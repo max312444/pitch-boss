@@ -13,6 +13,8 @@ export interface MyClubDesign {
   charge: CrestCharge;
   star?: boolean;
   stadium: string;
+  /** 직접 넣은 로고 이미지 (128×148 PNG data URL). 있으면 엠블럼 대신 */
+  image?: string;
 }
 export interface MyClubState {
   id: string;
@@ -29,7 +31,7 @@ export interface MyClubState {
 export function myClubMaster(st: MyClubState): ClubMaster {
   const d = st.design;
   return {
-    id: st.id, name: d.name, ko: d.name, short: d.short.toUpperCase(), nation: st.nation, stadiumName: d.stadium, founded: st.founded,
+    id: st.id, name: d.name, ko: d.name, short: d.short.toUpperCase(), nation: st.nation, stadiumName: d.stadium, founded: st.founded, ...(d.image ? { crestImage: d.image } : {}),
     kits: { home: { primary: d.colors[0], secondary: d.colors[1], pattern: d.pattern === 'stripes' || d.pattern === 'hoops' || d.pattern === 'halves' || d.pattern === 'sash' ? d.pattern : 'plain' } },
     crest: { shape: d.shape, colors: d.colors, pattern: d.pattern, charge: d.charge, mark: d.short.toUpperCase(), star: d.star },
   };

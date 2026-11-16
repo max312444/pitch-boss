@@ -12,8 +12,7 @@ import { DEFAULT_DESIGN, designError, MyClubForm } from '../components/MyClubFor
 import { weakestClub } from '../../engine/myclub';
 import type { MyClubDesign } from '../../engine/myclubDesign';
 
-/** 게임 모드: 기본 (실제 구단) · 나의 구단 만들기 · 월드컵 (준비 중) */
-type Mode = 'base' | 'my';
+
 
 const fmtSeason = (s: string) => s.replace('-', '/');
 
@@ -48,7 +47,7 @@ export function NewGameScreen() {
     const t = c.squad.map(overall).sort((a, b) => b - a).slice(0, 11);
     return Math.round(t.reduce((a, b) => a + b, 0) / Math.max(1, t.length));
   };
-  const [mode, setMode] = useState<Mode>('base');
+  const mode = useApp((s) => s.newMode);   // 타이틀의 모드 고르기 팝업에서
   const [design, setDesign] = useState<MyClubDesign>(DEFAULT_DESIGN);
   const weakest = clubsData?.length ? weakestClub(clubsData) : null;
   const sel = clubsData?.find((c) => c.club === club);
@@ -103,13 +102,8 @@ export function NewGameScreen() {
           <Icon name="back" size={15} /> 메인 메뉴
         </button>
         <h1 className="mt-2 text-[22px] font-semibold lg:text-[26px]">새 게임</h1>
-        <div className="mt-4 grid grid-cols-3 gap-1 rounded-lg bg-ink-850 p-1">
-          {([['base', '기본'], ['my', '나의 구단'], ['wc', '월드컵']] as const).map(([k, label]) => (
-            <button key={k} disabled={k === 'wc'} onClick={() => k !== 'wc' && setMode(k)} title={k === 'wc' ? '준비 중입니다' : undefined}
-              className={`h-9 rounded-md text-[12px] transition-colors disabled:opacity-40 ${mode === k ? 'bg-ink-700 font-semibold text-hi' : 'text-mid hover:text-hi'}`}>{label}{k === 'wc' ? ' (곧)' : ''}</button>
-          ))}
-        </div>
-        <div className="mt-1.5 text-[11px] leading-relaxed text-lo">{mode === 'base' ? '실제 구단을 골라 감독으로 시작합니다' : '고른 리그의 꼴찌 자리에 내 구단을 만들어 시작합니다'}</div>
+        <div className="mt-3 inline-flex w-fit items-center gap-2 rounded-md bg-neon-ghost px-2.5 py-1 text-[12px] font-semibold text-neon">{mode === 'my' ? '나의 구단 모드' : '기본 모드'}</div>
+        <div className="mt-1.5 text-[11px] leading-relaxed text-lo">{mode === 'base' ? '실제 구단을 골라 감독으로 시작합니다' : '시즌 · 리그를 고르면 그 리그의 꼴찌 자리에 내 구단을 만들어 시작합니다'}</div>
         {mode === 'base' && <button onClick={randomStart} disabled={loading || rolling} title="시즌 · 리그 · 구단을 모두 무작위로 고릅니다"
           className="mt-5 flex h-11 w-full items-center justify-center gap-2 rounded-lg border border-dashed border-neon/50 text-[13px] font-semibold text-neon transition-colors hover:bg-neon-ghost disabled:opacity-50">
           {rolling ? '구단 고르는 중…' : '완전 랜덤으로 시작'}

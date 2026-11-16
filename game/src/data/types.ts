@@ -53,6 +53,8 @@ export interface ClubMaster {
   rivals?: string[];
   /** 경기장 이름 (나의 구단) */
   stadiumName?: string;
+  /** 직접 넣은 로고 이미지 (data URL, 나의 구단) */
+  crestImage?: string;
   /** 엠블럼 디자인 (publish 단계에서 넣음) */
   crest?: import('../ui/crests/types').CrestStyle;
 }

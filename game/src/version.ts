@@ -1,12 +1,16 @@
 // 게임 버전 (첫 화면에 표시). 기능을 넣거나 고칠 때마다 올린다 — 기능 추가 0.1 단위, 작은 수정 0.0.1 단위
 //  바꿀 때 아래 CHANGELOG 맨 위에 한 줄 요약을 넣고, README 개발 현황에도 적는다
 //  첫 화면은 새 버전을 처음 본 뒤 24시간 동안 '업데이트 소식'을 보여 준다 (UpdateNotes.tsx)
-export const GAME_VERSION = '1.0';
+export const GAME_VERSION = '1.1';
 
 export interface ChangeEntry { version: string; date: string; items: string[] }
 
 /** 업데이트 내역 (새 것이 위). 플레이어가 읽는 글이므로 쉬운 말로 */
 export const CHANGELOG: ChangeEntry[] = [
+  { version: '1.1', date: '2026-11-16', items: [
+    '새 게임을 누르면 게임 모드 고르기 창: 기본 · 나의 구단 · 월드컵(준비 중)을 설명과 함께 고르고 시작합니다',
+    '나의 구단: 로고 이미지를 직접 넣을 수 있습니다 (엠블럼 조합 대신, 이 기기 세이브에만 저장)',
+  ] },
   { version: '1.0', date: '2026-11-16', items: [
     'v1.0 — 게임 모드: 새 게임에서 기본 · 나의 구단 고르기 (월드컵 모드는 준비 중)',
     '나의 구단 만들기: 이름 · 약칭 · 색 · 엠블럼(모양 · 무늬 · 문장 · 별) · 경기장 이름을 정해 고른 리그의 꼴찌 자리를 대신합니다. 그 구단 선수들은 자유계약으로 풀립니다',

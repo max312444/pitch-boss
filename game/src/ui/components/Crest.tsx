@@ -133,7 +133,7 @@ export function Crest({ clubId, size = 36 }: { clubId: string; size?: number }) 
   const uid = useId().replace(/:/g, '');
   const master = clubs.get(clubId);
   const name = master?.name ?? clubId;
-  const file = FILE.get(clubId);
+  const file = FILE.get(clubId) ?? master?.crestImage;   // 파일 · 나의 구단 로고 이미지
   if (file) return <img src={file} width={size} height={size * 1.16} alt={name} style={{ objectFit: 'contain', flexShrink: 0 }} />;
 
   const st = master?.crest ?? fallbackStyle(clubId);

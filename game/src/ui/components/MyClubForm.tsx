@@ -14,6 +14,17 @@ const CHARGES: [CrestCharge, string][] = [['letters', '약칭 글자'], ['ball',
 const SWATCH = ['#c8102e', '#e4572e', '#f2a900', '#ffd100', '#2e8b57', '#00843d', '#00a3e0', '#1c3f94', '#5b2c83', '#6c1d45', '#111111', '#4a4a4a', '#ffffff', '#d9c7a1'];
 const SLOT_KO = ['주색', '보조색', '테두리'];
 
+/** 로고 이미지 → 128×148 칸에 맞춰 줄인 PNG (투명 배경 유지) */
+async function logoData(file: File): Promise<string> {
+  const img = await createImageBitmap(file);
+  const W = 128, H = 148, k = Math.min(W / img.width, H / img.height);
+  const c = document.createElement('canvas');
+  c.width = W; c.height = H;
+  c.getContext('2d')!.drawImage(img, (W - img.width * k) / 2, (H - img.height * k) / 2, img.width * k, img.height * k);
+  img.close?.();
+  return c.toDataURL('image/png');
+}
+
 export const DEFAULT_DESIGN: MyClubDesign = { name: '새 구단 FC', short: 'NEW', colors: ['#1c3f94', '#ffffff', '#111111'], shape: 'shield', pattern: 'solid', charge: 'letters', star: false, stadium: '새 구단 스타디움' };
 
 /** 입력 검사: 잘못이면 이유 */
@@ -77,6 +88,16 @@ export function MyClubForm({ clubsData, d, setD }: { clubsData: ClubSeasonFile[]
             </div>
           </div>
         ))}
+      </div>
+
+      {/* 로고 이미지 (선택): 있으면 아래 엠블럼 조합 대신 */}
+      <div className="flex flex-wrap items-center gap-2 text-[12px]">
+        <label className="flex h-9 cursor-pointer items-center rounded-lg bg-ink-700 px-3 font-semibold text-hi hover:bg-ink-750">
+          {d.image ? '로고 이미지 바꾸기' : '로고 이미지 넣기 (선택)'}
+          <input type="file" accept="image/*" hidden onChange={async (e) => { const f = e.target.files?.[0]; e.target.value = ''; if (f) up({ image: await logoData(f) }); }} />
+        </label>
+        {d.image && <button type="button" onClick={() => up({ image: undefined })} className="h-9 rounded-lg px-3 text-lo ring-1 ring-line hover:text-hi">이미지 빼기</button>}
+        <span className="basis-full text-[11px] text-lo">{d.image ? '넣은 이미지를 엠블럼으로 씁니다 (아래 모양 · 무늬는 색 표시에만 쓰임)' : 'png · jpg · webp. 넣으면 아래 엠블럼 조합 대신 그 이미지를 씁니다. 이 기기 세이브에만 저장됩니다'}</span>
       </div>
 
       {/* 엠블럼 */}

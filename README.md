@@ -135,6 +135,9 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 > 버전: `game/src/version.ts` (첫 화면 표시). 기능 추가 +0.1 · 작은 수정 +0.0.1, 바꿀 때마다 여기에 적는다.
 > 같은 파일의 `CHANGELOG` 맨 위에 플레이어용 한 줄 요약도 넣는다 → 첫 화면 '업데이트 소식' (새 버전을 처음 본 뒤 24시간 표시, `UpdateNotes.tsx`).
 
+0. **v1.1 모드 고르기 창 · 로고 이미지** (2026-11-16)
+   - 타이틀 `새 게임` → `ModePicker` 팝업 (모드별 설명, 월드컵 준비 중) → `useApp.newMode` → 새 게임 화면 (모드 탭 없앰, 그 외 흐름 · 감독 설정 · 튜토리얼은 기본 모드와 같음).
+   - 나의 구단 로고 이미지: `MyClubDesign.image` (128×148 PNG data URL, 세이브에 함께) → `ClubMaster.crestImage` → `Crest` 가 이미지로 그림.
 0. **v1.0 게임 모드 · 나의 구단 만들기** (2026-11-16)
    - 새 게임 화면 모드 탭 (기본 · 나의 구단 · 월드컵 준비 중). `engine/myclub.ts` + `myclubDesign.ts`(타입 · `myClubMaster`, db.ts 가 가볍게 씀): 고른 리그 꼴찌 자리 (`weakestClub` 명성 → 전력) 를 `swapInput` 으로 내 구단 (`my-…`) 으로 바꿔 읽고, 그 구단 선수는 FA (`setupMyClub`), 유스 6명 (`youthIntake`, createWorld `skipFill` 로 아카데미 자동 채우기 제외). 시작값 `myStart`: 리그 아래쪽 절반 중간값 × 이적 1.6 · 주급 1.25 · 잔고 1.3 · 매출 1.1, 명성 max(대신한 구단, 중간값)+2. 다음 시즌 데이터도 store `nextSeason` 에서 `swapInput(…, currentAsData)` → 리그 크기 · 승강 수 그대로, 대신한 구단은 다시 안 나옴.
    - `world.myClub {id, replaced, design, setup}` 저장, 불러올 때 `registerMyClub` 으로 db `clubs` 에 등록 (이름 · 엠블럼 · 색). 시작 조건 `squadNeeds`: GK 2 · DF 6 · MF 6 · FW 3 + 전체 11 + 후보 수. 그 전에는 '계속' 대신 '선수단 채우기 n/20' (FA 목록으로), 홈 `MyClubSetup` 카드. 테스트 `myclub.test.ts` (2012/13 → 2013/14 실제 데이터 전환 · 경질 없음 포함).

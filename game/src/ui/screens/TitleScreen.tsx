@@ -1,3 +1,4 @@
+import { ModePicker } from '../components/ModePicker';
 import { GAME_VERSION } from '../../version';
 import { UpdateNotes } from '../components/UpdateNotes';
 /** 휴대폰: 업데이트 소식을 로고와 메뉴 사이에 (스크롤로 다 볼 수 있게) */
@@ -30,6 +31,8 @@ export function TitleScreen() {
   const [setOpen, setSetOpen] = useState(false);
   const [hallOpen, setHallOpen] = useState(false);
   const [helpOpen, setHelpOpen] = useState(false);
+  const [modeOpen, setModeOpen] = useState(false);
+  const setNewMode = useApp((s) => s.setNewMode);
   const importFile = useGame((s) => s.importFile);
   const fileRef = useRef<HTMLInputElement>(null);
   // 인트로: 브라우저를 켜고 처음 들어오면 한 번 (끝나면 고지가 이어서)
@@ -48,7 +51,7 @@ export function TitleScreen() {
   []);
 
   const items: MenuItem[] = [
-    { key: 'new', label: '새 게임', desc: '시즌과 리그, 구단을 골라 감독 커리어를 시작합니다', action: () => (noticeSeen() ? go('newgame') : setNotice('start')) },
+    { key: 'new', label: '새 게임', desc: '게임 모드(기본 · 나의 구단 · 월드컵)를 고르고 시작합니다', action: () => (noticeSeen() ? setModeOpen(true) : setNotice('start')) },
     { key: 'continue', label: '이어하기', desc: hasWorld ? '진행 중인 게임으로 돌아갑니다' : latest ? `가장 최근 저장 · ${latest.season.replace('-', '/')} ${latest.date.slice(5).replace('-', '.')}` : '저장된 게임이 없습니다', disabled: !hasWorld && !latest, action: () => void resume() },
     { key: 'load', label: '불러오기', desc: '저장 슬롯 또는 내 PC의 저장 파일(.pitchboss)에서 불러옵니다', action: () => setLoadOpen(true) },
     { key: 'hall', label: '명예의 전당', desc: '이 PC에서 지휘한 감독 커리어 순위', action: () => setHallOpen(true) },
@@ -145,7 +148,8 @@ export function TitleScreen() {
       {!intro && (
         <button onClick={() => setIntro(true)} className="absolute top-[max(16px,env(safe-area-inset-top))] right-4 z-10 text-[11px] text-lo transition-colors hover:text-mid sm:top-auto sm:right-8 sm:bottom-6">인트로 다시 보기</button>
       )}
-      {notice && !intro && <NoticeDialog confirmLabel={notice === 'start' ? '확인하고 시작' : notice === 'first' ? '확인' : '닫기'} onClose={() => { const n = notice; setNotice(null); if (n === 'start') go('newgame'); }} />}
+      {notice && !intro && <NoticeDialog confirmLabel={notice === 'start' ? '확인하고 시작' : notice === 'first' ? '확인' : '닫기'} onClose={() => { const n = notice; setNotice(null); if (n === 'start') setModeOpen(true); }} />}
+      {modeOpen && <ModePicker onClose={() => setModeOpen(false)} onPick={(m) => { setNewMode(m); setModeOpen(false); go('newgame'); }} />}
 
       {dbOpen && <DatabaseDialog onClose={() => setDbOpen(false)} />}
       {setOpen && <SettingsDialog onClose={() => setSetOpen(false)} />}
