@@ -9,7 +9,9 @@ import { advanceDay, advanceToUserMatch, applyMatch, createWorld, prepareMatch, 
 import { playToEnd, reshapeTeam, setFormation, setTactics, step, substitute, swapSlots, type MatchState } from '../engine/match';
 import { createRng, type Rng } from '../engine/rng';
 import { seedTraits } from '../engine/traits';
-import { availableSeasons, clubKo, clubs as clubMasters, dataset, leagues, loadHistory, loadLeagueSeason, loadManagers, loadStandings, playerKo, realAvailable, registerGeneratedNames, setDataset, worldCupsMeta } from '../data/db';
+import { availableSeasons, clubKo, clubs as clubMasters, dataset, leagues, loadHistory, loadLeagueSeason, loadManagers, loadStandings, playerKo, realAvailable, registerGeneratedNames, registerMyClub, setDataset, worldCupsMeta } from '../data/db';
+import { currentAsData, myStart, newMyClubId, setupMyClub, squadNeeds, swapInput, weakestClub, type MyClubDesign, type MyClubState } from '../engine/myclub';
+import type { SquadPlayer } from '../data/types';
 import { closeSeason, nextSeasonOf, startNextSeason, type SeasonReport } from '../engine/season';
 import { fillContracts, seasonOver } from '../engine/world';
 import { ensureManagers } from '../engine/managers';
@@ -164,7 +166,7 @@ interface GameStore {
   /** 경기 준비 화면: 같은 동작을 이번 경기 선발에 */
   reshapeDraft(slotIdx: number, pos: Position): string;
   /** random: 완전 랜덤으로 고른 구단 → 첫 시즌만 예산 · 재정 규정 한도 보정 */
-  newGame(season: string, league: string, clubId: string, opts?: { random?: boolean; manager?: import('../engine/managers').UserManagerInput }): Promise<void>;
+  newGame(season: string, league: string, clubId: string, opts?: { random?: boolean; manager?: import('../engine/managers').UserManagerInput; /** 나의 구단 만들기: 이 리그 꼴찌 자리를 대신 (clubId 는 무시) */ myClub?: MyClubDesign }): Promise<void>;
   continueGame(): void;
   updateDraft(change: Partial<MatchDraft>): void;
   resetDraft(): void;
@@ -271,9 +273,21 @@ export const useGame = create<GameStore>((set, get) => {
     async newGame(season, league, clubId, opts = {}) {
       set({ loading: true });
       // 그 시즌 데이터가 있는 1부 리그를 모두 불러와 함께 진행한다
-      const input = await loadSeasonInput(season, league);
+      let input = await loadSeasonInput(season, league);
       const seed = (Date.now() ^ Math.floor(Math.random() * 1e9)) >>> 0;
-      const world = createWorld(input, clubId, seed, { manager: opts.manager, settings: gameSettingsOf(useSettings.getState().s) });
+      // 나의 구단: 이 리그 꼴찌 자리를 대신 (그 구단 선수들은 FA 로)
+      let my: MyClubState | undefined, freed: SquadPlayer[] = [];
+      if (opts.myClub) {
+        const lg = input.leagues.find((l) => l.id === league)!;
+        const rep = weakestClub(lg.clubs);
+        const st = myStart(lg.clubs, rep);
+        my = { id: newMyClubId(seed), replaced: rep.club, nation: clubMasters.get(rep.club)?.nation ?? leagues.find((l) => l.id === league)?.nation ?? 'ENG', founded: +season.slice(0, 4), design: opts.myClub, setup: true };
+        const sw = swapInput(input, my, { ...st, formation: '4-3-3' });
+        input = sw.input; freed = sw.freed; clubId = my.id;
+        registerMyClub(my);
+      }
+      const world = createWorld(input, clubId, seed, { manager: opts.manager, settings: gameSettingsOf(useSettings.getState().s), ...(my ? { skipFill: [my.id] } : {}) });
+      if (my) setupMyClub(world, my, freed);
       registerGeneratedNames(world.managers ?? {});   // 가상 감독 한국어 이름
       world.dataset = dataset;
       world.careerId = newCareerId();
@@ -296,6 +310,7 @@ export const useGame = create<GameStore>((set, get) => {
     continueGame() {
       const w = get().world;
       if (!w || get().match || w.manager?.pendingJob) return;   // 감독: 새 구단을 골라야 하면 진행 멈춤
+      if (w.myClub?.setup) { if (!squadNeeds(w).ok) return; w.myClub.setup = false; }   // 나의 구단: 선수단을 다 채워야 시즌 시작
       syncWorld(w);   // 설정 (팝업 · 난이도) 을 이 게임에 반영
       const st = useSettings.getState().s;
       const startWindow = windowOpen(w.season, w.date);
@@ -881,7 +896,8 @@ export const useGame = create<GameStore>((set, get) => {
       if (!w || !seasonOver(w)) return;
       set({ loading: true });
       closeSeason(w);
-      const input = await loadSeasonInput(nextSeasonOf(w.season));
+      let input = await loadSeasonInput(nextSeasonOf(w.season));
+      if (w.myClub) input = swapInput(input, w.myClub, currentAsData(w.clubs[w.myClub.id])).input;   // 나의 구단: 대신한 구단 자리
       const report = startNextSeason(w, input);
       registerGeneratedNames(w.players);   // 유스 선수 한국어 이름
       const awards = w.pendingAwards?.length ? w.pendingAwards : null;
@@ -926,6 +942,7 @@ export const useGame = create<GameStore>((set, get) => {
         setDataset(need);
         return false;
       }
+      registerMyClub(world.myClub);   // 나의 구단 이름 · 엠블럼
       // 데이터 형식이 바뀌기 전에 만든 세이브 (구단을 찾을 수 없음)
       if (!clubMasters.has(world.userClubId) || !Object.keys(world.clubs).every((id) => clubMasters.has(id) || !world.competitions[world.clubs[id].league])) {
         set({ loadError: '이전 형식의 데이터로 만든 세이브라 불러올 수 없습니다. 새 게임으로 시작해 주세요.' });

@@ -37,10 +37,10 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
   const [tab, setTab] = useState<Tab>('search');
   const [filters, setFilters] = useState(false);
   const [group, setGroup] = useState<Group>(initialGroup ?? 'ALL');
-  const [league, setLeague] = useState<string>('ALL');
+  const [league, setLeague] = useState<string>(preset?.league ?? 'ALL');
   const [maxAge, setMaxAge] = useState(preset?.maxAge ?? 40);
   const [minOvr, setMinOvr] = useState(preset?.minOvr ?? 60);
-  const [posSet, setPosSet] = useState<{ positions: Position[]; label: string } | null>(preset ? { positions: preset.positions, label: preset.label } : null);
+  const [posSet, setPosSet] = useState<{ positions: Position[]; label: string } | null>(preset?.positions.length ? { positions: preset.positions, label: preset.label } : null);
   const advice = useMemo(() => analyzeClub(w, w.userClubId).priorities, [w, w.clubs[w.userClubId].squad.length]);
   const [maxValue, setMaxValue] = useState(0);   // 0 = 제한 없음
   const [q, setQ] = useState('');

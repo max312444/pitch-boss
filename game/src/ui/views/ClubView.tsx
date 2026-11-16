@@ -102,7 +102,7 @@ export function ClubView() {
         <div className="ml-auto grid grid-cols-2 gap-x-10 gap-y-3 sm:grid-cols-4">
           <Stat k="명성" v={String(club.reputation)} />
           <Stat k="팬" v={`${(fansOf(w, id) / 1e6).toFixed(2)}M 명`} />
-          <Stat k="경기장" v={club.stadium ? `${club.stadium.toLocaleString()}석` : '–'} />
+          <Stat k="경기장" v={`${master?.stadiumName ? `${master.stadiumName} · ` : ''}${club.stadium ? `${club.stadium.toLocaleString()}석` : '–'}`} />
           <Stat k="우승" v={`${trophyRows.reduce((a, r) => a + r.seasons.length, 0)}회`} gold />
         </div>
       </section>

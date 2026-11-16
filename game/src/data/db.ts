@@ -4,6 +4,7 @@
 //  - public: data-public/ (패러디 이름 · 가상 리그 이름, 저장소에 포함) — 기본
 //  - real:   data/        (실명, 각자 파이프라인으로 만든 내 PC의 데이터) — 있을 때만 설정에서 선택 가능
 //            웹 배포판은 data/ 가 비어 있으므로, '데이터베이스'에서 고른 폴더를 이 브라우저에 넣어 둔 것(realStore.ts)을 쓴다
+import { myClubMaster, type MyClubState } from '../engine/myclubDesign';
 import type {
   ClubMaster, ClubSeasonFile, CupMeta, LeagueMeta, LeagueSeasonFile, LocaleName, NationMeta,
 } from './types';
@@ -159,4 +160,10 @@ export async function devRealEntries(onProgress?: (done: number, total: number) 
     if (i % 100 === 0) onProgress?.(i, lazy.length);
   }
   return out;
+}
+
+/** 나의 구단: 다른 구단처럼 이름 · 엠블럼 · 색이 보이게 등록 (새 게임 · 불러오기 때) */
+export function registerMyClub(st: MyClubState | undefined) {
+  if (!st) return;
+  clubs.set(st.id, myClubMaster(st));
 }

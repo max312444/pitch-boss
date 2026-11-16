@@ -1,5 +1,7 @@
 // 세이브: 브라우저 IndexedDB에 월드를 통째로 저장한다.
 // 슬롯: 'auto'(자동 저장) + 'slot-1' ~ 'slot-3'(직접 저장)
+import { registerMyClub } from '../data/db';
+import type { MyClubState } from '../engine/myclubDesign';
 import { WORLD_VERSION, type World } from '../engine/types';
 
 export interface SaveMeta {
@@ -9,6 +11,8 @@ export interface SaveMeta {
   date: string;
   clubId: string;
   version: number;
+  /** 나의 구단 (목록에서 이름 · 엠블럼을 보이려고) */
+  myClub?: MyClubState;
 }
 interface SaveRecord extends SaveMeta { world: World }
 
@@ -34,7 +38,7 @@ function tx<T>(mode: IDBTransactionMode, fn: (s: IDBObjectStore) => IDBRequest<T
 }
 
 export async function writeSave(slot: string, world: World): Promise<SaveMeta> {
-  const meta: SaveMeta = { slot, savedAt: new Date().toISOString(), season: world.season, date: world.date, clubId: world.userClubId, version: world.version };
+  const meta: SaveMeta = { slot, savedAt: new Date().toISOString(), season: world.season, date: world.date, clubId: world.userClubId, version: world.version, ...(world.myClub ? { myClub: world.myClub } : {}) };
   // 구조화 복제로 저장 (월드는 함수 없는 순수 데이터)
   await tx('readwrite', (s) => s.put({ ...meta, world } satisfies SaveRecord));
   return meta;
@@ -48,7 +52,8 @@ export async function readSave(slot: string): Promise<World | null> {
 
 export async function listSaves(): Promise<SaveMeta[]> {
   const all = await tx<SaveRecord[]>('readonly', (s) => s.getAll() as IDBRequest<SaveRecord[]>);
-  return all.map(({ world: _w, ...meta }) => meta).sort((a, b) => b.savedAt.localeCompare(a.savedAt));
+  // 나의 구단 세이브: 불러오기 전에도 목록에 이름 · 엠블럼이 보이게 등록 (예전 세이브는 world 에서)
+  return all.map(({ world, ...meta }) => { const my = meta.myClub ?? world?.myClub; registerMyClub(my); return { ...meta, ...(my ? { myClub: my } : {}) }; }).sort((a, b) => b.savedAt.localeCompare(a.savedAt));
 }
 
 export async function deleteSave(slot: string): Promise<void> {

@@ -8,6 +8,12 @@ import { Crest } from '../components/Crest';
 import { Icon } from '../components/Icon';
 import { ManagerSetup, useManagerSetup } from '../components/ManagerSetup';
 import { money, ratingTone } from '../format';
+import { DEFAULT_DESIGN, designError, MyClubForm } from '../components/MyClubForm';
+import { weakestClub } from '../../engine/myclub';
+import type { MyClubDesign } from '../../engine/myclubDesign';
+
+/** 게임 모드: 기본 (실제 구단) · 나의 구단 만들기 · 월드컵 (준비 중) */
+type Mode = 'base' | 'my';
 
 const fmtSeason = (s: string) => s.replace('-', '/');
 
@@ -42,6 +48,9 @@ export function NewGameScreen() {
     const t = c.squad.map(overall).sort((a, b) => b - a).slice(0, 11);
     return Math.round(t.reduce((a, b) => a + b, 0) / Math.max(1, t.length));
   };
+  const [mode, setMode] = useState<Mode>('base');
+  const [design, setDesign] = useState<MyClubDesign>(DEFAULT_DESIGN);
+  const weakest = clubsData?.length ? weakestClub(clubsData) : null;
   const sel = clubsData?.find((c) => c.club === club);
   const mgr = useManagerSetup();   // 내 감독 이름 · 철학 · 압박 · 강점
   // 휴대폰: 구단을 누르면 팝업 (닫기 · 뒤로 가기로 닫힘)
@@ -71,6 +80,13 @@ export function NewGameScreen() {
   };
 
   const start = async () => {
+    if (mode === 'my') {
+      if (designError(design)) return;
+      await newGame(season, league, '', { manager: mgr.m, myClub: { ...design, name: design.name.trim(), short: design.short.trim(), stadium: design.stadium.trim() } });
+      setTab('home');
+      go('hub');
+      return;
+    }
     if (!club) return;
     await newGame(season, league, club, { manager: mgr.m });
     setTab('home');
@@ -87,13 +103,20 @@ export function NewGameScreen() {
           <Icon name="back" size={15} /> 메인 메뉴
         </button>
         <h1 className="mt-2 text-[22px] font-semibold lg:text-[26px]">새 게임</h1>
-        <button onClick={randomStart} disabled={loading || rolling} title="시즌 · 리그 · 구단을 모두 무작위로 고릅니다"
+        <div className="mt-4 grid grid-cols-3 gap-1 rounded-lg bg-ink-850 p-1">
+          {([['base', '기본'], ['my', '나의 구단'], ['wc', '월드컵']] as const).map(([k, label]) => (
+            <button key={k} disabled={k === 'wc'} onClick={() => k !== 'wc' && setMode(k)} title={k === 'wc' ? '준비 중입니다' : undefined}
+              className={`h-9 rounded-md text-[12px] transition-colors disabled:opacity-40 ${mode === k ? 'bg-ink-700 font-semibold text-hi' : 'text-mid hover:text-hi'}`}>{label}{k === 'wc' ? ' (곧)' : ''}</button>
+          ))}
+        </div>
+        <div className="mt-1.5 text-[11px] leading-relaxed text-lo">{mode === 'base' ? '실제 구단을 골라 감독으로 시작합니다' : '고른 리그의 꼴찌 자리에 내 구단을 만들어 시작합니다'}</div>
+        {mode === 'base' && <button onClick={randomStart} disabled={loading || rolling} title="시즌 · 리그 · 구단을 모두 무작위로 고릅니다"
           className="mt-5 flex h-11 w-full items-center justify-center gap-2 rounded-lg border border-dashed border-neon/50 text-[13px] font-semibold text-neon transition-colors hover:bg-neon-ghost disabled:opacity-50">
           {rolling ? '구단 고르는 중…' : '완전 랜덤으로 시작'}
-        </button>
-        <div className="mt-1.5 text-[11px] leading-relaxed text-lo">시즌 · 리그 · 구단 모두 무작위 · 첫 시즌만 살짝 보정 (이적 예산 +10% · 주급 예산 +5% · 샐러리 캡 +5%)</div>
+        </button>}
+        {mode === 'base' && <div className="mt-1.5 text-[11px] leading-relaxed text-lo">시즌 · 리그 · 구단 모두 무작위 · 첫 시즌만 살짝 보정 (이적 예산 +10% · 주급 예산 +5% · 샐러리 캡 +5%)</div>}
         <ol className="mt-10 hidden space-y-6 lg:block">
-          {[['시즌', fmtSeason(season)], ['리그', compKo(league)], ['구단', club ? clubKo(club) : '–']].map(([k, v], i) => (
+          {[['시즌', fmtSeason(season)], ['리그', compKo(league)], ['구단', mode === 'my' ? design.name || '나의 구단' : club ? clubKo(club) : '–']].map(([k, v], i) => (
             <li key={k} className="flex gap-4">
               <span className="tnum mt-0.5 text-[12px] font-semibold text-neon">{String(i + 1).padStart(2, '0')}</span>
               <div>
@@ -157,17 +180,23 @@ export function NewGameScreen() {
 
         <section className="px-4 py-5 lg:min-h-0 lg:flex-1 lg:overflow-auto lg:px-8 lg:py-6">
           <h2 className="mb-3 text-[13px] font-semibold text-mid lg:mb-4">구단 <span className="text-lo">· 명성 순 · 숫자는 주전 평균 능력</span></h2>
+          {mode === 'my' && weakest && (
+            <button onClick={() => { setClub(weakest.club); openSheet(); }} className="mb-3 flex w-full items-center gap-3 rounded-lg border border-dashed border-neon/50 px-4 py-3 text-left text-[13px] text-neon hover:bg-neon-ghost lg:pointer-events-none">
+              <span className="font-semibold">나의 구단 만들기</span><span className="text-lo">· {clubKo(weakest.club)} 자리를 대신합니다</span><span className="ml-auto lg:hidden">만들기 →</span>
+            </button>
+          )}
           {!clubsData ? <div className="text-[13px] text-lo">불러오는 중…</div> : (
             <div className="grid grid-cols-[repeat(auto-fill,minmax(min(220px,100%),1fr))] gap-1.5 lg:gap-2">
               {clubsData.map((c) => {
                 const on = c.club === club;
                 const st = strength(c);
                 return (
-                  <button key={c.club} onClick={() => { setClub(c.club); openSheet(); }}
+                  <button key={c.club} onClick={() => { setClub(c.club); openSheet(); }} title={mode === 'my' && c.club === weakest?.club ? '이 자리를 내 구단이 대신합니다' : undefined}
                     className={`group flex items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors ${
                       on ? 'bg-neon-ghost ring-1 ring-line-strong' : 'bg-ink-850 ring-1 ring-line hover:bg-ink-800 hover:ring-line-strong'}`}>
                     <Crest clubId={c.club} size={26} />
-                    <div className="min-w-0 flex-1 truncate text-[14px] font-semibold">{clubKo(c.club)}</div>
+                    <div className={`min-w-0 flex-1 truncate text-[14px] font-semibold ${mode === 'my' && c.club === weakest?.club ? 'text-lo line-through' : ''}`}>{clubKo(c.club)}</div>
+                    {mode === 'my' && c.club === weakest?.club && <span className="shrink-0 rounded bg-neon/15 px-1.5 text-[11px] font-semibold text-neon">내 구단 자리</span>}
                     <div className={`tnum text-[17px] font-semibold ${ratingTone(st)}`}>{st}</div>
                   </button>
                 );
@@ -180,7 +209,22 @@ export function NewGameScreen() {
       {/* 오른쪽: 요약 (휴대폰은 구단을 눌렀을 때 팝업) */}
       {sheet && <div className="fixed inset-0 z-40 animate-[fade_0.2s_ease-out] bg-ink-950/75 lg:hidden" onClick={closeSheet} />}
       <aside className={`flex w-full shrink-0 flex-col border-line bg-ink-900 lg:static lg:w-[340px] lg:border-l ${sheet ? 'fixed inset-x-0 top-[6dvh] bottom-0 z-50 animate-[rise_0.25s_ease-out] overflow-y-auto rounded-t-2xl border-t' : 'max-lg:hidden'}`}>
-        {sel ? (
+        {mode === 'my' && clubsData ? (
+          <>
+            <button onClick={closeSheet} className="flex h-11 shrink-0 items-center justify-between border-b border-line px-5 text-[14px] text-mid lg:hidden"><span>나의 구단 만들기</span><span>닫기 ✕</span></button>
+            <div className="lg:min-h-0 lg:flex-1 lg:overflow-auto">
+              <MyClubForm clubsData={clubsData} d={design} setD={setDesign} />
+              <ManagerSetup {...mgr} />
+            </div>
+            <div className="sticky bottom-0 border-t border-line bg-ink-900 p-4 pb-[max(16px,env(safe-area-inset-bottom))] lg:static lg:p-5">
+              <button onClick={start} disabled={loading || !!designError(design)}
+                className="group flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-neon px-5 text-[15px] font-semibold text-ink-950 transition-colors hover:bg-[#5bff3d] disabled:opacity-60">
+                {loading ? '세계를 만드는 중…' : '창단하고 시작'}
+                {!loading && <Icon name="arrow" size={18} className="transition-transform" />}
+              </button>
+            </div>
+          </>
+        ) : sel ? (
           <>
             <button onClick={closeSheet} className="flex h-11 shrink-0 items-center justify-between border-b border-line px-5 text-[14px] text-mid lg:hidden"><span>구단 정보</span><span>닫기 ✕</span></button>
             <div className="relative shrink-0 overflow-hidden px-7 pt-8 pb-6">

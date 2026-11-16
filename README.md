@@ -135,6 +135,10 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 > 버전: `game/src/version.ts` (첫 화면 표시). 기능 추가 +0.1 · 작은 수정 +0.0.1, 바꿀 때마다 여기에 적는다.
 > 같은 파일의 `CHANGELOG` 맨 위에 플레이어용 한 줄 요약도 넣는다 → 첫 화면 '업데이트 소식' (새 버전을 처음 본 뒤 24시간 표시, `UpdateNotes.tsx`).
 
+0. **v1.0 게임 모드 · 나의 구단 만들기** (2026-11-16)
+   - 새 게임 화면 모드 탭 (기본 · 나의 구단 · 월드컵 준비 중). `engine/myclub.ts` + `myclubDesign.ts`(타입 · `myClubMaster`, db.ts 가 가볍게 씀): 고른 리그 꼴찌 자리 (`weakestClub` 명성 → 전력) 를 `swapInput` 으로 내 구단 (`my-…`) 으로 바꿔 읽고, 그 구단 선수는 FA (`setupMyClub`), 유스 6명 (`youthIntake`, createWorld `skipFill` 로 아카데미 자동 채우기 제외). 시작값 `myStart`: 리그 아래쪽 절반 중간값 × 이적 1.6 · 주급 1.25 · 잔고 1.3 · 매출 1.1, 명성 max(대신한 구단, 중간값)+2. 다음 시즌 데이터도 store `nextSeason` 에서 `swapInput(…, currentAsData)` → 리그 크기 · 승강 수 그대로, 대신한 구단은 다시 안 나옴.
+   - `world.myClub {id, replaced, design, setup}` 저장, 불러올 때 `registerMyClub` 으로 db `clubs` 에 등록 (이름 · 엠블럼 · 색). 시작 조건 `squadNeeds`: GK 2 · DF 6 · MF 6 · FW 3 + 전체 11 + 후보 수. 그 전에는 '계속' 대신 '선수단 채우기 n/20' (FA 목록으로), 홈 `MyClubSetup` 카드. 테스트 `myclub.test.ts` (2012/13 → 2013/14 실제 데이터 전환 · 경질 없음 포함).
+   - 내 구단을 맡는 동안 경질 없음 · 감독 계약 자동 연장 (`manager.ts ownClub`). 경기장 이름 `ClubMaster.stadiumName` (구단 화면 · 홈 경기 카드). 세이브 목록 `SaveMeta.myClub` · 명예의 전당 `CareerRecord.myClub` 으로 불러오기 전에도 이름 · 엠블럼 등록. 점검: 5대 리그 + 독일 2부 · 2001/02 · 2005/06 · 2012/13 창단 → 규칙대로 선수단 채우기 (주전 평균 ≈ 리그 아래쪽 30% 수준) → 3시즌 (첫 시즌 9~17위, 대신한 구단 재등장 없음, 리그 크기 유지).
 0. **v0.27 셀온 · 보너스 조항** (2026-11-16)
    - `engine/addons.ts`: 선수 `sellOn {club, pct}` (다음 이적 때 `completeTransfer` → `settleSellOn` 이 파는 구단 몫에서 떼어 원래 구단에) · `addOn {club, payer, amount, apps, done}` (world.ts 출전 기록 → `addOnApp`, 채우면 그날 지급, 그 전에 떠나면 없어짐). 파는 구단 판단 `evaluateBid(…, terms)` 는 `termsWorth` 를 이적료에 더함 (셀온 × 나이 계수 0.75/0.5/0.3/0.1 · 보너스 × 가능성 0.75/0.55/0.35). 받은 제안 역제안 `counterOffer(…, sellOn)` 은 사는 구단 한도에서 셀온 값어치를 뺌. AI 제안 30% 에 보너스 (`aiOfferBonus`), AI 끼리 이적에 가끔 조건 (`aiTerms`). 알림 `clause` 이벤트. 보너스는 이적료 절반까지 (`termsError`).
    - UI: 영입 협상 이적료 단계에 셀온 · 보너스 선택 (구단이 보는 값어치 표시), 받은 제안 협상에 셀온 요구 · 보너스 표시, 선수 정보 '이적 조건' 줄. 테스트 `addons.test.ts`.

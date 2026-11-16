@@ -4,7 +4,8 @@
 //  시즌이 끝날 때 · 저장할 때 갱신 (세이브의 w.careerId 기준)
 import type { World } from '../engine/types';
 import { levelOf } from '../engine/pyramid';
-import { clubKo, dataset } from '../data/db';
+import { clubKo, dataset, registerMyClub } from '../data/db';
+import type { MyClubState } from '../engine/myclubDesign';
 
 export type TitleKind = 'ucl' | 'league1' | 'uel' | 'league2' | 'cup';
 export const TITLE_KO: Record<TitleKind, string> = { ucl: '챔피언스리그', league1: '1부 리그', uel: '유로파리그', league2: '2부 리그', cup: '국내 컵' };
@@ -18,6 +19,8 @@ export interface CareerRecord {
   date: string;             // 게임 속 날짜
   dataset: 'public' | 'real';
   clubs: { club: string; name: string; from: string; to: string | null }[];
+  /** 나의 구단 (명예의 전당에서 엠블럼을 보이려고) */
+  myClub?: MyClubState;
   seasons: number;          // 지휘한 시즌 (끝난 시즌)
   titles: Record<TitleKind, number>;
   reputation: number;
@@ -26,7 +29,7 @@ export interface CareerRecord {
 
 const KEY = 'pitchboss.careers';
 export function listCareers(): CareerRecord[] {
-  try { return Object.values(JSON.parse(localStorage.getItem(KEY) ?? '{}') as Record<string, CareerRecord>).sort((a, b) => b.points - a.points); } catch { return []; }
+  try { const xs = Object.values(JSON.parse(localStorage.getItem(KEY) ?? '{}') as Record<string, CareerRecord>); for (const c of xs) registerMyClub(c.myClub); return xs.sort((a, b) => b.points - a.points); } catch { return []; }
 }
 export function deleteCareer(id: string) {
   try { const all = JSON.parse(localStorage.getItem(KEY) ?? '{}'); delete all[id]; localStorage.setItem(KEY, JSON.stringify(all)); } catch { /* 무시 */ }
@@ -44,7 +47,7 @@ export function careerOf(w: World): CareerRecord | null {
   return {
     id: w.careerId, started: [...w.history.map((h) => h.season), w.season].sort()[0], updated: new Date().toISOString(), date: w.date,
     dataset: w.dataset ?? dataset, clubs: m.history.map((h) => ({ club: h.club, name: clubKo(h.club), from: h.from, to: h.to })),
-    seasons, titles, reputation: m.reputation, points: Math.round(points * 10) / 10,
+    seasons, titles, reputation: m.reputation, points: Math.round(points * 10) / 10, ...(w.myClub ? { myClub: w.myClub } : {}),
   };
 }
 

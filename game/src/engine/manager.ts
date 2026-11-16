@@ -177,6 +177,9 @@ function followerDay(w: World): GameEvent[] {
   return events;
 }
 
+/** 나의 구단 모드에서 내가 만든 구단을 맡고 있음 → 경질 없음 · 계약 자동 연장 */
+export const ownClub = (w: World) => !!w.myClub && w.userClubId === w.myClub.id;
+
 /** 하루: 신뢰도 (매달 1일) · 경질 · 재계약 결정 (3월 1일) · 다른 구단 제안 (1일 · 15일) · 제안 만료 · 따라오는 선수 */
 export function managerDay(w: World, rng: Rng): GameEvent[] {
   const m = ensureManager(w);
@@ -197,7 +200,7 @@ export function managerDay(w: World, rng: Rng): GameEvent[] {
     m.confidence = clamp(m.confidence + (dlt < 0 ? dlt * pat.drop : dlt), 0, 100);
     // 시즌 중 경질 (10월 ~ 4월, 신뢰도 15 미만)
     // 팬 여론이 높으면 (70+) 이사회가 쉽게 경질하지 못한다
-    if (m.confidence < pat.mid - ((m.fanMood ?? 60) >= 70 ? 5 : 0) && (mon >= 10 || mon <= 4)) {
+    if (!ownClub(w) && m.confidence < pat.mid - ((m.fanMood ?? 60) >= 70 ? 5 : 0) && (mon >= 10 || mon <= 4)) {
       m.pendingJob = { reason: 'sacked', clubs: jobOffers(w, rng) };
       m.reputation = clamp(m.reputation - 4, 20, 99);
       events.push({ type: 'manager', date: d, kind: 'sacked', club: club.id });
@@ -207,8 +210,8 @@ export function managerDay(w: World, rng: Rng): GameEvent[] {
 
   // 재계약 결정: 계약 마지막 시즌 3월 1일
   if (d.slice(5) === '03-01' && m.contract <= `${endYear(w.season)}-06-30` && m.renewal?.contract !== m.contract) {
-    if (m.confidence >= 45) {
-      const years = m.confidence >= 75 ? 3 : 2;
+    if (m.confidence >= 45 || ownClub(w)) {   // 나의 구단: 늘 재계약
+      const years = m.confidence >= 75 || ownClub(w) ? 3 : 2;
       m.offers.push({ club: club.id, date: d, until: m.contract, kind: 'renew', years });   // 계약 만료일까지 유효 (놓치지 않게)
       m.renewal = { contract: m.contract, result: 'renew' };
       events.push({ type: 'manager', date: d, kind: 'renew', club: club.id, years });
@@ -287,7 +290,7 @@ export function managerSeasonEnd(w: World, recs: SeasonRecord[]): { titles: numb
     const won = [...(pos === 1 ? [`${w.season} ${club.league}`] : []), ...(w.cupHistory ?? []).filter((h) => h.season === w.season && h.winner === club.id).map((h) => `${w.season} ${h.cup}`)];
     cur.titles = [...(cur.titles ?? []), ...won];
   }
-  if (m.confidence < patienceOf(w).end) m.sackAtEnd = true;
+  if (m.confidence < patienceOf(w).end && !ownClub(w)) m.sackAtEnd = true;
   return { titles, relegated, met: pos <= target };
 }
 
@@ -296,6 +299,8 @@ export function managerNewSeason(w: World, rng: Rng): GameEvent[] {
   const m = ensureManager(w);
   m.offers = m.offers.filter((o) => o.kind === 'offer');
   const expired = m.contract < w.date;
+  // 나의 구단: 경질 없음 · 계약이 끝나면 자동 연장 (내가 만든 구단)
+  if (ownClub(w)) { m.sackAtEnd = false; if (expired) m.contract = `${+w.date.slice(0, 4) + 3}-06-30`; return []; }
   if (!m.sackAtEnd && !expired) return [];
   const reason = m.sackAtEnd ? 'sacked' : m.renewal?.result === 'declined' ? 'declined' : 'expired';
   m.pendingJob = { reason, clubs: jobOffers(w, rng) };

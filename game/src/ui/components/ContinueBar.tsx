@@ -1,4 +1,5 @@
 // 하단 진행 바: 다음 일정 정보 + "계속" 버튼 (스페이스 키로도 진행)
+import { squadNeeds } from '../../engine/myclub';
 import { useEffect } from 'react';
 import { Icon } from './Icon';
 import { Crest } from './Crest';
@@ -26,7 +27,10 @@ export function ContinueBar() {
   const dday = next ? daysBetween(w.date, next.date) : 0;
   const league = w.clubs[w.userClubId].league;
   const finalPos = over && w.competitions[league] ? sortTable(w.competitions[league].table).findIndex((r) => r.club === w.userClubId) + 1 : 0;
-  const go = over ? () => { if (!loading) void nextSeason(); } : continueGame;
+  // 나의 구단: 선수단을 다 채우기 전에는 '선수단 채우기' (이적 화면으로)
+  const setup = w.myClub?.setup ? squadNeeds(w) : null;
+  const openTransfers = useApp((s) => s.openTransfers);
+  const go = over ? () => { if (!loading) void nextSeason(); } : setup && !setup.ok ? () => openTransfers({ positions: [], label: '자유계약', minOvr: 40, maxAge: 40, league: 'FA' }) : continueGame;
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -71,7 +75,7 @@ export function ContinueBar() {
         </span>
         <button onClick={go} disabled={loading}
           className="group flex h-12 min-w-[112px] items-center justify-center gap-2 rounded-lg bg-neon px-4 text-[15px] lg:min-w-[200px] lg:gap-3 lg:px-8 font-semibold text-ink-950 transition-colors hover:bg-[#5bff3d] active:scale-[0.98] disabled:bg-ink-700 disabled:text-lo">
-          {over ? (loading ? '준비 중…' : '다음 시즌으로') : today ? '경기 준비' : '계속'}
+          {over ? (loading ? '준비 중…' : '다음 시즌으로') : setup ? (setup.ok ? '시즌 시작' : `선수단 채우기 ${setup.total}/${setup.need}`) : today ? '경기 준비' : '계속'}
           <Icon name="arrow" size={18} />
         </button>
       </div>

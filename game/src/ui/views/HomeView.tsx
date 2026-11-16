@@ -1,3 +1,4 @@
+import { MyClubSetup } from '../components/MyClubSetup';
 import type { PlayerState, World } from '../../engine/types';
 import { nextUserFixture } from '../../engine/world';
 import { OvrText } from '../components/Scout';
@@ -5,7 +6,7 @@ import { overall } from '../../engine/ratings';
 import { sortTable } from '../../engine/standings';
 import { levelOf } from '../../engine/pyramid';
 import { ageOn } from '../../engine/condition';
-import { clubKo, playerKo } from '../../data/db';
+import { clubKo, clubs, playerKo } from '../../data/db';
 import { posGroup } from '../../data/rating';
 import { Crest } from '../components/Crest';
 import { COMP_TONE, Card, CompBadge, ResultDot, compKind } from '../components/bits';
@@ -89,6 +90,7 @@ export function HomeView() {
   return (
     <div className="h-full overflow-auto">
       <div className="mx-auto flex max-w-[1440px] flex-col gap-4 p-3 lg:gap-6 lg:p-6">
+        <MyClubSetup w={w} />
         {next ? <NextMatch w={w} home={next.home} away={next.away} date={next.date} round={roundLabel(next)} fx={next} />
           : <section className="panel px-8 py-6 text-[15px]">시즌이 끝났습니다 · 최종 {pos}위 · 승점 {row.pts}</section>}
         <WindowBar w={w} onOpen={() => setTab('transfers')} />
@@ -177,7 +179,7 @@ function NextMatch({ w, home, away, date, round, fx }: { w: World; home: string;
       <div>
         <div className="flex flex-wrap items-center gap-2 text-[12px] text-lo">다음 경기 <CompBadge f={fx} /> <span className={k === 'league' ? '' : COMP_TONE[k].text}>{round}</span></div>
         <div className="mt-2 text-[22px] font-semibold whitespace-nowrap">{d.getMonth() + 1}월 {d.getDate()}일 <span className="font-normal text-mid">{'일월화수목금토'[d.getDay()]}요일</span></div>
-        <div className="mt-1 text-[13px] text-mid">{home === mine ? '홈 경기' : '원정 경기'}</div>
+        <div className="mt-1 text-[13px] text-mid">{home === mine ? '홈 경기' : '원정 경기'}{clubs.get(home)?.stadiumName ? ` · ${clubs.get(home)!.stadiumName}` : ''}</div>
       </div>
       <div className="flex items-start justify-center gap-3 sm:items-center sm:gap-6">
         <Side club={home} w={w} align="right" />

@@ -105,7 +105,7 @@ export function fillContracts(w: World): void {
 
 export const emptyStats = () => ({ apps: 0, subApps: 0, goals: 0, assists: 0, yellow: 0, red: 0, cleanSheets: 0, ratingSum: 0 });
 
-export function createWorld(input: SeasonInput, userClubId: string, seed: number, opts: { manager?: UserManagerInput; settings?: World['settings'] } = {}): World {
+export function createWorld(input: SeasonInput, userClubId: string, seed: number, opts: { manager?: UserManagerInput; settings?: World['settings']; /** 아카데미 자동 채우기에서 뺄 구단 (나의 구단) */ skipFill?: string[] } = {}): World {
   const rng = createRng(seed);
   const players: Record<string, PlayerState> = {};
   const clubs: Record<string, ClubState> = {};
@@ -147,7 +147,7 @@ export function createWorld(input: SeasonInput, userClubId: string, seed: number
   w.europe = createEurope(w, rng, input.prevStandings);
   w.cups = createCups(w, rng);
   w.worldCup = createWorldCup(w, input.season, input.worldCups);
-  academyFill(w, Object.values(clubs), input.season);   // 선수단 구성이 모자란 구단은 유스에서 끌어올림
+  academyFill(w, Object.values(clubs).filter((c) => !opts.skipFill?.includes(c.id)), input.season);   // 선수단 구성이 모자란 구단은 유스에서 끌어올림
   if (opts.settings) w.settings = { ...opts.settings };
   // 감독: 데이터의 그 시즌 감독 (없으면 가상) · 내 감독
   assignManagers(w, input.managers, input.season, createRng((seed ^ 0x3a9e) >>> 0));

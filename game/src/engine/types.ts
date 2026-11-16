@@ -355,6 +355,8 @@ export interface World {
   history: SeasonRecord[];   // 지난 시즌 최종 순위
   /** 어느 데이터로 만든 세이브인지 (public: 패러디 이름, real: 실명). 없으면 옛 세이브 = real */
   dataset?: 'public' | 'real';
+  /** 나의 구단 만들기 모드 (engine/myclub.ts) */
+  myClub?: import('./myclubDesign').MyClubState;
   /** 이적 명단에 올린 내 선수 */
   transferList?: string[];
   /** 내 선수에게 들어온 제안 */

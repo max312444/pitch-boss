@@ -121,7 +121,7 @@ export function analyzeClub(w: World, clubId: string): { units: UnitReport[]; su
 }
 
 /** 이적 화면 검색 조건 추천: 묶음 · 최소 능력(현재 주전 수준) · 최대 나이 */
-export interface SearchPreset { positions: Position[]; label: string; minOvr: number; maxAge: number }
+export interface SearchPreset { positions: Position[]; label: string; minOvr: number; maxAge: number; /** 리그 필터 (FA = 자유계약) */ league?: string }
 export function searchPreset(r: UnitReport): SearchPreset {
   // 현재 주전 평균보다 조금 높은 선수부터 (너무 높으면 영입 가능한 선수가 없음)
   const base = r.starters.length ? r.starterAvg + 1 : Math.max(55, r.benchmark - 6);

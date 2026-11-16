@@ -51,6 +51,8 @@ export interface ClubMaster {
   founded?: number;
   kits?: { home: Kit; away?: Kit };
   rivals?: string[];
+  /** 경기장 이름 (나의 구단) */
+  stadiumName?: string;
   /** 엠블럼 디자인 (publish 단계에서 넣음) */
   crest?: import('../ui/crests/types').CrestStyle;
 }
