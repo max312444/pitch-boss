@@ -1,4 +1,7 @@
 // 첫 화면 '데이터베이스': 수록 데이터 · 실명 데이터 켜고 끄기 · 선수 사진 켜고 끄기 (+ 넣는 방법)
+import { MyData } from './MyData';
+import { hasPhotoFolder, importPhotoFolder } from '../../data/customIO';
+import { customStats } from '../../data/custom';
 import { useEffect, useRef, useState } from 'react';
 import { availableSeasons, dataset, leagues, realAvailable, realSource, setDataset } from '../../data/db';
 import { clearRealPack, filesFromDrop, importRealFolder, realBoot, type PickedFile } from '../../data/realStore';
@@ -62,17 +65,18 @@ export function DatabaseDialog({ onClose }: { onClose: () => void }) {
               <div className="min-w-0 flex-1">
                 <div className="text-[15px] font-semibold">선수 사진</div>
                 <div className="mt-0.5 text-[12px] text-lo">
-                  {server === null ? '확인 중…' : !server ? '사진 기능을 쓸 수 없습니다 (개발 서버로 실행했을 때만 쓸 수 있음)'
-                    : stats && stats.files ? `사진 ${stats.files}장 · 사진 있는 선수 ${stats.players}명${stats.user ? ` · 직접 넣은 사진 ${stats.user}장` : ''}` : '아직 넣은 사진이 없습니다'}
+                  {server && stats && stats.files ? `PC 사진 폴더 ${stats.files}장 · 사진 있는 선수 ${stats.players}명 · ` : ''}이 기기에 넣은 사진 {customStats().photos}장
                 </div>
               </div>
               <span className={`text-[12px] ${photosOn ? 'text-neon' : 'text-lo'}`}>{photosOn ? '표시' : '숨김'}</span>
-              <Switch on={photosOn} disabled={!server} onChange={(v) => { setPhotosEnabled(v); setOn(v); }} />
+              <Switch on={photosOn} onChange={(v) => { setPhotosEnabled(v); setOn(v); }} />
             </div>
             <div className="mt-2 rounded-lg bg-ink-900 px-4 py-3 text-[12px] leading-relaxed text-mid">
               선수 사진은 게임에 들어 있지 않습니다. 개인이 추가해야 합니다.
               <ul className="mt-1.5 list-disc space-y-0.5 pl-4 text-lo">
-                <li><b className="text-mid">게임 안에서</b>: 선수 정보의 사진 칸(없으면 '+ 사진')을 누르고 파일을 끌어다 놓거나, 복사한 이미지를 Ctrl+V, 또는 이미지 주소를 붙여 넣습니다. 얼굴 위치는 자동으로 맞춥니다.</li>
+                <li><b className="text-mid">휴대폰 · 어디서나</b>: 선수 정보의 사진 칸(없으면 '+ 사진') → 사진 고르기 → 끌어서 얼굴 맞추기. 여러 장 · 다른 기기로 옮기기는 아래 '내 데이터'.</li>
+                <li className="pt-1 text-[11px] text-lo">아래는 PC에서 개발 서버로 실행할 때만 (고급):</li>
+                <li><b className="text-mid">PC 사진 폴더</b>: 사진 칸에서 파일을 끌어다 놓거나 Ctrl+V · 이미지 주소. 얼굴 위치는 자동으로 맞춥니다.</li>
                 <li><b className="text-mid">직접 모은 사진 한꺼번에</b>: <Code>node tools/data_pipeline photos-ids --club liverpool</Code> 로 선수 ID 목록(CSV)을 뽑고,
                   사진을 <Code>data/photos/inbox/선수ID/2025-26.jpg</Code> 처럼 넣은 뒤 <Code>node tools/data_pipeline photos-import</Code>. 얼굴 위치는 자동으로 맞춥니다.</li>
                 <li><b className="text-mid">공개 사진 자동 수집</b>: <Code>tools</Code> 폴더에서 <Code>npm i</Code> 한 번, 그다음 <Code>node tools/data_pipeline photos --club liverpool --season 2025-26</Code></li>
@@ -80,6 +84,8 @@ export function DatabaseDialog({ onClose }: { onClose: () => void }) {
               </ul>
             </div>
           </section>
+
+          <MyData />
 
           {/* 수록 데이터 */}
           <section>
@@ -111,7 +117,13 @@ function RealImport() {
     setErr(null); setBusy('파일 찾는 중…');
     try {
       const info = await importRealFolder(files, (d, t) => setBusy(`읽는 중 ${d} / ${t}`));
-      setBusy(`넣었습니다: 시즌 ${info.seasons}개 · 파일 ${info.files}개. 실명으로 바꿉니다…`);
+      // 같은 폴더에 사진 폴더(photos)가 있으면 사진도 이 기기에 함께
+      let ph = '';
+      if (hasPhotoFolder(files)) {
+        const r = await importPhotoFolder(files, (d, t) => setBusy(`사진 넣는 중 ${d} / ${t}`)).catch(() => null);
+        if (r) ph = ` · 사진 ${r.ok}장`;
+      }
+      setBusy(`넣었습니다: 시즌 ${info.seasons}개 · 파일 ${info.files}개${ph}. 실명으로 바꿉니다…`);
       setDataset('real');
     } catch (e) { setErr((e as Error).message); setBusy(null); }
     if (ref.current) ref.current.value = '';

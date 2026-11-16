@@ -1,8 +1,12 @@
 // 선수 사진 (개인이 내 PC 에 추가). 누르면 확대 · 자동 수집 후보로 바꾸기 · 직접 넣기 (파일 · 붙여넣기 · 이미지 주소) · 빼기
-// 사진이 없으면 빈 칸 (+ 사진) 을 눌러 바로 넣을 수 있다. 개발 서버가 없으면 (사진 기능 없음) 아무것도 그리지 않는다
+// 사진이 없으면 빈 칸 (+ 사진) 을 눌러 바로 넣을 수 있다.
+// 이 기기에 넣기 (휴대폰 · 배포판 포함): 갤러리 · 카메라에서 골라 끌어서 맞추면 이 브라우저에 저장 (custom.ts)
+// 개발 서버(PC)에서는 자동 수집 후보 · data/photos 에 넣기도 함께
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { choosePhoto, removePhoto, uploadPhoto, usePhotos, type PhotoCand } from '../../data/photos';
+import { bakePhoto, putDevicePhoto, removeDevicePhoto } from '../../data/custom';
+import { PhotoCrop } from './PhotoCrop';
 import { useWorld } from '../hooks';
 
 export function PlayerPhoto({ id, size = 64, name }: { id: string; size?: number; name?: string }) {
@@ -49,7 +53,15 @@ const readFile = (f: File) => new Promise<string>((ok, bad) => { const r = new F
 function PhotoViewer({ id, name, onClose }: { id: string; name?: string; onClose: () => void }) {
   const w = useWorld();
   const season = w.season;
-  const { ph, cands } = usePhotos(id, season);
+  const { ph, cands, server, device } = usePhotos(id, season);
+  const [cropFile, setCropFile] = useState<File | null>(null);
+  const devRef = useRef<HTMLInputElement>(null);
+  const saveDevice = async (crop: { x: number; y: number; w: number }, all: boolean) => {
+    const f = cropFile!; setCropFile(null); setBusy('device'); setMsg(null);
+    try { await putDevicePhoto(id, all ? null : season, await bakePhoto(f, crop)); setMsg({ t: '이 기기에 사진을 저장했습니다' }); }
+    catch { setMsg({ t: '사진을 저장하지 못했습니다 (브라우저 저장 공간 확인)', bad: true }); }
+    setBusy(null);
+  };
   const [busy, setBusy] = useState<string | null>(null);
   const [msg, setMsg] = useState<{ t: string; bad?: boolean } | null>(null);
   const [url, setUrl] = useState('');
@@ -64,7 +76,7 @@ function PhotoViewer({ id, name, onClose }: { id: string; name?: string; onClose
     if (r.ok) setUrl('');
   };
   const putData = (data: string) => run('upload', () => uploadPhoto(id, season, { data }), '사진을 넣었습니다');
-  const putFiles = async (files: FileList | File[] | null) => { const f = [...(files ?? [])].find((x) => x.type.startsWith('image/')); if (f) putData(await readFile(f)); else setMsg({ t: '그림 파일이 아닙니다', bad: true }); };
+  const putFiles = async (files: FileList | File[] | null) => { const f = [...(files ?? [])].find((x) => x.type.startsWith('image/')); if (!f) { setMsg({ t: '그림 파일이 아닙니다', bad: true }); return; } if (server) putData(await readFile(f)); else setCropFile(f); };
 
   useEffect(() => {
     const k = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
@@ -72,9 +84,9 @@ function PhotoViewer({ id, name, onClose }: { id: string; name?: string; onClose
     const paste = (e: ClipboardEvent) => {
       if ((e.target as HTMLElement)?.tagName === 'INPUT') return;
       const img = [...(e.clipboardData?.items ?? [])].find((i) => i.type.startsWith('image/'))?.getAsFile();
-      if (img) { e.preventDefault(); readFile(img).then(putData); return; }
+      if (img) { e.preventDefault(); if (server) readFile(img).then(putData); else setCropFile(img); return; }
       const text = e.clipboardData?.getData('text')?.trim();
-      if (text && /^https?:\/\//.test(text)) { e.preventDefault(); run('upload', () => uploadPhoto(id, season, { url: text }), '사진을 넣었습니다'); }
+      if (server && text && /^https?:\/\//.test(text)) { e.preventDefault(); run('upload', () => uploadPhoto(id, season, { url: text }), '사진을 넣었습니다'); }
     };
     window.addEventListener('keydown', k);
     window.addEventListener('paste', paste);
@@ -86,11 +98,19 @@ function PhotoViewer({ id, name, onClose }: { id: string; name?: string; onClose
       <div className="flex max-h-full w-full max-w-[900px] flex-col items-center gap-3 overflow-auto" onClick={(e) => e.stopPropagation()}
         onDragOver={(e) => { e.preventDefault(); setDrag(true); }} onDragLeave={() => setDrag(false)}
         onDrop={(e) => { e.preventDefault(); setDrag(false); putFiles(e.dataTransfer.files); }}>
+        {cropFile ? <PhotoCrop file={cropFile} onDone={saveDevice} onCancel={() => setCropFile(null)} /> : <>
         {ph ? <img src={ph.src} alt="" className="max-h-[58vh] max-w-full rounded-xl border border-line object-contain" />
           : <div className="grid h-[240px] w-[200px] place-items-center rounded-xl border border-dashed border-line-strong text-[13px] text-lo">이번 시즌 사진 없음</div>}
-        <div className="text-center text-[15px] font-semibold">{name}<span className="ml-2 text-[12px] font-normal text-lo">{season.replace('-', '/')} 시즌{ph?.credit.user ? ' · 직접 넣은 사진' : ph?.picked ? ' · 직접 고른 사진' : ''}</span></div>
+        <div className="text-center text-[15px] font-semibold">{name}<span className="ml-2 text-[12px] font-normal text-lo">{season.replace('-', '/')} 시즌{ph?.credit.device ? ' · 이 기기에 넣은 사진' : ph?.credit.user ? ' · 직접 넣은 사진' : ph?.picked ? ' · 직접 고른 사진' : ''}</span></div>
 
-        {cands.length > 0 && (
+        {/* 이 기기에 넣기 (휴대폰 · 배포판 포함) */}
+        <div className="w-full max-w-[560px] rounded-xl border border-dashed border-line-strong px-4 py-3 text-center">
+          <div className="text-[13px] font-semibold">이 기기에 사진 넣기</div>
+          <div className="mt-0.5 text-[11px] text-lo">갤러리 · 카메라에서 골라 얼굴 위치를 맞추면 이 브라우저에만 저장됩니다 (어디로도 보내지 않음)</div>
+          <button onClick={() => devRef.current?.click()} disabled={!!busy} className="mt-2.5 h-10 w-full rounded-lg bg-neon text-[13px] font-semibold text-ink-950 hover:bg-[#5bff3d] disabled:opacity-50">사진 고르기</button>
+          <input ref={devRef} type="file" accept="image/*" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) setCropFile(f); e.target.value = ''; }} />
+        </div>
+        {server && cands.length > 0 && (
           <div className="w-full">
             <div className="mb-1.5 text-center text-[11px] text-lo">자동으로 찾은 이 시즌 사진 · 누르면 이 사진으로 바꿉니다</div>
             <div className="flex justify-center gap-2 overflow-x-auto pb-1">
@@ -108,9 +128,9 @@ function PhotoViewer({ id, name, onClose }: { id: string; name?: string; onClose
           </div>
         )}
 
-        {/* 직접 넣기 */}
-        <div className={`w-full max-w-[560px] rounded-xl border border-dashed px-4 py-3 text-center ${drag ? 'border-neon bg-neon-ghost' : 'border-line-strong'}`}>
-          <div className="text-[13px] font-semibold">사진 직접 넣기</div>
+        {/* PC 개발 서버: data/photos 에 넣기 */}
+        {server && <div className={`w-full max-w-[560px] rounded-xl border border-dashed px-4 py-3 text-center ${drag ? 'border-neon bg-neon-ghost' : 'border-line-strong'}`}>
+          <div className="text-[13px] font-semibold">PC 사진 폴더에 넣기 (개발 서버)</div>
           <div className="mt-0.5 text-[11px] text-lo">사진 파일을 여기로 끌어다 놓기 · 복사한 이미지를 Ctrl+V · 이미지 주소 붙여넣기 — 얼굴 위치는 자동으로 맞춥니다</div>
           <div className="mt-2.5 flex gap-2">
             <button onClick={() => fileRef.current?.click()} disabled={!!busy} className="h-9 shrink-0 rounded-lg bg-ink-700 px-3 text-[12px] font-semibold hover:bg-ink-750">파일 고르기</button>
@@ -119,13 +139,15 @@ function PhotoViewer({ id, name, onClose }: { id: string; name?: string; onClose
               className="h-9 min-w-0 flex-1 rounded-lg border border-line bg-ink-850 px-3 text-[12px] outline-none focus:border-line-strong" />
             <button onClick={() => url && run('upload', () => uploadPhoto(id, season, { url: url.trim() }), '사진을 넣었습니다')} disabled={!url || !!busy} className="h-9 shrink-0 rounded-lg bg-neon px-3 text-[12px] font-semibold text-ink-950 disabled:bg-ink-700 disabled:text-lo">넣기</button>
           </div>
-        </div>
+        </div>}
         {busy === 'upload' && <div className="text-[12px] text-mid">사진을 넣는 중… (얼굴 찾는 중)</div>}
         {msg && <div className={`text-[12px] ${msg.bad ? 'text-red' : 'text-neon'}`}>{msg.t}</div>}
         <div className="flex gap-2">
-          {ph && <button onClick={() => run('remove', () => removePhoto(id, season), '이 시즌 사진을 뺐습니다')} disabled={!!busy} className="h-9 rounded-lg px-4 text-[13px] text-lo ring-1 ring-line hover:text-red">이 시즌 사진 빼기</button>}
+          {device && <button onClick={() => { removeDevicePhoto(device.key); setMsg({ t: '이 기기 사진을 뺐습니다' }); }} disabled={!!busy} className="h-9 rounded-lg px-4 text-[13px] text-lo ring-1 ring-line hover:text-red">이 기기 사진 빼기</button>}
+          {server && ph && !ph.credit.device && <button onClick={() => run('remove', () => removePhoto(id, season), '이 시즌 사진을 뺐습니다')} disabled={!!busy} className="h-9 rounded-lg px-4 text-[13px] text-lo ring-1 ring-line hover:text-red">이 시즌 사진 빼기</button>}
           <button onClick={onClose} className="h-9 rounded-lg px-5 text-[13px] text-mid ring-1 ring-line hover:text-hi">닫기 (Esc)</button>
         </div>
+        </>}
       </div>
     </div>
   );

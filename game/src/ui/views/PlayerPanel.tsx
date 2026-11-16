@@ -1,3 +1,4 @@
+import { NameEdit } from '../components/NameEdit';
 import { sagaSummary } from '../../engine/saga';
 import { buyoutOf } from '../../engine/clauses';
 import { relClauseOf } from '../../engine/firesale';
@@ -130,7 +131,7 @@ export function PlayerPanel({ p, age, ko, nation, actions, club, sheet }: { p: P
           <PlayerPhoto id={p.id} name={ko} />
           <div className="min-w-0 flex-1">
             <div className="text-[12px] font-semibold text-lo">{POS_KO[p.pos]}{altPositions(p).length ? <span className="font-normal"> · 보조 {altPositions(p).join(', ')}</span> : null}</div>
-            <div className="mt-1 truncate text-[22px] leading-tight font-semibold">{ko}</div>
+            <div className="mt-1 flex min-w-0 flex-wrap items-center"><span className="min-w-0 truncate text-[22px] leading-tight font-semibold">{ko}</span><NameEdit kind="players" id={p.id} current={ko} /></div>
             <div className="truncate text-[12px] text-lo">{p.name} · {nation} · {age}세</div>
             {club && <div className="mt-1 flex items-center gap-1.5 text-[12px] text-mid">{p.clubId ? <><Crest clubId={p.clubId} size={14} />{clubKo(p.clubId)}</> : <span className="text-neon">자유계약 (FA)</span>}</div>}
           </div>

@@ -1,3 +1,4 @@
+import { onCustomChange } from './data/custom';
 import { useApp } from './store/app';
 import { useGame } from './store/game';
 import { TitleScreen } from './ui/screens/TitleScreen';
@@ -5,10 +6,12 @@ import { NewGameScreen } from './ui/screens/NewGameScreen';
 import { HubScreen } from './ui/screens/HubScreen';
 import { MatchScreen } from './ui/screens/MatchScreen';
 import { CrestGallery } from './ui/screens/CrestGallery';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export function App() {
   const screen = useApp((s) => s.screen);
+  const [, tick] = useState(0);
+  useEffect(() => onCustomChange(() => tick((x) => x + 1)), []);   // 바꾼 이름 · 사진 → 다시 그리기
   const hasWorld = useGame((s) => !!s.world);
   const inMatch = useGame((s) => !!s.match);
   const load = useGame((s) => s.load);

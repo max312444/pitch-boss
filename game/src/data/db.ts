@@ -9,6 +9,7 @@ import type {
 } from './types';
 import type { PlayerHistory } from '../engine/traits';
 import type { ManagerData } from '../engine/managers';
+import { customName, type NameKind } from './custom';
 import { realBoot } from './realStore';
 
 type Meta<T> = Record<string, T>;
@@ -106,11 +107,15 @@ export async function loadHistory(): Promise<PlayerHistory | null> {
 /** 선수 이름 표기 (설정): 전체 이름 · 짧은 이름 */
 let nameStyle: 'full' | 'short' = 'full';
 export function setNameStyle(s: 'full' | 'short') { nameStyle = s; }
-export const playerKo = (id: string, fallback: string) => { const e = koNames.get(id); return (nameStyle === 'short' ? e?.short ?? e?.name : e?.name) ?? fallback; };
+/** 내가 바꾼 이름 (짧은 이름이 없으면 마지막 단어) */
+const mine = (kind: NameKind, id: string) => { const c = customName(kind, id); return c ? (nameStyle === 'short' ? c.short ?? c.name.split(' ').at(-1)! : c.name) : null; };
+export const playerKo = (id: string, fallback: string) => { const c = mine('players', id); if (c) return c; const e = koNames.get(id); return (nameStyle === 'short' ? e?.short ?? e?.name : e?.name) ?? fallback; };
 /** 구단 이름. 월드컵 경기용 대표팀(nt-나라)은 '나라 대표팀' */
-export const clubKo = (id: string) => (id.startsWith('nt-') ? `${nations.get(id.slice(3))?.ko ?? id.slice(3)} 대표팀` : clubs.get(id)?.ko ?? clubs.get(id)?.name ?? id);
+export const clubKo = (id: string) => customName('clubs', id)?.name ?? (id.startsWith('nt-') ? `${nations.get(id.slice(3))?.ko ?? id.slice(3)} 대표팀` : clubs.get(id)?.ko ?? clubs.get(id)?.name ?? id);
 /** 감독 이름: 한국어 이름 파일(locale/ko/managers.json, 짧은 이름 설정 따름) → 내 감독 · 가상 감독(이름을 가져온 선수들의 한국어 이름을 섞어서, 처음 한 번 계산해 저장) → 영문 */
 export function managerKo(m: { id?: string; name: string; ko?: string; nameFrom?: [string | null, string | null] }): string {
+  const c = m.id ? mine('managers', m.id) : null;
+  if (c) return c;
   const e = m.id ? koNames.get(m.id) : undefined;
   if (e) return (nameStyle === 'short' ? e.short ?? e.name : e.name);
   if (m.ko) return m.ko;
@@ -140,4 +145,18 @@ export function registerGeneratedNames(players: Record<string, { generated?: boo
     }
     if (p.ko) koNames.set(id, { name: p.ko, short: p.ko.split(' ').at(-1) });
   }
+}
+
+/** 개발 서버의 data/ 폴더 실명 데이터 전부 ([폴더 안 경로, JSON 글]) — 내 데이터 내보내기(휴대폰으로 옮기기)용 */
+export async function devRealEntries(onProgress?: (done: number, total: number) => void): Promise<[string, string][]> {
+  if (!devReal) return [];
+  const rel = (k: string) => k.split('/data/').pop()!;
+  const out: [string, string][] = [];
+  for (const g of [SETS.dev.meta, SETS.dev.clubs, SETS.dev.ko] as Record<string, unknown>[]) for (const [k, v] of Object.entries(g)) out.push([rel(k), JSON.stringify(v)]);
+  const lazy = [...Object.entries(SETS.dev.seasons), ...Object.entries(SETS.dev.history), ...Object.entries(SETS.dev.managers)] as [string, () => Promise<unknown>][];
+  for (let i = 0; i < lazy.length; i++) {
+    out.push([rel(lazy[i][0]), JSON.stringify(await lazy[i][1]())]);
+    if (i % 100 === 0) onProgress?.(i, lazy.length);
+  }
+  return out;
 }

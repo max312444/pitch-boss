@@ -1,4 +1,5 @@
 // 검색에서 연 창: 선수 정보 (영입 협상 · 관심) · 구단 선수단
+import { NameEdit } from './NameEdit';
 import { ManagerLine } from './ManagerProfile';
 import { useEffect, useState } from 'react';
 import { ClubScoutBar, OvrText } from './Scout';
@@ -91,7 +92,7 @@ function ClubModal() {
         <header className="flex flex-wrap items-center gap-x-4 gap-y-3 border-b border-line px-4 py-4 sm:flex-nowrap sm:px-6 sm:py-5">
           <Crest clubId={c.id} size={44} />
           <div className="min-w-0 flex-1">
-            <div className="truncate text-[20px] font-semibold">{clubKo(c.id)}{c.id === w.userClubId && <span className="ml-2 align-middle text-[12px] text-neon">내 구단</span>}</div>
+            <div className="flex min-w-0 flex-wrap items-center"><span className="min-w-0 truncate text-[20px] font-semibold">{clubKo(c.id)}</span>{c.id === w.userClubId && <span className="ml-2 shrink-0 text-[12px] text-neon">내 구단</span>}<NameEdit kind="clubs" id={c.id} current={clubKo(c.id)} /></div>
             <button onClick={() => openTable(c.league)} className="text-[12px] text-lo hover:text-hi">{lg} · 순위 보기</button>
           </div>
           <dl className="order-last flex w-full justify-around gap-5 text-center text-[12px] text-lo sm:order-none sm:w-auto sm:justify-start">

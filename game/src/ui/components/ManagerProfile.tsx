@@ -1,4 +1,5 @@
 // 감독 능력 표시: 내 감독 카드 (능력 · 철학 · 압박 바꾸기) · 다른 구단 감독 한 줄
+import { NameEdit } from './NameEdit';
 import { useState } from 'react';
 import { managerAge, managerOf, managerOverall, philosophyOf, PHILOSOPHY_KO, type Manager, type Philosophy } from '../../engine/managers';
 import type { Pressing } from '../../engine/types';
@@ -71,7 +72,7 @@ function ManagerInfo({ m, age, compact }: { m: Manager; age: number; compact?: b
   return (
     <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px]">
       <span className="text-lo">감독</span>
-      <span className="font-semibold text-hi">{managerKo(m)}</span>
+      <span className="font-semibold text-hi">{managerKo(m)}{!m.user && <NameEdit kind="managers" id={m.id} current={managerKo(m)} />}</span>
       {!compact && <span className="text-lo">{m.birth ? `${age}세 · ` : ''}{nationKo(m.nation)} · {MENT_KO[m.style.mentality]} · 압박 {PRESS[m.style.pressing][1]}</span>}
       <span className="tnum text-lo">전술 <b className={ratingTone(m.tac)}>{m.tac}</b> · 동기 <b className={ratingTone(m.mot)}>{m.mot}</b> · 육성 <b className={ratingTone(m.dev)}>{m.dev}</b></span>
     </div>

@@ -3,13 +3,14 @@
 //  그 시즌에 찍힌 사진만 쓴다 (없으면 사진 없음)
 //  확대 창에서: 자동 수집 후보 중 고르기 · 직접 넣기 (파일 · 붙여넣기 · 이미지 주소) · 빼기
 import { useEffect, useState } from 'react';
+import { devicePhoto, onCustomChange } from './custom';
 
 export interface PhotoCredit {
   title: string; author: string; license: string; date: string | null; url: string;
   /** 사진 크기 · 선수 얼굴 위치 [x, y, w, h] (0~1) */
   w?: number; h?: number; face?: number[];
-  /** 직접 넣은 사진 · 파일 확장자 (없으면 jpg) */
-  user?: boolean; ext?: string;
+  /** 직접 넣은 사진 · 파일 확장자 (없으면 jpg) · 이 기기 브라우저에 넣은 사진 */
+  user?: boolean; ext?: string; device?: boolean;
 }
 export interface PhotoCand extends PhotoCredit { src: string }
 interface Manifest {
@@ -68,17 +69,21 @@ export const uploadPhoto = (player: string, season: string, src: { data?: string
 /** 이 시즌 사진 빼기 */
 export const removePhoto = (player: string, season: string) => post('/photos/remove', { player, season });
 
-/** 사진 · 후보 · 사진 기능 사용 가능 여부 */
+/** 사진 · 후보 · 사진 기능 사용 가능 여부. 이 기기에 넣은 사진(custom.ts)이 먼저, 개발 서버 사진 기능은 PC 개발 서버에서만 (server) */
 export function usePhotos(playerId: string, season: string) {
   const [m, setM] = useState<Manifest | null>(manifest);
+  const [, tick] = useState(0);
   useEffect(() => {
     let alive = true;
     const l = (x: Manifest | null) => alive && setM(x);
     listeners.add(l);
     loadPhotos().then(l);
-    return () => { alive = false; listeners.delete(l); };
+    const off = onCustomChange(() => alive && tick((x) => x + 1));
+    return () => { alive = false; listeners.delete(l); off(); };
   }, []);
   const on = photosEnabled();
-  return { ph: on ? photoOf(m, playerId, season) : null, cands: on ? candsOf(m, playerId, season) : [], ready: !!m && on };
+  const dev = on ? devicePhoto(playerId, season) : null;
+  const ph: PlayerPhotoInfo | null = dev ? { src: dev.url, credit: { title: '', author: '', license: '', date: null, url: '', user: true, device: true }, season, cands: [], picked: true } : on ? photoOf(m, playerId, season) : null;
+  return { ph, cands: on ? candsOf(m, playerId, season) : [], ready: on, server: !!m, device: dev };
 }
 export const usePhoto = (playerId: string, season: string) => usePhotos(playerId, season).ph;

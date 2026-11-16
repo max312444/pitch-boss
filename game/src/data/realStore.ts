@@ -83,6 +83,35 @@ export async function importRealFolder(list: FileList | PickedFile[], onProgress
   return info;
 }
 
+/** 파일 묶음(.pitchboss 가져오기)에서 실명 데이터 저장: [폴더 안 경로, JSON 글] */
+export async function importRealEntries(entries: [string, string][]): Promise<RealPackInfo> {
+  const keep = entries.filter(([k]) => WANT.test(k));
+  if (!keep.some(([k]) => k === 'meta/leagues.json')) throw new Error('실명 데이터가 들어 있지 않은 파일입니다');
+  const info: RealPackInfo = {
+    date: new Date().toISOString().slice(0, 10), files: keep.length, bytes: keep.reduce((n, [, v]) => n + v.length, 0),
+    leagues: [...new Set(keep.filter(([k]) => k.startsWith('seasons/')).map(([k]) => k.split('/')[2]))].sort(),
+    seasons: new Set(keep.filter(([k]) => k.startsWith('seasons/')).map(([k]) => k.split('/')[1])).size,
+  };
+  const db = await open();
+  const t = db.transaction([FILES, INFO], 'readwrite');
+  t.objectStore(FILES).clear();
+  for (const [k, v] of keep) t.objectStore(FILES).put(v, k);
+  t.objectStore(INFO).put(info, 'info');
+  await done(t);
+  db.close();
+  try { await navigator.storage?.persist?.(); } catch { /* 무시 */ }
+  return info;
+}
+
+/** 이 브라우저에 넣어 둔 실명 데이터 전부 ([경로, JSON 글]) — 내 데이터 내보내기용 */
+export async function exportRealEntries(): Promise<[string, string][]> {
+  const db = await open();
+  const s = db.transaction(FILES).objectStore(FILES);
+  const [keys, vals] = await Promise.all([ask(s.getAllKeys()), ask(s.getAll())]);
+  db.close();
+  return keys.map((k, i) => [String(k), vals[i] as string]);
+}
+
 /** 넣어 둔 실명 데이터 지우기 */
 export async function clearRealPack() {
   const db = await open();
@@ -121,12 +150,12 @@ export async function boot(wantReal: boolean) {
 }
 
 /** 끌어다 놓은 폴더 읽기 (브라우저는 폴더 주소를 알려 주지 않으므로 안의 파일을 직접 훑는다). 사진 · 수집 중간 폴더는 건너뜀 */
-const SKIP = new Set(['photos', '_pipeline', '_audit', 'node_modules', '.git', 'canonical', 'game', 'tools']);
+const SKIP = new Set(['_faces', 'inbox', 'ids', '_pipeline', '_audit', 'node_modules', '.git', 'canonical', 'game', 'tools']);
 export async function filesFromDrop(dt: DataTransfer): Promise<PickedFile[]> {
   const out: PickedFile[] = [];
   const walk = async (e: FileSystemEntry, path: string): Promise<void> => {
     if (e.isFile) {
-      if (!e.name.endsWith('.json')) return;
+      if (!e.name.endsWith('.json') && !(/\.(jpe?g|png|webp)$/i.test(e.name) && /(^|\/)files\/[^/]+$/.test(path))) return;
       const file = await new Promise<File>((res, rej) => (e as FileSystemFileEntry).file(res, rej));
       out.push({ file, path });
     } else if (e.isDirectory && !SKIP.has(e.name)) {
