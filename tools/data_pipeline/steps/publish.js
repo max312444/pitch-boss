@@ -273,6 +273,31 @@ async function publish({ apply = false, log = console.log } = {}) {
   for (const pm of Object.values(playerMap)) if (pm.ko) koOut[pm.id] = { name: pm.ko, short: pm.ko.split(' ').slice(-1)[0] };
   out.set(path.join('locale', 'ko', 'players.json'), koOut);
 
+  // 월드컵 실제 명단 (data/worldcups/squads.json, wcsquads 로 만든 것) → 공개: 게임 선수는 공개 번호 · 공개 이름,
+  //  게임에 없는 선수는 wc 번호로 공개 번호 · 패러디 이름. 생년월일은 연 · 월만, 소속 구단 이름 · Wikidata 번호는 뺀다
+  const wcFile = path.join(DATA, 'worldcups', 'squads.json');
+  if (fs.existsSync(wcFile)) {
+    const wc = readJson(wcFile);
+    const wcKo = readJson(path.join(LOC, 'wcplayers.json'), {});
+    const pubWc = {}, koW = {};
+    let n = 0;
+    for (const [y, nats] of Object.entries(wc)) {
+      pubWc[y] = {};
+      for (const [nat, rows] of Object.entries(nats)) pubWc[y][nat] = rows.map((r) => {
+        n++;
+        const known = r.id && playerMap[r.id];
+        const rid = known ? r.id : (r.wc ?? r.id);
+        const pid = known ? playerMap[r.id].id : pidOf(rid);
+        const name = known ? (playerMap[r.id].name ?? parodyEn(r.name, r.id)) : parodyEn(r.name, rid);
+        if (!known && wcKo[r.wc]) { const ko = parodyKo(wcKo[r.wc].name, rid); koW[pid] = { name: ko, short: ko.split(' ').pop() }; }
+        return { ...(known ? { id: pid } : { wc: pid }), name, birth: r.birth ? r.birth.slice(0, 7) + '-01' : null, pos: r.pos, no: r.no, caps: r.caps, goals: r.goals, clubnat: r.clubnat };
+      });
+    }
+    out.set(path.join('worldcups', 'squads.json'), pubWc);
+    out.set(path.join('locale', 'ko', 'wcplayers.json'), koW);
+    log('  월드컵 명단 ' + n + '명 · 새 선수 한국어 이름 ' + Object.keys(koW).length + '명');
+  }
+
   // 보고
   const ex = ['mohamed-salah-1992', 'virgil-van-dijk-1991', 'son-heung-min-1992', 'lionel-messi-1987'].filter((id) => playerMap[id]);
   log(`  구단 ${clubs.length}개 · 선수 ${Object.keys(playerMap).length}명 · 선수 항목 ${players}개`);

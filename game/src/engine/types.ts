@@ -85,6 +85,8 @@ export interface PlayerState {
   buyoutClub?: string;
   /** 셀온: 다음 이적 때 이적료의 pct% 를 club 에 (engine/addons.ts) */
   sellOn?: { club: string; pct: number };
+  /** 대표팀 전용 선수 (실제 월드컵 명단 중 게임에 없는 선수 · 국내파, engine/wcsquads.ts) */
+  intlOnly?: boolean;
   /** 보너스: payer(지금 구단)가 이 선수 출전 apps 경기를 채우면 club 에 amount (done = 지금까지) */
   addOn?: { club: string; payer: string; amount: number; apps: number; done: number };
   /** 보스만 사전 계약: 계약이 끝나면 이 구단으로 (bosman.ts) */
@@ -205,6 +207,8 @@ export interface MatchSummary {
   pens?: Side;
   /** 승부차기 한 번씩 (내 경기 화면 연출용, shootoutSeq.ts) */
   shootout?: import('./shootoutSeq').ShootoutSeq;
+  /** 승부차기를 감독이 직접 했음 (연출 다시 안 보여 줌) */
+  pensLive?: boolean;
   goals: { minute: number; side: Side; scorer: string; assist?: string; kind?: 'pen' | 'set' }[];
   cards: { minute: number; side: Side; player: string; red: boolean }[];
   injuries: { minute: number; side: Side; player: string }[];
@@ -355,6 +359,8 @@ export interface World {
   history: SeasonRecord[];   // 지난 시즌 최종 순위
   /** 어느 데이터로 만든 세이브인지 (public: 패러디 이름, real: 실명). 없으면 옛 세이브 = real */
   dataset?: 'public' | 'real';
+  /** 월드컵 모드 · 대표팀 감독 (engine/intl.ts) */
+  intl?: import('./intl').IntlState;
   /** 나의 구단 만들기 모드 (engine/myclub.ts) */
   myClub?: import('./myclubDesign').MyClubState;
   /** 이적 명단에 올린 내 선수 */

@@ -13,6 +13,7 @@ export interface RealPack {
   seasons: Record<string, () => Promise<unknown>>;
   history: Record<string, () => Promise<unknown>>;
   managers?: Record<string, () => Promise<unknown>>;
+  wcsquads?: Record<string, () => Promise<unknown>>;
 }
 
 /** main.tsx 가 게임보다 먼저 채운다 */
@@ -31,7 +32,7 @@ const ask = <T,>(r: IDBRequest<T>) => new Promise<T>((res, rej) => { r.onsuccess
 const range = (prefix: string) => IDBKeyRange.bound(prefix, prefix + '￿');
 
 /** 게임에 필요한 파일 (폴더 안 상대 경로) */
-const WANT = /^(?:(.*)\/)?(meta\/[^/]+\.json|clubs\/[^/]+\.json|locale\/ko\/(?:players[^/]*|managers)\.json|seasons\/[^/]+\/[^/]+\/[^/]+\.json|history\/(?:players|managers)\.json)$/;
+const WANT = /^(?:(.*)\/)?(meta\/[^/]+\.json|clubs\/[^/]+\.json|locale\/ko\/(?:players[^/]*|managers|wcplayers)\.json|seasons\/[^/]+\/[^/]+\/[^/]+\.json|history\/(?:players|managers)\.json|worldcups\/squads\.json)$/;
 
 /** 고른 폴더(파일 목록)에서 실명 데이터 찾아 저장. 사진 · 수집 중간 파일 등 나머지는 읽지 않는다 */
 export type PickedFile = File | { file: File; path: string };
@@ -135,13 +136,13 @@ export async function boot(wantReal: boolean) {
       const [keys, vals] = await Promise.all([ask(s.getAllKeys(range(prefix))), ask(s.getAll(range(prefix)))]);
       return Object.fromEntries(keys.map((k, i) => [`pack/${k}`, JSON.parse(vals[i] as string)]));
     };
-    const [meta, clubs, ko, seasonKeys, histKeys] = await Promise.all([
-      all('meta/'), all('clubs/'), all('locale/ko/'), ask(s.getAllKeys(range('seasons/'))), ask(s.getAllKeys(range('history/'))),
+    const [meta, clubs, ko, seasonKeys, histKeys, wcKeys] = await Promise.all([
+      all('meta/'), all('clubs/'), all('locale/ko/'), ask(s.getAllKeys(range('seasons/'))), ask(s.getAllKeys(range('history/'))), ask(s.getAllKeys(range('worldcups/'))),
     ]);
     // 시즌 · 이력 파일은 부를 때 읽는다 (db 는 열어 둔다)
     const lazy = (keys: IDBValidKey[]) => Object.fromEntries(keys.map((k) => [`pack/${k}`, async () => JSON.parse((await ask(db.transaction(FILES).objectStore(FILES).get(k))) as string)]));
     const isMgr = (k: IDBValidKey) => String(k).endsWith('managers.json');
-    realBoot.pack = { meta, clubs, ko, seasons: lazy(seasonKeys), history: lazy(histKeys.filter((k) => !isMgr(k))), managers: lazy(histKeys.filter(isMgr)) };
+    realBoot.pack = { meta, clubs, ko, seasons: lazy(seasonKeys), history: lazy(histKeys.filter((k) => !isMgr(k))), managers: lazy(histKeys.filter(isMgr)), wcsquads: lazy(wcKeys) };
   } catch {
     // IndexedDB 를 못 쓰는 브라우저 (사생활 보호 모드 등) → 공개 데이터만
     realBoot.available = false;

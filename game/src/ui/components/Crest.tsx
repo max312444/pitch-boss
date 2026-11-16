@@ -141,7 +141,7 @@ export function Crest({ clubId, size = 36 }: { clubId: string; size?: number }) 
   const [base, second, rim] = st.colors;
   // 문장이 있으면 가운데 띠 무늬는 쓰지 않는다 (문장과 겹침)
   const pattern: CrestPattern = charge !== 'letters' && st.pattern === 'band' ? 'solid' : st.pattern;
-  const mark = (st.mark ?? master?.short ?? clubId.slice(0, 3)).toUpperCase();
+  const mark = (st.mark ?? master?.short ?? (clubId.startsWith('nt-') ? clubId.slice(3) : clubId.slice(0, 3))).toUpperCase();
   const d = SHAPES[st.shape];
   const round = st.shape === 'round';
   const detailed = size >= 40;          // 머리띠 · 고리 글자 · 창단 연도

@@ -1,3 +1,4 @@
+import { IntlNewGame } from './IntlNewGame';
 import { useEffect, useMemo, useState } from 'react';
 import { useApp } from '../../store/app';
 import { useGame } from '../../store/game';
@@ -17,6 +18,11 @@ import type { MyClubDesign } from '../../engine/myclubDesign';
 const fmtSeason = (s: string) => s.replace('-', '/');
 
 export function NewGameScreen() {
+  if (useApp.getState().newMode === 'wc') return <IntlNewGame />;   // 월드컵 모드는 따로 (나라 · 주기)
+  return <ClubNewGame />;
+}
+
+function ClubNewGame() {
   const go = useApp((s) => s.go);
   const setTab = useApp((s) => s.setTab);
   const { newGame, loading } = useGame();

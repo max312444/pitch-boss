@@ -135,6 +135,12 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 > 버전: `game/src/version.ts` (첫 화면 표시). 기능 추가 +0.1 · 작은 수정 +0.0.1, 바꿀 때마다 여기에 적는다.
 > 같은 파일의 `CHANGELOG` 맨 위에 플레이어용 한 줄 요약도 넣는다 → 첫 화면 '업데이트 소식' (새 버전을 처음 본 뒤 24시간 표시, `UpdateNotes.tsx`).
 
+0. **v2.0 월드컵 모드 (대표팀 감독)** (2026-11-16)
+   - 파이프라인 `node tools/data_pipeline wcsquads --apply`: 위키백과 "{연도} FIFA World Cup squads" 선수 줄 → `data/worldcups/squads.json` (실명, Git 제외) · `data/locale/ko/wcplayers.json`. 위키백과 문서 → Wikidata 번호 (50개씩) → canonical 선수와 정확히 맞춤 (2002 ~ 2026 5759명 중 3704명), 나머지는 게임에 없는 선수 (wc 번호, 한국어는 Wikidata 이름표). `publish` 가 공개 번호 · 패러디 이름으로 `data-public/worldcups/squads.json`.
+   - `engine/wcsquads.ts`: 명단 → 선수 (없으면 실명 대표 전용 선수, 능력 = 소속 리그 수준 + A매치 + 나이, retired · intlOnly). 본선 AI 나라는 실제 명단 (worldcup.ts callUpSquads).
+   - `engine/intl.ts` (`w.intl`): 내 대표팀 nt-나라 (userClubId), 일정 = A매치 기간 토 · 화 (월드컵 시즌: 9 · 10 · 11월 예선 6경기 + 3월 플레이오프, 그 밖: 친선), 같은 조 다른 경기 · 상대는 빠른 계산, 상대 대표팀은 사흘 전 준비 · 시즌마다 정리, 국내파 (실제 명단 · 모자라면 가상), 목표 (전력 순위), 통과 / 탈락에 따라 본선 참가국 바꾸기, 주기 끝 협회 평가 (2단계 미달 경질 · 2단계 초과 제안 → `switchNation`). 클럽 일 (이적 제안 · 스폰서 · 이사회 · 재계약 · 기자회견 등) 은 건너뜀.
+   - `engine/matchEvents.ts`: 경기 중 사건 (하프타임 · 통증 · 우리 / 상대 페널티 · 막판), `shootoutSeq.ts` 직접 승부차기 규칙 (`kickChance` · `resolveKick` · `shootoutOver`). store: 경기 단계 `pens` (비긴 녹아웃 `decidesOnDraw`), `finishShootout` · `resolveEvent`. 이미 정한 승부차기 승자는 `s.pens ??=` 로 유지.
+   - UI: 모드 창 월드컵 · `IntlNewGame` (주기 · 대륙 · 나라 · 실제 명단 미리 보기), `IntlViews` (대표팀 홈 · 대표 명단 · 순위), `ShootoutGame`, `MatchEventModal`, `IntlJobModal`, 월드컵 모드 튜토리얼. 테스트 `intl.test.ts` · `shootoutLive.test.ts`.
 0. **v1.1 모드 고르기 창 · 로고 이미지** (2026-11-16)
    - 타이틀 `새 게임` → `ModePicker` 팝업 (모드별 설명, 월드컵 준비 중) → `useApp.newMode` → 새 게임 화면 (모드 탭 없앰, 그 외 흐름 · 감독 설정 · 튜토리얼은 기본 모드와 같음).
    - 나의 구단 로고 이미지: `MyClubDesign.image` (128×148 PNG data URL, 세이브에 함께) → `ClubMaster.crestImage` → `Crest` 가 이미지로 그림.

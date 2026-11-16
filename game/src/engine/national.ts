@@ -87,6 +87,7 @@ export function intlBreakDay(w: World, rng: Rng): GameEvent[] {
   const mine: string[] = [], hurt: string[] = [];
   const nations = new Set(Object.values(w.players).filter((p) => p.clubId && !p.retired).map((p) => p.nation));
   for (const nation of nations) {
+    if (w.intl && nation === w.intl.nation) continue;   // 월드컵 모드: 내 나라는 실제 경기로
     for (const p of selectSquad(w, nation, 23)) {
       p.fitness = Math.max(40, p.fitness - rng.int(10, 25));
       p.sharpness = Math.min(100, p.sharpness + 6);

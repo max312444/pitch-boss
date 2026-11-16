@@ -269,6 +269,7 @@ export function declineOffer(w: World, idx: number) {
 
 /** 시즌 끝 (순위 확정 뒤): 목표 · 우승 · 강등으로 신뢰도 · 명성. 너무 낮으면 시즌 끝에 경질 */
 export function managerSeasonEnd(w: World, recs: SeasonRecord[]): { titles: number; relegated: boolean; met: boolean } | null {
+  if (w.intl) return null;   // 월드컵 모드: 협회 평가는 intl.ts
   const m = ensureManager(w);
   const club = w.clubs[w.userClubId];
   const rec = recs.find((r) => r.league === club.league);
@@ -296,6 +297,7 @@ export function managerSeasonEnd(w: World, recs: SeasonRecord[]): { titles: numb
 
 /** 새 시즌 시작 (구단 · 일정이 정해진 뒤): 경질 · 계약 만료 · 재계약 거절이면 새 구단 고르기 */
 export function managerNewSeason(w: World, rng: Rng): GameEvent[] {
+  if (w.intl) return [];
   const m = ensureManager(w);
   m.offers = m.offers.filter((o) => o.kind === 'offer');
   const expired = m.contract < w.date;

@@ -1,6 +1,7 @@
 // 처음 게임에 들어오면 한 번 도는 튜토리얼: 화면을 옮겨 다니며 곳곳을 비추고 기본 조작을 설명
 //  끝내거나 건너뛰면 이 브라우저에 기록 (다시 안 뜸). 도움말 → '튜토리얼 다시 보기' 로 언제든
 //  튜토리얼 내용이 크게 바뀌면 VERSION 을 올린다 → 예전 튜토리얼을 본 사람에게도 한 번 더 뜸
+import { useGame } from '../../store/game';
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { create } from 'zustand';
 import { useApp, type HubTab } from '../../store/app';
@@ -20,6 +21,21 @@ export const useTour = create<{ open: boolean; start(): void; stop(): void }>((s
 
 /** target: 비출 곳 (data-tour) · tab: 먼저 이 화면으로 이동 */
 interface Step { target?: string; tab?: HubTab; title: string; body: string; narrowOnly?: boolean }
+/** 월드컵 모드 (대표팀 감독): 이적 · 재정 · 구단 화면이 없어서 따로 */
+const INTL_STEPS: Step[] = [
+  { title: '대표팀 감독이 되신 걸 환영합니다', body: '월드컵 모드에서는 이적시장 없이 대표 선수 소집과 전술로 승부합니다. A매치 기간마다 친선경기 · 월드컵 예선을 치르고, 예선을 통과하면 본선에 나갑니다. 끝나면 다음 월드컵 주기가 이어집니다.' },
+  { target: 'continue', tab: 'home', title: '계속 — 시간을 흐르게 하기', body: "'계속'을 누르면 날짜가 진행됩니다. 클럽 리그는 뒤에서 자동으로 흘러가고, 대표팀 경기 날이 되면 멈춥니다. 스페이스 키로도 누를 수 있습니다." },
+  { target: 'nav-home', tab: 'home', title: '홈', body: '협회 목표, 다음 경기, 예선 조 순위, 최근 결과, 지난 월드컵 성적을 봅니다.' },
+  { target: 'nav-inbox', title: '받은편지함', body: '경기 결과 · 예선 통과 · 부상 소식이 쌓입니다.' },
+  { target: 'nav-squad', tab: 'squad', title: '대표 명단 — 소집', body: "왼쪽(위)은 지금 대표 명단, 오른쪽(아래)은 소집 후보입니다. 후보는 그 나라 국적의 게임 속 선수와 실제 월드컵 명단의 '국내파'입니다. '넣기 · 빼기'로 바꾸고, '추천 명단'으로 능력 · 포지션에 맞게 다시 뽑을 수 있습니다." },
+  { target: 'tactics-pitch', tab: 'tactics', title: '전술 — 피치에서 바로 바꾸기', body: '자리를 누르면 그 자리에 넣을 선수를 고르고, 선수를 끌어 자리를 바꿉니다. 포메이션 · 공수 성향 · 압박 · 세트피스 키커도 여기서 정합니다.' },
+  { target: 'nav-schedule', title: '일정', body: '친선경기 · 예선 · 플레이오프 · 본선 일정과 결과를 봅니다.' },
+  { target: 'nav-table', title: '순위', body: '예선 조 순위와 월드컵 조 · 대진을 봅니다.' },
+  { target: 'search', title: '검색', body: '선수 · 구단 · 리그를 바로 찾습니다. 다른 나라 선수도 볼 수 있어요.' },
+  { target: 'save', title: '저장', body: '진행할 때마다 자동 저장됩니다. 슬롯에 따로 저장하거나 파일로 보관할 수도 있습니다.' },
+  { target: 'help', title: '도움말 · 설정', body: '막히면 도움말에 사용 설명서가 있고, 이 튜토리얼도 거기서 다시 볼 수 있습니다.' },
+  { target: 'menu', title: '메뉴 (휴대폰)', body: '화면이 좁으면 메뉴가 서랍에 들어갑니다. 왼쪽 위 ☰ 버튼을 누르세요.', narrowOnly: true },
+];
 const ALL_STEPS: Step[] = [
   { title: 'PITCH BOSS에 오신 걸 환영합니다', body: '이제 이 구단의 감독입니다. 선수단을 꾸리고, 전술을 짜고, 이적시장에서 선수를 사고팔며 이사회와 팬의 기대에 맞춰 성적을 내야 합니다. 화면을 옮겨 다니며 기본 조작을 보여 드릴게요 (2분 정도).' },
   { target: 'continue', tab: 'home', title: '계속 — 시간을 흐르게 하기', body: "'계속'을 누르면 날짜가 진행됩니다. 경기 날이나 중요한 일(이적시장 마감 · 재계약 요청 등)이 생기면 알아서 멈춥니다. 스페이스 키로도 누를 수 있습니다." },
@@ -44,7 +60,7 @@ const ALL_STEPS: Step[] = [
 ];
 
 export function Tour() {
-  const STEPS = ALL_STEPS.filter((s) => !s.narrowOnly || window.innerWidth < 1024);
+  const STEPS = (useGame.getState().world?.intl ? INTL_STEPS : ALL_STEPS).filter((s) => !s.narrowOnly || window.innerWidth < 1024);   // 월드컵 모드는 대표팀 단계
   const { open, start, stop } = useTour();
   const [i, setI] = useState(0);
   const [rect, setRect] = useState<DOMRect | null>(null);

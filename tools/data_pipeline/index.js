@@ -6,6 +6,7 @@
 //   node tools/data_pipeline report   --league eng1
 //   node tools/data_pipeline merge    <중복 ID> <남길 ID>
 //   node tools/data_pipeline dedupe [--apply]    같은 시즌 중복 소속 정리
+//   node tools/data_pipeline wcsquads [--apply]    월드컵 실제 명단 (위키백과 squads 문서 → 게임 선수와 맞춤)
 //   node tools/data_pipeline worldcups [--apply]   월드컵 참가국 · 조 (위키백과 squads 문서)
 //   node tools/data_pipeline standings [--league esp1] [--season 2019-20] [--apply]   실제 최종 순위 (위키백과 순위표)
 //   node tools/data_pipeline photos [--club liverpool] [--season 2025-26] [--league eng1,esp1] [--limit 100]   선수 사진 (위키미디어 공용, 개인 보관용 · Git 제외)
@@ -148,6 +149,7 @@ function report(league, { t0, summary } = {}) {
 
   if (cmd === 'report') return leagues.forEach(l => report(l));
   if (cmd === 'unify-names') return unifyNames({ apply: args.includes('--apply'), log });
+  if (cmd === 'wcsquads') return require('./steps/wcsquads').wcsquads({ apply: args.includes('--apply'), log });
   if (cmd === 'worldcups') return require('./steps/worldcups').worldcups({ apply: args.includes('--apply'), log });
   if (cmd === 'standings') return require('./steps/standings').standings({ apply: args.includes('--apply'), leagueFilter: typeof opt('league') === 'string' ? opt('league') : undefined, seasonFilter: typeof opt('season') === 'string' ? opt('season') : undefined, log });
   if (cmd === 'photos') return require('./steps/photos').photos({ club: typeof opt('club') === 'string' ? opt('club') : undefined, league: typeof opt('league') === 'string' ? opt('league') : undefined, season: typeof opt('season') === 'string' ? opt('season') : undefined, limit: typeof opt('limit') === 'string' ? +opt('limit') : undefined, log });

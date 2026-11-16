@@ -1,15 +1,20 @@
 // 게임 진행 상태: 월드(엔진 상태) + 진행 중인 사용자 경기.
 // 엔진은 월드를 직접 수정하므로, 화면 갱신은 rev 숫자를 올려서 알린다.
+import { applyMatchEvent, rollMatchEvent, type MatchEvent } from '../engine/matchEvents';
+import { shootout } from '../engine/cup';
+import { worldCupYear } from '../engine/worldcup';
+import { autoCallUp, cycleStage, intlNextSeason, setupIntl, squadSize, switchNation } from '../engine/intl';
+import { setWcSquads } from '../engine/wcsquads';
 import { termsError, type DealTerms } from '../engine/addons';
 import { newCareerId, recordCareer } from './careers';
 import { changeRole, type Role } from '../engine/roles';
 import { create } from 'zustand';
 import type { Fixture, GameEvent, Side, Tactics, World } from '../engine/types';
-import { advanceDay, advanceToUserMatch, applyMatch, createWorld, prepareMatch, type SeasonInput } from '../engine/world';
+import { advanceDay, advanceToUserMatch, applyMatch, createWorld, prepareMatch, type SeasonInput, decidesOnDraw } from '../engine/world';
 import { playToEnd, reshapeTeam, setFormation, setTactics, step, substitute, swapSlots, type MatchState } from '../engine/match';
 import { createRng, type Rng } from '../engine/rng';
 import { seedTraits } from '../engine/traits';
-import { availableSeasons, clubKo, clubs as clubMasters, dataset, leagues, loadHistory, loadLeagueSeason, loadManagers, loadStandings, playerKo, realAvailable, registerGeneratedNames, registerMyClub, setDataset, worldCupsMeta } from '../data/db';
+import { availableSeasons, clubKo, clubs as clubMasters, dataset, leagues, loadHistory, loadLeagueSeason, loadManagers, loadStandings, playerKo, realAvailable, registerGeneratedNames, registerMyClub, setDataset, worldCupsMeta, loadWcSquads } from '../data/db';
 import { currentAsData, myStart, newMyClubId, setupMyClub, squadNeeds, swapInput, weakestClub, type MyClubDesign, type MyClubState } from '../engine/myclub';
 import type { SquadPlayer } from '../data/types';
 import { closeSeason, nextSeasonOf, startNextSeason, type SeasonReport } from '../engine/season';
@@ -123,7 +128,10 @@ export interface LiveMatch {
   side: Side;
   rng: Rng;
   /** squad: 경기 전 스쿼드 설정 · live: 진행 중 · full: 종료 */
-  phase: 'squad' | 'live' | 'full';
+  phase: 'squad' | 'live' | 'pens' | 'full';
+  /** 월드컵 모드: 경기 중 사건 (고를 때까지 멈춤) · 이번 경기에 나온 종류 */
+  event?: MatchEvent;
+  evSeen?: string[];
   rec: Recommendation;
   draft: MatchDraft;
   /** 선발 확정 뒤 생성 */
@@ -166,7 +174,7 @@ interface GameStore {
   /** 경기 준비 화면: 같은 동작을 이번 경기 선발에 */
   reshapeDraft(slotIdx: number, pos: Position): string;
   /** random: 완전 랜덤으로 고른 구단 → 첫 시즌만 예산 · 재정 규정 한도 보정 */
-  newGame(season: string, league: string, clubId: string, opts?: { random?: boolean; manager?: import('../engine/managers').UserManagerInput; /** 나의 구단 만들기: 이 리그 꼴찌 자리를 대신 (clubId 는 무시) */ myClub?: MyClubDesign }): Promise<void>;
+  newGame(season: string, league: string, clubId: string, opts?: { random?: boolean; manager?: import('../engine/managers').UserManagerInput; /** 나의 구단 만들기: 이 리그 꼴찌 자리를 대신 (clubId 는 무시) */ myClub?: MyClubDesign; /** 월드컵 모드: 이 나라 대표팀 감독 (clubId 는 무시) */ intl?: { nation: string } }): Promise<void>;
   continueGame(): void;
   updateDraft(change: Partial<MatchDraft>): void;
   resetDraft(): void;
@@ -187,6 +195,16 @@ interface GameStore {
   sign(playerId: string, wage: number, years: number, role?: Role, clause?: number): { ok: boolean; reason: string; left?: number; broken?: boolean };
   /** 내 선수 역할 바꾸기 */
   setRole(playerId: string, role: Role): void;
+  /** 월드컵 모드: 대표 소집 (넣기 · 빼기) · 추천 명단. 실패하면 이유 */
+  callUp(playerId: string, on: boolean): string | null;
+  autoSquad(): void;
+  /** 월드컵 모드 협회 평가: 다른 나라 고르기 (null = 제안 거절, 경질이면 거절 불가) */
+  chooseIntlJob(nation: string | null): void;
+  /** 경기 중 사건 고르기 (우리 페널티는 키커도) · 결과 확인 뒤 닫기 */
+  resolveEvent(choice: string, takerId?: string): void;
+  closeEvent(): void;
+  /** 직접 한 승부차기 결과 (null 이면 자동) */
+  finishShootout(res: { home: import('../engine/shootoutSeq').Kick[]; away: import('../engine/shootoutSeq').Kick[] } | null): void;
   toggleShortlist(playerId: string): void;
   toggleTransferList(playerId: string): void;
   release(playerId: string): void;
@@ -273,7 +291,8 @@ export const useGame = create<GameStore>((set, get) => {
     async newGame(season, league, clubId, opts = {}) {
       set({ loading: true });
       // 그 시즌 데이터가 있는 1부 리그를 모두 불러와 함께 진행한다
-      let input = await loadSeasonInput(season, league);
+      setWcSquads(await loadWcSquads());   // 실제 월드컵 명단 (본선 · 월드컵 모드)
+      let input = await loadSeasonInput(season, opts.intl ? undefined : league);
       const seed = (Date.now() ^ Math.floor(Math.random() * 1e9)) >>> 0;
       // 나의 구단: 이 리그 꼴찌 자리를 대신 (그 구단 선수들은 FA 로)
       let my: MyClubState | undefined, freed: SquadPlayer[] = [];
@@ -288,6 +307,7 @@ export const useGame = create<GameStore>((set, get) => {
       }
       const world = createWorld(input, clubId, seed, { manager: opts.manager, settings: gameSettingsOf(useSettings.getState().s), ...(my ? { skipFill: [my.id] } : {}) });
       if (my) setupMyClub(world, my, freed);
+      if (opts.intl) setupIntl(world, opts.intl.nation);   // 월드컵 모드: 내 대표팀 · 국내파 · 첫 일정
       registerGeneratedNames(world.managers ?? {});   // 가상 감독 한국어 이름
       world.dataset = dataset;
       world.careerId = newCareerId();
@@ -310,7 +330,8 @@ export const useGame = create<GameStore>((set, get) => {
     continueGame() {
       const w = get().world;
       if (!w || get().match || w.manager?.pendingJob) return;   // 감독: 새 구단을 골라야 하면 진행 멈춤
-      if (w.myClub?.setup) { if (!squadNeeds(w).ok) return; w.myClub.setup = false; }   // 나의 구단: 선수단을 다 채워야 시즌 시작
+      if (w.myClub?.setup) { if (!squadNeeds(w).ok) return; w.myClub.setup = false; }
+      if (w.intl?.job?.reason === 'sacked') return;   // 월드컵 모드: 경질 → 새 나라를 골라야 진행   // 나의 구단: 선수단을 다 채워야 시즌 시작
       syncWorld(w);   // 설정 (팝업 · 난이도) 을 이 게임에 반영
       const st = useSettings.getState().s;
       const startWindow = windowOpen(w.season, w.date);
@@ -385,8 +406,21 @@ export const useGame = create<GameStore>((set, get) => {
       const { match: m, world: w } = get();
       if (!m || !w || m.phase !== 'live' || !m.state) return;
       const st = m.state;
+      if (m.event) return;   // 사건을 고를 때까지 멈춤
       const ctx = { players: w.players, rng: m.rng };
-      for (let i = 0; i < n && !st.done; i++) step(st, ctx);
+      for (let i = 0; i < n && !st.done; i++) {
+        step(st, ctx);
+        // 월드컵 모드: 구간 사이 사건 (하프타임 연설 · 통증 · 페널티 · 막판 선택)
+        if (w.intl && m.phase === 'live' && !st.done) {
+          const ev = rollMatchEvent(st, m.side, ctx, (m.evSeen ??= []));
+          if (ev) { m.event = ev; m.evSeen.push(ev.kind); break; }
+        }
+      }
+      if (st.done && m.phase === 'live' && decidesOnDraw(m.fixture) && st.summary.homeGoals === st.summary.awayGoals && !st.summary.pens) {
+        m.phase = 'pens';   // 비긴 녹아웃 경기: 승부차기를 직접 (결과만 보기면 자동)
+        bump();
+        return;
+      }
       if (st.done) {
         m.phase = 'full';
         applyMatch(w, m.fixture, st);
@@ -676,10 +710,40 @@ export const useGame = create<GameStore>((set, get) => {
       if (get().match?.phase === 'squad') set({ match: null });
     },
 
+    resolveEvent(choice, takerId) {
+      const { match: m, world: w } = get();
+      if (!m?.event || !m.state || !w || m.event.result) return;
+      const r = applyMatchEvent(m.state, m.side, m.event, choice, { players: w.players, rng: m.rng }, takerId);
+      m.event = { ...m.event, result: r.text, good: r.good };
+      bump();
+    },
+    closeEvent() {
+      const m = get().match;
+      if (!m) return;
+      m.event = undefined;
+      bump();
+    },
+
+    finishShootout(res) {
+      const { match: m, world: w } = get();
+      if (!m || !w || m.phase !== 'pens' || !m.state) return;
+      const s = m.state.summary;
+      if (res) {
+        const hs = res.home.filter((k) => k.scored).length, as = res.away.filter((k) => k.scored).length;
+        s.pens = hs > as ? 'home' : 'away';
+        s.shootout = { home: res.home, away: res.away, score: [hs, as] };
+        s.pensLive = true;
+      } else s.pens = shootout(w, m.fixture.home, m.fixture.away, m.fixture.id);   // 자동: 지금까지와 같은 방식
+      m.phase = 'live';
+      get().stepMatch(0);   // 결과 반영 (자동이면 applyMatch 가 정함)
+    },
+
     closeMatch() {
       const { match: m, world: w } = get();
       if (!m || !w) return;
       const skipped = m.phase !== 'full';
+      m.event = undefined;   // 결과만 보기: 남은 사건은 건너뜀
+      if (m.phase === 'pens') get().finishShootout(null);   // 승부차기 화면에서 결과만 보기: 자동
       if (m.phase !== 'full') {
         // 결과만 보기: (스쿼드 설정 중이면 지금 선발로 확정하고) 남은 시간을 한 번에 진행
         if (m.phase === 'squad') get().confirmLineup();
@@ -687,6 +751,7 @@ export const useGame = create<GameStore>((set, get) => {
         st[m.side].manual = false;   // 남은 시간은 AI가 교체까지 맡음
         playToEnd(st, { players: w.players, rng: m.rng });
         get().stepMatch(0);
+        if (get().match?.phase === 'pens') get().finishShootout(null);
       }
       // 오늘 남은 다른 경기를 치르고 하루 넘김
       const events = advanceDay(w);
@@ -718,6 +783,39 @@ export const useGame = create<GameStore>((set, get) => {
       autosave(w);
       bump();
       return { ...r, left, broken: left <= 0 };
+    },
+
+    callUp(playerId, on) {
+      const w = get().world!;
+      if (!w.intl || get().match) return '경기 중에는 바꿀 수 없습니다';
+      const c = w.clubs[w.userClubId];
+      if (on) {
+        if (c.squad.includes(playerId)) return null;
+        if (c.squad.length >= squadSize(w)) return `대표 명단은 ${squadSize(w)}명까지입니다. 먼저 한 명을 빼세요`;
+        c.squad.push(playerId);
+      } else {
+        if (c.squad.length <= 14) return '최소 14명은 남겨야 합니다';
+        c.squad = c.squad.filter((id) => id !== playerId);
+        if (c.lineup) c.lineup = { starters: c.lineup.starters.map((x) => (x === playerId ? null : x)), bench: c.lineup.bench.filter((x) => x !== playerId) };
+      }
+      autosave(w); bump();
+      return null;
+    },
+    chooseIntlJob(nation) {
+      const w = get().world!;
+      const job = w.intl?.job;
+      if (!job) return;
+      if (nation && job.offers.includes(nation)) switchNation(w, nation);
+      else if (job.reason === 'offer') w.intl!.job = undefined;
+      autosave(w); bump();
+    },
+    autoSquad() {
+      const w = get().world!;
+      if (!w.intl || get().match) return;
+      const c = w.clubs[w.userClubId];
+      c.squad = autoCallUp(w);
+      c.lineup = null;
+      autosave(w); bump();
     },
 
     setRole(playerId, role) {
@@ -895,10 +993,12 @@ export const useGame = create<GameStore>((set, get) => {
       const w = get().world;
       if (!w || !seasonOver(w)) return;
       set({ loading: true });
+      const intlStage = w.intl && worldCupYear(w.season) ? cycleStage(w) : undefined;   // 월드컵 모드: 이번 주기 성적 (월드컵이 끝난 시즌)
       closeSeason(w);
       let input = await loadSeasonInput(nextSeasonOf(w.season));
       if (w.myClub) input = swapInput(input, w.myClub, currentAsData(w.clubs[w.myClub.id])).input;   // 나의 구단: 대신한 구단 자리
       const report = startNextSeason(w, input);
+      if (w.intl) intlNextSeason(w, intlStage);   // 월드컵 모드: 다음 일정 (새 주기면 국내파 · 목표)
       registerGeneratedNames(w.players);   // 유스 선수 한국어 이름
       const awards = w.pendingAwards?.length ? w.pendingAwards : null;
       const news = w.pendingNews?.length ? w.pendingNews : null;
@@ -933,6 +1033,7 @@ export const useGame = create<GameStore>((set, get) => {
     },
     async load(slot) {
       const world = await readSave(slot);
+      setWcSquads(await loadWcSquads());
       if (!world) return false;
       // 다른 데이터로 만든 세이브면 그 데이터로 바꾼 뒤 (새로 고침) 자동으로 이어서 불러온다
       const need = world.dataset ?? 'real';

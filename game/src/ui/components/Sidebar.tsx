@@ -22,6 +22,9 @@ const NAV: { key: HubTab; label: string; icon: string; ready?: boolean }[] = [
   { key: 'club', label: '구단', icon: 'club', ready: true },
 ];
 
+/** 월드컵 모드: 이적 · 재정 · 구단 없음 */
+const INTL_TABS: HubTab[] = ['home', 'inbox', 'news', 'squad', 'tactics', 'schedule', 'table'];
+
 export function Sidebar() {
   const { tab, setTab, go, drawer, setDrawer } = useApp();
   const w = useWorld();
@@ -41,13 +44,13 @@ export function Sidebar() {
         <Crest clubId={club.id} size={34} />
         <div className="min-w-0 flex-1">
           <div className="truncate text-[15px] font-semibold">{clubKo(club.id)}</div>
-          <div className="truncate text-[12px] text-lo">{lg?.ko} · {w.season.replace('-', '/')}</div>
+          <div className="truncate text-[12px] text-lo">{w.intl ? `월드컵 모드 · ${w.intl.cycle} 주기` : lg?.ko} · {w.season.replace('-', '/')}</div>
         </div>
       </div>
       <div className="mx-5 h-px bg-line" />
 
       <nav className="mt-3 flex flex-1 flex-col gap-0.5 px-3">
-        {NAV.map((n) => {
+        {NAV.filter((n) => !w.intl || INTL_TABS.includes(n.key)).map((n) => {
           const active = tab === n.key;
           return (
             <button key={n.key} data-tour={`nav-${n.key}`} onClick={() => setTab(n.key)}
@@ -55,7 +58,7 @@ export function Sidebar() {
                 active ? 'bg-neon-ghost font-semibold text-hi' : n.ready ? 'text-mid hover:bg-ink-800 hover:text-hi' : 'text-lo hover:bg-ink-800'}`}>
               {active && <span className="absolute top-2 bottom-2 -left-3 w-0.5 rounded-r-full bg-neon" />}
               <Icon name={n.icon} className={active ? 'text-neon' : 'text-lo group-hover:text-mid'} />
-              <span className="flex-1 text-left">{n.label}</span>
+              <span className="flex-1 text-left">{w.intl && n.key === 'squad' ? '대표 명단' : n.label}</span>
               {n.key === 'squad' && unreadInjuries > 0 && (
                 <span title="부상자" className="tnum rounded-md bg-red/15 px-1.5 text-[11px] leading-5 font-semibold text-red">{unreadInjuries}</span>
               )}

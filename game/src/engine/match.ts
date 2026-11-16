@@ -473,7 +473,7 @@ export function taker(t: TeamInMatch, ctx: MatchCtx, kind: 'set' | 'pen'): OnPit
   const score = (o: OnPitch) => { const p = ctx.players[o.id]; return kind === 'pen' ? attr(p, 'sho') * 2 + attr(p, 'com') : attr(p, 'pas') + 0.5 * attr(p, 'vis') + 0.3 * attr(p, 'sho'); };
   return on.length ? on.reduce((a, b) => (score(b) > score(a) ? b : a)) : null;
 }
-function goalAt(m: MatchState, side: Side, scorer: string, assist: string | undefined, kind: 'pen' | 'set', rng: Rng) {
+export function goalAt(m: MatchState, side: Side, scorer: string, assist: string | undefined, kind: 'pen' | 'set', rng: Rng) {
   const me = m[side];
   me.goals++; me.shots++; me.onTarget++;
   m.summary.goals.push({ minute: m.segment * SEG_MIN + rng.int(1, SEG_MIN), side, scorer, ...(assist ? { assist } : {}), kind });

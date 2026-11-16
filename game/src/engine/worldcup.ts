@@ -9,6 +9,7 @@
 //  - 대표팀은 경기용 구단 'nt-<나라>' (리그 'intl', 재정 없음). 경기 기록은 선수 intlStats
 //  - 녹아웃: 단판, 비기면 승부차기. 32팀: 1A-2B 식 대진, 48팀: 조 순위 · 승점 순 시드로 1 vs 32 …
 //  - 우승: 우승국 출전 선수 수상 경력(wc) · 사기 +15, 준우승 사기 +5. 득점왕 소식
+import { playerFromRow, wcSquadsOf } from './wcsquads';
 import type { Fixture, GameEvent, PlayerState, TableRow, World } from './types';
 import { createRng, hashSeed, type Rng } from './rng';
 import { applyResult, emptyRow, sortTable } from './standings';
@@ -145,7 +146,11 @@ function callUpSquads(w: World, wc: WorldCupState, rng: Rng): GameEvent[] {
   const mine: string[] = [];
   for (const g of wc.groups) for (const id of g.teams) {
     const nation = nationOfNT(id);
-    const squad = selectSquad(w, nation, size);
+    // 월드컵 모드: 내 나라는 감독이 정한 명단 그대로
+    if (w.intl && nation === w.intl.nation && w.clubs[id]?.squad.length) { for (const pid of w.clubs[id].squad) w.players[pid].fitness = Math.max(w.players[pid].fitness, 92); continue; }
+    // 실제 대회 · 실제 명단이 있으면 그 명단 (게임에 없는 선수는 실명으로 만듦)
+    const real = wc.real ? wcSquadsOf(wc.year, nation) : undefined;
+    const squad = real?.length ? real.map((r) => { const had = !!w.players[r.id ?? r.wc!]; const p = playerFromRow(w, r, nation, wc.year); if (!had) fillers.push(p.id); return p; }).filter((p) => !p.injury).slice(0, size) : selectSquad(w, nation, size);
     const level = fillerLevel(nationPlayers(w, nation).slice(0, 11).map(overall));
     // 모자란 자리는 '국내파' 가상 선수
     missingSlots(squad, size).forEach((pos, i) => {
@@ -179,10 +184,10 @@ function callUpSquads(w: World, wc: WorldCupState, rng: Rng): GameEvent[] {
 /** 경기 결과 (applyMatch 에서): 조별리그 순위표 · 녹아웃 승부차기 */
 export function onWorldCupResult(w: World, f: Fixture) {
   const wc = w.worldCup;
-  if (!wc) return;
+  if (!wc || f.league !== 'wc') return;
   const s = f.result!;
   if (f.group) { applyResult(wc.groups.find((g) => g.name === f.group)!.table, f.home, f.away, s.homeGoals, s.awayGoals); return; }
-  if (s.homeGoals === s.awayGoals) s.pens = shootout(w, f.home, f.away, f.id);
+  if (s.homeGoals === s.awayGoals) s.pens ??= shootout(w, f.home, f.away, f.id);
 }
 
 const winnerOf = (f: Fixture) => { const s = f.result!; return s.homeGoals > s.awayGoals ? f.home : s.homeGoals < s.awayGoals ? f.away : s.pens === 'away' ? f.away : f.home; };
@@ -281,8 +286,8 @@ function finishWorldCup(w: World, wc: WorldCupState, ev: GameEvent[]) {
 
 /** 시즌이 바뀔 때: 경기용 대표팀 구단 · 가상 선수 지우기 (대회 기록은 worldCupHistory 에 남음) */
 export function clearWorldCup(w: World) {
-  for (const id of Object.keys(w.clubs)) if (isNT(id)) delete w.clubs[id];
-  for (const id of w.worldCup?.fillers ?? []) delete w.players[id];
+  for (const id of Object.keys(w.clubs)) if (isNT(id) && !(w.intl && id === NT(w.intl.nation))) delete w.clubs[id];   // 월드컵 모드: 내 대표팀은 남김
+  for (const id of w.worldCup?.fillers ?? []) if (!w.intl?.domestic.includes(id)) delete w.players[id];
   w.worldCup = undefined;
 }
 

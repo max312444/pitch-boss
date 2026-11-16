@@ -1,3 +1,5 @@
+import { MatchEventModal } from '../components/MatchEventModal';
+import { ShootoutGame } from '../components/ShootoutGame';
 import { useSettings } from '../../store/settings';
 import { useEffect, useRef, useState } from 'react';
 import { useGame } from '../../store/game';
@@ -20,7 +22,7 @@ const SPEEDS = [{ label: '보통', ms: 1100 }, { label: '빠르게', ms: 450 }, 
 
 export function MatchScreen() {
   const w = useWorld();
-  const { match: m, stepMatch, changeTactics, changeFormation, sub, setAutoSub, closeMatch, liveSwap, liveReshape } = useGame();
+  const { match: m, stepMatch, changeTactics, changeFormation, sub, setAutoSub, closeMatch, liveSwap, liveReshape, finishShootout } = useGame();
   const [pitchMsg, setPitchMsg] = useState('');
   const [playing, setPlaying] = useState(true);
   const [speed, setSpeed] = useState<number>(useSettings.getState().s.matchSpeed);   // 설정: 기본 경기 속도
@@ -46,7 +48,8 @@ export function MatchScreen() {
     if (m?.phase === 'live' && seg === 0 && final && !shown.current.intro) { shown.current.intro = true; setPlaying(false); setMoment('intro'); }
     if (m?.phase === 'full' && !shown.current.end) {
       shown.current.end = true;
-      if (sumNow?.shootout) setMoment('pens');
+      if (sumNow?.shootout && !sumNow.pensLive) setMoment('pens');   // 직접 한 승부차기는 다시 안 보여 줌
+      else if (sumNow?.pensLive && final && userWon) setMoment('trophy');
       else if (final && userWon) setMoment('trophy');
       else if (m.clinch != null) setMoment('league');
     }
@@ -80,11 +83,14 @@ export function MatchScreen() {
   const poss = s.segment ? Math.round((s.home.possSum / s.segment) * 100) : 50;
 
 
-  const momentEl = moment === 'intro' ? <FinalIntro home={s.home.clubId} away={s.away.clubId} title={compKo(m.fixture.league)} onDone={() => { setMoment(null); setPlaying(true); }} />
+  // 비긴 녹아웃: 승부차기를 직접
+  const pensEl = m.phase === 'pens' && m.state ? <ShootoutGame st={m.state} side={m.side} players={w.players} onDone={finishShootout} /> : null;
+  const evEl = m.event && m.phase === 'live' ? <MatchEventModal ev={m.event} players={w.players} /> : null;   // 월드컵 모드: 경기 중 사건
+  const momentEl = pensEl ?? evEl ?? (moment === 'intro' ? <FinalIntro home={s.home.clubId} away={s.away.clubId} title={compKo(m.fixture.league)} onDone={() => { setMoment(null); setPlaying(true); }} />
     : moment === 'pens' && sum.shootout ? <ShootoutOverlay seq={sum.shootout} home={s.home.clubId} away={s.away.clubId} mySide={m.side} onDone={() => setMoment(final && userWon ? 'trophy' : null)} />
     : moment === 'trophy' ? <TrophyOverlay club={w.userClubId} title={compKo(m.fixture.league)} onDone={() => setMoment(null)} />
     : moment === 'league' ? <TrophyOverlay club={w.userClubId} title={compKo(w.clubs[w.userClubId].league)} headline="리그 우승 확정!" sub={m.clinch ? `${m.clinch}경기를 남기고 우승` : '마지막 경기에서 우승'} onDone={() => setMoment(null)} />
-    : null;
+    : null);
 
   return (
     <div className="flex h-full flex-col bg-ink-950">

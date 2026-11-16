@@ -55,3 +55,46 @@ export function shootoutSeq(m: MatchState, players: Record<string, PlayerState>,
     ? { home: [{ id: id('home'), scored: true, saved: false }], away: [{ id: id('away'), scored: false, saved: true }], score: [1, 0] }
     : { home: [{ id: id('home'), scored: false, saved: true }], away: [{ id: id('away'), scored: true, saved: false }], score: [0, 1] };
 }
+
+// ── 직접 하는 승부차기 (내 경기) ─────────────────────────────
+//  내 키커는 방향 (왼쪽 · 가운데 · 오른쪽), 상대 키커는 내 골키퍼가 몸을 날릴 방향을 고른다.
+//  성공 기본 확률 = 키커 슈팅 · 침착성 vs 골키퍼 반사 신경 · 1:1 (위 chance 와 같은 식, 55~90%)
+//  - 골키퍼가 맞는 쪽으로 날면: 구석이면 30% · 가운데면 10% 만 들어감 (나머지 선방)
+//  - 다른 쪽이면: 기본 확률만큼 실축 위험 (빗나감 · 골대)만 남는다 → 기본 확률의 1/3 정도가 빗나감
+export type Dir = 'L' | 'C' | 'R';
+export const DIRS: Dir[] = ['L', 'C', 'R'];
+export const DIR_KO: Record<Dir, string> = { L: '왼쪽', C: '가운데', R: '오른쪽' };
+
+/** 승부차기 키커 순서 (슈팅 · 침착성 순, 골키퍼는 마지막) */
+export const kickOrder = (onPitch: OnPitch[], players: Record<string, PlayerState>) => takers(onPitch, players);
+
+/** 이 키커 · 골키퍼의 기본 성공 확률 */
+export function kickChance(kicker: PlayerState, keeper: PlayerState | undefined): number {
+  const kick = (attr(kicker, 'sho') + attr(kicker, 'com')) / 2, save = keeper ? (attr(keeper, 'ref') + attr(keeper, 'one')) / 2 : 50;
+  return Math.max(0.55, Math.min(0.9, 0.75 + (kick - 70) / 200 - (save - 70) / 250));
+}
+
+/** AI 의 방향 (차는 쪽 · 막는 쪽 모두): 구석 42% · 가운데 16% */
+export const aiDir = (r: number): Dir => (r < 0.42 ? 'L' : r < 0.84 ? 'R' : 'C');
+
+/** 한 번 차기 결과 */
+export function resolveKick(base: number, shot: Dir, dive: Dir, r1: number, r2: number): { scored: boolean; saved: boolean } {
+  if (shot === dive) { const ok = r1 < (shot === 'C' ? 0.1 : 0.3); return { scored: ok, saved: !ok }; }
+  const miss = (1 - base) / 3 + (shot === 'C' ? 0 : 0.02);   // 구석은 조금 더 빗나갈 위험
+  const scored = r2 >= miss;
+  return { scored, saved: false };
+}
+
+/** 승부차기가 끝났는지 (5명씩 → 서든데스) · 승자 */
+export function shootoutOver(home: Kick[], away: Kick[]): 'home' | 'away' | null {
+  const hs = home.filter((k) => k.scored).length, as = away.filter((k) => k.scored).length;
+  const hn = home.length, an = away.length;
+  if (hn <= 5 && an <= 5) {
+    if (hs > as + (5 - an)) return 'home';
+    if (as > hs + (5 - hn)) return 'away';
+    if (hn === 5 && an === 5) return hs === as ? null : hs > as ? 'home' : 'away';
+    return null;
+  }
+  if (hn === an && hs !== as) return hs > as ? 'home' : 'away';
+  return null;
+}

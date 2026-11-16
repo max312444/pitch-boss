@@ -57,7 +57,7 @@ export function buyoutWageFactor(w: World, p: PlayerState, clause: number): numb
  */
 export function aiBuyoutRaids(w: World, rng: Rng): GameEvent[] {
   const me = w.clubs[w.userClubId];
-  if (!me) return [];
+  if (!me || w.intl) return [];
   for (const id of me.squad) {
     const p = w.players[id];
     if (p.loan) continue;

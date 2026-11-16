@@ -1,4 +1,5 @@
 // 월드 생성과 하루 진행 (advanceDay)
+import { intlDay, onIntlResult } from './intl';
 import { addOnApp } from './addons';
 import { ffpMidSeason, ffpOf } from './ffp';
 import { clinchCheck } from './clinch';
@@ -165,6 +166,7 @@ export function allFixtures(w: World): Fixture[] {
   for (const c of Object.values(w.cups ?? {})) out.push(...c.fixtures);
   for (const c of Object.values(w.europe ?? {})) out.push(...c.fixtures);
   if (w.worldCup) out.push(...w.worldCup.fixtures);
+  if (w.intl) out.push(...w.intl.fixtures);   // 월드컵 모드: 내 대표팀 친선 · 예선
   return out;
 }
 
@@ -208,10 +210,11 @@ export function applyMatch(w: World, f: Fixture, m: MatchState) {
   // 기록: 컵 · 유럽 대회는 cupStats, 월드컵은 intlStats (리그 기록 stats 와 따로)
   const cs = (id: string) => (f.stage === 'intl' ? (w.players[id].intlStats ??= { apps: 0, goals: 0, assists: 0 }) : (w.players[id].cupStats ??= { apps: 0, goals: 0, assists: 0 }));
   // 컵 경기는 비기면 바로 승부차기
-  if (f.stage === 'cup' && s.homeGoals === s.awayGoals) s.pens = shootout(w, f.home, f.away, f.id);
+  if (f.stage === 'cup' && s.homeGoals === s.awayGoals) s.pens ??= shootout(w, f.home, f.away, f.id);   // 직접 한 승부차기면 그 결과
   f.result = s;
   if (f.stage === 'euro') onEuroResult(w, f);
   if (f.stage === 'intl') onWorldCupResult(w, f);
+  if (f.league === 'nt') onIntlResult(w, f, () => shootout(w, f.home, f.away, f.id));
   if (!f.stage) applyResult(w.competitions[f.league].table, f.home, f.away, s.homeGoals, s.awayGoals);
   gateIncome(w, f.home, f.away);
   // 포메이션 숙련도: 이번 경기 포메이션 +, 나머지 조금 −
@@ -301,6 +304,7 @@ export function advanceDay(w: World): GameEvent[] {
   const events: GameEvent[] = [];
   const today = w.date;
   const playedToday = new Set<string>();
+  if (w.intl) events.push(...intlDay(w, rng));   // 월드컵 모드: 상대 대표팀 준비 · 예선 순위 · 플레이오프
 
   for (const f of allFixtures(w)) {
     if (f.date !== today || f.result) continue;
@@ -334,20 +338,20 @@ export function advanceDay(w: World): GameEvent[] {
   // 이적시장: AI 구단 이적 (기간이 아니면 아무것도 안 함)
   events.push(...aiTransferDay(w, rng));
   events.push(...aiLoanDay(w, rng));   // AI 구단 유망주 임대
-  events.push(...aiBosmanDay(w, rng));   // 해외 구단의 내 선수 보스만 사전 계약
+  if (!w.intl) events.push(...aiBosmanDay(w, rng));   // 해외 구단의 내 선수 보스만 사전 계약
   events.push(...bargainDay(w, rng));   // 급매물: 강제 매각 · 강등 조항
   { const c = clinchCheck(w); if (c) events.push(c); }   // 리그 우승 확정 (다른 구단 결과로)
   events.push(...ffpMidSeason(w));   // 재정 규정: 1월 1일 한도 초과 경고
-  events.push(...sponsorDay(w, rng));   // 스폰서: 만료 시즌 봄 제안 · 기한 지나면 자동 계약
-  events.push(...appealDay(w, rng));   // 이적 어필: 우리 구단에 오고 싶은 선수
-  events.push(...shortlistDay(w));   // 관심 선수: 급매물 · 자유계약 · 보스만 · 계약 만료 임박
+  if (!w.intl) events.push(...sponsorDay(w, rng));   // 스폰서: 만료 시즌 봄 제안 · 기한 지나면 자동 계약
+  if (!w.intl) events.push(...appealDay(w, rng));   // 이적 어필: 우리 구단에 오고 싶은 선수
+  if (!w.intl) events.push(...shortlistDay(w));   // 관심 선수: 급매물 · 자유계약 · 보스만 · 계약 만료 임박
   events.push(...traitMonth(w, rng));
-  events.push(...managerDay(w, rng));
+  if (!w.intl) events.push(...managerDay(w, rng));
   events.push(...coachDay(w, rng));     // AI 구단 감독: 신뢰도 · 경질 · 공석이면 나에게 제안
   rememberOurs(w);                    // 우리 구단 선수 기억 (떠나도 능력치 공개)
-  events.push(...scoutDay(w));        // 스카우트 보고서
-  events.push(...facilityDay(w));   // 시설 공사 완료
-  boardMonth(w);   // 이사회 관계: 성적에 따라 조금씩   // 감독: 신뢰도 · 재계약 · 다른 구단 제안 · 경질
+  if (!w.intl) events.push(...scoutDay(w));        // 스카우트 보고서
+  if (!w.intl) events.push(...facilityDay(w));   // 시설 공사 완료
+  if (!w.intl) boardMonth(w);   // 이사회 관계: 성적에 따라 조금씩   // 감독: 신뢰도 · 재계약 · 다른 구단 제안 · 경질
   // 훈련 · 선수 육성 (매달 1일)
   trainingMonth(w, rng);
 
@@ -366,8 +370,8 @@ export function advanceDay(w: World): GameEvent[] {
     }
   }
 
-  events.push(...boardEventDay(w, events, rng));   // 팬 여론 · 이사회 이벤트
-  const sagas = sagaDay(w, rng);   // 선수 언론 플레이 (연봉 요구 · 이적 요청 · 태업)
+  if (!w.intl) events.push(...boardEventDay(w, events, rng));   // 팬 여론 · 이사회 이벤트
+  const sagas = w.intl ? [] : sagaDay(w, rng);   // 선수 언론 플레이 (연봉 요구 · 이적 요청 · 태업)
   events.push(...sagas);
   events.push(...aiSagaDay(w, rng, (p, to, fee) => {
     const wage = Math.max(p.wage, wageDemand(w, p));
@@ -377,17 +381,17 @@ export function advanceDay(w: World): GameEvent[] {
   }));
   const prompt = sagas.find((e) => e.type === 'saga' && e.step !== 'resolved');
   if (prompt && prompt.type === 'saga') w.sagaPrompt = prompt.player;
-  events.push(...scandalDay(w, rng));   // 선수 논란
-  events.push(...pressDay(w, events, rng, nextUserFixture(w)));   // 기자회견
+  if (!w.intl) events.push(...scandalDay(w, rng));   // 선수 논란
+  if (!w.intl) events.push(...pressDay(w, events, rng, nextUserFixture(w)));   // 기자회견
   events.push(...autoResolve(w, rng));   // 설정에서 끈 팝업은 무난하게 자동 처리
   financeDay(w);
   boostMonth(w);
   events.push(...newsDay(w, events, rng));   // 뉴스 · 이적 소문 (실제로 추진하는 소문은 이적 시도)
-  lockerDay(w);   // 라커룸: 불만 전염 · 주장
-  contractCheck(w);
+  if (!w.intl) lockerDay(w);   // 라커룸: 불만 전염 · 주장
+  if (!w.intl) contractCheck(w);
   w.date = addDay(today);
   w.rng = rng.state();
-  events.push(...deadlineCheck(w));   // 이적시장 마감 3일 전 · 당일 알림
+  if (!w.intl) events.push(...deadlineCheck(w));   // 이적시장 마감 3일 전 · 당일 알림
   // 받은편지함에는 사용자 구단 관련과 시즌 종료만 남긴다
   for (const e of events) {
     if (e.type === 'seasonEnd' || e.type === 'info' || (e.type === 'match' && e.user) || (e.type === 'injury' && e.club === w.userClubId)
@@ -463,3 +467,6 @@ export function advanceToUserMatch(w: World, maxDays = 120): { events: GameEvent
   }
   return { events, matchToday: userFixtureToday(w) };
 }
+
+/** 비기면 승부차기로 승자를 정하는 경기 (컵 · 월드컵 녹아웃 · 월드컵 예선 플레이오프) */
+export const decidesOnDraw = (f: Fixture) => f.stage === 'cup' || (f.league === 'wc' && !f.group) || (f.league === 'nt' && !!f.name?.startsWith('예선 플레이오프'));
