@@ -1,4 +1,5 @@
 // 이적 엔진: 몸값 · 이적시장 기간 · 영입 제안 판단 · 계약 · AI 구단 이적
+import { transferBan } from './ffp';
 import { APPEAL_WAGE, appealOf } from './appeal';
 import { ROLE_JOIN, type Role } from './roles';
 import { transferFactor } from './gameSettings';
@@ -142,7 +143,7 @@ export const wageBill = (w: World, clubId: string) => { const c = w.clubs[clubId
 export const wageRoom = (w: World, clubId: string) => Math.min(w.clubs[clubId].finance.wageBudget * WAGE_SLACK - wageBill(w, clubId), ruleWageRoom(w, clubId));
 /** 영입 가능한지: 이적료는 이적 예산 안, 주급은 주급 여유 안, 주급 + 이적료 상각은 재정 규정 안 — AI · 사용자 같은 규칙 */
 export const canAfford = (w: World, clubId: string, fee: number, wage: number, years = 3) =>
-  fee <= w.clubs[clubId].finance.transferBudget && wage <= wageRoom(w, clubId) && withinRules(w, clubId, wage, fee, years).ok;
+  !(fee > 0 && transferBan(w, clubId)) && fee <= w.clubs[clubId].finance.transferBudget && wage <= wageRoom(w, clubId) && withinRules(w, clubId, wage, fee, years).ok;
 
 /** 구단 안에서 능력 순위 (1부터) */
 function rankInClub(w: World, p: PlayerState): number {

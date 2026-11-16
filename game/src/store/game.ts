@@ -14,6 +14,7 @@ import { fillContracts, seasonOver } from '../engine/world';
 import { ensureManagers } from '../engine/managers';
 import { shootoutSeq } from '../engine/shootoutSeq';
 import { clinchCheck } from '../engine/clinch';
+import { transferBan } from '../engine/ffp';
 import { signSponsor as signSponsorDeal } from '../engine/sponsors';
 import { recommend, type Recommendation } from '../engine/ai';
 import { withinRules } from '../engine/rules';
@@ -542,6 +543,8 @@ export const useGame = create<GameStore>((set, get) => {
       if (!c.ok) return { ok: false, msg: c.reason };
       const pw = playerWillLoan(w, p, w.userClubId);
       if (!pw.ok) return { ok: false, msg: pw.reason };
+      const fban = transferBan(w, w.userClubId);
+      if (fban) return { ok: false, msg: fban };
       if (terms.fee > w.clubs[w.userClubId].finance.transferBudget) return { ok: false, msg: '이적 예산이 모자랍니다 (임대료)' };
       if (Math.round(p.wage * terms.share) > wageRoom(w, w.userClubId)) return { ok: false, msg: '주급 여유가 모자랍니다' };
       // 이적 조건의 영입 후 주급: 선수가 원하는 주급의 90% 이상이어야
@@ -570,6 +573,8 @@ export const useGame = create<GameStore>((set, get) => {
       const p = w.players[playerId];
       const fee = p.loan?.buy;
       if (!fee || p.clubId !== w.userClubId) return { ok: false, msg: '완전 영입 옵션이 없습니다' };
+      const fban = transferBan(w, w.userClubId);
+      if (fban) return { ok: false, msg: fban };
       if (fee > w.clubs[w.userClubId].finance.transferBudget) return { ok: false, msg: '이적 예산이 모자랍니다' };
       w.inbox.push(...exerciseBuy(w, p));
       autosave(w); bump();
@@ -683,6 +688,8 @@ export const useGame = create<GameStore>((set, get) => {
       const ban = talkBanned(w, playerId);
       if (ban) return { decision: 'reject', ask: 0, reason: '', blocked: `협상이 결렬된 선수입니다. ${ban.slice(5).replace('-', '/')}까지 다시 협상할 수 없습니다` };
       if (p.clubId && !windowOpen(w.season, w.date)) return { decision: 'reject', ask: 0, reason: '', blocked: '이적시장이 닫혀 있어 다른 구단 선수는 영입할 수 없습니다 (자유계약 선수는 가능)' };
+      const fban = p.clubId ? transferBan(w, w.userClubId) : null;
+      if (fban) return { decision: 'reject', ask: 0, reason: '', blocked: fban };
       if (p.clubId && fee > w.clubs[w.userClubId].finance.transferBudget) return { decision: 'reject', ask: 0, reason: '', blocked: '이적 예산이 부족합니다' };
       const t = talkOf(w, playerId);
       const r = evaluateBid(w, p, w.userClubId, fee);

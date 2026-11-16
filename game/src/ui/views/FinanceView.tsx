@@ -1,4 +1,5 @@
 // 재정 화면: 잔고 · 예산 · 이번 시즌 수입/지출 · 잔고 추이 · 지난 시즌 장부
+import { transferBan } from '../../engine/ffp';
 import { SponsorCard } from '../components/SponsorCard';
 import { EXPENSE_LABEL, INCOME_LABEL, ledgerOf, revenueBase, sum, wageBillOf, type ExpenseKind, type IncomeKind } from '../../engine/finance';
 import { useWorld } from '../hooks';
@@ -53,7 +54,17 @@ export function FinanceView() {
                 선수단 비용 = 연 주급 총액 + 이적료 상각 (이적료 ÷ 계약 연수). 한도를 넘는 영입 · 재계약은 할 수 없습니다 (AI 구단도 같은 규칙).
                 {rule.dncg && ' 잔고가 마이너스가 되면 DNCG 급여 통제로 주급 총액을 늘릴 수 없습니다.'}
                 {rule.debt && ' 잔고가 마이너스면 부채 상환분만큼 한도가 줄어듭니다.'}
+                {' '}매출이 줄어 한도를 넘거나(강등 · 유럽 대회 탈락 · 팬 감소){rule.kind === 'loss' ? ' 3시즌 누적 손실이 허용치를 넘으면' : ''} 시즌 끝 심사에서 경고 → 벌금 → 승점 감점 → 영입 금지 순으로 징계를 받습니다.
               </div>
+              {(club.ffp?.strikes || club.ffp?.pending || transferBan(w, club.id) || r > 1) ? (
+                <div className="mt-2 flex flex-wrap gap-2 text-[12px]">
+                  {r > 1 && <span className="rounded bg-red/15 px-2 py-0.5 font-semibold text-red">지금 한도 {Math.round((r - 1) * 100)}% 초과 · 시즌 끝까지 줄여야 함</span>}
+                  {!!club.ffp?.strikes && <span className="rounded bg-amber/15 px-2 py-0.5 text-amber">최근 위반 {club.ffp.strikes}회 (지키는 시즌마다 1회씩 줄어듦)</span>}
+                  {club.ffp?.pending?.deduct && <span className="rounded bg-red/15 px-2 py-0.5 text-red">다음 시즌 승점 {club.ffp.pending.deduct}점 감점 예정</span>}
+                  {club.ffp?.pending?.ban && <span className="rounded bg-red/15 px-2 py-0.5 text-red">다음 여름 영입 금지 예정</span>}
+                  {transferBan(w, club.id) && <span className="rounded bg-red/15 px-2 py-0.5 text-red">영입 금지 중 · {club.ffp!.banUntil!.slice(5).replace('-', '/')}까지</span>}
+                </div>
+              ) : null}
             </div>
           );
         })()}

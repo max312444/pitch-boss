@@ -7,6 +7,7 @@
 //      의무 이적 (이적료 · 영입 후 주급) → 시즌 끝에 자동으로 이적. 원소속 구단은 확실히 파는 거래라 가치의 75%부터 받아 줌 (옵션은 90%)
 //  - 이적시장 기간에만. 임대 중인 선수는 사고팔 수 없다
 //  - AI 구단: 이적시장 동안 출전 기회가 없는 유망주를 하위 구단에 임대
+import { transferBan } from './ffp';
 import type { GameEvent, PlayerState, World } from './types';
 import type { Rng } from './rng';
 import { overall } from './ratings';
@@ -109,7 +110,7 @@ export function loanCandidates(w: World, p: PlayerState, exclude: string[] = [],
       const share = c.reputation >= parent.reputation - 6 ? 1 : c.reputation >= parent.reputation - 15 ? 0.75 : 0.5;
       return { c, share };
     })
-    .filter(({ c, share }) => wageRoom(w, c.id) >= p.wage * share && canAfford(w, c.id, 0, p.wage * share, 1)
+    .filter(({ c, share }) => !transferBan(w, c.id) && wageRoom(w, c.id) >= p.wage * share && canAfford(w, c.id, 0, p.wage * share, 1)
       && (!deal || canAfford(w, c.id, deal.buy, p.wage, 3)))   // 이적 조건을 걸면: 그 이적료 · 주급을 감당할 수 있는 구단만
     .sort((a, b) => b.c.reputation - a.c.reputation)
     .slice(0, 3)

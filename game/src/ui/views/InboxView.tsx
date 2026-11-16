@@ -85,6 +85,15 @@ export function describe(e: GameEvent, w: World): { tag: string; tone: string; t
       if (e.result === 'start') return { tag: '월드컵', tone: 'text-sky', title: `${e.year} ${cup} 대표 선발 · 우리 선수 ${mine.length}명`, body: mine.join(', ') };
       return { tag: '월드컵', tone: 'text-[#f2c94c]', title: `${e.year} ${cup} 우승 · ${nationKo(e.nation)}`, body: [mine.length ? `우승 멤버: ${mine.join(', ')}` : '', e.scorer ? `득점왕 ${playerKo(e.scorer, e.text ?? '')}` : e.text ?? ''].filter(Boolean).join(' · ') };
     }
+    case 'ffp': {
+      const mine = e.club === w.userClubId;
+      const who = mine ? '' : `${clubKo(e.club)} · `;
+      if (e.kind === 'midwarn') return { tag: '재정 규정', tone: 'text-amber', title: `재정 규정 한도를 ${e.over}% 넘었습니다`, body: `${e.rule} · 시즌이 끝날 때까지 선수단 비용(주급 · 이적료 상각)을 줄이지 않으면 징계를 받습니다 (선수 판매 · 방출 · 임대 보내기)` };
+      if (e.kind === 'applied') return { tag: '재정 규정', tone: 'text-red', title: '재정 규정 징계 적용', body: [e.deduct ? `이번 시즌 승점 ${e.deduct}점 감점으로 시작` : '', e.ban ? '이번 여름 이적시장 동안 이적료 · 임대 영입 금지 (자유계약 선수는 가능)' : ''].filter(Boolean).join(' · ') };
+      if (e.kind === 'warn') return { tag: '재정 규정', tone: 'text-amber', title: `${who}재정 규정 위반 경고 (${e.over}% 초과)`, body: `${e.rule} · 처음이고 초과가 작아 경고로 끝났습니다. 다음 시즌에도 넘으면 벌금 · 승점 감점을 받습니다` };
+      const parts = [e.fine ? `벌금 ${money(e.fine)}` : '', e.deduct ? `다음 시즌 승점 ${e.deduct}점 감점` : '', e.ban ? '다음 여름 이적시장 영입 금지' : ''].filter(Boolean).join(' · ');
+      return { tag: '재정 규정', tone: 'text-red', title: `${who}재정 규정 위반 징계 (${e.over}% 초과)`, body: `${e.rule} · ${parts}` };
+    }
     case 'clinch':
       return { tag: '우승', tone: 'text-[#f2c94c]', title: `${compKo(e.league)} 우승 확정!`, body: e.left ? `${e.left}경기를 남기고 우승을 확정했습니다` : '마지막 경기에서 우승을 확정했습니다' };
     case 'sponsor': {

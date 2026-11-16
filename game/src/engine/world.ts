@@ -1,4 +1,5 @@
 // 월드 생성과 하루 진행 (advanceDay)
+import { ffpMidSeason, ffpOf } from './ffp';
 import { clinchCheck } from './clinch';
 import { coachDay } from './coaches';
 import { scoutDay, scoutMatch, rememberOurs } from './scout';
@@ -151,6 +152,7 @@ export function createWorld(input: SeasonInput, userClubId: string, seed: number
   assignManagers(w, input.managers, input.season, createRng((seed ^ 0x3a9e) >>> 0));
   createUserManager(w, opts.manager ?? { name: '감독', philosophy: 'balance', pressing: 1, strength: 'tac' });
   rememberOurs(w);
+  for (const c of Object.values(clubs)) ffpOf(w, c);   // 재정 규정: 이번 시즌 손익 기준 잔고
   w.rng = rng.state();
   return w;
 }
@@ -333,6 +335,7 @@ export function advanceDay(w: World): GameEvent[] {
   events.push(...aiBosmanDay(w, rng));   // 해외 구단의 내 선수 보스만 사전 계약
   events.push(...bargainDay(w, rng));   // 급매물: 강제 매각 · 강등 조항
   { const c = clinchCheck(w); if (c) events.push(c); }   // 리그 우승 확정 (다른 구단 결과로)
+  events.push(...ffpMidSeason(w));   // 재정 규정: 1월 1일 한도 초과 경고
   events.push(...sponsorDay(w, rng));   // 스폰서: 만료 시즌 봄 제안 · 기한 지나면 자동 계약
   events.push(...appealDay(w, rng));   // 이적 어필: 우리 구단에 오고 싶은 선수
   events.push(...shortlistDay(w));   // 관심 선수: 급매물 · 자유계약 · 보스만 · 계약 만료 임박
@@ -388,7 +391,7 @@ export function advanceDay(w: World): GameEvent[] {
     if (e.type === 'seasonEnd' || e.type === 'info' || (e.type === 'match' && e.user) || (e.type === 'injury' && e.club === w.userClubId)
       || (e.type === 'transfer' && (e.user || e.fee >= 30e6))
       || (e.type === 'cup' && (e.club === w.userClubId || e.result === 'champion'))
-      || e.type === 'callup' || e.type === 'shortlist' || e.type === 'appeal' || e.type === 'sponsor' || e.type === 'clinch' || e.type === 'manager' || e.type === 'board' || e.type === 'press' || e.type === 'saga' || e.type === 'scandal' || (e.type === 'loan' && e.user) || (e.type === 'coach' && e.news) || e.type === 'scout' || (e.type === 'worldcup' && (e.result === 'champion' || !!e.players?.length))) w.inbox.push(e);
+      || e.type === 'callup' || e.type === 'shortlist' || e.type === 'appeal' || e.type === 'sponsor' || e.type === 'clinch' || e.type === 'ffp' || e.type === 'manager' || e.type === 'board' || e.type === 'press' || e.type === 'saga' || e.type === 'scandal' || (e.type === 'loan' && e.user) || (e.type === 'coach' && e.news) || e.type === 'scout' || (e.type === 'worldcup' && (e.result === 'champion' || !!e.players?.length))) w.inbox.push(e);
   }
   if (w.inbox.length > 300) w.inbox.splice(0, w.inbox.length - 300);
   return events;

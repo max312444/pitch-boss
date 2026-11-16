@@ -7,6 +7,7 @@
 //  - 데이터가 끝난 뒤(2026/27~): 나이에 따른 성장 · 노화 엔진
 //  - 강등 · 승격: 실제 다음 시즌에 새로 올라온 구단 수만큼 게임 순위 하위 구단을 내린다
 //    (2부 리그는 아직 없음 → 사용자 구단이 강등권이면 잔류 처리하고 그 위 구단을 내림)
+import { ffpNewSeason, ffpSeasonEnd } from './ffp';
 import { coachSeasonEnd } from './coaches';
 import { rememberOurs, scoutNewSeason } from './scout';
 import { assignManagers, managerSeasonGrowth } from './managers';
@@ -99,7 +100,8 @@ export function closeSeason(w: World): SeasonRecord[] {
   w.history.push(...recs);
   const mres = managerSeasonEnd(w, recs);   // 감독: 신뢰도 · 명성 (시즌 끝에 경질 판정)
   if (mres) fansSeasonEnd(w, mres);         // 팬 여론 · 우승 보너스 예약
-  w.inbox.push(...sponsorSeasonEnd(w, recs));   // 스폰서 성과 보너스 · AI 구단 계약 갱신
+  w.inbox.push(...sponsorSeasonEnd(w, recs));   
+  w.inbox.push(...ffpSeasonEnd(w));   // 재정 규정 심사: 경고 · 벌금 · 다음 시즌 감점 · 영입 금지   // 스폰서 성과 보너스 · AI 구단 계약 갱신
   managerSeasonGrowth(w, recs, (id) => (w.clubs[id] ? teamStrength(w, id) : 0));   // 감독 성장 · 하락 (기대보다 잘하면 잠재력까지)
   w.inbox.push(...coachSeasonEnd(w, recs, createRng((w.rng ^ 0xc0ac) >>> 0)).filter((e) => e.type === 'coach' && e.news));   // AI 구단 감독 교체
   return recs;
@@ -409,6 +411,7 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
   w.season = to;
   // 월드컵이 7월까지 이어졌으면 날짜를 되돌리지 않는다
   w.date = w.date > startDate ? w.date : startDate;
+  w.inbox.push(...ffpNewSeason(w));   // 재정 규정 징계 적용 (감점 · 영입 금지)
   cleanOffers(w);   // 떠난 · 은퇴한 선수에게 온 제안 정리
   w.rng = rng.state();
   w.inbox = w.inbox.filter((e) => e.date >= `${from.slice(0, 4)}-07-01`).slice(-100);

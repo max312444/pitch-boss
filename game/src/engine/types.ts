@@ -164,6 +164,8 @@ export interface ClubState {
   coach?: import('./coaches').Coach;
   /** 감독 (w.managers 키). 내 구단은 비움 (내 감독 = w.managers.user) */
   managerId?: string;
+  /** 재정 규정 위반 기록 · 징계 (ffp.ts) */
+  ffp?: import('./ffp').FfpState;
   /** 스폰서 계약 (메인 · 용품), sponsors.ts */
   sponsors?: import('./sponsors').SponsorDeal[];
   /** 시설 수준 1~5 (훈련장 · 유스) · 경기장 수용 인원 (데이터, 시즌마다 갱신) */
@@ -231,6 +233,8 @@ export type GameEvent =
   /** 스카우트 보고서: 선수 한 명 · 리그 관찰 */
   | { type: 'scout'; date: string; player?: string; club?: string; league?: string; count?: number }
   /** 관심 선수 소식 (급매물 · 자유계약 · 보스만 · 계약 만료 임박) */
+  /** 재정 규정: 1월 경고 · 시즌 끝 심사 (경고 · 벌금 · 감점 · 영입 금지) · 새 시즌 적용 */
+  | { type: 'ffp'; date: string; club: string; kind: 'midwarn' | 'warn' | 'fine' | 'deduct' | 'ban' | 'applied'; over: number; fine: number; deduct: number; ban: boolean; rule: string }
   /** 리그 우승 확정 (남은 경기 수) */
   | { type: 'clinch'; date: string; league: string; club: string; left: number }
   /** 스폰서: 제안 도착 · 계약 · 자동 계약 · 성과 보너스 */
