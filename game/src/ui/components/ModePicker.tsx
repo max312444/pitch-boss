@@ -2,6 +2,13 @@
 import { useEffect } from 'react';
 import type { GameMode } from '../../store/app';
 
+/** 모드마다 색 · 아이콘 (한눈에 구분): 기본 초록 · 나의 구단 하늘색 · 월드컵 금색 */
+const TONE: Record<GameMode, { emoji: string; text: string; bar: string; tile: string; btn: string; hover: string }> = {
+  base: { emoji: '⚽', text: 'text-neon', bar: 'bg-neon', tile: 'bg-neon/15', btn: 'bg-neon text-ink-950 group-hover:bg-[#5bff3d]', hover: 'enabled:hover:ring-neon/60' },
+  my: { emoji: '🏟️', text: 'text-sky', bar: 'bg-sky', tile: 'bg-sky/15', btn: 'bg-sky text-ink-950 group-hover:brightness-110', hover: 'enabled:hover:ring-sky/60' },
+  wc: { emoji: '🏆', text: 'text-amber', bar: 'bg-amber', tile: 'bg-amber/15', btn: 'bg-amber text-ink-950 group-hover:brightness-110', hover: 'enabled:hover:ring-amber/60' },
+};
+
 const MODES: { k: GameMode; title: string; tag: string; lines: string[]; soon?: boolean }[] = [
   {
     k: 'base', title: '기본', tag: '실제 구단 감독 커리어',
@@ -46,20 +53,29 @@ export function ModePicker({ onPick, onClose }: { onPick: (m: GameMode) => void;
           <button onClick={onClose} className="h-8 w-8 rounded-md text-[18px] text-lo hover:bg-ink-800 hover:text-hi" aria-label="닫기">×</button>
         </header>
         <div className="grid gap-3 overflow-auto p-4 lg:grid-cols-3 lg:p-6">
-          {MODES.map((m) => (
-            <button key={m.k} disabled={m.soon} onClick={() => onPick(m.k)}
-              className="group flex flex-col rounded-xl bg-ink-850 p-5 text-left ring-1 ring-line transition-colors enabled:hover:bg-ink-800 enabled:hover:ring-neon/60 disabled:opacity-60">
-              <div className="flex items-center gap-2">
-                <span className="text-[18px] font-semibold">{m.title}</span>
-                {m.soon && <span className="rounded bg-amber/15 px-1.5 py-px text-[11px] font-semibold text-amber">준비 중</span>}
-              </div>
-              <div className="mt-0.5 text-[12px] text-neon">{m.tag}</div>
-              <ul className="mt-3 flex-1 space-y-1.5 text-[13px] leading-relaxed text-mid">
-                {m.lines.map((l) => <li key={l} className="flex gap-2"><span className="text-lo">·</span><span>{l}</span></li>)}
-              </ul>
-              <span className={`mt-4 flex h-10 items-center justify-center rounded-lg text-[13px] font-semibold ${m.soon ? 'bg-ink-700 text-lo' : 'bg-neon text-ink-950 group-hover:bg-[#5bff3d]'}`}>{m.soon ? '곧 추가됩니다' : '이 모드로 시작'}</span>
-            </button>
-          ))}
+          {MODES.map((m) => {
+            const t = TONE[m.k];
+            return (
+              <button key={m.k} disabled={m.soon} onClick={() => onPick(m.k)}
+                className={`group relative flex shrink-0 flex-col rounded-xl bg-ink-850 p-5 pt-6 text-left ring-1 ring-line transition-colors enabled:hover:bg-ink-800 disabled:opacity-60 ${t.hover}`}>
+                <span className={`absolute inset-x-0 top-0 h-1 rounded-t-xl ${t.bar}`} />
+                <div className="flex items-center gap-3">
+                  <span className={`grid h-12 w-12 shrink-0 place-items-center rounded-xl text-[26px] ${t.tile}`} aria-hidden>{t.emoji}</span>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[18px] font-semibold">{m.title}</span>
+                      {m.soon && <span className="rounded bg-amber/15 px-1.5 py-px text-[11px] font-semibold text-amber">준비 중</span>}
+                    </div>
+                    <div className={`text-[12px] font-semibold ${t.text}`}>{m.tag}</div>
+                  </div>
+                </div>
+                <ul className="mt-3 flex-1 space-y-1.5 text-[13px] leading-relaxed text-mid">
+                  {m.lines.map((l) => <li key={l} className="flex gap-2"><span className={t.text}>·</span><span>{l}</span></li>)}
+                </ul>
+                <span className={`mt-4 flex h-10 items-center justify-center rounded-lg text-[13px] font-semibold ${m.soon ? 'bg-ink-700 text-lo' : t.btn}`}>{m.soon ? '곧 추가됩니다' : `${m.title} 모드로 시작`}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>

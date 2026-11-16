@@ -3,6 +3,7 @@
 // 2) 구단 파일의 crest 항목 (파이프라인 publish 단계에서 넣음): 모양 · 색 · 무늬 · 가운데 문장 · 머리글자
 // 3) 설정이 없으면 유니폼 색 기반 기본형
 // 실제 로고 그림은 복제하지 않는다. 문장(대포 · 새 · 왕관 …)은 일반적인 문장 요소로 직접 그린 것.
+import { nationColors } from '../crests/nationColors';
 import { useId } from 'react';
 import { clubs } from '../../data/db';
 import { NATION_SHAPE, type CrestCharge, type CrestPattern, type CrestShape, type CrestStyle } from '../crests/types';
@@ -31,6 +32,8 @@ const ink = (bg: string) => (luminance(bg) > 0.45 ? '#141414' : '#f4f4f2');
 const FONT = { fontFamily: 'Pretendard Variable, sans-serif' };
 
 function fallbackStyle(id: string): CrestStyle {
+  // 대표팀: 그 나라 유니폼 색 + 가운데 나라 약자
+  if (id.startsWith('nt-')) { const [p, s] = nationColors(id.slice(3)); return { shape: 'shield', colors: [p, s, s], pattern: 'solid', charge: 'letters', mark: id.slice(3) }; }
   const c = clubs.get(id);
   const p = c?.kits?.home.primary ?? '#2a2f2c', s = c?.kits?.home.secondary ?? '#f4f4f2';
   const kp = c?.kits?.home.pattern;

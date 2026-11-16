@@ -1,12 +1,17 @@
 // 게임 버전 (첫 화면에 표시). 기능을 넣거나 고칠 때마다 올린다 — 기능 추가 0.1 단위, 작은 수정 0.0.1 단위
 //  바꿀 때 아래 CHANGELOG 맨 위에 한 줄 요약을 넣고, README 개발 현황에도 적는다
 //  첫 화면은 새 버전을 처음 본 뒤 24시간 동안 '업데이트 소식'을 보여 준다 (UpdateNotes.tsx)
-export const GAME_VERSION = '2.1';
+export const GAME_VERSION = '2.1.1';
 
 export interface ChangeEntry { version: string; date: string; items: string[] }
 
 /** 업데이트 내역 (새 것이 위). 플레이어가 읽는 글이므로 쉬운 말로 */
 export const CHANGELOG: ChangeEntry[] = [
+  { version: '2.1.1', date: '2026-11-16', items: [
+    '게임 모드 고르기 창: 모드마다 색 · 아이콘으로 구분 (기본 초록 ⚽ · 나의 구단 하늘색 🏟️ · 월드컵 금색 🏆)',
+    '대표팀 엠블럼: 그 나라 대표팀 유니폼 색 + 나라 약자 (KOR · BRA …)',
+    '업데이트 알림을 화면 한가운데 창으로 (뒤 화면은 흐리게)',
+  ] },
   { version: '2.1', date: '2026-11-16', items: [
     '월드컵 모드 소집 후보가 크게 늘었습니다: 그 시즌 그 나라 대표 경력이 있는 선수 전원 (예: 한국 2010 시즌 81명). 게임에 없던 선수도 실명 · 오버롤로 들어오고, 누구를 뽑을지는 감독이 오버롤을 보고 정합니다 (다른 나라는 지금처럼)',
   ] },

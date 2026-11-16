@@ -31,11 +31,14 @@ export function UpdateBanner() {
   }, []);
   if (!stale) return null;
   return (
-    <div role="status" className="fixed inset-x-0 top-0 z-[1000] flex justify-center px-3 pt-[max(8px,env(safe-area-inset-top))]">
-      <div className="flex max-w-[560px] flex-wrap items-center justify-center gap-x-3 gap-y-2 rounded-xl border border-neon/60 bg-ink-900/95 px-4 py-2.5 text-[13px] shadow-lg backdrop-blur">
-        <span className="font-semibold text-hi">게임이 업데이트되었습니다. 새로 고침 한 번만 해 주세요</span>
-        <span className="text-[11px] text-lo">(진행 상황은 자동 저장되어 있습니다)</span>
-        <button onClick={() => location.reload()} className="h-8 rounded-lg bg-neon px-4 text-[12px] font-semibold text-ink-950 hover:bg-[#5bff3d]">새로 고침</button>
+    // 화면 한가운데 창 · 뒤는 흐리게 (놓치지 않게)
+    <div role="alertdialog" aria-modal="true" className="fixed inset-0 z-[1000] grid animate-[fade_0.25s_ease-out] place-items-center bg-ink-950/60 p-4 backdrop-blur-md">
+      <div className="panel w-full max-w-[400px] border border-neon/60 px-6 py-7 text-center shadow-[0_0_60px_rgba(57,255,20,0.15)]">
+        <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-neon/15 text-[28px]" aria-hidden>🔄</div>
+        <div className="mt-4 text-[19px] font-semibold text-hi">게임이 업데이트되었습니다</div>
+        <div className="mt-1.5 text-[14px] text-mid">새로 고침 한 번만 해 주세요</div>
+        <div className="mt-1 text-[12px] text-lo">진행 상황은 자동 저장되어 있습니다</div>
+        <button onClick={() => location.reload()} className="mt-6 h-12 w-full rounded-lg bg-neon text-[15px] font-semibold text-ink-950 hover:bg-[#5bff3d]">새로 고침</button>
       </div>
     </div>
   );
