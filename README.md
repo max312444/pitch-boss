@@ -135,6 +135,9 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 > 버전: `game/src/version.ts` (첫 화면 표시). 기능 추가 +0.1 · 작은 수정 +0.0.1, 바꿀 때마다 여기에 적는다.
 > 같은 파일의 `CHANGELOG` 맨 위에 플레이어용 한 줄 요약도 넣는다 → 첫 화면 '업데이트 소식' (새 버전을 처음 본 뒤 24시간 표시, `UpdateNotes.tsx`).
 
+0. **v2.1 대표 선수 풀** (2026-11-16)
+   - 파이프라인 `node tools/data_pipeline natpool --apply`: 나라별 대표팀 항목 (위키백과 "{나라} national football team" → Wikidata) 의 선수 소속 기록 (P54 + 기간 P580/P582 · 출전 P1350 · 골 P1351 · 포지션 P413), 1998년 이후 → `data/worldcups/pools.json` (실명, Git 제외 · 실명 데이터 옮기기에 포함) · 한국어 이름은 `data/locale/ko/wcplayers.json` 에 더함. 140개국 24160명 (게임 선수 6417명 맞춤). `publish` 가 공개 번호 · 패러디 이름으로 `data-public/worldcups/pools.json`.
+   - 게임: `wcsquads.ts poolOf` (그 시즌 대표였던 선수) · `playerFromPool` (게임에 없으면 그 나라 수준 + A매치 + 나이로 오버롤). `intl.ts refreshDomestic` 이 시즌마다 이번 주기 월드컵 명단 + 그 시즌 대표 풀 → 소집 후보. 풀 파일은 월드컵 모드에서만 읽음 (4.6MB). AI 나라 선발은 그대로.
 0. **v2.0 월드컵 모드 (대표팀 감독)** (2026-11-16)
    - 파이프라인 `node tools/data_pipeline wcsquads --apply`: 위키백과 "{연도} FIFA World Cup squads" 선수 줄 → `data/worldcups/squads.json` (실명, Git 제외) · `data/locale/ko/wcplayers.json`. 위키백과 문서 → Wikidata 번호 (50개씩) → canonical 선수와 정확히 맞춤 (2002 ~ 2026 5759명 중 3704명), 나머지는 게임에 없는 선수 (wc 번호, 한국어는 Wikidata 이름표). `publish` 가 공개 번호 · 패러디 이름으로 `data-public/worldcups/squads.json`.
    - `engine/wcsquads.ts`: 명단 → 선수 (없으면 실명 대표 전용 선수, 능력 = 소속 리그 수준 + A매치 + 나이, retired · intlOnly). 본선 AI 나라는 실제 명단 (worldcup.ts callUpSquads).

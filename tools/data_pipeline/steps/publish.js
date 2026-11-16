@@ -294,6 +294,24 @@ async function publish({ apply = false, log = console.log } = {}) {
       });
     }
     out.set(path.join('worldcups', 'squads.json'), pubWc);
+    // 나라별 대표 선수 풀 (natpool): 같은 규칙으로 공개 번호 · 패러디 이름
+    const poolFile = path.join(DATA, 'worldcups', 'pools.json');
+    if (fs.existsSync(poolFile)) {
+      const pools = readJson(poolFile);
+      const pubPool = {};
+      let pn = 0;
+      for (const [nat, rows] of Object.entries(pools)) pubPool[nat] = rows.map((r) => {
+        pn++;
+        const known = r.id && playerMap[r.id];
+        const rid = known ? r.id : (r.wc ?? r.id);
+        const pid = known ? playerMap[r.id].id : pidOf(rid);
+        const name = known ? (playerMap[r.id].name ?? parodyEn(r.name, r.id)) : parodyEn(r.name, rid);
+        if (!known && wcKo[r.wc] && !koW[pid]) { const ko = parodyKo(wcKo[r.wc].name, rid); koW[pid] = { name: ko, short: ko.split(' ').pop() }; }
+        return { ...(known ? { id: pid } : { wc: pid }), name, birth: r.birth ? r.birth.slice(0, 7) + '-01' : null, from: r.from, to: r.to, caps: r.caps, goals: r.goals, pos: r.pos };
+      });
+      out.set(path.join('worldcups', 'pools.json'), pubPool);
+      log('  대표 선수 풀 ' + pn + '명');
+    }
     out.set(path.join('locale', 'ko', 'wcplayers.json'), koW);
     log('  월드컵 명단 ' + n + '명 · 새 선수 한국어 이름 ' + Object.keys(koW).length + '명');
   }

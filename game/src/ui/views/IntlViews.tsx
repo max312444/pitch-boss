@@ -139,6 +139,7 @@ export function IntlSquad() {
   const openProfile = useApp((s) => s.openProfile);
   const [msg, setMsg] = useState<string | null>(null);
   const [g, setG] = useState<string>('ALL');
+
   const me = w.clubs[w.userClubId];
   const size = squadSize(w);
   const inSquad = new Set(me.squad);

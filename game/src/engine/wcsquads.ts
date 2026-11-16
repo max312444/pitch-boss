@@ -47,3 +47,36 @@ export function playerFromRow(w: World, row: WcSquadRow, nation: string, year: n
   w.players[id] = p;
   return p;
 }
+
+// ── 나라별 대표 선수 풀 (data/worldcups/pools.json, 파이프라인 natpool) ──────────
+//  Wikidata 의 대표팀 소속 기간 · A매치 출전 · 골. 그 시즌에 대표였던 선수 = 소집 후보 (실제 최종 명단 + 예비 · 탈락)
+export interface WcPoolRow { id?: string; wc?: string; name: string; birth: string | null; from: number; to: number | null; caps: number; goals: number; pos: string }
+export type WcPools = Record<string, WcPoolRow[]>;
+let POOLS: WcPools = {};
+export const setWcPools = (p: WcPools | undefined) => { POOLS = p ?? {}; };
+/** 이 시즌 (예: 2009-10)에 대표였던 선수 */
+export function poolOf(nation: string, season: string): WcPoolRow[] {
+  const a = +season.slice(0, 4), b = a + 1;
+  return (POOLS[nation] ?? []).filter((r) => r.from <= b && (r.to == null || r.to >= a));
+}
+/** 이 대회 실제 최종 명단 선수 ID */
+export const finalSquadIds = (year: number, nation: string) => new Set((wcSquadsOf(year, nation) ?? []).map((r) => r.id ?? r.wc!));
+
+/** 대표 풀 선수 (게임에 없으면 만든다): 능력 = 그 나라 수준 + A매치 출전 + 나이 */
+export function playerFromPool(w: World, row: WcPoolRow, nation: string, season: string, base: number): PlayerState {
+  const id = row.id ?? row.wc!;
+  const have = w.players[id];
+  if (have) return have;
+  const y = +season.slice(0, 4) + 1;
+  const age = row.birth ? y - +row.birth.slice(0, 4) : 27;
+  const ageAdj = age < 21 ? -3 : age <= 24 ? -1 : age <= 30 ? 1 : age <= 33 ? -1 : -3;
+  const ovr = Math.max(48, Math.min(82, Math.round(base + (Math.min(row.caps, 80) / 80) * 6 + ageAdj)));
+  const rng = createRng((w.seed ^ hashSeed(`wcp:${id}`)) >>> 0);
+  const g = row.pos in POS_OF ? row.pos : 'MF';
+  const pos = rng.pick(POS_OF[g]);
+  const p = newPlayer({ id, name: row.name, birth: row.birth ?? `${y - 27}-06-15`, nation, height: null, foot: null, number: null, pos, attrs: makeAttrs(ovr, pos, rng), wage: 0, contract: null }, null, w.seed);
+  p.retired = true;
+  p.intlOnly = true;
+  w.players[id] = p;
+  return p;
+}

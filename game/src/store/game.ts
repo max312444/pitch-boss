@@ -4,7 +4,7 @@ import { applyMatchEvent, rollMatchEvent, type MatchEvent } from '../engine/matc
 import { shootout } from '../engine/cup';
 import { worldCupYear } from '../engine/worldcup';
 import { autoCallUp, cycleStage, intlNextSeason, setupIntl, squadSize, switchNation } from '../engine/intl';
-import { setWcSquads } from '../engine/wcsquads';
+import { setWcPools, setWcSquads } from '../engine/wcsquads';
 import { termsError, type DealTerms } from '../engine/addons';
 import { newCareerId, recordCareer } from './careers';
 import { changeRole, type Role } from '../engine/roles';
@@ -14,7 +14,7 @@ import { advanceDay, advanceToUserMatch, applyMatch, createWorld, prepareMatch, 
 import { playToEnd, reshapeTeam, setFormation, setTactics, step, substitute, swapSlots, type MatchState } from '../engine/match';
 import { createRng, type Rng } from '../engine/rng';
 import { seedTraits } from '../engine/traits';
-import { availableSeasons, clubKo, clubs as clubMasters, dataset, leagues, loadHistory, loadLeagueSeason, loadManagers, loadStandings, playerKo, realAvailable, registerGeneratedNames, registerMyClub, setDataset, worldCupsMeta, loadWcSquads } from '../data/db';
+import { availableSeasons, clubKo, clubs as clubMasters, dataset, leagues, loadHistory, loadLeagueSeason, loadManagers, loadStandings, playerKo, realAvailable, registerGeneratedNames, registerMyClub, setDataset, worldCupsMeta, loadWcSquads, loadWcPools } from '../data/db';
 import { currentAsData, myStart, newMyClubId, setupMyClub, squadNeeds, swapInput, weakestClub, type MyClubDesign, type MyClubState } from '../engine/myclub';
 import type { SquadPlayer } from '../data/types';
 import { closeSeason, nextSeasonOf, startNextSeason, type SeasonReport } from '../engine/season';
@@ -292,6 +292,7 @@ export const useGame = create<GameStore>((set, get) => {
       set({ loading: true });
       // 그 시즌 데이터가 있는 1부 리그를 모두 불러와 함께 진행한다
       setWcSquads(await loadWcSquads());   // 실제 월드컵 명단 (본선 · 월드컵 모드)
+      setWcPools(opts.intl ? await loadWcPools() : undefined);   // 나라별 대표 선수 풀 (월드컵 모드만, 파일이 커서)
       let input = await loadSeasonInput(season, opts.intl ? undefined : league);
       const seed = (Date.now() ^ Math.floor(Math.random() * 1e9)) >>> 0;
       // 나의 구단: 이 리그 꼴찌 자리를 대신 (그 구단 선수들은 FA 로)
@@ -1034,6 +1035,7 @@ export const useGame = create<GameStore>((set, get) => {
     async load(slot) {
       const world = await readSave(slot);
       setWcSquads(await loadWcSquads());
+      setWcPools(world?.intl ? await loadWcPools() : undefined);
       if (!world) return false;
       // 다른 데이터로 만든 세이브면 그 데이터로 바꾼 뒤 (새로 고침) 자동으로 이어서 불러온다
       const need = world.dataset ?? 'real';

@@ -5,7 +5,7 @@ import path from 'node:path';
 import { advanceDay, createWorld, seasonOver, type SeasonInput } from './world';
 import { closeSeason, nextSeasonOf, startNextSeason } from './season';
 import { autoCallUp, callUpPool, cycleStage, intlNextSeason, setupIntl, STAGE_KO, switchNation } from './intl';
-import { setWcSquads, type WcSquads } from './wcsquads';
+import { setWcPools, setWcSquads, type WcPools, type WcSquads } from './wcsquads';
 import { NT } from './worldcup';
 import { sortTable } from './standings';
 import type { ClubSeasonFile, LeagueSeasonFile } from '../data/types';
@@ -14,6 +14,7 @@ const DATA = path.resolve(__dirname, '../../../data-public');
 const LEAGUES = ['eng1', 'esp1'];   // 빠르게: 두 리그만 (나머지 나라 선수는 국내파로)
 const meta = JSON.parse(fs.readFileSync(path.join(DATA, 'meta', 'worldcups.json'), 'utf8'));
 setWcSquads(JSON.parse(fs.readFileSync(path.join(DATA, 'worldcups', 'squads.json'), 'utf8')) as WcSquads);
+setWcPools(JSON.parse(fs.readFileSync(path.join(DATA, 'worldcups', 'pools.json'), 'utf8')) as WcPools);
 const loadAll = (season: string): SeasonInput => ({
   season, worldCups: meta, leagues: LEAGUES.filter((l) => fs.existsSync(path.join(DATA, 'seasons', season, l))).map((id) => {
     const dir = path.join(DATA, 'seasons', season, id);
@@ -67,7 +68,8 @@ describe('월드컵 모드', () => {
     expect(w.intl!.fixtures.every((f) => f.name === '친선경기')).toBe(true);
     const pool = callUpPool(w);
     expect(pool.length).toBeGreaterThanOrEqual(23);
-    expect(w.intl!.domestic.length).toBeGreaterThan(10);   // 실제 2002 명단 중 게임에 없는 국내파
+    expect(w.intl!.domestic.length).toBeGreaterThan(40);   // 실제 2002 명단 + 그 시즌 대표 풀 (게임에 없는 선수)
+    console.log('한국 2001/02 소집 후보', pool.length, '명 (국내파', w.intl!.domestic.length, ')');
     expect(autoCallUp(w)).toHaveLength(23);
     playSeason(w);
     expect(w.worldCup!.groups.some((g) => g.teams.includes(NT('KOR')))).toBe(true);

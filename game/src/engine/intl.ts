@@ -20,7 +20,7 @@ import { overall } from './ratings';
 import { posGroup } from '../data/rating';
 import { guessFormation } from './squad';
 import { makeAttrs, namePools } from './youth';
-import { estimateOvr, playerFromRow, wcSquadsOf, type WcSquadRow } from './wcsquads';
+import { estimateOvr, playerFromPool, playerFromRow, poolOf, wcSquadsOf, type WcSquadRow } from './wcsquads';
 import { newPlayer } from './world';
 
 export { setWcSquads, wcSquadsOf, type WcSquadRow, type WcSquads } from './wcsquads';
@@ -144,12 +144,18 @@ export function autoCallUp(w: World): string[] {
 /** 이번 주기 국내파: 그 나라 실제 월드컵 명단(이번 주기, 없으면 가까운 대회) 중 게임에 없는 선수 + 모자라면 가상 */
 export function refreshDomestic(w: World) {
   const it = w.intl!;
-  const near = [it.cycle, it.cycle - 4, it.cycle + 4, it.cycle - 8, it.cycle + 8].find((y) => wcSquadsOf(y, it.nation)?.length);
-  const rows = near ? wcSquadsOf(near, it.nation)! : [];
   const dom: string[] = [];
-  for (const r of rows) {
-    const p = playerFromRow(w, r, it.nation, near!);
-    if (p.intlOnly) dom.push(p.id);
+  const add = (p: PlayerState) => { if (p.intlOnly && !dom.includes(p.id)) dom.push(p.id); };
+  // ① 이번 주기 실제 월드컵 최종 명단 (그 대회에 안 나갔으면 가까운 대회 명단 — 대표 풀이 없을 때만)
+  const pool = poolOf(it.nation, w.season);
+  const near = [it.cycle, ...(pool.length ? [] : [it.cycle - 4, it.cycle + 4])].find((y) => wcSquadsOf(y, it.nation)?.length);
+  const rows = near ? wcSquadsOf(near, it.nation)! : [];
+  for (const r of rows) add(playerFromRow(w, r, it.nation, near!));
+  // ② 이 시즌 대표 풀 (Wikidata 대표팀 소속 기간): 최종 명단에 못 든 예비 · 탈락 선수까지. 능력 기준 = 그 나라 수준
+  if (pool.length) {
+    const est = rows.map((r) => estimateOvr(r, near!)).sort((a, b) => a - b);
+    const base = est.length ? est[Math.floor(est.length / 2)] - 3 : fillerLevel(nationPlayers(w, it.nation).slice(0, 11).map(overall)) + 2;
+    for (const r of pool) add(playerFromPool(w, r, it.nation, w.season, base));
   }
   // 그래도 후보가 32명이 안 되면 가상 국내파
   const rng = createRng((w.seed ^ hashSeed(`dom:${it.cycle}:${it.nation}`)) >>> 0);
@@ -380,9 +386,9 @@ export function intlNextSeason(w: World, prevStage?: IntlStage) {
     if (gap <= -2) it.job = { reason: 'sacked', offers: jobOffers(w, 'down'), stage: prevStage, objective: it.objective };
     else if (gap >= 2) it.job = { reason: 'offer', offers: jobOffers(w, 'up'), stage: prevStage, objective: it.objective };
     it.cycle += 4;
-    refreshDomestic(w);
     it.objective = objectiveFor(w, it.nation);
   }
+  refreshDomestic(w);   // 시즌마다: 그 시즌 대표 풀
   const mine = w.clubs[NT(it.nation)];
   // 은퇴 · 국적 외 선수 빼고, 모자라면 자동으로 채움
   const pool = new Set(callUpPool(w).map((p) => p.id));

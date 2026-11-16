@@ -10,7 +10,7 @@ import type {
 } from './types';
 import type { PlayerHistory } from '../engine/traits';
 import type { ManagerData } from '../engine/managers';
-import type { WcSquads } from '../engine/wcsquads';
+import type { WcPools, WcSquads } from '../engine/wcsquads';
 import { customName, type NameKind } from './custom';
 import { realBoot } from './realStore';
 
@@ -24,6 +24,7 @@ const SETS = {
     history: import.meta.glob<PlayerHistory>('@pub/history/players.json', { import: 'default' }),
     managers: import.meta.glob<ManagerData>('@pub/history/managers.json', { import: 'default' }),
     wcsquads: import.meta.glob<WcSquads>('@pub/worldcups/squads.json', { import: 'default' }),
+    wcpools: import.meta.glob<WcPools>('@pub/worldcups/pools.json', { import: 'default' }),
   },
   dev: {
     meta: import.meta.glob<unknown>('@data/meta/*.json', { eager: true, import: 'default' }) as Meta<unknown>,
@@ -33,6 +34,7 @@ const SETS = {
     history: import.meta.glob<PlayerHistory>('@data/history/players.json', { import: 'default' }),
     managers: import.meta.glob<ManagerData>('@data/history/managers.json', { import: 'default' }),
     wcsquads: import.meta.glob<WcSquads>('@data/worldcups/squads.json', { import: 'default' }),
+    wcpools: import.meta.glob<WcPools>('@data/worldcups/pools.json', { import: 'default' }),
   },
 };
 /** 저장소의 data/ 폴더가 있으면 그것, 없으면 브라우저에 넣어 둔 실명 데이터 */
@@ -157,7 +159,7 @@ export async function devRealEntries(onProgress?: (done: number, total: number) 
   const rel = (k: string) => k.split('/data/').pop()!;
   const out: [string, string][] = [];
   for (const g of [SETS.dev.meta, SETS.dev.clubs, SETS.dev.ko] as Record<string, unknown>[]) for (const [k, v] of Object.entries(g)) out.push([rel(k), JSON.stringify(v)]);
-  const lazy = [...Object.entries(SETS.dev.seasons), ...Object.entries(SETS.dev.history), ...Object.entries(SETS.dev.managers), ...Object.entries(SETS.dev.wcsquads)] as [string, () => Promise<unknown>][];
+  const lazy = [...Object.entries(SETS.dev.seasons), ...Object.entries(SETS.dev.history), ...Object.entries(SETS.dev.managers), ...Object.entries(SETS.dev.wcsquads), ...Object.entries(SETS.dev.wcpools)] as [string, () => Promise<unknown>][];
   for (let i = 0; i < lazy.length; i++) {
     out.push([rel(lazy[i][0]), JSON.stringify(await lazy[i][1]())]);
     if (i % 100 === 0) onProgress?.(i, lazy.length);
@@ -176,4 +178,11 @@ let wcCache: Promise<WcSquads | undefined> | null = null;
 export function loadWcSquads(): Promise<WcSquads | undefined> {
   wcCache ??= (async () => { const f = Object.values((S as { wcsquads?: Record<string, () => Promise<WcSquads>> }).wcsquads ?? {})[0]; return f ? await f() : undefined; })().catch(() => undefined);
   return wcCache;
+}
+
+/** 나라별 대표 선수 풀 (data/worldcups/pools.json · 없으면 빈 값 → 월드컵 명단 · 게임 속 선수로만) */
+let poolCache: Promise<WcPools | undefined> | null = null;
+export function loadWcPools(): Promise<WcPools | undefined> {
+  poolCache ??= (async () => { const f = Object.values((S as { wcpools?: Record<string, () => Promise<WcPools>> }).wcpools ?? {})[0]; return f ? await f() : undefined; })().catch(() => undefined);
+  return poolCache;
 }
