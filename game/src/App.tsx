@@ -6,6 +6,7 @@ import { NewGameScreen } from './ui/screens/NewGameScreen';
 import { HubScreen } from './ui/screens/HubScreen';
 import { MatchScreen } from './ui/screens/MatchScreen';
 import { CrestGallery } from './ui/screens/CrestGallery';
+import { UpdateBanner } from './ui/components/UpdateBanner';
 import { useEffect, useState } from 'react';
 
 export function App() {
@@ -24,7 +25,6 @@ export function App() {
   }, [load, go]);
 
   if (import.meta.env.DEV && location.search.includes('crests')) return <CrestGallery />;
-  if (screen === 'newgame') return <NewGameScreen />;
-  if (screen === 'hub' && hasWorld) return inMatch ? <MatchScreen /> : <HubScreen />;
-  return <TitleScreen />;
+  const view = screen === 'newgame' ? <NewGameScreen /> : screen === 'hub' && hasWorld ? (inMatch ? <MatchScreen /> : <HubScreen />) : <TitleScreen />;
+  return <>{view}<UpdateBanner /></>;
 }

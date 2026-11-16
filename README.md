@@ -135,6 +135,10 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 > 버전: `game/src/version.ts` (첫 화면 표시). 기능 추가 +0.1 · 작은 수정 +0.0.1, 바꿀 때마다 여기에 적는다.
 > 같은 파일의 `CHANGELOG` 맨 위에 플레이어용 한 줄 요약도 넣는다 → 첫 화면 '업데이트 소식' (새 버전을 처음 본 뒤 24시간 표시, `UpdateNotes.tsx`).
 
+0. **v0.26 업데이트 알림 · 개발 서버 상태 두 벌 고침** (2026-11-16)
+   - 업데이트 알림: `vite-build-id.ts` 가 빌드 번호를 `build.json` 으로 (개발 서버: 게임 코드 · 데이터가 바뀔 때마다 새 번호, `data/photos` · 수집 중간 파일 제외 / 배포판: 빌드 때 파일로). `ui/components/UpdateBanner.tsx` 가 처음 번호와 비교 (개발 4초 · 배포 5분마다 + 앱으로 돌아올 때) → 다르면 화면 위 띠 + 새로 고침 버튼. `sw.js` 는 build.json 을 저장하지 않음.
+   - 증상: 새 게임 → 타이틀로 튕김 (이어하기로는 들어가짐), 업데이트 뒤 불러오기 안 됨. 원인: Vite HMR 이 바뀐 파일을 `?t=` 주소로 내주면서 `store/game.ts` 가 두 주소로 두 번 실행 → 새 게임 화면과 App 이 서로 다른 상태를 봄 (새로 고침해도 그대로, 서버를 다시 켜야 풀림). `vite.config.ts` `server.hmr: false` 로 막음 (고친 뒤 새로 고침으로 반영). 배포판과는 무관.
+   - 확인: v0.20 · v0.24 에서 만든 세이브를 지금 버전에서 불러오기 · 이어하기 · 한 시즌 끝까지 + 다음 시즌 넘기기까지 오류 없음.
 0. **v0.25 내 데이터 (이름 · 사진 · 옮기기)** (2026-11-16)
    - `data/custom.ts`: 이 기기 브라우저(IndexedDB `pitchboss-custom`)에 바꾼 이름 `names.{players,clubs,managers}[id] = {name, short?}` · 사진 Blob (`id` 또는 `id|시즌`, 300×360 JPEG). `main.tsx` 가 `bootCustom()` 으로 먼저 읽음. `db.ts` `playerKo` · `clubKo` · `managerKo` 가 바꾼 이름 먼저. `photos.ts` `usePhotos` 가 기기 사진 먼저 (개발 서버 없어도 사진 칸 사용, `server` 일 때만 자동 수집 · PC 폴더 기능).
    - UI: 사진 창 '이 기기에 사진 넣기' → `PhotoCrop` (끌기 · 확대 · 모든 시즌/이번 시즌), 이름 옆 ✎ `NameEdit` (선수 정보 · 구단 창 · 감독 한 줄), 데이터베이스 `MyData` (이름 목록 CSV 내려받기 · 올리기 · 예시, 사진 여러 장, 내 데이터 내보내기 · 가져오기 · 지우기).

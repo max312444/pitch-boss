@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'node:path';
 import { photosPlugin } from './vite-photos';
+import { buildIdPlugin } from './vite-build-id';
 
 // 배포용 빌드 (PUBLIC_ONLY=1): 실명 데이터(data/) 대신 빈 폴더를 끼워 절대 묶이지 않게 한다
 //  BASE: 배포 주소 경로 (GitHub Pages 는 /pitch-boss/)
@@ -20,11 +21,13 @@ export default defineConfig({
   ...(testing ? {} : { root: here }),
   base: process.env.BASE ?? '/',
   // 선수 사진: 내 PC 의 data/photos (개발 서버 전용, vite-photos.ts)
-  plugins: [react(), tailwindcss(), ...(publicOnly ? [] : [photosPlugin(path.resolve(here, '../data'), path.resolve(here, '../tools'))])],
+  plugins: [react(), tailwindcss(), buildIdPlugin(),...(publicOnly ? [] : [photosPlugin(path.resolve(here, '../data'), path.resolve(here, '../tools'))])],
   resolve: { alias: { '@': path.resolve(here, 'src'), '@data': path.resolve(here, publicOnly ? 'empty-data' : '../data'), '@pub': path.resolve(here, '../data-public') } },
   // 게임 데이터는 저장소 루트의 data/ 폴더를 그대로 읽는다
   // data/_pipeline (위키백과 캐시 · 백업 · 보고서, 수만 개 파일)은 감시하지 않는다 — 감시하다 메모리 부족으로 꺼짐
-  server: { fs: { allow: ['..'] }, watch: { ignored: ['**/data/_pipeline/**', '**/tools/**'] } },
+  // hmr: false — 켜 둔 채 코드를 고치면 상태 모듈(store/game.ts)이 두 주소(?t=)로 갈라져 두 벌이 생기고,
+  //  새 게임이 타이틀로 튕기거나 불러오기가 안 됐다 (새로 고침해도 그대로, 2026-11-16). 고친 뒤에는 새로 고침으로 반영
+  server: { hmr: false, fs: { allow: ['..'] }, watch: { ignored: ['**/data/_pipeline/**', '**/tools/**'] } },
   // 시즌을 통째로 돌리는 테스트가 많아 기본 제한 시간을 넉넉히
   test: { include: ['src/**/*.test.ts'], testTimeout: 20000 },
 });
