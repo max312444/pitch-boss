@@ -1,3 +1,4 @@
+import { termsLine } from '../../engine/addons';
 import { NameEdit } from '../components/NameEdit';
 import { sagaSummary } from '../../engine/saga';
 import { buyoutOf } from '../../engine/clauses';
@@ -229,7 +230,7 @@ export function PlayerPanel({ p, age, ko, nation, actions, club, sheet }: { p: P
         <ul className="space-y-1 text-[13px] text-mid">
           {pressNotes(p).map((n) => <li key={n} className="flex gap-2"><span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-neon/70" />{n}</li>)}
         </ul>
-        <div className="mt-4 text-[12px] text-lo">주급 {money(p.wage)} · 계약 {p.contract ? p.contract.slice(0, 7).replace('-', '.') + (p.contractGen ? ' (게임 설정)' : '') : p.clubId ? '정보 없음' : '없음 (FA)'}{p.clubId && !p.clubId.startsWith('nt-') ? ` · 바이아웃 ${buyoutOf(w, p) ? money(buyoutOf(w, p)) : '없음'}${relClauseOf(w, p) ? ` · 강등 조항 ${money(relClauseOf(w, p))}` : ''}` : ''} · 최근 폼 {p.recentRatings.length ? formAvg(p).toFixed(1) : '–'}</div>
+        <div className="mt-4 text-[12px] text-lo">주급 {money(p.wage)} · 계약 {p.contract ? p.contract.slice(0, 7).replace('-', '.') + (p.contractGen ? ' (게임 설정)' : '') : p.clubId ? '정보 없음' : '없음 (FA)'}{p.clubId && !p.clubId.startsWith('nt-') ? ` · 바이아웃 ${buyoutOf(w, p) ? money(buyoutOf(w, p)) : '없음'}${relClauseOf(w, p) ? ` · 강등 조항 ${money(relClauseOf(w, p))}` : ''}` : ''} · 최근 폼 {p.recentRatings.length ? formAvg(p).toFixed(1) : '–'}{termsLine(w, p, clubKo) && <span className="block text-mid">이적 조건: {termsLine(w, p, clubKo)}</span>}</div>
       </div>
       <PhotoCredit id={p.id} />
       {actions && <div className="shrink-0 border-t border-line px-5 py-4">{actions}</div>}

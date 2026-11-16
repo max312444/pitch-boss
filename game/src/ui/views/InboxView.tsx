@@ -29,6 +29,16 @@ export function describe(e: GameEvent, w: World): { tag: string; tone: string; t
     }
     case 'offer':
       return { tag: '제안', tone: 'text-amber', title: `${playerKo(e.player, w.players[e.player]?.name ?? e.player)} 영입 제안 · ${clubKo(e.from)}`, body: `이적료 ${money(e.fee)} · 이적 화면 '받은 제안'에서 수락 · 거절 · 역제안` };
+    case 'clause': {
+      const name = playerKo(e.player, w.players[e.player]?.name ?? e.player);
+      const c = clubKo(e.club);
+      if (e.kind === 'sellOn') return e.dir === 'in'
+        ? { tag: '셀온', tone: 'text-neon', title: `셀온 수입 ${money(e.amount)} · ${name}`, body: `예전에 판 ${name}${josa(name, '이', '가')} ${c}${josa(c, '으로', '로')} 이적해 이적료 ${money(e.fee ?? 0)}의 ${e.pct}%를 받았습니다` }
+        : { tag: '셀온', tone: 'text-amber', title: `셀온 지급 ${money(e.amount)} · ${name}`, body: `이적료 ${money(e.fee ?? 0)} 중 ${e.pct}%는 셀온 조항에 따라 ${c}에 나갔습니다` };
+      return e.dir === 'in'
+        ? { tag: '보너스', tone: 'text-neon', title: `보너스 수입 ${money(e.amount)} · ${name}`, body: `${c}에서 출전 ${e.apps}경기를 채워 조건부 이적료를 받았습니다` }
+        : { tag: '보너스', tone: 'text-amber', title: `보너스 지급 ${money(e.amount)} · ${name}`, body: `우리 구단에서 출전 ${e.apps}경기를 채워 ${c}에 조건부 이적료를 냈습니다` };
+    }
     case 'buyout': {
       const name = playerKo(e.player, w.players[e.player]?.name ?? e.player);
       return { tag: '이적', tone: 'text-red', title: `${clubKo(e.to)}${josa(clubKo(e.to), '이', '가')} ${name}의 바이아웃을 냈습니다`, body: `바이아웃 ${money(e.fee)} · 계약 조항이라 거절할 수 없어 선수가 팀을 떠났습니다 (바이아웃은 재계약 때 높일 수 있습니다)` };

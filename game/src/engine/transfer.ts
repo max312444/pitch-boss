@@ -12,6 +12,7 @@ import { book } from './finance';
 import { WAGE_SLACK, ruleWageRoom, withinRules } from './rules';
 import { youthIntake } from './youth';
 import { aiBuyoutRaids, buyoutOf, buyoutWageFactor } from './clauses';
+import { aiOfferBonus, aiTerms, sellOnFactor, setTerms, settleSellOn, termsWorth, type DealTerms } from './addons';
 import { bargainOf } from './firesale';
 
 const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v));
@@ -166,7 +167,7 @@ export function askingPrice(w: World, p: PlayerState): number {
 }
 
 /** 파는 구단의 판단 */
-export function evaluateBid(w: World, p: PlayerState, buyer: string, fee: number): BidResult {
+export function evaluateBid(w: World, p: PlayerState, buyer: string, fee: number, terms?: DealTerms): BidResult {
   if (!p.clubId) return { decision: 'accept', ask: 0, reason: '자유계약 선수' };
   if (p.loan) return { decision: 'reject', ask: 0, reason: '임대 중인 선수라 지금은 이적할 수 없습니다' };
   if (p.precontract) return { decision: 'reject', ask: 0, reason: '이미 다른 구단과 사전 계약(보스만)한 선수입니다' };
@@ -184,10 +185,13 @@ export function evaluateBid(w: World, p: PlayerState, buyer: string, fee: number
   const forcing = p.saga?.kind === 'move' && p.saga.target === buyer && p.saga.club === p.clubId ? p.saga.stage : 0;
   const ask = askingPrice(w, p) * (1 - 0.1 * forcing) * (buyer === w.userClubId ? transferFactor(w).ask : 1);   // 설정: 이적 협상 난이도
   const rank = forcing ? 99 : rankInClub(w, p);
+  // 셀온 · 보너스: 파는 구단은 이적료에 조건의 값어치를 더해 본다 (바이아웃 · 급매물은 현금만)
+  const cash = fee;
+  fee = cash + termsWorth(w, p, cash, terms);
   if (seller.squad.length <= 18) return { decision: 'reject', ask, reason: '선수단 인원이 부족해 팔 수 없다고 합니다' };
   // 핵심 선수는 비슷한 급 이상 구단이 크게 쓸 때만
   if (rank <= 2 && w.clubs[buyer].reputation + 5 < seller.reputation && fee < ask * 1.5) return { decision: 'reject', ask, reason: '팀의 핵심 선수라 팔 생각이 없다고 합니다' };
-  if (fee >= ask) return { decision: 'accept', ask, reason: '제안을 받아들였습니다' };
+  if (fee >= ask) return { decision: 'accept', ask, reason: fee > cash ? '조건을 포함해 제안을 받아들였습니다' : '제안을 받아들였습니다' };
   if (fee >= ask * 0.75) return { decision: 'counter', ask, reason: `원하는 가격보다 낮습니다. ${Math.round(ask / 1e5) / 10}M 유로면 보내겠다고 합니다` };
   return { decision: 'reject', ask, reason: '원하는 가격보다 한참 낮습니다. 금액을 크게 올려야 합니다' };
 }
@@ -232,15 +236,17 @@ export function breakTalks(w: World, playerId: string) {
 }
 
 // ── 이적 실행 ────────────────────────────────────────
-export function completeTransfer(w: World, p: PlayerState, to: string, fee: number, wage: number, years: number): GameEvent {
+export function completeTransfer(w: World, p: PlayerState, to: string, fee: number, wage: number, years: number, terms?: DealTerms): GameEvent {
   const from = p.clubId;
+  const net = settleSellOn(w, p, from, to, fee);   // 이 선수에게 걸려 있던 셀온: 원래 구단 몫을 떼고 파는 구단에
+  setTerms(p, from, to, terms);                    // 이번 계약의 셀온 · 보너스
   p.role = undefined;   // 새 구단에서 역할은 새로 (사용자는 계약 때 약속)
   if (from) {
     const s = w.clubs[from];
     s.squad = s.squad.filter((id) => id !== p.id);
-    book(w, from, 'sales', fee);
-    s.sales = (s.sales ?? 0) + fee;               // 재정 규정 한도에 더해지는 판매 수입
-    s.finance.transferBudget += Math.round(fee * 0.5);
+    book(w, from, 'sales', net);
+    s.sales = (s.sales ?? 0) + net;               // 재정 규정 한도에 더해지는 판매 수입
+    s.finance.transferBudget += Math.round(net * 0.5);
     if (s.lineup) s.lineup = { starters: s.lineup.starters.map((x) => (x === p.id ? null : x)), bench: s.lineup.bench.filter((x) => x !== p.id) };
   }
   const b = w.clubs[to];
@@ -268,6 +274,7 @@ export function completeTransfer(w: World, p: PlayerState, to: string, fee: numb
 
 export function releasePlayer(w: World, p: PlayerState): void {
   if (!p.clubId) return;
+  p.sellOn = undefined; p.addOn = undefined;   // 방출하면 이적 조건도 끝
   w.offers = (w.offers ?? []).filter((o) => o.player !== p.id);
   const c = w.clubs[p.clubId];
   c.squad = c.squad.filter((id) => id !== p.id);
@@ -325,18 +332,21 @@ function userOffers(w: World, rng: Rng, active: World['clubs'][string][]) {
     const r50 = (v: number) => Math.round(v / 50000) * 50000;
     const fee = r50(Math.min(value * (onList ? 0.75 + rng.next() * 0.3 : 1 + rng.next() * 0.25), budget));
     const max = Math.max(fee, r50(Math.min(value * (onList ? 0.95 + rng.next() * 0.25 : 1.2 + rng.next() * 0.4), budget)));
-    offers.push({ id: `${w.date}-${club.id}-${id}`, player: id, from: club.id, fee, max, tries: 0, date: w.date, expires: addDays(w.date, 7), ...(onList ? {} : { unsolicited: true }) });
+    const bonus = aiOfferBonus(rng, fee);
+    offers.push({ id: `${w.date}-${club.id}-${id}`, player: id, from: club.id, fee, max, tries: 0, date: w.date, expires: addDays(w.date, 7), ...(onList ? {} : { unsolicited: true }), ...(bonus ? { bonus } : {}) });
     w.inbox.push({ type: 'offer', date: w.date, player: id, from: club.id, fee });
   }
 }
 
 /** 받은 제안에 내가 부른 값: 받아들이거나, 금액을 올리거나, 거절. 3번 안에 합의 못 하면 그 구단은 이번 이적시장 동안 손을 뗀다 */
-export function counterOffer(w: World, o: TransferOffer, ask: number): { result: 'accept' | 'raise' | 'reject' | 'withdraw'; fee: number; reason: string } {
-  const max = o.max ?? Math.round(o.fee * 1.15 / 50000) * 50000;
+export function counterOffer(w: World, o: TransferOffer, ask: number, sellOn = 0): { result: 'accept' | 'raise' | 'reject' | 'withdraw'; fee: number; reason: string } {
+  // 셀온을 요구하면 사는 구단은 그 값어치만큼 비싸게 본다 (받아들이면 이 제안에 셀온이 붙음)
+  const extra = sellOn ? Math.round(ask * (sellOn / 100) * sellOnFactor(w, w.players[o.player])) : 0;
+  const max = (o.max ?? Math.round(o.fee * 1.15 / 50000) * 50000) - extra;
   o.tries = (o.tries ?? 0) + 1;
   const M = (v: number) => `${Math.round(v / 1e5) / 10}M 유로`;
   // 지금 제안보다 낮게 부르면 지금 제안 금액 그대로
-  if (ask <= max) { o.fee = Math.max(ask, o.fee); return { result: 'accept', fee: o.fee, reason: `${M(o.fee)}에 동의했습니다` }; }
+  if (ask <= max) { o.fee = Math.max(ask, Math.min(o.fee, max)); if (sellOn) o.sellOn = sellOn; return { result: 'accept', fee: o.fee, reason: `${M(o.fee)}${sellOn ? ` + 셀온 ${sellOn}%` : ''}에 동의했습니다` }; }
   const left = MAX_TRIES - o.tries;
   if (left <= 0) {
     w.offers = (w.offers ?? []).filter((x) => x.id !== o.id);
@@ -346,8 +356,8 @@ export function counterOffer(w: World, o: TransferOffer, ask: number): { result:
   if (ask <= max * 1.3) {
     // 부른 값과 한도 사이에서 조금씩 올린다 (마지막 기회면 한도까지)
     const step = left === 1 ? max : Math.round((o.fee + (max - o.fee) * 0.6) / 50000) * 50000;
-    o.fee = Math.max(o.fee, Math.min(max, step));
-    return { result: 'raise', fee: o.fee, reason: `원하는 가격보다 높습니다. ${M(o.fee)}까지 올리겠습니다` };
+    o.fee = Math.max(Math.min(o.fee, max), Math.min(max, step));
+    return { result: 'raise', fee: o.fee, reason: sellOn ? `셀온 ${sellOn}%를 넣으면 ${M(o.fee)}까지 내겠습니다` : `원하는 가격보다 높습니다. ${M(o.fee)}까지 올리겠습니다` };
   }
   return { result: 'reject', fee: o.fee, reason: `너무 비쌉니다. ${M(o.fee)} 제안은 그대로 유효합니다` };
 }
@@ -453,7 +463,8 @@ export function aiTransferDay(w: World, rng: Rng): GameEvent[] {
         const offers = (w.offers ??= []);
         if (!offers.some((o) => o.player === target.id && o.from === club.id)) {
           const f0 = Math.round((fee * (0.85 + rng.next() * 0.25)) / 50000) * 50000;
-          const offer: TransferOffer = { id: `${w.date}-${club.id}-${target.id}`, player: target.id, from: club.id, fee: f0, max: Math.max(f0, Math.round(Math.min(fee * 1.2, club.finance.transferBudget) / 50000) * 50000), tries: 0, date: w.date, expires: addDays(w.date, 7) };
+          const bonus = aiOfferBonus(rng, f0);
+          const offer: TransferOffer = { id: `${w.date}-${club.id}-${target.id}`, player: target.id, from: club.id, fee: f0, max: Math.max(f0, Math.round(Math.min(fee * 1.2, club.finance.transferBudget) / 50000) * 50000), tries: 0, date: w.date, expires: addDays(w.date, 7), ...(bonus ? { bonus } : {}) };
           offers.push(offer);
           w.inbox.push({ type: 'offer', date: w.date, player: target.id, from: club.id, fee: offer.fee });
         }
@@ -461,7 +472,7 @@ export function aiTransferDay(w: World, rng: Rng): GameEvent[] {
       }
       if (target.clubId && evaluateBid(w, target, club.id, fee).decision !== 'accept') continue;
       if (!playerWillJoin(w, target, club.id, wage).ok) continue;
-      events.push(completeTransfer(w, target, club.id, fee, wage, years));
+      events.push(completeTransfer(w, target, club.id, fee, wage, years, target.clubId ? aiTerms(w, rng, target, fee) : undefined));
       // 선수단 정리: 26명이 넘으면 같은 포지션 묶음에서 가장 약한 선수를 내보낸다 (주급 부담 줄이기)
       if (club.squad.length > 26) {
         const out = club.squad.map((id) => w.players[id]).filter((p) => p.id !== target.id && posGroup(p.pos) === posGroup(target.pos)).sort((a, b) => overall(a) - overall(b))[0];

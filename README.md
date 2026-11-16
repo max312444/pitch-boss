@@ -135,6 +135,9 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 > 버전: `game/src/version.ts` (첫 화면 표시). 기능 추가 +0.1 · 작은 수정 +0.0.1, 바꿀 때마다 여기에 적는다.
 > 같은 파일의 `CHANGELOG` 맨 위에 플레이어용 한 줄 요약도 넣는다 → 첫 화면 '업데이트 소식' (새 버전을 처음 본 뒤 24시간 표시, `UpdateNotes.tsx`).
 
+0. **v0.27 셀온 · 보너스 조항** (2026-11-16)
+   - `engine/addons.ts`: 선수 `sellOn {club, pct}` (다음 이적 때 `completeTransfer` → `settleSellOn` 이 파는 구단 몫에서 떼어 원래 구단에) · `addOn {club, payer, amount, apps, done}` (world.ts 출전 기록 → `addOnApp`, 채우면 그날 지급, 그 전에 떠나면 없어짐). 파는 구단 판단 `evaluateBid(…, terms)` 는 `termsWorth` 를 이적료에 더함 (셀온 × 나이 계수 0.75/0.5/0.3/0.1 · 보너스 × 가능성 0.75/0.55/0.35). 받은 제안 역제안 `counterOffer(…, sellOn)` 은 사는 구단 한도에서 셀온 값어치를 뺌. AI 제안 30% 에 보너스 (`aiOfferBonus`), AI 끼리 이적에 가끔 조건 (`aiTerms`). 알림 `clause` 이벤트. 보너스는 이적료 절반까지 (`termsError`).
+   - UI: 영입 협상 이적료 단계에 셀온 · 보너스 선택 (구단이 보는 값어치 표시), 받은 제안 협상에 셀온 요구 · 보너스 표시, 선수 정보 '이적 조건' 줄. 테스트 `addons.test.ts`.
 0. **v0.26 업데이트 알림 · 개발 서버 상태 두 벌 고침** (2026-11-16)
    - 업데이트 알림: `vite-build-id.ts` 가 빌드 번호를 `build.json` 으로 (개발 서버: 게임 코드 · 데이터가 바뀔 때마다 새 번호, `data/photos` · 수집 중간 파일 제외 / 배포판: 빌드 때 파일로). `ui/components/UpdateBanner.tsx` 가 처음 번호와 비교 (개발 4초 · 배포 5분마다 + 앱으로 돌아올 때) → 다르면 화면 위 띠 + 새로 고침 버튼. `sw.js` 는 build.json 을 저장하지 않음.
    - 증상: 새 게임 → 타이틀로 튕김 (이어하기로는 들어가짐), 업데이트 뒤 불러오기 안 됨. 원인: Vite HMR 이 바뀐 파일을 `?t=` 주소로 내주면서 `store/game.ts` 가 두 주소로 두 번 실행 → 새 게임 화면과 App 이 서로 다른 상태를 봄 (새로 고침해도 그대로, 서버를 다시 켜야 풀림). `vite.config.ts` `server.hmr: false` 로 막음 (고친 뒤 새로 고침으로 반영). 배포판과는 무관.

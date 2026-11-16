@@ -205,7 +205,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
                 <Crest clubId={o.from} size={24} />
                 <div className="min-w-0 flex-1 basis-[calc(100%-40px)] lg:basis-auto">
                   <div className="text-[14px] font-medium">{playerKo(p.id, p.name)} <span className="text-lo">← {clubKo(o.from)}</span></div>
-                  <div className="text-[12px] text-lo">제안 이적료 <span className="tnum font-semibold text-neon">{money(o.fee)}</span> · 시장 가치 {money(marketValue(w, p))} · {koDate(o.expires)}까지{o.unsolicited ? ' · 이적 명단에 없는 선수' : ''}{o.tries ? ` · 역제안 ${o.tries}회` : ''}</div>
+                  <div className="text-[12px] text-lo">제안 이적료 <span className="tnum font-semibold text-neon">{money(o.fee)}</span>{o.bonus ? <span className="text-mid"> + 보너스 {money(o.bonus.amount)} (출전 {o.bonus.apps}경기)</span> : ''} · 시장 가치 {money(marketValue(w, p))} · {koDate(o.expires)}까지{o.unsolicited ? ' · 이적 명단에 없는 선수' : ''}{o.tries ? ` · 역제안 ${o.tries}회` : ''}</div>
                 </div>
                 <button onClick={() => setSellTalk(o.id)} className="h-9 rounded-lg bg-ink-700 px-4 text-[13px] font-semibold text-hi transition-colors hover:bg-ink-750">협상</button>
                 <button onClick={() => setNotice(answerOffer(o.id, false))} className="h-9 rounded-lg px-4 text-[13px] text-mid ring-1 ring-line transition-colors hover:text-hi">거절</button>

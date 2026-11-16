@@ -1,4 +1,5 @@
 // 월드 생성과 하루 진행 (advanceDay)
+import { addOnApp } from './addons';
 import { ffpMidSeason, ffpOf } from './ffp';
 import { clinchCheck } from './clinch';
 import { coachDay } from './coaches';
@@ -242,6 +243,7 @@ export function applyMatch(w: World, f: Fixture, m: MatchState) {
     const started = m.home.played[id]?.from === 0 || m.away.played[id]?.from === 0;
     if (cup) cs(id).apps++;
     else if (started) p.stats.apps++; else p.stats.subApps++;
+    if (p.addOn) addOnApp(w, p);   // 보너스 조건 (출전 경기 수)
     p.fitness = fit[id] ?? p.fitness;
     p.sharpness = clamp(p.sharpness + (min / 90) * 14, 0, 100);
     const r = s.ratings[id];

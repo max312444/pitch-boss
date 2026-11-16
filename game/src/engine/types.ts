@@ -83,6 +83,10 @@ export interface PlayerState {
   /** 바이아웃 금액 (0 = 없음) · 정한 구단 (구단이 바뀌면 새로 정함, clauses.ts) */
   buyout?: number;
   buyoutClub?: string;
+  /** 셀온: 다음 이적 때 이적료의 pct% 를 club 에 (engine/addons.ts) */
+  sellOn?: { club: string; pct: number };
+  /** 보너스: payer(지금 구단)가 이 선수 출전 apps 경기를 채우면 club 에 amount (done = 지금까지) */
+  addOn?: { club: string; payer: string; amount: number; apps: number; done: number };
   /** 보스만 사전 계약: 계약이 끝나면 이 구단으로 (bosman.ts) */
   /** 강등 조항 금액 (0 = 없음) · 정한 구단 (firesale.ts) */
   relClause?: number;
@@ -230,6 +234,8 @@ export type GameEvent =
   | { type: 'injury'; date: string; player: string; club: string; days: number; label: string }
   | { type: 'seasonEnd'; date: string; league: string; champion: string }
   | { type: 'info'; date: string; text: string }
+  /** 이적 조건 정산 (engine/addons.ts): 셀온 · 보너스, 받음(in) · 냄(out) */
+  | { type: 'clause'; date: string; player: string; kind: 'sellOn' | 'bonus'; dir: 'in' | 'out'; amount: number; club: string; pct?: number; fee?: number; apps?: number }
   /** 스카우트 보고서: 선수 한 명 · 리그 관찰 */
   | { type: 'scout'; date: string; player?: string; club?: string; league?: string; count?: number }
   /** 관심 선수 소식 (급매물 · 자유계약 · 보스만 · 계약 만료 임박) */
@@ -279,7 +285,7 @@ export type GameEvent =
 export interface RetireNews { player: string; club: string | null; season: string; ovr: number; mine: boolean; /** leave = 계약 만료로 팀을 떠남 (없으면 은퇴) */ kind?: 'retire' | 'leave' }
 
 /** 영입 협상 진행 상황 (창을 닫았다 열어도 유지) */
-export interface Talk { fee: number; wage: number; agreed?: number; until: string }
+export interface Talk { fee: number; wage: number; agreed?: number; until: string; /** 합의한 조건 (셀온 · 보너스) */ terms?: import('./addons').DealTerms }
 
 /** 사용자 선수에게 들어온 영입 제안 */
 export interface TransferOffer {
@@ -295,6 +301,10 @@ export interface TransferOffer {
   tries?: number;
   /** 이적 명단에 없던 선수에게 온 제안 */
   unsolicited?: boolean;
+  /** 사는 구단이 붙인 보너스 (출전 apps 경기 채우면 amount) */
+  bonus?: { amount: number; apps: number };
+  /** 내가 역제안으로 받아 낸 셀온 % */
+  sellOn?: number;
 }
 
 export interface SeasonRecord {

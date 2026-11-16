@@ -2,6 +2,7 @@
 //  ① 이적료: 파는 구단과 합의 (자유계약 선수는 건너뜀)
 //  ② 개인 계약: 선수와 주급 · 계약 기간 합의
 // 이적료 · 주급 각각 3번 안에 합의 못 하면 협상 결렬 → 이번 이적시장 동안 이 선수와 다시 협상 불가
+import { BONUS_APPS, bonusCap, SELL_ON_PCTS, termsWorth, type DealTerms } from '../../engine/addons';
 import { appealOf } from '../../engine/appeal';
 import { autoRole, ROLE_KO, ROLES, type Role } from '../../engine/roles';
 import { OvrText } from './Scout';
@@ -54,6 +55,12 @@ export function NegotiationModal({ p, onClose }: { p: PlayerState; onClose: () =
   const relClause = club && !bargain ? relClauseOf(w, p) : 0;
   const [stage, setStage] = useState<'fee' | 'contract'>(fa || talk?.agreed != null ? 'contract' : 'fee');
   const [fee, setFee] = useState(Math.round((talk?.agreed ?? value * 0.9) / 1e5) / 10);
+  // 이적 조건 (선택): 셀온 % · 보너스 (출전 경기 수 · 금액 M)
+  const [sellOn, setSellOn] = useState(0);
+  const [bApps, setBApps] = useState(0);
+  const [bAmt, setBAmt] = useState(0);
+  const terms = (_f?: number): DealTerms | undefined => (sellOn || (bApps && bAmt > 0) ? { ...(sellOn ? { sellOn } : {}), ...(bApps && bAmt > 0 ? { bonus: { amount: Math.round(bAmt * 1e6), apps: bApps } } : {}) } : undefined);
+  const termsText = (t?: DealTerms) => (t ? [t.sellOn ? `셀온 ${t.sellOn}%` : '', t.bonus ? `보너스 ${money(t.bonus.amount)} (출전 ${t.bonus.apps}경기)` : ''].filter(Boolean).join(' · ') : '');
   const [wage, setWage] = useState(Math.round(demand / 1000));
   const [years, setYears] = useState(3);
   const [role, setRole] = useState<Role>(() => autoRole(w, p, w.userClubId));
@@ -61,7 +68,7 @@ export function NegotiationModal({ p, onClose }: { p: PlayerState; onClose: () =
   const [msgs, setMsgs] = useState<Msg[]>(() => [
     bosman ? { who: 'sys', text: `계약이 이번 시즌 끝에 끝나는 선수입니다 (보스만). 이적료 없이 사전 계약하면 ${p.contract?.slice(0, 4)}년 7월에 합류합니다.` }
       : fa ? { who: 'sys', text: '자유계약 선수입니다. 이적료 없이 주급과 계약 기간만 협상하면 됩니다.' }
-      : talk?.agreed != null ? { who: 'sys', text: `${clubKo(club!)}와 이적료 ${money(talk.agreed)}에 합의한 상태입니다. 선수와 개인 계약을 협상하세요.` }
+      : talk?.agreed != null ? { who: 'sys', text: `${clubKo(club!)}와 이적료 ${money(talk.agreed)}${talk.terms ? ` (${[talk.terms.sellOn ? `셀온 ${talk.terms.sellOn}%` : '', talk.terms.bonus ? `보너스 ${money(talk.terms.bonus.amount)} · 출전 ${talk.terms.bonus.apps}경기` : ''].filter(Boolean).join(' · ')})` : ''}에 합의한 상태입니다. 선수와 개인 계약을 협상하세요.` }
       : bargainOf(w, p) ? { who: 'sys', tone: 'warn', text: bargainOf(w, p)!.kind === 'fire' ? `${clubKo(club!)}가 재정 위기로 ${money(bargainOf(w, p)!.price)}에 내놓은 선수입니다 (시장 가치보다 싸게). 이 금액이면 핵심 선수라도 보냅니다.` : `강등 조항이 발동한 선수입니다. ${money(bargainOf(w, p)!.price)}이면 ${clubKo(club!)}는 거절할 수 없습니다.` }
       : { who: 'sys', text: `${clubKo(club!)}에 이적료를 제안하세요. 구단이 원하는 금액은 알려지지 않았습니다.` },
     ...(talkBanned(w, p.id) ? [{ who: 'sys' as Who, tone: 'bad' as const, text: '이미 협상이 결렬된 선수입니다. 이번 이적시장 동안은 다시 협상할 수 없습니다.' }] : []),
@@ -79,9 +86,10 @@ export function NegotiationModal({ p, onClose }: { p: PlayerState; onClose: () =
   const push = (...m: Msg[]) => setMsgs((x) => [...x, ...m]);
   const fail = () => { setBroken(true); push({ who: 'sys', tone: 'bad', text: '협상 결렬 — 이번 이적시장 동안 이 선수와는 다시 협상할 수 없습니다.' }); };
 
-  const sendFee = (f = fee) => {
-    const r = bid(p.id, f * 1e6);
-    push({ who: 'me', text: f * 1e6 >= theirClause && theirClause > 0 ? `바이아웃 ${money(f * 1e6)} 지불` : `이적료 ${money(f * 1e6)} 제안` });
+  const sendFee = (f = fee, cashOnly = false) => {
+    const tm = cashOnly ? undefined : terms(f);
+    const r = bid(p.id, f * 1e6, tm);
+    push({ who: 'me', text: f * 1e6 >= theirClause && theirClause > 0 ? `바이아웃 ${money(f * 1e6)} 지불` : `이적료 ${money(f * 1e6)} 제안${tm ? ` + ${termsText(tm)}` : ''}` });
     if (r.blocked) return push({ who: 'sys', tone: 'warn', text: r.blocked });
     if (r.decision === 'accept') {
       push(f * 1e6 >= theirClause && theirClause > 0 ? { who: 'club', tone: 'warn', text: '바이아웃 조항이라 거절할 수 없습니다. 선수와 이야기해 보시죠.' } : { who: 'club', tone: 'ok', text: `좋습니다. ${money(f * 1e6)}에 보내겠습니다.` }, { who: 'sys', text: '이적료 합의 완료 — 이제 선수와 개인 계약을 협상하세요.' });
@@ -141,6 +149,22 @@ export function NegotiationModal({ p, onClose }: { p: PlayerState; onClose: () =
           ) : stage === 'fee' ? (
             <div className="space-y-3">
               <div className="flex justify-between text-[12px] text-lo"><span>시장 가치 <span className="tnum text-mid">{money(value)}</span> · 바이아웃 <span className="tnum text-mid">{theirClause ? money(theirClause) : '없음'}</span></span><span>이적 예산 <span className="tnum text-mid">{money(w.clubs[w.userClubId].finance.transferBudget)}</span></span></div>
+              {/* 이적 조건 (선택): 현금을 줄이는 대신 */}
+              <div className="flex flex-wrap items-center gap-2 text-[12px] text-lo">
+                <select value={sellOn} onChange={(e) => setSellOn(+e.target.value)} title="셀온: 나중에 이 선수를 다시 팔면 그 이적료의 몇 %를 지금 구단에 줍니다. 어린 선수일수록 구단이 반깁니다" className="h-9 rounded-lg border border-line bg-ink-850 px-2 text-[12px] text-hi max-sm:flex-1">
+                  {SELL_ON_PCTS.map((x) => <option key={x} value={x}>{x ? `셀온 ${x}%` : '셀온 없음'}</option>)}
+                </select>
+                <select value={bApps} onChange={(e) => { setBApps(+e.target.value); if (+e.target.value && !bAmt) setBAmt(Math.min(Math.round(fee * 0.15 * 2) / 2 || 0.5, bonusCap(fee * 1e6) / 1e6)); }} title="보너스: 이 선수가 우리 구단에서 그만큼 출전하면 이 금액을 더 냅니다 (리그 · 컵, 교체 포함)" className="h-9 rounded-lg border border-line bg-ink-850 px-2 text-[12px] text-hi max-sm:flex-1">
+                  <option value={0}>보너스 없음</option>
+                  {BONUS_APPS.map((x) => <option key={x} value={x}>보너스: 출전 {x}경기</option>)}
+                </select>
+                {bApps > 0 && (
+                  <label className="flex h-9 items-center gap-1.5 rounded-lg border border-line bg-ink-850 px-2 text-[12px] max-sm:flex-1"><span className="shrink-0">보너스</span>
+                    <input type="number" step={0.5} min={0} max={bonusCap(fee * 1e6) / 1e6} value={bAmt} onChange={(e) => setBAmt(+e.target.value)} className="tnum w-14 min-w-0 flex-1 bg-transparent text-right font-semibold text-hi outline-none" />백만 유로
+                  </label>
+                )}
+                {terms(fee) && <span className="basis-full">구단이 보는 조건 값어치 약 <span className="tnum text-mid">{money(termsWorth(w, p, fee * 1e6, terms(fee)))}</span> (이적료에 더해 판단 · 보너스는 이적료의 절반까지)</span>}
+              </div>
               <div className="flex flex-wrap gap-2">
                 <label className="flex h-11 min-w-0 flex-1 basis-full sm:basis-0 items-center gap-2 rounded-lg border border-line bg-ink-850 px-3 text-[13px] text-lo">이적료
                   <input autoFocus type="number" step={0.5} min={0} value={fee} onChange={(e) => setFee(+e.target.value)} onKeyDown={(e) => e.key === 'Enter' && sendFee()} className="tnum min-w-0 flex-1 bg-transparent text-right text-[16px] font-semibold text-hi outline-none" />백만 유로
@@ -148,14 +172,14 @@ export function NegotiationModal({ p, onClose }: { p: PlayerState; onClose: () =
                 <button onClick={() => sendFee()} className="h-11 rounded-lg bg-neon px-6 max-sm:flex-1 text-[14px] font-semibold text-ink-950 transition-colors hover:bg-[#5bff3d]">제안</button>
               </div>
               {bargain && (
-                <button onClick={() => { setFee(bargain.price / 1e6); sendFee(bargain.price / 1e6); }} disabled={bargain.price > w.clubs[w.userClubId].finance.transferBudget}
+                <button onClick={() => { setFee(bargain.price / 1e6); sendFee(bargain.price / 1e6, true); }} disabled={bargain.price > w.clubs[w.userClubId].finance.transferBudget}
                   className="h-10 w-full rounded-lg border border-red/50 text-[13px] font-semibold text-red transition-colors hover:bg-red/10 disabled:border-line disabled:text-lo">
                   {bargain.kind === 'fire' ? '강제 매각가' : '강등 조항'} {money(bargain.price)} 제안{bargain.price > w.clubs[w.userClubId].finance.transferBudget ? ' (이적 예산 부족)' : ''}
                 </button>
               )}
               {relClause > 0 && <div className="text-[12px] text-amber">강등 조항: {clubKo(club!)}가 강등되면 {money(relClause)}에 거절할 수 없는 이적이 가능해집니다</div>}
               {theirClause > 0 && (
-                <button onClick={() => { setFee(theirClause / 1e6); sendFee(theirClause / 1e6); }} disabled={theirClause > w.clubs[w.userClubId].finance.transferBudget}
+                <button onClick={() => { setFee(theirClause / 1e6); sendFee(theirClause / 1e6, true); }} disabled={theirClause > w.clubs[w.userClubId].finance.transferBudget}
                   title="바이아웃 금액을 내면 구단은 거절할 수 없습니다 (선수 동의는 따로)"
                   className="h-10 w-full rounded-lg border border-amber/50 text-[13px] font-semibold text-amber transition-colors hover:bg-amber/10 disabled:border-line disabled:text-lo">
                   바이아웃 {money(theirClause)} 지불{theirClause > w.clubs[w.userClubId].finance.transferBudget ? ' (이적 예산 부족)' : ''}

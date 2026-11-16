@@ -1,4 +1,5 @@
 // 받은 영입 제안 협상 창: 지금 제안 수락 · 거절 · 역제안 (3번 안에 합의 못 하면 사는 구단이 손을 뗌)
+import { SELL_ON_PCTS } from '../../engine/addons';
 import { useEffect, useRef, useState } from 'react';
 import { overall } from '../../engine/ratings';
 import { ageOn } from '../../engine/condition';
@@ -21,8 +22,9 @@ export function SellNegotiationModal({ offerId, onClose }: { offerId: string; on
   const value = marketValue(w, p);
   const [ask, setAsk] = useState(Math.round(Math.max(o.fee * 1.25, value) / 1e5) / 10);
   const [ended, setEnded] = useState(false);
+  const [sellOn, setSellOn] = useState(0);
   const [msgs, setMsgs] = useState<Msg[]>(() => [
-    { who: 'club', text: `${playerKo(p.id, p.name)} 영입을 원합니다. 이적료 ${money(o.fee)}를 제안합니다.` },
+    { who: 'club', text: `${playerKo(p.id, p.name)} 영입을 원합니다. 이적료 ${money(o.fee)}${o.bonus ? `에 우리 구단에서 ${o.bonus.apps}경기를 뛰면 보너스 ${money(o.bonus.amount)}를 더` : '를'} 제안합니다.` },
     { who: 'sys', text: o.unsolicited ? '이적 명단에 없는 선수에게 온 제안입니다. 원하는 금액을 불러 보세요.' : '수락하거나, 원하는 금액을 불러 역제안할 수 있습니다.' },
   ]);
   const log = useRef<HTMLDivElement>(null);
@@ -36,8 +38,8 @@ export function SellNegotiationModal({ offerId, onClose }: { offerId: string; on
   const left = ended ? 0 : MAX_TRIES - (o.tries ?? 0);
 
   const sendCounter = () => {
-    push({ who: 'me', text: `${money(ask * 1e6)}이면 보내겠습니다` });
-    const r = counter(o.id, ask * 1e6);
+    push({ who: 'me', text: `${money(ask * 1e6)}${sellOn ? ` + 셀온 ${sellOn}%` : ''}이면 보내겠습니다` });
+    const r = counter(o.id, ask * 1e6, sellOn);
     if (r.result === 'accept') {
       push({ who: 'club', tone: 'ok', text: r.reason.split(' · ')[0] });
       if (r.done) return setTimeout(onClose, 400);
@@ -62,7 +64,7 @@ export function SellNegotiationModal({ offerId, onClose }: { offerId: string; on
           <button onClick={onClose} className="h-8 w-8 rounded-md text-[18px] text-lo hover:bg-ink-800 hover:text-hi" aria-label="닫기">×</button>
         </header>
         <div className="flex items-center gap-4 border-b border-line px-6 py-3 text-[12px] text-lo">
-          <span>현재 제안 <span className="tnum text-[14px] font-semibold text-neon">{money(o.fee)}</span></span>
+          <span>현재 제안 <span className="tnum text-[14px] font-semibold text-neon">{money(o.fee)}</span>{o.bonus && <span className="text-mid"> + 보너스 {money(o.bonus.amount)} (출전 {o.bonus.apps})</span>}</span>
           <span>시장 가치 <span className="tnum text-mid">{money(value)}</span></span>
           <span className="ml-auto flex items-center gap-1.5">남은 기회{Array.from({ length: MAX_TRIES }, (_, i) => <span key={i} className={`h-2 w-2 rounded-full ${i < left ? 'bg-neon' : 'bg-ink-700'}`} />)}</span>
         </div>
@@ -78,11 +80,14 @@ export function SellNegotiationModal({ offerId, onClose }: { offerId: string; on
                 <label className="flex h-11 min-w-0 flex-1 basis-full sm:basis-0 items-center gap-2 rounded-lg border border-line bg-ink-850 px-3 text-[13px] text-lo">역제안
                   <input autoFocus type="number" step={0.5} min={0} value={ask} onChange={(e) => setAsk(+e.target.value)} onKeyDown={(e) => e.key === 'Enter' && sendCounter()} className="tnum min-w-0 flex-1 bg-transparent text-right text-[16px] font-semibold text-hi outline-none" />백만 유로
                 </label>
-                <button onClick={sendCounter} className="h-11 rounded-lg bg-ink-700 px-5 text-[14px] font-semibold text-hi hover:bg-ink-750">역제안</button>
+                <select value={sellOn} onChange={(e) => setSellOn(+e.target.value)} title="셀온: 나중에 이 선수가 다시 팔리면 그 이적료의 몇 %를 받습니다. 대신 지금 받는 이적료는 조금 낮아집니다 (어린 선수일수록 더)" className="h-11 rounded-lg border border-line bg-ink-850 px-2 text-[13px] text-hi max-sm:flex-1">
+                  {SELL_ON_PCTS.map((x) => <option key={x} value={x}>{x ? `셀온 ${x}% 요구` : '셀온 없음'}</option>)}
+                </select>
+                <button onClick={sendCounter} className="h-11 rounded-lg bg-ink-700 px-5 text-[14px] font-semibold text-hi hover:bg-ink-750 max-sm:flex-1">역제안</button>
               </div>
               <div className="flex gap-2">
                 <button onClick={reject} className="h-10 rounded-lg px-5 text-[13px] text-mid ring-1 ring-line hover:text-hi">거절</button>
-                <button onClick={accept} className="h-10 flex-1 rounded-lg bg-neon text-[14px] font-semibold text-ink-950 hover:bg-[#5bff3d]">{money(o.fee)}에 수락</button>
+                <button onClick={accept} className="h-10 flex-1 rounded-lg bg-neon text-[14px] font-semibold text-ink-950 hover:bg-[#5bff3d]">{money(o.fee)}{o.sellOn ? ` · 셀온 ${o.sellOn}%` : ''}{o.bonus ? ' + 보너스' : ''}에 수락</button>
               </div>
             </div>
           )}
