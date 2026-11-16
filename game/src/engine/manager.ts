@@ -269,7 +269,7 @@ export function declineOffer(w: World, idx: number) {
 
 /** 시즌 끝 (순위 확정 뒤): 목표 · 우승 · 강등으로 신뢰도 · 명성. 너무 낮으면 시즌 끝에 경질 */
 export function managerSeasonEnd(w: World, recs: SeasonRecord[]): { titles: number; relegated: boolean; met: boolean } | null {
-  if (w.intl) return null;   // 월드컵 모드: 협회 평가는 intl.ts
+  if (w.intl) return null;   // 세계 대회 모드: 협회 평가는 intl.ts
   const m = ensureManager(w);
   const club = w.clubs[w.userClubId];
   const rec = recs.find((r) => r.league === club.league);

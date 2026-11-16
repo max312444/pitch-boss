@@ -54,7 +54,7 @@
       "KOR",
       "JPN"
     ],
-    "source": "enwiki:2002 FIFA World Cup squads@1368162753"
+    "source": "enwiki@1368162753"
   },
   "2006": {
     "groups": {
@@ -110,7 +110,7 @@
     "hosts": [
       "GER"
     ],
-    "source": "enwiki:2006 FIFA World Cup squads@1383583039"
+    "source": "enwiki@1383583039"
   },
   "2010": {
     "groups": {
@@ -166,7 +166,7 @@
     "hosts": [
       "RSA"
     ],
-    "source": "enwiki:2010 FIFA World Cup squads@1382236500"
+    "source": "enwiki@1382236500"
   },
   "2014": {
     "groups": {
@@ -222,7 +222,7 @@
     "hosts": [
       "BRA"
     ],
-    "source": "enwiki:2014 FIFA World Cup squads@1383808203"
+    "source": "enwiki@1383808203"
   },
   "2018": {
     "groups": {
@@ -278,7 +278,7 @@
     "hosts": [
       "RUS"
     ],
-    "source": "enwiki:2018 FIFA World Cup squads@1378874460"
+    "source": "enwiki@1378874460"
   },
   "2022": {
     "groups": {
@@ -334,7 +334,7 @@
     "hosts": [
       "QAT"
     ],
-    "source": "enwiki:2022 FIFA World Cup squads@1384209849"
+    "source": "enwiki@1384209849"
   },
   "2026": {
     "groups": {
@@ -416,6 +416,6 @@
       "CAN",
       "MEX"
     ],
-    "source": "enwiki:2026 FIFA World Cup squads@1384210377"
+    "source": "enwiki@1384210377"
   }
 }

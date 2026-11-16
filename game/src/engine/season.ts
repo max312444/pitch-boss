@@ -133,7 +133,7 @@ const retireChance = (age: number, ovrish: number) => (age < 33 ? 0 : age < 35 ?
  * 월드를 직접 수정하고 보고서를 돌려준다.
  */
 export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
-  // 월드컵이 있었으면 경기용 대표팀 구단 · 가상 선수 정리 (기록은 worldCupHistory)
+  // 세계 대회가 있었으면 경기용 대표팀 구단 · 가상 선수 정리 (기록은 worldCupHistory)
   clearWorldCup(w);
   w.inbox.push(...endLoans(w).filter((e) => e.type === 'loan' && e.user));   // 임대 종료: 복귀 · 완전 영입 옵션
   const rng = createRng(w.rng ^ 0x5eed);
@@ -363,7 +363,9 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
 
   // 미래 선수 등장
   for (const [id, d] of dataPlayers) {
-    if (w.players[id]) continue;
+    // 대표 전용 선수 (실제 명단 · 대표 풀에서 만든 게임 리그 밖 선수) 가 실제 데이터에 나오면 같은 번호의 실제 선수로 바꿔 구단에 합류
+    //  (대표 명단 · 소집 후보는 번호가 같아 그대로 이어짐)
+    if (w.players[id] && !w.players[id].intlOnly) continue;
     const club = w.clubs[d.club];
     const join = club && newMembers[club.league]?.includes(club.id) && club.squad.length < MAX_SQUAD ? club.id : null;
     const p = newPlayer(d.sp, join, w.seed, to);
@@ -401,7 +403,7 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
   // 유럽 대회 (방금 끝난 시즌 순위로) · 국내 컵 대회 (새 리그 구성으로)
   w.europe = createEurope(w, rng);
   w.cups = createCups(w, rng);
-  // 월드컵 (이번 시즌 끝에 열리면): 실제 참가국 · 조가 있으면 그대로, 없으면 대표팀 전력 + 대륙 쿼터
+  // 세계 대회 (이번 시즌 끝에 열리면): 실제 참가국 · 조가 있으면 그대로, 없으면 대표팀 전력 + 대륙 쿼터
   w.worldCup = createWorldCup(w, to, next.worldCups);
 
   // 실제 다음 시즌 데이터에 내 구단이 없으면 현재 예산을 기준으로 배정
@@ -409,7 +411,7 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
   scoutNewSeason(w);   // 스카우트 보고서는 한 시즌만 → 새 시즌엔 다시 확인
   rememberOurs(w);
   w.season = to;
-  // 월드컵이 7월까지 이어졌으면 날짜를 되돌리지 않는다
+  // 세계 대회가 7월까지 이어졌으면 날짜를 되돌리지 않는다
   w.date = w.date > startDate ? w.date : startDate;
   w.inbox.push(...ffpNewSeason(w));   // 재정 규정 징계 적용 (감점 · 영입 금지)
   cleanOffers(w);   // 떠난 · 은퇴한 선수에게 온 제안 정리

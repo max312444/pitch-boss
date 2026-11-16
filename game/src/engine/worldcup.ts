@@ -1,4 +1,4 @@
-// 월드컵: 4년마다 (2002 · 2006 · … · 2026 · 2030 …) 시즌이 끝난 6~7월
+// 세계 대회: 4년마다 (2002 · 2006 · … · 2026 · 2030 …) 시즌이 끝난 6~7월
 //
 //  - 참가국 · 조: 2002 ~ 2026 은 실제 (위키백과 squads 문서 → meta/worldcups.json), 그 뒤는 대표팀 전력 + 대륙 연맹 쿼터
 //    32팀 (~2022): UEFA 13 · CAF 5 · AFC 4 · CONMEBOL 4 · CONCACAF 3 · 대륙 간 PO 2 (전력 순), 48팀 (2026~): 16 · 9 · 8 · 6 · 6 · OFC 1 · PO 2
@@ -17,7 +17,7 @@ import { shootout } from './cup';
 import { ALL_NATIONS, confedOf, fillerLevel, missingSlots, nationPlayers, nationStrength, selectSquad, type Confed } from './national';
 import { overall } from './ratings';
 import { guessFormation } from './squad';
-import { makeAttrs, namePools } from './youth';
+import { makeAttrs, namePools, pickName, usedNames } from './youth';
 import { newPlayer } from './world';
 
 export interface WcGroup { name: string; teams: string[]; table: Record<string, TableRow> }
@@ -49,7 +49,7 @@ export interface WorldCupMeta { hosts: string[]; groups: Record<string, string[]
 export const NT = (nation: string) => `nt-${nation}`;
 export const isNT = (id: string) => id.startsWith('nt-');
 export const nationOfNT = (id: string) => id.slice(3);
-/** 이 시즌이 끝나는 해에 월드컵이 열리는지 (2002부터 4년마다) */
+/** 이 시즌이 끝나는 해에 세계 대회가 열리는지 (2002부터 4년마다) */
 export const worldCupYear = (season: string) => { const y = +season.slice(0, 4) + 1; return y >= 2002 && (y - 2002) % 4 === 0 ? y : null; };
 const FUTURE_HOSTS: Record<number, string[]> = { 2030: ['ESP', 'POR', 'MAR'], 2034: ['KSA'] };
 const QUOTA: Record<32 | 48, Record<Confed, number>> = {
@@ -105,7 +105,7 @@ export function drawWorldCup(w: World, nations: string[], hosts: string[], rng: 
   return Array.from({ length: groupsN }, (_, i) => pots.map((p) => p[i]));
 }
 
-/** 시즌 시작: 그 시즌 끝에 월드컵이 열리면 만든다 */
+/** 시즌 시작: 그 시즌 끝에 세계 대회가 열리면 만든다 */
 export function createWorldCup(w: World, season: string, meta?: Record<string, WorldCupMeta>): WorldCupState | undefined {
   const year = worldCupYear(season);
   if (!year) return undefined;
@@ -146,24 +146,25 @@ function callUpSquads(w: World, wc: WorldCupState, rng: Rng): GameEvent[] {
   const mine: string[] = [];
   for (const g of wc.groups) for (const id of g.teams) {
     const nation = nationOfNT(id);
-    // 월드컵 모드: 내 나라는 감독이 정한 명단 그대로
+    // 세계 대회 모드: 내 나라는 감독이 정한 명단 그대로
     if (w.intl && nation === w.intl.nation && w.clubs[id]?.squad.length) { for (const pid of w.clubs[id].squad) w.players[pid].fitness = Math.max(w.players[pid].fitness, 92); continue; }
     // 실제 대회 · 실제 명단이 있으면 그 명단 (게임에 없는 선수는 실명으로 만듦)
     const real = wc.real ? wcSquadsOf(wc.year, nation) : undefined;
     const squad = real?.length ? real.map((r) => { const had = !!w.players[r.id ?? r.wc!]; const p = playerFromRow(w, r, nation, wc.year); if (!had) fillers.push(p.id); return p; }).filter((p) => !p.injury).slice(0, size) : selectSquad(w, nation, size);
     const level = fillerLevel(nationPlayers(w, nation).slice(0, 11).map(overall));
     // 모자란 자리는 '국내파' 가상 선수
+    const used = usedNames(w, nation);
     missingSlots(squad, size).forEach((pos, i) => {
       const pool = pools.get(nation) ?? [...pools.values()].find((p) => p.last.length > 20)!;
-      const f = pool.first.length ? rng.pick(pool.first) : null, l = rng.pick(pool.last);
+      const nm = pickName(pool, rng, used);
       const fid = `wcf-${wc.year}-${nation}-${i}`;
       const p = newPlayer({
-        id: fid, name: [f?.v, l.v].filter(Boolean).join(' '), birth: `${wc.year - rng.int(22, 31)}-0${rng.int(1, 9)}-1${rng.int(0, 9)}`, nation,
+        id: fid, name: nm.name, birth: `${wc.year - rng.int(22, 31)}-0${rng.int(1, 9)}-1${rng.int(0, 9)}`, nation,
         height: null, foot: null, number: null, pos, attrs: makeAttrs(Math.round(level + rng.int(-4, 3)), pos, rng), wage: 0, contract: null,
       }, null, w.seed);
       p.retired = true;           // 이적 · 자유계약 · 시즌 처리에서 빠지게 (대회용 가상 선수)
       p.generated = true;
-      p.nameFrom = [f?.id ?? null, l.id];
+      p.nameFrom = nm.nameFrom;
       w.players[fid] = p;
       fillers.push(fid);
       squad.push(p);
@@ -286,10 +287,10 @@ function finishWorldCup(w: World, wc: WorldCupState, ev: GameEvent[]) {
 
 /** 시즌이 바뀔 때: 경기용 대표팀 구단 · 가상 선수 지우기 (대회 기록은 worldCupHistory 에 남음) */
 export function clearWorldCup(w: World) {
-  for (const id of Object.keys(w.clubs)) if (isNT(id) && !(w.intl && id === NT(w.intl.nation))) delete w.clubs[id];   // 월드컵 모드: 내 대표팀은 남김
+  for (const id of Object.keys(w.clubs)) if (isNT(id) && !(w.intl && id === NT(w.intl.nation))) delete w.clubs[id];   // 세계 대회 모드: 내 대표팀은 남김
   for (const id of w.worldCup?.fillers ?? []) if (!w.intl?.domestic.includes(id)) delete w.players[id];
   w.worldCup = undefined;
 }
 
-/** 이 선수가 이번 월드컵 대표인지 */
+/** 이 선수가 이번 세계 대회 대표인지 */
 export const inWorldCupSquad = (w: World, p: PlayerState) => !!w.worldCup?.squads && w.worldCup.groups.some((g) => g.teams.some((t) => w.clubs[t]?.squad.includes(p.id)));

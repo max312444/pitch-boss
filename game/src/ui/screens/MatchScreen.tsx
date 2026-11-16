@@ -85,7 +85,7 @@ export function MatchScreen() {
 
   // 비긴 녹아웃: 승부차기를 직접
   const pensEl = m.phase === 'pens' && m.state ? <ShootoutGame st={m.state} side={m.side} players={w.players} onDone={finishShootout} /> : null;
-  const evEl = m.event && m.phase === 'live' ? <MatchEventModal ev={m.event} players={w.players} /> : null;   // 월드컵 모드: 경기 중 사건
+  const evEl = m.event && m.phase === 'live' ? <MatchEventModal ev={m.event} players={w.players} /> : null;   // 세계 대회 모드: 경기 중 사건
   const momentEl = pensEl ?? evEl ?? (moment === 'intro' ? <FinalIntro home={s.home.clubId} away={s.away.clubId} title={compKo(m.fixture.league)} onDone={() => { setMoment(null); setPlaying(true); }} />
     : moment === 'pens' && sum.shootout ? <ShootoutOverlay seq={sum.shootout} home={s.home.clubId} away={s.away.clubId} mySide={m.side} onDone={() => setMoment(final && userWon ? 'trophy' : null)} />
     : moment === 'trophy' ? <TrophyOverlay club={w.userClubId} title={compKo(m.fixture.league)} onDone={() => setMoment(null)} />

@@ -3,7 +3,7 @@ import { create } from 'zustand';
 import type { SearchPreset } from '../engine/analysis';
 
 export type Screen = 'title' | 'newgame' | 'hub';
-/** 게임 모드: 기본 · 나의 구단 · 월드컵 (타이틀의 모드 고르기 팝업) */
+/** 게임 모드: 기본 · 나의 구단 · 세계 대회 (타이틀의 모드 고르기 팝업) */
 export type GameMode = 'base' | 'my' | 'wc';
 export type HubTab = 'home' | 'inbox' | 'news' | 'squad' | 'tactics' | 'schedule' | 'table' | 'transfers' | 'finance' | 'club';
 

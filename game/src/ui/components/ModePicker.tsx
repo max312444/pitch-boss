@@ -1,12 +1,12 @@
-// 새 게임 → 게임 모드 고르기 팝업 (타이틀 화면): 기본 · 나의 구단 · 월드컵, 모드마다 설명
+// 새 게임 → 게임 모드 고르기 팝업 (타이틀 화면): 기본 · 나의 구단 · 세계 대회, 모드마다 설명
 import { useEffect } from 'react';
 import type { GameMode } from '../../store/app';
 
-/** 모드마다 색 · 아이콘 (한눈에 구분): 기본 초록 · 나의 구단 하늘색 · 월드컵 금색 */
+/** 모드마다 색 · 아이콘 (한눈에 구분): 기본 초록 · 나의 구단 하늘색 · 세계 대회 금색 */
 const TONE: Record<GameMode, { emoji: string; text: string; bar: string; tile: string; btn: string; hover: string }> = {
   base: { emoji: '⚽', text: 'text-neon', bar: 'bg-neon', tile: 'bg-neon/15', btn: 'bg-neon text-ink-950 group-hover:bg-[#5bff3d]', hover: 'enabled:hover:ring-neon/60' },
   my: { emoji: '🏟️', text: 'text-sky', bar: 'bg-sky', tile: 'bg-sky/15', btn: 'bg-sky text-ink-950 group-hover:brightness-110', hover: 'enabled:hover:ring-sky/60' },
-  wc: { emoji: '🏆', text: 'text-amber', bar: 'bg-amber', tile: 'bg-amber/15', btn: 'bg-amber text-ink-950 group-hover:brightness-110', hover: 'enabled:hover:ring-amber/60' },
+  wc: { emoji: '🌍', text: 'text-amber', bar: 'bg-amber', tile: 'bg-amber/15', btn: 'bg-amber text-ink-950 group-hover:brightness-110', hover: 'enabled:hover:ring-amber/60' },
 };
 
 const MODES: { k: GameMode; title: string; tag: string; lines: string[]; soon?: boolean }[] = [
@@ -27,11 +27,11 @@ const MODES: { k: GameMode; title: string; tag: string; lines: string[]; soon?: 
     ],
   },
   {
-    k: 'wc', title: '월드컵', tag: '대표팀 감독',
+    k: 'wc', title: '세계 대회', tag: '대표팀 감독',
     lines: [
-      '나라 하나의 대표팀 감독이 되어 A매치 → 예선 → 본선 → 다음 월드컵을 계속 이어 갑니다.',
+      '나라 하나의 대표팀 감독이 되어 A매치 → 예선 → 본선 → 다음 세계 대회를 계속 이어 갑니다.',
       '이적시장은 없습니다. 대표 선수 소집과 전술만 바꾸며 경기에 집중합니다.',
-      '2002 ~ 2026 실제 월드컵 명단으로 시작합니다. 승부차기 · 경기 중 사건은 감독이 직접 판단합니다.',
+      '2002 ~ 2026 실제 세계 대회 명단으로 시작합니다. 승부차기 · 경기 중 사건은 감독이 직접 판단합니다.',
     ],
   },
 ];

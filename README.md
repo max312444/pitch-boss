@@ -135,21 +135,22 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 > 버전: `game/src/version.ts` (첫 화면 표시). 기능 추가 +0.1 · 작은 수정 +0.0.1, 바꿀 때마다 여기에 적는다.
 > 같은 파일의 `CHANGELOG` 맨 위에 플레이어용 한 줄 요약도 넣는다 → 첫 화면 '업데이트 소식' (새 버전을 처음 본 뒤 24시간 표시, `UpdateNotes.tsx`).
 
-0. **v2.1.1 모드 고르기 창 색 · 아이콘** (2026-11-16) — `ModePicker` TONE: 모드별 위 띠 · 아이콘 칸 · 부제 · 버튼 색 (기본 neon · 나의 구단 sky · 월드컵 amber). 대표팀 엠블럼 `ui/crests/nationColors.ts` (나라별 유니폼 색, 없으면 약자로 정한 색) + 나라 약자. 업데이트 알림 `UpdateBanner` 가운데 창 · 배경 흐림.
+0. **v2.1.2 대표팀 엠블럼 색 · 세계 대회 이름 · 대표 선수 고침** (2026-11-16) — 모든 「월드컵」 표기를 「세계 대회」로 (리그 목록 wc 이름 · 출처 표기 포함, 예선 경기 이름은 `isQualiName` 이 예전 이름도 인식). 세계 대회 모드 세이브 불러오기 (userClubId nt- 허용) · 불러올 때 `repairIntl` (실제 명단 · 대표 풀로 소집 후보 다시, 가상 선수 빼고 채움) · 가상 이름 `pickName` (나라 안 겹침 없음) · 대표 전용 선수가 실제 데이터에 나오면 시즌 전환 `미래 선수 등장` 에서 같은 번호 실제 선수로. 새 게임 화면: 명단 데이터가 없으면 안내. 대표팀 경기 (stage intl) 이변: `match.ts INTL_RATIO_K` 0.45 (능력 비 · 점유율 민감도) + 그날 팀 컨디션 ±15% (xG 배율), 예선 빠른 계산도 같은 생각 (÷16 · 컨디션). 측정 (300경기): 강팀 62 ~ 71% · 무 17 ~ 22% · 약팀 12 ~ 16% (이전 약팀 0 ~ 3%). 실제 데이터 없는 시즌은 지난 실제 국내파를 이어감. 파이프라인 `natcolors --apply`: Wikidata 대표팀 공식 색 (P6364) → 없으면 국기 색 (P163 → P462 → P465), 원색은 차분하게 다듬어 두 색 → `data/meta/nation-colors.json` (사실 정보, publish 가 공개 데이터에 복사). 엠블럼은 손으로 정한 유니폼 색 → 이 색 → 약자로 정한 색 순.
+0. **v2.1.1 모드 고르기 창 색 · 아이콘** (2026-11-16) — `ModePicker` TONE: 모드별 위 띠 · 아이콘 칸 · 부제 · 버튼 색 (기본 neon · 나의 구단 sky · 세계 대회 amber). 대표팀 엠블럼 `ui/crests/nationColors.ts` (나라별 유니폼 색, 없으면 약자로 정한 색) + 나라 약자. 업데이트 알림 `UpdateBanner` 가운데 창 · 배경 흐림.
 0. **v2.1 대표 선수 풀** (2026-11-16)
    - 파이프라인 `node tools/data_pipeline natpool --apply`: 나라별 대표팀 항목 (위키백과 "{나라} national football team" → Wikidata) 의 선수 소속 기록 (P54 + 기간 P580/P582 · 출전 P1350 · 골 P1351 · 포지션 P413), 1998년 이후 → `data/worldcups/pools.json` (실명, Git 제외 · 실명 데이터 옮기기에 포함) · 한국어 이름은 `data/locale/ko/wcplayers.json` 에 더함. 140개국 24160명 (게임 선수 6417명 맞춤). `publish` 가 공개 번호 · 패러디 이름으로 `data-public/worldcups/pools.json`.
-   - 게임: `wcsquads.ts poolOf` (그 시즌 대표였던 선수) · `playerFromPool` (게임에 없으면 그 나라 수준 + A매치 + 나이로 오버롤). `intl.ts refreshDomestic` 이 시즌마다 이번 주기 월드컵 명단 + 그 시즌 대표 풀 → 소집 후보. 풀 파일은 월드컵 모드에서만 읽음 (4.6MB). AI 나라 선발은 그대로.
-0. **v2.0 월드컵 모드 (대표팀 감독)** (2026-11-16)
-   - 파이프라인 `node tools/data_pipeline wcsquads --apply`: 위키백과 "{연도} FIFA World Cup squads" 선수 줄 → `data/worldcups/squads.json` (실명, Git 제외) · `data/locale/ko/wcplayers.json`. 위키백과 문서 → Wikidata 번호 (50개씩) → canonical 선수와 정확히 맞춤 (2002 ~ 2026 5759명 중 3704명), 나머지는 게임에 없는 선수 (wc 번호, 한국어는 Wikidata 이름표). `publish` 가 공개 번호 · 패러디 이름으로 `data-public/worldcups/squads.json`.
+   - 게임: `wcsquads.ts poolOf` (그 시즌 대표였던 선수) · `playerFromPool` (게임에 없으면 그 나라 수준 + A매치 + 나이로 오버롤). `intl.ts refreshDomestic` 이 시즌마다 이번 주기 세계 대회 명단 + 그 시즌 대표 풀 → 소집 후보. 풀 파일은 세계 대회 모드에서만 읽음 (4.6MB). AI 나라 선발은 그대로.
+0. **v2.0 세계 대회 모드 (대표팀 감독)** (2026-11-16)
+   - 파이프라인 `node tools/data_pipeline wcsquads --apply`: 위키백과 대회별 대표 명단 문서 선수 줄 → `data/worldcups/squads.json` (실명, Git 제외) · `data/locale/ko/wcplayers.json`. 위키백과 문서 → Wikidata 번호 (50개씩) → canonical 선수와 정확히 맞춤 (2002 ~ 2026 5759명 중 3704명), 나머지는 게임에 없는 선수 (wc 번호, 한국어는 Wikidata 이름표). `publish` 가 공개 번호 · 패러디 이름으로 `data-public/worldcups/squads.json`.
    - `engine/wcsquads.ts`: 명단 → 선수 (없으면 실명 대표 전용 선수, 능력 = 소속 리그 수준 + A매치 + 나이, retired · intlOnly). 본선 AI 나라는 실제 명단 (worldcup.ts callUpSquads).
-   - `engine/intl.ts` (`w.intl`): 내 대표팀 nt-나라 (userClubId), 일정 = A매치 기간 토 · 화 (월드컵 시즌: 9 · 10 · 11월 예선 6경기 + 3월 플레이오프, 그 밖: 친선), 같은 조 다른 경기 · 상대는 빠른 계산, 상대 대표팀은 사흘 전 준비 · 시즌마다 정리, 국내파 (실제 명단 · 모자라면 가상), 목표 (전력 순위), 통과 / 탈락에 따라 본선 참가국 바꾸기, 주기 끝 협회 평가 (2단계 미달 경질 · 2단계 초과 제안 → `switchNation`). 클럽 일 (이적 제안 · 스폰서 · 이사회 · 재계약 · 기자회견 등) 은 건너뜀.
+   - `engine/intl.ts` (`w.intl`): 내 대표팀 nt-나라 (userClubId), 일정 = A매치 기간 토 · 화 (세계 대회 시즌: 9 · 10 · 11월 예선 6경기 + 3월 플레이오프, 그 밖: 친선), 같은 조 다른 경기 · 상대는 빠른 계산, 상대 대표팀은 사흘 전 준비 · 시즌마다 정리, 국내파 (실제 명단 · 모자라면 가상), 목표 (전력 순위), 통과 / 탈락에 따라 본선 참가국 바꾸기, 주기 끝 협회 평가 (2단계 미달 경질 · 2단계 초과 제안 → `switchNation`). 클럽 일 (이적 제안 · 스폰서 · 이사회 · 재계약 · 기자회견 등) 은 건너뜀.
    - `engine/matchEvents.ts`: 경기 중 사건 (하프타임 · 통증 · 우리 / 상대 페널티 · 막판), `shootoutSeq.ts` 직접 승부차기 규칙 (`kickChance` · `resolveKick` · `shootoutOver`). store: 경기 단계 `pens` (비긴 녹아웃 `decidesOnDraw`), `finishShootout` · `resolveEvent`. 이미 정한 승부차기 승자는 `s.pens ??=` 로 유지.
-   - UI: 모드 창 월드컵 · `IntlNewGame` (주기 · 대륙 · 나라 · 실제 명단 미리 보기), `IntlViews` (대표팀 홈 · 대표 명단 · 순위), `ShootoutGame`, `MatchEventModal`, `IntlJobModal`, 월드컵 모드 튜토리얼. 테스트 `intl.test.ts` · `shootoutLive.test.ts`.
+   - UI: 모드 창 세계 대회 · `IntlNewGame` (주기 · 대륙 · 나라 · 실제 명단 미리 보기), `IntlViews` (대표팀 홈 · 대표 명단 · 순위), `ShootoutGame`, `MatchEventModal`, `IntlJobModal`, 세계 대회 모드 튜토리얼. 테스트 `intl.test.ts` · `shootoutLive.test.ts`.
 0. **v1.1 모드 고르기 창 · 로고 이미지** (2026-11-16)
-   - 타이틀 `새 게임` → `ModePicker` 팝업 (모드별 설명, 월드컵 준비 중) → `useApp.newMode` → 새 게임 화면 (모드 탭 없앰, 그 외 흐름 · 감독 설정 · 튜토리얼은 기본 모드와 같음).
+   - 타이틀 `새 게임` → `ModePicker` 팝업 (모드별 설명, 세계 대회 준비 중) → `useApp.newMode` → 새 게임 화면 (모드 탭 없앰, 그 외 흐름 · 감독 설정 · 튜토리얼은 기본 모드와 같음).
    - 나의 구단 로고 이미지: `MyClubDesign.image` (128×148 PNG data URL, 세이브에 함께) → `ClubMaster.crestImage` → `Crest` 가 이미지로 그림.
 0. **v1.0 게임 모드 · 나의 구단 만들기** (2026-11-16)
-   - 새 게임 화면 모드 탭 (기본 · 나의 구단 · 월드컵 준비 중). `engine/myclub.ts` + `myclubDesign.ts`(타입 · `myClubMaster`, db.ts 가 가볍게 씀): 고른 리그 꼴찌 자리 (`weakestClub` 명성 → 전력) 를 `swapInput` 으로 내 구단 (`my-…`) 으로 바꿔 읽고, 그 구단 선수는 FA (`setupMyClub`), 유스 6명 (`youthIntake`, createWorld `skipFill` 로 아카데미 자동 채우기 제외). 시작값 `myStart`: 리그 아래쪽 절반 중간값 × 이적 1.6 · 주급 1.25 · 잔고 1.3 · 매출 1.1, 명성 max(대신한 구단, 중간값)+2. 다음 시즌 데이터도 store `nextSeason` 에서 `swapInput(…, currentAsData)` → 리그 크기 · 승강 수 그대로, 대신한 구단은 다시 안 나옴.
+   - 새 게임 화면 모드 탭 (기본 · 나의 구단 · 세계 대회 준비 중). `engine/myclub.ts` + `myclubDesign.ts`(타입 · `myClubMaster`, db.ts 가 가볍게 씀): 고른 리그 꼴찌 자리 (`weakestClub` 명성 → 전력) 를 `swapInput` 으로 내 구단 (`my-…`) 으로 바꿔 읽고, 그 구단 선수는 FA (`setupMyClub`), 유스 6명 (`youthIntake`, createWorld `skipFill` 로 아카데미 자동 채우기 제외). 시작값 `myStart`: 리그 아래쪽 절반 중간값 × 이적 1.6 · 주급 1.25 · 잔고 1.3 · 매출 1.1, 명성 max(대신한 구단, 중간값)+2. 다음 시즌 데이터도 store `nextSeason` 에서 `swapInput(…, currentAsData)` → 리그 크기 · 승강 수 그대로, 대신한 구단은 다시 안 나옴.
    - `world.myClub {id, replaced, design, setup}` 저장, 불러올 때 `registerMyClub` 으로 db `clubs` 에 등록 (이름 · 엠블럼 · 색). 시작 조건 `squadNeeds`: GK 2 · DF 6 · MF 6 · FW 3 + 전체 11 + 후보 수. 그 전에는 '계속' 대신 '선수단 채우기 n/20' (FA 목록으로), 홈 `MyClubSetup` 카드. 테스트 `myclub.test.ts` (2012/13 → 2013/14 실제 데이터 전환 · 경질 없음 포함).
    - 내 구단을 맡는 동안 경질 없음 · 감독 계약 자동 연장 (`manager.ts ownClub`). 경기장 이름 `ClubMaster.stadiumName` (구단 화면 · 홈 경기 카드). 세이브 목록 `SaveMeta.myClub` · 명예의 전당 `CareerRecord.myClub` 으로 불러오기 전에도 이름 · 엠블럼 등록. 점검: 5대 리그 + 독일 2부 · 2001/02 · 2005/06 · 2012/13 창단 → 규칙대로 선수단 채우기 (주전 평균 ≈ 리그 아래쪽 30% 수준) → 3시즌 (첫 시즌 9~17위, 대신한 구단 재등장 없음, 리그 크기 유지).
 0. **v0.27 셀온 · 보너스 조항** (2026-11-16)
@@ -346,18 +347,18 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
      `tools/`에서 `npm i` 필요. 게임에서 사진 누르면 확대 · 후보 바꾸기 · **직접 넣기**(파일 · Ctrl+V · 주소) · 빼기 (`vite-photos.ts`). 공지: "선수 사진은 개인이 추가".
    - 그 밖: 대회 배지(리그 · 컵 · 챔스 · 유로파 · A매치 색), 킥오프 전 '홈으로', `publish` 가 `data-public/history` 를 지우지 않음.
    - 시험: manager · board · boardEvents · press · facilities 테스트, 전체 75개 통과.
-0. **월드컵 · A매치 차출** (커밋됨, 2026-11-10)
+0. **세계 대회 · A매치 차출** (커밋됨, 2026-11-10)
    - `national.ts`: 나라 → 대륙 연맹, 대표 선발 (23명 GK 3 · DF 8 · MF 8 · FW 4 / 26명), A매치 기간(9 · 10 · 11 · 3월 리그 휴식 주말)
      나라마다 상위 23명 차출 → 체력 −10~25 · 부상 1.5% · 경기 감각 +, 내 선수 차출 소식.
    - `worldcup.ts`: 2002부터 4년마다 시즌이 끝난 6~7월 (2022도 여름으로 단순화). 2002~2026 실제 참가국 · 조
-     (`node tools/data_pipeline worldcups --apply` → `meta/worldcups.json`, 위키백과 "FIFA World Cup squads" 문서), 그 뒤는 대표팀 전력 + 대륙 쿼터
+     (`node tools/data_pipeline worldcups --apply` → `meta/worldcups.json`, 위키백과 대회별 대표 명단 문서), 그 뒤는 대표팀 전력 + 대륙 쿼터
      (32팀 UEFA 13 · CAF 5 · AFC 4 · CONMEBOL 4 · CONCACAF 3 + PO / 48팀 16 · 9 · 8 · 6 · 6 · OFC 1 + PO), 개최국 2030 스페인 · 포르투갈 · 모로코, 2034 사우디.
      조 추첨은 전력 포트 · 같은 연맹 한 조 1팀(UEFA 2팀). 32팀 16강 1A-2B 대진, 48팀 조 1 · 2위 + 3위 상위 8팀 → 시드 1 vs 32.
      대표팀은 경기용 구단 `nt-나라`(리그 'intl'), 유럽 리그 선수가 모자라면 '국내파' 가상 선수(retired 표시, 시즌 전환 때 `clearWorldCup` 이 지움).
      경기 기록은 `intlStats`, 구단 충성도 · 징계와 무관. 우승 출전 선수 수상 경력(wc) · 사기 +15, `w.worldCupHistory` (득점왕 포함).
-     월드컵이 7월까지 가면 다음 시즌 날짜를 되돌리지 않음. 화면: 순위 '대회' 줄 월드컵 탭(조 · 녹아웃 · 우리 선수), 받은편지함 차출 · 대표 선발 · 우승, 선수 창 월드컵 기록.
-   - 시험: `worldcup.test.ts`, 10시즌 연속 진행(2026 · 2030 · 2034 월드컵 포함) 문제 0건.
-   - 이름: 실명 데이터 'FIFA 월드컵', 공개 데이터 '월드 풋볼 챔피언십'.
+     세계 대회가 7월까지 가면 다음 시즌 날짜를 되돌리지 않음. 화면: 순위 '대회' 줄 세계 대회 탭(조 · 녹아웃 · 우리 선수), 받은편지함 차출 · 대표 선발 · 우승, 선수 창 세계 대회 기록.
+   - 시험: `worldcup.test.ts`, 10시즌 연속 진행(2026 · 2030 · 2034 세계 대회 포함) 문제 0건.
+   - 이름: 실명 · 공개 데이터 모두 '세계 대회'.
 0. **재정 개편 · 재정 규정 · 유스 · 훈련** (커밋됨 49516d6)
    - 원칙 (사용자 결정): 모든 구단은 수입이 있고 그 안에서 영입한다 — AI · 사용자 같은 규칙.
    - `finance.ts`: 모든 구단에 중계권 · 스폰서 · 입장 · 리그 상금 · 우승 보너스 수입과 주급 · 운영비(22%) 지출. 시즌 전환 때 잔고는 게임 속 돈을 이어가고
@@ -456,7 +457,7 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 1. 2부 리그 데이터 수집 마무리 (위) → 게임에서 확인
 2. ~~국내 컵 대회~~ (완료 · 다음 할 일: 2부 데이터가 들어오면 44팀 컵을 브라우저로 확인)
 3. ~~유럽 대회~~ (완료 · 16팀 축소판. 나중에: 36팀 리그 페이즈(2024~) 같은 시대별 방식, 다른 나라 구단)
-4. ~~월드컵~~ (완료 · 나중에: 유로 · 코파 아메리카 등 대륙 대회, 사용자가 대표팀 감독, 실제 2022 겨울 일정)
+4. ~~세계 대회~~ (완료 · 나중에: 유로 · 코파 아메리카 등 대륙 대회, 사용자가 대표팀 감독, 실제 2022 겨울 일정)
 5. ~~구단 메뉴 · 감독 계약 · 이사회 · 팬 · 기자회견 · 시설~~ (완료)
 6. ~~임대 · 역할 약속 · AI 감독 교체 · 무료 배포~~ (완료)
 7. ~~스카우트 · 내 포메이션~~ (완료, v0.3)

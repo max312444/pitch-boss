@@ -1,5 +1,7 @@
 // 대표팀 엠블럼 색: 그 나라 대표팀 유니폼의 대표 색 [주색, 보조색] (실제 로고가 아니라 색만)
-//  목록에 없는 나라는 나라 약자로 정한 색 (nationColors)
+//  목록에 없는 나라는 Wikidata 대표팀 공식 색 · 국기 색 (data meta/nation-colors.json), 그것도 없으면 나라 약자로 정한 색
+import { nationColorsMeta } from '../../data/db';
+
 export const NATION_COLORS: Record<string, [string, string]> = {
   // 유럽
   ENG: ['#f4f4f2', '#cf142b'], SCO: ['#1b2a5c', '#f4f4f2'], WAL: ['#c8102e', '#f4f4f2'], NIR: ['#00843d', '#f4f4f2'], IRL: ['#169b62', '#f4f4f2'],
@@ -34,7 +36,7 @@ export const NATION_COLORS: Record<string, [string, string]> = {
 
 /** 목록에 없는 나라: 약자로 정한 색 (같은 나라는 늘 같은 색) */
 export function nationColors(code: string): [string, string] {
-  const hit = NATION_COLORS[code];
+  const hit = NATION_COLORS[code] ?? nationColorsMeta[code];   // 손으로 정한 유니폼 색 → 위키 데이터 (대표팀 공식 색 · 국기 색)
   if (hit) return hit;
   let h = 0;
   for (const ch of code) h = (h * 31 + ch.charCodeAt(0)) >>> 0;

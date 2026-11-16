@@ -48,9 +48,9 @@
       "nation": "EUR"
     },
     {
-      "en": "World Football Championship",
+      "en": "World Championship",
       "id": "wc",
-      "ko": "월드 풋볼 챔피언십",
+      "ko": "세계 대회",
       "nation": "INT"
     }
   ],

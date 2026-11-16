@@ -1,4 +1,4 @@
-// 월드컵 모드 화면: 대표팀 홈 · 대표 명단(소집) · 순위(예선 조 + 월드컵)
+// 세계 대회 모드 화면: 대표팀 홈 · 대표 명단(소집) · 순위(예선 조 + 세계 대회)
 import { useMemo, useState } from 'react';
 import type { Fixture, PlayerState, World } from '../../engine/types';
 import { callUpPool, squadSize, STAGE_KO, stageRank, type IntlStage } from '../../engine/intl';
@@ -38,11 +38,11 @@ export function IntlHome() {
           <Crest clubId={me} size={56} />
           <div className="min-w-0 flex-1">
             <div className="text-[22px] font-semibold">{nationKo(it.nation)} 대표팀</div>
-            <div className="text-[13px] text-lo">{confedOf(it.nation) ?? ''} · {it.cycle} 월드컵 주기 · 대표 명단 {w.clubs[me].squad.length}/{squadSize(w)}명</div>
+            <div className="text-[13px] text-lo">{confedOf(it.nation) ?? ''} · {it.cycle} 세계 대회 주기 · 대표 명단 {w.clubs[me].squad.length}/{squadSize(w)}명</div>
           </div>
           <div className="rounded-lg bg-ink-850 px-4 py-2.5 text-right">
             <div className="text-[11px] text-lo">협회 목표</div>
-            <div className="text-[16px] font-semibold text-neon">{it.objective === 'playoff' ? '예선 플레이오프 이상' : it.objective === 'group' ? '월드컵 본선 진출' : `월드컵 ${STAGE_KO[it.objective]}`}</div>
+            <div className="text-[16px] font-semibold text-neon">{it.objective === 'playoff' ? '예선 플레이오프 이상' : it.objective === 'group' ? '세계 대회 본선 진출' : `세계 대회 ${STAGE_KO[it.objective]}`}</div>
           </div>
         </section>
 
@@ -64,14 +64,14 @@ export function IntlHome() {
 
         <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-2 lg:gap-6">
           {it.quali && (
-            <Card title={`월드컵 예선 · ${it.quali.group.name}`} action={it.quali.done ? <span className={`text-[12px] font-semibold ${it.quali.result === 'out' ? 'text-red' : 'text-neon'}`}>{it.quali.result === 'qualified' ? '본선 진출' : it.quali.result === 'playoff' ? (it.quali.playoff?.done ? (it.quali.playoff.won ? '플레이오프 통과' : '플레이오프 탈락') : '플레이오프') : '탈락'}</span> : null}>
+            <Card title={`세계 대회 예선 · ${it.quali.group.name}`} action={it.quali.done ? <span className={`text-[12px] font-semibold ${it.quali.result === 'out' ? 'text-red' : 'text-neon'}`}>{it.quali.result === 'qualified' ? '본선 진출' : it.quali.result === 'playoff' ? (it.quali.playoff?.done ? (it.quali.playoff.won ? '플레이오프 통과' : '플레이오프 탈락') : '플레이오프') : '탈락'}</span> : null}>
               <QualiTable w={w} />
               <div className="px-5 py-3 text-[11px] text-lo">1위 본선 진출 · 2위 3월 플레이오프 (준결승 · 결승 단판) · 3 · 4위 탈락</div>
             </Card>
           )}
           {!it.quali && (
             <Card title={it.host ? '개최국' : '친선경기 시즌'}>
-              <div className="px-5 py-4 text-[13px] leading-relaxed text-mid">{it.host ? `${it.cycle} 월드컵 개최국이라 예선 없이 본선에 나갑니다. 친선경기로 손발을 맞추세요.` : `이번 시즌은 A매치 기간마다 친선경기 2경기입니다. 월드컵 예선은 ${it.cycle - 1}/${String(it.cycle % 100).padStart(2, '0')} 시즌 9월부터입니다.`}</div>
+              <div className="px-5 py-4 text-[13px] leading-relaxed text-mid">{it.host ? `${it.cycle} 세계 대회 개최국이라 예선 없이 본선에 나갑니다. 친선경기로 손발을 맞추세요.` : `이번 시즌은 A매치 기간마다 친선경기 2경기입니다. 세계 대회 예선은 ${it.cycle - 1}/${String(it.cycle % 100).padStart(2, '0')} 시즌 9월부터입니다.`}</div>
             </Card>
           )}
           <Card title="최근 결과">
@@ -91,12 +91,12 @@ export function IntlHome() {
 
         {(inCup || w.worldCup) && (
           <button onClick={() => setTab('table')} className="panel flex items-center justify-between px-5 py-4 text-left text-[14px] hover:bg-ink-850">
-            <span><b>{w.worldCup?.year} 월드컵</b> <span className="text-lo">· {inCup ? '본선 진출' : '본선에 나가지 못함'}</span></span><span className="text-neon">순위 · 대진 보기 →</span>
+            <span><b>{w.worldCup?.year} 세계 대회</b> <span className="text-lo">· {inCup ? '본선 진출' : '본선에 나가지 못함'}</span></span><span className="text-neon">순위 · 대진 보기 →</span>
           </button>
         )}
 
         {it.history.length > 0 && (
-          <Card title="지난 월드컵">
+          <Card title="지난 세계 대회">
             {it.history.slice().reverse().map((h) => (
               <div key={h.year} className="flex items-center gap-3 px-5 py-2.5 text-[13px] shadow-[inset_0_-1px_0_var(--color-line)]">
                 <span className="tnum w-12 font-semibold">{h.year}</span>
@@ -179,15 +179,15 @@ export function IntlSquad() {
   );
 }
 
-/** 순위: 예선 조 + 월드컵 (조 · 대진) */
+/** 순위: 예선 조 + 세계 대회 (조 · 대진) */
 export function IntlTable() {
   const w = useWorld();
   return (
     <div className="h-full overflow-auto">
       <div className="mx-auto flex max-w-[1200px] flex-col gap-4 p-3 lg:gap-6 lg:p-6">
-        {w.intl?.quali && <Card title={`월드컵 예선 · ${w.intl.quali.group.name}`}><QualiTable w={w} /></Card>}
+        {w.intl?.quali && <Card title={`세계 대회 예선 · ${w.intl.quali.group.name}`}><QualiTable w={w} /></Card>}
       </div>
-      {w.worldCup ? <WorldCupView /> : <div className="px-6 pb-6 text-[13px] text-lo">이번 시즌에는 월드컵이 없습니다. 다음 월드컵: {w.intl?.cycle}</div>}
+      {w.worldCup ? <WorldCupView /> : <div className="px-6 pb-6 text-[13px] text-lo">이번 시즌에는 세계 대회가 없습니다. 다음 세계 대회: {w.intl?.cycle}</div>}
     </div>
   );
 }

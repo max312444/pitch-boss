@@ -57,7 +57,7 @@ export function Card({ title, action, children, className = '', tour }: { title?
   );
 }
 
-/** 대회 종류: 리그 · 국내 컵 · 챔스 · 유로파 · 월드컵 (경기마다 색으로 구분) */
+/** 대회 종류: 리그 · 국내 컵 · 챔스 · 유로파 · 세계 대회 (경기마다 색으로 구분) */
 export type CompKind = 'league' | 'po' | 'cup' | 'ucl' | 'uel' | 'intl';
 export function compKind(f: { league: string; stage?: string }, w?: World): CompKind {
   if (f.stage === 'intl' || f.league === 'wc' || f.league.startsWith('nt-')) return 'intl';

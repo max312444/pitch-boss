@@ -85,7 +85,7 @@ export interface PlayerState {
   buyoutClub?: string;
   /** 셀온: 다음 이적 때 이적료의 pct% 를 club 에 (engine/addons.ts) */
   sellOn?: { club: string; pct: number };
-  /** 대표팀 전용 선수 (실제 월드컵 명단 중 게임에 없는 선수 · 국내파, engine/wcsquads.ts) */
+  /** 대표팀 전용 선수 (실제 세계 대회 명단 중 게임에 없는 선수 · 국내파, engine/wcsquads.ts) */
   intlOnly?: boolean;
   /** 보너스: payer(지금 구단)가 이 선수 출전 apps 경기를 채우면 club 에 amount (done = 지금까지) */
   addOn?: { club: string; payer: string; amount: number; apps: number; done: number };
@@ -111,7 +111,7 @@ export interface PlayerState {
   stats: SeasonStats;
   /** 이번 시즌 컵 대회 기록 (리그 기록과 따로) */
   cupStats?: { apps: number; goals: number; assists: number };
-  /** 월드컵 기록 (대회가 있는 시즌) */
+  /** 세계 대회 기록 (대회가 있는 시즌) */
   intlStats?: { apps: number; goals: number; assists: number };
   /** 지난 시즌 기록 (시즌이 끝날 때 쌓임) */
   career: CareerEntry[];
@@ -342,9 +342,9 @@ export interface World {
   cups?: Record<string, import('./cup').Cup>;
   /** 유럽 대회 (챔피언스리그 · 유로파리그, 이번 시즌) */
   europe?: Record<string, import('./europe').EuroComp>;
-  /** 월드컵 (이번 시즌 끝에 열리면) */
+  /** 세계 대회 (이번 시즌 끝에 열리면) */
   worldCup?: import('./worldcup').WorldCupState;
-  /** 지난 월드컵 기록 */
+  /** 지난 세계 대회 기록 */
   worldCupHistory?: import('./worldcup').WorldCupRecord[];
   /** 지난 컵 대회 우승 기록 */
   cupHistory?: import('./cup').CupRecord[];
@@ -359,7 +359,7 @@ export interface World {
   history: SeasonRecord[];   // 지난 시즌 최종 순위
   /** 어느 데이터로 만든 세이브인지 (public: 패러디 이름, real: 실명). 없으면 옛 세이브 = real */
   dataset?: 'public' | 'real';
-  /** 월드컵 모드 · 대표팀 감독 (engine/intl.ts) */
+  /** 세계 대회 모드 · 대표팀 감독 (engine/intl.ts) */
   intl?: import('./intl').IntlState;
   /** 나의 구단 만들기 모드 (engine/myclub.ts) */
   myClub?: import('./myclubDesign').MyClubState;

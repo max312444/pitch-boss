@@ -1,4 +1,4 @@
-// 월드컵 모드 협회 평가 (주기가 끝난 뒤): 경질 → 다른 나라 고르기 (필수) · 목표를 크게 넘음 → 더 큰 나라 제안 (선택)
+// 세계 대회 모드 협회 평가 (주기가 끝난 뒤): 경질 → 다른 나라 고르기 (필수) · 목표를 크게 넘음 → 더 큰 나라 제안 (선택)
 import { STAGE_KO } from '../../engine/intl';
 import { confedOf } from '../../engine/national';
 import { nationKo } from '../../data/db';
@@ -18,7 +18,7 @@ export function IntlJobModal() {
         <div className={`text-[12px] font-semibold ${sacked ? 'text-red' : 'text-neon'}`}>{sacked ? '협회 결정' : '감독 제안'}</div>
         <div className="mt-1 text-[19px] font-semibold">{sacked ? `${nationKo(w.intl!.nation)} 대표팀에서 경질됐습니다` : '다른 나라가 감독으로 모시고 싶어 합니다'}</div>
         <div className="mt-1.5 text-[13px] leading-relaxed text-mid">
-          지난 월드컵 성적 <b className="text-hi">{STAGE_KO[job.stage]}</b> (목표 {STAGE_KO[job.objective]}). {sacked ? '아래 나라 중 한 곳을 골라 감독 커리어를 이어 가세요.' : '옮기거나, 지금 대표팀에 남을 수 있습니다.'}
+          지난 세계 대회 성적 <b className="text-hi">{STAGE_KO[job.stage]}</b> (목표 {STAGE_KO[job.objective]}). {sacked ? '아래 나라 중 한 곳을 골라 감독 커리어를 이어 가세요.' : '옮기거나, 지금 대표팀에 남을 수 있습니다.'}
         </div>
         <div className="mt-4 grid gap-2">
           {job.offers.map((n) => (

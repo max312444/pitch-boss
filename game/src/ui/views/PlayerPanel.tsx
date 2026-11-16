@@ -171,7 +171,7 @@ export function PlayerPanel({ p, age, ko, nation, actions, club, sheet }: { p: P
           ))}
         </div>
         {p.cupStats?.apps ? <div className="mt-2 text-center text-[11px] text-lo">리그 기록 · 컵 대회 {p.cupStats.apps}경기 {p.cupStats.goals}골 {p.cupStats.assists}도움</div> : null}
-        {p.intlStats?.apps ? <div className="mt-1 text-center text-[11px] text-sky">월드컵 {p.intlStats.apps}경기 {p.intlStats.goals}골 {p.intlStats.assists}도움</div> : null}
+        {p.intlStats?.apps ? <div className="mt-1 text-center text-[11px] text-sky">세계 대회 {p.intlStats.apps}경기 {p.intlStats.goals}골 {p.intlStats.assists}도움</div> : null}
       </div>
 
       <div className="flex-1 overflow-auto px-5 py-4">

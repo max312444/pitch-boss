@@ -53,7 +53,7 @@ export interface SeasonInput {
   leagues: { id: string; clubs: ClubSeasonFile[] }[];
   /** 실제 지난 시즌 최종 순위 (리그별, 첫 시즌 유럽 대회 출전권용) */
   prevStandings?: Record<string, string[]>;
-  /** 실제 월드컵 참가국 · 조 (meta/worldcups.json) */
+  /** 실제 세계 대회 참가국 · 조 (meta/worldcups.json) */
   worldCups?: Record<string, import('./worldcup').WorldCupMeta>;
   /** 감독 데이터 (history/managers.json) */
   managers?: import('./managers').ManagerData;
@@ -166,7 +166,7 @@ export function allFixtures(w: World): Fixture[] {
   for (const c of Object.values(w.cups ?? {})) out.push(...c.fixtures);
   for (const c of Object.values(w.europe ?? {})) out.push(...c.fixtures);
   if (w.worldCup) out.push(...w.worldCup.fixtures);
-  if (w.intl) out.push(...w.intl.fixtures);   // 월드컵 모드: 내 대표팀 친선 · 예선
+  if (w.intl) out.push(...w.intl.fixtures);   // 세계 대회 모드: 내 대표팀 친선 · 예선
   return out;
 }
 
@@ -200,6 +200,7 @@ export function prepareMatch(w: World, f: Fixture, rng: Rng, opts: { manualSide?
     homeChem: chemMult(chemistry(w, f.home).total) * (h ? managerEdge(w, f.home, f.away, hp.tactics) : 1),
     awayChem: chemMult(chemistry(w, f.away).total) * (a ? managerEdge(w, f.away, f.home, ap.tactics) : 1),
     manualSide: opts.manualSide,
+    intl: f.stage === 'intl',   // 대표팀 경기 (친선 · 예선 · 세계 대회): 이변이 잦게
   }, { players: w.players, rng });
 }
 
@@ -207,7 +208,7 @@ export function prepareMatch(w: World, f: Fixture, rng: Rng, opts: { manualSide?
 export function applyMatch(w: World, f: Fixture, m: MatchState) {
   const s = m.summary;
   const cup = f.stage === 'cup' || f.stage === 'euro' || f.stage === 'intl';   // 컵 · 유럽 · 국가대표: 순위표 · 경고 누적 제외
-  // 기록: 컵 · 유럽 대회는 cupStats, 월드컵은 intlStats (리그 기록 stats 와 따로)
+  // 기록: 컵 · 유럽 대회는 cupStats, 세계 대회는 intlStats (리그 기록 stats 와 따로)
   const cs = (id: string) => (f.stage === 'intl' ? (w.players[id].intlStats ??= { apps: 0, goals: 0, assists: 0 }) : (w.players[id].cupStats ??= { apps: 0, goals: 0, assists: 0 }));
   // 컵 경기는 비기면 바로 승부차기
   if (f.stage === 'cup' && s.homeGoals === s.awayGoals) s.pens ??= shootout(w, f.home, f.away, f.id);   // 직접 한 승부차기면 그 결과
@@ -304,7 +305,7 @@ export function advanceDay(w: World): GameEvent[] {
   const events: GameEvent[] = [];
   const today = w.date;
   const playedToday = new Set<string>();
-  if (w.intl) events.push(...intlDay(w, rng));   // 월드컵 모드: 상대 대표팀 준비 · 예선 순위 · 플레이오프
+  if (w.intl) events.push(...intlDay(w, rng));   // 세계 대회 모드: 상대 대표팀 준비 · 예선 순위 · 플레이오프
 
   for (const f of allFixtures(w)) {
     if (f.date !== today || f.result) continue;
@@ -325,7 +326,7 @@ export function advanceDay(w: World): GameEvent[] {
   // 컵 대회: 끝난 라운드 정리 · 다음 라운드 추첨 · 우승
   events.push(...cupDay(w));
   events.push(...euroDay(w));
-  // 월드컵 · A매치 기간 차출
+  // 세계 대회 · A매치 기간 차출
   events.push(...worldCupDay(w));
   events.push(...intlBreakDay(w, rng));
   // 리그 종료 (플레이오프까지 모두 끝난 리그)
@@ -468,5 +469,5 @@ export function advanceToUserMatch(w: World, maxDays = 120): { events: GameEvent
   return { events, matchToday: userFixtureToday(w) };
 }
 
-/** 비기면 승부차기로 승자를 정하는 경기 (컵 · 월드컵 녹아웃 · 월드컵 예선 플레이오프) */
+/** 비기면 승부차기로 승자를 정하는 경기 (컵 · 세계 대회 녹아웃 · 세계 대회 예선 플레이오프) */
 export const decidesOnDraw = (f: Fixture) => f.stage === 'cup' || (f.league === 'wc' && !f.group) || (f.league === 'nt' && !!f.name?.startsWith('예선 플레이오프'));

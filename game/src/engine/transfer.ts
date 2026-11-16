@@ -309,7 +309,7 @@ export function clubLevel(w: World, clubId: string): number {
  * 최대 금액(max)은 화면에 보이지 않고, 감독이 역제안하면 이 안에서 협상한다.
  */
 function userOffers(w: World, rng: Rng, active: World['clubs'][string][]) {
-  if (w.intl) return;   // 월드컵 모드: 내 구단 없음
+  if (w.intl) return;   // 세계 대회 모드: 내 구단 없음
   const offers = (w.offers ??= []);
   const listed = new Set(w.transferList ?? []);
   for (const id of w.clubs[w.userClubId].squad) {

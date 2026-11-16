@@ -1,4 +1,4 @@
-// 월드컵 · A매치 차출 테스트
+// 세계 대회 · A매치 차출 테스트
 import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -21,7 +21,7 @@ const load = (season: string, withWc = true): SeasonInput => ({
 });
 const LIV = 'c83d96l';
 
-describe('월드컵', () => {
+describe('세계 대회', () => {
   it('2026: 실제 참가국 48팀 · 12개 조 → 32강 … 결승, 끝나면 대표팀 구단 · 가상 선수 정리', () => {
     expect(worldCupYear('2025-26')).toBe(2026);
     expect(worldCupYear('2024-25')).toBeNull();
@@ -32,7 +32,7 @@ describe('월드컵', () => {
     expect(wc.groups).toHaveLength(12);
     expect(wc.groups[0].teams).toEqual(['nt-CZE', 'nt-MEX', 'nt-RSA', 'nt-KOR']);
     expect(wc.fixtures).toHaveLength(72);
-    // 리그 · 컵 · 유럽 대회와 날짜가 겹치는 구단이 없어야 한다 (월드컵은 시즌이 끝난 뒤)
+    // 리그 · 컵 · 유럽 대회와 날짜가 겹치는 구단이 없어야 한다 (세계 대회는 시즌이 끝난 뒤)
     const lastClubGame = allFixtures(w).filter((f) => f.stage !== 'intl').map((f) => f.date).sort().at(-1)!;
     expect(wc.dates.group[0] > lastClubGame).toBe(true);
 
@@ -59,7 +59,7 @@ describe('월드컵', () => {
     startNextSeason(w, load('2026-27'));
     expect(Object.keys(w.clubs).some(isNT)).toBe(false);
     expect(fillers.every((id) => !w.players[id])).toBe(true);
-    expect(w.worldCup).toBeUndefined();                       // 2027년에는 월드컵 없음
+    expect(w.worldCup).toBeUndefined();                       // 2027년에는 세계 대회 없음
     expect(w.date >= '2026-07-01' && w.date >= endDate).toBe(true);   // 날짜가 거꾸로 가지 않음
   }, 180000);
 

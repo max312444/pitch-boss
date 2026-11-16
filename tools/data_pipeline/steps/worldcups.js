@@ -43,7 +43,7 @@ async function worldcups({ apply, log }) {
       }
     }
     const n = Object.values(groups).flat().length;
-    out[y] = { hosts: HOSTS[y], groups, source: `enwiki:${title}@${rev.revid}` };
+    out[y] = { hosts: HOSTS[y], groups, source: `enwiki@${rev.revid}` };   // 출처: 위키백과 문서 판 번호 (대회 이름은 넣지 않음)
     log(`  ${y}: ${Object.keys(groups).length}개 조 · ${n}개 나라`);
   }
   if (missing.size) log(`  nations.json 에 없는 나라 ${missing.size}개: ${[...missing].join(', ')}`);

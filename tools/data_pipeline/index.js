@@ -6,6 +6,7 @@
 //   node tools/data_pipeline report   --league eng1
 //   node tools/data_pipeline merge    <중복 ID> <남길 ID>
 //   node tools/data_pipeline dedupe [--apply]    같은 시즌 중복 소속 정리
+//   node tools/data_pipeline natcolors [--apply]   나라별 대표팀 색 (대표팀 공식 색 → 국기 색, 엠블럼용)
 //   node tools/data_pipeline natpool [--apply] [--nation KOR]  나라별 대표 선수 풀 (Wikidata 대표팀 소속 기간 → 소집 후보)
 //   node tools/data_pipeline wcsquads [--apply]    월드컵 실제 명단 (위키백과 squads 문서 → 게임 선수와 맞춤)
 //   node tools/data_pipeline worldcups [--apply]   월드컵 참가국 · 조 (위키백과 squads 문서)
@@ -150,6 +151,7 @@ function report(league, { t0, summary } = {}) {
 
   if (cmd === 'report') return leagues.forEach(l => report(l));
   if (cmd === 'unify-names') return unifyNames({ apply: args.includes('--apply'), log });
+  if (cmd === 'natcolors') return require('./steps/natcolors').natcolors({ apply: args.includes('--apply'), log });
   if (cmd === 'natpool') return require('./steps/natpool').natpool({ apply: args.includes('--apply'), nation: typeof opt('nation') === 'string' ? opt('nation') : undefined, log });
   if (cmd === 'wcsquads') return require('./steps/wcsquads').wcsquads({ apply: args.includes('--apply'), log });
   if (cmd === 'worldcups') return require('./steps/worldcups').worldcups({ apply: args.includes('--apply'), log });

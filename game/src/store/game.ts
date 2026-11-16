@@ -3,7 +3,7 @@
 import { applyMatchEvent, rollMatchEvent, type MatchEvent } from '../engine/matchEvents';
 import { shootout } from '../engine/cup';
 import { worldCupYear } from '../engine/worldcup';
-import { autoCallUp, cycleStage, intlNextSeason, setupIntl, squadSize, switchNation } from '../engine/intl';
+import { autoCallUp, cycleStage, intlNextSeason, repairIntl, setupIntl, squadSize, switchNation } from '../engine/intl';
 import { setWcPools, setWcSquads } from '../engine/wcsquads';
 import { termsError, type DealTerms } from '../engine/addons';
 import { newCareerId, recordCareer } from './careers';
@@ -129,7 +129,7 @@ export interface LiveMatch {
   rng: Rng;
   /** squad: 경기 전 스쿼드 설정 · live: 진행 중 · full: 종료 */
   phase: 'squad' | 'live' | 'pens' | 'full';
-  /** 월드컵 모드: 경기 중 사건 (고를 때까지 멈춤) · 이번 경기에 나온 종류 */
+  /** 세계 대회 모드: 경기 중 사건 (고를 때까지 멈춤) · 이번 경기에 나온 종류 */
   event?: MatchEvent;
   evSeen?: string[];
   rec: Recommendation;
@@ -174,7 +174,7 @@ interface GameStore {
   /** 경기 준비 화면: 같은 동작을 이번 경기 선발에 */
   reshapeDraft(slotIdx: number, pos: Position): string;
   /** random: 완전 랜덤으로 고른 구단 → 첫 시즌만 예산 · 재정 규정 한도 보정 */
-  newGame(season: string, league: string, clubId: string, opts?: { random?: boolean; manager?: import('../engine/managers').UserManagerInput; /** 나의 구단 만들기: 이 리그 꼴찌 자리를 대신 (clubId 는 무시) */ myClub?: MyClubDesign; /** 월드컵 모드: 이 나라 대표팀 감독 (clubId 는 무시) */ intl?: { nation: string } }): Promise<void>;
+  newGame(season: string, league: string, clubId: string, opts?: { random?: boolean; manager?: import('../engine/managers').UserManagerInput; /** 나의 구단 만들기: 이 리그 꼴찌 자리를 대신 (clubId 는 무시) */ myClub?: MyClubDesign; /** 세계 대회 모드: 이 나라 대표팀 감독 (clubId 는 무시) */ intl?: { nation: string } }): Promise<void>;
   continueGame(): void;
   updateDraft(change: Partial<MatchDraft>): void;
   resetDraft(): void;
@@ -195,10 +195,10 @@ interface GameStore {
   sign(playerId: string, wage: number, years: number, role?: Role, clause?: number): { ok: boolean; reason: string; left?: number; broken?: boolean };
   /** 내 선수 역할 바꾸기 */
   setRole(playerId: string, role: Role): void;
-  /** 월드컵 모드: 대표 소집 (넣기 · 빼기) · 추천 명단. 실패하면 이유 */
+  /** 세계 대회 모드: 대표 소집 (넣기 · 빼기) · 추천 명단. 실패하면 이유 */
   callUp(playerId: string, on: boolean): string | null;
   autoSquad(): void;
-  /** 월드컵 모드 협회 평가: 다른 나라 고르기 (null = 제안 거절, 경질이면 거절 불가) */
+  /** 세계 대회 모드 협회 평가: 다른 나라 고르기 (null = 제안 거절, 경질이면 거절 불가) */
   chooseIntlJob(nation: string | null): void;
   /** 경기 중 사건 고르기 (우리 페널티는 키커도) · 결과 확인 뒤 닫기 */
   resolveEvent(choice: string, takerId?: string): void;
@@ -291,8 +291,8 @@ export const useGame = create<GameStore>((set, get) => {
     async newGame(season, league, clubId, opts = {}) {
       set({ loading: true });
       // 그 시즌 데이터가 있는 1부 리그를 모두 불러와 함께 진행한다
-      setWcSquads(await loadWcSquads());   // 실제 월드컵 명단 (본선 · 월드컵 모드)
-      setWcPools(opts.intl ? await loadWcPools() : undefined);   // 나라별 대표 선수 풀 (월드컵 모드만, 파일이 커서)
+      setWcSquads(await loadWcSquads());   // 실제 세계 대회 명단 (본선 · 세계 대회 모드)
+      setWcPools(opts.intl ? await loadWcPools() : undefined);   // 나라별 대표 선수 풀 (세계 대회 모드만, 파일이 커서)
       let input = await loadSeasonInput(season, opts.intl ? undefined : league);
       const seed = (Date.now() ^ Math.floor(Math.random() * 1e9)) >>> 0;
       // 나의 구단: 이 리그 꼴찌 자리를 대신 (그 구단 선수들은 FA 로)
@@ -308,7 +308,7 @@ export const useGame = create<GameStore>((set, get) => {
       }
       const world = createWorld(input, clubId, seed, { manager: opts.manager, settings: gameSettingsOf(useSettings.getState().s), ...(my ? { skipFill: [my.id] } : {}) });
       if (my) setupMyClub(world, my, freed);
-      if (opts.intl) setupIntl(world, opts.intl.nation);   // 월드컵 모드: 내 대표팀 · 국내파 · 첫 일정
+      if (opts.intl) setupIntl(world, opts.intl.nation);   // 세계 대회 모드: 내 대표팀 · 국내파 · 첫 일정
       registerGeneratedNames(world.managers ?? {});   // 가상 감독 한국어 이름
       world.dataset = dataset;
       world.careerId = newCareerId();
@@ -332,7 +332,7 @@ export const useGame = create<GameStore>((set, get) => {
       const w = get().world;
       if (!w || get().match || w.manager?.pendingJob) return;   // 감독: 새 구단을 골라야 하면 진행 멈춤
       if (w.myClub?.setup) { if (!squadNeeds(w).ok) return; w.myClub.setup = false; }
-      if (w.intl?.job?.reason === 'sacked') return;   // 월드컵 모드: 경질 → 새 나라를 골라야 진행   // 나의 구단: 선수단을 다 채워야 시즌 시작
+      if (w.intl?.job?.reason === 'sacked') return;   // 세계 대회 모드: 경질 → 새 나라를 골라야 진행   // 나의 구단: 선수단을 다 채워야 시즌 시작
       syncWorld(w);   // 설정 (팝업 · 난이도) 을 이 게임에 반영
       const st = useSettings.getState().s;
       const startWindow = windowOpen(w.season, w.date);
@@ -340,7 +340,7 @@ export const useGame = create<GameStore>((set, get) => {
       // 설정 '계속이 멈추는 곳': 내 경기마다 (기본) · 중요한 일만 · 이적시장 · 시즌 끝까지
       for (let guard = 0; guard < 400; guard++) {
         const { events, matchToday } = advanceToUserMatch(w);
-        registerGeneratedNames(w.players);   // 월드컵 국내파 가상 선수 한국어 이름
+        registerGeneratedNames(w.players);   // 세계 대회 국내파 가상 선수 한국어 이름
         all.push(...events);
         const m = w.manager;
         const halt = !!(m?.pendingJob || m?.boardEvent || m?.press || w.sagaPrompt || w.scandalPrompt || w.pendingRenewals?.length || seasonOver(w)
@@ -411,7 +411,7 @@ export const useGame = create<GameStore>((set, get) => {
       const ctx = { players: w.players, rng: m.rng };
       for (let i = 0; i < n && !st.done; i++) {
         step(st, ctx);
-        // 월드컵 모드: 구간 사이 사건 (하프타임 연설 · 통증 · 페널티 · 막판 선택)
+        // 세계 대회 모드: 구간 사이 사건 (하프타임 연설 · 통증 · 페널티 · 막판 선택)
         if (w.intl && m.phase === 'live' && !st.done) {
           const ev = rollMatchEvent(st, m.side, ctx, (m.evSeen ??= []));
           if (ev) { m.event = ev; m.evSeen.push(ev.kind); break; }
@@ -994,12 +994,12 @@ export const useGame = create<GameStore>((set, get) => {
       const w = get().world;
       if (!w || !seasonOver(w)) return;
       set({ loading: true });
-      const intlStage = w.intl && worldCupYear(w.season) ? cycleStage(w) : undefined;   // 월드컵 모드: 이번 주기 성적 (월드컵이 끝난 시즌)
+      const intlStage = w.intl && worldCupYear(w.season) ? cycleStage(w) : undefined;   // 세계 대회 모드: 이번 주기 성적 (세계 대회가 끝난 시즌)
       closeSeason(w);
       let input = await loadSeasonInput(nextSeasonOf(w.season));
       if (w.myClub) input = swapInput(input, w.myClub, currentAsData(w.clubs[w.myClub.id])).input;   // 나의 구단: 대신한 구단 자리
       const report = startNextSeason(w, input);
-      if (w.intl) intlNextSeason(w, intlStage);   // 월드컵 모드: 다음 일정 (새 주기면 국내파 · 목표)
+      if (w.intl) intlNextSeason(w, intlStage);   // 세계 대회 모드: 다음 일정 (새 주기면 국내파 · 목표)
       registerGeneratedNames(w.players);   // 유스 선수 한국어 이름
       const awards = w.pendingAwards?.length ? w.pendingAwards : null;
       const news = w.pendingNews?.length ? w.pendingNews : null;
@@ -1036,6 +1036,7 @@ export const useGame = create<GameStore>((set, get) => {
       const world = await readSave(slot);
       setWcSquads(await loadWcSquads());
       setWcPools(world?.intl ? await loadWcPools() : undefined);
+      if (world?.intl) repairIntl(world);   // 세계 대회 모드: 실제 명단 · 대표 풀로 소집 후보 다시 (데이터 없이 만든 세이브 고침)
       if (!world) return false;
       // 다른 데이터로 만든 세이브면 그 데이터로 바꾼 뒤 (새로 고침) 자동으로 이어서 불러온다
       const need = world.dataset ?? 'real';
@@ -1047,7 +1048,7 @@ export const useGame = create<GameStore>((set, get) => {
       }
       registerMyClub(world.myClub);   // 나의 구단 이름 · 엠블럼
       // 데이터 형식이 바뀌기 전에 만든 세이브 (구단을 찾을 수 없음)
-      if (!clubMasters.has(world.userClubId) || !Object.keys(world.clubs).every((id) => clubMasters.has(id) || !world.competitions[world.clubs[id].league])) {
+      if (!(clubMasters.has(world.userClubId) || (world.intl && world.userClubId.startsWith('nt-'))) || !Object.keys(world.clubs).every((id) => clubMasters.has(id) || !world.competitions[world.clubs[id].league])) {
         set({ loadError: '이전 형식의 데이터로 만든 세이브라 불러올 수 없습니다. 새 게임으로 시작해 주세요.' });
         return false;
       }

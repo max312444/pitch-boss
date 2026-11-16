@@ -169,3 +169,21 @@ export function growTowardPotential(p: PlayerState, age: number, minutesShare: n
   for (const k of Object.keys(p.base) as AttrKey[]) p.base[k] = clamp(Math.round((p.base[k] ?? 50) + step + rng.normal() * 1.2), 15, 97);
   return true;
 }
+
+/**
+ * 가상 선수 이름 (대표팀 국내파 · 상대 대표팀 · 대회 본선): 그 나라 이름 조각에서 고르되 이미 쓴 이름 (used) 과 겹치지 않게.
+ * 조합이 모자라면 겹칠 수 있지만 최대한 피한다 (40번 시도)
+ */
+export function pickName(pool: NamePool, rng: Rng, used: Set<string>): { name: string; nameFrom: [string | null, string] } {
+  let best: { name: string; nameFrom: [string | null, string] } | null = null;
+  for (let i = 0; i < 40; i++) {
+    const f = pool.first.length ? rng.pick(pool.first) : null, l = rng.pick(pool.last);
+    const name = [f?.v, l.v].filter(Boolean).join(' ');
+    best = { name, nameFrom: [f?.id ?? null, l.id] };
+    if (!used.has(name)) break;
+  }
+  used.add(best!.name);
+  return best!;
+}
+/** 그 나라 선수들이 이미 쓰는 이름 */
+export const usedNames = (w: World, nation: string) => new Set(Object.values(w.players).filter((p) => p.nation === nation).map((p) => p.name));

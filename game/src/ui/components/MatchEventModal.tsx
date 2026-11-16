@@ -1,4 +1,4 @@
-// 경기 중 사건 (월드컵 모드): 하프타임 연설 · 통증 호소 · 페널티 (키커 · 방향 / 골키퍼 방향) · 막판 선택
+// 경기 중 사건 (세계 대회 모드): 하프타임 연설 · 통증 호소 · 페널티 (키커 · 방향 / 골키퍼 방향) · 막판 선택
 import { useState } from 'react';
 import type { MatchEvent } from '../../engine/matchEvents';
 import type { PlayerState } from '../../engine/types';

@@ -44,7 +44,7 @@ export function HubScreen() {
   const ceremony = useGame((s) => s.ceremony);
   const preset = useApp((s) => s.transferPreset);
   const closeCeremony = useGame((s) => s.closeCeremony);
-  const intl = !!w.intl;   // 월드컵 모드: 대표팀 화면
+  const intl = !!w.intl;   // 세계 대회 모드: 대표팀 화면
   const view = {
     home: intl ? <IntlHome /> : <HomeView />, squad: intl ? <IntlSquad /> : <SquadView />, table: intl ? <IntlTable /> : <TableView />, schedule: <ScheduleView />,
     inbox: <InboxView />, news: <NewsView />, finance: <FinanceView />, club: <ClubView />, tactics: <TacticsView />, transfers: <TransfersView key={preset ? preset.label + preset.minOvr : 'free'} />,
@@ -54,7 +54,7 @@ export function HubScreen() {
     <div className="flex h-full animate-[fade_0.35s_ease-out] bg-ink-950">
       <Sidebar />
       <main className="flex min-w-0 flex-1 flex-col">
-        <TopBar title={intl && tab === 'squad' ? '대표 명단' : TITLES[tab]} subtitle={intl ? `${clubKo(w.userClubId)} · 월드컵 모드` : `${clubKo(w.userClubId)} · 1군`} />
+        <TopBar title={intl && tab === 'squad' ? '대표 명단' : TITLES[tab]} subtitle={intl ? `${clubKo(w.userClubId)} · 세계 대회 모드` : `${clubKo(w.userClubId)} · 1군`} />
         <div className="min-h-0 flex-1">
           {view ?? (
             <div className="grid h-full place-items-center">

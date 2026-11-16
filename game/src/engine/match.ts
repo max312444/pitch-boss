@@ -13,6 +13,9 @@ export const SEGMENTS = 18;
 const SEG_MIN = 5;
 
 // ── 튜닝 상수 (시뮬레이션으로 맞춤: 경기당 2.6~2.8골, 홈 승률 약 45%) ──
+/** 대표팀 경기의 능력 차 민감도 배율 (1 = 클럽 경기와 같음) */
+export const INTL_RATIO_K = 0.45;
+
 export const TUNING = {
   baseXg: 0.068,        // 구간당 팀 평균 xG
   homeAdv: 1.1,          // 홈 xG 배율 (원정은 2 - homeAdv)
@@ -107,6 +110,8 @@ export interface MatchState {
   done: boolean;
   /** 문자 중계 (사용자 경기만) */
   cm?: CommentaryState;
+  /** 대표팀 경기 (이변이 잦게): 능력 차 민감도 배율 · 그날 팀 컨디션 (xG 배율) */
+  intl?: { ratioK: number; form: Record<Side, number> };
   /** 중계용 메모: 전술 변경 · 페널티 실축 (경기 결과와 무관) */
   notes?: MatchNote[];
 }
@@ -152,7 +157,7 @@ function team(clubId: string, lineup: Lineup, tactics: Tactics, maxSubs: number,
 }
 
 export function createMatch(
-  args: { home: string; away: string; homeLineup: Lineup; awayLineup: Lineup; homeTactics: Tactics; awayTactics: Tactics; maxSubs: number; bigMatch?: boolean; manualSide?: Side; homeFam?: number; awayFam?: number; homeChem?: number; awayChem?: number; commentary?: boolean },
+  args: { home: string; away: string; homeLineup: Lineup; awayLineup: Lineup; homeTactics: Tactics; awayTactics: Tactics; maxSubs: number; bigMatch?: boolean; manualSide?: Side; homeFam?: number; awayFam?: number; homeChem?: number; awayChem?: number; commentary?: boolean; /** 대표팀 경기: 이변이 잦게 */ intl?: boolean },
   ctx: MatchCtx,
 ): MatchState {
   const bigMatch = !!args.bigMatch;
@@ -165,6 +170,12 @@ export function createMatch(
       stats: { home: { shots: 0, onTarget: 0, xg: 0, possession: 50 }, away: { shots: 0, onTarget: 0, xg: 0, possession: 50 } },
     },
   };
+  // 대표팀 경기: 손발을 맞출 시간이 적어 그날 컨디션 · 운이 크게 작용 (강팀도 어이없이 질 수 있게)
+  //  능력 차가 결과에 미치는 힘을 줄이고 (ratioK), 팀마다 그날 컨디션 ±12% 정도 (xG 배율)
+  if (args.intl) {
+    const day = () => Math.max(0.68, Math.min(1.38, 1 + ctx.rng.normal() * 0.15));
+    m.intl = { ratioK: INTL_RATIO_K, form: { home: day(), away: day() } };
+  }
   if (args.commentary) {
     // 경기 전 전력 차 (해설 판단용): 공격 · 중원 · 수비 평균 차이
     const sh = strengths(home, ctx), sa = strengths(away, ctx);
@@ -373,7 +384,8 @@ export function step(m: MatchState, ctx: MatchCtx): void {
   const str = { home: strengths(m.home, ctx), away: strengths(m.away, ctx) };
   const air = { home: aerial(m.home, ctx), away: aerial(m.away, ctx) };   // 세트피스용 (구간마다 한 번)
 
-  const midH = str.home.mid ** TUNING.possExp, midA = str.away.mid ** TUNING.possExp;
+  const pe = TUNING.possExp * (m.intl?.ratioK ?? 1);   // 대표팀 경기는 중원 차이도 덜 (이변)
+  const midH = str.home.mid ** pe, midA = str.away.mid ** pe;
   const possHome = clamp(midH / (midH + midA) + 0.03, 0.25, 0.75);
   m.home.possSum += possHome; m.away.possSum += 1 - possHome;
 
@@ -384,7 +396,8 @@ export function step(m: MatchState, ctx: MatchCtx): void {
     const ratio = s.att / (0.78 * o.def + 0.22 * o.gk);
     const xg = TUNING.baseXg
       * (2 * poss) ** 0.6
-      * ratio ** TUNING.ratioExp
+      * ratio ** (TUNING.ratioExp * (m.intl?.ratioK ?? 1))
+      * (m.intl?.form[side] ?? 1)
       * (side === 'home' ? TUNING.homeAdv : 2 - TUNING.homeAdv)
       * (1 + 0.1 * me.tactics.mentality)      // 내가 공격적이면 기회 ↑
       * (1 + 0.08 * opp.tactics.mentality)    // 상대가 공격적이면 뒷공간 ↑

@@ -22,7 +22,7 @@ const NAV: { key: HubTab; label: string; icon: string; ready?: boolean }[] = [
   { key: 'club', label: '구단', icon: 'club', ready: true },
 ];
 
-/** 월드컵 모드: 이적 · 재정 · 구단 없음 */
+/** 세계 대회 모드: 이적 · 재정 · 구단 없음 */
 const INTL_TABS: HubTab[] = ['home', 'inbox', 'news', 'squad', 'tactics', 'schedule', 'table'];
 
 export function Sidebar() {
@@ -44,7 +44,7 @@ export function Sidebar() {
         <Crest clubId={club.id} size={34} />
         <div className="min-w-0 flex-1">
           <div className="truncate text-[15px] font-semibold">{clubKo(club.id)}</div>
-          <div className="truncate text-[12px] text-lo">{w.intl ? `월드컵 모드 · ${w.intl.cycle} 주기` : lg?.ko} · {w.season.replace('-', '/')}</div>
+          <div className="truncate text-[12px] text-lo">{w.intl ? `세계 대회 모드 · ${w.intl.cycle} 주기` : lg?.ko} · {w.season.replace('-', '/')}</div>
         </div>
       </div>
       <div className="mx-5 h-px bg-line" />

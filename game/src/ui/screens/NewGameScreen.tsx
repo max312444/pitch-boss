@@ -18,7 +18,7 @@ import type { MyClubDesign } from '../../engine/myclubDesign';
 const fmtSeason = (s: string) => s.replace('-', '/');
 
 export function NewGameScreen() {
-  if (useApp.getState().newMode === 'wc') return <IntlNewGame />;   // 월드컵 모드는 따로 (나라 · 주기)
+  if (useApp.getState().newMode === 'wc') return <IntlNewGame />;   // 세계 대회 모드는 따로 (나라 · 주기)
   return <ClubNewGame />;
 }
 

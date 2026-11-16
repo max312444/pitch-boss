@@ -1,7 +1,7 @@
 // 국가대표: 대륙 연맹 · 대표 선발 · A매치 기간 차출
 //
 //  - 대표 선발: 그 국적 선수 중 능력 순으로 포지션 묶음별 인원 (23명: GK 3 · DF 8 · MF 8 · FW 4, 26명: 3 · 9 · 9 · 5)
-//    게임에는 유럽 리그 선수만 있어서 인원이 모자라는 나라는 '국내파' 가상 선수로 채운다 (월드컵 동안만 있고 시즌이 바뀌면 지운다)
+//    게임에는 유럽 리그 선수만 있어서 인원이 모자라는 나라는 '국내파' 가상 선수로 채운다 (세계 대회 동안만 있고 시즌이 바뀌면 지운다)
 //  - A매치 기간 (9월 · 10월 · 11월 · 3월 리그 휴식 주말): 나라마다 상위 23명 차출 → 체력 소모 · 작은 부상 위험 · 경기 감각 +
 import type { Position } from '../data/types';
 import type { GameEvent, PlayerState, World } from './types';
@@ -87,7 +87,7 @@ export function intlBreakDay(w: World, rng: Rng): GameEvent[] {
   const mine: string[] = [], hurt: string[] = [];
   const nations = new Set(Object.values(w.players).filter((p) => p.clubId && !p.retired).map((p) => p.nation));
   for (const nation of nations) {
-    if (w.intl && nation === w.intl.nation) continue;   // 월드컵 모드: 내 나라는 실제 경기로
+    if (w.intl && nation === w.intl.nation) continue;   // 세계 대회 모드: 내 나라는 실제 경기로
     for (const p of selectSquad(w, nation, 23)) {
       p.fitness = Math.max(40, p.fitness - rng.int(10, 25));
       p.sharpness = Math.min(100, p.sharpness + 6);

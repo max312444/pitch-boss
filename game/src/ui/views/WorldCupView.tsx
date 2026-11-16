@@ -1,4 +1,4 @@
-// 월드컵 화면: 조별리그 순위 · 녹아웃 · 지난 대회 (순위 화면 '대회' 줄에서 월드컵 탭)
+// 세계 대회 화면: 조별리그 순위 · 녹아웃 · 지난 대회 (순위 화면 '대회' 줄에서 세계 대회 탭)
 import { sortTable } from '../../engine/standings';
 import { nationOfNT, type WcTie } from '../../engine/worldcup';
 import { clubKo, compKo, nationKo, playerKo } from '../../data/db';

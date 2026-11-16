@@ -61,10 +61,12 @@ const metaFile = <T,>(name: string): T => Object.entries(S.meta).find(([p]) => p
 
 export const leagues: LeagueMeta[] = metaFile<{ leagues: LeagueMeta[] }>('leagues').leagues;
 export const cups: CupMeta[] = metaFile<{ cups?: CupMeta[] }>('leagues').cups ?? [];
-/** 실제 월드컵 참가국 · 조 (없으면 빈 값 → 게임이 전력으로 정함) */
+/** 실제 세계 대회 참가국 · 조 (없으면 빈 값 → 게임이 전력으로 정함) */
 export const worldCupsMeta = (Object.entries(S.meta).find(([p]) => p.endsWith('/meta/worldcups.json'))?.[1] ?? {}) as Record<string, import('../engine/worldcup').WorldCupMeta>;
+/** 나라별 대표팀 색 (natcolors: 대표팀 공식 색 → 국기 색) · 엠블럼용 */
+export const nationColorsMeta = (Object.entries(S.meta).find(([p]) => p.endsWith('/meta/nation-colors.json'))?.[1] ?? {}) as Record<string, [string, string]>;
 /** 리그 · 컵 대회 이름 */
-export const compKo = (id: string) => leagues.find((l) => l.id === id)?.ko ?? cups.find((c) => c.id === id)?.ko ?? (id === 'nt' ? 'A매치' : id === 'wc' ? '월드컵' : id);
+export const compKo = (id: string) => leagues.find((l) => l.id === id)?.ko ?? cups.find((c) => c.id === id)?.ko ?? (id === 'nt' ? 'A매치' : id === 'wc' ? '세계 대회' : id);
 export const nations = new Map<string, NationMeta>(metaFile<{ nations: NationMeta[] }>('nations').nations.map((n) => [n.code, n]));
 export const clubs = new Map<string, ClubMaster>(Object.values(S.clubs).map((c) => [c.id, c]));
 
@@ -116,7 +118,7 @@ export function setNameStyle(s: 'full' | 'short') { nameStyle = s; }
 /** 내가 바꾼 이름 (짧은 이름이 없으면 마지막 단어) */
 const mine = (kind: NameKind, id: string) => { const c = customName(kind, id); return c ? (nameStyle === 'short' ? c.short ?? c.name.split(' ').at(-1)! : c.name) : null; };
 export const playerKo = (id: string, fallback: string) => { const c = mine('players', id); if (c) return c; const e = koNames.get(id); return (nameStyle === 'short' ? e?.short ?? e?.name : e?.name) ?? fallback; };
-/** 구단 이름. 월드컵 경기용 대표팀(nt-나라)은 '나라 대표팀' */
+/** 구단 이름. 세계 대회 경기용 대표팀(nt-나라)은 '나라 대표팀' */
 export const clubKo = (id: string) => customName('clubs', id)?.name ?? (id.startsWith('nt-') ? `${nations.get(id.slice(3))?.ko ?? id.slice(3)} 대표팀` : clubs.get(id)?.ko ?? clubs.get(id)?.name ?? id);
 /** 감독 이름: 한국어 이름 파일(locale/ko/managers.json, 짧은 이름 설정 따름) → 내 감독 · 가상 감독(이름을 가져온 선수들의 한국어 이름을 섞어서, 처음 한 번 계산해 저장) → 영문 */
 export function managerKo(m: { id?: string; name: string; ko?: string; nameFrom?: [string | null, string | null] }): string {
@@ -173,14 +175,14 @@ export function registerMyClub(st: MyClubState | undefined) {
   clubs.set(st.id, myClubMaster(st));
 }
 
-/** 실제 월드컵 명단 (data/worldcups/squads.json · 없으면 빈 값 → 게임이 능력 순으로 뽑음) */
+/** 실제 세계 대회 명단 (data/worldcups/squads.json · 없으면 빈 값 → 게임이 능력 순으로 뽑음) */
 let wcCache: Promise<WcSquads | undefined> | null = null;
 export function loadWcSquads(): Promise<WcSquads | undefined> {
   wcCache ??= (async () => { const f = Object.values((S as { wcsquads?: Record<string, () => Promise<WcSquads>> }).wcsquads ?? {})[0]; return f ? await f() : undefined; })().catch(() => undefined);
   return wcCache;
 }
 
-/** 나라별 대표 선수 풀 (data/worldcups/pools.json · 없으면 빈 값 → 월드컵 명단 · 게임 속 선수로만) */
+/** 나라별 대표 선수 풀 (data/worldcups/pools.json · 없으면 빈 값 → 세계 대회 명단 · 게임 속 선수로만) */
 let poolCache: Promise<WcPools | undefined> | null = null;
 export function loadWcPools(): Promise<WcPools | undefined> {
   poolCache ??= (async () => { const f = Object.values((S as { wcpools?: Record<string, () => Promise<WcPools>> }).wcpools ?? {})[0]; return f ? await f() : undefined; })().catch(() => undefined);
