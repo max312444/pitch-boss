@@ -142,9 +142,9 @@ export function TitleScreen() {
         <button onClick={() => setNotice('view')} className="mt-4 self-start text-[11px] text-lo transition-colors hover:text-mid">비공식 팬 프로젝트 · 고지 보기</button>
       </div>
 
-      {!intro && <UpdateNotes />}
+      {!intro && !notice && <UpdateNotes />}
       {helpOpen && <HelpDialog onClose={() => setHelpOpen(false)} />}
-      {intro && <IntroScreen onClose={() => setIntro(false)} />}
+      {intro && <IntroScreen onClose={() => { setIntro(false); setNotice((n) => n ?? 'first'); }} />}   {/* 인트로가 끝나면 바로 고지 */}
       {!intro && (
         <button onClick={() => setIntro(true)} className="absolute top-[max(16px,env(safe-area-inset-top))] right-4 z-10 text-[11px] text-lo transition-colors hover:text-mid sm:top-auto sm:right-8 sm:bottom-6">인트로 다시 보기</button>
       )}
