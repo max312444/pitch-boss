@@ -127,6 +127,8 @@ export function PlayerPanel({ p, age, ko, nation, actions, club, sheet }: { p: P
   return (
     <aside key={p.id} className={`panel flex shrink-0 animate-[fade_0.25s_ease-out] flex-col overflow-hidden ${sheet ? `fixed inset-0 z-40 rounded-none border-0 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] lg:static lg:z-auto lg:w-[340px] lg:rounded-xl lg:border lg:p-0 ${sheet.open ? '' : 'hidden lg:flex'}` : 'w-full lg:w-[340px]'}`}>
       {sheet && <button onClick={sheet.onClose} className="flex h-11 shrink-0 items-center gap-2 border-b border-line px-4 text-[14px] text-mid lg:hidden">← 닫기</button>}
+      {/* 위 정보 · 능력치를 한 번에 스크롤 (낮은 화면에서 능력치 칸이 좁아지지 않게), 버튼은 아래 고정 */}
+      <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
       <div className="relative overflow-hidden border-b border-line px-5 pt-5 pb-4">
         <div className="tnum pointer-events-none absolute -top-6 -right-2 text-[120px] leading-none font-semibold text-white/[0.03]">{p.number ?? ''}</div>
         <div className="flex items-start justify-between gap-3">
@@ -189,7 +191,7 @@ export function PlayerPanel({ p, age, ko, nation, actions, club, sheet }: { p: P
         {p.intlStats?.apps ? <div className="mt-1 text-center text-[11px] text-sky">세계 대회 {p.intlStats.apps}경기 {p.intlStats.goals}골 {p.intlStats.assists}도움</div> : null}
       </div>
 
-      <div className="flex-1 overflow-auto px-5 py-4">
+      <div className="px-5 py-4">
         {p.clubId && (p.dev ?? 0) !== 0 && (
           <div className="mb-3 text-[12px] text-lo">지난달 훈련 성장 <span className={(p.dev ?? 0) > 0.05 ? 'text-neon' : (p.dev ?? 0) < -0.05 ? 'text-red' : 'text-mid'}>{(p.dev ?? 0) > 0.05 ? '↑ 잘 자라는 중' : (p.dev ?? 0) < -0.05 ? '↓ 정체 · 하락' : '→ 보통'}</span> · 오른쪽 작은 숫자는 훈련으로 바뀐 만큼</div>
         )}
@@ -246,6 +248,7 @@ export function PlayerPanel({ p, age, ko, nation, actions, club, sheet }: { p: P
           {pressNotes(p).map((n) => <li key={n} className="flex gap-2"><span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-neon/70" />{n}</li>)}
         </ul>
         <div className="mt-4 text-[12px] text-lo">주급 {money(p.wage)} · 계약 {p.contract ? p.contract.slice(0, 7).replace('-', '.') + (p.contractGen ? ' (게임 설정)' : '') : p.clubId ? '정보 없음' : '없음 (FA)'}{p.clubId && !p.clubId.startsWith('nt-') ? ` · 바이아웃 ${buyoutOf(w, p) ? money(buyoutOf(w, p)) : '없음'}${relClauseOf(w, p) ? ` · 강등 조항 ${money(relClauseOf(w, p))}` : ''}` : ''} · 최근 폼 {p.recentRatings.length ? formAvg(p).toFixed(1) : '–'}{termsLine(w, p, clubKo) && <span className="block text-mid">이적 조건: {termsLine(w, p, clubKo)}</span>}</div>
+      </div>
       </div>
       <PhotoCredit id={p.id} />
       {actions && <div className="shrink-0 border-t border-line px-5 py-4">{actions}</div>}

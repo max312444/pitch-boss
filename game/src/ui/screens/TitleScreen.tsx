@@ -159,7 +159,7 @@ export function TitleScreen() {
           <div className="panel w-full max-w-[520px] overflow-hidden" onClick={(e) => e.stopPropagation()}>
             <header className="flex items-center justify-between border-b border-line px-6 py-4">
               <h2 className="text-[15px] font-semibold">불러오기</h2>
-              <button onClick={() => setLoadOpen(false)} className="text-[13px] text-lo hover:text-hi">닫기</button>
+              <button onClick={() => setLoadOpen(false)} className="h-9 shrink-0 rounded-lg px-3 text-[13px] text-mid ring-1 ring-line transition-colors hover:text-hi">닫기</button>
             </header>
             <SaveSlots mode="load" onPick={async (slot) => { if (await load(slot)) go('hub'); }} />
             <div className="flex items-center justify-between border-t border-line px-6 py-3">

@@ -88,8 +88,8 @@ export function ClubView() {
   const o = objective(rank, ids.length, levelOf(club.league));
 
   return (
-    <div className="h-full overflow-auto p-6">
-      <section className="panel mb-6 flex flex-wrap items-center gap-x-10 gap-y-4 px-8 py-6">
+    <div className="h-full overflow-auto p-3 sm:p-5 lg:p-6">
+      <section className="panel mb-6 flex flex-wrap items-center gap-x-10 gap-y-4 px-5 py-5 lg:px-8 lg:py-6">
         <div className="flex items-center gap-5">
           <Crest clubId={id} size={64} />
           <div>

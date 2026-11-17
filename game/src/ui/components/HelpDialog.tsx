@@ -125,7 +125,7 @@ export function HelpDialog({ onClose, inGame }: { onClose: () => void; inGame?: 
             {msg && <span className="text-[12px] text-neon">{msg}</span>}
             <button onClick={() => { if (inGame) { onClose(); start(); } else { resetTutorial(); setMsg('다음에 게임에 들어가면 튜토리얼이 다시 나옵니다'); } }}
               className="rounded-md border border-line px-3 py-1.5 text-[12px] text-mid hover:text-hi">튜토리얼 다시 보기</button>
-            <button onClick={onClose} className="text-[13px] text-lo hover:text-hi">닫기</button>
+            <button onClick={onClose} className="h-9 shrink-0 rounded-lg px-3 text-[13px] text-mid ring-1 ring-line transition-colors hover:text-hi">닫기</button>
           </div>
         </header>
         <div className="flex min-h-0 flex-1 flex-col lg:flex-row">

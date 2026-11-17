@@ -155,7 +155,7 @@ export function MatchPrep() {
               const b = bind(i);
               return (
                 <button key={i} {...b}
-                  className="absolute flex w-24 -translate-x-1/2 -translate-y-1/2 cursor-grab flex-col items-center select-none active:cursor-grabbing" style={{ ...b.style, left: `${pos[i].x}%`, top: `${pos[i].y}%` }}>
+                  className="absolute flex w-[min(6rem,22%)] -translate-x-1/2 -translate-y-1/2 cursor-grab flex-col items-center select-none active:cursor-grabbing" style={{ ...b.style, left: `${pos[i].x}%`, top: `${pos[i].y}%` }}>
                   <div className={`grid h-9 w-9 place-items-center rounded-full bg-ink-950/90 text-[13px] font-semibold transition-colors ${ring}`}>{p?.number ?? ''}</div>
                   <div className="mt-1 max-w-full truncate rounded bg-ink-950/80 px-1.5 text-[12px] font-semibold">{id ? short(id) : '빈 자리'}</div>
                   <div className="text-[11px] text-lo">{slot}{p && <> · <span className={ratingTone(r)}>{r}</span></>}</div>
@@ -175,7 +175,7 @@ export function MatchPrep() {
         {/* 오른쪽: AI 추천 · 전술 · 후보 / 선수 선택 */}
         <div className="order-2 flex shrink-0 flex-col gap-4 lg:order-none lg:min-h-0 lg:shrink">
           {sel != null ? (
-            <Card title={`${slots[sel]} 자리에 넣을 선수`} action={<button onClick={() => setSel(null)} className="text-[12px] text-lo hover:text-hi">닫기</button>} className="min-h-0 flex-1 max-lg:fixed max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-40 max-lg:max-h-[78dvh] max-lg:rounded-b-none max-lg:pb-[env(safe-area-inset-bottom)] max-lg:shadow-2xl">
+            <Card title={`${slots[sel]} 자리에 넣을 선수`} action={<button onClick={() => setSel(null)} className="h-8 rounded-lg px-3 text-[12px] text-mid ring-1 ring-line hover:text-hi">닫기</button>} className="min-h-0 flex-1 max-lg:fixed max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-40 max-lg:max-h-[78dvh] max-lg:rounded-b-none max-lg:pb-[env(safe-area-inset-bottom)] max-lg:shadow-2xl">
               <div className="h-full overflow-auto">
                 {candidates.map((p) => {
                   const r = Math.round(slotRating(p, slots[sel]));

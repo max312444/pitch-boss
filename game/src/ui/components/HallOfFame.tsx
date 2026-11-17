@@ -15,7 +15,7 @@ export function HallOfFame({ onClose }: { onClose: () => void }) {
             <h2 className="text-[17px] font-semibold">명예의 전당</h2>
             <div className="mt-0.5 text-[12px] text-lo">이 PC에서 지휘한 감독 커리어 순위 · 점수: {KINDS.map((k) => `${TITLE_KO[k]} ${TITLE_POINTS[k]}`).join(' · ')} · 시즌당 {SEASON_POINTS}</div>
           </div>
-          <button onClick={onClose} className="text-[13px] text-lo hover:text-hi">닫기</button>
+          <button onClick={onClose} className="h-9 shrink-0 rounded-lg px-3 text-[13px] text-mid ring-1 ring-line transition-colors hover:text-hi">닫기</button>
         </header>
         <div className="overflow-auto">
           {list.length === 0 && <div className="py-16 text-center text-[13px] text-lo">아직 기록이 없습니다. 새 게임을 시작해 시즌을 마치면 여기에 기록됩니다.</div>}

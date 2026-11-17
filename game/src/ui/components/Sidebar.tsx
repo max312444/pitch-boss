@@ -72,7 +72,7 @@ export function Sidebar() {
           // 사이드바는 자체 스크롤이라 밖으로 나가면 잘림 → 화면 가운데 창으로
           <div className="fixed inset-0 z-50 grid animate-[fade_0.15s_ease-out] place-items-center bg-ink-950/70 p-4" onClick={() => setSaveOpen(false)}>
           <div className="panel w-[min(400px,100%)] overflow-hidden" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between border-b border-line px-5 py-3"><span className="text-[13px] font-semibold">저장하기</span><button onClick={() => setSaveOpen(false)} className="text-[12px] text-lo hover:text-hi">닫기</button></div>
+            <div className="flex items-center justify-between border-b border-line px-5 py-3"><span className="text-[13px] font-semibold">저장하기</span><button onClick={() => setSaveOpen(false)} className="h-9 rounded-lg px-3 text-[13px] text-mid ring-1 ring-line transition-colors hover:text-hi">닫기</button></div>
             <SaveSlots mode="save" onPick={async (slot) => { await save(slot); }} />
             <div className="flex items-center justify-between border-t border-line px-5 py-2.5 text-[12px] text-lo">
               <span>내 PC에 파일로 보관 (.pitchboss)</span>

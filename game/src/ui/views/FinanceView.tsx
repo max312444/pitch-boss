@@ -24,7 +24,7 @@ export function FinanceView() {
   const fans = fansOf(w, club.id), fanBase = baseFans(club.reputation), ff = fanFactor(w, club.id);
 
   return (
-    <div className="h-full overflow-auto px-8 py-6">
+    <div className="h-full overflow-auto px-3 py-4 sm:px-6 lg:px-8 lg:py-6">
       <div className="mx-auto max-w-[1180px] space-y-4">
         {/* 핵심 숫자 */}
         <div className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line md:grid-cols-4">
@@ -32,7 +32,7 @@ export function FinanceView() {
           <Kpi label="이적 예산" value={money(f.transferBudget)} sub="선수 판매 시 이적료의 50%가 다시 들어옵니다" />
           <div className="bg-ink-850 px-5 py-4">
             <div className="text-[12px] text-lo">주급 지출 / 예산</div>
-            <div className={`tnum mt-1 text-[20px] font-semibold ${wageRatio > 1 ? 'text-amber' : ''}`}>{money(bill)} <span className="text-[14px] font-normal text-lo">/ {money(f.wageBudget)}</span></div>
+            <div className={`tnum mt-1 text-[20px] font-semibold ${wageRatio > 1 ? 'text-amber' : ''}`}>{money(bill)} <span className="text-[14px] font-normal whitespace-nowrap text-lo">/ {money(f.wageBudget)}</span></div>
             <div className="mt-2 h-1 overflow-hidden rounded-full bg-ink-700"><div className={`h-full rounded-full ${wageRatio > 1 ? 'bg-amber' : wageRatio > 0.95 ? 'bg-mid' : 'bg-neon'}`} style={{ width: `${Math.min(1, wageRatio) * 100}%` }} /></div>
           </div>
           <Kpi label={`${cur.season.replace('-', '/')} 시즌 손익`} value={signed(net)} neg={net < 0} pos={net > 0} sub={`수입 ${money(inc)} · 지출 ${money(exp)}`} />

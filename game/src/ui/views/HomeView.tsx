@@ -92,7 +92,7 @@ export function HomeView() {
       <div className="mx-auto flex max-w-[1440px] flex-col gap-4 p-3 lg:gap-6 lg:p-6">
         <MyClubSetup w={w} />
         {next ? <NextMatch w={w} home={next.home} away={next.away} date={next.date} round={roundLabel(next)} fx={next} />
-          : <section className="panel px-8 py-6 text-[15px]">시즌이 끝났습니다 · 최종 {pos}위 · 승점 {row.pts}</section>}
+          : <section className="panel px-5 py-5 text-[15px] lg:px-8 lg:py-6">시즌이 끝났습니다 · 최종 {pos}위 · 승점 {row.pts}</section>}
         <WindowBar w={w} onOpen={() => setTab('transfers')} />
 
         <div className="grid grid-cols-1 items-start gap-6 xl:grid-cols-3">

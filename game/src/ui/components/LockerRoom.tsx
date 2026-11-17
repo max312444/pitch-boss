@@ -31,7 +31,7 @@ export function LockerRoom({ onClose }: { onClose: () => void }) {
       <div className="panel flex max-h-full w-full max-w-[640px] flex-col overflow-hidden" onClick={(e) => e.stopPropagation()}>
         <header className="flex items-center justify-between border-b border-line px-5 py-4 sm:px-7">
           <div><div className="text-[17px] font-semibold">라커룸</div><div className="text-[12px] text-lo">팀 케미는 경기력에 ±3%까지 영향을 줍니다</div></div>
-          <button onClick={onClose} className="text-[13px] text-lo hover:text-hi">닫기</button>
+          <button onClick={onClose} className="h-9 shrink-0 rounded-lg px-3 text-[13px] text-mid ring-1 ring-line transition-colors hover:text-hi">닫기</button>
         </header>
         <div className="space-y-6 overflow-auto px-5 py-5 sm:px-7">
           <section className="flex items-center gap-5">

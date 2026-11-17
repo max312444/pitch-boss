@@ -52,8 +52,8 @@ export function SettingsDialog({ onClose }: { onClose: () => void }) {
             ))}
           </div>
           <div className="flex items-center gap-4">
-            {view === 'settings' && <button onClick={() => { reset(); syncWorld(world, DEFAULT_SETTINGS); }} className="text-[12px] text-lo hover:text-hi">기본값으로</button>}
-            <button onClick={onClose} className="text-[13px] text-lo hover:text-hi">닫기</button>
+            {view === 'settings' && <button onClick={() => { reset(); syncWorld(world, DEFAULT_SETTINGS); }} className="h-9 rounded-lg px-2.5 text-[12px] text-lo transition-colors hover:text-hi">기본값으로</button>}
+            <button onClick={onClose} className="h-9 shrink-0 rounded-lg px-3 text-[13px] text-mid ring-1 ring-line transition-colors hover:text-hi">닫기</button>
           </div>
         </header>
         {view === 'changelog' ? (

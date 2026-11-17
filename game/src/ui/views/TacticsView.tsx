@@ -45,12 +45,20 @@ export function slotXY(slots: Position[]): { x: number; y: number }[] {
     right.forEach((i) => (out[i] = { x: 88, y }));
     mid.forEach((i, k) => (out[i] = { x: mid.length === 1 ? 50 : 26 + (48 * k) / (mid.length - 1), y }));
   }
+  // 같은 세로줄(가로 위치가 가까운)에 있는 선수끼리 너무 붙으면 (예: 4-2-3-1 의 DM 과 CB) 이름표가 아래 선수를 덮으므로 위쪽 줄을 올린다
+  const MIN = 15;
+  const order = out.map((_, i) => i).sort((a, b) => out[b].y - out[a].y);
+  for (let k = 0; k < order.length; k++) {
+    const me = out[order[k]];
+    for (let j = 0; j < k; j++) { const o = out[order[j]]; if (Math.abs(o.x - me.x) < 12 && o.y - me.y < MIN && o.y >= me.y) me.y = o.y - MIN; }
+    me.y = Math.max(7, me.y);
+  }
   return out;
 }
 
 export function Pitch({ children }: { children: React.ReactNode }) {
   return (
-    <div data-pitch className="relative aspect-[68/90] w-full overflow-hidden rounded-lg bg-[linear-gradient(180deg,#0d1a10,#0a130c)] ring-1 ring-line">
+    <div data-pitch className="relative aspect-[68/100] w-full sm:aspect-[68/90] overflow-hidden rounded-lg bg-[linear-gradient(180deg,#0d1a10,#0a130c)] ring-1 ring-line">
       <svg viewBox="0 0 68 90" className="absolute inset-0 h-full w-full" preserveAspectRatio="none" aria-hidden>
         <g stroke="rgb(57 255 20 / 0.16)" strokeWidth="0.35" fill="none">
           <rect x="2" y="2" width="64" height="86" /><line x1="2" y1="45" x2="66" y2="45" /><circle cx="34" cy="45" r="7" />
@@ -140,7 +148,7 @@ export function TacticsView() {
             const b = bind(i);
             return (
               <button key={i} {...b}
-                className="absolute flex w-24 -translate-x-1/2 -translate-y-1/2 cursor-grab flex-col items-center select-none active:cursor-grabbing"
+                className="absolute flex w-[min(6rem,22%)] -translate-x-1/2 -translate-y-1/2 cursor-grab flex-col items-center select-none active:cursor-grabbing"
                 style={{ ...b.style, left: `${pos[i].x}%`, top: `${pos[i].y}%` }}>
                 <div className={`grid h-9 w-9 place-items-center rounded-full bg-ink-950/90 text-[13px] font-semibold transition-colors ${ring}`}>{p?.number ?? ''}</div>
                 <div className="mt-1 max-w-full truncate rounded bg-ink-950/80 px-1.5 text-[12px] font-semibold">{p ? playerKo(p.id, p.name).split(' ').slice(-1)[0] : '빈 자리'}</div>
@@ -165,7 +173,7 @@ export function TacticsView() {
 
       <div ref={col} className="flex min-w-0 flex-col gap-4 lg:min-h-0 lg:flex-1 lg:overflow-y-auto">
         {sel != null ? (
-          <Card title={`${slots[sel]} 자리에 넣을 선수`} action={<button onClick={() => setSel(null)} className="text-[12px] text-lo hover:text-hi">닫기</button>} className="shrink-0 max-lg:fixed max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-40 max-lg:max-h-[78dvh] max-lg:overflow-y-auto max-lg:rounded-b-none max-lg:pb-[env(safe-area-inset-bottom)] max-lg:shadow-2xl">
+          <Card title={`${slots[sel]} 자리에 넣을 선수`} action={<button onClick={() => setSel(null)} className="h-8 rounded-lg px-3 text-[12px] text-mid ring-1 ring-line hover:text-hi">닫기</button>} className="shrink-0 max-lg:fixed max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-40 max-lg:max-h-[78dvh] max-lg:overflow-y-auto max-lg:rounded-b-none max-lg:pb-[env(safe-area-inset-bottom)] max-lg:shadow-2xl">
             {slots[sel] !== 'GK' && (
               <div className="border-b border-line px-5 py-3">
                 <div className="mb-2 text-[12px] text-lo">이 자리 지시</div>

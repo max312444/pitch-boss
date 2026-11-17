@@ -155,13 +155,13 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
         )}
         {/* 휴대폰: 검색 조건은 접어 둔다 */}
         {tab === 'search' && (
-          <button onClick={() => setFilters((v) => !v)} className="mb-3 flex h-10 items-center justify-between rounded-lg bg-ink-850 px-4 text-[13px] text-mid ring-1 ring-line lg:hidden">
+          <button onClick={() => setFilters((v) => !v)} className="mb-3 flex h-10 items-center justify-between rounded-lg bg-ink-850 px-4 text-[13px] text-mid ring-1 ring-line xl:hidden">
             <span>검색 조건 {pos.length || posSet || clubPick || q || league !== 'ALL' ? <span className="text-neon">· 적용 중</span> : ''}</span><span>{filters ? '접기 ▴' : '펼치기 ▾'}</span>
           </button>
         )}
 
         {tab === 'search' && advice.length > 0 && (
-          <div className={`mb-3 flex flex-wrap items-center gap-2 text-[12px] ${filters ? '' : 'max-lg:hidden'}`}>
+          <div className={`mb-3 flex flex-wrap items-center gap-2 text-[12px] ${filters ? '' : 'max-xl:hidden'}`}>
             <span className="text-lo">추천 보강</span>
             {advice.map((a) => {
               const pr = searchPreset(a);
@@ -176,7 +176,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
           </div>
         )}
         {tab === 'search' && (
-          <div className={`mb-3 flex flex-wrap items-center gap-2 text-[13px] ${filters ? '' : 'max-lg:hidden'}`}>
+          <div className={`mb-3 flex flex-wrap items-center gap-2 text-[13px] ${filters ? '' : 'max-xl:hidden'}`}>
             {posSet && <button onClick={() => setPosSet(null)} className="h-8 rounded-lg bg-neon-ghost px-3 text-[12px] text-neon ring-1 ring-line-strong">{posSet.label} ({posSet.positions.join('·')}) ✕</button>}
             <div className="flex gap-1 rounded-lg bg-ink-900 p-1">
               {(['ALL', 'GK', 'DF', 'MF', 'FW'] as const).map((g) => (
@@ -221,7 +221,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
           </div>
         )}
         {tab === 'search' && (
-          <div className={`mb-3 flex flex-wrap items-center gap-1 text-[12px] ${filters ? '' : 'max-lg:hidden'}`}>
+          <div className={`mb-3 flex flex-wrap items-center gap-1 text-[12px] ${filters ? '' : 'max-xl:hidden'}`}>
             <span className="mr-1 text-lo">세부 포지션</span>
             {POS_CHIPS.map((x) => {
               const on = pos.includes(x);
@@ -266,7 +266,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
                     </select>
                     {statSort && <button onClick={() => setSort((x) => ({ ...x, desc: !x.desc }))} className="ml-1 text-[9px] text-neon" title="방향 바꾸기">{sort.desc ? '▼' : '▲'}</button>}
                   </th>
-                  <SortTh k="value" s={sort} on={sortBy} right className="hidden px-3 sm:table-cell">시장 가치</SortTh><SortTh k="wage" s={sort} on={sortBy} right className="hidden px-3 lg:table-cell">주급</SortTh><SortTh k="contract" s={sort} on={sortBy} right className="hidden px-4 lg:table-cell">계약</SortTh>
+                  <SortTh k="value" s={sort} on={sortBy} right className="hidden px-3 sm:table-cell">시장 가치</SortTh><SortTh k="wage" s={sort} on={sortBy} right className="hidden px-3 xl:table-cell">주급</SortTh><SortTh k="contract" s={sort} on={sortBy} right className="hidden px-4 xl:table-cell">계약</SortTh>
                 </tr>
               </thead>
               <tbody>
@@ -296,8 +296,8 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
                     <td className="px-2 text-right"><OvrText w={w} p={p} /></td>
                     <td className="hidden px-3 lg:table-cell"><TopAttrs w={w} p={p} first={statSort} /></td>
                     <td className="tnum hidden px-3 text-right sm:table-cell">{p.clubId ? money(value) : '–'}</td>
-                    <td className="tnum hidden px-3 text-right text-mid lg:table-cell">{money(p.wage)}</td>
-                    <td className="tnum hidden px-4 text-right text-mid lg:table-cell">{p.contract ? p.contract.slice(0, 7).replace('-', '.') : p.clubId ? '–' : <span className="text-sky">FA</span>}</td>
+                    <td className="tnum hidden px-3 text-right text-mid xl:table-cell">{money(p.wage)}</td>
+                    <td className="tnum hidden px-4 text-right text-mid xl:table-cell">{p.contract ? p.contract.slice(0, 7).replace('-', '.') : p.clubId ? '–' : <span className="text-sky">FA</span>}</td>
                   </tr>
                 ))}
               </tbody>
