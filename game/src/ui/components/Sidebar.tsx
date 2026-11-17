@@ -7,6 +7,7 @@ import { useWorld } from '../hooks';
 import { useState } from 'react';
 import { useGame } from '../../store/game';
 import { SaveSlots } from './SaveSlots';
+import { FeedbackDialog } from './FeedbackDialog';
 import { HelpDialog } from './HelpDialog';
 
 const NAV: { key: HubTab; label: string; icon: string; ready?: boolean }[] = [
@@ -33,6 +34,7 @@ export function Sidebar() {
   const save = useGame((s) => s.save);
   const [saveOpen, setSaveOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [helpOpen, setHelpOpen] = useState(false);
   const exportFile = useGame((g) => g.exportFile);
   const unreadInjuries = club.squad.filter((id) => w.players[id].injury).length;
@@ -87,6 +89,12 @@ export function Sidebar() {
           <Icon name="inbox" size={16} />
           저장하기
         </button>
+        <button onClick={() => { setFeedbackOpen(true); setDrawer(false); }}
+          className="mb-1 flex h-9 w-full items-center gap-3 rounded-lg px-3 text-[13px] text-mid transition-colors hover:bg-ink-800 hover:text-hi">
+          <Icon name="bell" size={16} />
+          의견 보내기
+        </button>
+        {feedbackOpen && <FeedbackDialog onClose={() => setFeedbackOpen(false)} />}
         <button data-tour="help" onClick={() => { setHelpOpen(true); setDrawer(false); }}
           className="mb-1 flex h-9 w-full items-center gap-3 rounded-lg px-3 text-[13px] text-mid transition-colors hover:bg-ink-800 hover:text-hi">
           <Icon name="help" size={16} />

@@ -1,6 +1,7 @@
 import { ModePicker } from '../components/ModePicker';
 import { GAME_VERSION } from '../../version';
 import { UpdateBar, UpdateNotes } from '../components/UpdateNotes';
+import { FeedbackDialog } from '../components/FeedbackDialog';
 /** 휴대폰: 업데이트 소식을 로고와 메뉴 사이에 (스크롤로 다 볼 수 있게) */
 import { HelpDialog } from '../components/HelpDialog';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -36,6 +37,7 @@ export function TitleScreen() {
   const fileRef = useRef<HTMLInputElement>(null);
   // 인트로: 브라우저를 켜고 처음 들어오면 한 번 (끝나면 고지가 이어서)
   const [intro, setIntro] = useState(() => !introSeen());
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
   // 안내: 새 게임을 처음 시작할 때 한 번 (또는 '고지 보기')
   // 처음 실행하면 바로 안내 팝업 (확인하면 다음부터는 안 뜸, '고지 보기'로 다시 볼 수 있음)
   const [notice, setNotice] = useState<null | 'start' | 'view' | 'first'>(() => (noticeSeen() ? null : 'first'));
@@ -57,6 +59,7 @@ export function TitleScreen() {
     { key: 'db', label: '데이터베이스', desc: '실명 데이터 · 선수 사진 넣기 / 빼기 · 수록 데이터', action: () => setDbOpen(true) },
     { key: 'settings', label: '설정', desc: '진행 방식 · 팝업 · 난이도 · 경기 · 저장 · 화면', action: () => setSetOpen(true) },
     { key: 'help', label: '도움말', desc: '조작법 · 사용 설명서 · 튜토리얼 다시 보기', action: () => setHelpOpen(true) },
+    { key: 'feedback', label: '의견 보내기', desc: '버그 제보 · 개선 의견 · 문의 (개발자에게 바로 전달)', action: () => setFeedbackOpen(true) },
   ];
 
   return (
@@ -138,7 +141,11 @@ export function TitleScreen() {
           <div className="tnum">v{GAME_VERSION}</div>
         </footer>
         {loadError && <p className="mt-4 max-w-[440px] text-[13px] text-amber">{loadError}</p>}
-        <button onClick={() => setNotice('view')} className="mt-4 self-start text-[11px] text-lo transition-colors hover:text-mid">비공식 팬 프로젝트 · 고지 보기</button>
+        <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
+          <button onClick={() => setFeedbackOpen(true)} className="h-9 rounded-lg px-3 text-[12px] font-semibold text-neon ring-1 ring-line transition-colors hover:bg-neon-ghost">의견 보내기 · 버그 제보</button>
+          <button onClick={() => setNotice('view')} className="py-2 text-[11px] text-lo transition-colors hover:text-mid">비공식 팬 프로젝트 · 고지 보기</button>
+        </div>
+        {feedbackOpen && <FeedbackDialog onClose={() => setFeedbackOpen(false)} />}
       </div>
 
       {!intro && !notice && <UpdateNotes />}
