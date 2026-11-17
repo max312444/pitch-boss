@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { Pressing } from '../../engine/types';
 import { PHILOSOPHY_KO, STRENGTH_KO, type Philosophy, type Strength, type UserManagerInput } from '../../engine/managers';
 import { DIFFICULTY_KO, difficultyPreset, type Difficulty } from '../../engine/gameSettings';
+import { randomManagerName } from './randomIdentity';
 import { useSettings } from '../../store/settings';
 
 const KEY = 'pitchboss.manager';
@@ -44,6 +45,7 @@ export function ManagerSetup({ m, change }: ReturnType<typeof useManagerSetup>) 
         <span className="shrink-0 text-lo">이름</span>
         <input value={m.name} maxLength={20} placeholder="감독 이름" onChange={(e) => change({ name: e.target.value })}
           className="min-w-0 flex-1 bg-transparent text-right text-[14px] font-semibold text-hi outline-none placeholder:font-normal placeholder:text-lo" />
+        <button type="button" onClick={() => change({ name: randomManagerName() })} title="무작위 이름" className="shrink-0 rounded-md px-2 py-1 text-[12px] font-semibold text-neon ring-1 ring-neon/40 hover:bg-neon-ghost">무작위</button>
       </label>
       <div><div className="mb-1 text-lo">축구 철학 <span className="text-[11px]">· 이 성향으로 싸우면 조금 더 강함</span></div>
         <Seg value={m.philosophy} options={(Object.keys(PHILOSOPHY_KO) as Philosophy[]).map((k) => [k, PHILOSOPHY_KO[k]])} onChange={(v) => change({ philosophy: v })} /></div>

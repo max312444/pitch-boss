@@ -6,6 +6,7 @@ import { myClubMaster, type MyClubDesign } from '../../engine/myclubDesign';
 import { weakestClub } from '../../engine/myclub';
 import type { CrestCharge, CrestPattern, CrestShape } from '../crests/types';
 import { Crest } from './Crest';
+import { randomCrest, randomDesign } from './randomIdentity';
 
 const SHAPES: [CrestShape, string][] = [['shield', '방패'], ['round', '원형'], ['oval', '타원'], ['pointed', '뾰족'], ['diamond', '마름모'], ['cut', '모서리']];
 const PATTERNS: [CrestPattern, string][] = [['solid', '단색'], ['stripes', '세로 줄'], ['hoops', '가로 줄'], ['halves', '반반'], ['quarters', '4분할'], ['sash', '사선'], ['band', '띠']];
@@ -57,6 +58,12 @@ export function MyClubForm({ clubsData, d, setD }: { clubsData: ClubSeasonFile[]
           <div className="text-[12px] text-lo">{d.stadium || '경기장'} · {rep.season.slice(0, 4)}년 창단</div>
           <div className="mt-1 text-[12px] text-amber">{clubKo(rep.club)}를 인수해 새 이름으로 (선수단은 그대로)</div>
         </div>
+      </div>
+
+      {/* 무작위 */}
+      <div className="flex gap-2">
+        <button type="button" onClick={() => up({ ...randomDesign(), image: undefined })} className="h-9 flex-1 rounded-lg bg-ink-850 text-[12px] font-semibold text-neon ring-1 ring-neon/40 hover:bg-neon-ghost">무작위 구단 (이름 · 엠블럼)</button>
+        <button type="button" onClick={() => up({ ...randomCrest(), image: undefined })} className="h-9 rounded-lg bg-ink-850 px-3 text-[12px] text-mid ring-1 ring-line hover:text-hi">엠블럼만</button>
       </div>
 
       {/* 이름 */}
