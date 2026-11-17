@@ -286,11 +286,11 @@ export function swapSlots(m: MatchState, side: Side, a: string, b: string): bool
 }
 
 /** 경기 중 한 선수를 새 포지션으로 → 새 포메이션 (order: 새 자리 k ← 예전 자리 order[k], squad.reshape 결과) */
-export function reshapeTeam(m: MatchState, side: Side, formation: string, order: number[]): boolean {
+export function reshapeTeam(m: MatchState, side: Side, formation: string, order: number[], before?: (OnPitch | null)[]): boolean {
   const t = m[side];
   const slots = FORMATIONS[formation];
   if (!slots) return false;
-  const cur = slotOrder(t);
+  const cur = before ?? slotOrder(t);   // 사용자 포메이션(★ 내 배치)을 덮어쓰기 전에 읽은 순서를 넘겨받는다
   t.onPitch = order.map((k, j): OnPitch | null => (cur[k] ? { ...cur[k]!, slot: slots[j], instr: null } : null)).filter((o): o is OnPitch => !!o);
   t.tactics = { ...t.tactics, formation };
   m.notes?.push({ minute: m.segment * SEG_MIN, side, kind: 'formation', formation });

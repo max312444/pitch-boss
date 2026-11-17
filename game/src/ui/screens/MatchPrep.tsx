@@ -17,7 +17,8 @@ import { recommend, teamStrength } from '../../engine/ai';
 import { Crest } from '../components/Crest';
 import { Icon } from '../components/Icon';
 import { Card, CompBadge, ConditionIcon, FitnessBar, PosTag, ResultDot } from '../components/bits';
-import { MENTALITY, PRESSING, Pitch, slotXY } from '../views/TacticsView';
+import { MENTALITY, PRESSING, Pitch } from '../views/TacticsView';
+import { placeXY } from '../../engine/placement';
 import { koDate, ratingTone, roundLabel } from '../format';
 
 export function MatchPrep() {
@@ -47,7 +48,7 @@ export function MatchPrep() {
   const f = m.fixture;
   const oppId = m.side === 'home' ? f.away : f.home;
   const slots = FORMATIONS[d.formation];
-  const pos = slotXY(slots);
+  const pos = placeXY(slots, d.formation, d.xy);
   const squad = w.clubs[w.userClubId].squad.map((id) => w.players[id]);
   const name = (id: string) => playerKo(id, w.players[id]?.name ?? id);
   const short = (id: string) => name(id).split(' ').slice(-1)[0];
@@ -57,7 +58,7 @@ export function MatchPrep() {
   const oppKey = w.clubs[oppId].squad.map((id) => w.players[id]).filter(available).sort((a, b) => overall(b) - overall(a)).slice(0, 5);
 
   // 끌어다 놓기: 두 자리 선수 맞바꿈
-  const { bind, ghost, over } = usePitchDrag((i) => setSel(sel === i ? null : i), (a, b) => { const id = d.starters[a]; if (id) assign(b, id); }, (i, p) => { setMsg(reshapeDraft(i, p)); setSel(null); });
+  const { bind, ghost, over } = usePitchDrag((i) => setSel(sel === i ? null : i), (a, b) => { const id = d.starters[a]; if (id) assign(b, id); }, (i, x, y) => { setMsg(reshapeDraft(i, x, y)); setSel(null); });
   const assign = (slotIdx: number, id: string) => {
     const starters = [...d.starters];
     let bench = [...d.bench];
@@ -143,7 +144,7 @@ export function MatchPrep() {
 
         {/* 가운데: 피치 */}
         <div className="order-1 mx-auto flex w-full max-w-[440px] shrink-0 flex-col lg:order-none lg:min-h-0 lg:shrink">
-          <Pitch>
+          <Pitch zone={ghost ? ghost.zone ?? null : undefined}>
             {slots.map((slot, i) => {
               const id = d.starters[i];
               const p = id ? w.players[id] : null;
@@ -211,7 +212,7 @@ export function MatchPrep() {
                 <div className="space-y-4 p-4">
                   <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
                     {Object.keys(FORMATIONS).map((fm) => (
-                      <button key={fm} onClick={() => updateDraft({ formation: fm })}
+                      <button key={fm} onClick={() => updateDraft({ formation: fm, xy: undefined })}
                         title={`${fm} · 숙련도 ${Math.round(famOf(w.clubs[w.userClubId], fm))}%`} className={`tnum relative h-9 truncate rounded-md px-1 text-[12px] transition-colors ${d.formation === fm ? 'bg-neon font-semibold text-ink-950' : 'bg-ink-900 text-mid ring-1 ring-line hover:text-hi'}`}>
                         {fm}
                         <FamBar v={famOf(w.clubs[w.userClubId], fm)} on={d.formation === fm} />

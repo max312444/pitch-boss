@@ -11,7 +11,8 @@ import { changeRole, type Role } from '../engine/roles';
 import { create } from 'zustand';
 import type { Fixture, GameEvent, Side, Tactics, World } from '../engine/types';
 import { advanceDay, advanceToUserMatch, applyMatch, createWorld, prepareMatch, type SeasonInput, decidesOnDraw } from '../engine/world';
-import { playToEnd, reshapeTeam, setFormation, setTactics, step, substitute, swapSlots, type MatchState } from '../engine/match';
+import { playToEnd, reshapeTeam, setFormation, setTactics, slotOrder, step, substitute, swapSlots, type MatchState, type TeamInMatch } from '../engine/match';
+import type { Instr } from '../engine/types';
 import { createRng, type Rng } from '../engine/rng';
 import { seedTraits } from '../engine/traits';
 import { availableSeasons, clubKo, clubs as clubMasters, dataset, leagues, loadHistory, loadLeagueSeason, loadManagers, loadStandings, playerKo, realAvailable, registerGeneratedNames, registerMyClub, setDataset, worldCupsMeta, loadWcSquads, loadWcPools, loadPublicMap } from '../data/db';
@@ -43,7 +44,8 @@ import { buyoutMandatory, setBuyout, setRelClause } from '../engine/clauses';
 import { bosmanEligible, signPrecontract } from '../engine/bosman';
 import { meetingReady, teamMeeting } from '../engine/chemistry';
 const addDaysIso = (iso: string, n: number) => new Date(Date.parse(iso + 'T00:00:00Z') + n * 86400000).toISOString().slice(0, 10);
-import { CUSTOM_MARK, famOf, FORMATIONS, formationShape, guessFormation, matchRules, MAX_CUSTOM, pickLineup, registerFormations, reshape, validateFormation } from '../engine/squad';
+import { CUSTOM_MARK, famOf, FORMATIONS, formationShape, guessFormation, matchRules, MAX_CUSTOM, pickLineup, registerFormations, validateFormation } from '../engine/squad';
+import { moveFree, type Placement } from '../engine/placement';
 
 /** 한 자리만 바꾼 변형은 원래 포메이션 숙련도에서 10만 깎아 이어받는다 (새 포메이션처럼 30% 로 떨어지지 않게) */
 function inheritFam(c: World['clubs'][string], from: string, to: string) {
@@ -53,6 +55,24 @@ function inheritFam(c: World['clubs'][string], from: string, to: string) {
 }
 
 /** 끌어다 놓아 만든 자리 구성이 기본 포메이션에 없으면: 사용자 포메이션 '★ 내 배치'로 저장 (덮어씀). 키 또는 오류 문장 */
+/** 경기 중 배치를 한 장면으로 되돌림 (교체 · 퇴장으로 없는 선수는 건너뜀). 오류 문구 또는 null */
+function restoreLayout(w: World, st: MatchState, side: Side, snap: LayoutSnap): string | null {
+  const t = st[side];
+  let key = snap.formation;
+  if ((FORMATIONS[key] ?? []).join() !== snap.slots.join()) {   // ★ 내 배치 가 그 뒤 다른 모양으로 바뀌었으면 다시
+    const a = autoFormation(w, snap.slots);
+    if ('error' in a) return a.error;
+    key = a.key;
+  }
+  const rest = [...t.onPitch];
+  const next = snap.ids.flatMap((id, j) => {
+    const k = rest.findIndex((o) => o.id === id);
+    return k < 0 ? [] : [{ ...rest.splice(k, 1)[0], slot: snap.slots[j], instr: snap.instr[j] }];
+  });
+  t.onPitch = [...next, ...rest];
+  t.tactics = { ...t.tactics, formation: key, xy: snap.xy };
+  return null;
+}
 function autoFormation(w: World, slots: Position[]): { key: string } | { error: string } {
   const errs = validateFormation(slots);
   if (errs.length) return { error: errs[0] };
@@ -126,8 +146,16 @@ export interface MatchDraft {
   bench: string[];
   /** 후보를 직접 정함 (빈자리 자동으로 안 채움) */
   benchExact?: boolean;
+  /** 자유 배치 (placement.ts) */
+  xy?: Placement;
 }
 
+/** 경기 중 배치 한 장면 (자리 순서대로 선수 · 지시, 포메이션 · 자유 배치) */
+interface LayoutSnap { formation: string; slots: Position[]; ids: (string | null)[]; instr: (Instr | null)[]; xy?: Placement }
+const snapOf = (t: TeamInMatch): LayoutSnap => {
+  const order = slotOrder(t);
+  return { formation: t.tactics.formation, slots: [...(FORMATIONS[t.tactics.formation] ?? [])], ids: order.map((o) => o?.id ?? null), instr: order.map((o) => o?.instr ?? null), xy: t.tactics.xy };
+};
 export interface LiveMatch {
   fixture: Fixture;
   side: Side;
@@ -141,6 +169,8 @@ export interface LiveMatch {
   draft: MatchDraft;
   /** 선발 확정 뒤 생성 */
   state: MatchState | null;
+  /** 하프타임 배치 되돌리기: base = 하프타임 시작 배치 · hist = 바꾸기 전 배치들 (교체하면 들어온 선수로 바꿔 둠) */
+  layout?: { base: LayoutSnap; hist: LayoutSnap[] };
   /** 이 경기로 리그 우승 확정 (남은 경기 수) */
   clinch?: number;
 }
@@ -175,9 +205,10 @@ interface GameStore {
   importFile(file: File): Promise<boolean>;
   setLineup(starters: (string | null)[] | null, bench?: string[], benchExact?: boolean): void;
   /** 전술 화면: 선수를 빈 곳에 끌어다 놓아 그 자리 포지션을 바꿈 → 포메이션 자동 변경. 결과 문장 */
-  reshapeTactics(slotIdx: number, pos: Position): string;
+  /** 피치 자유 배치: i 번째 자리 선수를 (x, y)% 로 → 구역 포지션이 바뀌면 포메이션도 (문구 반환) */
+  reshapeTactics(slotIdx: number, x: number, y: number): string;
   /** 경기 준비 화면: 같은 동작을 이번 경기 선발에 */
-  reshapeDraft(slotIdx: number, pos: Position): string;
+  reshapeDraft(slotIdx: number, x: number, y: number): string;
   /** random: 완전 랜덤으로 고른 구단 → 첫 시즌만 예산 · 재정 규정 한도 보정 */
   newGame(season: string, league: string, clubId: string, opts?: { random?: boolean; manager?: import('../engine/managers').UserManagerInput; /** 나의 구단 만들기: 이 리그 꼴찌 자리를 대신 (clubId 는 무시) */ myClub?: MyClubDesign; /** 세계 대회 모드: 이 나라 대표팀 감독 (clubId 는 무시) */ intl?: { nation: string } }): Promise<void>;
   continueGame(): void;
@@ -228,9 +259,16 @@ interface GameStore {
   changeFormation(formation: string): void;
   /** 경기 중 피치: 두 선수 자리 맞바꿈 · 한 선수를 빈 곳(새 포지션)으로 → 포메이션 변경 (문구 반환) */
   liveSwap(a: string, b: string): string;
+  /** 경기 중 피치 선수를 빈 자리(퇴장 등)로 옮김 → 원래 자리가 빈다 (문구 반환) */
+  liveToSlot(id: string, slotIdx: number): string;
   /** 스폰서 제안 수락 */
   signSponsor(offerId: string): void;
-  liveReshape(slotIdx: number, pos: Position): string;
+  liveReshape(slotIdx: number, x: number, y: number): string;
+  /** 하프타임 배치: 시작 (base 저장) · 끝 · 이전으로 · 하프타임 배치로 초기화 (문구 반환) */
+  layoutBegin(): void;
+  layoutEnd(): void;
+  layoutUndo(): string;
+  layoutReset(): string;
   sub(outId: string, inId: string): boolean;
   /** 경기 중 자동 교체 켜기 · 끄기 (설정에도 기억) */
   setAutoSub(on: boolean): void;
@@ -363,7 +401,7 @@ export const useGame = create<GameStore>((set, get) => {
         // 경기 전 스쿼드 설정: 상대에 맞춘 AI 추천을 먼저 채워 둔다
         const opp = side === 'home' ? matchToday.away : matchToday.home;
         const rec = recommend(w, w.userClubId, opp, side === 'home', matchToday);
-        set({ match: { fixture: matchToday, side, rng, phase: 'squad', rec, draft: draftFrom(rec), state: null } });
+        set({ match: { fixture: matchToday, side, rng, phase: 'squad', rec, draft: { ...draftFrom(rec), xy: w.clubs[w.userClubId].tactics.xy }, state: null } });
         const big = bigMatch(w, matchToday);
         const auto = st.matchMode === 'result' || (st.stopAt === 'important' && !big) || st.stopAt === 'window';
         if (!auto || halt) break;                 // 직접 지휘 (스쿼드 설정 화면)
@@ -386,7 +424,7 @@ export const useGame = create<GameStore>((set, get) => {
       if (change.formation && change.formation !== m.draft.formation) {
         const w = get().world!;
         const l = pickLineup(w.clubs[w.userClubId].squad.map((id) => w.players[id]), change.formation, matchRules(w.season).benchSize);
-        m.draft = { ...m.draft, ...change, starters: l.starters.map((x) => x.id), bench: l.bench };
+        m.draft = { ...m.draft, ...change, starters: l.starters.map((x) => x.id), bench: l.bench, xy: undefined };
       } else m.draft = { ...m.draft, ...change };
       bump();
     },
@@ -408,7 +446,7 @@ export const useGame = create<GameStore>((set, get) => {
       m.state = prepareMatch(w, m.fixture, m.rng, {
         manualSide: m.side,
         lineups: { [m.side]: lineup },
-        tactics: { [m.side]: { formation: lineup.formation, mentality: d.mentality, pressing: d.pressing } },
+        tactics: { [m.side]: { formation: lineup.formation, mentality: d.mentality, pressing: d.pressing, ...(d.xy ? { xy: d.xy } : {}) } },
       });
       m.state[m.side].autoSub = useSettings.getState().s.autoSubs;   // 자동 교체 (설정)
       m.phase = 'live';
@@ -478,7 +516,10 @@ export const useGame = create<GameStore>((set, get) => {
     changeFormation(formation) {
       const { match: m, world: w } = get();
       if (!m?.state || !w) return;
-      setFormation(m.state, m.side, formation, { players: w.players, rng: m.rng });
+      const snap = snapOf(m.state[m.side]);
+      if (!setFormation(m.state, m.side, formation, { players: w.players, rng: m.rng })) return;
+      m.layout?.hist.push(snap);
+      m.state[m.side].tactics.xy = undefined;   // 버튼으로 바꾸면 기본 위치로
       bump();
     },
 
@@ -490,27 +531,75 @@ export const useGame = create<GameStore>((set, get) => {
       autosave(w);
       bump();
     },
+    liveToSlot(id, slotIdx) {
+      const m = get().match;
+      if (!m?.state || m.phase !== 'live') return '';
+      const t = m.state[m.side];
+      const slots = FORMATIONS[t.tactics.formation] ?? [];
+      const o = t.onPitch.find((x) => x.id === id);
+      if (!o || !slots[slotIdx] || slotOrder(t)[slotIdx]) return '';
+      if ((o.slot === 'GK') !== (slots[slotIdx] === 'GK')) return '골키퍼는 필드 선수 자리와 바꿀 수 없습니다';
+      const snap = snapOf(t);
+      const from = o.slot;
+      o.slot = slots[slotIdx];
+      o.instr = null;
+      m.layout?.hist.push(snap);
+      bump();
+      return `${from} → ${o.slot} (${from} 자리가 빕니다)`;
+    },
     liveSwap(a, b) {
       const m = get().match;
       if (!m?.state || m.phase !== 'live') return '';
+      const snap = snapOf(m.state[m.side]);
       const ok = swapSlots(m.state, m.side, a, b);
+      if (ok) m.layout?.hist.push(snap);
       bump();
       return ok ? '' : '골키퍼는 필드 선수와 자리를 바꿀 수 없습니다';
     },
-    liveReshape(slotIdx, pos) {
+    liveReshape(slotIdx, x, y) {
       const { match: m, world: w } = get();
       if (!m?.state || !w || m.phase !== 'live') return '';
       const t = m.state[m.side];
       const slots = FORMATIONS[t.tactics.formation];
-      if (!slots || slots[slotIdx] === pos) return '';
-      if (slots[slotIdx] === 'GK') return '골키퍼 자리는 옮길 수 없습니다';
-      if (pos === 'GK') return '필드 선수를 골키퍼 자리로 옮길 수 없습니다';
-      const r = reshape(slots, slotIdx, pos);
+      if (!slots) return '';
+      const r = moveFree(slots, t.tactics.formation, t.tactics.xy, slotIdx, x, y);
+      if ('error' in r) return r.error;
+      const snap = snapOf(t);
+      if (r.same) { t.tactics = { ...t.tactics, xy: { formation: t.tactics.formation, pts: r.pts, slots: [...slots] } }; m.layout?.hist.push(snap); bump(); return ''; }
+      const before = slotOrder(t);   // ★ 내 배치 를 덮어쓰기 전에 지금 자리 순서
       let key = r.formation;
       if (!key) { const a = autoFormation(w, r.slots); if ('error' in a) return a.error; key = a.key; }
-      reshapeTeam(m.state, m.side, key, r.order);
+      reshapeTeam(m.state, m.side, key, r.order, before);
+      t.tactics = { ...t.tactics, xy: { formation: key, pts: r.pts, slots: [...r.slots] } };
+      m.layout?.hist.push(snap);
       bump();
-      return `${slots[slotIdx]} → ${pos} · 포메이션 ${key}`;
+      return `${slots[slotIdx]} → ${r.pos} · 포메이션 ${key}`;
+    },
+    layoutBegin() {
+      const m = get().match;
+      if (!m?.state || m.layout) return;
+      m.layout = { base: snapOf(m.state[m.side]), hist: [] };
+      bump();
+    },
+    layoutEnd() {
+      const m = get().match;
+      if (m?.layout) { m.layout = undefined; bump(); }
+    },
+    layoutUndo() {
+      const { match: m, world: w } = get();
+      const snap = m?.layout?.hist.pop();
+      if (!m?.state || !w || !snap) return '';
+      const err = restoreLayout(w, m.state, m.side, snap);
+      bump();
+      return err ?? '이전 배치로 되돌렸습니다';
+    },
+    layoutReset() {
+      const { match: m, world: w } = get();
+      if (!m?.state || !w || !m.layout) return '';
+      const err = restoreLayout(w, m.state, m.side, m.layout.base);
+      if (!err) m.layout.hist = [];
+      bump();
+      return err ?? '하프타임 시작 배치로 되돌렸습니다';
     },
     setAutoSub(on) {
       const m = get().match;
@@ -522,6 +611,8 @@ export const useGame = create<GameStore>((set, get) => {
       const { match: m, world: w } = get();
       if (!m?.state || !w) return false;
       const ok = substitute(m.state, m.side, outId, inId, { players: w.players, rng: m.rng });
+      // 되돌리기 기록: 나간 선수 자리는 들어온 선수로 (교체는 되돌리지 않음)
+      if (ok && m.layout) for (const s of [m.layout.base, ...m.layout.hist]) s.ids = s.ids.map((id) => (id === outId ? inId : id));
       bump();
       return ok;
     },
@@ -1115,36 +1206,41 @@ export const useGame = create<GameStore>((set, get) => {
       return true;
     },
 
-    reshapeTactics(slotIdx, pos) {
+    reshapeTactics(slotIdx, x, y) {
       const w = get().world!;
       const c = w.clubs[w.userClubId];
       const slots = FORMATIONS[c.tactics.formation];
-      if (!slots || slots[slotIdx] === pos) return '';
-      if (slots[slotIdx] === 'GK') return '골키퍼 자리는 옮길 수 없습니다';
+      if (!slots) return '';
+      const mv = moveFree(slots, c.tactics.formation, c.tactics.xy, slotIdx, x, y);
+      if ('error' in mv) return mv.error;
+      if (mv.same) { c.tactics = { ...c.tactics, xy: { formation: c.tactics.formation, pts: mv.pts, slots: [...slots] } }; autosave(w); bump(); return ''; }
+      const pos = mv.pos;
       const players = c.squad.map((id) => w.players[id]);
       const rules = matchRules(w.season);
       const l = pickLineup(players, c.tactics.formation, rules.benchSize, c.lineup?.starters, c.lineup?.bench, undefined, !!c.lineup?.benchExact);
       const cur = slots.map((_, i) => l.starters[i]?.id ?? null);
-      const r = reshape(slots, slotIdx, pos);
+      const r = mv;
       let key = r.formation;
       if (!key) { const a = autoFormation(w, r.slots); if ('error' in a) return a.error; key = a.key; }
       inheritFam(c, c.tactics.formation, key);
-      c.tactics = { ...c.tactics, formation: key };
+      c.tactics = { ...c.tactics, formation: key, xy: { formation: key, pts: mv.pts, slots: [...mv.slots] } };
       c.lineup = { starters: r.order.map((k) => cur[k]), bench: c.lineup?.bench ?? l.bench };
       autosave(w); bump();
       return `${slots[slotIdx]} → ${pos} · 포메이션 ${key}${r.formation ? '' : ` (${formationShape(r.slots)} 모양 · 내 포메이션으로 저장)`}`;
     },
-    reshapeDraft(slotIdx, pos) {
+    reshapeDraft(slotIdx, x, y) {
       const { match: m, world: w } = get();
       if (!m || !w || m.phase !== 'squad') return '';
       const slots = FORMATIONS[m.draft.formation];
-      if (!slots || slots[slotIdx] === pos) return '';
-      if (slots[slotIdx] === 'GK') return '골키퍼 자리는 옮길 수 없습니다';
-      const r = reshape(slots, slotIdx, pos);
+      if (!slots) return '';
+      const r = moveFree(slots, m.draft.formation, m.draft.xy, slotIdx, x, y);
+      if ('error' in r) return r.error;
+      if (r.same) { m.draft = { ...m.draft, xy: { formation: m.draft.formation, pts: r.pts, slots: [...slots] } }; bump(); return ''; }
+      const pos = r.pos;
       let key = r.formation;
       if (!key) { const a = autoFormation(w, r.slots); if ('error' in a) return a.error; key = a.key; }
       inheritFam(w.clubs[w.userClubId], m.draft.formation, key);
-      m.draft = { ...m.draft, formation: key, starters: r.order.map((k) => m.draft.starters[k]) };
+      m.draft = { ...m.draft, formation: key, starters: r.order.map((k) => m.draft.starters[k]), xy: { formation: key, pts: r.pts, slots: [...r.slots] } };
       bump();
       return `${slots[slotIdx]} → ${pos} · 포메이션 ${key}${r.formation ? '' : ` (${formationShape(r.slots)} 모양 · 내 포메이션으로 저장)`}`;
     },

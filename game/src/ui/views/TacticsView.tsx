@@ -3,6 +3,7 @@ import type { Position } from '../../data/types';
 import { available, famOf, FORMATIONS, isCustom, matchRules, MAX_CUSTOM, pickLineup } from '../../engine/squad';
 import type { Instr } from '../../engine/types';
 import { attr } from '../../engine/ratings';
+import { placeXY, ZONES } from '../../engine/placement';
 
 export const INSTR_KO: Record<Instr, { label: string; short: string; desc: string }> = {
   attack: { label: '공격 가담', short: '공격', desc: '공격에 더 자주 올라가고 슈팅을 노립니다. 수비 공백이 생기고 조금 더 지칩니다.' },
@@ -31,32 +32,11 @@ export const MENTALITY: { v: Mentality; label: string }[] = [
 ];
 export const PRESSING: { v: Pressing; label: string }[] = [{ v: 0, label: '낮음' }, { v: 1, label: '보통' }, { v: 2, label: '높음' }];
 
-// 피치 위 자리 좌표 (가로 0~100, 세로 0=상대 골문 ~ 100=우리 골문)
-export function slotXY(slots: Position[]): { x: number; y: number }[] {
-  const rowY: Record<string, number> = { GK: 92, CB: 75, LB: 72, RB: 72, LWB: 62, RWB: 62, DM: 63, CM: 47, LM: 44, RM: 44, AM: 32, LW: 24, RW: 24, ST: 13 };
-  const rows = new Map<number, number[]>();
-  slots.forEach((s, i) => { const y = rowY[s]; rows.set(y, [...(rows.get(y) ?? []), i]); });
-  const out: { x: number; y: number }[] = new Array(slots.length);
-  for (const [y, idx] of rows) {
-    // 오른쪽(R) 자리는 오른편, 왼쪽(L)은 왼편, 가운데는 고르게
-    const left = idx.filter((i) => slots[i].startsWith('L')), right = idx.filter((i) => slots[i].startsWith('R'));
-    const mid = idx.filter((i) => !left.includes(i) && !right.includes(i));
-    left.forEach((i) => (out[i] = { x: 12, y }));
-    right.forEach((i) => (out[i] = { x: 88, y }));
-    mid.forEach((i, k) => (out[i] = { x: mid.length === 1 ? 50 : 26 + (48 * k) / (mid.length - 1), y }));
-  }
-  // 같은 세로줄(가로 위치가 가까운)에 있는 선수끼리 너무 붙으면 (예: 4-2-3-1 의 DM 과 CB) 이름표가 아래 선수를 덮으므로 위쪽 줄을 올린다
-  const MIN = 15;
-  const order = out.map((_, i) => i).sort((a, b) => out[b].y - out[a].y);
-  for (let k = 0; k < order.length; k++) {
-    const me = out[order[k]];
-    for (let j = 0; j < k; j++) { const o = out[order[j]]; if (Math.abs(o.x - me.x) < 12 && o.y - me.y < MIN && o.y >= me.y) me.y = o.y - MIN; }
-    me.y = Math.max(7, me.y);
-  }
-  return out;
-}
+// 피치 위 자리 좌표 · 자유 배치: engine/placement.ts
+export { slotXY } from '../../engine/placement';
 
-export function Pitch({ children }: { children: React.ReactNode }) {
+/** 피치. zone 이 undefined 가 아니면 (끄는 중) 포지션 구역을 흐리게 보여 주고 지금 구역(zone)을 밝게 */
+export function Pitch({ children, zone }: { children: React.ReactNode; zone?: Position | null }) {
   return (
     <div data-pitch className="relative aspect-[68/100] w-full sm:aspect-[68/90] overflow-hidden rounded-lg bg-[linear-gradient(180deg,#0d1a10,#0a130c)] ring-1 ring-line">
       <svg viewBox="0 0 68 90" className="absolute inset-0 h-full w-full" preserveAspectRatio="none" aria-hidden>
@@ -66,6 +46,10 @@ export function Pitch({ children }: { children: React.ReactNode }) {
           <rect x="16" y="75" width="36" height="13" /><rect x="25" y="83" width="18" height="5" />
         </g>
       </svg>
+      {zone !== undefined && ZONES.map(([x0, x1, y0, y1, p]) => (
+        <div key={p} aria-hidden className={`pointer-events-none absolute grid place-items-center border border-dashed text-[10px] font-semibold transition-colors ${zone === p ? 'border-sky/70 bg-sky/15 text-sky' : 'border-neon/10 text-neon/25'}`}
+          style={{ left: `${x0}%`, width: `${x1 - x0}%`, top: `${y0}%`, height: `${y1 - y0}%` }}>{p}</div>
+      ))}
       {children}
     </div>
   );
@@ -89,7 +73,7 @@ export function TacticsView() {
   const rules = matchRules(w.season);
   const lineup = pickLineup(squad, t.formation, rules.benchSize, club.lineup?.starters, club.lineup?.bench, undefined, !!club.lineup?.benchExact);
   const slots = FORMATIONS[lineup.formation];
-  const pos = slotXY(slots);
+  const pos = placeXY(slots, lineup.formation, t.xy);
   const fixed = club.lineup?.starters ?? [];
   // 자리 순서대로 현재 선발 (자동 선택분 포함)
   const current: (string | null)[] = slots.map((_, i) => lineup.starters[i]?.id ?? null);
@@ -111,11 +95,11 @@ export function TacticsView() {
     setSel(null);
   };
   // 빈 곳에 놓으면: 그 위치 포지션으로 자리를 바꾸고 포메이션 자동 변경 (예: 4-3-3 의 LW 를 가운데 위로 → 4-4-2 쪽으로)
-  const { bind, ghost, over } = usePitchDrag((i) => setSel(sel === i ? null : i), swap, (i, p) => { setMsg(reshapeTactics(i, p)); setSel(null); });
+  const { bind, ghost, over } = usePitchDrag((i) => setSel(sel === i ? null : i), swap, (i, x, y) => { setMsg(reshapeTactics(i, x, y)); setSel(null); });
   const ghostP = ghost && current[ghost.i] ? w.players[current[ghost.i]!] : null;
   const changeFormation = (f: string) => {
-    if (f === t.formation) return;
-    setClubTactics({ formation: f });
+    if (f === t.formation && !t.xy) return;
+    setClubTactics({ formation: f, xy: undefined });   // 버튼: 그 포메이션 기본 위치로
     setLineup(null);                                // 자리 구성이 바뀌므로 직접 지정 초기화
     setSel(null);
   };
@@ -137,7 +121,7 @@ export function TacticsView() {
       {editor && <FormationEditor edit={editor.edit} base={t.formation} onClose={() => setEditor(null)} />}
       <DragGhost ghost={ghost} number={ghostP?.number} label={ghostP ? playerKo(ghostP.id, ghostP.name).split(' ').slice(-1)[0] : ''} />
       <div data-tour="tactics-pitch" className="mx-auto w-full max-w-[440px] shrink-0 lg:w-[440px]">
-        <Pitch>
+        <Pitch zone={ghost ? ghost.zone ?? null : undefined}>
           {slots.map((slot, i) => {
             const id = current[i];
             const p = id ? w.players[id] : null;
@@ -157,7 +141,7 @@ export function TacticsView() {
             );
           })}
         </Pitch>
-        <div className="mt-2 text-[12px] text-lo">누르면 선수 바꾸기 · 다른 선수 위로 끌면 자리 맞바꾸기 · <b className="text-mid">빈 곳으로 끌면 그 위치 포지션으로 (포메이션 자동 변경)</b></div>
+        <div className="mt-2 text-[12px] text-lo">누르면 선수 바꾸기 · 다른 선수 위로 끌면 자리 맞바꾸기 · <b className="text-mid">빈 곳으로 끌면 그 자리에 그대로 (구역에 따라 포지션 · 능력이 바뀜)</b> · 포메이션 버튼을 누르면 기본 위치로</div>
         {msg && <div className="mt-1 text-[12px] text-sky">{msg}</div>}
         <div className="mt-3 flex items-center justify-between text-[12px] text-lo">
           <span className="flex items-center gap-4">

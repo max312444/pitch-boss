@@ -18,7 +18,7 @@ export function SortTh<K extends string>({ k, s, on, right, className = '', chil
   return (
     <th className={`font-medium ${right ? 'text-right' : ''} ${className}`} aria-sort={active ? (s.desc ? 'descending' : 'ascending') : undefined}>
       <button onClick={() => on(k)} title={title ?? '눌러서 정렬 (다시 누르면 반대로)'} className={`inline-flex items-center gap-0.5 whitespace-nowrap ${active ? 'text-hi' : 'hover:text-mid'}`}>
-        {children}<span className={`w-2.5 text-[9px] ${active ? 'text-neon' : 'opacity-30'}`}>{active ? (s.desc ? '▼' : '▲') : '↕'}</span>
+        {children}<span className={`w-2.5 text-[9px] ${active ? 'text-neon' : 'opacity-50'}`}>{active ? (s.desc ? '▼' : '▲') : '↕'}</span>
       </button>
     </th>
   );

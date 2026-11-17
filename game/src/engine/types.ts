@@ -16,6 +16,8 @@ export interface Tactics {
   instr?: { formation: string; list: (Instr | null)[] };
   /** 세트피스 키커 (코너 · 프리킥) · 페널티 키커. 없거나 못 뛰면 자동 */
   takers?: { set?: string; pen?: string };
+  /** 자유 배치 (placement.ts): 끌어다 놓은 위치. formation 이 지금과 다르면 무시 (기본 위치) */
+  xy?: import('./placement').Placement;
 }
 
 /** 숨은 속성 (1~20). 게임이 생성한 값 — 출처 데이터가 아님 */

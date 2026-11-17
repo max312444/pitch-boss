@@ -102,12 +102,17 @@ export function financeDay(w: World) {
 
 /** 홈 경기 입장 수입 (모든 구단): 매출의 20%를 한 시즌 홈 경기 수(리그 + 컵 · 유럽 평균 3경기)로 나눈 값, 상대 명성에 따라 약 ±10% */
 export function gateIncome(w: World, home: string, away: string) {
+  const v = gateAmount(w, home, away);
+  if (v) book(w, home, 'gate', v);
+}
+/** 이 홈 경기 입장 수입 (장부에 적지 않고 값만: 경기 화면 표시) */
+export function gateAmount(w: World, home: string, away: string): number {
   const c = w.clubs[home];
-  if (!c) return;
+  if (!c) return 0;
   const homeGames = Math.max(1, Object.keys(w.competitions[c.league]?.table ?? {}).length - 1) + 3;
   const opp = w.clubs[away]?.reputation ?? 70;
   const oppF = Math.max(0.85, Math.min(1.15, 1 + (opp - 70) / 150));
-  book(w, home, 'gate', Math.round(((clubRevenue(w, home) * SHARE.gate) / homeGames) * oppF * fanFactor(w, home) * moodIncome(w, home)));
+  return Math.round(((clubRevenue(w, home) * SHARE.gate) / homeGames) * oppF * fanFactor(w, home) * moodIncome(w, home));
 }
 
 /** 리그 상금 (모든 구단): 매출의 15% 기준, 1위 1.6배 ~ 꼴찌 0.4배 */

@@ -16,7 +16,8 @@ import { MENTALITY, PRESSING } from '../views/TacticsView';
 import { MatchPrep } from './MatchPrep';
 import { LivePitch } from '../components/LivePitch';
 import { FinalIntro, isFinal, ShootoutOverlay, TrophyOverlay } from '../components/BigMoments';
-import { roundLabel } from '../format';
+import { money, roundLabel } from '../format';
+import { gateAmount } from '../../engine/finance';
 
 /** 경기 속도: id 는 설정에 저장되는 값 (예전 값 0 · 1 · 2 그대로, 느리게는 3) · 화면에는 느린 순으로 */
 const SPEEDS = [{ id: 3, label: '느리게', ms: 2200 }, { id: 0, label: '보통', ms: 1100 }, { id: 1, label: '빠르게', ms: 450 }, { id: 2, label: '매우 빠르게', ms: 150 }];
@@ -24,7 +25,7 @@ const speedMs = (id: number) => (SPEEDS.find((x) => x.id === id) ?? SPEEDS[1]).m
 
 export function MatchScreen() {
   const w = useWorld();
-  const { match: m, stepMatch, changeTactics, changeFormation, sub, setAutoSub, closeMatch, liveSwap, liveReshape, finishShootout } = useGame();
+  const { match: m, stepMatch, changeTactics, changeFormation, sub, setAutoSub, closeMatch, liveSwap, liveReshape, liveToSlot, finishShootout, layoutBegin, layoutEnd, layoutUndo, layoutReset } = useGame();
   const [pitchMsg, setPitchMsg] = useState('');
   const [playing, setPlaying] = useState(true);
   const [speed, setSpeed] = useState<number>(useSettings.getState().s.matchSpeed);   // 설정: 기본 경기 속도
@@ -34,9 +35,9 @@ export function MatchScreen() {
   const [half, setHalf] = useState<'before' | 'now' | 'done'>('before');
   const seg = m?.state?.segment ?? 0;
   useEffect(() => {
-    if (half === 'before' && seg >= 9 && m?.phase === 'live') { setPlaying(false); setHalf('now'); }
+    if (half === 'before' && seg >= 9 && m?.phase === 'live') { setPlaying(false); setHalf('now'); layoutBegin(); }   // 하프타임 배치 기록 시작 (되돌리기)
   }, [seg, half, m?.phase]);
-  const resume = () => { setHalf('done'); setPlaying(true); };
+  const resume = () => { setHalf('done'); setPlaying(true); layoutEnd(); };
 
   // 큰 경기 연출: 결승 시작 · 승부차기 · 우승
   const [moment, setMoment] = useState<'intro' | 'pens' | 'trophy' | 'league' | null>(null);
@@ -83,6 +84,7 @@ export function MatchScreen() {
   const goalsSoFar = { home: sum.goals.filter((g) => g.side === 'home').length, away: sum.goals.filter((g) => g.side === 'away').length };
   const xg = { home: s.home.xg, away: s.away.xg };
   const poss = s.segment ? Math.round((s.home.possSum / s.segment) * 100) : 50;
+  const gate = m.phase === 'full' && m.side === 'home' ? gateAmount(w, s.home.clubId, s.away.clubId) : 0;   // 홈 경기 입장 수입 (경기가 끝나면 장부에)
 
 
   // 비긴 녹아웃: 승부차기를 직접
@@ -109,9 +111,17 @@ export function MatchScreen() {
             <div className={`led mt-2 rounded-md px-2.5 py-0.5 text-[13px] font-semibold ${m.phase === 'live' ? 'bg-neon/15 text-neon' : 'bg-ink-700 text-mid'}`}>
               {m.phase === 'full' ? (sum.pens ? `경기 종료 · 승부차기 ${clubKo(sum.pens === 'home' ? s.home.clubId : s.away.clubId)} 승` : '경기 종료') : `${minute}'`}
             </div>
+            {gate > 0 && <div className="mt-1.5 text-[11px] font-semibold text-neon" title="홈 경기마다 들어오는 입장 수입 (상대 명성 · 팬 · 분위기에 따라)">홈 경기 입장 수입 +{money(gate)}</div>}
           </div>
           <TeamHead club={s.away.clubId} mine={m.side === 'away'} align="left" />
         </div>
+        {sum.goals.length > 0 && (
+          <div className="relative mx-auto grid max-w-[1100px] grid-cols-[1fr_auto_1fr] gap-x-3 px-3 pb-2.5 text-[11px] leading-[1.45] text-mid lg:px-8 lg:pb-4 lg:text-[12px]">
+            <ScorerList goals={sum.goals.filter((g) => g.side === 'home')} name={name} align="right" />
+            <span className="w-4 pt-0.5 opacity-70"><BallIcon size={12} /></span>
+            <ScorerList goals={sum.goals.filter((g) => g.side === 'away')} name={name} align="left" />
+          </div>
+        )}
         <div className="h-1 w-full bg-ink-800"><div className="h-full origin-left bg-neon transition-transform duration-500 ease-[var(--ease-out-quart)]" style={{ transform: `scaleX(${s.segment / SEGMENTS})` }} /></div>
       </header>
 
@@ -196,10 +206,17 @@ export function MatchScreen() {
                     <span className="hidden sm:inline">상대 {opp.tactics.formation}</span>
                   </span>
                 </div>
+                {half === 'now' && m.layout && (
+                  <div className="mb-3 flex flex-wrap items-center gap-2 text-[12px] text-lo">
+                    <span className="w-full sm:mr-auto sm:w-auto">하프타임에는 배치를 되돌릴 수 있습니다</span>
+                    <button onClick={() => setPitchMsg(layoutUndo())} disabled={!m.layout.hist.length} className="h-9 flex-1 rounded-lg px-3 text-[13px] text-mid ring-1 ring-line hover:text-hi disabled:opacity-40 sm:flex-none">↶ 이전으로{m.layout.hist.length ? ` (${m.layout.hist.length})` : ''}</button>
+                    <button onClick={() => setPitchMsg(layoutReset())} disabled={!m.layout.hist.length} className="h-9 flex-1 rounded-lg px-3 text-[13px] text-mid ring-1 ring-line hover:text-hi disabled:opacity-40 sm:flex-none">배치 초기화</button>
+                  </div>
+                )}
                 <div>
-                  <LivePitch team={me} ratings={sum.ratings} editable={m.phase === 'live'} selected={subOut} onSelect={setSubOut}
+                  <LivePitch team={me} ratings={sum.ratings} goals={sum.goals} editable={m.phase === 'live'} selected={subOut} onSelect={setSubOut}
                     onSub={(o, i) => { setSubOut(null); setPitchMsg(sub(o, i) ? '' : '이 자리에 맞지 않는 선수입니다 (주 · 보조 · 가까운 포지션만)'); }}
-                    onSwap={(a, b) => setPitchMsg(liveSwap(a, b))} onReshape={(i, p) => { setSubOut(null); setPitchMsg(liveReshape(i, p)); }}
+                    onSwap={(a, b) => setPitchMsg(liveSwap(a, b))} onToSlot={(id, i) => { setSubOut(null); setPitchMsg(liveToSlot(id, i)); }} onReshape={(i, x, y) => { setSubOut(null); setPitchMsg(liveReshape(i, x, y)); }}
                     side={<>
                       <div>
                         <div className="mb-1.5 text-[12px] text-lo">공격 · 수비 성향</div>
@@ -314,10 +331,24 @@ function EventIcon({ kind }: { kind: 'goal' | 'yellow' | 'red' | 'injury' | 'sub
   return <span className="grid h-5 w-5 place-items-center text-sky"><Icon name="transfers" size={15} /></span>;
 }
 
-/** 골 표시용 축구공 */
-function BallIcon() {
+/** 점수판 아래 득점자: 선수별로 묶어 "살라 23' 41' (PK)" + 도움 */
+function ScorerList({ goals, name, align }: { goals: { minute: number; scorer: string; assist?: string | null; kind?: string; own?: boolean }[]; name: (id: string) => string; align: 'left' | 'right' }) {
+  const by = new Map<string, string[]>();
+  for (const g of [...goals].sort((a, b) => a.minute - b.minute)) by.set(g.scorer, [...(by.get(g.scorer) ?? []), `${g.minute}'${g.kind === 'pen' ? ' (PK)' : ''}`]);
+  const assists = [...new Set(goals.map((g) => g.assist).filter(Boolean) as string[])];
+  const short = (id: string) => name(id).split(' ').slice(-1)[0];
   return (
-    <svg width={20} height={20} viewBox="-12 -12 24 24" aria-label="골" className="shrink-0">
+    <div className={`min-w-0 ${align === 'right' ? 'text-right' : 'text-left'}`}>
+      {[...by].map(([id, mins]) => <div key={id} className="truncate"><span className="font-semibold text-hi">{short(id)}</span> <span className="tnum">{mins.join(', ')}</span></div>)}
+      {assists.length > 0 && <div className="truncate text-lo">도움 {assists.map(short).join(', ')}</div>}
+    </div>
+  );
+}
+
+/** 골 표시용 축구공 */
+export function BallIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="-12 -12 24 24" aria-label="골" className="shrink-0">
       <circle r={11} fill="#f4f4f2" stroke="#0d100e" strokeWidth={0.8} />
       <path d="M0 -4.2 L4 -1.3 L2.5 3.4 L-2.5 3.4 L-4 -1.3 Z" fill="#141414" />
       <path d="M0 -4.2 V-8.5 M4 -1.3 L8.2 -2.6 M2.5 3.4 L5 7.2 M-2.5 3.4 L-5 7.2 M-4 -1.3 L-8.2 -2.6" stroke="#141414" strokeWidth={0.9} fill="none" />

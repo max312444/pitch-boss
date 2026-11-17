@@ -1,7 +1,7 @@
 // 피치 위 선수 끌어다 놓기 (전술 · 경기 준비 공통). 마우스 · 손가락 모두 (Pointer Events)
 //  - 살짝 누르고 떼면: 그 자리 선택 (onTap)
 //  - 끌어서 다른 자리에 놓으면: 두 자리 선수 맞바꿈 (onDrop) — 예: LW ↔ RW
-//  - 끌어서 피치의 빈 곳에 놓으면: 그 위치의 포지션으로 자리를 바꿈 (onFree) — 예: 윙어를 가운데 위로 → ST, 포메이션이 4-4-2 등으로 바뀜
+//  - 끌어서 피치의 빈 곳에 놓으면: 그 위치에 그대로 둔다 (자유 배치, onFree). 구역 포지션이 바뀌면 포메이션도 — 예: 윙어를 가운데 위로 → ST
 //  자리 버튼에 data-slot, 피치에 data-pitch 가 있어야 하고, 끌 때 화면이 스크롤되지 않도록 touch-action: none
 import { useRef, useState, type PointerEvent as RPointerEvent } from 'react';
 import type { Position } from '../../data/types';
@@ -20,7 +20,7 @@ const zoneAt = (x: number, y: number): { x: number; y: number; pos: Position | n
   return { x: px, y: py, pos: zonePos(px, py) };
 };
 
-export function usePitchDrag(onTap: (i: number) => void, onDrop: (from: number, to: number) => void, onFree?: (i: number, pos: Position) => void) {
+export function usePitchDrag(onTap: (i: number) => void, onDrop: (from: number, to: number) => void, onFree?: (i: number, x: number, y: number) => void) {
   const drag = useRef<{ i: number; x: number; y: number; moved: boolean } | null>(null);
   const [ghost, setGhost] = useState<{ i: number; x: number; y: number; zone?: Position | null } | null>(null);
   const [over, setOver] = useState<number | null>(null);
@@ -50,7 +50,7 @@ export function usePitchDrag(onTap: (i: number) => void, onDrop: (from: number, 
       if (!d.moved) { onTap(d.i); return; }
       const to = slotAt(e.clientX, e.clientY);
       if (to != null && to !== d.i) { onDrop(d.i, to); return; }
-      if (to == null && onFree) { const z = zoneAt(e.clientX, e.clientY); if (z?.pos) onFree(d.i, z.pos); }
+      if ((to == null || to === d.i) && onFree) { const z = zoneAt(e.clientX, e.clientY); if (z) onFree(d.i, z.x, z.y); }
     },
     onPointerCancel: end,
     // 키보드(Enter · Space)로 누를 때만 (마우스 · 손가락은 위에서 처리)
@@ -66,7 +66,7 @@ export function DragGhost({ ghost, label, number }: { ghost: { x: number; y: num
     <div className="pointer-events-none fixed z-[80] flex -translate-x-1/2 -translate-y-1/2 flex-col items-center" style={{ left: ghost.x, top: ghost.y }}>
       <div className="grid h-11 w-11 place-items-center rounded-full bg-neon text-[14px] font-semibold text-ink-950 shadow-[0_6px_20px_rgb(0_0_0/0.5)] ring-2 ring-neon">{number ?? ''}</div>
       <div className="mt-1 rounded bg-ink-950/90 px-1.5 text-[12px] font-semibold">{label}</div>
-      {ghost.zone && <div className="mt-1 rounded bg-sky px-1.5 text-[11px] font-semibold text-ink-950">→ {ghost.zone} 자리로</div>}
+      {ghost.zone && <div className="mt-1 rounded bg-sky px-1.5 text-[11px] font-semibold text-ink-950">{ghost.zone}</div>}
     </div>
   );
 }

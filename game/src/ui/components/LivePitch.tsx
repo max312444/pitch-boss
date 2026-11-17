@@ -2,28 +2,32 @@
 //  - 선수 누르기: 교체할 선수 선택 → 후보를 누르면 교체
 //  - 후보를 피치의 선수 위로 끌어 놓기: 바로 교체 (그 자리에 맞는 선수만)
 //  - 피치 선수끼리 끌어 놓기: 자리 맞바꿈 · 빈 곳으로 끌기: 새 포지션 → 포메이션이 바뀜
-import type { Position } from '../../data/types';
 import { canSubInto, slotOrder, type TeamInMatch } from '../../engine/match';
 import { slotRating } from '../../engine/ratings';
 import { FORMATIONS } from '../../engine/squad';
 import { playerKo } from '../../data/db';
 import { useWorld } from '../hooks';
-import { Pitch, slotXY } from '../views/TacticsView';
+import { Pitch } from '../views/TacticsView';
+import { placeXY } from '../../engine/placement';
 import { DragGhost, usePitchDrag } from './PitchDrag';
 import { ratingTone } from '../format';
 
 const BENCH = 100;   // 후보 칸 번호 (피치 자리와 구분)
 
-export function LivePitch({ team, ratings, editable, selected, onSelect, onSub, onSwap, onReshape, side }: {
+export function LivePitch({ team, ratings, goals = [], editable, selected, onSelect, onSub, onSwap, onReshape, onToSlot, side }: {
   team: TeamInMatch; ratings: Record<string, number>; editable: boolean;
+  /** 이번 경기 골 (피치에 골 · 도움 표시) */
+  goals?: { scorer: string; assist?: string | null }[];
   selected: string | null; onSelect: (id: string | null) => void;
-  onSub: (outId: string, inId: string) => void; onSwap: (a: string, b: string) => void; onReshape: (slotIdx: number, pos: Position) => void;
+  onSub: (outId: string, inId: string) => void; onSwap: (a: string, b: string) => void; onReshape: (slotIdx: number, x: number, y: number) => void;
+  /** 피치 선수를 빈 자리로 옮기기 */
+  onToSlot?: (id: string, slotIdx: number) => void;
   /** 후보 칸 오른쪽에 놓을 것 (성향 · 압박) */
   side?: React.ReactNode;
 }) {
   const w = useWorld();
   const slots = FORMATIONS[team.tactics.formation] ?? [];
-  const xy = slotXY(slots);
+  const xy = placeXY(slots, team.tactics.formation, team.tactics.xy);
   const order = slotOrder(team);
   const canSub = editable && team.subsUsed < team.maxSubs;
   const short = (id: string) => playerKo(id, w.players[id]?.name ?? id).split(' ').slice(-1)[0];
@@ -39,12 +43,13 @@ export function LivePitch({ team, ratings, editable, selected, onSelect, onSub, 
     (from, to) => {
       if (!editable) return;
       const a = idAt(from), b = idAt(to);
+      if (a && !b && from < BENCH && to < BENCH) { onToSlot?.(a, to); return; }   // 빈 자리로 옮김
       if (!a || !b) return;
       if (from >= BENCH && to < BENCH) { if (canSub) onSub(b, a); }        // 후보 → 피치: 교체
       else if (from < BENCH && to >= BENCH) { if (canSub) onSub(a, b); }   // 피치 → 후보: 교체
       else if (from < BENCH && to < BENCH) onSwap(a, b);                  // 피치끼리: 자리 맞바꿈
     },
-    (i, pos) => { if (editable && i < BENCH) onReshape(i, pos); },
+    (i, x, y) => { if (editable && i < BENCH) onReshape(i, x, y); },
   );
   const ghostId = ghost ? idAt(ghost.i) : null;
   // 끄는 후보가 들어갈 수 있는 자리 표시
@@ -56,10 +61,20 @@ export function LivePitch({ team, ratings, editable, selected, onSelect, onSub, 
     <div className="grid items-start gap-3 xl:grid-cols-[minmax(200px,1fr)_auto_minmax(220px,1fr)] xl:gap-4">
       {/* 피치: 화면 높이에 맞춰 (PC), 휴대폰은 가로 꽉 */}
       <div className="mx-auto w-full max-w-[460px] xl:order-2 xl:w-[max(300px,min(460px,calc((100dvh-540px)*0.755)))]">
-      <Pitch>
+      <Pitch zone={ghost && ghost.i < BENCH ? ghost.zone ?? null : undefined}>
         {slots.map((slot, i) => {
           const o = order[i];
-          if (!o) return <div key={i} className="absolute -translate-x-1/2 -translate-y-1/2 text-[11px] text-red/70" style={{ left: `${xy[i].x}%`, top: `${xy[i].y}%` }}>{slot} 빈 자리</div>;
+          if (!o) {
+            // 빈 자리 (퇴장 등): 피치 선수를 끌어 놓으면 그 자리로 옮겨 감
+            const dropHere = ghost && over === i && ghost.i < BENCH;
+            return (
+              <div key={i} data-slot={i} className="absolute flex w-20 -translate-x-1/2 -translate-y-1/2 flex-col items-center" style={{ left: `${xy[i].x}%`, top: `${xy[i].y}%` }} title="다른 선수를 끌어다 놓으면 이 자리로 옮깁니다">
+                <div className={`grid h-8 w-8 place-items-center rounded-full border-2 border-dashed text-[11px] transition-all ${dropHere ? 'scale-110 border-sky bg-sky/30 text-sky' : 'border-red/60 text-red/70'}`}>{ghost && ghost.i < BENCH ? '+' : ''}</div>
+                <div className="mt-0.5 rounded bg-ink-950/80 px-1 text-[11px] leading-4 text-red/80">빈 자리</div>
+                <div className="text-[10px] leading-3 text-lo">{slot}</div>
+              </div>
+            );
+          }
           const p = w.players[o.id];
           const r = ratings[o.id];
           const fit = Math.round(o.fitness);
@@ -74,10 +89,15 @@ export function LivePitch({ team, ratings, editable, selected, onSelect, onSub, 
               <div className={`relative grid h-8 w-8 place-items-center rounded-full bg-ink-950/90 text-[12px] font-semibold transition-all ${ring}`}>
                 {p.number ?? ''}
                 {o.yellow && <span className="absolute -top-0.5 -right-1 h-3 w-2 rounded-[1px] bg-amber" />}
+                {(() => { const g = goals.filter((x) => x.scorer === o.id).length, a = goals.filter((x) => x.assist === o.id).length; return (g > 0 || a > 0) && (
+                  <span className="absolute -top-1.5 -left-2.5 flex gap-px" title={`골 ${g} · 도움 ${a}`}>
+                    {g > 0 && <span className="grid h-3.5 min-w-3.5 place-items-center rounded-full bg-[#f4f4f2] px-0.5 text-[9px] leading-none font-bold text-ink-950">{g > 1 ? `G${g}` : 'G'}</span>}
+                    {a > 0 && <span className="grid h-3.5 min-w-3.5 place-items-center rounded-full bg-sky px-0.5 text-[9px] leading-none font-bold text-ink-950">{a > 1 ? `A${a}` : 'A'}</span>}
+                  </span>); })()}
                 {o.fromMinute > 0 && <span className="absolute -bottom-0.5 -left-1 rounded bg-sky px-0.5 text-[9px] leading-3 text-ink-950" title="교체 투입">IN</span>}
               </div>
               <div className="mt-0.5 max-w-full truncate rounded bg-ink-950/80 px-1 text-[11px] leading-4 font-semibold">{short(o.id)}</div>
-              <div className="flex items-center gap-1 text-[10px] leading-3 text-lo">{slot}<span className="h-1 w-6 overflow-hidden rounded-full bg-ink-700"><span className={`block h-full ${tone}`} style={{ width: `${fit}%` }} /></span>{r != null && <span className={`tnum ${ratingTone(r * 10 + 15)}`}>{r.toFixed(1)}</span>}</div>
+              <div className="flex items-center gap-1 text-[10px] leading-3 text-lo">{slot}<span className={`tnum font-semibold ${ratingTone(slotRating(p, slot))}`}>{Math.round(slotRating(p, slot))}</span><span className="h-1 w-6 overflow-hidden rounded-full bg-ink-700"><span className={`block h-full ${tone}`} style={{ width: `${fit}%` }} /></span>{r != null && <span className={`tnum ${ratingTone(r * 10 + 15)}`}>{r.toFixed(1)}</span>}</div>
             </button>
           );
         })}
