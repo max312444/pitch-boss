@@ -52,7 +52,8 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 3500
+      "wage": 3500,
+      "weight": 69
     },
     {
       "attrs": {
@@ -576,7 +577,8 @@
       "nation": "MNE",
       "number": null,
       "pos": "CB",
-      "wage": 1000
+      "wage": 1000,
+      "weight": 82
     },
     {
       "attrs": {

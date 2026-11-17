@@ -460,7 +460,8 @@
       "nation": "GER",
       "number": 21,
       "pos": "GK",
-      "wage": 12000
+      "wage": 12000,
+      "weight": 80
     },
     {
       "alt": [
@@ -709,7 +710,8 @@
       "nation": "GER",
       "number": 36,
       "pos": "ST",
-      "wage": 13000
+      "wage": 13000,
+      "weight": 86
     }
   ],
   "stadiumCapacity": 15000

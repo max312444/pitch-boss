@@ -263,7 +263,8 @@
       "nation": "ALB",
       "number": 13,
       "pos": "GK",
-      "wage": 17500
+      "wage": 17500,
+      "weight": 86
     },
     {
       "attrs": {
@@ -315,7 +316,8 @@
       "nation": "GER",
       "number": 17,
       "pos": "ST",
-      "wage": 18000
+      "wage": 18000,
+      "weight": 83
     },
     {
       "attrs": {

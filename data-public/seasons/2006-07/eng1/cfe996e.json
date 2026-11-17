@@ -41,7 +41,8 @@
       "nation": "ENG",
       "number": 1,
       "pos": "GK",
-      "wage": 59000
+      "wage": 59000,
+      "weight": 94
     },
     {
       "attrs": {
@@ -68,7 +69,8 @@
       "nation": "ENG",
       "number": 2,
       "pos": "RB",
-      "wage": 59000
+      "wage": 59000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -95,7 +97,8 @@
       "number": 4,
       "pos": "CB",
       "verify": true,
-      "wage": 32500
+      "wage": 32500,
+      "weight": 74
     },
     {
       "attrs": {
@@ -126,7 +129,8 @@
         "aerial_threat"
       ],
       "verify": true,
-      "wage": 59000
+      "wage": 59000,
+      "weight": 92
     },
     {
       "attrs": {
@@ -179,7 +183,8 @@
       "nation": "ZIM",
       "number": 9,
       "pos": "ST",
-      "wage": 27500
+      "wage": 27500,
+      "weight": 78
     },
     {
       "alt": [
@@ -213,7 +218,8 @@
         "flair"
       ],
       "verify": true,
-      "wage": 37000
+      "wage": 37000,
+      "weight": 62
     },
     {
       "attrs": {
@@ -240,7 +246,8 @@
       "number": 12,
       "pos": "ST",
       "verify": true,
-      "wage": 15000
+      "wage": 15000,
+      "weight": 86
     },
     {
       "attrs": {
@@ -267,7 +274,8 @@
       "number": 13,
       "pos": "GK",
       "verify": true,
-      "wage": 35500
+      "wage": 35500,
+      "weight": 78
     },
     {
       "alt": [
@@ -302,7 +310,8 @@
         "long_shot"
       ],
       "verify": true,
-      "wage": 28000
+      "wage": 28000,
+      "weight": 73
     },
     {
       "alt": [
@@ -393,7 +402,8 @@
       "traits": [
         "long_shot"
       ],
-      "wage": 26500
+      "wage": 26500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -450,7 +460,8 @@
       "number": 21,
       "pos": "CM",
       "verify": true,
-      "wage": 39500
+      "wage": 39500,
+      "weight": 75
     },
     {
       "alt": [
@@ -505,7 +516,8 @@
       "nation": "FRA",
       "number": 23,
       "pos": "CB",
-      "wage": 25500
+      "wage": 25500,
+      "weight": 86
     },
     {
       "attrs": {
@@ -564,7 +576,8 @@
         "injury_prone"
       ],
       "verify": true,
-      "wage": 33000
+      "wage": 33000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -594,7 +607,8 @@
       "traits": [
         "flair"
       ],
-      "wage": 40000
+      "wage": 40000,
+      "weight": 90
     },
     {
       "attrs": {

@@ -49,6 +49,8 @@ export interface PlayerState {
   foot?: 'L' | 'R' | 'B' | null;
   /** 키 cm (데이터에 있을 때, 없으면 body.ts heightOf 가 추정) */
   height?: number;
+  /** 몸무게 kg (데이터에 있을 때만) */
+  weight?: number;
   /** 이번 시즌 체형이 바뀌었으면 예전 체형 (body.ts) */
   bodyChange?: { from: import('./body').BodyType; season: string };
   /** 능력이 깎이지 않는 보조 포지션 (데이터 + 능력치로 정함, positions.ts). 없으면 처음 쓸 때 계산 */

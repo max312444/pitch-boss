@@ -93,7 +93,8 @@
       "nation": "IRL",
       "number": 13,
       "pos": "GK",
-      "wage": 7000
+      "wage": 7000,
+      "weight": 91
     },
     {
       "attrs": {
@@ -119,7 +120,8 @@
       "nation": "NED",
       "number": 29,
       "pos": "RB",
-      "wage": 46500
+      "wage": 46500,
+      "weight": 74
     },
     {
       "attrs": {
@@ -174,7 +176,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 29500
+      "wage": 29500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -226,7 +229,8 @@
       "nation": "CIV",
       "number": 26,
       "pos": "CB",
-      "wage": 27000
+      "wage": 27000,
+      "weight": 83
     },
     {
       "attrs": {
@@ -252,7 +256,8 @@
       "nation": "ENG",
       "number": 2,
       "pos": "CB",
-      "wage": 19000
+      "wage": 19000,
+      "weight": 95
     },
     {
       "alt": [
@@ -340,7 +345,8 @@
       "nation": "NIR",
       "number": 22,
       "pos": "CM",
-      "wage": 46000
+      "wage": 46000,
+      "weight": 64
     },
     {
       "alt": [
@@ -430,7 +436,8 @@
       "nation2": "ENG",
       "number": 15,
       "pos": "CM",
-      "wage": 14500
+      "wage": 14500,
+      "weight": 67
     },
     {
       "attrs": {
@@ -459,7 +466,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 38000
+      "wage": 38000,
+      "weight": 83
     },
     {
       "attrs": {
@@ -485,7 +493,8 @@
       "nation": "ENG",
       "number": 21,
       "pos": "LW",
-      "wage": 25000
+      "wage": 25000,
+      "weight": 69
     },
     {
       "alt": [
@@ -514,7 +523,8 @@
       "nation": "ENG",
       "number": 7,
       "pos": "RW",
-      "wage": 30500
+      "wage": 30500,
+      "weight": 67
     },
     {
       "alt": [
@@ -546,7 +556,8 @@
       "nation": "CZE",
       "number": 14,
       "pos": "CM",
-      "wage": 56500
+      "wage": 56500,
+      "weight": 87
     },
     {
       "alt": [
@@ -634,7 +645,8 @@
       "traits": [
         "target_man"
       ],
-      "wage": 46500
+      "wage": 46500,
+      "weight": 92
     },
     {
       "attrs": {
@@ -660,7 +672,8 @@
       "nation": "FIN",
       "number": 9,
       "pos": "ST",
-      "wage": 32500
+      "wage": 32500,
+      "weight": 68
     },
     {
       "attrs": {
@@ -686,7 +699,8 @@
       "nation": "URU",
       "number": 8,
       "pos": "ST",
-      "wage": 31000
+      "wage": 31000,
+      "weight": 81
     }
   ],
   "stadiumCapacity": 30016

@@ -48,7 +48,8 @@
       "nation": "ESP",
       "number": 1,
       "pos": "GK",
-      "wage": 37500
+      "wage": 37500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -100,7 +101,8 @@
       "nation": "ESP",
       "number": 3,
       "pos": "LB",
-      "wage": 34500
+      "wage": 34500,
+      "weight": 69
     },
     {
       "alt": [
@@ -157,7 +159,8 @@
       "nation": "BRA",
       "number": 5,
       "pos": "CB",
-      "wage": 50500
+      "wage": 50500,
+      "weight": 86
     },
     {
       "alt": [
@@ -212,7 +215,8 @@
       "nation": "URU",
       "number": 7,
       "pos": "ST",
-      "wage": 79500
+      "wage": 79500,
+      "weight": 71
     },
     {
       "attrs": {
@@ -238,7 +242,8 @@
       "nation": "SRB",
       "number": 8,
       "pos": "DM",
-      "wage": 39000
+      "wage": 39000,
+      "weight": 81
     },
     {
       "attrs": {
@@ -264,7 +269,8 @@
       "nation": "URU",
       "number": 9,
       "pos": "ST",
-      "wage": 40000
+      "wage": 40000,
+      "weight": 91
     },
     {
       "alt": [
@@ -293,7 +299,8 @@
       "nation": "ESP",
       "number": 11,
       "pos": "RW",
-      "wage": 79500
+      "wage": 79500,
+      "weight": 67
     },
     {
       "alt": [
@@ -323,7 +330,8 @@
       "nation2": "FRA",
       "number": 12,
       "pos": "CB",
-      "wage": 39500
+      "wage": 39500,
+      "weight": 74
     },
     {
       "attrs": {
@@ -375,7 +383,8 @@
       "nation": "ESP",
       "number": 14,
       "pos": "LB",
-      "wage": 79500
+      "wage": 79500,
+      "weight": 64
     },
     {
       "attrs": {
@@ -542,7 +551,8 @@
       "nation2": "FRA",
       "number": 20,
       "pos": "RB",
-      "wage": 79500
+      "wage": 79500,
+      "weight": 77
     },
     {
       "alt": [
@@ -623,7 +633,8 @@
       "nation": "SUI",
       "number": 24,
       "pos": "CB",
-      "wage": 68500
+      "wage": 68500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -649,7 +660,8 @@
       "nation": "GEO",
       "number": 28,
       "pos": "GK",
-      "wage": 70500
+      "wage": 70500,
+      "weight": 90
     },
     {
       "attrs": {

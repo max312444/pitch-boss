@@ -100,7 +100,8 @@
       "nation": "SUI",
       "number": 4,
       "pos": "CB",
-      "wage": 23500
+      "wage": 23500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -126,7 +127,8 @@
       "nation": "BRA",
       "number": 6,
       "pos": "CB",
-      "wage": 8500
+      "wage": 8500,
+      "weight": 79
     },
     {
       "alt": [
@@ -217,7 +219,8 @@
       "nation": "FRA",
       "number": 9,
       "pos": "ST",
-      "wage": 11000
+      "wage": 11000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -243,7 +246,8 @@
       "nation": "DEN",
       "number": 10,
       "pos": "AM",
-      "wage": 23500
+      "wage": 23500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -321,7 +325,8 @@
       "nation": "FRA",
       "number": 13,
       "pos": "LW",
-      "wage": 9000
+      "wage": 9000,
+      "weight": 81
     },
     {
       "attrs": {
@@ -347,7 +352,8 @@
       "nation": "FRA",
       "number": 15,
       "pos": "CB",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -373,7 +379,8 @@
       "nation": "FRA",
       "number": 16,
       "pos": "GK",
-      "wage": 4500
+      "wage": 4500,
+      "weight": 84
     },
     {
       "alt": [
@@ -402,7 +409,8 @@
       "nation": "FRA",
       "number": 17,
       "pos": "CM",
-      "wage": 23500
+      "wage": 23500,
+      "weight": 69
     },
     {
       "attrs": {
@@ -457,7 +465,8 @@
       "nation": "FRA",
       "number": 19,
       "pos": "RW",
-      "wage": 6500
+      "wage": 6500,
+      "weight": 67
     },
     {
       "attrs": {
@@ -483,7 +492,8 @@
       "nation": "FRA",
       "number": 20,
       "pos": "ST",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 66
     },
     {
       "attrs": {
@@ -509,7 +519,8 @@
       "nation": "ROU",
       "number": 21,
       "pos": "ST",
-      "wage": 11000
+      "wage": 11000,
+      "weight": 79
     },
     {
       "alt": [
@@ -538,7 +549,8 @@
       "nation": "POL",
       "number": 22,
       "pos": "ST",
-      "wage": 23500
+      "wage": 23500,
+      "weight": 74
     },
     {
       "alt": [
@@ -568,7 +580,8 @@
       "nation2": "COD",
       "number": 24,
       "pos": "RW",
-      "wage": 2500
+      "wage": 2500,
+      "weight": 72
     },
     {
       "alt": [
@@ -657,7 +670,8 @@
       "nation2": "FRA",
       "number": 27,
       "pos": "ST",
-      "wage": 7500
+      "wage": 7500,
+      "weight": 73
     },
     {
       "attrs": {

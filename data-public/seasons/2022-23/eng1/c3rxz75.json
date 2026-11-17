@@ -67,7 +67,8 @@
       "nation": "USA",
       "number": 30,
       "pos": "GK",
-      "wage": 142500
+      "wage": 142500,
+      "weight": 84
     },
     {
       "attrs": {
@@ -125,7 +126,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 164000
+      "wage": 164000,
+      "weight": 70
     },
     {
       "alt": [
@@ -184,7 +186,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 321000
+      "wage": 321000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -214,7 +217,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 278500
+      "wage": 278500,
+      "weight": 78
     },
     {
       "attrs": {
@@ -279,7 +283,8 @@
         "playmaker",
         "leader"
       ],
-      "wage": 321000
+      "wage": 321000,
+      "weight": 68
     },
     {
       "attrs": {
@@ -308,7 +313,8 @@
       "traits": [
         "engine"
       ],
-      "wage": 258500
+      "wage": 258500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -367,7 +373,8 @@
       "traits": [
         "speedster"
       ],
-      "wage": 241500
+      "wage": 241500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -419,7 +426,8 @@
       "nation": "ENG",
       "number": 14,
       "pos": "ST",
-      "wage": 110500
+      "wage": 110500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -445,7 +453,8 @@
       "nation": "ENG",
       "number": 16,
       "pos": "CB",
-      "wage": 75500
+      "wage": 75500,
+      "weight": 75
     },
     {
       "alt": [
@@ -474,7 +483,8 @@
       "nation": "POR",
       "number": 17,
       "pos": "RB",
-      "wage": 62500
+      "wage": 62500,
+      "weight": 65
     },
     {
       "alt": [
@@ -507,7 +517,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 208000
+      "wage": 208000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -592,7 +603,8 @@
       "nation": "ENG",
       "number": 24,
       "pos": "RW",
-      "wage": 73500
+      "wage": 73500,
+      "weight": 71
     },
     {
       "attrs": {
@@ -618,7 +630,8 @@
       "nation": "EGY",
       "number": 25,
       "pos": "DM",
-      "wage": 145000
+      "wage": 145000,
+      "weight": 72
     },
     {
       "alt": [
@@ -677,7 +690,8 @@
         "long_shot",
         "leader"
       ],
-      "wage": 297500
+      "wage": 297500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -706,7 +720,8 @@
       "traits": [
         "playmaker"
       ],
-      "wage": 273500
+      "wage": 273500,
+      "weight": 61
     }
   ],
   "stadiumCapacity": 60704

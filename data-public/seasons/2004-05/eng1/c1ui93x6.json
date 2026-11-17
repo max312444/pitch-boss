@@ -41,7 +41,8 @@
       "nation": "NED",
       "number": 1,
       "pos": "GK",
-      "wage": 55000
+      "wage": 55000,
+      "weight": 83
     },
     {
       "attrs": {
@@ -67,7 +68,8 @@
       "nation": "WAL",
       "number": 12,
       "pos": "GK",
-      "wage": 23500
+      "wage": 23500,
+      "weight": 89
     },
     {
       "attrs": {
@@ -123,7 +125,8 @@
       "nation": "USA",
       "number": 3,
       "pos": "LB",
-      "wage": 45500
+      "wage": 45500,
+      "weight": 78
     },
     {
       "attrs": {
@@ -175,7 +178,8 @@
       "nation": "ENG",
       "number": 6,
       "pos": "CB",
-      "wage": 24500
+      "wage": 24500,
+      "weight": 91
     },
     {
       "attrs": {
@@ -315,7 +319,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 55000
+      "wage": 55000,
+      "weight": 94
     },
     {
       "alt": [
@@ -346,7 +351,8 @@
       "nation": "FRA",
       "number": 4,
       "pos": "AM",
-      "wage": 52500
+      "wage": 52500,
+      "weight": 66
     },
     {
       "alt": [
@@ -404,7 +410,8 @@
       "nation": "ENG",
       "number": 10,
       "pos": "CM",
-      "wage": 31500
+      "wage": 31500,
+      "weight": 73
     },
     {
       "alt": [
@@ -491,7 +498,8 @@
       "nation": "POR",
       "number": 11,
       "pos": "LW",
-      "wage": 47000
+      "wage": 47000,
+      "weight": 73
     },
     {
       "alt": [
@@ -522,7 +530,8 @@
       "nation2": "POL",
       "number": 17,
       "pos": "ST",
-      "wage": 29000
+      "wage": 29000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -548,7 +557,8 @@
       "nation": "ENG",
       "number": 9,
       "pos": "ST",
-      "wage": 30500
+      "wage": 30500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -577,7 +587,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 40500
+      "wage": 40500,
+      "weight": 78
     },
     {
       "attrs": {
@@ -604,7 +615,8 @@
       "nation2": "LBR",
       "number": 15,
       "pos": "ST",
-      "wage": 13500
+      "wage": 13500,
+      "weight": 79
     },
     {
       "attrs": {

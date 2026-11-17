@@ -171,7 +171,8 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 3500
+      "wage": 3500,
+      "weight": 74
     },
     {
       "alt": [
@@ -201,7 +202,8 @@
       "nation2": "ESP",
       "number": null,
       "pos": "CM",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 65
     },
     {
       "alt": [

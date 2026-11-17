@@ -183,7 +183,8 @@
       "nation": "NIR",
       "number": 6,
       "pos": "CB",
-      "wage": 34500
+      "wage": 34500,
+      "weight": 71
     },
     {
       "alt": [
@@ -246,7 +247,8 @@
         "injury_prone"
       ],
       "verify": true,
-      "wage": 56000
+      "wage": 56000,
+      "weight": 69
     },
     {
       "attrs": {
@@ -272,7 +274,8 @@
       "nation": "SEN",
       "number": 9,
       "pos": "ST",
-      "wage": 24000
+      "wage": 24000,
+      "weight": 77
     },
     {
       "alt": [
@@ -302,7 +305,8 @@
       "number": 12,
       "pos": "RW",
       "verify": true,
-      "wage": 16000
+      "wage": 16000,
+      "weight": 82
     },
     {
       "alt": [
@@ -360,7 +364,8 @@
       "number": 15,
       "pos": "ST",
       "verify": true,
-      "wage": 44000
+      "wage": 44000,
+      "weight": 79
     },
     {
       "attrs": {
@@ -386,7 +391,8 @@
       "nation": "NIR",
       "number": 18,
       "pos": "CB",
-      "wage": 56000
+      "wage": 56000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -412,7 +418,8 @@
       "nation": "NIR",
       "number": 19,
       "pos": "ST",
-      "wage": 19000
+      "wage": 19000,
+      "weight": 68
     },
     {
       "attrs": {
@@ -442,7 +449,8 @@
         "aerial_threat",
         "leader"
       ],
-      "wage": 31500
+      "wage": 31500,
+      "weight": 78
     },
     {
       "alt": [
@@ -473,7 +481,8 @@
       "nation": "USA",
       "number": 23,
       "pos": "AM",
-      "wage": 33500
+      "wage": 33500,
+      "weight": 84
     },
     {
       "attrs": {
@@ -500,7 +509,8 @@
       "number": 24,
       "pos": "GK",
       "verify": true,
-      "wage": 40500
+      "wage": 40500,
+      "weight": 88
     },
     {
       "alt": [
@@ -530,7 +540,8 @@
       "number": 28,
       "pos": "CM",
       "verify": true,
-      "wage": 47500
+      "wage": 47500,
+      "weight": 72
     },
     {
       "alt": [
@@ -559,7 +570,8 @@
       "nation": "WAL",
       "number": 29,
       "pos": "RW",
-      "wage": 39000
+      "wage": 39000,
+      "weight": 76
     },
     {
       "attrs": {

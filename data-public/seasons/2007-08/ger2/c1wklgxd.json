@@ -105,7 +105,8 @@
       "nation2": "KVX",
       "number": 7,
       "pos": "CM",
-      "wage": 4500
+      "wage": 4500,
+      "weight": 71
     },
     {
       "alt": [
@@ -464,7 +465,8 @@
       "nation": "GER",
       "number": 24,
       "pos": "CM",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 75
     },
     {
       "attrs": {

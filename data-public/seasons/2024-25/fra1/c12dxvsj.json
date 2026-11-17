@@ -131,7 +131,8 @@
       "nation": "JPN",
       "number": 7,
       "pos": "RW",
-      "wage": 54000
+      "wage": 54000,
+      "weight": 68
     },
     {
       "alt": [
@@ -300,7 +301,8 @@
       "nation": "FRA",
       "number": 16,
       "pos": "GK",
-      "wage": 13500
+      "wage": 13500,
+      "weight": 84
     },
     {
       "attrs": {

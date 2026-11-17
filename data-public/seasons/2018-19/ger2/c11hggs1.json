@@ -153,7 +153,8 @@
       "nation": "GER",
       "number": 6,
       "pos": "DM",
-      "wage": 7500
+      "wage": 7500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -349,7 +350,8 @@
       "nation2": "POR",
       "number": 14,
       "pos": "CB",
-      "wage": 5000
+      "wage": 5000,
+      "weight": 76
     },
     {
       "attrs": {

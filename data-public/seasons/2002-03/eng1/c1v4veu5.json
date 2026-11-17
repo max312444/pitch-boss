@@ -71,7 +71,8 @@
       "number": 2,
       "pos": "RB",
       "verify": true,
-      "wage": 23500
+      "wage": 23500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -129,7 +130,8 @@
       "number": 4,
       "pos": "CB",
       "verify": true,
-      "wage": 29000
+      "wage": 29000,
+      "weight": 96
     },
     {
       "attrs": {
@@ -325,7 +327,8 @@
       "number": 11,
       "pos": "AM",
       "verify": true,
-      "wage": 34000
+      "wage": 34000,
+      "weight": 73
     },
     {
       "alt": [
@@ -382,7 +385,8 @@
       "number": 13,
       "pos": "GK",
       "verify": true,
-      "wage": 13500
+      "wage": 13500,
+      "weight": 80
     },
     {
       "alt": [
@@ -609,7 +613,8 @@
       "number": 21,
       "pos": "LB",
       "verify": true,
-      "wage": 12500
+      "wage": 12500,
+      "weight": 75
     }
   ],
   "stadiumCapacity": 28003

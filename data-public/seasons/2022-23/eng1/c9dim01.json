@@ -41,7 +41,8 @@
       "nation": "POL",
       "number": 1,
       "pos": "GK",
-      "wage": 102000
+      "wage": 102000,
+      "weight": 83
     },
     {
       "alt": [
@@ -99,7 +100,8 @@
       "traits": [
         "free_kick"
       ],
-      "wage": 150000
+      "wage": 150000,
+      "weight": 68
     },
     {
       "attrs": {
@@ -151,7 +153,8 @@
       "nation": "CZE",
       "number": 5,
       "pos": "RB",
-      "wage": 144500
+      "wage": 144500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -177,7 +180,8 @@
       "nation": "ITA",
       "number": 7,
       "pos": "ST",
-      "wage": 119500
+      "wage": 119500,
+      "weight": 85
     },
     {
       "attrs": {
@@ -203,7 +207,8 @@
       "nation": "ESP",
       "number": 8,
       "pos": "AM",
-      "wage": 79000
+      "wage": 79000,
+      "weight": 67
     },
     {
       "alt": [
@@ -260,7 +265,8 @@
       "nation": "ARG",
       "number": 10,
       "pos": "AM",
-      "wage": 70500
+      "wage": 70500,
+      "weight": 66
     },
     {
       "attrs": {
@@ -289,7 +295,8 @@
       "traits": [
         "flair"
       ],
-      "wage": 173000
+      "wage": 173000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -346,7 +353,8 @@
       "nation": "CIV",
       "number": 14,
       "pos": "LW",
-      "wage": 78000
+      "wage": 78000,
+      "weight": 69
     },
     {
       "attrs": {
@@ -427,7 +435,8 @@
       "nation": "ITA",
       "number": 21,
       "pos": "CB",
-      "wage": 114000
+      "wage": 114000,
+      "weight": 86
     },
     {
       "alt": [
@@ -459,7 +468,8 @@
       "traits": [
         "flair"
       ],
-      "wage": 105000
+      "wage": 105000,
+      "weight": 69
     },
     {
       "attrs": {
@@ -485,7 +495,8 @@
       "nation": "FRA",
       "number": 13,
       "pos": "GK",
-      "wage": 97000
+      "wage": 97000,
+      "weight": 88
     },
     {
       "alt": [
@@ -515,7 +526,8 @@
       "nation": "GER",
       "number": 24,
       "pos": "RB",
-      "wage": 147500
+      "wage": 147500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -576,7 +588,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 223000
+      "wage": 223000,
+      "weight": 84
     },
     {
       "attrs": {
@@ -603,7 +616,8 @@
       "nation2": "BRA",
       "number": 33,
       "pos": "LB",
-      "wage": 130500
+      "wage": 130500,
+      "weight": 63
     },
     {
       "attrs": {
@@ -629,7 +643,8 @@
       "nation": "IRL",
       "number": 35,
       "pos": "GK",
-      "wage": 32000
+      "wage": 32000,
+      "weight": 98
     },
     {
       "alt": [
@@ -663,7 +678,8 @@
         "engine",
         "leader"
       ],
-      "wage": 223000
+      "wage": 223000,
+      "weight": 80
     },
     {
       "attrs": {

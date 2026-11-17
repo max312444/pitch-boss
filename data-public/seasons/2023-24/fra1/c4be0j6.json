@@ -103,7 +103,8 @@
       "nation": "CHI",
       "number": 3,
       "pos": "CB",
-      "wage": 34000
+      "wage": 34000,
+      "weight": 83
     },
     {
       "attrs": {
@@ -155,7 +156,8 @@
       "nation": "SUI",
       "number": 6,
       "pos": "DM",
-      "wage": 107500
+      "wage": 107500,
+      "weight": 76
     },
     {
       "alt": [
@@ -185,7 +187,8 @@
       "nation2": "MAR",
       "number": 7,
       "pos": "LM",
-      "wage": 15500
+      "wage": 15500,
+      "weight": 79
     },
     {
       "alt": [
@@ -240,7 +243,8 @@
       "nation": "NED",
       "number": 9,
       "pos": "ST",
-      "wage": 16500
+      "wage": 16500,
+      "weight": 67
     },
     {
       "attrs": {
@@ -266,7 +270,8 @@
       "nation": "FRA",
       "number": 10,
       "pos": "ST",
-      "wage": 72000
+      "wage": 72000,
+      "weight": 66
     },
     {
       "alt": [
@@ -295,7 +300,8 @@
       "nation": "BRA",
       "number": 12,
       "pos": "LB",
-      "wage": 65500
+      "wage": 65500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -377,7 +383,8 @@
       "nation": "RUS",
       "number": 17,
       "pos": "AM",
-      "wage": 107500
+      "wage": 107500,
+      "weight": 69
     },
     {
       "alt": [
@@ -407,7 +414,8 @@
       "nation": "JPN",
       "number": 18,
       "pos": "AM",
-      "wage": 107500
+      "wage": 107500,
+      "weight": 67
     },
     {
       "alt": [
@@ -545,7 +553,8 @@
       "nation": "FRA",
       "number": 26,
       "pos": "RB",
-      "wage": 30500
+      "wage": 30500,
+      "weight": 70
     },
     {
       "alt": [
@@ -576,7 +585,8 @@
       "nation": "SEN",
       "number": 27,
       "pos": "RW",
-      "wage": 69000
+      "wage": 69000,
+      "weight": 68
     },
     {
       "alt": [
@@ -660,7 +670,8 @@
       "nation2": "CMR",
       "number": 36,
       "pos": "ST",
-      "wage": 107000
+      "wage": 107000,
+      "weight": 71
     },
     {
       "alt": [
@@ -720,7 +731,8 @@
       "nation2": "CPV",
       "number": 77,
       "pos": "RW",
-      "wage": 107500
+      "wage": 107500,
+      "weight": 75
     },
     {
       "alt": [

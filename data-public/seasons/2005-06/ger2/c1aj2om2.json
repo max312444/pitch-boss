@@ -48,7 +48,8 @@
       "number": null,
       "pos": "CB",
       "verify": true,
-      "wage": 3500
+      "wage": 3500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -75,7 +76,8 @@
       "number": null,
       "pos": "RB",
       "verify": true,
-      "wage": 3500
+      "wage": 3500,
+      "weight": 70
     },
     {
       "alt": [

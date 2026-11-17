@@ -125,7 +125,8 @@
       "nation": "ITA",
       "number": 20,
       "pos": "RW",
-      "wage": 31000
+      "wage": 31000,
+      "weight": 74
     },
     {
       "alt": [
@@ -185,7 +186,8 @@
       "nation": "IRL",
       "number": 5,
       "pos": "RM",
-      "wage": 33500
+      "wage": 33500,
+      "weight": 74
     },
     {
       "attrs": {
@@ -528,7 +530,8 @@
       "nation": "NOR",
       "number": 14,
       "pos": "CM",
-      "wage": 25000
+      "wage": 25000,
+      "weight": 81
     },
     {
       "attrs": {
@@ -661,7 +664,8 @@
       "nation": "ENG",
       "number": 32,
       "pos": "GK",
-      "wage": 1500
+      "wage": 1500,
+      "weight": 86
     }
   ],
   "stadiumCapacity": 33597

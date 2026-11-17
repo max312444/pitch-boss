@@ -67,7 +67,8 @@
       "nation": "ENG",
       "number": 13,
       "pos": "GK",
-      "wage": 28500
+      "wage": 28500,
+      "weight": 90
     },
     {
       "attrs": {
@@ -93,7 +94,8 @@
       "nation": "IRL",
       "number": 2,
       "pos": "RB",
-      "wage": 44500
+      "wage": 44500,
+      "weight": 73
     },
     {
       "attrs": {
@@ -123,7 +125,8 @@
         "free_kick",
         "penalty"
       ],
-      "wage": 41000
+      "wage": 41000,
+      "weight": 73
     },
     {
       "alt": [
@@ -155,7 +158,8 @@
       "traits": [
         "engine"
       ],
-      "wage": 67000
+      "wage": 67000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -210,7 +214,8 @@
       "nation": "ENG",
       "number": 6,
       "pos": "CB",
-      "wage": 51500
+      "wage": 51500,
+      "weight": 80
     },
     {
       "alt": [
@@ -243,7 +248,8 @@
         "speedster"
       ],
       "verify": true,
-      "wage": 17000
+      "wage": 17000,
+      "weight": 75
     },
     {
       "alt": [
@@ -304,7 +310,8 @@
       "traits": [
         "target_man"
       ],
-      "wage": 58000
+      "wage": 58000,
+      "weight": 92
     },
     {
       "alt": [
@@ -337,7 +344,8 @@
       "traits": [
         "flair"
       ],
-      "wage": 50500
+      "wage": 50500,
+      "weight": 73
     },
     {
       "alt": [
@@ -369,7 +377,8 @@
       "traits": [
         "engine"
       ],
-      "wage": 67000
+      "wage": 67000,
+      "weight": 62
     },
     {
       "alt": [
@@ -398,7 +407,8 @@
       "nation": "IRL",
       "number": 14,
       "pos": "CM",
-      "wage": 27000
+      "wage": 27000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -482,7 +492,8 @@
       "nation": "ENG",
       "number": 18,
       "pos": "RB",
-      "wage": 31000
+      "wage": 31000,
+      "weight": 72
     },
     {
       "alt": [
@@ -511,7 +522,8 @@
       "nation": "NOR",
       "number": 19,
       "pos": "CM",
-      "wage": 42000
+      "wage": 42000,
+      "weight": 80
     },
     {
       "alt": [
@@ -597,7 +609,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 48500
+      "wage": 48500,
+      "weight": 76
     },
     {
       "alt": [

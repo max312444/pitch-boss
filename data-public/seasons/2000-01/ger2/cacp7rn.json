@@ -111,7 +111,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 2500
+      "wage": 2500,
+      "weight": 82
     },
     {
       "alt": [

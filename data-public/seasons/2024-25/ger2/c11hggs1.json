@@ -103,7 +103,8 @@
       "nation": "GER",
       "number": 6,
       "pos": "DM",
-      "wage": 13000
+      "wage": 13000,
+      "weight": 70
     },
     {
       "alt": [
@@ -408,7 +409,8 @@
       "nation": "GER",
       "number": 23,
       "pos": "GK",
-      "wage": 13000
+      "wage": 13000,
+      "weight": 85
     },
     {
       "alt": [

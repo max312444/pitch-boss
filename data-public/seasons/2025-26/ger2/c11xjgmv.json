@@ -488,7 +488,8 @@
       "nation": "LVA",
       "number": 28,
       "pos": "ST",
-      "wage": 16000
+      "wage": 16000,
+      "weight": 92
     },
     {
       "attrs": {
@@ -514,7 +515,8 @@
       "nation": "GER",
       "number": 29,
       "pos": "LB",
-      "wage": 10000
+      "wage": 10000,
+      "weight": 81
     },
     {
       "attrs": {
@@ -566,7 +568,8 @@
       "nation": "GER",
       "number": 37,
       "pos": "RW",
-      "wage": 15500
+      "wage": 15500,
+      "weight": 70
     },
     {
       "alt": [

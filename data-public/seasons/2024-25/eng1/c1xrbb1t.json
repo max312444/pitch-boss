@@ -44,7 +44,8 @@
       "traits": [
         "sweeper_keeper"
       ],
-      "wage": 620500
+      "wage": 620500,
+      "weight": 89
     },
     {
       "attrs": {
@@ -96,7 +97,8 @@
       "nation": "ENG",
       "number": 33,
       "pos": "GK",
-      "wage": 27500
+      "wage": 27500,
+      "weight": 86
     },
     {
       "alt": [
@@ -128,7 +130,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 377500
+      "wage": 377500,
+      "weight": 73
     },
     {
       "attrs": {
@@ -157,7 +160,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 567000
+      "wage": 567000,
+      "weight": 70
     },
     {
       "alt": [
@@ -189,7 +193,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 535500
+      "wage": 535500,
+      "weight": 70
     },
     {
       "alt": [
@@ -218,7 +223,8 @@
       "nation": "NED",
       "number": 6,
       "pos": "CB",
-      "wage": 343500
+      "wage": 343500,
+      "weight": 75
     },
     {
       "alt": [
@@ -273,7 +279,8 @@
       "nation": "SUI",
       "number": 25,
       "pos": "CB",
-      "wage": 295500
+      "wage": 295500,
+      "weight": 85
     },
     {
       "alt": [
@@ -333,7 +340,8 @@
       "nation": "CRO",
       "number": 8,
       "pos": "CM",
-      "wage": 388500
+      "wage": 388500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -363,7 +371,8 @@
         "playmaker",
         "leader"
       ],
-      "wage": 620500
+      "wage": 620500,
+      "weight": 78
     },
     {
       "alt": [
@@ -398,7 +407,8 @@
         "big_game",
         "long_shot"
       ],
-      "wage": 605500
+      "wage": 605500,
+      "weight": 76
     },
     {
       "alt": [
@@ -431,7 +441,8 @@
         "clutch",
         "leader"
       ],
-      "wage": 567000
+      "wage": 567000,
+      "weight": 79
     },
     {
       "alt": [
@@ -466,7 +477,8 @@
         "engine",
         "leader"
       ],
-      "wage": 540500
+      "wage": 540500,
+      "weight": 65
     },
     {
       "alt": [
@@ -557,7 +569,8 @@
       "traits": [
         "flair"
       ],
-      "wage": 256500
+      "wage": 256500,
+      "weight": 68
     },
     {
       "alt": [
@@ -650,7 +663,8 @@
       "nation": "ENG",
       "number": 47,
       "pos": "AM",
-      "wage": 334000
+      "wage": 334000,
+      "weight": 71
     },
     {
       "attrs": {
@@ -711,7 +725,8 @@
         "clutch",
         "penalty"
       ],
-      "wage": 487500
+      "wage": 487500,
+      "weight": 87
     }
   ],
   "stadiumCapacity": 53400

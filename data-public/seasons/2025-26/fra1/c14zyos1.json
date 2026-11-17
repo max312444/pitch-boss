@@ -287,7 +287,8 @@
       "nation": "NOR",
       "number": 15,
       "pos": "RW",
-      "wage": 51000
+      "wage": 51000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -372,7 +373,8 @@
       "nation": "FRA",
       "number": 19,
       "pos": "RB",
-      "wage": 51000
+      "wage": 51000,
+      "weight": 80
     },
     {
       "alt": [

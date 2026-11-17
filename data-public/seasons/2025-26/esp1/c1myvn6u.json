@@ -163,7 +163,8 @@
       "nation": "ESP",
       "number": 6,
       "pos": "CB",
-      "wage": 26500
+      "wage": 26500,
+      "weight": 78
     },
     {
       "alt": [
@@ -247,7 +248,8 @@
       "nation": "POR",
       "number": 9,
       "pos": "ST",
-      "wage": 84500
+      "wage": 84500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -274,7 +276,8 @@
       "nation": "ESP",
       "number": 10,
       "pos": "ST",
-      "wage": 84500
+      "wage": 84500,
+      "weight": 75
     },
     {
       "alt": [

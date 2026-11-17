@@ -74,7 +74,8 @@
       "nation": "GRE",
       "number": 2,
       "pos": "RB",
-      "wage": 74500
+      "wage": 74500,
+      "weight": 74
     },
     {
       "alt": [
@@ -185,7 +186,8 @@
       "nation": "AUS",
       "number": 7,
       "pos": "CM",
-      "wage": 100000
+      "wage": 100000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -211,7 +213,8 @@
       "nation": "SWE",
       "number": 8,
       "pos": "CB",
-      "wage": 97500
+      "wage": 97500,
+      "weight": 86
     },
     {
       "alt": [
@@ -266,7 +269,8 @@
       "nation": "GER",
       "number": 11,
       "pos": "ST",
-      "wage": 77500
+      "wage": 77500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -571,7 +575,8 @@
       "nation": "POL",
       "number": 25,
       "pos": "CB",
-      "wage": 24000
+      "wage": 24000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -624,7 +629,8 @@
       "nation": "GER",
       "number": 27,
       "pos": "ST",
-      "wage": 24000
+      "wage": 24000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -678,7 +684,8 @@
       "nation": "GER",
       "number": 30,
       "pos": "GK",
-      "wage": 52000
+      "wage": 52000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -704,7 +711,8 @@
       "nation": "BRA",
       "number": 33,
       "pos": "ST",
-      "wage": 33000
+      "wage": 33000,
+      "weight": 77
     },
     {
       "alt": [

@@ -73,7 +73,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "DM",
-      "wage": 20500
+      "wage": 20500,
+      "weight": 77
     },
     {
       "alt": [
@@ -104,7 +105,8 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 20500
+      "wage": 20500,
+      "weight": 76
     },
     {
       "alt": [
@@ -190,7 +192,8 @@
       "nation": "CIV",
       "number": null,
       "pos": "DM",
-      "wage": 16500
+      "wage": 16500,
+      "weight": 63
     },
     {
       "attrs": {
@@ -269,7 +272,8 @@
       "nation": "PAR",
       "number": null,
       "pos": "CB",
-      "wage": 9000
+      "wage": 9000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -351,7 +355,8 @@
       "nation2": "ITA",
       "number": null,
       "pos": "CB",
-      "wage": 8000
+      "wage": 8000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -377,7 +382,8 @@
       "nation": "ROU",
       "number": null,
       "pos": "ST",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 71
     },
     {
       "alt": [
@@ -406,7 +412,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "CM",
-      "wage": 7500
+      "wage": 7500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -433,7 +440,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 5000
+      "wage": 5000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -540,7 +548,8 @@
       "number": null,
       "pos": "AM",
       "verify": true,
-      "wage": 5500
+      "wage": 5500,
+      "weight": 77
     },
     {
       "alt": [
@@ -597,7 +606,8 @@
       "number": null,
       "pos": "LB",
       "verify": true,
-      "wage": 5000
+      "wage": 5000,
+      "weight": 69
     },
     {
       "attrs": {
@@ -625,7 +635,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 4000
+      "wage": 4000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -678,7 +689,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "LM",
-      "wage": 6000
+      "wage": 6000,
+      "weight": 76
     },
     {
       "alt": [
@@ -762,7 +774,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "CB",
-      "wage": 5000
+      "wage": 5000,
+      "weight": 85
     },
     {
       "attrs": {
@@ -789,7 +802,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 3000
+      "wage": 3000,
+      "weight": 73
     },
     {
       "alt": [
@@ -819,7 +833,8 @@
       "nation2": "SRB",
       "number": null,
       "pos": "CM",
-      "wage": 5000
+      "wage": 5000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -845,7 +860,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "CB",
-      "wage": 3500
+      "wage": 3500,
+      "weight": 69
     },
     {
       "attrs": {
@@ -871,7 +887,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "CB",
-      "wage": 3500
+      "wage": 3500,
+      "weight": 80
     },
     {
       "alt": [
@@ -902,7 +919,8 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 4000
+      "wage": 4000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -984,7 +1002,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "CM",
-      "wage": 3500
+      "wage": 3500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -1010,7 +1029,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "GK",
-      "wage": 2500
+      "wage": 2500,
+      "weight": 81
     },
     {
       "alt": [
@@ -1039,7 +1059,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "CB",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 81
     },
     {
       "alt": [
@@ -1070,7 +1091,8 @@
       "nation2": "GNB",
       "number": null,
       "pos": "CM",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -1208,7 +1230,8 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 2000
+      "wage": 2000,
+      "weight": 67
     }
   ],
   "stadiumCapacity": 35318

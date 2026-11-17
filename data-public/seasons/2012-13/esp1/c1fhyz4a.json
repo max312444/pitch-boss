@@ -48,7 +48,8 @@
       "nation": "ESP",
       "number": 1,
       "pos": "GK",
-      "wage": 15000
+      "wage": 15000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -74,7 +75,8 @@
       "nation": "SRB",
       "number": 2,
       "pos": "RB",
-      "wage": 40000
+      "wage": 40000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -100,7 +102,8 @@
       "nation": "ESP",
       "number": 4,
       "pos": "CB",
-      "wage": 40000
+      "wage": 40000,
+      "weight": 71
     },
     {
       "attrs": {
@@ -126,7 +129,8 @@
       "nation": "POR",
       "number": 5,
       "pos": "CB",
-      "wage": 22500
+      "wage": 22500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -152,7 +156,8 @@
       "nation": "ARG",
       "number": 7,
       "pos": "AM",
-      "wage": 15000
+      "wage": 15000,
+      "weight": 69
     },
     {
       "alt": [
@@ -207,7 +212,8 @@
       "nation": "ESP",
       "number": 10,
       "pos": "AM",
-      "wage": 40000
+      "wage": 40000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -233,7 +239,8 @@
       "nation": "VEN",
       "number": 13,
       "pos": "GK",
-      "wage": 23000
+      "wage": 23000,
+      "weight": 85
     },
     {
       "attrs": {
@@ -288,7 +295,8 @@
       "nation": "ESP",
       "number": 15,
       "pos": "RW",
-      "wage": 34500
+      "wage": 34500,
+      "weight": 81
     },
     {
       "alt": [
@@ -344,7 +352,8 @@
       "nation": "ESP",
       "number": 18,
       "pos": "DM",
-      "wage": 21500
+      "wage": 21500,
+      "weight": 70
     },
     {
       "alt": [
@@ -373,7 +382,8 @@
       "nation": "GER",
       "number": 20,
       "pos": "RW",
-      "wage": 40000
+      "wage": 40000,
+      "weight": 68
     },
     {
       "attrs": {
@@ -399,7 +409,8 @@
       "nation": "ESP",
       "number": 22,
       "pos": "DM",
-      "wage": 19000
+      "wage": 19000,
+      "weight": 71
     },
     {
       "attrs": {
@@ -425,7 +436,8 @@
       "nation": "ESP",
       "number": 24,
       "pos": "LB",
-      "wage": 38500
+      "wage": 38500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -451,7 +463,8 @@
       "nation": "ANG",
       "number": 25,
       "pos": "ST",
-      "wage": 40000
+      "wage": 40000,
+      "weight": 83
     }
   ],
   "stadiumCapacity": 27618

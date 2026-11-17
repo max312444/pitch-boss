@@ -78,7 +78,8 @@
       "nation": "TOG",
       "number": null,
       "pos": "CM",
-      "wage": 4500
+      "wage": 4500,
+      "weight": 69
     },
     {
       "attrs": {
@@ -635,7 +636,8 @@
       "nation": "MNE",
       "number": null,
       "pos": "CB",
-      "wage": 1000
+      "wage": 1000,
+      "weight": 82
     },
     {
       "attrs": {

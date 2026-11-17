@@ -100,7 +100,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 124000
+      "wage": 124000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -129,7 +130,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 117000
+      "wage": 117000,
+      "weight": 88
     },
     {
       "alt": [
@@ -159,7 +161,8 @@
       "nation": "ENG",
       "number": 7,
       "pos": "RW",
-      "wage": 66500
+      "wage": 66500,
+      "weight": 72
     },
     {
       "alt": [
@@ -188,7 +191,8 @@
       "nation": "ARG",
       "number": 10,
       "pos": "CM",
-      "wage": 147000
+      "wage": 147000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -217,7 +221,8 @@
       "traits": [
         "clutch"
       ],
-      "wage": 98000
+      "wage": 98000,
+      "weight": 61
     },
     {
       "alt": [
@@ -251,7 +256,8 @@
         "free_kick",
         "playmaker"
       ],
-      "wage": 147000
+      "wage": 147000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -280,7 +286,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 90500
+      "wage": 90500,
+      "weight": 67
     },
     {
       "alt": [
@@ -341,7 +348,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 82500
+      "wage": 82500,
+      "weight": 72
     },
     {
       "alt": [
@@ -481,7 +489,8 @@
       "nation": "ENG",
       "number": 23,
       "pos": "GK",
-      "wage": 69000
+      "wage": 69000,
+      "weight": 79
     },
     {
       "attrs": {
@@ -674,7 +683,8 @@
       "nation": "ECU",
       "number": 30,
       "pos": "LB",
-      "wage": 118000
+      "wage": 118000,
+      "weight": 79
     },
     {
       "alt": [

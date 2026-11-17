@@ -237,7 +237,8 @@
       "nation": "GER",
       "number": null,
       "pos": "ST",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 82
     },
     {
       "alt": [

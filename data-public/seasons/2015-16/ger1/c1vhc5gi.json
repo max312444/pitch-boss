@@ -49,7 +49,8 @@
       "nation2": "TUR",
       "number": 1,
       "pos": "GK",
-      "wage": 53500
+      "wage": 53500,
+      "weight": 84
     },
     {
       "attrs": {
@@ -75,7 +76,8 @@
       "nation": "GER",
       "number": 5,
       "pos": "CB",
-      "wage": 22500
+      "wage": 22500,
+      "weight": 78
     },
     {
       "alt": [
@@ -105,7 +107,8 @@
       "nation2": "GER",
       "number": 6,
       "pos": "CM",
-      "wage": 36000
+      "wage": 36000,
+      "weight": 74
     },
     {
       "alt": [
@@ -135,7 +138,8 @@
       "nation": "AUS",
       "number": 7,
       "pos": "RW",
-      "wage": 53500
+      "wage": 53500,
+      "weight": 78
     },
     {
       "attrs": {
@@ -161,7 +165,8 @@
       "nation": "BRA",
       "number": 8,
       "pos": "DM",
-      "wage": 23500
+      "wage": 23500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -187,7 +192,8 @@
       "nation": "GER",
       "number": 9,
       "pos": "ST",
-      "wage": 11500
+      "wage": 11500,
+      "weight": 74
     },
     {
       "alt": [
@@ -217,7 +223,8 @@
       "nation": "GER",
       "number": 10,
       "pos": "CM",
-      "wage": 53500
+      "wage": 53500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -243,7 +250,8 @@
       "nation": "CZE",
       "number": 11,
       "pos": "ST",
-      "wage": 53500
+      "wage": 53500,
+      "weight": 88
     },
     {
       "alt": [
@@ -272,7 +280,8 @@
       "nation": "GER",
       "number": 14,
       "pos": "RW",
-      "wage": 18000
+      "wage": 18000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -324,7 +333,8 @@
       "nation": "AUT",
       "number": 16,
       "pos": "ST",
-      "wage": 34000
+      "wage": 34000,
+      "weight": 84
     },
     {
       "attrs": {
@@ -350,7 +360,8 @@
       "nation": "FRA",
       "number": 18,
       "pos": "CB",
-      "wage": 14500
+      "wage": 14500,
+      "weight": 87
     },
     {
       "attrs": {
@@ -377,7 +388,8 @@
       "nation2": "GER",
       "number": 20,
       "pos": "RB",
-      "wage": 18000
+      "wage": 18000,
+      "weight": 75
     },
     {
       "alt": [
@@ -406,7 +418,8 @@
       "nation": "GER",
       "number": 21,
       "pos": "RB",
-      "wage": 26000
+      "wage": 26000,
+      "weight": 85
     },
     {
       "alt": [
@@ -466,7 +479,8 @@
       "nation": "GER",
       "number": 23,
       "pos": "DM",
-      "wage": 27000
+      "wage": 27000,
+      "weight": 75
     },
     {
       "alt": [
@@ -496,7 +510,8 @@
       "nation2": "COD",
       "number": 25,
       "pos": "ST",
-      "wage": 29000
+      "wage": 29000,
+      "weight": 64
     },
     {
       "attrs": {
@@ -549,7 +564,8 @@
       "nation2": "NED",
       "number": 28,
       "pos": "CB",
-      "wage": 16000
+      "wage": 16000,
+      "weight": 81
     },
     {
       "attrs": {
@@ -575,7 +591,8 @@
       "nation": "AUT",
       "number": 29,
       "pos": "LB",
-      "wage": 51000
+      "wage": 51000,
+      "weight": 70
     },
     {
       "alt": [
@@ -604,7 +621,8 @@
       "nation": "GER",
       "number": 30,
       "pos": "CM",
-      "wage": 21500
+      "wage": 21500,
+      "weight": 65
     },
     {
       "attrs": {
@@ -631,7 +649,8 @@
       "nation2": "GER",
       "number": 34,
       "pos": "CB",
-      "wage": 49500
+      "wage": 49500,
+      "weight": 83
     }
   ],
   "stadiumCapacity": 15000

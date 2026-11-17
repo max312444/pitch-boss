@@ -78,7 +78,8 @@
       "nation": "CHI",
       "number": 4,
       "pos": "CB",
-      "wage": 35000
+      "wage": 35000,
+      "weight": 83
     },
     {
       "alt": [
@@ -350,7 +351,8 @@
       "nation": "FRA",
       "number": 16,
       "pos": "GK",
-      "wage": 32500
+      "wage": 32500,
+      "weight": 88
     },
     {
       "attrs": {
@@ -404,7 +406,8 @@
       "nation": "SEN",
       "number": 18,
       "pos": "DM",
-      "wage": 56000
+      "wage": 56000,
+      "weight": 68
     },
     {
       "attrs": {

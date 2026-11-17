@@ -49,7 +49,8 @@
       "nation2": "GER",
       "number": 1,
       "pos": "GK",
-      "wage": 7000
+      "wage": 7000,
+      "weight": 87
     },
     {
       "attrs": {
@@ -237,7 +238,8 @@
       "nation": "SUI",
       "number": 8,
       "pos": "ST",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 85
     },
     {
       "attrs": {
@@ -263,7 +265,8 @@
       "nation": "CZE",
       "number": 9,
       "pos": "ST",
-      "wage": 7000
+      "wage": 7000,
+      "weight": 84
     },
     {
       "attrs": {
@@ -289,7 +292,8 @@
       "nation": "GER",
       "number": 10,
       "pos": "ST",
-      "wage": 7000
+      "wage": 7000,
+      "weight": 64
     },
     {
       "attrs": {
@@ -316,7 +320,8 @@
       "nation2": "GER",
       "number": 11,
       "pos": "CB",
-      "wage": 6500
+      "wage": 6500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -343,7 +348,8 @@
       "nation2": "KVX",
       "number": 18,
       "pos": "ST",
-      "wage": 7000
+      "wage": 7000,
+      "weight": 78
     },
     {
       "alt": [
@@ -428,7 +434,8 @@
       "nation": "GER",
       "number": 22,
       "pos": "GK",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 83
     },
     {
       "alt": [
@@ -545,7 +552,8 @@
       "nation2": "GER",
       "number": 32,
       "pos": "CB",
-      "wage": 2500
+      "wage": 2500,
+      "weight": 74
     }
   ],
   "stadiumCapacity": 27300

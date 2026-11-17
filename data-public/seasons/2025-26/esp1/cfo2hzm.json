@@ -75,7 +75,8 @@
       "nation": "CIV",
       "number": 2,
       "pos": "CB",
-      "wage": 118000
+      "wage": 118000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -127,7 +128,8 @@
       "nation": "ESP",
       "number": 4,
       "pos": "CB",
-      "wage": 76000
+      "wage": 76000,
+      "weight": 71
     },
     {
       "attrs": {
@@ -242,7 +244,8 @@
       "nation": "ESP",
       "number": 8,
       "pos": "CM",
-      "wage": 86000
+      "wage": 86000,
+      "weight": 66
     },
     {
       "attrs": {
@@ -326,7 +329,8 @@
       "nation": "ARG",
       "number": 11,
       "pos": "CM",
-      "wage": 60500
+      "wage": 60500,
+      "weight": 71
     },
     {
       "attrs": {
@@ -352,7 +356,8 @@
       "nation": "ESP",
       "number": 12,
       "pos": "CB",
-      "wage": 26000
+      "wage": 26000,
+      "weight": 82
     },
     {
       "attrs": {
@@ -407,7 +412,8 @@
       "nation": "ENG",
       "number": 14,
       "pos": "CM",
-      "wage": 58000
+      "wage": 58000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -513,7 +519,8 @@
       "nation": "CRO",
       "number": 18,
       "pos": "LW",
-      "wage": 118000
+      "wage": 118000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -569,7 +576,8 @@
       "nation": "BEL",
       "number": 20,
       "pos": "DM",
-      "wage": 118000
+      "wage": 118000,
+      "weight": 83
     },
     {
       "attrs": {
@@ -595,7 +603,8 @@
       "nation": "SRB",
       "number": 21,
       "pos": "AM",
-      "wage": 51500
+      "wage": 51500,
+      "weight": 73
     },
     {
       "attrs": {
@@ -621,7 +630,8 @@
       "nation": "ESP",
       "number": 22,
       "pos": "RB",
-      "wage": 2500
+      "wage": 2500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -648,7 +658,8 @@
       "nation": "VEN",
       "number": 23,
       "pos": "ST",
-      "wage": 104000
+      "wage": 104000,
+      "weight": 86
     },
     {
       "attrs": {
@@ -731,7 +742,8 @@
       "nation": "ESP",
       "number": null,
       "pos": "RB",
-      "wage": 38500
+      "wage": 38500,
+      "weight": 72
     }
   ],
   "stadiumCapacity": 30500

@@ -101,7 +101,8 @@
       "nation2": "ITA",
       "number": 4,
       "pos": "CB",
-      "wage": 10500
+      "wage": 10500,
+      "weight": 81
     },
     {
       "attrs": {
@@ -187,7 +188,8 @@
       "nation": "NOR",
       "number": 7,
       "pos": "AM",
-      "wage": 20000
+      "wage": 20000,
+      "weight": 65
     },
     {
       "alt": [
@@ -217,7 +219,8 @@
       "nation": "MLI",
       "number": 9,
       "pos": "ST",
-      "wage": 7500
+      "wage": 7500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -243,7 +246,8 @@
       "nation": "FRA",
       "number": 10,
       "pos": "ST",
-      "wage": 16500
+      "wage": 16500,
+      "weight": 73
     },
     {
       "attrs": {
@@ -269,7 +273,8 @@
       "nation": "PAR",
       "number": 11,
       "pos": "LW",
-      "wage": 14500
+      "wage": 14500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -325,7 +330,8 @@
       "nation2": "TOG",
       "number": 14,
       "pos": "RW",
-      "wage": 13000
+      "wage": 13000,
+      "weight": 65
     },
     {
       "alt": [
@@ -441,7 +447,8 @@
       "nation": "FRA",
       "number": 18,
       "pos": "RB",
-      "wage": 5000
+      "wage": 5000,
+      "weight": 75
     },
     {
       "alt": [
@@ -470,7 +477,8 @@
       "nation": "FRA",
       "number": 20,
       "pos": "CM",
-      "wage": 12500
+      "wage": 12500,
+      "weight": 69
     },
     {
       "alt": [
@@ -499,7 +507,8 @@
       "nation": "BRA",
       "number": 21,
       "pos": "CM",
-      "wage": 5000
+      "wage": 5000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -525,7 +534,8 @@
       "nation": "NOR",
       "number": 22,
       "pos": "ST",
-      "wage": 20000
+      "wage": 20000,
+      "weight": 86
     },
     {
       "attrs": {
@@ -551,7 +561,8 @@
       "nation": "BEN",
       "number": 23,
       "pos": "CB",
-      "wage": 7500
+      "wage": 7500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -603,7 +614,8 @@
       "nation": "BEL",
       "number": 26,
       "pos": "LW",
-      "wage": 11500
+      "wage": 11500,
+      "weight": 71
     },
     {
       "attrs": {
@@ -629,7 +641,8 @@
       "nation": "CIV",
       "number": 27,
       "pos": "LW",
-      "wage": 20000
+      "wage": 20000,
+      "weight": 68
     },
     {
       "attrs": {

@@ -41,7 +41,8 @@
       "nation": "SVK",
       "number": 1,
       "pos": "GK",
-      "wage": 105500
+      "wage": 105500,
+      "weight": 83
     },
     {
       "attrs": {
@@ -153,7 +154,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 178000
+      "wage": 178000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -208,7 +210,8 @@
       "nation": "WAL",
       "number": 14,
       "pos": "RB",
-      "wage": 116000
+      "wage": 116000,
+      "weight": 71
     },
     {
       "attrs": {
@@ -262,7 +265,8 @@
       "number": 6,
       "pos": "CB",
       "verify": true,
-      "wage": 91000
+      "wage": 91000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -372,7 +376,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 157000
+      "wage": 157000,
+      "weight": 75
     },
     {
       "alt": [
@@ -638,7 +643,8 @@
       "nation": "NED",
       "number": 19,
       "pos": "ST",
-      "wage": 105500
+      "wage": 105500,
+      "weight": 84
     },
     {
       "attrs": {
@@ -697,7 +703,8 @@
       "number": 7,
       "pos": "ST",
       "verify": true,
-      "wage": 79500
+      "wage": 79500,
+      "weight": 76
     }
   ],
   "stadiumCapacity": 21944

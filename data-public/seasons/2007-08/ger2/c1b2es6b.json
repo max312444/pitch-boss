@@ -130,7 +130,8 @@
       "nation": "GER",
       "number": 5,
       "pos": "CB",
-      "wage": 6500
+      "wage": 6500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -349,7 +350,8 @@
       "nation": "SVK",
       "number": 14,
       "pos": "CM",
-      "wage": 6500
+      "wage": 6500,
+      "weight": 82
     },
     {
       "alt": [
@@ -659,7 +661,8 @@
       "nation": "GER",
       "number": null,
       "pos": "CB",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 80
     },
     {
       "alt": [

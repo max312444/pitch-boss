@@ -14,6 +14,8 @@ export interface SquadPlayer {
   birth: string;
   nation: string;
   height: number | null;
+  /** 몸무게 kg (Wikidata 에 있을 때, 파이프라인 weights) */
+  weight?: number | null;
   foot: 'L' | 'R' | 'B' | null;
   number: number | null;
   pos: Position;

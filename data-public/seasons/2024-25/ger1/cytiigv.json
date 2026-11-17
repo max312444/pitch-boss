@@ -48,7 +48,8 @@
       "nation": "GER",
       "number": 1,
       "pos": "GK",
-      "wage": 92000
+      "wage": 92000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -74,7 +75,8 @@
       "nation": "CRC",
       "number": 2,
       "pos": "RB",
-      "wage": 92000
+      "wage": 92000,
+      "weight": 67
     },
     {
       "alt": [
@@ -103,7 +105,8 @@
       "nation": "SRB",
       "number": 4,
       "pos": "CB",
-      "wage": 58500
+      "wage": 58500,
+      "weight": 74
     },
     {
       "alt": [
@@ -133,7 +136,8 @@
       "nation": "BRA",
       "number": 5,
       "pos": "RB",
-      "wage": 58500
+      "wage": 58500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -160,7 +164,8 @@
       "nation2": "FRA",
       "number": 6,
       "pos": "DM",
-      "wage": 62000
+      "wage": 62000,
+      "weight": 88
     },
     {
       "attrs": {
@@ -240,7 +245,8 @@
       "nation": "NED",
       "number": 9,
       "pos": "ST",
-      "wage": 35000
+      "wage": 35000,
+      "weight": 67
     },
     {
       "attrs": {
@@ -266,7 +272,8 @@
       "nation": "NED",
       "number": 10,
       "pos": "AM",
-      "wage": 49500
+      "wage": 49500,
+      "weight": 76
     },
     {
       "alt": [
@@ -378,7 +385,8 @@
       "nation": "GER",
       "number": 15,
       "pos": "RB",
-      "wage": 81000
+      "wage": 81000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -462,7 +470,8 @@
       "nation": "SVK",
       "number": 19,
       "pos": "CM",
-      "wage": 92000
+      "wage": 92000,
+      "weight": 81
     },
     {
       "attrs": {
@@ -518,7 +527,8 @@
       "nation2": "GER",
       "number": 21,
       "pos": "RW",
-      "wage": 42000
+      "wage": 42000,
+      "weight": 73
     },
     {
       "alt": [
@@ -630,7 +640,8 @@
       "nation": "GER",
       "number": 32,
       "pos": "LB",
-      "wage": 59000
+      "wage": 59000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -708,7 +719,8 @@
       "nation": "GER",
       "number": null,
       "pos": "GK",
-      "wage": 18500
+      "wage": 18500,
+      "weight": 83
     }
   ],
   "stadiumCapacity": 29299

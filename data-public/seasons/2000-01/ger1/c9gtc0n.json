@@ -78,7 +78,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 19500
+      "wage": 19500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -246,7 +247,8 @@
       "nation": "GER",
       "number": null,
       "pos": "DM",
-      "wage": 14000
+      "wage": 14000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -273,7 +275,8 @@
       "number": null,
       "pos": "LB",
       "verify": true,
-      "wage": 7500
+      "wage": 7500,
+      "weight": 77
     },
     {
       "alt": [
@@ -335,7 +338,8 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 10500
+      "wage": 10500,
+      "weight": 65
     },
     {
       "attrs": {
@@ -361,7 +365,8 @@
       "nation": "GER",
       "number": null,
       "pos": "GK",
-      "wage": 6500
+      "wage": 6500,
+      "weight": 89
     },
     {
       "alt": [
@@ -448,7 +453,8 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 7000
+      "wage": 7000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -559,7 +565,8 @@
       "nation": "GER",
       "number": null,
       "pos": "CM",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -697,7 +704,8 @@
       "number": null,
       "pos": "AM",
       "verify": true,
-      "wage": 4500
+      "wage": 4500,
+      "weight": 71
     },
     {
       "attrs": {
@@ -839,7 +847,8 @@
       "number": null,
       "pos": "AM",
       "verify": true,
-      "wage": 3500
+      "wage": 3500,
+      "weight": 74
     },
     {
       "attrs": {

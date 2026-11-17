@@ -48,7 +48,8 @@
       "nation": "ESP",
       "number": 1,
       "pos": "GK",
-      "wage": 97500
+      "wage": 97500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -74,7 +75,8 @@
       "nation": "ESP",
       "number": 2,
       "pos": "RB",
-      "wage": 93000
+      "wage": 93000,
+      "weight": 71
     },
     {
       "attrs": {
@@ -100,7 +102,8 @@
       "nation": "ESP",
       "number": 3,
       "pos": "CB",
-      "wage": 83000
+      "wage": 83000,
+      "weight": 82
     },
     {
       "attrs": {
@@ -156,7 +159,8 @@
       "nation": "ESP",
       "number": 5,
       "pos": "CM",
-      "wage": 132500
+      "wage": 132500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -182,7 +186,8 @@
       "nation": "FRA",
       "number": 6,
       "pos": "DM",
-      "wage": 118000
+      "wage": 118000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -208,7 +213,8 @@
       "nation": "ESP",
       "number": 7,
       "pos": "ST",
-      "wage": 85000
+      "wage": 85000,
+      "weight": 75
     },
     {
       "alt": [
@@ -237,7 +243,8 @@
       "nation": "ARG",
       "number": 8,
       "pos": "CB",
-      "wage": 82500
+      "wage": 82500,
+      "weight": 77
     },
     {
       "attrs": {
@@ -263,7 +270,8 @@
       "nation": "ESP",
       "number": 9,
       "pos": "ST",
-      "wage": 116000
+      "wage": 116000,
+      "weight": 69
     },
     {
       "attrs": {
@@ -289,7 +297,8 @@
       "nation": "ESP",
       "number": 10,
       "pos": "DM",
-      "wage": 41500
+      "wage": 41500,
+      "weight": 76
     },
     {
       "alt": [
@@ -348,7 +357,8 @@
       "nation": "ECU",
       "number": 12,
       "pos": "LB",
-      "wage": 73000
+      "wage": 73000,
+      "weight": 79
     },
     {
       "attrs": {
@@ -374,7 +384,8 @@
       "nation": "ARG",
       "number": 13,
       "pos": "GK",
-      "wage": 102500
+      "wage": 102500,
+      "weight": 80
     },
     {
       "alt": [
@@ -403,7 +414,8 @@
       "nation": "ESP",
       "number": 14,
       "pos": "CM",
-      "wage": 70000
+      "wage": 70000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -430,7 +442,8 @@
       "nation2": "NGA",
       "number": 15,
       "pos": "LW",
-      "wage": 59000
+      "wage": 59000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -486,7 +499,8 @@
       "nation": "ESP",
       "number": 17,
       "pos": "RW",
-      "wage": 19000
+      "wage": 19000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -512,7 +526,8 @@
       "nation": "ESP",
       "number": 18,
       "pos": "LB",
-      "wage": 103500
+      "wage": 103500,
+      "weight": 64
     },
     {
       "attrs": {
@@ -538,7 +553,8 @@
       "nation": "FRA",
       "number": 19,
       "pos": "DM",
-      "wage": 132500
+      "wage": 132500,
+      "weight": 74
     },
     {
       "alt": [
@@ -568,7 +584,8 @@
       "nation": "ESP",
       "number": 20,
       "pos": "RB",
-      "wage": 25000
+      "wage": 25000,
+      "weight": 65
     },
     {
       "attrs": {
@@ -594,7 +611,8 @@
       "nation": "ALG",
       "number": 22,
       "pos": "CB",
-      "wage": 46500
+      "wage": 46500,
+      "weight": 78
     },
     {
       "attrs": {
@@ -620,7 +638,8 @@
       "nation": "ESP",
       "number": 23,
       "pos": "AM",
-      "wage": 101500
+      "wage": 101500,
+      "weight": 65
     },
     {
       "alt": [
@@ -650,7 +669,8 @@
       "nation": "ESP",
       "number": 24,
       "pos": "LB",
-      "wage": 54000
+      "wage": 54000,
+      "weight": 75
     },
     {
       "alt": [

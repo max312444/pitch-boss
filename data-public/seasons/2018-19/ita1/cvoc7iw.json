@@ -48,7 +48,8 @@
       "nation": "SWE",
       "number": 1,
       "pos": "GK",
-      "wage": 63500
+      "wage": 63500,
+      "weight": 86
     },
     {
       "attrs": {
@@ -74,7 +75,8 @@
       "nation": "NED",
       "number": 2,
       "pos": "RB",
-      "wage": 69000
+      "wage": 69000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -101,7 +103,8 @@
       "nation": "ITA",
       "number": 4,
       "pos": "DM",
-      "wage": 124000
+      "wage": 124000,
+      "weight": 80
     },
     {
       "alt": [
@@ -130,7 +133,8 @@
       "nation": "BRA",
       "number": 5,
       "pos": "CB",
-      "wage": 140000
+      "wage": 140000,
+      "weight": 84
     },
     {
       "attrs": {
@@ -156,7 +160,8 @@
       "nation": "ITA",
       "number": 7,
       "pos": "AM",
-      "wage": 105500
+      "wage": 105500,
+      "weight": 77
     },
     {
       "alt": [
@@ -185,7 +190,8 @@
       "nation": "ARG",
       "number": 8,
       "pos": "RW",
-      "wage": 83500
+      "wage": 83500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -211,7 +217,8 @@
       "nation": "BIH",
       "number": 9,
       "pos": "ST",
-      "wage": 164500
+      "wage": 164500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -237,7 +244,8 @@
       "nation": "SRB",
       "number": 11,
       "pos": "LB",
-      "wage": 164500
+      "wage": 164500,
+      "weight": 83
     },
     {
       "attrs": {
@@ -263,7 +271,8 @@
       "nation": "CZE",
       "number": 14,
       "pos": "ST",
-      "wage": 85500
+      "wage": 85500,
+      "weight": 73
     },
     {
       "attrs": {
@@ -289,7 +298,8 @@
       "nation": "ESP",
       "number": 15,
       "pos": "CB",
-      "wage": 55000
+      "wage": 55000,
+      "weight": 74
     },
     {
       "alt": [
@@ -318,7 +328,8 @@
       "nation": "ITA",
       "number": 16,
       "pos": "CM",
-      "wage": 158000
+      "wage": 158000,
+      "weight": 83
     },
     {
       "attrs": {
@@ -344,7 +355,8 @@
       "nation": "TUR",
       "number": 17,
       "pos": "RW",
-      "wage": 51500
+      "wage": 51500,
+      "weight": 66
     },
     {
       "alt": [
@@ -373,7 +385,8 @@
       "nation": "ITA",
       "number": 18,
       "pos": "RB",
-      "wage": 146500
+      "wage": 146500,
+      "weight": 77
     },
     {
       "attrs": {
@@ -399,7 +412,8 @@
       "nation": "CRO",
       "number": 19,
       "pos": "AM",
-      "wage": 67000
+      "wage": 67000,
+      "weight": 68
     },
     {
       "attrs": {
@@ -425,7 +439,8 @@
       "nation": "ARG",
       "number": 20,
       "pos": "CB",
-      "wage": 128500
+      "wage": 128500,
+      "weight": 88
     },
     {
       "alt": [
@@ -455,7 +470,8 @@
       "nation": "ITA",
       "number": 22,
       "pos": "AM",
-      "wage": 22000
+      "wage": 22000,
+      "weight": 79
     },
     {
       "alt": [
@@ -484,7 +500,8 @@
       "nation": "ITA",
       "number": 24,
       "pos": "RB",
-      "wage": 185000
+      "wage": 185000,
+      "weight": 67
     },
     {
       "attrs": {
@@ -510,7 +527,8 @@
       "nation": "ARG",
       "number": 27,
       "pos": "AM",
-      "wage": 185000
+      "wage": 185000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -568,7 +586,8 @@
       "nation2": "FRA",
       "number": 34,
       "pos": "RW",
-      "wage": 21000
+      "wage": 21000,
+      "weight": 66
     },
     {
       "attrs": {
@@ -594,7 +613,8 @@
       "nation": "FRA",
       "number": 42,
       "pos": "DM",
-      "wage": 185000
+      "wage": 185000,
+      "weight": 75
     },
     {
       "alt": [
@@ -625,7 +645,8 @@
       "nation": "GRE",
       "number": 44,
       "pos": "CB",
-      "wage": 141500
+      "wage": 141500,
+      "weight": 87
     },
     {
       "attrs": {
@@ -677,7 +698,8 @@
       "nation": "ITA",
       "number": 83,
       "pos": "GK",
-      "wage": 31000
+      "wage": 31000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -704,7 +726,8 @@
       "nation2": "EGY",
       "number": 92,
       "pos": "LW",
-      "wage": 159500
+      "wage": 159500,
+      "weight": 72
     },
     {
       "attrs": {

@@ -81,7 +81,8 @@
       "nation": "LBN",
       "number": null,
       "pos": "CM",
-      "wage": 7500
+      "wage": 7500,
+      "weight": 80
     },
     {
       "alt": [
@@ -141,7 +142,8 @@
       "number": null,
       "pos": "RW",
       "verify": true,
-      "wage": 7500
+      "wage": 7500,
+      "weight": 64
     },
     {
       "attrs": {
@@ -167,7 +169,8 @@
       "nation": "GER",
       "number": null,
       "pos": "RB",
-      "wage": 6000
+      "wage": 6000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -193,7 +196,8 @@
       "nation": "AUT",
       "number": null,
       "pos": "LB",
-      "wage": 4500
+      "wage": 4500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -219,7 +223,8 @@
       "nation": "GER",
       "number": null,
       "pos": "ST",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 80
     },
     {
       "alt": [
@@ -303,7 +308,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 3000
+      "wage": 3000,
+      "weight": 74
     },
     {
       "alt": [
@@ -332,7 +338,8 @@
       "nation": "GER",
       "number": null,
       "pos": "LB",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 84
     },
     {
       "attrs": {
@@ -358,7 +365,8 @@
       "nation": "GER",
       "number": null,
       "pos": "GK",
-      "wage": 3500
+      "wage": 3500,
+      "weight": 88
     },
     {
       "attrs": {
@@ -468,7 +476,8 @@
       "nation": "CZE",
       "number": null,
       "pos": "CM",
-      "wage": 3500
+      "wage": 3500,
+      "weight": 86
     },
     {
       "alt": [
@@ -526,7 +535,8 @@
       "number": null,
       "pos": "CB",
       "verify": true,
-      "wage": 2500
+      "wage": 2500,
+      "weight": 77
     },
     {
       "alt": [
@@ -586,7 +596,8 @@
       "number": null,
       "pos": "RW",
       "verify": true,
-      "wage": 3000
+      "wage": 3000,
+      "weight": 60
     },
     {
       "attrs": {
@@ -643,7 +654,8 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 2000
+      "wage": 2000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -842,7 +854,8 @@
       "number": null,
       "pos": "LB",
       "verify": true,
-      "wage": 1000
+      "wage": 1000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -927,7 +940,8 @@
       "nation": "GER",
       "number": null,
       "pos": "CM",
-      "wage": 1000
+      "wage": 1000,
+      "weight": 83
     }
   ],
   "stadiumCapacity": 34700

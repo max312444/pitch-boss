@@ -48,7 +48,8 @@
       "nation": "DEN",
       "number": 2,
       "pos": "RB",
-      "wage": 50000
+      "wage": 50000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -158,7 +159,8 @@
       "nation": "CZE",
       "number": 7,
       "pos": "CB",
-      "wage": 13000
+      "wage": 13000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -184,7 +186,8 @@
       "nation": "GRE",
       "number": 9,
       "pos": "ST",
-      "wage": 49500
+      "wage": 49500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -211,7 +214,8 @@
       "nation2": "BIH",
       "number": 10,
       "pos": "AM",
-      "wage": 50000
+      "wage": 50000,
+      "weight": 79
     },
     {
       "attrs": {
@@ -237,7 +241,8 @@
       "nation": "SVK",
       "number": 11,
       "pos": "AM",
-      "wage": 50000
+      "wage": 50000,
+      "weight": 78
     },
     {
       "alt": [
@@ -295,7 +300,8 @@
       "nation": "DEN",
       "number": 15,
       "pos": "CM",
-      "wage": 32000
+      "wage": 32000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -399,7 +405,8 @@
       "nation": "AUS",
       "number": 20,
       "pos": "ST",
-      "wage": 48500
+      "wage": 48500,
+      "weight": 84
     },
     {
       "alt": [
@@ -481,7 +488,8 @@
       "nation": "AUS",
       "number": 23,
       "pos": "CB",
-      "wage": 18500
+      "wage": 18500,
+      "weight": 88
     },
     {
       "alt": [
@@ -510,7 +518,8 @@
       "nation": "GER",
       "number": 24,
       "pos": "CM",
-      "wage": 29000
+      "wage": 29000,
+      "weight": 68
     },
     {
       "attrs": {
@@ -537,7 +546,8 @@
       "nation2": "ITA",
       "number": 25,
       "pos": "LB",
-      "wage": 12500
+      "wage": 12500,
+      "weight": 79
     },
     {
       "attrs": {
@@ -563,7 +573,8 @@
       "nation": "GER",
       "number": 28,
       "pos": "RB",
-      "wage": 10000
+      "wage": 10000,
+      "weight": 82
     },
     {
       "attrs": {
@@ -641,7 +652,8 @@
       "nation": "SVK",
       "number": 33,
       "pos": "ST",
-      "wage": 20500
+      "wage": 20500,
+      "weight": 84
     },
     {
       "attrs": {
@@ -693,7 +705,8 @@
       "nation": "TUN",
       "number": 36,
       "pos": "DM",
-      "wage": 49000
+      "wage": 49000,
+      "weight": 82
     },
     {
       "alt": [

@@ -48,7 +48,8 @@
       "traits": [
         "sweeper_keeper"
       ],
-      "wage": 162500
+      "wage": 162500,
+      "weight": 78
     },
     {
       "attrs": {
@@ -77,7 +78,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 126000
+      "wage": 126000,
+      "weight": 77
     },
     {
       "alt": [
@@ -108,7 +110,8 @@
       "number": 3,
       "pos": "LB",
       "verify": true,
-      "wage": 77000
+      "wage": 77000,
+      "weight": 75
     },
     {
       "alt": [
@@ -141,7 +144,8 @@
         "playmaker",
         "long_shot"
       ],
-      "wage": 169000
+      "wage": 169000,
+      "weight": 79
     },
     {
       "attrs": {
@@ -170,7 +174,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 102500
+      "wage": 102500,
+      "weight": 86
     },
     {
       "attrs": {
@@ -196,7 +201,8 @@
       "nation": "ENG",
       "number": 6,
       "pos": "CB",
-      "wage": 149500
+      "wage": 149500,
+      "weight": 82
     },
     {
       "alt": [
@@ -237,7 +243,8 @@
         "long_shot",
         "big_game"
       ],
-      "wage": 169000
+      "wage": 169000,
+      "weight": 75
     },
     {
       "alt": [
@@ -299,7 +306,8 @@
         "clutch",
         "penalty"
       ],
-      "wage": 94000
+      "wage": 94000,
+      "weight": 80
     },
     {
       "alt": [
@@ -332,7 +340,8 @@
         "flair",
         "speedster"
       ],
-      "wage": 114500
+      "wage": 114500,
+      "weight": 68
     },
     {
       "attrs": {
@@ -385,7 +394,8 @@
       "nation": "NIR",
       "number": 13,
       "pos": "GK",
-      "wage": 35000
+      "wage": 35000,
+      "weight": 80
     },
     {
       "alt": [
@@ -417,7 +427,8 @@
       "number": 15,
       "pos": "RM",
       "verify": true,
-      "wage": 49500
+      "wage": 49500,
+      "weight": 72
     },
     {
       "alt": [
@@ -494,7 +505,8 @@
         "long_shot",
         "playmaker"
       ],
-      "wage": 169000
+      "wage": 169000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -523,7 +535,8 @@
       "traits": [
         "clutch"
       ],
-      "wage": 52500
+      "wage": 52500,
+      "weight": 74
     },
     {
       "attrs": {
@@ -550,7 +563,8 @@
       "number": 21,
       "pos": "ST",
       "verify": true,
-      "wage": 39500
+      "wage": 39500,
+      "weight": 78
     },
     {
       "alt": [
@@ -580,7 +594,8 @@
       "nation": "IRL",
       "number": 22,
       "pos": "CB",
-      "wage": 56500
+      "wage": 56500,
+      "weight": 75
     },
     {
       "alt": [
@@ -609,7 +624,8 @@
       "nation": "ENG",
       "number": 24,
       "pos": "CB",
-      "wage": 64500
+      "wage": 64500,
+      "weight": 87
     },
     {
       "attrs": {
@@ -665,7 +681,8 @@
       "nation": "FRA",
       "number": 27,
       "pos": "LB",
-      "wage": 78500
+      "wage": 78500,
+      "weight": 87
     },
     {
       "alt": [

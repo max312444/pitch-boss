@@ -41,7 +41,8 @@
       "nation": "USA",
       "number": 1,
       "pos": "GK",
-      "wage": 57500
+      "wage": 57500,
+      "weight": 91
     },
     {
       "attrs": {
@@ -67,7 +68,8 @@
       "nation": "FIN",
       "number": 13,
       "pos": "GK",
-      "wage": 17000
+      "wage": 17000,
+      "weight": 89
     },
     {
       "alt": [
@@ -97,7 +99,8 @@
       "nation": "AUS",
       "number": 2,
       "pos": "RB",
-      "wage": 54500
+      "wage": 54500,
+      "weight": 80
     },
     {
       "alt": [
@@ -152,7 +155,8 @@
       "nation": "SWE",
       "number": 14,
       "pos": "CB",
-      "wage": 26000
+      "wage": 26000,
+      "weight": 88
     },
     {
       "attrs": {
@@ -235,7 +239,8 @@
       "nation": "ITA",
       "number": 4,
       "pos": "CB",
-      "wage": 30500
+      "wage": 30500,
+      "weight": 87
     },
     {
       "alt": [
@@ -322,7 +327,8 @@
       "nation": "SVK",
       "number": 23,
       "pos": "LB",
-      "wage": 26500
+      "wage": 26500,
+      "weight": 72
     },
     {
       "alt": [
@@ -354,7 +360,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 57500
+      "wage": 57500,
+      "weight": 74
     },
     {
       "alt": [
@@ -451,7 +458,8 @@
       "nation": "IRL",
       "number": 18,
       "pos": "RM",
-      "wage": 34000
+      "wage": 34000,
+      "weight": 87
     },
     {
       "alt": [
@@ -485,7 +493,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 34000
+      "wage": 34000,
+      "weight": 63
     },
     {
       "alt": [
@@ -549,7 +558,8 @@
         "free_kick",
         "long_shot"
       ],
-      "wage": 31000
+      "wage": 31000,
+      "weight": 72
     },
     {
       "alt": [
@@ -604,7 +614,8 @@
       "nation": "FRA",
       "number": 15,
       "pos": "AM",
-      "wage": 27500
+      "wage": 27500,
+      "weight": 73
     },
     {
       "attrs": {
@@ -685,7 +696,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 16000
+      "wage": 16000,
+      "weight": 71
     },
     {
       "alt": [
@@ -715,7 +727,8 @@
       "nation": "SCO",
       "number": 19,
       "pos": "ST",
-      "wage": 12000
+      "wage": 12000,
+      "weight": 79
     },
     {
       "attrs": {
@@ -742,7 +755,8 @@
       "nation": "ENG",
       "number": 27,
       "pos": "ST",
-      "wage": 31500
+      "wage": 31500,
+      "weight": 89
     },
     {
       "attrs": {
@@ -770,7 +784,8 @@
       "number": 26,
       "pos": "GK",
       "verify": true,
-      "wage": 9000
+      "wage": 9000,
+      "weight": 85
     }
   ],
   "stadiumCapacity": 31367

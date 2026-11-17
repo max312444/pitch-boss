@@ -48,7 +48,8 @@
       "nation": "ARG",
       "number": 2,
       "pos": "CB",
-      "wage": 9000
+      "wage": 9000,
+      "weight": 81
     },
     {
       "attrs": {
@@ -74,7 +75,8 @@
       "nation": "ITA",
       "number": 3,
       "pos": "CB",
-      "wage": 12500
+      "wage": 12500,
+      "weight": 82
     },
     {
       "alt": [
@@ -103,7 +105,8 @@
       "nation": "ITA",
       "number": 4,
       "pos": "CB",
-      "wage": 23500
+      "wage": 23500,
+      "weight": 77
     },
     {
       "attrs": {
@@ -129,7 +132,8 @@
       "nation": "ITA",
       "number": 5,
       "pos": "CB",
-      "wage": 6500
+      "wage": 6500,
+      "weight": 83
     },
     {
       "alt": [
@@ -159,7 +163,8 @@
       "nation": "ITA",
       "number": 6,
       "pos": "CM",
-      "wage": 25000
+      "wage": 25000,
+      "weight": 68
     },
     {
       "alt": [
@@ -188,7 +193,8 @@
       "nation": "ITA",
       "number": 7,
       "pos": "CM",
-      "wage": 14500
+      "wage": 14500,
+      "weight": 71
     },
     {
       "attrs": {
@@ -214,7 +220,8 @@
       "nation": "ITA",
       "number": 8,
       "pos": "CB",
-      "wage": 13500
+      "wage": 13500,
+      "weight": 77
     },
     {
       "alt": [
@@ -243,7 +250,8 @@
       "nation": "ITA",
       "number": 9,
       "pos": "CM",
-      "wage": 24500
+      "wage": 24500,
+      "weight": 79
     },
     {
       "attrs": {
@@ -269,7 +277,8 @@
       "nation": "BRA",
       "number": 10,
       "pos": "RW",
-      "wage": 9000
+      "wage": 9000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -295,7 +304,8 @@
       "nation": "URU",
       "number": 11,
       "pos": "ST",
-      "wage": 8500
+      "wage": 8500,
+      "weight": 82
     },
     {
       "alt": [
@@ -324,7 +334,8 @@
       "nation": "ITA",
       "number": 16,
       "pos": "CM",
-      "wage": 14500
+      "wage": 14500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -350,7 +361,8 @@
       "nation": "ITA",
       "number": 18,
       "pos": "GK",
-      "wage": 5000
+      "wage": 5000,
+      "weight": 86
     },
     {
       "attrs": {
@@ -376,7 +388,8 @@
       "nation": "ITA",
       "number": 19,
       "pos": "CB",
-      "wage": 8500
+      "wage": 8500,
+      "weight": 73
     },
     {
       "attrs": {
@@ -402,7 +415,8 @@
       "nation": "ITA",
       "number": 20,
       "pos": "CB",
-      "wage": 5000
+      "wage": 5000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -428,7 +442,8 @@
       "nation": "FRA",
       "number": 21,
       "pos": "CB",
-      "wage": 9000
+      "wage": 9000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -454,7 +469,8 @@
       "nation": "ALB",
       "number": 23,
       "pos": "ST",
-      "wage": 25000
+      "wage": 25000,
+      "weight": 82
     },
     {
       "attrs": {
@@ -480,7 +496,8 @@
       "nation": "ITA",
       "number": 27,
       "pos": "CB",
-      "wage": 5000
+      "wage": 5000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -506,7 +523,8 @@
       "nation": "ITA",
       "number": 28,
       "pos": "GK",
-      "wage": 14000
+      "wage": 14000,
+      "weight": 86
     },
     {
       "attrs": {
@@ -532,7 +550,8 @@
       "nation": "ITA",
       "number": 31,
       "pos": "ST",
-      "wage": 17000
+      "wage": 17000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -558,7 +577,8 @@
       "nation": "COL",
       "number": 33,
       "pos": "CB",
-      "wage": 25000
+      "wage": 25000,
+      "weight": 83
     },
     {
       "alt": [
@@ -587,7 +607,8 @@
       "nation": "ITA",
       "number": 40,
       "pos": "CM",
-      "wage": 9500
+      "wage": 9500,
+      "weight": 70
     },
     {
       "alt": [
@@ -616,7 +637,8 @@
       "nation": "ITA",
       "number": 46,
       "pos": "RW",
-      "wage": 12500
+      "wage": 12500,
+      "weight": 67
     },
     {
       "attrs": {
@@ -642,7 +664,8 @@
       "nation": "BRA",
       "number": 83,
       "pos": "ST",
-      "wage": 6000
+      "wage": 6000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -668,7 +691,8 @@
       "nation": "SUI",
       "number": 88,
       "pos": "CB",
-      "wage": 7000
+      "wage": 7000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -694,7 +718,8 @@
       "nation": "ITA",
       "number": 99,
       "pos": "ST",
-      "wage": 9500
+      "wage": 9500,
+      "weight": 78
     },
     {
       "attrs": {

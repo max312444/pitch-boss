@@ -46,7 +46,8 @@
         "injury_prone"
       ],
       "verify": true,
-      "wage": 49000
+      "wage": 49000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -76,7 +77,8 @@
         "free_kick"
       ],
       "verify": true,
-      "wage": 49000
+      "wage": 49000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -136,7 +138,8 @@
       "number": 5,
       "pos": "CB",
       "verify": true,
-      "wage": 40500
+      "wage": 40500,
+      "weight": 83
     },
     {
       "alt": [
@@ -166,7 +169,8 @@
       "number": 6,
       "pos": "CM",
       "verify": true,
-      "wage": 49000
+      "wage": 49000,
+      "weight": 78
     },
     {
       "alt": [
@@ -196,7 +200,8 @@
       "number": 7,
       "pos": "LB",
       "verify": true,
-      "wage": 34500
+      "wage": 34500,
+      "weight": 82
     },
     {
       "alt": [
@@ -285,7 +290,8 @@
       "number": 10,
       "pos": "LM",
       "verify": true,
-      "wage": 35000
+      "wage": 35000,
+      "weight": 83
     },
     {
       "attrs": {
@@ -315,7 +321,8 @@
         "target_man"
       ],
       "verify": true,
-      "wage": 49000
+      "wage": 49000,
+      "weight": 92
     },
     {
       "attrs": {
@@ -342,7 +349,8 @@
       "number": 12,
       "pos": "GK",
       "verify": true,
-      "wage": 39500
+      "wage": 39500,
+      "weight": 88
     },
     {
       "attrs": {
@@ -405,7 +413,8 @@
       "number": 15,
       "pos": "CB",
       "verify": true,
-      "wage": 49000
+      "wage": 49000,
+      "weight": 80
     },
     {
       "alt": [
@@ -438,7 +447,8 @@
         "free_kick"
       ],
       "verify": true,
-      "wage": 17500
+      "wage": 17500,
+      "weight": 80
     },
     {
       "alt": [
@@ -468,7 +478,8 @@
       "nation": "ENG",
       "number": 17,
       "pos": "RB",
-      "wage": 39000
+      "wage": 39000,
+      "weight": 75
     },
     {
       "alt": [
@@ -529,7 +540,8 @@
       "number": 19,
       "pos": "RW",
       "verify": true,
-      "wage": 26500
+      "wage": 26500,
+      "weight": 76
     },
     {
       "alt": [
@@ -559,7 +571,8 @@
       "number": 20,
       "pos": "RW",
       "verify": true,
-      "wage": 14500
+      "wage": 14500,
+      "weight": 71
     },
     {
       "attrs": {

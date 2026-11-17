@@ -48,7 +48,8 @@
       "nation": "GER",
       "number": 1,
       "pos": "GK",
-      "wage": 302500
+      "wage": 302500,
+      "weight": 93
     },
     {
       "attrs": {
@@ -100,7 +101,8 @@
       "nation": "KOR",
       "number": 3,
       "pos": "CB",
-      "wage": 454500
+      "wage": 454500,
+      "weight": 86
     },
     {
       "attrs": {
@@ -126,7 +128,8 @@
       "nation": "GER",
       "number": 4,
       "pos": "CB",
-      "wage": 637000
+      "wage": 637000,
+      "weight": 98
     },
     {
       "alt": [
@@ -155,7 +158,8 @@
       "nation": "GER",
       "number": 6,
       "pos": "DM",
-      "wage": 637000
+      "wage": 637000,
+      "weight": 75
     },
     {
       "alt": [
@@ -186,7 +190,8 @@
       "nation2": "CIV",
       "number": 7,
       "pos": "RW",
-      "wage": 297000
+      "wage": 297000,
+      "weight": 77
     },
     {
       "alt": [
@@ -215,7 +220,8 @@
       "nation": "GER",
       "number": 8,
       "pos": "CM",
-      "wage": 637000
+      "wage": 637000,
+      "weight": 82
     },
     {
       "attrs": {
@@ -241,7 +247,8 @@
       "nation": "ENG",
       "number": 9,
       "pos": "ST",
-      "wage": 637000
+      "wage": 637000,
+      "weight": 86
     },
     {
       "attrs": {
@@ -296,7 +303,8 @@
       "nation": "COL",
       "number": 14,
       "pos": "LW",
-      "wage": 518500
+      "wage": 518500,
+      "weight": 65
     },
     {
       "alt": [
@@ -356,7 +364,8 @@
       "nation2": "LBR",
       "number": 19,
       "pos": "LB",
-      "wage": 570000
+      "wage": 570000,
+      "weight": 75
     },
     {
       "alt": [
@@ -443,7 +452,8 @@
       "nation2": "FRA",
       "number": 22,
       "pos": "LB",
-      "wage": 559000
+      "wage": 559000,
+      "weight": 67
     },
     {
       "alt": [
@@ -500,7 +510,8 @@
       "nation": "GER",
       "number": 26,
       "pos": "GK",
-      "wage": 185000
+      "wage": 185000,
+      "weight": 84
     },
     {
       "alt": [
@@ -530,7 +541,8 @@
       "nation": "AUT",
       "number": 27,
       "pos": "CM",
-      "wage": 626500
+      "wage": 626500,
+      "weight": 68
     },
     {
       "attrs": {

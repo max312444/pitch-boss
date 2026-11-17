@@ -51,7 +51,8 @@
       "nation": "AUT",
       "number": 2,
       "pos": "RB",
-      "wage": 113500
+      "wage": 113500,
+      "weight": 66
     },
     {
       "attrs": {
@@ -108,7 +109,8 @@
       "nation2": "GER",
       "number": 4,
       "pos": "CM",
-      "wage": 73500
+      "wage": 73500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -190,7 +192,8 @@
       "nation": "KOR",
       "number": 7,
       "pos": "AM",
-      "wage": 113500
+      "wage": 113500,
+      "weight": 70
     },
     {
       "alt": [
@@ -335,7 +338,8 @@
       "nation": "GER",
       "number": 16,
       "pos": "CB",
-      "wage": 72000
+      "wage": 72000,
+      "weight": 86
     },
     {
       "attrs": {
@@ -361,7 +365,8 @@
       "nation": "GER",
       "number": 18,
       "pos": "AM",
-      "wage": 113500
+      "wage": 113500,
+      "weight": 72
     },
     {
       "alt": [
@@ -390,7 +395,8 @@
       "nation": "FRA",
       "number": 19,
       "pos": "LB",
-      "wage": 50000
+      "wage": 50000,
+      "weight": 70
     },
     {
       "alt": [
@@ -419,7 +425,8 @@
       "nation": "GER",
       "number": 21,
       "pos": "RB",
-      "wage": 113500
+      "wage": 113500,
+      "weight": 85
     },
     {
       "alt": [
@@ -505,7 +512,8 @@
       "nation": "GER",
       "number": 27,
       "pos": "GK",
-      "wage": 54500
+      "wage": 54500,
+      "weight": 96
     },
     {
       "attrs": {
@@ -557,7 +565,8 @@
       "nation": "SUI",
       "number": 30,
       "pos": "RB",
-      "wage": 113500
+      "wage": 113500,
+      "weight": 80
     },
     {
       "alt": [

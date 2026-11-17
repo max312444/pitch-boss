@@ -74,7 +74,8 @@
       "nation": "GER",
       "number": 2,
       "pos": "RB",
-      "wage": 5000
+      "wage": 5000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -155,7 +156,8 @@
       "nation": "AUT",
       "number": 8,
       "pos": "CM",
-      "wage": 7500
+      "wage": 7500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -238,7 +240,8 @@
       "nation": "GER",
       "number": 11,
       "pos": "AM",
-      "wage": 9000
+      "wage": 9000,
+      "weight": 70
     },
     {
       "alt": [
@@ -295,7 +298,8 @@
       "nation": "NED",
       "number": 15,
       "pos": "ST",
-      "wage": 4500
+      "wage": 4500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -580,7 +584,8 @@
       "nation": "GER",
       "number": 30,
       "pos": "DM",
-      "wage": 10500
+      "wage": 10500,
+      "weight": 71
     },
     {
       "attrs": {

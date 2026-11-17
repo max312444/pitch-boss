@@ -48,7 +48,8 @@
       "nation": "FRA",
       "number": 1,
       "pos": "GK",
-      "wage": 46500
+      "wage": 46500,
+      "weight": 84
     },
     {
       "attrs": {
@@ -742,7 +743,8 @@
       "nation": "SWE",
       "number": 30,
       "pos": "GK",
-      "wage": 49500
+      "wage": 49500,
+      "weight": 83
     },
     {
       "attrs": {
@@ -821,7 +823,8 @@
       "nation": "UKR",
       "number": 77,
       "pos": "LB",
-      "wage": 49500
+      "wage": 49500,
+      "weight": 74
     },
     {
       "attrs": {

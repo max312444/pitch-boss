@@ -130,7 +130,8 @@
       "nation": "SWE",
       "number": 5,
       "pos": "CB",
-      "wage": 16000
+      "wage": 16000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -182,7 +183,8 @@
       "nation": "GER",
       "number": 7,
       "pos": "ST",
-      "wage": 17000
+      "wage": 17000,
+      "weight": 64
     },
     {
       "alt": [
@@ -399,7 +401,8 @@
       "nation": "AUT",
       "number": 22,
       "pos": "CM",
-      "wage": 21000
+      "wage": 21000,
+      "weight": 78
     },
     {
       "attrs": {

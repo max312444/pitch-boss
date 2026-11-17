@@ -130,7 +130,8 @@
       "nation2": "FRA",
       "number": 5,
       "pos": "AM",
-      "wage": 49500
+      "wage": 49500,
+      "weight": 65
     },
     {
       "attrs": {
@@ -213,7 +214,8 @@
       "nation": "SUI",
       "number": 8,
       "pos": "CM",
-      "wage": 49500
+      "wage": 49500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -239,7 +241,8 @@
       "nation": "NED",
       "number": 9,
       "pos": "ST",
-      "wage": 18000
+      "wage": 18000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -398,7 +401,8 @@
       "nation": "CHI",
       "number": 17,
       "pos": "LB",
-      "wage": 43500
+      "wage": 43500,
+      "weight": 74
     },
     {
       "attrs": {

@@ -302,6 +302,7 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
       p.dataAlt = d.sp.alt?.length ? d.sp.alt : undefined;
       if (d.sp.foot) p.foot = d.sp.foot;
       if (d.sp.height) p.height = d.sp.height;
+      if (d.sp.weight) p.weight = d.sp.weight;
       // AI 구단: 실제로도 같은 구단에 남아 있고 실제 주급이 더 높으면 실제 재계약 반영 (내 구단 선수는 직접 재계약)
       if (p.clubId && p.clubId !== w.userClubId && d.club === p.clubId && d.sp.wage > p.wage) {
         p.wage = d.sp.wage;

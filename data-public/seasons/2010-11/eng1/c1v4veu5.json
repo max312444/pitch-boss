@@ -41,7 +41,8 @@
       "nation": "ENG",
       "number": 1,
       "pos": "GK",
-      "wage": 68000
+      "wage": 68000,
+      "weight": 86
     },
     {
       "attrs": {
@@ -69,7 +70,8 @@
       "number": 13,
       "pos": "GK",
       "verify": true,
-      "wage": 47500
+      "wage": 47500,
+      "weight": 91
     },
     {
       "attrs": {
@@ -96,7 +98,8 @@
       "number": 2,
       "pos": "CB",
       "verify": true,
-      "wage": 40000
+      "wage": 40000,
+      "weight": 76
     },
     {
       "alt": [
@@ -153,7 +156,8 @@
       "number": 4,
       "pos": "CB",
       "verify": true,
-      "wage": 57500
+      "wage": 57500,
+      "weight": 85
     },
     {
       "attrs": {
@@ -180,7 +184,8 @@
       "number": 5,
       "pos": "CB",
       "verify": true,
-      "wage": 47000
+      "wage": 47000,
+      "weight": 86
     },
     {
       "attrs": {
@@ -244,7 +249,8 @@
       "number": 25,
       "pos": "CB",
       "verify": true,
-      "wage": 68000
+      "wage": 68000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -303,7 +309,8 @@
       "nation2": "SCO",
       "number": 7,
       "pos": "RM",
-      "wage": 46500
+      "wage": 46500,
+      "weight": 64
     },
     {
       "alt": [
@@ -395,7 +402,8 @@
       "nation": "SCO",
       "number": 17,
       "pos": "CM",
-      "wage": 39000
+      "wage": 39000,
+      "weight": 73
     },
     {
       "alt": [
@@ -427,7 +435,8 @@
       "traits": [
         "engine"
       ],
-      "wage": 68000
+      "wage": 68000,
+      "weight": 71
     },
     {
       "attrs": {
@@ -480,7 +489,8 @@
       "nation": "ENG",
       "number": 10,
       "pos": "ST",
-      "wage": 20000
+      "wage": 20000,
+      "weight": 86
     },
     {
       "attrs": {
@@ -506,7 +516,8 @@
       "nation": "IRL",
       "number": 18,
       "pos": "ST",
-      "wage": 27500
+      "wage": 27500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -532,7 +543,8 @@
       "nation": "FRA",
       "number": 20,
       "pos": "ST",
-      "wage": 46500
+      "wage": 46500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -558,7 +570,8 @@
       "nation": "NGA",
       "number": 24,
       "pos": "ST",
-      "wage": 68000
+      "wage": 68000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -585,7 +598,8 @@
       "number": 26,
       "pos": "AM",
       "verify": true,
-      "wage": 22500
+      "wage": 22500,
+      "weight": 86
     },
     {
       "attrs": {
@@ -615,7 +629,8 @@
         "aerial_threat"
       ],
       "verify": true,
-      "wage": 10000
+      "wage": 10000,
+      "weight": 82
     }
   ],
   "stadiumCapacity": 26445

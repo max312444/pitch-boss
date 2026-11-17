@@ -97,7 +97,8 @@
       "nation": "USA",
       "number": 3,
       "pos": "LB",
-      "wage": 57000
+      "wage": 57000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -153,7 +154,8 @@
       "nation": "ENG",
       "number": 5,
       "pos": "CB",
-      "wage": 35000
+      "wage": 35000,
+      "weight": 91
     },
     {
       "attrs": {
@@ -245,7 +247,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 57000
+      "wage": 57000,
+      "weight": 94
     },
     {
       "attrs": {
@@ -304,7 +307,8 @@
       "nation": "POR",
       "number": 10,
       "pos": "LW",
-      "wage": 31500
+      "wage": 31500,
+      "weight": 73
     },
     {
       "alt": [
@@ -365,7 +369,8 @@
       "number": 12,
       "pos": "GK",
       "verify": true,
-      "wage": 36000
+      "wage": 36000,
+      "weight": 80
     },
     {
       "alt": [
@@ -399,7 +404,8 @@
         "free_kick"
       ],
       "verify": true,
-      "wage": 57000
+      "wage": 57000,
+      "weight": 69
     },
     {
       "attrs": {
@@ -427,7 +433,8 @@
       "number": 15,
       "pos": "ST",
       "verify": true,
-      "wage": 32500
+      "wage": 32500,
+      "weight": 79
     },
     {
       "alt": [
@@ -458,7 +465,8 @@
       "nation2": "POL",
       "number": 16,
       "pos": "ST",
-      "wage": 32000
+      "wage": 32000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -514,7 +522,8 @@
         "aerial_threat",
         "leader"
       ],
-      "wage": 39000
+      "wage": 39000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -541,7 +550,8 @@
       "number": 22,
       "pos": "LB",
       "verify": true,
-      "wage": 57000
+      "wage": 57000,
+      "weight": 77
     }
   ],
   "stadiumCapacity": 24600

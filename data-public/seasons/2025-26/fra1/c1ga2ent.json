@@ -49,7 +49,8 @@
       "nation2": "ESP",
       "number": 2,
       "pos": "RB",
-      "wage": 619500
+      "wage": 619500,
+      "weight": 69
     },
     {
       "attrs": {
@@ -75,7 +76,8 @@
       "nation": "FRA",
       "number": 3,
       "pos": "CB",
-      "wage": 490500
+      "wage": 490500,
+      "weight": 77
     },
     {
       "alt": [
@@ -131,7 +133,8 @@
       "nation2": "POR",
       "number": 5,
       "pos": "CB",
-      "wage": 524000
+      "wage": 524000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -183,7 +186,8 @@
       "nation": "GEO",
       "number": 7,
       "pos": "LW",
-      "wage": 402500
+      "wage": 402500,
+      "weight": 70
     },
     {
       "alt": [
@@ -213,7 +217,8 @@
       "nation": "ESP",
       "number": 8,
       "pos": "CM",
-      "wage": 619500
+      "wage": 619500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -265,7 +270,8 @@
       "nation": "FRA",
       "number": 10,
       "pos": "RW",
-      "wage": 519500
+      "wage": 519500,
+      "weight": 67
     },
     {
       "alt": [
@@ -296,7 +302,8 @@
       "nation2": "CIV",
       "number": 14,
       "pos": "RW",
-      "wage": 177000
+      "wage": 177000,
+      "weight": 79
     },
     {
       "alt": [
@@ -386,7 +393,8 @@
       "nation2": "ESP",
       "number": 21,
       "pos": "CB",
-      "wage": 529000
+      "wage": 529000,
+      "weight": 79
     },
     {
       "alt": [
@@ -467,7 +475,8 @@
       "nation": "FRA",
       "number": 29,
       "pos": "ST",
-      "wage": 303000
+      "wage": 303000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -628,7 +637,8 @@
       "nation": "ECU",
       "number": 51,
       "pos": "CB",
-      "wage": 258000
+      "wage": 258000,
+      "weight": 81
     },
     {
       "alt": [
@@ -713,7 +723,8 @@
       "nation": "ESP",
       "number": null,
       "pos": "RW",
-      "wage": 477000
+      "wage": 477000,
+      "weight": 70
     },
     {
       "alt": [
@@ -742,7 +753,8 @@
       "nation": "ESP",
       "number": null,
       "pos": "CM",
-      "wage": 539000
+      "wage": 539000,
+      "weight": 72
     },
     {
       "attrs": {

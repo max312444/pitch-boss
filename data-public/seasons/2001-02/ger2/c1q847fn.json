@@ -102,7 +102,8 @@
       "number": null,
       "pos": "CB",
       "verify": true,
-      "wage": 3500
+      "wage": 3500,
+      "weight": 78
     },
     {
       "alt": [
@@ -189,7 +190,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 1500
+      "wage": 1500,
+      "weight": 79
     },
     {
       "attrs": {
@@ -708,7 +710,8 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 1500
+      "wage": 1500,
+      "weight": 81
     },
     {
       "attrs": {

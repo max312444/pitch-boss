@@ -346,7 +346,8 @@
       "nation": "SUI",
       "number": 13,
       "pos": "ST",
-      "wage": 21500
+      "wage": 21500,
+      "weight": 81
     },
     {
       "attrs": {
@@ -456,7 +457,8 @@
       "nation": "GER",
       "number": 19,
       "pos": "CB",
-      "wage": 11000
+      "wage": 11000,
+      "weight": 86
     },
     {
       "alt": [
@@ -603,7 +605,8 @@
       "nation": "GER",
       "number": 25,
       "pos": "CB",
-      "wage": 21500
+      "wage": 21500,
+      "weight": 73
     },
     {
       "alt": [
@@ -659,7 +662,8 @@
       "nation": "NED",
       "number": 30,
       "pos": "CB",
-      "wage": 14000
+      "wage": 14000,
+      "weight": 84
     },
     {
       "attrs": {

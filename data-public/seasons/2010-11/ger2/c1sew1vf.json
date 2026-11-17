@@ -126,7 +126,8 @@
       "nation": "GER",
       "number": 5,
       "pos": "CB",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 95
     },
     {
       "alt": [
@@ -155,7 +156,8 @@
       "nation": "GER",
       "number": 6,
       "pos": "RB",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -585,7 +587,8 @@
       "nation2": "KAZ",
       "number": 25,
       "pos": "RB",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 75
     },
     {
       "alt": [
@@ -641,7 +644,8 @@
       "nation": "GER",
       "number": 33,
       "pos": "GK",
-      "wage": 2500
+      "wage": 2500,
+      "weight": 83
     },
     {
       "alt": [

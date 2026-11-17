@@ -67,7 +67,8 @@
       "nation": "IRL",
       "number": 2,
       "pos": "RB",
-      "wage": 62000
+      "wage": 62000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -97,7 +98,8 @@
         "free_kick",
         "penalty"
       ],
-      "wage": 67500
+      "wage": 67500,
+      "weight": 73
     },
     {
       "alt": [
@@ -129,7 +131,8 @@
       "traits": [
         "engine"
       ],
-      "wage": 93000
+      "wage": 93000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -187,7 +190,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 68000
+      "wage": 68000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -217,7 +221,8 @@
         "penalty"
       ],
       "verify": true,
-      "wage": 47000
+      "wage": 47000,
+      "weight": 74
     },
     {
       "alt": [
@@ -279,7 +284,8 @@
       "traits": [
         "target_man"
       ],
-      "wage": 68000
+      "wage": 68000,
+      "weight": 92
     },
     {
       "alt": [
@@ -312,7 +318,8 @@
       "traits": [
         "flair"
       ],
-      "wage": 52000
+      "wage": 52000,
+      "weight": 73
     },
     {
       "alt": [
@@ -344,7 +351,8 @@
       "traits": [
         "engine"
       ],
-      "wage": 65500
+      "wage": 65500,
+      "weight": 62
     },
     {
       "attrs": {
@@ -370,7 +378,8 @@
       "nation": "ENG",
       "number": 13,
       "pos": "GK",
-      "wage": 51500
+      "wage": 51500,
+      "weight": 90
     },
     {
       "alt": [
@@ -400,7 +409,8 @@
       "number": 14,
       "pos": "CM",
       "verify": true,
-      "wage": 48500
+      "wage": 48500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -484,7 +494,8 @@
       "nation": "ENG",
       "number": 18,
       "pos": "RB",
-      "wage": 41500
+      "wage": 41500,
+      "weight": 72
     },
     {
       "alt": [
@@ -513,7 +524,8 @@
       "nation": "NOR",
       "number": 19,
       "pos": "CM",
-      "wage": 69000
+      "wage": 69000,
+      "weight": 80
     },
     {
       "alt": [
@@ -630,7 +642,8 @@
         "injury_prone"
       ],
       "verify": true,
-      "wage": 48000
+      "wage": 48000,
+      "weight": 76
     },
     {
       "alt": [
@@ -661,7 +674,8 @@
       "number": 24,
       "pos": "AM",
       "verify": true,
-      "wage": 30500
+      "wage": 30500,
+      "weight": 71
     },
     {
       "alt": [
@@ -752,7 +766,8 @@
       "number": 39,
       "pos": "RM",
       "verify": true,
-      "wage": 15500
+      "wage": 15500,
+      "weight": 70
     }
   ],
   "stadiumCapacity": 40204

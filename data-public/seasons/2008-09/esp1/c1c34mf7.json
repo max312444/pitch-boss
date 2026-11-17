@@ -48,7 +48,8 @@
       "nation": "ESP",
       "number": 1,
       "pos": "GK",
-      "wage": 42000
+      "wage": 42000,
+      "weight": 82
     },
     {
       "attrs": {
@@ -100,7 +101,8 @@
       "nation": "BRA",
       "number": 3,
       "pos": "LB",
-      "wage": 40500
+      "wage": 40500,
+      "weight": 77
     },
     {
       "attrs": {
@@ -152,7 +154,8 @@
       "nation": "POR",
       "number": 5,
       "pos": "CB",
-      "wage": 34500
+      "wage": 34500,
+      "weight": 76
     },
     {
       "alt": [
@@ -181,7 +184,8 @@
       "nation": "CAN",
       "number": 6,
       "pos": "CM",
-      "wage": 42000
+      "wage": 42000,
+      "weight": 68
     },
     {
       "attrs": {
@@ -208,7 +212,8 @@
       "nation2": "ESP",
       "number": 7,
       "pos": "ST",
-      "wage": 25000
+      "wage": 25000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -234,7 +239,8 @@
       "nation": "MEX",
       "number": 9,
       "pos": "ST",
-      "wage": 38000
+      "wage": 38000,
+      "weight": 56
     },
     {
       "attrs": {
@@ -286,7 +292,8 @@
       "nation": "ESP",
       "number": 13,
       "pos": "GK",
-      "wage": 12500
+      "wage": 12500,
+      "weight": 77
     },
     {
       "alt": [
@@ -400,7 +407,8 @@
       "nation2": "ESP",
       "number": 18,
       "pos": "CM",
-      "wage": 41500
+      "wage": 41500,
+      "weight": 69
     },
     {
       "attrs": {
@@ -426,7 +434,8 @@
       "nation": "ESP",
       "number": 19,
       "pos": "RB",
-      "wage": 10000
+      "wage": 10000,
+      "weight": 66
     },
     {
       "alt": [
@@ -455,7 +464,8 @@
       "nation": "ESP",
       "number": 20,
       "pos": "RW",
-      "wage": 9500
+      "wage": 9500,
+      "weight": 68
     },
     {
       "attrs": {
@@ -481,7 +491,8 @@
       "nation": "ESP",
       "number": 21,
       "pos": "AM",
-      "wage": 42000
+      "wage": 42000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -507,7 +518,8 @@
       "nation": "ESP",
       "number": 22,
       "pos": "DM",
-      "wage": 24500
+      "wage": 24500,
+      "weight": 78
     },
     {
       "attrs": {
@@ -559,7 +571,8 @@
       "nation": "ESP",
       "number": 25,
       "pos": "CB",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 87
     },
     {
       "attrs": {

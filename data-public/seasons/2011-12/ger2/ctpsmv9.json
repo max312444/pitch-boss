@@ -48,7 +48,8 @@
       "nation": "HUN",
       "number": 1,
       "pos": "GK",
-      "wage": 7500
+      "wage": 7500,
+      "weight": 92
     },
     {
       "attrs": {
@@ -74,7 +75,8 @@
       "nation": "SRB",
       "number": 2,
       "pos": "RB",
-      "wage": 8000
+      "wage": 8000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -100,7 +102,8 @@
       "nation": "GER",
       "number": 4,
       "pos": "CB",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 81
     },
     {
       "attrs": {
@@ -178,7 +181,8 @@
       "nation": "GER",
       "number": 7,
       "pos": "LM",
-      "wage": 8000
+      "wage": 8000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -204,7 +208,8 @@
       "nation": "SRB",
       "number": 9,
       "pos": "ST",
-      "wage": 6500
+      "wage": 6500,
+      "weight": 83
     },
     {
       "attrs": {
@@ -230,7 +235,8 @@
       "nation": "GER",
       "number": 11,
       "pos": "ST",
-      "wage": 8000
+      "wage": 8000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -283,7 +289,8 @@
       "nation": "USA",
       "number": 14,
       "pos": "ST",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 80
     },
     {
       "alt": [
@@ -312,7 +319,8 @@
       "nation": "GER",
       "number": 15,
       "pos": "CM",
-      "wage": 5000
+      "wage": 5000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -364,7 +372,8 @@
       "nation": "GER",
       "number": 18,
       "pos": "ST",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 82
     },
     {
       "attrs": {
@@ -390,7 +399,8 @@
       "nation": "GER",
       "number": 19,
       "pos": "AM",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 68
     },
     {
       "alt": [
@@ -445,7 +455,8 @@
       "nation": "GER",
       "number": 22,
       "pos": "GK",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 88
     },
     {
       "attrs": {
@@ -497,7 +508,8 @@
       "nation": "GER",
       "number": 26,
       "pos": "CB",
-      "wage": 3500
+      "wage": 3500,
+      "weight": 77
     },
     {
       "alt": [
@@ -556,7 +568,8 @@
       "nation": "GER",
       "number": 28,
       "pos": "AM",
-      "wage": 8000
+      "wage": 8000,
+      "weight": 64
     },
     {
       "alt": [
@@ -587,7 +600,8 @@
       "nation": "GER",
       "number": 31,
       "pos": "ST",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 82
     }
   ],
   "stadiumCapacity": 15000

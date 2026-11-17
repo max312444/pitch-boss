@@ -35,6 +35,7 @@ const SETS = {
     managers: import.meta.glob<ManagerData>('@data/history/managers.json', { import: 'default' }),
     wcsquads: import.meta.glob<WcSquads>('@data/worldcups/squads.json', { import: 'default' }),
     wcpools: import.meta.glob<WcPools>('@data/worldcups/pools.json', { import: 'default' }),
+    pubmap: import.meta.glob<unknown>('@data/canonical/public-map.json', { import: 'default' }),
   },
 };
 /** 저장소의 data/ 폴더가 있으면 그것, 없으면 브라우저에 넣어 둔 실명 데이터 */
@@ -98,6 +99,13 @@ export async function loadLeagueSeason(season: string, league: string) {
   if (!meta) throw new Error(`데이터 없음: ${season} ${league}`);
   const clubsData = await Promise.all(meta.clubs.map((id) => index.get(`${season}/${league}/${id}`)!() as Promise<ClubSeasonFile>));
   return { meta, clubs: clubsData };
+}
+
+/** 실명 번호 → 공개 번호 대응표 (실명 데이터를 쓰는 중일 때만, 없으면 null) */
+export async function loadPublicMap(): Promise<import('../engine/convertReal').PublicMap | null> {
+  if (dataset !== 'real') return null;
+  const f = Object.values((S as { pubmap?: Record<string, () => Promise<unknown>> }).pubmap ?? {})[0];
+  return f ? ((await f()) as import('../engine/convertReal').PublicMap) : null;
 }
 
 /** 감독 데이터 (시즌별 구단 감독 · 능력). 파일이 없으면 undefined → 모든 구단 가상 감독 */

@@ -48,7 +48,8 @@
       "nation2": "FRA",
       "number": null,
       "pos": "ST",
-      "wage": 14000
+      "wage": 14000,
+      "weight": 78
     },
     {
       "alt": [
@@ -160,7 +161,8 @@
       "nation2": "FRA",
       "number": null,
       "pos": "CM",
-      "wage": 12500
+      "wage": 12500,
+      "weight": 67
     },
     {
       "alt": [
@@ -190,7 +192,8 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 13500
+      "wage": 13500,
+      "weight": 69
     },
     {
       "attrs": {
@@ -217,7 +220,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 7000
+      "wage": 7000,
+      "weight": 76
     },
     {
       "alt": [
@@ -246,7 +250,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "CM",
-      "wage": 9000
+      "wage": 9000,
+      "weight": 67
     },
     {
       "attrs": {
@@ -273,7 +278,8 @@
       "number": null,
       "pos": "CB",
       "verify": true,
-      "wage": 6000
+      "wage": 6000,
+      "weight": 68
     },
     {
       "attrs": {
@@ -354,7 +360,8 @@
       "number": null,
       "pos": "RB",
       "verify": true,
-      "wage": 4500
+      "wage": 4500,
+      "weight": 72
     },
     {
       "alt": [
@@ -383,7 +390,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "CM",
-      "wage": 7000
+      "wage": 7000,
+      "weight": 68
     },
     {
       "alt": [
@@ -412,7 +420,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "CM",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -549,7 +558,8 @@
       "number": null,
       "pos": "LB",
       "verify": true,
-      "wage": 3500
+      "wage": 3500,
+      "weight": 74
     },
     {
       "alt": [
@@ -635,7 +645,8 @@
       "number": null,
       "pos": "CB",
       "verify": true,
-      "wage": 3500
+      "wage": 3500,
+      "weight": 100
     },
     {
       "attrs": {
@@ -850,7 +861,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "CB",
-      "wage": 2500
+      "wage": 2500,
+      "weight": 75
     },
     {
       "alt": [
@@ -987,7 +999,8 @@
       "nation2": "FRA",
       "number": null,
       "pos": "LW",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 76
     },
     {
       "attrs": {

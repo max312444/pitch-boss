@@ -44,7 +44,8 @@
       "traits": [
         "sweeper_keeper"
       ],
-      "wage": 153500
+      "wage": 153500,
+      "weight": 92
     },
     {
       "attrs": {
@@ -70,7 +71,8 @@
       "nation": "BRA",
       "number": 1,
       "pos": "GK",
-      "wage": 36000
+      "wage": 36000,
+      "weight": 86
     },
     {
       "alt": [
@@ -102,7 +104,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 38000
+      "wage": 38000,
+      "weight": 83
     },
     {
       "alt": [
@@ -131,7 +134,8 @@
       "nation": "ITA",
       "number": 2,
       "pos": "LB",
-      "wage": 54000
+      "wage": 54000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -161,7 +165,8 @@
         "leader",
         "aerial_threat"
       ],
-      "wage": 75500
+      "wage": 75500,
+      "weight": 85
     },
     {
       "attrs": {
@@ -190,7 +195,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 128000
+      "wage": 128000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -216,7 +222,8 @@
       "nation": "IRL",
       "number": 7,
       "pos": "ST",
-      "wage": 70500
+      "wage": 70500,
+      "weight": 80
     },
     {
       "alt": [
@@ -250,7 +257,8 @@
         "long_shot",
         "big_game"
       ],
-      "wage": 153500
+      "wage": 153500,
+      "weight": 83
     },
     {
       "attrs": {
@@ -280,7 +288,8 @@
         "speedster",
         "clutch"
       ],
-      "wage": 145000
+      "wage": 145000,
+      "weight": 78
     },
     {
       "alt": [
@@ -310,7 +319,8 @@
       "nation": "ESP",
       "number": 11,
       "pos": "LW",
-      "wage": 43000
+      "wage": 43000,
+      "weight": 80
     },
     {
       "alt": [
@@ -343,7 +353,8 @@
         "free_kick",
         "injury_prone"
       ],
-      "wage": 74000
+      "wage": 74000,
+      "weight": 73
     },
     {
       "alt": [
@@ -376,7 +387,8 @@
         "playmaker",
         "long_shot"
       ],
-      "wage": 153500
+      "wage": 153500,
+      "weight": 76
     },
     {
       "alt": [
@@ -409,7 +421,8 @@
       "traits": [
         "flair"
       ],
-      "wage": 62500
+      "wage": 62500,
+      "weight": 70
     },
     {
       "alt": [
@@ -438,7 +451,8 @@
       "nation": "ENG",
       "number": 16,
       "pos": "RW",
-      "wage": 22500
+      "wage": 22500,
+      "weight": 67
     },
     {
       "alt": [
@@ -467,7 +481,8 @@
       "nation": "ESP",
       "number": 17,
       "pos": "RB",
-      "wage": 82000
+      "wage": 82000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -497,7 +512,8 @@
         "engine",
         "big_game"
       ],
-      "wage": 69500
+      "wage": 69500,
+      "weight": 83
     },
     {
       "alt": [
@@ -530,7 +546,8 @@
       "traits": [
         "speedster"
       ],
-      "wage": 33500
+      "wage": 33500,
+      "weight": 85
     },
     {
       "alt": [
@@ -562,7 +579,8 @@
       "traits": [
         "engine"
       ],
-      "wage": 153500
+      "wage": 153500,
+      "weight": 74
     },
     {
       "attrs": {
@@ -588,7 +606,8 @@
       "nation": "BRA",
       "number": 21,
       "pos": "DM",
-      "wage": 60000
+      "wage": 60000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -614,7 +633,8 @@
       "nation": "ARG",
       "number": 22,
       "pos": "LB",
-      "wage": 21000
+      "wage": 21000,
+      "weight": 79
     },
     {
       "alt": [
@@ -672,7 +692,8 @@
       "nation": "FRA",
       "number": 24,
       "pos": "ST",
-      "wage": 8500
+      "wage": 8500,
+      "weight": 78
     },
     {
       "alt": [
@@ -702,7 +723,8 @@
       "nation2": "FRA",
       "number": 31,
       "pos": "RW",
-      "wage": 8500
+      "wage": 8500,
+      "weight": 67
     },
     {
       "attrs": {
@@ -732,7 +754,8 @@
       "nation": "SVK",
       "number": 37,
       "pos": "CB",
-      "wage": 87000
+      "wage": 87000,
+      "weight": 83
     },
     {
       "attrs": {
@@ -758,7 +781,8 @@
       "nation": "ENG",
       "number": 26,
       "pos": "DM",
-      "wage": 14000
+      "wage": 14000,
+      "weight": 71
     },
     {
       "attrs": {

@@ -242,7 +242,8 @@
       "nation": "COL",
       "number": 9,
       "pos": "ST",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 84
     },
     {
       "alt": [
@@ -271,7 +272,8 @@
       "nation": "NED",
       "number": 10,
       "pos": "RW",
-      "wage": 3500
+      "wage": 3500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -439,7 +441,8 @@
       "nation2": "NGA",
       "number": 19,
       "pos": "RW",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 78
     },
     {
       "alt": [
@@ -470,7 +473,8 @@
       "nation": "GER",
       "number": 20,
       "pos": "CB",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -579,7 +583,8 @@
       "nation": "GER",
       "number": 40,
       "pos": "GK",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 101
     }
   ],
   "stadiumCapacity": 21704

@@ -48,7 +48,8 @@
       "nation": "FIN",
       "number": 1,
       "pos": "GK",
-      "wage": 59500
+      "wage": 59500,
+      "weight": 88
     },
     {
       "attrs": {
@@ -159,7 +160,8 @@
       "nation": "ITA",
       "number": 7,
       "pos": "RB",
-      "wage": 40000
+      "wage": 40000,
+      "weight": 68
     },
     {
       "alt": [
@@ -404,7 +406,8 @@
       "nation": "FIN",
       "number": 20,
       "pos": "ST",
-      "wage": 45000
+      "wage": 45000,
+      "weight": 84
     },
     {
       "attrs": {
@@ -459,7 +462,8 @@
       "nation": "SVN",
       "number": 22,
       "pos": "CM",
-      "wage": 59500
+      "wage": 59500,
+      "weight": 81
     },
     {
       "attrs": {
@@ -590,7 +594,8 @@
       "nation2": "ITA",
       "number": 32,
       "pos": "DM",
-      "wage": 59500
+      "wage": 59500,
+      "weight": 78
     },
     {
       "attrs": {

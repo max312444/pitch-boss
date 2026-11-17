@@ -160,7 +160,8 @@
       "nation": "POL",
       "number": null,
       "pos": "GK",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -358,7 +359,8 @@
       "nation": "CZE",
       "number": null,
       "pos": "CB",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 83
     },
     {
       "attrs": {
@@ -502,7 +504,8 @@
       "nation": "GER",
       "number": null,
       "pos": "RB",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -641,7 +644,8 @@
       "nation2": "GER",
       "number": null,
       "pos": "ST",
-      "wage": 1500
+      "wage": 1500,
+      "weight": 70
     },
     {
       "alt": [
@@ -779,7 +783,8 @@
       "number": null,
       "pos": "LW",
       "verify": true,
-      "wage": 1000
+      "wage": 1000,
+      "weight": 74
     },
     {
       "attrs": {

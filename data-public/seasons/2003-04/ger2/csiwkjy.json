@@ -53,7 +53,8 @@
       "number": null,
       "pos": "LM",
       "verify": true,
-      "wage": 9000
+      "wage": 9000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -80,7 +81,8 @@
       "number": null,
       "pos": "AM",
       "verify": true,
-      "wage": 9000
+      "wage": 9000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -107,7 +109,8 @@
       "number": null,
       "pos": "CB",
       "verify": true,
-      "wage": 8500
+      "wage": 8500,
+      "weight": 80
     },
     {
       "alt": [
@@ -197,7 +200,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 5500
+      "wage": 5500,
+      "weight": 71
     },
     {
       "attrs": {
@@ -368,7 +372,8 @@
       "nation": "CZE",
       "number": null,
       "pos": "CB",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -446,7 +451,8 @@
       "nation": "GER",
       "number": null,
       "pos": "GK",
-      "wage": 3500
+      "wage": 3500,
+      "weight": 91
     },
     {
       "attrs": {
@@ -473,7 +479,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 2500
+      "wage": 2500,
+      "weight": 84
     },
     {
       "attrs": {
@@ -526,7 +533,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 2000
+      "wage": 2000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -553,7 +561,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 2500
+      "wage": 2500,
+      "weight": 81
     },
     {
       "alt": [
@@ -716,7 +725,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 2000
+      "wage": 2000,
+      "weight": 72
     },
     {
       "alt": [
@@ -799,7 +809,8 @@
       "number": null,
       "pos": "AM",
       "verify": true,
-      "wage": 2000
+      "wage": 2000,
+      "weight": 73
     },
     {
       "alt": [
@@ -856,7 +867,8 @@
       "nation": "GER",
       "number": null,
       "pos": "RB",
-      "wage": 1500
+      "wage": 1500,
+      "weight": 82
     },
     {
       "attrs": {

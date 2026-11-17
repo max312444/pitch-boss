@@ -48,7 +48,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 4000
+      "wage": 4000,
+      "weight": 81
     },
     {
       "attrs": {
@@ -75,7 +76,8 @@
       "number": null,
       "pos": "GK",
       "verify": true,
-      "wage": 4000
+      "wage": 4000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -101,7 +103,8 @@
       "nation": "GER",
       "number": null,
       "pos": "AM",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 76
     },
     {
       "alt": [

@@ -74,7 +74,8 @@
       "nation": "ITA",
       "number": 3,
       "pos": "LB",
-      "wage": 34500
+      "wage": 34500,
+      "weight": 81
     },
     {
       "attrs": {
@@ -126,7 +127,8 @@
       "nation": "ITA",
       "number": 5,
       "pos": "DM",
-      "wage": 65500
+      "wage": 65500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -183,7 +185,8 @@
       "nation": "UKR",
       "number": 8,
       "pos": "CM",
-      "wage": 65500
+      "wage": 65500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -209,7 +212,8 @@
       "nation": "ITA",
       "number": 9,
       "pos": "ST",
-      "wage": 14000
+      "wage": 14000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -345,7 +349,8 @@
       "nation": "POL",
       "number": 19,
       "pos": "RB",
-      "wage": 65500
+      "wage": 65500,
+      "weight": 78
     },
     {
       "alt": [
@@ -574,7 +579,8 @@
       "nation": "SUI",
       "number": 32,
       "pos": "CM",
-      "wage": 30000
+      "wage": 30000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -600,7 +606,8 @@
       "nation": "ITA",
       "number": 33,
       "pos": "CB",
-      "wage": 26000
+      "wage": 26000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -627,7 +634,8 @@
       "nation2": "KVX",
       "number": 34,
       "pos": "CB",
-      "wage": 64000
+      "wage": 64000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -682,7 +690,8 @@
       "nation": "ITA",
       "number": 92,
       "pos": "CM",
-      "wage": 19500
+      "wage": 19500,
+      "weight": 67
     },
     {
       "attrs": {
@@ -708,7 +717,8 @@
       "nation": "ALB",
       "number": 99,
       "pos": "GK",
-      "wage": 26000
+      "wage": 26000,
+      "weight": 92
     },
     {
       "attrs": {
@@ -734,7 +744,8 @@
       "nation": "ITA",
       "number": null,
       "pos": "ST",
-      "wage": 65500
+      "wage": 65500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -760,7 +771,8 @@
       "nation": "ITA",
       "number": null,
       "pos": "CB",
-      "wage": 25000
+      "wage": 25000,
+      "weight": 78
     },
     {
       "alt": [

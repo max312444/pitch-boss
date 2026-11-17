@@ -99,7 +99,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 104500
+      "wage": 104500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -210,7 +211,8 @@
       "nation": "ENG",
       "number": 16,
       "pos": "CB",
-      "wage": 118000
+      "wage": 118000,
+      "weight": 72
     },
     {
       "alt": [
@@ -239,7 +241,8 @@
       "nation": "NOR",
       "number": 20,
       "pos": "CB",
-      "wage": 101500
+      "wage": 101500,
+      "weight": 94
     },
     {
       "attrs": {
@@ -353,7 +356,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 152500
+      "wage": 152500,
+      "weight": 70
     },
     {
       "alt": [
@@ -383,7 +387,8 @@
       "nation": "DEN",
       "number": 8,
       "pos": "CM",
-      "wage": 117000
+      "wage": 117000,
+      "weight": 71
     },
     {
       "alt": [
@@ -469,7 +474,8 @@
       "nation": "DEN",
       "number": 24,
       "pos": "AM",
-      "wage": 71000
+      "wage": 71000,
+      "weight": 65
     },
     {
       "attrs": {
@@ -615,7 +621,8 @@
       "nation": "POR",
       "number": 14,
       "pos": "AM",
-      "wage": 69000
+      "wage": 69000,
+      "weight": 63
     },
     {
       "alt": [

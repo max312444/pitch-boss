@@ -48,7 +48,8 @@
       "number": null,
       "pos": "GK",
       "verify": true,
-      "wage": 4500
+      "wage": 4500,
+      "weight": 91
     },
     {
       "alt": [
@@ -625,7 +626,8 @@
       "nation": "GER",
       "number": null,
       "pos": "CM",
-      "wage": 1500
+      "wage": 1500,
+      "weight": 88
     },
     {
       "attrs": {

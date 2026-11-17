@@ -74,7 +74,8 @@
       "nation": "GER",
       "number": 2,
       "pos": "RB",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -264,7 +265,8 @@
       "nation": "GER",
       "number": 11,
       "pos": "AM",
-      "wage": 12000
+      "wage": 12000,
+      "weight": 70
     },
     {
       "alt": [
@@ -578,7 +580,8 @@
       "nation": "GER",
       "number": 30,
       "pos": "DM",
-      "wage": 11000
+      "wage": 11000,
+      "weight": 71
     },
     {
       "attrs": {
@@ -833,7 +836,8 @@
       "nation": "GER",
       "number": null,
       "pos": "DM",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 72
     }
   ],
   "stadiumCapacity": 10001

@@ -316,7 +316,8 @@
       "number": 40,
       "pos": "CB",
       "verify": true,
-      "wage": 74000
+      "wage": 74000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -345,7 +346,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 97000
+      "wage": 97000,
+      "weight": 79
     },
     {
       "attrs": {
@@ -371,7 +373,8 @@
       "nation": "AUS",
       "number": 25,
       "pos": "DM",
-      "wage": 58000
+      "wage": 58000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -398,7 +401,8 @@
       "nation": "ENG",
       "number": 8,
       "pos": "DM",
-      "wage": 150000
+      "wage": 150000,
+      "weight": 72
     },
     {
       "alt": [
@@ -430,7 +434,8 @@
       "number": 12,
       "pos": "CM",
       "verify": true,
-      "wage": 82000
+      "wage": 82000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -568,7 +573,8 @@
       "nation": "WAL",
       "number": 33,
       "pos": "LW",
-      "wage": 63500
+      "wage": 63500,
+      "weight": 73
     },
     {
       "alt": [

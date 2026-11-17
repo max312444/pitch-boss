@@ -70,7 +70,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 47000
+      "wage": 47000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -127,7 +128,8 @@
       "nation": "ESP",
       "number": 17,
       "pos": "RB",
-      "wage": 31000
+      "wage": 31000,
+      "weight": 80
     },
     {
       "alt": [
@@ -189,7 +191,8 @@
         "leader",
         "aerial_threat"
       ],
-      "wage": 103500
+      "wage": 103500,
+      "weight": 85
     },
     {
       "attrs": {
@@ -246,7 +249,8 @@
       "nation2": "FRA",
       "number": 21,
       "pos": "LB",
-      "wage": 28500
+      "wage": 28500,
+      "weight": 87
     },
     {
       "alt": [
@@ -278,7 +282,8 @@
       "traits": [
         "long_shot"
       ],
-      "wage": 77000
+      "wage": 77000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -304,7 +309,8 @@
       "nation": "ENG",
       "number": 28,
       "pos": "LB",
-      "wage": 29000
+      "wage": 29000,
+      "weight": 75
     },
     {
       "alt": [
@@ -338,7 +344,8 @@
         "big_game",
         "long_shot"
       ],
-      "wage": 103500
+      "wage": 103500,
+      "weight": 83
     },
     {
       "alt": [
@@ -371,7 +378,8 @@
         "playmaker",
         "long_shot"
       ],
-      "wage": 103500
+      "wage": 103500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -397,7 +405,8 @@
       "nation": "GER",
       "number": 16,
       "pos": "DM",
-      "wage": 93000
+      "wage": 93000,
+      "weight": 83
     },
     {
       "alt": [
@@ -491,7 +500,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 44500
+      "wage": 44500,
+      "weight": 73
     },
     {
       "alt": [
@@ -608,7 +618,8 @@
       "nation": "CZE",
       "number": 5,
       "pos": "ST",
-      "wage": 43000
+      "wage": 43000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -642,7 +653,8 @@
       "traits": [
         "speedster"
       ],
-      "wage": 52000
+      "wage": 52000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -668,7 +680,8 @@
       "nation": "FRA",
       "number": 24,
       "pos": "ST",
-      "wage": 21000
+      "wage": 21000,
+      "weight": 71
     },
     {
       "attrs": {

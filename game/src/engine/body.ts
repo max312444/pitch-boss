@@ -1,4 +1,4 @@
-// 키 · 체형: 실제 데이터의 키 + 그 시즌 능력치(몸싸움 · 속도 · 공중볼)로 체형을 정한다
+// 키 · 몸무게 · 체형: 실제 데이터의 키 · 몸무게 (파이프라인 weights, Wikidata) + 그 시즌 능력치(몸싸움 · 속도)로 체형을 정한다
 //  - 키는 데이터에 있으면 그 값 (실제 선수), 없으면 포지션 · 공중볼 · 몸싸움으로 추정 (선수마다 고정)
 //  - 체형은 시즌마다 능력치가 바뀌면 함께 바뀐다 (벌크업 · 나이 들며 느려짐 등). 바뀐 시즌에는 bodyChange 로 표시
 //  - 경기 (match.ts): 키는 공중볼 경합 · 세트피스에, 체형 · 속도 · 몸싸움 차이는 수비 실책 (뒷공간 · 몸싸움 · 공중볼)에 쓰인다
@@ -33,15 +33,21 @@ export function heightOf(p: PlayerState): number {
   return Math.round(Math.max(163, Math.min(202, est)));
 }
 
-/** 그 시즌 체형 (키 + 지금 능력치) */
+/** 체질량 지수 (몸무게 데이터가 있을 때만) */
+export const bmiOf = (p: PlayerState): number | null => (p.weight && p.weight > 40 ? p.weight / (heightOf(p) / 100) ** 2 : null);
+
+/** 그 시즌 체형: 키 + 몸무게 (있으면, 실제 데이터) + 지금 능력치 (몸싸움 · 속도, 시즌마다 바뀜) */
 export function bodyType(p: PlayerState): BodyType {
-  const h = heightOf(p), str = attr(p, 'str'), pac = attr(p, 'pac');
-  if (h >= 190 && str >= 72) return 'tower';
-  if (h >= 188 && str < 66) return 'lanky';
+  const h = heightOf(p), str = attr(p, 'str'), pac = attr(p, 'pac'), bmi = bmiOf(p);
+  // 몸무게가 있으면 실제 체격으로, 없으면 몸싸움 능력치로 무겁다 · 가볍다를 정한다
+  const heavy = bmi != null ? bmi >= 24.3 : str >= 80;
+  const light = bmi != null ? bmi < 22 : str < 66;
+  if (h >= 190 && (heavy || str >= 74)) return 'tower';
+  if (h >= 188 && light) return 'lanky';
   if (h <= 174 && pac >= 76) return 'pocket';
-  if (h <= 180 && str >= 78) return 'stocky';
-  if (str >= 82) return 'power';
-  if (pac >= 84 && str < 72) return 'lean';
+  if (h <= 180 && heavy && str >= 70) return 'stocky';
+  if (heavy && str >= 76) return 'power';
+  if (pac >= 84 && (light || str < 70)) return 'lean';
   return 'normal';
 }
 

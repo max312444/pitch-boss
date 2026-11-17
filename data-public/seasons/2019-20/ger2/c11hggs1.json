@@ -100,7 +100,8 @@
       "nation": "GER",
       "number": 6,
       "pos": "DM",
-      "wage": 9500
+      "wage": 9500,
+      "weight": 70
     },
     {
       "alt": [
@@ -303,7 +304,8 @@
       "nation2": "POR",
       "number": 14,
       "pos": "CB",
-      "wage": 6500
+      "wage": 6500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -677,7 +679,8 @@
       "nation": "GER",
       "number": null,
       "pos": "CB",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 83
     }
   ],
   "stadiumCapacity": null

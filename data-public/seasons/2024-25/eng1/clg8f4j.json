@@ -67,7 +67,8 @@
       "nation": "ENG",
       "number": 20,
       "pos": "GK",
-      "wage": 152000
+      "wage": 152000,
+      "weight": 92
     },
     {
       "attrs": {
@@ -175,7 +176,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 455500
+      "wage": 455500,
+      "weight": 85
     },
     {
       "alt": [
@@ -233,7 +235,8 @@
       "nation": "ESP",
       "number": 23,
       "pos": "RB",
-      "wage": 402500
+      "wage": 402500,
+      "weight": 71
     },
     {
       "alt": [
@@ -262,7 +265,8 @@
       "nation": "WAL",
       "number": 33,
       "pos": "LB",
-      "wage": 248500
+      "wage": 248500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -375,7 +379,8 @@
         "free_kick",
         "playmaker"
       ],
-      "wage": 284000
+      "wage": 284000,
+      "weight": 73
     },
     {
       "alt": [
@@ -406,7 +411,8 @@
       "nation": "ENG",
       "number": 14,
       "pos": "CM",
-      "wage": 248500
+      "wage": 248500,
+      "weight": 70
     },
     {
       "alt": [
@@ -494,7 +500,8 @@
       "nation": "URU",
       "number": 30,
       "pos": "CM",
-      "wage": 398500
+      "wage": 398500,
+      "weight": 73
     },
     {
       "alt": [
@@ -528,7 +535,8 @@
         "clutch",
         "long_shot"
       ],
-      "wage": 384000
+      "wage": 384000,
+      "weight": 77
     },
     {
       "alt": [
@@ -557,7 +565,8 @@
       "nation": "BRA",
       "number": 9,
       "pos": "ST",
-      "wage": 294500
+      "wage": 294500,
+      "weight": 71
     },
     {
       "alt": [
@@ -588,7 +597,8 @@
       "nation": "GER",
       "number": 16,
       "pos": "LW",
-      "wage": 228500
+      "wage": 228500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -614,7 +624,8 @@
       "nation": "ENG",
       "number": 19,
       "pos": "ST",
-      "wage": 256000
+      "wage": 256000,
+      "weight": 75
     },
     {
       "alt": [

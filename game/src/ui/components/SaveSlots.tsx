@@ -1,7 +1,8 @@
 // 저장 슬롯 목록 (저장하기 · 불러오기 공용)
 import { useEffect, useState } from 'react';
 import { deleteSave, listSaves, SLOTS, type SaveMeta } from '../../store/save';
-import { clubKo } from '../../data/db';
+import { clubKo, realAvailable } from '../../data/db';
+import { useGame } from '../../store/game';
 import { Crest } from './Crest';
 
 const SLOT_NAME: Record<string, string> = { auto: '자동 저장', 'slot-1': '슬롯 1', 'slot-2': '슬롯 2', 'slot-3': '슬롯 3' };
@@ -34,6 +35,10 @@ export function SaveSlots({ mode, onPick, refreshKey = 0 }: { mode: 'save' | 'lo
                 </div>
               </div>
             </button>
+            {m && mode === 'load' && m.dataset === 'public' && realAvailable && (
+              <button onClick={() => { if (confirm('이 세이브를 실명 데이터로 바꿀까요?\n선수 · 구단이 실제 이름으로 바뀌고, 앞으로도 실명 데이터로 이어집니다 (패러디로 되돌릴 수 없음).')) useGame.getState().convertToReal(slot); }}
+                title="패러디 이름으로 하던 게임을 실명으로" className="shrink-0 rounded-md px-2 py-1 text-[12px] text-neon ring-1 ring-line transition-colors hover:bg-neon-ghost">실명 전환</button>
+            )}
             {m && slot !== 'auto' && mode === 'load' && (
               <button onClick={async () => { await deleteSave(slot); void reload(); }} className="text-[12px] text-lo transition-colors hover:text-red">삭제</button>
             )}

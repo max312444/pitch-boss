@@ -603,7 +603,8 @@
       "number": null,
       "pos": "CB",
       "verify": true,
-      "wage": 1000
+      "wage": 1000,
+      "weight": 82
     },
     {
       "alt": [

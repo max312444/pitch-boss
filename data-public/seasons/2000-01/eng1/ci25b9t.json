@@ -100,7 +100,8 @@
       "nation": "ENG",
       "number": 2,
       "pos": "RB",
-      "wage": 27000
+      "wage": 27000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -252,7 +253,8 @@
       "nation": "NIR",
       "number": 7,
       "pos": "DM",
-      "wage": 37500
+      "wage": 37500,
+      "weight": 73
     },
     {
       "alt": [
@@ -310,7 +312,8 @@
       "nation2": "ENG",
       "number": 22,
       "pos": "ST",
-      "wage": 17500
+      "wage": 17500,
+      "weight": 86
     },
     {
       "attrs": {
@@ -478,7 +481,8 @@
       "nation": "SCO",
       "number": 14,
       "pos": "LB",
-      "wage": 25000
+      "wage": 25000,
+      "weight": 84
     },
     {
       "alt": [
@@ -596,7 +600,8 @@
       "nation": "ENG",
       "number": 46,
       "pos": "LB",
-      "wage": 7000
+      "wage": 7000,
+      "weight": 78
     },
     {
       "attrs": {

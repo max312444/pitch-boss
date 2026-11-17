@@ -48,7 +48,8 @@
       "nation": "GER",
       "number": 1,
       "pos": "GK",
-      "wage": 10500
+      "wage": 10500,
+      "weight": 81
     },
     {
       "attrs": {
@@ -406,7 +407,8 @@
       "nation": "DEN",
       "number": 16,
       "pos": "CB",
-      "wage": 16500
+      "wage": 16500,
+      "weight": 78
     },
     {
       "alt": [

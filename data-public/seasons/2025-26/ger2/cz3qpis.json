@@ -134,7 +134,8 @@
       "nation2": "GUI",
       "number": 6,
       "pos": "CM",
-      "wage": 16500
+      "wage": 16500,
+      "weight": 67
     },
     {
       "alt": [
@@ -532,7 +533,8 @@
       "nation2": "GHA",
       "number": 30,
       "pos": "RB",
-      "wage": 16500
+      "wage": 16500,
+      "weight": 77
     },
     {
       "attrs": {

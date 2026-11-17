@@ -218,7 +218,8 @@
       "nation": "GER",
       "number": null,
       "pos": "ST",
-      "wage": 1500
+      "wage": 1500,
+      "weight": 82
     },
     {
       "attrs": {

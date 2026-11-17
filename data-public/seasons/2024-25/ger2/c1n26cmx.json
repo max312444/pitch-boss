@@ -130,7 +130,8 @@
       "nation": "GER",
       "number": 10,
       "pos": "RW",
-      "wage": 11500
+      "wage": 11500,
+      "weight": 68
     },
     {
       "alt": [

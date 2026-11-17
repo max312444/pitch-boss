@@ -264,7 +264,8 @@
       "nation": "AZE",
       "number": 10,
       "pos": "ST",
-      "wage": 17000
+      "wage": 17000,
+      "weight": 75
     },
     {
       "alt": [
@@ -295,7 +296,8 @@
       "nation2": "ESP",
       "number": 11,
       "pos": "CM",
-      "wage": 14500
+      "wage": 14500,
+      "weight": 69
     },
     {
       "alt": [
@@ -493,7 +495,8 @@
       "nation": "NGA",
       "number": 23,
       "pos": "CM",
-      "wage": 17000
+      "wage": 17000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -573,7 +576,8 @@
       "nation": "NGA",
       "number": 27,
       "pos": "ST",
-      "wage": 11000
+      "wage": 11000,
+      "weight": 78
     },
     {
       "attrs": {

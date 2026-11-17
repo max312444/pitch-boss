@@ -568,7 +568,8 @@
       "nation": "GER",
       "number": 31,
       "pos": "ST",
-      "wage": 4500
+      "wage": 4500,
+      "weight": 86
     },
     {
       "attrs": {

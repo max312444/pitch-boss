@@ -74,7 +74,8 @@
       "nation": "DEN",
       "number": 2,
       "pos": "LB",
-      "wage": 16000
+      "wage": 16000,
+      "weight": 82
     },
     {
       "alt": [
@@ -381,7 +382,8 @@
       "nation": "NED",
       "number": 20,
       "pos": "CM",
-      "wage": 16000
+      "wage": 16000,
+      "weight": 75
     },
     {
       "alt": [
@@ -436,7 +438,8 @@
       "nation": "GER",
       "number": 22,
       "pos": "CB",
-      "wage": 9000
+      "wage": 9000,
+      "weight": 63
     },
     {
       "attrs": {

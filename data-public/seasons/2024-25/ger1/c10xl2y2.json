@@ -48,7 +48,8 @@
       "nation": "GER",
       "number": 1,
       "pos": "GK",
-      "wage": 95000
+      "wage": 95000,
+      "weight": 82
     },
     {
       "attrs": {
@@ -103,7 +104,8 @@
       "nation": "CZE",
       "number": 3,
       "pos": "RB",
-      "wage": 126000
+      "wage": 126000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -155,7 +157,8 @@
       "nation": "TUR",
       "number": 5,
       "pos": "CB",
-      "wage": 127000
+      "wage": 127000,
+      "weight": 80
     },
     {
       "alt": [
@@ -184,7 +187,8 @@
       "nation": "GER",
       "number": 6,
       "pos": "CM",
-      "wage": 137500
+      "wage": 137500,
+      "weight": 75
     },
     {
       "alt": [
@@ -243,7 +247,8 @@
       "nation": "GER",
       "number": 8,
       "pos": "CM",
-      "wage": 46500
+      "wage": 46500,
+      "weight": 65
     },
     {
       "alt": [
@@ -273,7 +278,8 @@
       "nation2": "GER",
       "number": 9,
       "pos": "ST",
-      "wage": 40500
+      "wage": 40500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -328,7 +334,8 @@
       "nation": "AUT",
       "number": 11,
       "pos": "DM",
-      "wage": 137500
+      "wage": 137500,
+      "weight": 73
     },
     {
       "attrs": {
@@ -440,7 +447,8 @@
       "nation": "MLI",
       "number": 18,
       "pos": "DM",
-      "wage": 85500
+      "wage": 85500,
+      "weight": 67
     },
     {
       "attrs": {
@@ -640,7 +648,8 @@
       "nation2": "GER",
       "number": 25,
       "pos": "CB",
-      "wage": 113500
+      "wage": 113500,
+      "weight": 83
     },
     {
       "attrs": {
@@ -667,7 +676,8 @@
       "nation2": "SUI",
       "number": 26,
       "pos": "ST",
-      "wage": 116500
+      "wage": 116500,
+      "weight": 90
     },
     {
       "alt": [
@@ -696,7 +706,8 @@
       "nation": "CRO",
       "number": 27,
       "pos": "ST",
-      "wage": 130500
+      "wage": 130500,
+      "weight": 75
     },
     {
       "alt": [
@@ -725,7 +736,8 @@
       "nation": "DEN",
       "number": 29,
       "pos": "LW",
-      "wage": 48000
+      "wage": 48000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -778,7 +790,8 @@
       "nation": "FRA",
       "number": 34,
       "pos": "CB",
-      "wage": 43000
+      "wage": 43000,
+      "weight": 65
     },
     {
       "attrs": {

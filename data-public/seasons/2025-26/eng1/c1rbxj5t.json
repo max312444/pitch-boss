@@ -41,7 +41,8 @@
       "nation": "BEL",
       "number": 26,
       "pos": "GK",
-      "wage": 178500
+      "wage": 178500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -96,7 +97,8 @@
       "number": 18,
       "pos": "GK",
       "verify": true,
-      "wage": 76500
+      "wage": 76500,
+      "weight": 77
     },
     {
       "attrs": {
@@ -151,7 +153,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 165500
+      "wage": 165500,
+      "weight": 92
     },
     {
       "alt": [
@@ -211,7 +214,8 @@
       "nation": "NGA",
       "number": 34,
       "pos": "RB",
-      "wage": 162500
+      "wage": 162500,
+      "weight": 82
     },
     {
       "alt": [
@@ -272,7 +276,8 @@
       "number": 37,
       "pos": "RB",
       "verify": true,
-      "wage": 89000
+      "wage": 89000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -326,7 +331,8 @@
       "number": 35,
       "pos": "LB",
       "verify": true,
-      "wage": 125000
+      "wage": 125000,
+      "weight": 61
     },
     {
       "alt": [
@@ -385,7 +391,8 @@
       "nation": "CIV",
       "number": 6,
       "pos": "DM",
-      "wage": 196500
+      "wage": 196500,
+      "weight": 77
     },
     {
       "alt": [
@@ -415,7 +422,8 @@
       "nation": "ARG",
       "number": 16,
       "pos": "CM",
-      "wage": 162500
+      "wage": 162500,
+      "weight": 73
     },
     {
       "alt": [
@@ -476,7 +484,8 @@
       "traits": [
         "playmaker"
       ],
-      "wage": 228500
+      "wage": 228500,
+      "weight": 70
     },
     {
       "alt": [
@@ -508,7 +517,8 @@
       "number": 12,
       "pos": "CM",
       "verify": true,
-      "wage": 185500
+      "wage": 185500,
+      "weight": 66
     },
     {
       "alt": [
@@ -658,7 +668,8 @@
         "target_man",
         "aerial_threat"
       ],
-      "wage": 107500
+      "wage": 107500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -713,7 +724,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 67000
+      "wage": 67000,
+      "weight": 74
     },
     {
       "attrs": {

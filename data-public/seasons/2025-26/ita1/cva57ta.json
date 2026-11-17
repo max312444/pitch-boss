@@ -196,7 +196,8 @@
       "nation": "ITA",
       "number": 10,
       "pos": "RW",
-      "wage": 76500
+      "wage": 76500,
+      "weight": 72
     },
     {
       "alt": [
@@ -409,7 +410,8 @@
       "nation": "SRB",
       "number": 18,
       "pos": "DM",
-      "wage": 76500
+      "wage": 76500,
+      "weight": 85
     },
     {
       "attrs": {
@@ -435,7 +437,8 @@
       "nation": "ITA",
       "number": 19,
       "pos": "CB",
-      "wage": 34500
+      "wage": 34500,
+      "weight": 75
     },
     {
       "alt": [
@@ -853,7 +856,8 @@
       "nation": "ITA",
       "number": 99,
       "pos": "ST",
-      "wage": 68000
+      "wage": 68000,
+      "weight": 72
     }
   ],
   "stadiumCapacity": 21525

@@ -48,7 +48,8 @@
       "nation": "FRA",
       "number": 1,
       "pos": "GK",
-      "wage": 28000
+      "wage": 28000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -100,7 +101,8 @@
       "nation": "NGA",
       "number": 3,
       "pos": "LB",
-      "wage": 88500
+      "wage": 88500,
+      "weight": 81
     },
     {
       "attrs": {
@@ -182,7 +184,8 @@
       "nation": "FRA",
       "number": 6,
       "pos": "CM",
-      "wage": 58500
+      "wage": 58500,
+      "weight": 76
     },
     {
       "alt": [
@@ -211,7 +214,8 @@
       "nation": "FRA",
       "number": 7,
       "pos": "CM",
-      "wage": 98500
+      "wage": 98500,
+      "weight": 78
     },
     {
       "alt": [
@@ -240,7 +244,8 @@
       "nation": "ARG",
       "number": 8,
       "pos": "CM",
-      "wage": 98500
+      "wage": 98500,
+      "weight": 88
     },
     {
       "attrs": {
@@ -267,7 +272,8 @@
       "nation2": "FRA",
       "number": 9,
       "pos": "ST",
-      "wage": 24500
+      "wage": 24500,
+      "weight": 79
     },
     {
       "alt": [
@@ -298,7 +304,8 @@
       "nation2": "TUN",
       "number": 10,
       "pos": "AM",
-      "wage": 83500
+      "wage": 83500,
+      "weight": 65
     },
     {
       "attrs": {
@@ -325,7 +332,8 @@
       "nation2": "FRA",
       "number": 11,
       "pos": "ST",
-      "wage": 69000
+      "wage": 69000,
+      "weight": 80
     },
     {
       "alt": [
@@ -355,7 +363,8 @@
       "nation2": "FRA",
       "number": 12,
       "pos": "CM",
-      "wage": 26500
+      "wage": 26500,
+      "weight": 75
     },
     {
       "alt": [
@@ -385,7 +394,8 @@
       "nation2": "FRA",
       "number": 14,
       "pos": "RW",
-      "wage": 70500
+      "wage": 70500,
+      "weight": 62
     },
     {
       "alt": [
@@ -415,7 +425,8 @@
       "nation2": "FRA",
       "number": 17,
       "pos": "DM",
-      "wage": 97000
+      "wage": 97000,
+      "weight": 87
     },
     {
       "alt": [
@@ -474,7 +485,8 @@
       "nation2": "ITA",
       "number": 19,
       "pos": "CB",
-      "wage": 69000
+      "wage": 69000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -500,7 +512,8 @@
       "nation": "CMR",
       "number": 20,
       "pos": "LB",
-      "wage": 7500
+      "wage": 7500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -527,7 +540,8 @@
       "nation2": "FRA",
       "number": 21,
       "pos": "CB",
-      "wage": 71000
+      "wage": 71000,
+      "weight": 88
     },
     {
       "alt": [
@@ -557,7 +571,8 @@
       "nation": "FRA",
       "number": 22,
       "pos": "DM",
-      "wage": 17500
+      "wage": 17500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -583,7 +598,8 @@
       "nation": "ESP",
       "number": 23,
       "pos": "ST",
-      "wage": 68000
+      "wage": 68000,
+      "weight": 79
     },
     {
       "alt": [
@@ -612,7 +628,8 @@
       "nation": "FRA",
       "number": 24,
       "pos": "RB",
-      "wage": 31000
+      "wage": 31000,
+      "weight": 62
     },
     {
       "attrs": {
@@ -638,7 +655,8 @@
       "nation": "SEN",
       "number": 27,
       "pos": "CB",
-      "wage": 9000
+      "wage": 9000,
+      "weight": 74
     },
     {
       "alt": [
@@ -668,7 +686,8 @@
       "nation": "FRA",
       "number": 28,
       "pos": "AM",
-      "wage": 38000
+      "wage": 38000,
+      "weight": 58
     },
     {
       "attrs": {
@@ -695,7 +714,8 @@
       "nation2": "COD",
       "number": 30,
       "pos": "GK",
-      "wage": 92000
+      "wage": 92000,
+      "weight": 82
     },
     {
       "attrs": {
@@ -721,7 +741,8 @@
       "nation": "FRA",
       "number": 31,
       "pos": "ST",
-      "wage": 7500
+      "wage": 7500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -748,7 +769,8 @@
       "nation2": "POR",
       "number": 40,
       "pos": "GK",
-      "wage": 25000
+      "wage": 25000,
+      "weight": 85
     },
     {
       "alt": [
@@ -778,7 +800,8 @@
       "nation2": "FRA",
       "number": null,
       "pos": "RW",
-      "wage": 34500
+      "wage": 34500,
+      "weight": 72
     },
     {
       "alt": [

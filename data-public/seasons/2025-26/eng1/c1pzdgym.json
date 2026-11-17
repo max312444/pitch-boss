@@ -184,7 +184,8 @@
       "nation": "ESP",
       "number": 3,
       "pos": "LB",
-      "wage": 378000
+      "wage": 378000,
+      "weight": 67
     },
     {
       "attrs": {
@@ -291,7 +292,8 @@
       "nation": "ENG",
       "number": 4,
       "pos": "CB",
-      "wage": 161500
+      "wage": 161500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -438,7 +440,8 @@
       "nation": "ARG",
       "number": 8,
       "pos": "CM",
-      "wage": 432500
+      "wage": 432500,
+      "weight": 78
     },
     {
       "attrs": {

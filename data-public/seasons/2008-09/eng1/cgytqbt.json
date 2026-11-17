@@ -44,7 +44,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 60000
+      "wage": 60000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -71,7 +72,8 @@
       "number": 12,
       "pos": "GK",
       "verify": true,
-      "wage": 25000
+      "wage": 25000,
+      "weight": 88
     },
     {
       "attrs": {
@@ -98,7 +100,8 @@
       "number": 30,
       "pos": "GK",
       "verify": true,
-      "wage": 24500
+      "wage": 24500,
+      "weight": 83
     },
     {
       "attrs": {
@@ -127,7 +130,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 57000
+      "wage": 57000,
+      "weight": 74
     },
     {
       "alt": [
@@ -157,7 +161,8 @@
       "number": 3,
       "pos": "LB",
       "verify": true,
-      "wage": 17000
+      "wage": 17000,
+      "weight": 82
     },
     {
       "alt": [
@@ -192,7 +197,8 @@
       "nation": "AUT",
       "number": 4,
       "pos": "CB",
-      "wage": 54000
+      "wage": 54000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -218,7 +224,8 @@
       "nation": "ENG",
       "number": 5,
       "pos": "CB",
-      "wage": 42500
+      "wage": 42500,
+      "weight": 87
     },
     {
       "attrs": {
@@ -245,7 +252,8 @@
       "number": 6,
       "pos": "DM",
       "verify": true,
-      "wage": 60000
+      "wage": 60000,
+      "weight": 76
     },
     {
       "alt": [
@@ -305,7 +313,8 @@
         "engine"
       ],
       "verify": true,
-      "wage": 60000
+      "wage": 60000,
+      "weight": 71
     },
     {
       "attrs": {
@@ -334,7 +343,8 @@
       "traits": [
         "target_man"
       ],
-      "wage": 57500
+      "wage": 57500,
+      "weight": 92
     },
     {
       "alt": [
@@ -364,7 +374,8 @@
       "number": 10,
       "pos": "AM",
       "verify": true,
-      "wage": 26500
+      "wage": 26500,
+      "weight": 83
     },
     {
       "attrs": {
@@ -392,7 +403,8 @@
       "number": 11,
       "pos": "ST",
       "verify": true,
-      "wage": 37500
+      "wage": 37500,
+      "weight": 86
     },
     {
       "attrs": {
@@ -419,7 +431,8 @@
       "number": 14,
       "pos": "AM",
       "verify": true,
-      "wage": 24000
+      "wage": 24000,
+      "weight": 73
     },
     {
       "alt": [
@@ -452,7 +465,8 @@
         "free_kick"
       ],
       "verify": true,
-      "wage": 23000
+      "wage": 23000,
+      "weight": 80
     },
     {
       "alt": [
@@ -482,7 +496,8 @@
       "number": 16,
       "pos": "RW",
       "verify": true,
-      "wage": 55500
+      "wage": 55500,
+      "weight": 76
     },
     {
       "alt": [
@@ -513,7 +528,8 @@
       "number": 17,
       "pos": "RB",
       "verify": true,
-      "wage": 40500
+      "wage": 40500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -600,7 +616,8 @@
       "number": 31,
       "pos": "LB",
       "verify": true,
-      "wage": 40500
+      "wage": 40500,
+      "weight": 85
     }
   ],
   "stadiumCapacity": 25138

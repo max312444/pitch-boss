@@ -101,7 +101,8 @@
       "nation": "GER",
       "number": 4,
       "pos": "CB",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -127,7 +128,8 @@
       "nation": "GER",
       "number": 5,
       "pos": "CB",
-      "wage": 7000
+      "wage": 7000,
+      "weight": 90
     },
     {
       "alt": [
@@ -237,7 +239,8 @@
       "nation": "GER",
       "number": 9,
       "pos": "ST",
-      "wage": 8500
+      "wage": 8500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -750,7 +753,8 @@
       "nation": "GER",
       "number": 39,
       "pos": "ST",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 81
     }
   ],
   "stadiumCapacity": 12560

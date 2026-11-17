@@ -74,7 +74,8 @@
       "nation": "GRE",
       "number": 2,
       "pos": "RB",
-      "wage": 80500
+      "wage": 80500,
+      "weight": 74
     },
     {
       "alt": [
@@ -215,7 +216,8 @@
       "nation": "AUS",
       "number": 7,
       "pos": "CM",
-      "wage": 110500
+      "wage": 110500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -241,7 +243,8 @@
       "nation": "SWE",
       "number": 8,
       "pos": "CB",
-      "wage": 110500
+      "wage": 110500,
+      "weight": 86
     },
     {
       "attrs": {
@@ -602,7 +605,8 @@
       "nation": "POL",
       "number": 25,
       "pos": "CB",
-      "wage": 25000
+      "wage": 25000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -686,7 +690,8 @@
       "nation2": "FRA",
       "number": 28,
       "pos": "CM",
-      "wage": 46500
+      "wage": 46500,
+      "weight": 67
     },
     {
       "attrs": {

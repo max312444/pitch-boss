@@ -41,7 +41,8 @@
       "nation": "ARG",
       "number": 1,
       "pos": "GK",
-      "wage": 63500
+      "wage": 63500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -67,7 +68,8 @@
       "nation": "SCO",
       "number": 25,
       "pos": "GK",
-      "wage": 22000
+      "wage": 22000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -93,7 +95,8 @@
       "nation": "WAL",
       "number": 34,
       "pos": "GK",
-      "wage": 16500
+      "wage": 16500,
+      "weight": 83
     },
     {
       "alt": [
@@ -149,7 +152,8 @@
       "nation2": "ENG",
       "number": 3,
       "pos": "CB",
-      "wage": 44500
+      "wage": 44500,
+      "weight": 75
     },
     {
       "alt": [
@@ -178,7 +182,8 @@
       "nation": "NOR",
       "number": 4,
       "pos": "LB",
-      "wage": 36500
+      "wage": 36500,
+      "weight": 75
     },
     {
       "alt": [
@@ -207,7 +212,8 @@
       "nation": "ESP",
       "number": 6,
       "pos": "CM",
-      "wage": 23500
+      "wage": 23500,
+      "weight": 74
     },
     {
       "alt": [
@@ -237,7 +243,8 @@
       "nation2": "FRA",
       "number": 7,
       "pos": "RW",
-      "wage": 37500
+      "wage": 37500,
+      "weight": 83
     },
     {
       "alt": [
@@ -266,7 +273,8 @@
       "nation": "RSA",
       "number": 8,
       "pos": "CM",
-      "wage": 46000
+      "wage": 46000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -292,7 +300,8 @@
       "nation": "ENG",
       "number": 9,
       "pos": "ST",
-      "wage": 13000
+      "wage": 13000,
+      "weight": 69
     },
     {
       "alt": [
@@ -347,7 +356,8 @@
       "nation": "SCO",
       "number": 11,
       "pos": "ST",
-      "wage": 22000
+      "wage": 22000,
+      "weight": 65
     },
     {
       "alt": [
@@ -377,7 +387,8 @@
       "nation": "ENG",
       "number": 12,
       "pos": "AM",
-      "wage": 22000
+      "wage": 22000,
+      "weight": 64
     },
     {
       "alt": [
@@ -409,7 +420,8 @@
       "nation": "ENG",
       "number": 13,
       "pos": "RW",
-      "wage": 43000
+      "wage": 43000,
+      "weight": 70
     },
     {
       "alt": [
@@ -467,7 +479,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 75000
+      "wage": 75000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -493,7 +506,8 @@
       "nation": "ENG",
       "number": 16,
       "pos": "ST",
-      "wage": 26500
+      "wage": 26500,
+      "weight": 73
     },
     {
       "attrs": {
@@ -519,7 +533,8 @@
       "nation": "ENG",
       "number": 17,
       "pos": "ST",
-      "wage": 35500
+      "wage": 35500,
+      "weight": 79
     },
     {
       "attrs": {
@@ -545,7 +560,8 @@
       "nation": "ENG",
       "number": 18,
       "pos": "ST",
-      "wage": 19000
+      "wage": 19000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -571,7 +587,8 @@
       "nation": "WAL",
       "number": 19,
       "pos": "CB",
-      "wage": 42000
+      "wage": 42000,
+      "weight": 76
     },
     {
       "alt": [
@@ -631,7 +648,8 @@
       "nation": "ENG",
       "number": 21,
       "pos": "LB",
-      "wage": 30500
+      "wage": 30500,
+      "weight": 69
     },
     {
       "alt": [
@@ -660,7 +678,8 @@
       "nation": "ENG",
       "number": 22,
       "pos": "RB",
-      "wage": 23500
+      "wage": 23500,
+      "weight": 70
     },
     {
       "alt": [
@@ -715,7 +734,8 @@
       "nation": "IRL",
       "number": 27,
       "pos": "CB",
-      "wage": 48500
+      "wage": 48500,
+      "weight": 89
     },
     {
       "attrs": {
@@ -769,7 +789,8 @@
       "nation2": "FRA",
       "number": 29,
       "pos": "ST",
-      "wage": 42000
+      "wage": 42000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -796,7 +817,8 @@
       "nation": "ENG",
       "number": 30,
       "pos": "ST",
-      "wage": 32000
+      "wage": 32000,
+      "weight": 85
     },
     {
       "alt": [
@@ -826,7 +848,8 @@
       "nation2": "FRA",
       "number": 31,
       "pos": "CM",
-      "wage": 55500
+      "wage": 55500,
+      "weight": 74
     },
     {
       "alt": [
@@ -856,7 +879,8 @@
       "nation": "SCO",
       "number": 46,
       "pos": "CM",
-      "wage": 34500
+      "wage": 34500,
+      "weight": 61
     }
   ],
   "stadiumCapacity": 26255

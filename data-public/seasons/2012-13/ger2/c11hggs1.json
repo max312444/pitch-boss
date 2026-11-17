@@ -517,7 +517,8 @@
       "nation": "GER",
       "number": 37,
       "pos": "CM",
-      "wage": 3500
+      "wage": 3500,
+      "weight": 66
     },
     {
       "attrs": {
@@ -543,7 +544,8 @@
       "nation": "GER",
       "number": 38,
       "pos": "RB",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 75
     },
     {
       "attrs": {

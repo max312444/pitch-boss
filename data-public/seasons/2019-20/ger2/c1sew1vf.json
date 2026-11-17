@@ -131,7 +131,8 @@
       "nation2": "GER",
       "number": 5,
       "pos": "RB",
-      "wage": 10000
+      "wage": 10000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -347,7 +348,8 @@
       "nation": "GER",
       "number": 16,
       "pos": "CB",
-      "wage": 4500
+      "wage": 4500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -373,7 +375,8 @@
       "nation": "CRO",
       "number": 17,
       "pos": "CB",
-      "wage": 7500
+      "wage": 7500,
+      "weight": 77
     },
     {
       "attrs": {

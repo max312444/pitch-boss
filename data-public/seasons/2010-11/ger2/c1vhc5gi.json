@@ -240,7 +240,8 @@
       "nation": "GER",
       "number": 8,
       "pos": "CM",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 87
     },
     {
       "alt": [
@@ -490,7 +491,8 @@
       "nation2": "ALB",
       "number": 25,
       "pos": "LB",
-      "wage": 6500
+      "wage": 6500,
+      "weight": 79
     },
     {
       "alt": [
@@ -545,7 +547,8 @@
       "nation": "GER",
       "number": 37,
       "pos": "RB",
-      "wage": 6500
+      "wage": 6500,
+      "weight": 76
     },
     {
       "alt": [

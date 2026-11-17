@@ -48,7 +48,8 @@
       "number": null,
       "pos": "GK",
       "verify": true,
-      "wage": 14500
+      "wage": 14500,
+      "weight": 94
     },
     {
       "attrs": {
@@ -129,7 +130,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 8000
+      "wage": 8000,
+      "weight": 84
     },
     {
       "alt": [
@@ -242,7 +244,8 @@
       "number": null,
       "pos": "LB",
       "verify": true,
-      "wage": 9000
+      "wage": 9000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -268,7 +271,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "CB",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -295,7 +299,8 @@
       "number": null,
       "pos": "CB",
       "verify": true,
-      "wage": 4500
+      "wage": 4500,
+      "weight": 74
     },
     {
       "attrs": {
@@ -403,7 +408,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "ST",
-      "wage": 3500
+      "wage": 3500,
+      "weight": 77
     },
     {
       "alt": [
@@ -467,7 +473,8 @@
       "number": null,
       "pos": "AM",
       "verify": true,
-      "wage": 3000
+      "wage": 3000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -605,7 +612,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "CM",
-      "wage": 3500
+      "wage": 3500,
+      "weight": 69
     },
     {
       "attrs": {
@@ -657,7 +665,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "LB",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 69
     },
     {
       "alt": [
@@ -687,7 +696,8 @@
       "number": null,
       "pos": "RW",
       "verify": true,
-      "wage": 3500
+      "wage": 3500,
+      "weight": 68
     },
     {
       "attrs": {
@@ -713,7 +723,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "ST",
-      "wage": 2500
+      "wage": 2500,
+      "weight": 68
     },
     {
       "attrs": {
@@ -740,7 +751,8 @@
       "number": null,
       "pos": "GK",
       "verify": true,
-      "wage": 2500
+      "wage": 2500,
+      "weight": 79
     },
     {
       "attrs": {
@@ -766,7 +778,8 @@
       "nation": "FRA",
       "number": null,
       "pos": "ST",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 91
     },
     {
       "attrs": {
@@ -875,7 +888,8 @@
       "number": null,
       "pos": "CB",
       "verify": true,
-      "wage": 2000
+      "wage": 2000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -986,7 +1000,8 @@
       "number": null,
       "pos": "GK",
       "verify": true,
-      "wage": 2500
+      "wage": 2500,
+      "weight": 84
     },
     {
       "attrs": {
@@ -1127,7 +1142,8 @@
       "number": null,
       "pos": "CB",
       "verify": true,
-      "wage": 1500
+      "wage": 1500,
+      "weight": 86
     }
   ],
   "stadiumCapacity": 26671

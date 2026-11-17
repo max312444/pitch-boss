@@ -41,7 +41,8 @@
       "nation": "FIN",
       "number": 22,
       "pos": "GK",
-      "wage": 53000
+      "wage": 53000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -67,7 +68,8 @@
       "nation": "ENG",
       "number": 1,
       "pos": "GK",
-      "wage": 11500
+      "wage": 11500,
+      "weight": 75
     },
     {
       "alt": [
@@ -96,7 +98,8 @@
       "nation": "ENG",
       "number": 18,
       "pos": "RB",
-      "wage": 18500
+      "wage": 18500,
+      "weight": 86
     },
     {
       "alt": [
@@ -184,7 +187,8 @@
       "nation": "ISR",
       "number": 26,
       "pos": "CB",
-      "wage": 26000
+      "wage": 26000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -213,7 +217,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 31000
+      "wage": 31000,
+      "weight": 89
     },
     {
       "attrs": {
@@ -239,7 +244,8 @@
       "nation": "FRA",
       "number": 5,
       "pos": "CB",
-      "wage": 43000
+      "wage": 43000,
+      "weight": 86
     },
     {
       "alt": [
@@ -271,7 +277,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 56000
+      "wage": 56000,
+      "weight": 84
     },
     {
       "alt": [
@@ -335,7 +342,8 @@
       "nation": "ENG",
       "number": 4,
       "pos": "CM",
-      "wage": 55000
+      "wage": 55000,
+      "weight": 85
     },
     {
       "alt": [
@@ -397,7 +405,8 @@
         "flair",
         "free_kick"
       ],
-      "wage": 57000
+      "wage": 57000,
+      "weight": 70
     },
     {
       "alt": [
@@ -457,7 +466,8 @@
       "nation": "IRL",
       "number": 33,
       "pos": "DM",
-      "wage": 14000
+      "wage": 14000,
+      "weight": 69
     },
     {
       "attrs": {
@@ -543,7 +553,8 @@
       "nation": "SEN",
       "number": 21,
       "pos": "RW",
-      "wage": 30500
+      "wage": 30500,
+      "weight": 74
     },
     {
       "attrs": {
@@ -569,7 +580,8 @@
       "nation": "ENG",
       "number": 23,
       "pos": "ST",
-      "wage": 16500
+      "wage": 16500,
+      "weight": 85
     },
     {
       "attrs": {
@@ -595,7 +607,8 @@
       "nation": "POR",
       "number": 28,
       "pos": "ST",
-      "wage": 9500
+      "wage": 9500,
+      "weight": 79
     },
     {
       "attrs": {
@@ -651,7 +664,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 20500
+      "wage": 20500,
+      "weight": 83
     },
     {
       "alt": [
@@ -680,7 +694,8 @@
       "nation": "NGA",
       "number": 24,
       "pos": "CM",
-      "wage": 16500
+      "wage": 16500,
+      "weight": 78
     },
     {
       "alt": [

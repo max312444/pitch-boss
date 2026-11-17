@@ -106,7 +106,8 @@
       "nation2": "KVX",
       "number": 5,
       "pos": "DM",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 71
     },
     {
       "attrs": {
@@ -490,7 +491,8 @@
       "nation": "GER",
       "number": 26,
       "pos": "CB",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 83
     },
     {
       "alt": [
@@ -522,7 +524,8 @@
       "nation2": "GER",
       "number": 29,
       "pos": "AM",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -611,7 +614,8 @@
       "nation": "FIN",
       "number": null,
       "pos": "RB",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 77
     },
     {
       "attrs": {

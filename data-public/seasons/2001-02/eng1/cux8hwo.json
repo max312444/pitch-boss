@@ -67,7 +67,8 @@
       "nation": "IRL",
       "number": 2,
       "pos": "RB",
-      "wage": 60000
+      "wage": 60000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -97,7 +98,8 @@
         "free_kick",
         "penalty"
       ],
-      "wage": 60500
+      "wage": 60500,
+      "weight": 73
     },
     {
       "alt": [
@@ -129,7 +131,8 @@
       "traits": [
         "engine"
       ],
-      "wage": 93000
+      "wage": 93000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -187,7 +190,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 65000
+      "wage": 65000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -214,7 +218,8 @@
       "number": 7,
       "pos": "ST",
       "verify": true,
-      "wage": 40000
+      "wage": 40000,
+      "weight": 80
     },
     {
       "alt": [
@@ -275,7 +280,8 @@
       "traits": [
         "target_man"
       ],
-      "wage": 71000
+      "wage": 71000,
+      "weight": 92
     },
     {
       "alt": [
@@ -308,7 +314,8 @@
       "traits": [
         "flair"
       ],
-      "wage": 58000
+      "wage": 58000,
+      "weight": 73
     },
     {
       "alt": [
@@ -340,7 +347,8 @@
       "traits": [
         "engine"
       ],
-      "wage": 75500
+      "wage": 75500,
+      "weight": 62
     },
     {
       "attrs": {
@@ -366,7 +374,8 @@
       "nation": "ENG",
       "number": 13,
       "pos": "GK",
-      "wage": 43500
+      "wage": 43500,
+      "weight": 90
     },
     {
       "alt": [
@@ -395,7 +404,8 @@
       "nation": "IRL",
       "number": 14,
       "pos": "CM",
-      "wage": 40000
+      "wage": 40000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -479,7 +489,8 @@
       "nation": "ENG",
       "number": 18,
       "pos": "RB",
-      "wage": 41000
+      "wage": 41000,
+      "weight": 72
     },
     {
       "alt": [
@@ -508,7 +519,8 @@
       "nation": "NOR",
       "number": 19,
       "pos": "CM",
-      "wage": 62000
+      "wage": 62000,
+      "weight": 80
     },
     {
       "alt": [
@@ -594,7 +606,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 53000
+      "wage": 53000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -678,7 +691,8 @@
       "number": 29,
       "pos": "CB",
       "verify": true,
-      "wage": 93000
+      "wage": 93000,
+      "weight": 82
     }
   ],
   "stadiumCapacity": 40204

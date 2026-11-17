@@ -48,7 +48,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 6500
+      "wage": 6500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -181,7 +182,8 @@
       "number": null,
       "pos": "CB",
       "verify": true,
-      "wage": 3500
+      "wage": 3500,
+      "weight": 92
     },
     {
       "alt": [
@@ -291,7 +293,8 @@
       "nation": "GER",
       "number": null,
       "pos": "GK",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 87
     },
     {
       "attrs": {
@@ -317,7 +320,8 @@
       "nation": "POL",
       "number": null,
       "pos": "CB",
-      "wage": 2500
+      "wage": 2500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -372,7 +376,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 2000
+      "wage": 2000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -425,7 +430,8 @@
       "number": null,
       "pos": "GK",
       "verify": true,
-      "wage": 2500
+      "wage": 2500,
+      "weight": 94
     },
     {
       "alt": [
@@ -513,7 +519,8 @@
       "nation": "GER",
       "number": null,
       "pos": "CM",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 78
     },
     {
       "alt": [
@@ -622,7 +629,8 @@
       "nation": "GER",
       "number": null,
       "pos": "GK",
-      "wage": 1500
+      "wage": 1500,
+      "weight": 83
     },
     {
       "attrs": {
@@ -648,7 +656,8 @@
       "nation": "GER",
       "number": null,
       "pos": "CB",
-      "wage": 1500
+      "wage": 1500,
+      "weight": 85
     },
     {
       "alt": [
@@ -677,7 +686,8 @@
       "nation": "GER",
       "number": null,
       "pos": "CM",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 78
     },
     {
       "alt": [
@@ -843,7 +853,8 @@
       "number": null,
       "pos": "CB",
       "verify": true,
-      "wage": 1000
+      "wage": 1000,
+      "weight": 83
     },
     {
       "alt": [
@@ -984,7 +995,8 @@
       "nation": "BIH",
       "number": null,
       "pos": "ST",
-      "wage": 500
+      "wage": 500,
+      "weight": 68
     },
     {
       "alt": [

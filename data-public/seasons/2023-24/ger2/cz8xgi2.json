@@ -303,7 +303,8 @@
       "nation": "SWE",
       "number": 14,
       "pos": "CM",
-      "wage": 14500
+      "wage": 14500,
+      "weight": 83
     },
     {
       "attrs": {
@@ -329,7 +330,8 @@
       "nation": "AUT",
       "number": 16,
       "pos": "ST",
-      "wage": 14500
+      "wage": 14500,
+      "weight": 84
     },
     {
       "attrs": {
@@ -581,7 +583,8 @@
       "nation": "GER",
       "number": 25,
       "pos": "CB",
-      "wage": 7000
+      "wage": 7000,
+      "weight": 78
     },
     {
       "alt": [
@@ -667,7 +670,8 @@
       "nation": "NZL",
       "number": 28,
       "pos": "AM",
-      "wage": 14500
+      "wage": 14500,
+      "weight": 65
     }
   ],
   "stadiumCapacity": 29000

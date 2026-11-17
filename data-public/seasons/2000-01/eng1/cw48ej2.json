@@ -41,7 +41,8 @@
       "nation": "ENG",
       "number": 1,
       "pos": "GK",
-      "wage": 42000
+      "wage": 42000,
+      "weight": 89
     },
     {
       "attrs": {
@@ -206,7 +207,8 @@
       "nation": "NIR",
       "number": 7,
       "pos": "CM",
-      "wage": 42000
+      "wage": 42000,
+      "weight": 89
     },
     {
       "alt": [
@@ -317,7 +319,8 @@
       "nation": "ENG",
       "number": 11,
       "pos": "ST",
-      "wage": 34000
+      "wage": 34000,
+      "weight": 70
     },
     {
       "alt": [
@@ -432,7 +435,8 @@
       "nation": "ENG",
       "number": 19,
       "pos": "CB",
-      "wage": 24000
+      "wage": 24000,
+      "weight": 87
     },
     {
       "alt": [
@@ -466,7 +470,8 @@
       "traits": [
         "long_shot"
       ],
-      "wage": 31500
+      "wage": 31500,
+      "weight": 78
     },
     {
       "attrs": {
@@ -495,7 +500,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 22000
+      "wage": 22000,
+      "weight": 77
     },
     {
       "attrs": {

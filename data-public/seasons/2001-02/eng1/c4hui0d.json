@@ -102,7 +102,8 @@
       "number": 3,
       "pos": "LB",
       "verify": true,
-      "wage": 16000
+      "wage": 16000,
+      "weight": 82
     },
     {
       "alt": [
@@ -563,7 +564,8 @@
       "nation": "ITA",
       "number": 8,
       "pos": "ST",
-      "wage": 31000
+      "wage": 31000,
+      "weight": 84
     },
     {
       "attrs": {
@@ -653,7 +655,8 @@
       "number": 26,
       "pos": "DM",
       "verify": true,
-      "wage": 15500
+      "wage": 15500,
+      "weight": 74
     },
     {
       "attrs": {
@@ -680,7 +683,8 @@
       "number": 30,
       "pos": "GK",
       "verify": true,
-      "wage": 6500
+      "wage": 6500,
+      "weight": 86
     }
   ],
   "stadiumCapacity": 33597

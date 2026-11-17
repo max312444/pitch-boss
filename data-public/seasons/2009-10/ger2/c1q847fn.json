@@ -239,7 +239,8 @@
       "nation": "COL",
       "number": 9,
       "pos": "ST",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 84
     },
     {
       "attrs": {

@@ -74,7 +74,8 @@
       "nation": "ESP",
       "number": 3,
       "pos": "CB",
-      "wage": 86000
+      "wage": 86000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -127,7 +128,8 @@
       "nation": "ESP",
       "number": 5,
       "pos": "CB",
-      "wage": 45000
+      "wage": 45000,
+      "weight": 79
     },
     {
       "attrs": {
@@ -153,7 +155,8 @@
       "nation": "URU",
       "number": 6,
       "pos": "CB",
-      "wage": 71000
+      "wage": 71000,
+      "weight": 80
     },
     {
       "alt": [
@@ -297,7 +300,8 @@
       "nation": "ESP",
       "number": 11,
       "pos": "RW",
-      "wage": 33000
+      "wage": 33000,
+      "weight": 72
     },
     {
       "alt": [
@@ -378,7 +382,8 @@
       "nation": "ESP",
       "number": 14,
       "pos": "LB",
-      "wage": 56000
+      "wage": 56000,
+      "weight": 70
     },
     {
       "alt": [

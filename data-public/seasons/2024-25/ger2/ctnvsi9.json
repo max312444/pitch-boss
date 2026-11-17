@@ -48,7 +48,8 @@
       "nation": "GER",
       "number": 1,
       "pos": "GK",
-      "wage": 11000
+      "wage": 11000,
+      "weight": 81
     },
     {
       "attrs": {
@@ -270,7 +271,8 @@
       "nation2": "NED",
       "number": 11,
       "pos": "RW",
-      "wage": 16500
+      "wage": 16500,
+      "weight": 80
     },
     {
       "alt": [
@@ -354,7 +356,8 @@
       "nation": "DEN",
       "number": 16,
       "pos": "CB",
-      "wage": 16500
+      "wage": 16500,
+      "weight": 78
     },
     {
       "alt": [
@@ -661,7 +664,8 @@
       "nation": "JPN",
       "number": 37,
       "pos": "ST",
-      "wage": 16000
+      "wage": 16000,
+      "weight": 59
     },
     {
       "attrs": {

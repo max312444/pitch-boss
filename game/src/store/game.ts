@@ -14,7 +14,7 @@ import { advanceDay, advanceToUserMatch, applyMatch, createWorld, prepareMatch, 
 import { playToEnd, reshapeTeam, setFormation, setTactics, step, substitute, swapSlots, type MatchState } from '../engine/match';
 import { createRng, type Rng } from '../engine/rng';
 import { seedTraits } from '../engine/traits';
-import { availableSeasons, clubKo, clubs as clubMasters, dataset, leagues, loadHistory, loadLeagueSeason, loadManagers, loadStandings, playerKo, realAvailable, registerGeneratedNames, registerMyClub, setDataset, worldCupsMeta, loadWcSquads, loadWcPools } from '../data/db';
+import { availableSeasons, clubKo, clubs as clubMasters, dataset, leagues, loadHistory, loadLeagueSeason, loadManagers, loadStandings, playerKo, realAvailable, registerGeneratedNames, registerMyClub, setDataset, worldCupsMeta, loadWcSquads, loadWcPools, loadPublicMap } from '../data/db';
 import { currentAsData, myStart, newMyClubId, setupMyClub, squadNeeds, swapInput, weakestClub, type MyClubDesign, type MyClubState } from '../engine/myclub';
 import type { SquadPlayer } from '../data/types';
 import { closeSeason, nextSeasonOf, startNextSeason, type SeasonReport } from '../engine/season';
@@ -214,6 +214,8 @@ interface GameStore {
   /** 받은 제안에 역제안 (이적료). done = 이적 성사, gone = 제안이 사라짐 */
   counter(offerId: string, ask: number, sellOn?: number): { result: 'accept' | 'raise' | 'reject' | 'withdraw' | 'gone'; fee: number; reason: string; done?: boolean };
   stepMatch(n?: number): void;
+  /** 패러디 이름 세이브를 실명 데이터로 바꿔 불러오기 (실명 데이터가 있을 때) */
+  convertToReal(slot: string): void;
   changeTactics(t: Partial<Tactics>): void;
   /** 경기 중 포메이션 바꾸기 */
   changeFormation(formation: string): void;
@@ -405,6 +407,10 @@ export const useGame = create<GameStore>((set, get) => {
       bump();
     },
 
+    convertToReal(slot) {
+      try { sessionStorage.setItem('pitchboss.convert', slot); sessionStorage.setItem('pitchboss.resume', slot); } catch { /* 무시 */ }
+      setDataset('real');   // 새로 고침 → 실명 데이터로 켜진 뒤 resume 이 load(slot) → 위에서 바꾼다
+    },
     stepMatch(n = 1) {
       const { match: m, world: w } = get();
       if (!m || !w || m.phase !== 'live' || !m.state) return;
@@ -1040,6 +1046,24 @@ export const useGame = create<GameStore>((set, get) => {
       setWcPools(world?.intl ? await loadWcPools() : undefined);
       if (world?.intl) repairIntl(world);   // 세계 대회 모드: 실제 명단 · 대표 풀로 소집 후보 다시 (데이터 없이 만든 세이브 고침)
       if (!world) return false;
+      // 패러디 세이브 → 실명으로 바꾸기 (슬롯 목록의 「실명으로 바꾸기」: 실명 데이터로 새로 고침한 뒤 여기서)
+      let conv: string | null = null;
+      try { conv = sessionStorage.getItem('pitchboss.convert'); } catch { /* 무시 */ }
+      if (conv === slot && world.dataset === 'public' && dataset === 'real') {
+        try { sessionStorage.removeItem('pitchboss.convert'); } catch { /* 무시 */ }
+        const map = await loadPublicMap();
+        if (!map) { set({ loadError: '실명 데이터에 번호 대응표(canonical/public-map.json)가 없어 바꿀 수 없습니다. 실명 데이터를 다시 넣어 주세요.' }); return false; }
+        const { convertToReal, inverseMap } = await import('../engine/convertReal');
+        const inv = inverseMap(map);
+        const files: import('../data/types').ClubSeasonFile[] = [];
+        for (const lg of Object.keys(world.competitions)) {
+          try { files.push(...(await loadLeagueSeason(world.season, lg)).clubs); } catch { /* 그 시즌 그 리그 실명 파일 없음 */ }
+        }
+        const { world: realWorld } = convertToReal(world, map, files);
+        if (!inv.has(world.userClubId) && !world.myClub && !world.userClubId.startsWith('nt-')) { set({ loadError: '이 세이브의 구단을 실명 데이터에서 찾지 못했습니다.' }); return false; }
+        await writeSave(slot, realWorld);
+        return get().load(slot);
+      }
       // 다른 데이터로 만든 세이브면 그 데이터로 바꾼 뒤 (새로 고침) 자동으로 이어서 불러온다
       const need = world.dataset ?? 'real';
       if (need !== dataset) {

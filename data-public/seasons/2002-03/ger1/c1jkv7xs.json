@@ -48,7 +48,8 @@
       "nation2": "POL",
       "number": null,
       "pos": "ST",
-      "wage": 36500
+      "wage": 36500,
+      "weight": 84
     },
     {
       "attrs": {
@@ -130,7 +131,8 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 33000
+      "wage": 33000,
+      "weight": 78
     },
     {
       "alt": [
@@ -185,7 +187,8 @@
       "nation": "GER",
       "number": null,
       "pos": "RM",
-      "wage": 36500
+      "wage": 36500,
+      "weight": 73
     },
     {
       "attrs": {
@@ -212,7 +215,8 @@
       "number": null,
       "pos": "CB",
       "verify": true,
-      "wage": 26000
+      "wage": 26000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -267,7 +271,8 @@
       "nation": "CRO",
       "number": null,
       "pos": "CM",
-      "wage": 29000
+      "wage": 29000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -320,7 +325,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 18000
+      "wage": 18000,
+      "weight": 79
     },
     {
       "attrs": {
@@ -374,7 +380,8 @@
       "number": null,
       "pos": "RW",
       "verify": true,
-      "wage": 14500
+      "wage": 14500,
+      "weight": 69
     },
     {
       "alt": [
@@ -404,7 +411,8 @@
       "number": null,
       "pos": "RW",
       "verify": true,
-      "wage": 22500
+      "wage": 22500,
+      "weight": 66
     },
     {
       "attrs": {
@@ -431,7 +439,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 11000
+      "wage": 11000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -483,7 +492,8 @@
       "nation": "BRA",
       "number": null,
       "pos": "AM",
-      "wage": 14000
+      "wage": 14000,
+      "weight": 68
     },
     {
       "attrs": {
@@ -536,7 +546,8 @@
       "number": null,
       "pos": "ST",
       "verify": true,
-      "wage": 7500
+      "wage": 7500,
+      "weight": 71
     },
     {
       "attrs": {
@@ -701,7 +712,8 @@
       "nation": "MLT",
       "number": null,
       "pos": "ST",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 59
     },
     {
       "attrs": {
@@ -787,7 +799,8 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 7500
+      "wage": 7500,
+      "weight": 79
     },
     {
       "alt": [

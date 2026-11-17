@@ -44,7 +44,8 @@
       "traits": [
         "big_game"
       ],
-      "wage": 153500
+      "wage": 153500,
+      "weight": 85
     },
     {
       "attrs": {
@@ -150,7 +151,8 @@
       "nation": "ENG",
       "number": 3,
       "pos": "LB",
-      "wage": 114500
+      "wage": 114500,
+      "weight": 70
     },
     {
       "alt": [
@@ -179,7 +181,8 @@
       "nation": "ENG",
       "number": 4,
       "pos": "CB",
-      "wage": 138500
+      "wage": 138500,
+      "weight": 77
     },
     {
       "attrs": {
@@ -208,7 +211,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 110500
+      "wage": 110500,
+      "weight": 77
     },
     {
       "attrs": {
@@ -236,7 +240,8 @@
       "nation2": "COD",
       "number": 16,
       "pos": "CB",
-      "wage": 46500
+      "wage": 46500,
+      "weight": 72
     },
     {
       "alt": [
@@ -265,7 +270,8 @@
       "nation": "ENG",
       "number": 30,
       "pos": "CB",
-      "wage": 57000
+      "wage": 57000,
+      "weight": 82
     },
     {
       "alt": [
@@ -296,7 +302,8 @@
       "nation": "ENG",
       "number": 18,
       "pos": "LB",
-      "wage": 90500
+      "wage": 90500,
+      "weight": 64
     },
     {
       "alt": [
@@ -326,7 +333,8 @@
       "nation": "BRA",
       "number": 6,
       "pos": "DM",
-      "wage": 153500
+      "wage": 153500,
+      "weight": 66
     },
     {
       "alt": [
@@ -359,7 +367,8 @@
         "engine",
         "leader"
       ],
-      "wage": 153500
+      "wage": 153500,
+      "weight": 66
     },
     {
       "alt": [
@@ -388,7 +397,8 @@
       "nation": "FRA",
       "number": 8,
       "pos": "CM",
-      "wage": 47500
+      "wage": 47500,
+      "weight": 70
     },
     {
       "alt": [
@@ -446,7 +456,8 @@
       "traits": [
         "speedster"
       ],
-      "wage": 66500
+      "wage": 66500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -475,7 +486,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 131000
+      "wage": 131000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -504,7 +516,8 @@
       "traits": [
         "engine"
       ],
-      "wage": 122500
+      "wage": 122500,
+      "weight": 70
     },
     {
       "alt": [
@@ -534,7 +547,8 @@
       "nation": "BFA",
       "number": 15,
       "pos": "RW",
-      "wage": 55500
+      "wage": 55500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -560,7 +574,8 @@
       "nation": "ZIM",
       "number": 19,
       "pos": "DM",
-      "wage": 69500
+      "wage": 69500,
+      "weight": 71
     },
     {
       "attrs": {
@@ -586,7 +601,8 @@
       "nation": "EGY",
       "number": 17,
       "pos": "LW",
-      "wage": 64000
+      "wage": 64000,
+      "weight": 68
     },
     {
       "attrs": {
@@ -697,7 +713,8 @@
       "nation2": "MAR",
       "number": 21,
       "pos": "RW",
-      "wage": 80000
+      "wage": 80000,
+      "weight": 86
     },
     {
       "alt": [

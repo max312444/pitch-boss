@@ -48,7 +48,8 @@
       "nation": "FRA",
       "number": 1,
       "pos": "GK",
-      "wage": 13500
+      "wage": 13500,
+      "weight": 78
     },
     {
       "alt": [
@@ -107,7 +108,8 @@
       "nation2": "CGO",
       "number": 4,
       "pos": "RW",
-      "wage": 5500
+      "wage": 5500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -134,7 +136,8 @@
       "nation2": "FRA",
       "number": 5,
       "pos": "CB",
-      "wage": 10500
+      "wage": 10500,
+      "weight": 84
     },
     {
       "alt": [
@@ -305,7 +308,8 @@
       "nation2": "FRA",
       "number": 11,
       "pos": "CM",
-      "wage": 14500
+      "wage": 14500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -359,7 +363,8 @@
       "nation2": "ITA",
       "number": 13,
       "pos": "CB",
-      "wage": 13500
+      "wage": 13500,
+      "weight": 80
     },
     {
       "alt": [
@@ -473,7 +478,8 @@
       "nation2": "URU",
       "number": 18,
       "pos": "CM",
-      "wage": 12500
+      "wage": 12500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -526,7 +532,8 @@
       "nation2": "FRA",
       "number": 20,
       "pos": "RB",
-      "wage": 19000
+      "wage": 19000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -552,7 +559,8 @@
       "nation": "FRA",
       "number": 22,
       "pos": "ST",
-      "wage": 10500
+      "wage": 10500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -608,7 +616,8 @@
       "nation": "FRA",
       "number": 24,
       "pos": "CM",
-      "wage": 11000
+      "wage": 11000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -661,7 +670,8 @@
       "nation2": "FRA",
       "number": 26,
       "pos": "DM",
-      "wage": 12500
+      "wage": 12500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -713,7 +723,8 @@
       "nation": "FRA",
       "number": 28,
       "pos": "CB",
-      "wage": 11000
+      "wage": 11000,
+      "weight": 88
     }
   ],
   "stadiumCapacity": 20087

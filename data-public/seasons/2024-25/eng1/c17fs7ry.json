@@ -44,7 +44,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 161000
+      "wage": 161000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -70,7 +71,8 @@
       "nation": "POR",
       "number": 12,
       "pos": "GK",
-      "wage": 33000
+      "wage": 33000,
+      "weight": 87
     },
     {
       "attrs": {
@@ -96,7 +98,8 @@
       "nation": "BIH",
       "number": 31,
       "pos": "GK",
-      "wage": 52000
+      "wage": 52000,
+      "weight": 101
     },
     {
       "attrs": {
@@ -148,7 +151,8 @@
       "nation": "ENG",
       "number": 5,
       "pos": "CB",
-      "wage": 87000
+      "wage": 87000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -177,7 +181,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 156000
+      "wage": 156000,
+      "weight": 81
     },
     {
       "attrs": {
@@ -234,7 +239,8 @@
       "nation": "ENG",
       "number": 18,
       "pos": "LB",
-      "wage": 57500
+      "wage": 57500,
+      "weight": 64
     },
     {
       "attrs": {
@@ -289,7 +295,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 78000
+      "wage": 78000,
+      "weight": 67
     },
     {
       "attrs": {
@@ -343,7 +350,8 @@
       "number": 8,
       "pos": "DM",
       "verify": true,
-      "wage": 161000
+      "wage": 161000,
+      "weight": 78
     },
     {
       "alt": [
@@ -399,7 +407,8 @@
       "nation": "SEN",
       "number": 27,
       "pos": "DM",
-      "wage": 160500
+      "wage": 160500,
+      "weight": 64
     },
     {
       "alt": [
@@ -554,7 +563,8 @@
       "nation": "ENG",
       "number": 11,
       "pos": "LW",
-      "wage": 74500
+      "wage": 74500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -582,7 +592,8 @@
       "number": 29,
       "pos": "AM",
       "verify": true,
-      "wage": 66500
+      "wage": 66500,
+      "weight": 63
     },
     {
       "attrs": {
@@ -612,7 +623,8 @@
         "aerial_threat",
         "injury_prone"
       ],
-      "wage": 92500
+      "wage": 92500,
+      "weight": 80
     },
     {
       "attrs": {

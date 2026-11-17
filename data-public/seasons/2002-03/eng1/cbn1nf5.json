@@ -186,7 +186,8 @@
         "injury_prone"
       ],
       "verify": true,
-      "wage": 31500
+      "wage": 31500,
+      "weight": 78
     },
     {
       "alt": [
@@ -215,7 +216,8 @@
       "nation": "ENG",
       "number": 8,
       "pos": "CM",
-      "wage": 36000
+      "wage": 36000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -244,7 +246,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 35000
+      "wage": 35000,
+      "weight": 76
     },
     {
       "alt": [
@@ -364,7 +367,8 @@
         "free_kick"
       ],
       "verify": true,
-      "wage": 37000
+      "wage": 37000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -450,7 +454,8 @@
       "number": 18,
       "pos": "RM",
       "verify": true,
-      "wage": 35000
+      "wage": 35000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -480,7 +485,8 @@
         "injury_prone"
       ],
       "verify": true,
-      "wage": 23000
+      "wage": 23000,
+      "weight": 67
     },
     {
       "attrs": {
@@ -507,7 +513,8 @@
       "number": 10,
       "pos": "ST",
       "verify": true,
-      "wage": 18500
+      "wage": 18500,
+      "weight": 83
     },
     {
       "alt": [
@@ -601,7 +608,8 @@
         "leader"
       ],
       "verify": true,
-      "wage": 16000
+      "wage": 16000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -628,7 +636,8 @@
       "number": 22,
       "pos": "CB",
       "verify": true,
-      "wage": 21000
+      "wage": 21000,
+      "weight": 81
     },
     {
       "attrs": {

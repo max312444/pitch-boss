@@ -48,7 +48,8 @@
       "nation": "CZE",
       "number": 1,
       "pos": "GK",
-      "wage": 82500
+      "wage": 82500,
+      "weight": 81
     },
     {
       "alt": [
@@ -78,7 +79,8 @@
       "nation2": "ESP",
       "number": 3,
       "pos": "CB",
-      "wage": 37000
+      "wage": 37000,
+      "weight": 83
     },
     {
       "alt": [
@@ -107,7 +109,8 @@
       "nation": "GER",
       "number": 4,
       "pos": "CB",
-      "wage": 125000
+      "wage": 125000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -162,7 +165,8 @@
       "nation": "DEN",
       "number": 6,
       "pos": "CM",
-      "wage": 44500
+      "wage": 44500,
+      "weight": 81
     },
     {
       "attrs": {
@@ -188,7 +192,8 @@
       "nation": "GER",
       "number": 7,
       "pos": "ST",
-      "wage": 98500
+      "wage": 98500,
+      "weight": 72
     },
     {
       "alt": [
@@ -218,7 +223,8 @@
       "nation2": "ALG",
       "number": 8,
       "pos": "RB",
-      "wage": 125000
+      "wage": 125000,
+      "weight": 67
     },
     {
       "attrs": {
@@ -244,7 +250,8 @@
       "nation": "POL",
       "number": 9,
       "pos": "ST",
-      "wage": 110500
+      "wage": 110500,
+      "weight": 75
     },
     {
       "alt": [
@@ -275,7 +282,8 @@
       "nation2": "BRA",
       "number": 10,
       "pos": "CM",
-      "wage": 125000
+      "wage": 125000,
+      "weight": 63
     },
     {
       "attrs": {
@@ -302,7 +310,8 @@
       "nation2": "SUI",
       "number": 13,
       "pos": "CB",
-      "wage": 125000
+      "wage": 125000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -387,7 +396,8 @@
       "nation": "GUI",
       "number": 18,
       "pos": "CM",
-      "wage": 125000
+      "wage": 125000,
+      "weight": 71
     },
     {
       "attrs": {
@@ -495,7 +505,8 @@
       "nation": "SCO",
       "number": 24,
       "pos": "RW",
-      "wage": 47000
+      "wage": 47000,
+      "weight": 75
     },
     {
       "alt": [
@@ -636,7 +647,8 @@
       "nation": "AUT",
       "number": 32,
       "pos": "CB",
-      "wage": 121500
+      "wage": 121500,
+      "weight": 71
     },
     {
       "alt": [

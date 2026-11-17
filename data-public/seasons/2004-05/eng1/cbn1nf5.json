@@ -67,7 +67,8 @@
       "nation": "ENG",
       "number": 13,
       "pos": "GK",
-      "wage": 18000
+      "wage": 18000,
+      "weight": 89
     },
     {
       "alt": [
@@ -211,7 +212,8 @@
       "nation": "BEL",
       "number": 4,
       "pos": "LB",
-      "wage": 17500
+      "wage": 17500,
+      "weight": 87
     },
     {
       "attrs": {
@@ -266,7 +268,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 32000
+      "wage": 32000,
+      "weight": 78
     },
     {
       "alt": [
@@ -350,7 +353,8 @@
       "nation": "ENG",
       "number": 8,
       "pos": "CM",
-      "wage": 38000
+      "wage": 38000,
+      "weight": 70
     },
     {
       "alt": [
@@ -380,7 +384,8 @@
       "nation": "IRL",
       "number": 18,
       "pos": "CM",
-      "wage": 37500
+      "wage": 37500,
+      "weight": 74
     },
     {
       "alt": [
@@ -409,7 +414,8 @@
       "nation": "ENG",
       "number": 20,
       "pos": "CM",
-      "wage": 27000
+      "wage": 27000,
+      "weight": 73
     },
     {
       "alt": [
@@ -441,7 +447,8 @@
       "traits": [
         "free_kick"
       ],
-      "wage": 40500
+      "wage": 40500,
+      "weight": 77
     },
     {
       "alt": [
@@ -472,7 +479,8 @@
       "nation": "SWE",
       "number": 35,
       "pos": "RM",
-      "wage": 26000
+      "wage": 26000,
+      "weight": 75
     },
     {
       "alt": [
@@ -582,7 +590,8 @@
       "nation": "ENG",
       "number": 7,
       "pos": "ST",
-      "wage": 26000
+      "wage": 26000,
+      "weight": 69
     },
     {
       "attrs": {
@@ -611,7 +620,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 43000
+      "wage": 43000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -640,7 +650,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 26500
+      "wage": 26500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -696,7 +707,8 @@
         "injury_prone"
       ],
       "verify": true,
-      "wage": 22000
+      "wage": 22000,
+      "weight": 67
     },
     {
       "attrs": {
@@ -722,7 +734,8 @@
       "nation": "TRI",
       "number": 34,
       "pos": "ST",
-      "wage": 11500
+      "wage": 11500,
+      "weight": 84
     },
     {
       "attrs": {

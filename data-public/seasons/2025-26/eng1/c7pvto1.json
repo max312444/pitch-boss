@@ -120,7 +120,8 @@
       "nation": "NIR",
       "number": 5,
       "pos": "CB",
-      "wage": 127500
+      "wage": 127500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -209,7 +210,8 @@
       "number": 20,
       "pos": "RB",
       "verify": true,
-      "wage": 151000
+      "wage": 151000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -236,7 +238,8 @@
       "number": 17,
       "pos": "LB",
       "verify": true,
-      "wage": 123000
+      "wage": 123000,
+      "weight": 74
     },
     {
       "alt": [
@@ -324,7 +327,8 @@
       "nation2": "FRA",
       "number": 26,
       "pos": "LB",
-      "wage": 96000
+      "wage": 96000,
+      "weight": 70
     },
     {
       "alt": [
@@ -386,7 +390,8 @@
         "leader",
         "long_shot"
       ],
-      "wage": 187500
+      "wage": 187500,
+      "weight": 82
     },
     {
       "alt": [
@@ -613,7 +618,8 @@
       "nation": "BFA",
       "number": 25,
       "pos": "RW",
-      "wage": 94500
+      "wage": 94500,
+      "weight": 72
     },
     {
       "alt": [
@@ -670,7 +676,8 @@
       "nation": "FRA",
       "number": 18,
       "pos": "ST",
-      "wage": 82500
+      "wage": 82500,
+      "weight": 78
     },
     {
       "attrs": {

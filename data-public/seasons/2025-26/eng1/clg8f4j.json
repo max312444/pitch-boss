@@ -123,7 +123,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 451500
+      "wage": 451500,
+      "weight": 85
     },
     {
       "alt": [
@@ -181,7 +182,8 @@
       "nation": "ESP",
       "number": 23,
       "pos": "RB",
-      "wage": 374000
+      "wage": 374000,
+      "weight": 71
     },
     {
       "attrs": {
@@ -264,7 +266,8 @@
       "nation": "AUT",
       "number": 4,
       "pos": "CB",
-      "wage": 200500
+      "wage": 200500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -320,7 +323,8 @@
       "nation": "WAL",
       "number": 33,
       "pos": "LB",
-      "wage": 233000
+      "wage": 233000,
+      "weight": 76
     },
     {
       "alt": [
@@ -351,7 +355,8 @@
       "nation": "ENG",
       "number": 14,
       "pos": "CM",
-      "wage": 281500
+      "wage": 281500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -406,7 +411,8 @@
       "number": 6,
       "pos": "DM",
       "verify": true,
-      "wage": 427000
+      "wage": 427000,
+      "weight": 77
     },
     {
       "alt": [
@@ -436,7 +442,8 @@
       "nation": "URU",
       "number": 30,
       "pos": "CM",
-      "wage": 353500
+      "wage": 353500,
+      "weight": 73
     },
     {
       "attrs": {
@@ -580,7 +587,8 @@
         "free_kick",
         "playmaker"
       ],
-      "wage": 251500
+      "wage": 251500,
+      "weight": 73
     },
     {
       "alt": [
@@ -639,7 +647,8 @@
       "nation": "BRA",
       "number": 9,
       "pos": "ST",
-      "wage": 229000
+      "wage": 229000,
+      "weight": 71
     },
     {
       "attrs": {
@@ -665,7 +674,8 @@
       "nation": "ENG",
       "number": 19,
       "pos": "ST",
-      "wage": 287000
+      "wage": 287000,
+      "weight": 75
     },
     {
       "alt": [

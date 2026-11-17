@@ -41,7 +41,8 @@
       "nation": "ENG",
       "number": 1,
       "pos": "GK",
-      "wage": 68500
+      "wage": 68500,
+      "weight": 94
     },
     {
       "attrs": {
@@ -119,7 +120,8 @@
       "nation": "ENG",
       "number": 18,
       "pos": "RB",
-      "wage": 50500
+      "wage": 50500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -205,7 +207,8 @@
       "nation": "FRA",
       "number": 5,
       "pos": "CB",
-      "wage": 69000
+      "wage": 69000,
+      "weight": 88
     },
     {
       "attrs": {
@@ -231,7 +234,8 @@
       "nation": "IRL",
       "number": 22,
       "pos": "CB",
-      "wage": 43500
+      "wage": 43500,
+      "weight": 95
     },
     {
       "attrs": {
@@ -257,7 +261,8 @@
       "nation": "ENG",
       "number": 16,
       "pos": "CB",
-      "wage": 14500
+      "wage": 14500,
+      "weight": 85
     },
     {
       "alt": [
@@ -346,7 +351,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 61000
+      "wage": 61000,
+      "weight": 73
     },
     {
       "alt": [
@@ -375,7 +381,8 @@
       "nation": "ENG",
       "number": 24,
       "pos": "CM",
-      "wage": 58000
+      "wage": 58000,
+      "weight": 70
     },
     {
       "alt": [
@@ -434,7 +441,8 @@
       "nation": "FRA",
       "number": 10,
       "pos": "AM",
-      "wage": 52500
+      "wage": 52500,
+      "weight": 80
     },
     {
       "alt": [
@@ -466,7 +474,8 @@
       "traits": [
         "speedster"
       ],
-      "wage": 61000
+      "wage": 61000,
+      "weight": 64
     },
     {
       "attrs": {
@@ -492,7 +501,8 @@
       "nation": "ENG",
       "number": 28,
       "pos": "LW",
-      "wage": 43000
+      "wage": 43000,
+      "weight": 78
     },
     {
       "alt": [
@@ -521,7 +531,8 @@
       "nation": "IRL",
       "number": 44,
       "pos": "CM",
-      "wage": 16500
+      "wage": 16500,
+      "weight": 66
     },
     {
       "alt": [
@@ -550,7 +561,8 @@
       "nation": "ENG",
       "number": 40,
       "pos": "RW",
-      "wage": 13500
+      "wage": 13500,
+      "weight": 81
     },
     {
       "attrs": {
@@ -576,7 +588,8 @@
       "nation": "ENG",
       "number": 8,
       "pos": "ST",
-      "wage": 47000
+      "wage": 47000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -602,7 +615,8 @@
       "nation": "FRA",
       "number": 39,
       "pos": "ST",
-      "wage": 69000
+      "wage": 69000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -654,7 +668,8 @@
       "nation": "ENG",
       "number": 42,
       "pos": "ST",
-      "wage": 11000
+      "wage": 11000,
+      "weight": 64
     },
     {
       "attrs": {

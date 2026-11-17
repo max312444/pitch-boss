@@ -67,7 +67,8 @@
       "nation": "ENG",
       "number": 23,
       "pos": "GK",
-      "wage": 71500
+      "wage": 71500,
+      "weight": 79
     },
     {
       "attrs": {
@@ -93,7 +94,8 @@
       "nation": "NED",
       "number": 16,
       "pos": "GK",
-      "wage": 14500
+      "wage": 14500,
+      "weight": 85
     },
     {
       "alt": [
@@ -181,7 +183,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 134500
+      "wage": 134500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -210,7 +213,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 136000
+      "wage": 136000,
+      "weight": 88
     },
     {
       "alt": [
@@ -273,7 +277,8 @@
       "nation": "ESP",
       "number": 3,
       "pos": "LWB",
-      "wage": 107500
+      "wage": 107500,
+      "weight": 67
     },
     {
       "attrs": {
@@ -299,7 +304,8 @@
       "nation": "IRL",
       "number": 24,
       "pos": "CB",
-      "wage": 67500
+      "wage": 67500,
+      "weight": 76
     },
     {
       "alt": [
@@ -357,7 +363,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 114500
+      "wage": 114500,
+      "weight": 67
     },
     {
       "alt": [
@@ -387,7 +394,8 @@
       "nation": "ENG",
       "number": 20,
       "pos": "LWB",
-      "wage": 88000
+      "wage": 88000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -447,7 +455,8 @@
         "free_kick",
         "playmaker"
       ],
-      "wage": 147000
+      "wage": 147000,
+      "weight": 72
     },
     {
       "alt": [
@@ -506,7 +515,8 @@
       "nation": "ARG",
       "number": 10,
       "pos": "CM",
-      "wage": 129500
+      "wage": 129500,
+      "weight": 72
     },
     {
       "alt": [
@@ -567,7 +577,8 @@
       "traits": [
         "clutch"
       ],
-      "wage": 106500
+      "wage": 106500,
+      "weight": 61
     },
     {
       "attrs": {
@@ -593,7 +604,8 @@
       "nation": "FRA",
       "number": 9,
       "pos": "ST",
-      "wage": 70000
+      "wage": 70000,
+      "weight": 69
     },
     {
       "attrs": {
@@ -622,7 +634,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 112500
+      "wage": 112500,
+      "weight": 72
     },
     {
       "attrs": {

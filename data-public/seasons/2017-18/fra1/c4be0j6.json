@@ -48,7 +48,8 @@
       "nation": "CRO",
       "number": 1,
       "pos": "GK",
-      "wage": 85500
+      "wage": 85500,
+      "weight": 84
     },
     {
       "alt": [
@@ -77,7 +78,8 @@
       "nation": "BRA",
       "number": 2,
       "pos": "CB",
-      "wage": 68500
+      "wage": 68500,
+      "weight": 78
     },
     {
       "alt": [
@@ -107,7 +109,8 @@
       "nation2": "SUI",
       "number": 4,
       "pos": "CB",
-      "wage": 48000
+      "wage": 48000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -133,7 +136,8 @@
       "nation": "BRA",
       "number": 5,
       "pos": "CB",
-      "wage": 22000
+      "wage": 22000,
+      "weight": 77
     },
     {
       "alt": [
@@ -163,7 +167,8 @@
       "nation2": "FRA",
       "number": 7,
       "pos": "RW",
-      "wage": 42000
+      "wage": 42000,
+      "weight": 65
     },
     {
       "alt": [
@@ -192,7 +197,8 @@
       "nation": "POR",
       "number": 8,
       "pos": "CM",
-      "wage": 85500
+      "wage": 85500,
+      "weight": 61
     },
     {
       "attrs": {
@@ -219,7 +225,8 @@
       "nation2": "VEN",
       "number": 9,
       "pos": "ST",
-      "wage": 84000
+      "wage": 84000,
+      "weight": 73
     },
     {
       "alt": [
@@ -248,7 +255,8 @@
       "nation": "MNE",
       "number": 10,
       "pos": "ST",
-      "wage": 83500
+      "wage": 83500,
+      "weight": 79
     },
     {
       "attrs": {
@@ -275,7 +283,8 @@
       "nation2": "ITA",
       "number": 11,
       "pos": "ST",
-      "wage": 22000
+      "wage": 22000,
+      "weight": 86
     },
     {
       "alt": [
@@ -305,7 +314,8 @@
       "nation2": "ESP",
       "number": 14,
       "pos": "RW",
-      "wage": 40500
+      "wage": 40500,
+      "weight": 86
     },
     {
       "alt": [
@@ -334,7 +344,8 @@
       "nation": "FRA",
       "number": 15,
       "pos": "RW",
-      "wage": 8500
+      "wage": 8500,
+      "weight": 65
     },
     {
       "attrs": {
@@ -360,7 +371,8 @@
       "nation": "SUI",
       "number": 16,
       "pos": "GK",
-      "wage": 65000
+      "wage": 65000,
+      "weight": 89
     },
     {
       "alt": [
@@ -389,7 +401,8 @@
       "nation": "BEL",
       "number": 17,
       "pos": "CM",
-      "wage": 54500
+      "wage": 54500,
+      "weight": 72
     },
     {
       "alt": [
@@ -419,7 +432,8 @@
       "nation2": "CIV",
       "number": 18,
       "pos": "CM",
-      "wage": 58500
+      "wage": 58500,
+      "weight": 80
     },
     {
       "alt": [
@@ -449,7 +463,8 @@
       "nation": "FRA",
       "number": 19,
       "pos": "RB",
-      "wage": 71500
+      "wage": 71500,
+      "weight": 80
     },
     {
       "alt": [
@@ -479,7 +494,8 @@
       "nation": "POR",
       "number": 20,
       "pos": "AM",
-      "wage": 47500
+      "wage": 47500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -536,7 +552,8 @@
       "nation": "ITA",
       "number": 24,
       "pos": "RB",
-      "wage": 29000
+      "wage": 29000,
+      "weight": 82
     },
     {
       "attrs": {
@@ -563,7 +580,8 @@
       "nation2": "GER",
       "number": 25,
       "pos": "CB",
-      "wage": 85500
+      "wage": 85500,
+      "weight": 80
     },
     {
       "alt": [
@@ -593,7 +611,8 @@
       "nation2": "ITA",
       "number": 26,
       "pos": "CM",
-      "wage": 29500
+      "wage": 29500,
+      "weight": 63
     },
     {
       "alt": [
@@ -623,7 +642,8 @@
       "nation": "FRA",
       "number": 27,
       "pos": "CM",
-      "wage": 71000
+      "wage": 71000,
+      "weight": 58
     },
     {
       "attrs": {
@@ -649,7 +669,8 @@
       "nation": "SEN",
       "number": 30,
       "pos": "GK",
-      "wage": 8000
+      "wage": 8000,
+      "weight": 80
     },
     {
       "alt": [
@@ -678,7 +699,8 @@
       "nation": "FRA",
       "number": 35,
       "pos": "CB",
-      "wage": 12500
+      "wage": 12500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -705,7 +727,8 @@
       "nation2": "FRA",
       "number": 38,
       "pos": "RB",
-      "wage": 12500
+      "wage": 12500,
+      "weight": 73
     },
     {
       "attrs": {

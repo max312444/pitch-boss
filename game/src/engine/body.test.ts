@@ -24,6 +24,7 @@ describe('키 · 체형', () => {
   });
   it('체형은 능력치가 바뀌면 바뀐다 (몸싸움 벌크업)', () => {
     const p = structuredClone(Object.values(w.players).find((x) => x.pos === 'CM' && (x.height ?? 0) <= 178 && (x.base.str ?? 0) < 70)!);
+    p.weight = undefined;   // 몸무게가 없으면 몸싸움 능력치로
     const before = bodyType(p);
     p.base.str = 85;
     expect(bodyType(p)).not.toBe(before);
@@ -31,6 +32,17 @@ describe('키 · 체형', () => {
     const kinds = new Set(Object.values(w.players).map(bodyType));
     console.log('체형 종류', [...kinds].join(','));
     expect(kinds.size).toBeGreaterThanOrEqual(5);
+  });
+});
+
+describe('몸무게', () => {
+  it('몸무게가 있으면 실제 체격으로: 같은 키 · 능력치라도 무거우면 근육질 · 다부진, 가벼우면 날렵 · 호리호리', () => {
+    const w = createWorld(load('2025-26', ['eng1']), LIV, 3);
+    const p = structuredClone(Object.values(w.players).find((x) => x.pos === 'CB')!);
+    p.height = 191; p.base.str = 70; p.base.pac = 60;
+    p.weight = 92; expect(bodyType(p)).toBe('tower');
+    p.weight = 74; expect(bodyType(p)).toBe('lanky');
+    p.height = 178; p.base.str = 74; p.weight = 82; expect(bodyType(p)).toBe('stocky');
   });
 });
 

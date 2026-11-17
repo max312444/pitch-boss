@@ -49,7 +49,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 71500
+      "wage": 71500,
+      "weight": 83
     },
     {
       "attrs": {
@@ -75,7 +76,8 @@
       "nation": "AUT",
       "number": 13,
       "pos": "GK",
-      "wage": 23500
+      "wage": 23500,
+      "weight": 84
     },
     {
       "attrs": {
@@ -101,7 +103,8 @@
       "nation": "ENG",
       "number": 31,
       "pos": "GK",
-      "wage": 10500
+      "wage": 10500,
+      "weight": 85
     },
     {
       "attrs": {
@@ -198,7 +201,8 @@
         "engine",
         "leader"
       ],
-      "wage": 72000
+      "wage": 72000,
+      "weight": 82
     },
     {
       "attrs": {
@@ -224,7 +228,8 @@
       "nation": "ENG",
       "number": 5,
       "pos": "CB",
-      "wage": 46000
+      "wage": 46000,
+      "weight": 83
     },
     {
       "attrs": {
@@ -254,7 +259,8 @@
         "leader",
         "aerial_threat"
       ],
-      "wage": 61500
+      "wage": 61500,
+      "weight": 83
     },
     {
       "alt": [
@@ -292,7 +298,8 @@
       "traits": [
         "flair"
       ],
-      "wage": 45500
+      "wage": 45500,
+      "weight": 75
     },
     {
       "alt": [
@@ -332,7 +339,8 @@
       "traits": [
         "big_game"
       ],
-      "wage": 49500
+      "wage": 49500,
+      "weight": 69
     },
     {
       "alt": [
@@ -365,7 +373,8 @@
         "playmaker",
         "flair"
       ],
-      "wage": 58500
+      "wage": 58500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -391,7 +400,8 @@
       "nation": "FRA",
       "number": 11,
       "pos": "RW",
-      "wage": 30000
+      "wage": 30000,
+      "weight": 72
     },
     {
       "alt": [
@@ -455,7 +465,8 @@
         "speedster",
         "big_game"
       ],
-      "wage": 62500
+      "wage": 62500,
+      "weight": 83
     },
     {
       "alt": [
@@ -516,7 +527,8 @@
       "nation": "BRA",
       "number": 16,
       "pos": "LB",
-      "wage": 38500
+      "wage": 38500,
+      "weight": 66
     },
     {
       "attrs": {
@@ -651,7 +663,8 @@
       "traits": [
         "flair"
       ],
-      "wage": 38000
+      "wage": 38000,
+      "weight": 90
     },
     {
       "attrs": {
@@ -677,7 +690,8 @@
       "nation": "LVA",
       "number": 3,
       "pos": "CB",
-      "wage": 12000
+      "wage": 12000,
+      "weight": 85
     },
     {
       "attrs": {
@@ -703,7 +717,8 @@
       "nation": "ENG",
       "number": 24,
       "pos": "GK",
-      "wage": 4500
+      "wage": 4500,
+      "weight": 88
     },
     {
       "alt": [

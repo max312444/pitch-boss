@@ -239,7 +239,8 @@
       "nation2": "GER",
       "number": 10,
       "pos": "ST",
-      "wage": 2500
+      "wage": 2500,
+      "weight": 78
     },
     {
       "attrs": {
@@ -266,7 +267,8 @@
       "nation2": "GER",
       "number": 11,
       "pos": "ST",
-      "wage": 3500
+      "wage": 3500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -508,7 +510,8 @@
       "nation": "DEN",
       "number": 28,
       "pos": "ST",
-      "wage": 3500
+      "wage": 3500,
+      "weight": 77
     }
   ],
   "stadiumCapacity": 21318

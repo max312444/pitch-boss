@@ -49,7 +49,8 @@
       "nation": "BRA",
       "number": 2,
       "pos": "CB",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 88
     },
     {
       "attrs": {
@@ -105,7 +106,8 @@
       "nation": "GER",
       "number": 5,
       "pos": "CM",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 70
     },
     {
       "alt": [
@@ -523,7 +525,8 @@
       "nation2": "GER",
       "number": 23,
       "pos": "CB",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -576,7 +579,8 @@
       "nation2": "KAZ",
       "number": 25,
       "pos": "RB",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 75
     },
     {
       "alt": [
@@ -637,7 +641,8 @@
       "nation2": "GER",
       "number": 29,
       "pos": "AM",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 75
     },
     {
       "attrs": {

@@ -233,7 +233,8 @@
       "nation2": "CRO",
       "number": 10,
       "pos": "ST",
-      "wage": 16000
+      "wage": 16000,
+      "weight": 75
     },
     {
       "alt": [
@@ -320,7 +321,8 @@
       "nation": "GER",
       "number": 17,
       "pos": "LB",
-      "wage": 10000
+      "wage": 10000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -399,7 +401,8 @@
       "nation": "GER",
       "number": 23,
       "pos": "DM",
-      "wage": 16000
+      "wage": 16000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -486,7 +489,8 @@
       "nation2": "GER",
       "number": 37,
       "pos": "CM",
-      "wage": 16000
+      "wage": 16000,
+      "weight": 60
     },
     {
       "alt": [

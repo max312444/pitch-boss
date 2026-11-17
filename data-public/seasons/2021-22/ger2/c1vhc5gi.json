@@ -75,7 +75,8 @@
       "nation": "DEN",
       "number": 2,
       "pos": "LB",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -186,7 +187,8 @@
       "nation2": "IRN",
       "number": 7,
       "pos": "RW",
-      "wage": 7000
+      "wage": 7000,
+      "weight": 79
     },
     {
       "alt": [
@@ -272,7 +274,8 @@
       "nation": "GER",
       "number": 10,
       "pos": "CM",
-      "wage": 11000
+      "wage": 11000,
+      "weight": 64
     },
     {
       "alt": [
@@ -384,7 +387,8 @@
       "nation": "GER",
       "number": 17,
       "pos": "RB",
-      "wage": 7000
+      "wage": 7000,
+      "weight": 66
     },
     {
       "attrs": {
@@ -410,7 +414,8 @@
       "nation": "GER",
       "number": 19,
       "pos": "LB",
-      "wage": 6500
+      "wage": 6500,
+      "weight": 78
     },
     {
       "alt": [

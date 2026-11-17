@@ -124,7 +124,8 @@
       "number": 5,
       "pos": "CB",
       "verify": true,
-      "wage": 27500
+      "wage": 27500,
+      "weight": 96
     },
     {
       "attrs": {
@@ -211,7 +212,8 @@
         "aerial_threat",
         "leader"
       ],
-      "wage": 36000
+      "wage": 36000,
+      "weight": 87
     },
     {
       "attrs": {
@@ -240,7 +242,8 @@
       "traits": [
         "clutch"
       ],
-      "wage": 31500
+      "wage": 31500,
+      "weight": 69
     },
     {
       "alt": [
@@ -269,7 +272,8 @@
       "nation": "IRL",
       "number": 11,
       "pos": "LB",
-      "wage": 38500
+      "wage": 38500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -296,7 +300,8 @@
       "number": 13,
       "pos": "GK",
       "verify": true,
-      "wage": 27000
+      "wage": 27000,
+      "weight": 88
     },
     {
       "attrs": {
@@ -354,7 +359,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 42500
+      "wage": 42500,
+      "weight": 74
     },
     {
       "attrs": {
@@ -380,7 +386,8 @@
       "nation": "ENG",
       "number": 16,
       "pos": "CB",
-      "wage": 26000
+      "wage": 26000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -407,7 +414,8 @@
       "number": 17,
       "pos": "ST",
       "verify": true,
-      "wage": 21500
+      "wage": 21500,
+      "weight": 82
     },
     {
       "alt": [
@@ -436,7 +444,8 @@
       "nation": "ARG",
       "number": 21,
       "pos": "LWB",
-      "wage": 29000
+      "wage": 29000,
+      "weight": 69
     },
     {
       "alt": [
@@ -493,7 +502,8 @@
       "number": 23,
       "pos": "ST",
       "verify": true,
-      "wage": 9000
+      "wage": 9000,
+      "weight": 82
     },
     {
       "alt": [
@@ -550,7 +560,8 @@
       "number": 25,
       "pos": "ST",
       "verify": true,
-      "wage": 7500
+      "wage": 7500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -577,7 +588,8 @@
       "number": 26,
       "pos": "LB",
       "verify": true,
-      "wage": 10500
+      "wage": 10500,
+      "weight": 78
     },
     {
       "attrs": {

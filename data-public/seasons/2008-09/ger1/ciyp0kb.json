@@ -74,7 +74,8 @@
       "nation": "BRA",
       "number": 2,
       "pos": "CB",
-      "wage": 25500
+      "wage": 25500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -100,7 +101,8 @@
       "nation": "CMR",
       "number": 3,
       "pos": "LB",
-      "wage": 84500
+      "wage": 84500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -126,7 +128,8 @@
       "nation": "GER",
       "number": 4,
       "pos": "CB",
-      "wage": 15500
+      "wage": 15500,
+      "weight": 95
     },
     {
       "attrs": {
@@ -152,7 +155,8 @@
       "nation": "NED",
       "number": 5,
       "pos": "CB",
-      "wage": 94500
+      "wage": 94500,
+      "weight": 72
     },
     {
       "alt": [
@@ -183,7 +187,8 @@
       "nation": "BEL",
       "number": 6,
       "pos": "DM",
-      "wage": 19000
+      "wage": 19000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -209,7 +214,8 @@
       "nation": "GER",
       "number": 7,
       "pos": "LB",
-      "wage": 75500
+      "wage": 75500,
+      "weight": 89
     },
     {
       "attrs": {
@@ -235,7 +241,8 @@
       "nation": "NED",
       "number": 8,
       "pos": "DM",
-      "wage": 94500
+      "wage": 94500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -261,7 +268,8 @@
       "nation": "PER",
       "number": 9,
       "pos": "ST",
-      "wage": 67500
+      "wage": 67500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -287,7 +295,8 @@
       "nation": "CRO",
       "number": 10,
       "pos": "ST",
-      "wage": 77000
+      "wage": 77000,
+      "weight": 77
     },
     {
       "alt": [
@@ -317,7 +326,8 @@
       "nation": "CRO",
       "number": 11,
       "pos": "ST",
-      "wage": 94500
+      "wage": 94500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -343,7 +353,8 @@
       "nation": "GER",
       "number": 12,
       "pos": "GK",
-      "wage": 8500
+      "wage": 8500,
+      "weight": 85
     },
     {
       "alt": [
@@ -399,7 +410,8 @@
       "nation": "GER",
       "number": 15,
       "pos": "AM",
-      "wage": 88500
+      "wage": 88500,
+      "weight": 70
     },
     {
       "alt": [
@@ -428,7 +440,8 @@
       "nation": "BLR",
       "number": 16,
       "pos": "CM",
-      "wage": 33000
+      "wage": 33000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -454,7 +467,8 @@
       "nation": "ESP",
       "number": 17,
       "pos": "ST",
-      "wage": 9500
+      "wage": 9500,
+      "weight": 76
     },
     {
       "alt": [
@@ -509,7 +523,8 @@
       "nation": "GER",
       "number": 19,
       "pos": "CB",
-      "wage": 48500
+      "wage": 48500,
+      "weight": 90
     },
     {
       "attrs": {
@@ -536,7 +551,8 @@
       "nation2": "FRA",
       "number": 20,
       "pos": "RB",
-      "wage": 70500
+      "wage": 70500,
+      "weight": 85
     },
     {
       "alt": [
@@ -565,7 +581,8 @@
       "nation": "BFA",
       "number": 21,
       "pos": "RW",
-      "wage": 26500
+      "wage": 26500,
+      "weight": 60
     },
     {
       "attrs": {
@@ -592,7 +609,8 @@
       "nation2": "CMR",
       "number": 22,
       "pos": "ST",
-      "wage": 24500
+      "wage": 24500,
+      "weight": 87
     },
     {
       "attrs": {
@@ -644,7 +662,8 @@
       "nation": "BRA",
       "number": 27,
       "pos": "AM",
-      "wage": 66500
+      "wage": 66500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -670,7 +689,8 @@
       "nation": "GER",
       "number": 29,
       "pos": "GK",
-      "wage": 10000
+      "wage": 10000,
+      "weight": 86
     },
     {
       "alt": [
@@ -726,7 +746,8 @@
       "nation2": "TUN",
       "number": 32,
       "pos": "AM",
-      "wage": 27000
+      "wage": 27000,
+      "weight": 78
     },
     {
       "alt": [
@@ -756,7 +777,8 @@
       "nation2": "GER",
       "number": 35,
       "pos": "RW",
-      "wage": 14000
+      "wage": 14000,
+      "weight": 72
     },
     {
       "alt": [
@@ -785,7 +807,8 @@
       "nation": "GER",
       "number": 40,
       "pos": "CM",
-      "wage": 64000
+      "wage": 64000,
+      "weight": 84
     }
   ],
   "stadiumCapacity": 57000

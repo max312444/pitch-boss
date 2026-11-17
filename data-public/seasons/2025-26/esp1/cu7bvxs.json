@@ -127,7 +127,8 @@
       "nation": "ESP",
       "number": 5,
       "pos": "CB",
-      "wage": 45500
+      "wage": 45500,
+      "weight": 74
     },
     {
       "attrs": {
@@ -292,7 +293,8 @@
       "nation": "ESP",
       "number": 11,
       "pos": "RW",
-      "wage": 18500
+      "wage": 18500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -512,7 +514,8 @@
       "nation2": "USA",
       "number": 22,
       "pos": "RB",
-      "wage": 81000
+      "wage": 81000,
+      "weight": 72
     },
     {
       "attrs": {
@@ -620,7 +623,8 @@
       "nation": "AUS",
       "number": null,
       "pos": "GK",
-      "wage": 81000
+      "wage": 81000,
+      "weight": 73
     },
     {
       "attrs": {

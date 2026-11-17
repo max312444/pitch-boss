@@ -48,7 +48,8 @@
       "nation": "ESP",
       "number": 1,
       "pos": "GK",
-      "wage": 46500
+      "wage": 46500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -74,7 +75,8 @@
       "nation": "SRB",
       "number": 2,
       "pos": "CB",
-      "wage": 70000
+      "wage": 70000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -269,7 +271,8 @@
       "nation": "ESP",
       "number": 9,
       "pos": "ST",
-      "wage": 84000
+      "wage": 84000,
+      "weight": 82
     },
     {
       "alt": [
@@ -489,7 +492,8 @@
       "nation": "ESP",
       "number": 17,
       "pos": "ST",
-      "wage": 44500
+      "wage": 44500,
+      "weight": 79
     },
     {
       "alt": [
@@ -576,7 +580,8 @@
       "nation2": "ESP",
       "number": 20,
       "pos": "RW",
-      "wage": 29500
+      "wage": 29500,
+      "weight": 69
     },
     {
       "attrs": {
@@ -659,7 +664,8 @@
       "nation": "URU",
       "number": 23,
       "pos": "CM",
-      "wage": 84000
+      "wage": 84000,
+      "weight": 76
     },
     {
       "alt": [
@@ -715,7 +721,8 @@
       "nation2": "ESP",
       "number": 31,
       "pos": "GK",
-      "wage": 8000
+      "wage": 8000,
+      "weight": 83
     },
     {
       "alt": [
@@ -746,7 +753,8 @@
       "nation": "ESP",
       "number": null,
       "pos": "CM",
-      "wage": 75500
+      "wage": 75500,
+      "weight": 74
     }
   ],
   "stadiumCapacity": 19840

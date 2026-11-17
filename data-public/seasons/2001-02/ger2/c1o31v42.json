@@ -487,7 +487,8 @@
       "nation": "ITA",
       "number": null,
       "pos": "CM",
-      "wage": 1500
+      "wage": 1500,
+      "weight": 70
     },
     {
       "alt": [

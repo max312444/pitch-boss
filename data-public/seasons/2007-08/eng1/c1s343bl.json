@@ -41,7 +41,8 @@
       "nation": "USA",
       "number": 1,
       "pos": "GK",
-      "wage": 63000
+      "wage": 63000,
+      "weight": 91
     },
     {
       "attrs": {
@@ -68,7 +69,8 @@
       "number": 2,
       "pos": "CB",
       "verify": true,
-      "wage": 62500
+      "wage": 62500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -94,7 +96,8 @@
       "nation": "ENG",
       "number": 3,
       "pos": "LB",
-      "wage": 55500
+      "wage": 55500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -123,7 +126,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 56500
+      "wage": 56500,
+      "weight": 100
     },
     {
       "alt": [
@@ -181,7 +185,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 63000
+      "wage": 63000,
+      "weight": 84
     },
     {
       "alt": [
@@ -239,7 +244,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 34000
+      "wage": 34000,
+      "weight": 83
     },
     {
       "attrs": {
@@ -291,7 +297,8 @@
       "nation": "RSA",
       "number": 10,
       "pos": "ST",
-      "wage": 39500
+      "wage": 39500,
+      "weight": 87
     },
     {
       "alt": [
@@ -323,7 +330,8 @@
       "traits": [
         "free_kick"
       ],
-      "wage": 37500
+      "wage": 37500,
+      "weight": 89
     },
     {
       "alt": [
@@ -357,7 +365,8 @@
       "traits": [
         "free_kick"
       ],
-      "wage": 41500
+      "wage": 41500,
+      "weight": 72
     },
     {
       "alt": [
@@ -386,7 +395,8 @@
       "nation": "RSA",
       "number": 15,
       "pos": "DM",
-      "wage": 47000
+      "wage": 47000,
+      "weight": 79
     },
     {
       "attrs": {
@@ -412,7 +422,8 @@
       "nation": "ENG",
       "number": 19,
       "pos": "ST",
-      "wage": 7500
+      "wage": 7500,
+      "weight": 80
     },
     {
       "alt": [
@@ -445,7 +456,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 26500
+      "wage": 26500,
+      "weight": 87
     },
     {
       "attrs": {
@@ -471,7 +483,8 @@
       "nation": "GEO",
       "number": 22,
       "pos": "CB",
-      "wage": 22500
+      "wage": 22500,
+      "weight": 89
     },
     {
       "attrs": {

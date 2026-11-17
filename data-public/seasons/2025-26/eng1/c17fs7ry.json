@@ -44,7 +44,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 173500
+      "wage": 173500,
+      "weight": 77
     },
     {
       "attrs": {
@@ -100,7 +101,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 170000
+      "wage": 170000,
+      "weight": 81
     },
     {
       "attrs": {
@@ -152,7 +154,8 @@
       "nation": "ENG",
       "number": 5,
       "pos": "CB",
-      "wage": 96500
+      "wage": 96500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -260,7 +263,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 74000
+      "wage": 74000,
+      "weight": 67
     },
     {
       "attrs": {
@@ -314,7 +318,8 @@
       "nation": "SEN",
       "number": 27,
       "pos": "DM",
-      "wage": 155000
+      "wage": 155000,
+      "weight": 64
     },
     {
       "alt": [
@@ -492,7 +497,8 @@
       "traits": [
         "flair"
       ],
-      "wage": 128000
+      "wage": 128000,
+      "weight": 68
     },
     {
       "alt": [

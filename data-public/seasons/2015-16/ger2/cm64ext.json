@@ -549,7 +549,8 @@
       "nation": "GER",
       "number": 30,
       "pos": "DM",
-      "wage": 8000
+      "wage": 8000,
+      "weight": 71
     },
     {
       "attrs": {

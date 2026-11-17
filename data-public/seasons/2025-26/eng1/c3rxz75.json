@@ -71,7 +71,8 @@
       "nation": "ESP",
       "number": 13,
       "pos": "GK",
-      "wage": 265500
+      "wage": 265500,
+      "weight": 88
     },
     {
       "attrs": {
@@ -224,7 +225,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 430000
+      "wage": 430000,
+      "weight": 78
     },
     {
       "alt": [
@@ -362,7 +364,8 @@
         "playmaker",
         "leader"
       ],
-      "wage": 414000
+      "wage": 414000,
+      "weight": 68
     },
     {
       "alt": [
@@ -401,7 +404,8 @@
         "engine",
         "free_kick"
       ],
-      "wage": 608500
+      "wage": 608500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -460,7 +464,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 544500
+      "wage": 544500,
+      "weight": 78
     },
     {
       "attrs": {
@@ -489,7 +494,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 342500
+      "wage": 342500,
+      "weight": 70
     },
     {
       "attrs": {
@@ -620,7 +626,8 @@
       "traits": [
         "speedster"
       ],
-      "wage": 265500
+      "wage": 265500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -649,7 +656,8 @@
       "traits": [
         "clutch"
       ],
-      "wage": 224000
+      "wage": 224000,
+      "weight": 61
     },
     {
       "alt": [
@@ -748,7 +756,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 380000
+      "wage": 380000,
+      "weight": 80
     },
     {
       "attrs": {
@@ -777,7 +786,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 237000
+      "wage": 237000,
+      "weight": 72
     },
     {
       "alt": [

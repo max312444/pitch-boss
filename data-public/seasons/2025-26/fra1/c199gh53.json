@@ -157,7 +157,8 @@
       "nation": "FRA",
       "number": 7,
       "pos": "RB",
-      "wage": 41500
+      "wage": 41500,
+      "weight": 79
     },
     {
       "alt": [
@@ -354,7 +355,8 @@
       "nation": "GNB",
       "number": 17,
       "pos": "RW",
-      "wage": 49500
+      "wage": 49500,
+      "weight": 69
     },
     {
       "attrs": {
@@ -406,7 +408,8 @@
       "nation": "FRA",
       "number": 19,
       "pos": "ST",
-      "wage": 42000
+      "wage": 42000,
+      "weight": 78
     },
     {
       "attrs": {

@@ -513,7 +513,8 @@
       "nation": "BRA",
       "number": 23,
       "pos": "CM",
-      "wage": 68000
+      "wage": 68000,
+      "weight": 77
     },
     {
       "alt": [
@@ -596,7 +597,8 @@
       "nation": "BIH",
       "number": 30,
       "pos": "ST",
-      "wage": 34500
+      "wage": 34500,
+      "weight": 94
     },
     {
       "attrs": {
@@ -623,7 +625,8 @@
       "nation2": "USA",
       "number": 31,
       "pos": "GK",
-      "wage": 68000
+      "wage": 68000,
+      "weight": 100
     },
     {
       "alt": [
@@ -653,7 +656,8 @@
       "nation": "ITA",
       "number": 32,
       "pos": "ST",
-      "wage": 53500
+      "wage": 53500,
+      "weight": 75
     },
     {
       "attrs": {

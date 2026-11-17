@@ -265,7 +265,8 @@
       "nation": "GER",
       "number": 11,
       "pos": "CM",
-      "wage": 15000
+      "wage": 15000,
+      "weight": 70
     },
     {
       "alt": [
@@ -483,7 +484,8 @@
       "nation": "GER",
       "number": 26,
       "pos": "RB",
-      "wage": 12500
+      "wage": 12500,
+      "weight": 73
     },
     {
       "alt": [
@@ -593,7 +595,8 @@
       "nation": "GER",
       "number": 32,
       "pos": "LB",
-      "wage": 10500
+      "wage": 10500,
+      "weight": 75
     },
     {
       "attrs": {

@@ -13,6 +13,8 @@ export interface SaveMeta {
   version: number;
   /** 나의 구단 (목록에서 이름 · 엠블럼을 보이려고) */
   myClub?: MyClubState;
+  /** 패러디 이름 · 실명 (목록에서 실명으로 바꾸기 버튼) */
+  dataset?: 'public' | 'real';
 }
 interface SaveRecord extends SaveMeta { world: World }
 
@@ -53,7 +55,7 @@ export async function readSave(slot: string): Promise<World | null> {
 export async function listSaves(): Promise<SaveMeta[]> {
   const all = await tx<SaveRecord[]>('readonly', (s) => s.getAll() as IDBRequest<SaveRecord[]>);
   // 나의 구단 세이브: 불러오기 전에도 목록에 이름 · 엠블럼이 보이게 등록 (예전 세이브는 world 에서)
-  return all.map(({ world, ...meta }) => { const my = meta.myClub ?? world?.myClub; registerMyClub(my); return { ...meta, ...(my ? { myClub: my } : {}) }; }).sort((a, b) => b.savedAt.localeCompare(a.savedAt));
+  return all.map(({ world, ...meta }) => { const my = meta.myClub ?? world?.myClub; registerMyClub(my); return { ...meta, dataset: world?.dataset ?? 'real', ...(my ? { myClub: my } : {}) }; }).sort((a, b) => b.savedAt.localeCompare(a.savedAt));
 }
 
 export async function deleteSave(slot: string): Promise<void> {

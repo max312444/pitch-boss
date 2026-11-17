@@ -104,7 +104,8 @@
       "nation": "NED",
       "number": 3,
       "pos": "CB",
-      "wage": 28000
+      "wage": 28000,
+      "weight": 87
     },
     {
       "attrs": {
@@ -156,7 +157,8 @@
       "nation": "MAR",
       "number": 5,
       "pos": "CB",
-      "wage": 49500
+      "wage": 49500,
+      "weight": 78
     },
     {
       "alt": [
@@ -186,7 +188,8 @@
       "nation2": "CIV",
       "number": 7,
       "pos": "RW",
-      "wage": 27500
+      "wage": 27500,
+      "weight": 77
     },
     {
       "attrs": {
@@ -238,7 +241,8 @@
       "nation": "PAR",
       "number": 9,
       "pos": "ST",
-      "wage": 89500
+      "wage": 89500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -290,7 +294,8 @@
       "nation": "CHI",
       "number": 13,
       "pos": "CB",
-      "wage": 29000
+      "wage": 29000,
+      "weight": 83
     },
     {
       "alt": [
@@ -346,7 +351,8 @@
       "nation": "ITA",
       "number": 17,
       "pos": "GK",
-      "wage": 21000
+      "wage": 21000,
+      "weight": 96
     },
     {
       "attrs": {
@@ -403,7 +409,8 @@
       "nation": "AUT",
       "number": 20,
       "pos": "RM",
-      "wage": 96500
+      "wage": 96500,
+      "weight": 73
     },
     {
       "alt": [
@@ -490,7 +497,8 @@
       "nation": "CRO",
       "number": 24,
       "pos": "LB",
-      "wage": 96500
+      "wage": 96500,
+      "weight": 74
     },
     {
       "alt": [
@@ -549,7 +557,8 @@
       "nation2": "BEL",
       "number": 27,
       "pos": "RB",
-      "wage": 82000
+      "wage": 82000,
+      "weight": 71
     },
     {
       "attrs": {
@@ -601,7 +610,8 @@
       "nation": "SRB",
       "number": 32,
       "pos": "GK",
-      "wage": 78500
+      "wage": 78500,
+      "weight": 92
     },
     {
       "alt": [
@@ -631,7 +641,8 @@
       "nation2": "CMR",
       "number": 61,
       "pos": "CM",
-      "wage": 35000
+      "wage": 35000,
+      "weight": 78
     },
     {
       "alt": [
@@ -689,7 +700,8 @@
       "nation": "POL",
       "number": 77,
       "pos": "CM",
-      "wage": 96500
+      "wage": 96500,
+      "weight": 73
     },
     {
       "alt": [
@@ -744,7 +756,8 @@
       "nation": "COL",
       "number": 91,
       "pos": "ST",
-      "wage": 75500
+      "wage": 75500,
+      "weight": 88
     },
     {
       "alt": [
@@ -773,7 +786,8 @@
       "nation": "SRB",
       "number": null,
       "pos": "RW",
-      "wage": 96500
+      "wage": 96500,
+      "weight": 70
     },
     {
       "attrs": {

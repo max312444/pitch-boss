@@ -48,7 +48,8 @@
       "nation": "ARG",
       "number": 1,
       "pos": "GK",
-      "wage": 2500
+      "wage": 2500,
+      "weight": 90
     },
     {
       "attrs": {
@@ -74,7 +75,8 @@
       "nation": "ESP",
       "number": 2,
       "pos": "RB",
-      "wage": 86000
+      "wage": 86000,
+      "weight": 69
     },
     {
       "alt": [
@@ -132,7 +134,8 @@
       "nation": "ESP",
       "number": 4,
       "pos": "CB",
-      "wage": 86000
+      "wage": 86000,
+      "weight": 81
     },
     {
       "attrs": {
@@ -159,7 +162,8 @@
       "nation": "ESP",
       "number": 5,
       "pos": "AM",
-      "wage": 44000
+      "wage": 44000,
+      "weight": 67
     },
     {
       "alt": [
@@ -188,7 +192,8 @@
       "nation": "ESP",
       "number": 6,
       "pos": "CM",
-      "wage": 86000
+      "wage": 86000,
+      "weight": 72
     },
     {
       "alt": [
@@ -247,7 +252,8 @@
       "nation": "ESP",
       "number": 8,
       "pos": "CM",
-      "wage": 40000
+      "wage": 40000,
+      "weight": 66
     },
     {
       "attrs": {
@@ -273,7 +279,8 @@
       "nation": "POR",
       "number": 9,
       "pos": "ST",
-      "wage": 86000
+      "wage": 86000,
+      "weight": 79
     },
     {
       "attrs": {
@@ -299,7 +306,8 @@
       "nation": "ESP",
       "number": 10,
       "pos": "ST",
-      "wage": 74000
+      "wage": 74000,
+      "weight": 67
     },
     {
       "alt": [
@@ -329,7 +337,8 @@
       "nation2": "ITA",
       "number": 11,
       "pos": "LW",
-      "wage": 66000
+      "wage": 66000,
+      "weight": 60
     },
     {
       "attrs": {
@@ -410,7 +419,8 @@
       "nation": "GHA",
       "number": 15,
       "pos": "CB",
-      "wage": 36000
+      "wage": 36000,
+      "weight": 80
     },
     {
       "alt": [
@@ -440,7 +450,8 @@
       "nation": "ESP",
       "number": 17,
       "pos": "LB",
-      "wage": 41000
+      "wage": 41000,
+      "weight": 70
     },
     {
       "alt": [
@@ -524,7 +535,8 @@
       "nation": "ARG",
       "number": 21,
       "pos": "RW",
-      "wage": 35500
+      "wage": 35500,
+      "weight": 80
     },
     {
       "alt": [

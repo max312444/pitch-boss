@@ -46,7 +46,8 @@
         "leader",
         "playmaker"
       ],
-      "wage": 157000
+      "wage": 157000,
+      "weight": 66
     },
     {
       "alt": [
@@ -130,7 +131,8 @@
       "traits": [
         "long_shot"
       ],
-      "wage": 119500
+      "wage": 119500,
+      "weight": 85
     },
     {
       "attrs": {
@@ -156,7 +158,8 @@
       "nation": "ENG",
       "number": 6,
       "pos": "CB",
-      "wage": 80500
+      "wage": 80500,
+      "weight": 83
     },
     {
       "alt": [
@@ -189,7 +192,8 @@
       "traits": [
         "engine"
       ],
-      "wage": 157000
+      "wage": 157000,
+      "weight": 81
     },
     {
       "alt": [
@@ -222,7 +226,8 @@
       "traits": [
         "long_shot"
       ],
-      "wage": 96000
+      "wage": 96000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -251,7 +256,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 70500
+      "wage": 70500,
+      "weight": 66
     },
     {
       "alt": [
@@ -319,7 +325,8 @@
       "nation": "SCO",
       "number": 11,
       "pos": "RW",
-      "wage": 30500
+      "wage": 30500,
+      "weight": 71
     },
     {
       "attrs": {
@@ -345,7 +352,8 @@
       "nation": "ENG",
       "number": 13,
       "pos": "LB",
-      "wage": 73000
+      "wage": 73000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -371,7 +379,8 @@
       "nation": "SWE",
       "number": 14,
       "pos": "ST",
-      "wage": 79000
+      "wage": 79000,
+      "weight": 77
     },
     {
       "alt": [
@@ -400,7 +409,8 @@
       "nation": "SWE",
       "number": 17,
       "pos": "RB",
-      "wage": 48000
+      "wage": 48000,
+      "weight": 79
     },
     {
       "attrs": {
@@ -426,7 +436,8 @@
       "nation": "ESP",
       "number": 19,
       "pos": "RB",
-      "wage": 38000
+      "wage": 38000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -455,7 +466,8 @@
       "traits": [
         "target_man"
       ],
-      "wage": 52000
+      "wage": 52000,
+      "weight": 82
     },
     {
       "attrs": {
@@ -507,7 +519,8 @@
       "nation": "ENG",
       "number": 22,
       "pos": "GK",
-      "wage": 157000
+      "wage": 157000,
+      "weight": 76
     },
     {
       "alt": [
@@ -569,7 +582,8 @@
       "traits": [
         "engine"
       ],
-      "wage": 92000
+      "wage": 92000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -596,7 +610,8 @@
       "nation2": "WAL",
       "number": 26,
       "pos": "GK",
-      "wage": 33000
+      "wage": 33000,
+      "weight": 74
     },
     {
       "alt": [
@@ -625,7 +640,8 @@
       "nation": "ENG",
       "number": 28,
       "pos": "CM",
-      "wage": 124000
+      "wage": 124000,
+      "weight": 71
     },
     {
       "attrs": {
@@ -799,7 +815,8 @@
       "traits": [
         "playmaker"
       ],
-      "wage": 157000
+      "wage": 157000,
+      "weight": 74
     }
   ],
   "stadiumCapacity": 52305

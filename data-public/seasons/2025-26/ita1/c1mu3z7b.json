@@ -454,7 +454,8 @@
       "nation2": "GER",
       "number": 20,
       "pos": "DM",
-      "wage": 64000
+      "wage": 64000,
+      "weight": 67
     },
     {
       "attrs": {
@@ -620,7 +621,8 @@
       "nation": "MLI",
       "number": 29,
       "pos": "CM",
-      "wage": 54500
+      "wage": 54500,
+      "weight": 77
     },
     {
       "attrs": {

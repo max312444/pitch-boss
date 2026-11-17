@@ -41,7 +41,8 @@
       "nation": "ENG",
       "number": 1,
       "pos": "GK",
-      "wage": 83500
+      "wage": 83500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -124,7 +125,8 @@
       "nation": "ENG",
       "number": 2,
       "pos": "RB",
-      "wage": 131500
+      "wage": 131500,
+      "weight": 62
     },
     {
       "attrs": {
@@ -176,7 +178,8 @@
       "nation": "ENG",
       "number": 5,
       "pos": "CB",
-      "wage": 108000
+      "wage": 108000,
+      "weight": 75
     },
     {
       "attrs": {
@@ -310,7 +313,8 @@
       "nation": "ENG",
       "number": 21,
       "pos": "LB",
-      "wage": 104000
+      "wage": 104000,
+      "weight": 70
     },
     {
       "attrs": {
@@ -336,7 +340,8 @@
       "nation": "POL",
       "number": 35,
       "pos": "CB",
-      "wage": 150000
+      "wage": 150000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -567,7 +572,8 @@
       "nation": "ENG",
       "number": 9,
       "pos": "ST",
-      "wage": 66500
+      "wage": 66500,
+      "weight": 70
     },
     {
       "attrs": {

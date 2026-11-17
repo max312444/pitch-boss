@@ -208,7 +208,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 32500
+      "wage": 32500,
+      "weight": 78
     },
     {
       "attrs": {
@@ -322,7 +323,8 @@
       "nation": "ENG",
       "number": 8,
       "pos": "CM",
-      "wage": 39000
+      "wage": 39000,
+      "weight": 70
     },
     {
       "alt": [
@@ -352,7 +354,8 @@
       "nation": "IRL",
       "number": 18,
       "pos": "CM",
-      "wage": 38500
+      "wage": 38500,
+      "weight": 74
     },
     {
       "alt": [
@@ -384,7 +387,8 @@
       "traits": [
         "free_kick"
       ],
-      "wage": 38500
+      "wage": 38500,
+      "weight": 77
     },
     {
       "alt": [
@@ -558,7 +562,8 @@
       "traits": [
         "aerial_threat"
       ],
-      "wage": 40500
+      "wage": 40500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -584,7 +589,8 @@
       "nation": "ENG",
       "number": 10,
       "pos": "ST",
-      "wage": 29500
+      "wage": 29500,
+      "weight": 69
     },
     {
       "attrs": {
@@ -613,7 +619,8 @@
       "traits": [
         "injury_prone"
       ],
-      "wage": 24000
+      "wage": 24000,
+      "weight": 67
     },
     {
       "attrs": {
@@ -666,7 +673,8 @@
       "number": 31,
       "pos": "ST",
       "verify": true,
-      "wage": 19500
+      "wage": 19500,
+      "weight": 83
     }
   ],
   "stadiumCapacity": 32689

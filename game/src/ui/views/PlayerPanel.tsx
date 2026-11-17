@@ -157,7 +157,7 @@ export function PlayerPanel({ p, age, ko, nation, actions, club, sheet }: { p: P
           return (
             <div className="mt-2 rounded-lg bg-ink-900 px-3 py-2.5 text-[12px]" title={BODY[bt].how}>
               <div className="flex items-center justify-between gap-2">
-                <span className="text-mid">키 <span className="tnum font-semibold text-hi">{heightOf(p)}cm</span>{p.foot ? <span className="text-lo"> · {p.foot === 'L' ? '왼발' : p.foot === 'R' ? '오른발' : '양발'}</span> : null}</span>
+                <span className="text-mid">키 <span className="tnum font-semibold text-hi">{heightOf(p)}cm</span>{p.weight ? <span className="tnum font-semibold text-hi"> · {p.weight}kg</span> : null}{p.foot ? <span className="text-lo"> · {p.foot === 'L' ? '왼발' : p.foot === 'R' ? '오른발' : '양발'}</span> : null}</span>
                 <span className="text-mid">체형 <span className="font-semibold text-hi">{BODY[bt].ko}</span></span>
               </div>
               <div className="mt-1 text-[11px] leading-snug text-lo">{BODY[bt].how}</div>

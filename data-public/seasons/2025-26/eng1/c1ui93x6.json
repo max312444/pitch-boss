@@ -41,7 +41,8 @@
       "nation": "GER",
       "number": 1,
       "pos": "GK",
-      "wage": 208000
+      "wage": 208000,
+      "weight": 83
     },
     {
       "attrs": {
@@ -68,7 +69,8 @@
       "number": 23,
       "pos": "GK",
       "verify": true,
-      "wage": 60500
+      "wage": 60500,
+      "weight": 78
     },
     {
       "attrs": {
@@ -94,7 +96,8 @@
       "nation": "NED",
       "number": 2,
       "pos": "RB",
-      "wage": 136000
+      "wage": 136000,
+      "weight": 70
     },
     {
       "alt": [
@@ -123,7 +126,8 @@
       "nation": "NGA",
       "number": 3,
       "pos": "CB",
-      "wage": 152500
+      "wage": 152500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -149,7 +153,8 @@
       "nation": "DEN",
       "number": 5,
       "pos": "CB",
-      "wage": 211000
+      "wage": 211000,
+      "weight": 90
     },
     {
       "attrs": {
@@ -176,7 +181,8 @@
       "nation2": "MAR",
       "number": 31,
       "pos": "CB",
-      "wage": 117000
+      "wage": 117000,
+      "weight": 90
     },
     {
       "attrs": {
@@ -203,7 +209,8 @@
       "nation2": "ENG",
       "number": 33,
       "pos": "LB",
-      "wage": 195000
+      "wage": 195000,
+      "weight": 70
     },
     {
       "alt": [
@@ -232,7 +239,8 @@
       "nation": "BEL",
       "number": 21,
       "pos": "RB",
-      "wage": 131000
+      "wage": 131000,
+      "weight": 80
     },
     {
       "alt": [
@@ -292,7 +300,8 @@
       "nation": "ENG",
       "number": 30,
       "pos": "LB",
-      "wage": 106500
+      "wage": 106500,
+      "weight": 71
     },
     {
       "attrs": {
@@ -318,7 +327,8 @@
       "nation": "NOR",
       "number": 16,
       "pos": "DM",
-      "wage": 211000
+      "wage": 211000,
+      "weight": 97
     },
     {
       "attrs": {
@@ -344,7 +354,8 @@
       "nation": "SRB",
       "number": 20,
       "pos": "DM",
-      "wage": 167500
+      "wage": 167500,
+      "weight": 77
     },
     {
       "attrs": {
@@ -370,7 +381,8 @@
       "nation": "ENG",
       "number": 6,
       "pos": "DM",
-      "wage": 119000
+      "wage": 119000,
+      "weight": 75
     },
     {
       "alt": [
@@ -402,7 +414,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 97000
+      "wage": 97000,
+      "weight": 74
     },
     {
       "attrs": {
@@ -461,7 +474,8 @@
       "traits": [
         "free_kick"
       ],
-      "wage": 144000
+      "wage": 144000,
+      "weight": 66
     },
     {
       "attrs": {
@@ -519,7 +533,8 @@
       "nation": "NGA",
       "number": 17,
       "pos": "LW",
-      "wage": 161500
+      "wage": 161500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -548,7 +563,8 @@
       "traits": [
         "penalty"
       ],
-      "wage": 117000
+      "wage": 117000,
+      "weight": 80
     },
     {
       "attrs": {

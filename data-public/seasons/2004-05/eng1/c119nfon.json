@@ -67,7 +67,8 @@
       "nation": "NED",
       "number": 13,
       "pos": "GK",
-      "wage": 26500
+      "wage": 26500,
+      "weight": 110
     },
     {
       "attrs": {
@@ -123,7 +124,8 @@
       "nation": "ECU",
       "number": 15,
       "pos": "RB",
-      "wage": 40500
+      "wage": 40500,
+      "weight": 74
     },
     {
       "alt": [
@@ -155,7 +157,8 @@
       "nation2": "TRI",
       "number": 3,
       "pos": "LB",
-      "wage": 30500
+      "wage": 30500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -184,7 +187,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 62500
+      "wage": 62500,
+      "weight": 84
     },
     {
       "attrs": {
@@ -236,7 +240,8 @@
       "nation": "ENG",
       "number": 19,
       "pos": "CB",
-      "wage": 21500
+      "wage": 21500,
+      "weight": 78
     },
     {
       "alt": [
@@ -326,7 +331,8 @@
       "traits": [
         "long_shot"
       ],
-      "wage": 59500
+      "wage": 59500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -352,7 +358,8 @@
       "nation": "ENG",
       "number": 6,
       "pos": "DM",
-      "wage": 62500
+      "wage": 62500,
+      "weight": 80
     },
     {
       "alt": [
@@ -416,7 +423,8 @@
       "traits": [
         "free_kick"
       ],
-      "wage": 53000
+      "wage": 53000,
+      "weight": 72
     },
     {
       "alt": [
@@ -447,7 +455,8 @@
       "nation": "ENG",
       "number": 17,
       "pos": "LM",
-      "wage": 20000
+      "wage": 20000,
+      "weight": 63
     },
     {
       "alt": [
@@ -476,7 +485,8 @@
       "nation": "NIR",
       "number": 24,
       "pos": "CM",
-      "wage": 26500
+      "wage": 26500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -535,7 +545,8 @@
       "traits": [
         "speedster"
       ],
-      "wage": 29000
+      "wage": 29000,
+      "weight": 76
     },
     {
       "attrs": {
@@ -614,7 +625,8 @@
       "nation": "ENG",
       "number": 26,
       "pos": "ST",
-      "wage": 11000
+      "wage": 11000,
+      "weight": 68
     },
     {
       "attrs": {

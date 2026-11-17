@@ -190,7 +190,8 @@
       "nation": "NED",
       "number": 9,
       "pos": "ST",
-      "wage": 11000
+      "wage": 11000,
+      "weight": 82
     },
     {
       "attrs": {
@@ -456,7 +457,8 @@
       "nation": "GER",
       "number": 27,
       "pos": "CM",
-      "wage": 15000
+      "wage": 15000,
+      "weight": 63
     },
     {
       "attrs": {

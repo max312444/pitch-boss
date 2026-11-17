@@ -74,7 +74,8 @@
       "nation": "GER",
       "number": 3,
       "pos": "CB",
-      "wage": 6000
+      "wage": 6000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -100,7 +101,8 @@
       "nation": "GER",
       "number": 5,
       "pos": "CB",
-      "wage": 10000
+      "wage": 10000,
+      "weight": 82
     },
     {
       "alt": [
@@ -162,7 +164,8 @@
       "nation": "KOR",
       "number": 7,
       "pos": "AM",
-      "wage": 10000
+      "wage": 10000,
+      "weight": 70
     },
     {
       "alt": [
@@ -303,7 +306,8 @@
       "nation": "GER",
       "number": 14,
       "pos": "ST",
-      "wage": 8000
+      "wage": 8000,
+      "weight": 90
     },
     {
       "attrs": {
@@ -329,7 +333,8 @@
       "nation": "GER",
       "number": 15,
       "pos": "LB",
-      "wage": 7000
+      "wage": 7000,
+      "weight": 81
     },
     {
       "attrs": {
@@ -519,7 +524,8 @@
       "nation": "GER",
       "number": 23,
       "pos": "ST",
-      "wage": 2000
+      "wage": 2000,
+      "weight": 88
     },
     {
       "attrs": {
@@ -662,7 +668,8 @@
       "nation": "JPN",
       "number": null,
       "pos": "AM",
-      "wage": 8000
+      "wage": 8000,
+      "weight": 67
     }
   ],
   "stadiumCapacity": 15034

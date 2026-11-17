@@ -48,7 +48,8 @@
       "nation": "ESP",
       "number": 1,
       "pos": "GK",
-      "wage": 32500
+      "wage": 32500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -74,7 +75,8 @@
       "nation": "ESP",
       "number": 2,
       "pos": "RB",
-      "wage": 3000
+      "wage": 3000,
+      "weight": 75
     },
     {
       "alt": [
@@ -129,7 +131,8 @@
       "nation": "ESP",
       "number": 4,
       "pos": "CB",
-      "wage": 27500
+      "wage": 27500,
+      "weight": 81
     },
     {
       "attrs": {
@@ -185,7 +188,8 @@
       "nation": "ESP",
       "number": 6,
       "pos": "CM",
-      "wage": 64500
+      "wage": 64500,
+      "weight": 77
     },
     {
       "alt": [
@@ -243,7 +247,8 @@
       "nation": "SRB",
       "number": 8,
       "pos": "CM",
-      "wage": 81500
+      "wage": 81500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -269,7 +274,8 @@
       "nation": "ARG",
       "number": 9,
       "pos": "ST",
-      "wage": 28500
+      "wage": 28500,
+      "weight": 81
     },
     {
       "alt": [
@@ -299,7 +305,8 @@
       "nation": "ESP",
       "number": 10,
       "pos": "CM",
-      "wage": 43500
+      "wage": 43500,
+      "weight": 72
     },
     {
       "alt": [
@@ -385,7 +392,8 @@
       "nation": "ESP",
       "number": 14,
       "pos": "RW",
-      "wage": 79500
+      "wage": 79500,
+      "weight": 72
     },
     {
       "alt": [
@@ -415,7 +423,8 @@
       "nation": "ESP",
       "number": 15,
       "pos": "RB",
-      "wage": 31500
+      "wage": 31500,
+      "weight": 65
     },
     {
       "attrs": {
@@ -441,7 +450,8 @@
       "nation": "ESP",
       "number": 16,
       "pos": "AM",
-      "wage": 81500
+      "wage": 81500,
+      "weight": 65
     },
     {
       "attrs": {
@@ -467,7 +477,8 @@
       "nation": "CRO",
       "number": 17,
       "pos": "ST",
-      "wage": 81500
+      "wage": 81500,
+      "weight": 75
     },
     {
       "attrs": {
@@ -493,7 +504,8 @@
       "nation": "ESP",
       "number": 18,
       "pos": "ST",
-      "wage": 44500
+      "wage": 44500,
+      "weight": 79
     },
     {
       "attrs": {

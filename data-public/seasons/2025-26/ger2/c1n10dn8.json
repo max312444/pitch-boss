@@ -414,7 +414,8 @@
       "nation": "NOR",
       "number": 16,
       "pos": "ST",
-      "wage": 17500
+      "wage": 17500,
+      "weight": 80
     },
     {
       "attrs": {

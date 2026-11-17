@@ -67,7 +67,8 @@
       "nation": "ENG",
       "number": 13,
       "pos": "GK",
-      "wage": 19000
+      "wage": 19000,
+      "weight": 80
     },
     {
       "alt": [
@@ -123,7 +124,8 @@
       "nation": "ENG",
       "number": 4,
       "pos": "CB",
-      "wage": 23000
+      "wage": 23000,
+      "weight": 81
     },
     {
       "attrs": {
@@ -207,7 +209,8 @@
       "traits": [
         "speedster"
       ],
-      "wage": 27500
+      "wage": 27500,
+      "weight": 67
     },
     {
       "alt": [
@@ -237,7 +240,8 @@
       "nation": "MAR",
       "number": 10,
       "pos": "AM",
-      "wage": 32500
+      "wage": 32500,
+      "weight": 76
     },
     {
       "attrs": {
@@ -263,7 +267,8 @@
       "nation": "BEL",
       "number": 9,
       "pos": "ST",
-      "wage": 14500
+      "wage": 14500,
+      "weight": 85
     },
     {
       "attrs": {
@@ -289,7 +294,8 @@
       "nation": "AUS",
       "number": 16,
       "pos": "ST",
-      "wage": 18000
+      "wage": 18000,
+      "weight": 83
     },
     {
       "alt": [
@@ -318,7 +324,8 @@
       "nation": "MAR",
       "number": 8,
       "pos": "CM",
-      "wage": 30500
+      "wage": 30500,
+      "weight": 77
     },
     {
       "alt": [
@@ -433,7 +440,8 @@
       "nation": "IRL",
       "number": 17,
       "pos": "CB",
-      "wage": 22500
+      "wage": 22500,
+      "weight": 76
     },
     {
       "alt": [
@@ -463,7 +471,8 @@
       "nation": "ENG",
       "number": 7,
       "pos": "CM",
-      "wage": 27000
+      "wage": 27000,
+      "weight": 63
     },
     {
       "alt": [
@@ -547,7 +556,8 @@
       "nation": "ENG",
       "number": 28,
       "pos": "ST",
-      "wage": 7500
+      "wage": 7500,
+      "weight": 89
     },
     {
       "attrs": {
@@ -573,7 +583,8 @@
       "nation": "PER",
       "number": 11,
       "pos": "ST",
-      "wage": 9500
+      "wage": 9500,
+      "weight": 73
     },
     {
       "alt": [

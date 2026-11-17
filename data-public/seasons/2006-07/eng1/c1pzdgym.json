@@ -41,7 +41,8 @@
       "nation": "CZE",
       "number": 1,
       "pos": "GK",
-      "wage": 163500
+      "wage": 163500,
+      "weight": 90
     },
     {
       "attrs": {
@@ -100,7 +101,8 @@
       "nation": "FRA",
       "number": 4,
       "pos": "DM",
-      "wage": 124000
+      "wage": 124000,
+      "weight": 65
     },
     {
       "alt": [
@@ -132,7 +134,8 @@
       "traits": [
         "engine"
       ],
-      "wage": 163500
+      "wage": 163500,
+      "weight": 85
     },
     {
       "attrs": {
@@ -158,7 +161,8 @@
       "nation": "POR",
       "number": 6,
       "pos": "CB",
-      "wage": 144000
+      "wage": 144000,
+      "weight": 79
     },
     {
       "attrs": {
@@ -187,7 +191,8 @@
       "traits": [
         "big_game"
       ],
-      "wage": 69500
+      "wage": 69500,
+      "weight": 72
     },
     {
       "alt": [
@@ -221,7 +226,8 @@
         "long_shot",
         "big_game"
       ],
-      "wage": 163500
+      "wage": 163500,
+      "weight": 88
     },
     {
       "attrs": {
@@ -280,7 +286,8 @@
       "traits": [
         "flair"
       ],
-      "wage": 61000
+      "wage": 61000,
+      "weight": 73
     },
     {
       "attrs": {
@@ -311,7 +318,8 @@
         "aerial_threat",
         "big_game"
       ],
-      "wage": 148000
+      "wage": 148000,
+      "weight": 84
     },
     {
       "attrs": {
@@ -337,7 +345,8 @@
       "nation": "NGA",
       "number": 12,
       "pos": "DM",
-      "wage": 37500
+      "wage": 37500,
+      "weight": 86
     },
     {
       "alt": [
@@ -370,7 +379,8 @@
         "leader",
         "long_shot"
       ],
-      "wage": 163500
+      "wage": 163500,
+      "weight": 85
     },
     {
       "alt": [
@@ -403,7 +413,8 @@
       "traits": [
         "free_kick"
       ],
-      "wage": 53500
+      "wage": 53500,
+      "weight": 85
     },
     {
       "attrs": {
@@ -433,7 +444,8 @@
         "injury_prone",
         "flair"
       ],
-      "wage": 73500
+      "wage": 73500,
+      "weight": 80
     },
     {
       "attrs": {
@@ -486,7 +498,8 @@
       "number": 19,
       "pos": "DM",
       "verify": true,
-      "wage": 52000
+      "wage": 52000,
+      "weight": 73
     },
     {
       "alt": [
@@ -544,7 +557,8 @@
       "nation": "CIV",
       "number": 21,
       "pos": "RW",
-      "wage": 20000
+      "wage": 20000,
+      "weight": 79
     },
     {
       "attrs": {
@@ -602,7 +616,8 @@
       "traits": [
         "speedster"
       ],
-      "wage": 46500
+      "wage": 46500,
+      "weight": 64
     },
     {
       "attrs": {
@@ -632,7 +647,8 @@
         "leader",
         "aerial_threat"
       ],
-      "wage": 163500
+      "wage": 163500,
+      "weight": 90
     },
     {
       "attrs": {

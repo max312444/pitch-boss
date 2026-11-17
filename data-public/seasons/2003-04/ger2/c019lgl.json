@@ -48,7 +48,8 @@
       "nation2": "GER",
       "number": null,
       "pos": "AM",
-      "wage": 3500
+      "wage": 3500,
+      "weight": 80
     },
     {
       "alt": [

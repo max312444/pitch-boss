@@ -184,7 +184,8 @@
       "nation": "GER",
       "number": 6,
       "pos": "LM",
-      "wage": 4500
+      "wage": 4500,
+      "weight": 72
     },
     {
       "alt": [
@@ -354,7 +355,8 @@
       "nation": "GER",
       "number": 18,
       "pos": "AM",
-      "wage": 4500
+      "wage": 4500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -436,7 +438,8 @@
       "nation": "GER",
       "number": 21,
       "pos": "RW",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 77
     },
     {
       "attrs": {
@@ -488,7 +491,8 @@
       "nation": "GER",
       "number": 23,
       "pos": "CB",
-      "wage": 2500
+      "wage": 2500,
+      "weight": 80
     },
     {
       "alt": [

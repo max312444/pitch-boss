@@ -214,7 +214,8 @@
       "nation2": "GER",
       "number": 13,
       "pos": "CB",
-      "wage": 7500
+      "wage": 7500,
+      "weight": 76
     },
     {
       "alt": [
@@ -492,7 +493,8 @@
       "nation": "CIV",
       "number": 30,
       "pos": "ST",
-      "wage": 4000
+      "wage": 4000,
+      "weight": 75
     },
     {
       "alt": [

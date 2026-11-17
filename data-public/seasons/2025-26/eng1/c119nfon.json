@@ -44,7 +44,8 @@
       "traits": [
         "big_game"
       ],
-      "wage": 328500
+      "wage": 328500,
+      "weight": 85
     },
     {
       "attrs": {
@@ -100,7 +101,8 @@
       "nation": "ENG",
       "number": 4,
       "pos": "CB",
-      "wage": 247500
+      "wage": 247500,
+      "weight": 77
     },
     {
       "attrs": {
@@ -155,7 +157,8 @@
       "traits": [
         "leader"
       ],
-      "wage": 163500
+      "wage": 163500,
+      "weight": 77
     },
     {
       "attrs": {
@@ -182,7 +185,8 @@
       "number": 3,
       "pos": "CB",
       "verify": true,
-      "wage": 166500
+      "wage": 166500,
+      "weight": 82
     },
     {
       "attrs": {
@@ -238,7 +242,8 @@
       "traits": [
         "free_kick"
       ],
-      "wage": 208500
+      "wage": 208500,
+      "weight": 74
     },
     {
       "alt": [
@@ -357,7 +362,8 @@
       "nation": "BEL",
       "number": 8,
       "pos": "CM",
-      "wage": 333500
+      "wage": 333500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -384,7 +390,8 @@
       "nation2": "SEN",
       "number": 44,
       "pos": "DM",
-      "wage": 282500
+      "wage": 282500,
+      "weight": 68
     },
     {
       "attrs": {
@@ -443,7 +450,8 @@
         "leader",
         "engine"
       ],
-      "wage": 328500
+      "wage": 328500,
+      "weight": 66
     },
     {
       "alt": [
@@ -473,7 +481,8 @@
       "nation": "ENG",
       "number": 6,
       "pos": "AM",
-      "wage": 169500
+      "wage": 169500,
+      "weight": 83
     },
     {
       "alt": [
@@ -530,7 +539,8 @@
       "number": 9,
       "pos": "AM",
       "verify": true,
-      "wage": 130000
+      "wage": 130000,
+      "weight": 64
     },
     {
       "alt": [
@@ -586,7 +596,8 @@
       "nation": "ENG",
       "number": 11,
       "pos": "ST",
-      "wage": 262000
+      "wage": 262000,
+      "weight": 70
     },
     {
       "alt": [
@@ -648,7 +659,8 @@
       "nation": "ENG",
       "number": 19,
       "pos": "LW",
-      "wage": 100000
+      "wage": 100000,
+      "weight": 76
     },
     {
       "alt": [

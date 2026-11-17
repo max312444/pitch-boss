@@ -48,7 +48,8 @@
       "nation": "SVK",
       "number": 1,
       "pos": "GK",
-      "wage": 87000
+      "wage": 87000,
+      "weight": 82
     },
     {
       "attrs": {
@@ -74,7 +75,8 @@
       "nation": "ARG",
       "number": 3,
       "pos": "LB",
-      "wage": 97000
+      "wage": 97000,
+      "weight": 65
     },
     {
       "attrs": {
@@ -126,7 +128,8 @@
       "nation": "BEL",
       "number": 5,
       "pos": "DM",
-      "wage": 64500
+      "wage": 64500,
+      "weight": 78
     },
     {
       "alt": [
@@ -216,7 +219,8 @@
       "nation": "FRA",
       "number": 8,
       "pos": "CM",
-      "wage": 97000
+      "wage": 97000,
+      "weight": 78
     },
     {
       "attrs": {
@@ -353,7 +357,8 @@
       "nation2": "FRA",
       "number": 19,
       "pos": "CB",
-      "wage": 85500
+      "wage": 85500,
+      "weight": 82
     },
     {
       "alt": [
@@ -409,7 +414,8 @@
       "nation2": "BEL",
       "number": 22,
       "pos": "RB",
-      "wage": 27500
+      "wage": 27500,
+      "weight": 72
     },
     {
       "attrs": {
@@ -650,7 +656,8 @@
       "nation": "ENG",
       "number": 98,
       "pos": "RB",
-      "wage": 97000
+      "wage": 97000,
+      "weight": 71
     }
   ],
   "stadiumCapacity": 59286
