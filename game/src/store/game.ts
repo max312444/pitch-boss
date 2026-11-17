@@ -16,7 +16,7 @@ import type { Instr } from '../engine/types';
 import { createRng, type Rng } from '../engine/rng';
 import { seedTraits } from '../engine/traits';
 import { availableSeasons, clubKo, clubs as clubMasters, dataset, leagues, loadHistory, loadLeagueSeason, loadManagers, loadStandings, playerKo, realAvailable, registerGeneratedNames, registerMyClub, setDataset, worldCupsMeta, loadWcSquads, loadWcPools, loadPublicMap } from '../data/db';
-import { currentAsData, myStart, newMyClubId, setupMyClub, squadNeeds, swapInput, weakestClub, type MyClubDesign, type MyClubState } from '../engine/myclub';
+import { currentAsData, investGoal, investStart, myStart, newMyClubId, plainStart, setupMyClub, squadNeeds, swapInput, weakestClub, type MyClubDesign, type MyClubState } from '../engine/myclub';
 import type { SquadPlayer } from '../data/types';
 import { closeSeason, nextSeasonOf, startNextSeason, type SeasonReport } from '../engine/season';
 import { fillContracts, seasonOver } from '../engine/world';
@@ -210,7 +210,7 @@ interface GameStore {
   /** 경기 준비 화면: 같은 동작을 이번 경기 선발에 */
   reshapeDraft(slotIdx: number, x: number, y: number): string;
   /** random: 완전 랜덤으로 고른 구단 → 첫 시즌만 예산 · 재정 규정 한도 보정 */
-  newGame(season: string, league: string, clubId: string, opts?: { random?: boolean; manager?: import('../engine/managers').UserManagerInput; /** 나의 구단 만들기: 이 리그 꼴찌 자리를 대신 (clubId 는 무시) */ myClub?: MyClubDesign; /** 세계 대회 모드: 이 나라 대표팀 감독 (clubId 는 무시) */ intl?: { nation: string } }): Promise<void>;
+  newGame(season: string, league: string, clubId: string, opts?: { random?: boolean; manager?: import('../engine/managers').UserManagerInput; /** 나의 구단 만들기: 이 리그 꼴찌 자리를 대신 (clubId 는 무시) */ myClub?: MyClubDesign; /** 나의 구단 인수 방식 (plain 그대로 · invest 투자) */ takeover?: 'plain' | 'invest'; /** 세계 대회 모드: 이 나라 대표팀 감독 (clubId 는 무시) */ intl?: { nation: string } }): Promise<void>;
   continueGame(): void;
   updateDraft(change: Partial<MatchDraft>): void;
   resetDraft(): void;
@@ -344,18 +344,20 @@ export const useGame = create<GameStore>((set, get) => {
       setWcPools(opts.intl ? await loadWcPools() : undefined);   // 나라별 대표 선수 풀 (세계 대회 모드만, 파일이 커서)
       let input = await loadSeasonInput(season, opts.intl ? undefined : league);
       const seed = (Date.now() ^ Math.floor(Math.random() * 1e9)) >>> 0;
-      // 나의 구단: 이 리그 꼴찌 자리를 대신 (그 구단 선수들은 FA 로)
+      // 나의 구단: 이 리그 꼴찌 구단을 인수 (그대로 · 투자). 인수 방식이 없으면 예전처럼 선수는 FA 로 · 유스로 시작
       let my: MyClubState | undefined, freed: SquadPlayer[] = [];
       if (opts.myClub) {
         const lg = input.leagues.find((l) => l.id === league)!;
         const rep = weakestClub(lg.clubs);
-        const st = myStart(lg.clubs, rep);
-        my = { id: newMyClubId(seed), replaced: rep.club, nation: clubMasters.get(rep.club)?.nation ?? leagues.find((l) => l.id === league)?.nation ?? 'ENG', founded: +season.slice(0, 4), design: opts.myClub, setup: true };
-        const sw = swapInput(input, my, { ...st, formation: '4-3-3' });
+        const tk = opts.takeover;
+        const st = tk === 'plain' ? plainStart(rep) : tk === 'invest' ? investStart(lg.clubs, rep) : { ...myStart(lg.clubs, rep), formation: '4-3-3' };
+        my = { id: newMyClubId(seed), replaced: rep.club, nation: clubMasters.get(rep.club)?.nation ?? leagues.find((l) => l.id === league)?.nation ?? 'ENG', founded: +season.slice(0, 4), design: opts.myClub, setup: !tk,
+          ...(tk ? { takeover: tk } : {}), ...(tk === 'invest' ? { goal: investGoal(lg.clubs.length, season, leagues.find((l) => l.id === league)?.level ?? 1) } : {}) };
+        const sw = swapInput(input, my, st, !!tk);
         input = sw.input; freed = sw.freed; clubId = my.id;
         registerMyClub(my);
       }
-      const world = createWorld(input, clubId, seed, { manager: opts.manager, settings: gameSettingsOf(useSettings.getState().s), ...(my ? { skipFill: [my.id] } : {}) });
+      const world = createWorld(input, clubId, seed, { manager: opts.manager, settings: gameSettingsOf(useSettings.getState().s), ...(my && !my.takeover ? { skipFill: [my.id] } : {}) });
       if (my) setupMyClub(world, my, freed);
       if (opts.intl) setupIntl(world, opts.intl.nation);   // 세계 대회 모드: 내 대표팀 · 국내파 · 첫 일정
       else { academySeason(world, season); registerGeneratedNames(Object.fromEntries((world.academy?.players ?? []).map((x) => [x.id, x]))); }   // 내 구단 유스 아카데미 첫 유망주 (한국어 이름 등록)

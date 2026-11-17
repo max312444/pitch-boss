@@ -25,6 +25,10 @@ export interface MyClubState {
   design: MyClubDesign;
   /** 선수단 준비 중 (다 채우면 false → 시즌 진행) */
   setup: boolean;
+  /** 인수 방식: plain 그대로 인수 (선수단 · 재정 그대로) · invest 투자 인수 (재정 ↑, 구단주 조건). 없으면 예전 방식 (유스로 시작) */
+  takeover?: 'plain' | 'invest';
+  /** 투자 인수 조건: by 시즌이 끝날 때까지 1부 리그 pos 위 이내 (met 달성 · failed 실패 → 감독 해임) */
+  goal?: { pos: number; from: string; by: string; /** 2 = 2부에서 시작: 1부 승격이 조건 */ level?: number; met?: boolean; failed?: boolean };
 }
 
 /** 구단 정보 (이름 · 엠블럼 · 유니폼 색) — db.ts 의 clubs 에 등록해서 다른 구단처럼 보이게 */

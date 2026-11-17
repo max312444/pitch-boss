@@ -10,6 +10,7 @@ import { levelOf } from './pyramid';
 import { ageOn } from './condition';
 import { hireManager, placeDisplaced } from './managers';
 import { canAfford, completeTransfer, marketValue, wageDemand, windowOpen } from './transfer';
+import { ownerGoalSeasonEnd } from './myclub';
 
 export interface ManagerOffer { club: string; date: string; until: string; kind: 'offer' | 'renew'; years: number }
 export interface ManagerStint { club: string; from: string; to: string | null; why?: 'offer' | 'sacked' | 'expired' | 'declined'; titles?: string[] }
@@ -292,6 +293,7 @@ export function managerSeasonEnd(w: World, recs: SeasonRecord[]): { titles: numb
     cur.titles = [...(cur.titles ?? []), ...won];
   }
   if (m.confidence < patienceOf(w).end && !ownClub(w)) m.sackAtEnd = true;
+  if (ownerGoalSeasonEnd(w, recs)) m.sackAtEnd = true;   // 투자 인수: 구단주 조건 실패 → 해임
   return { titles, relegated, met: pos <= target };
 }
 
@@ -302,7 +304,7 @@ export function managerNewSeason(w: World, rng: Rng): GameEvent[] {
   m.offers = m.offers.filter((o) => o.kind === 'offer');
   const expired = m.contract < w.date;
   // 나의 구단: 경질 없음 · 계약이 끝나면 자동 연장 (내가 만든 구단)
-  if (ownClub(w)) { m.sackAtEnd = false; if (expired) m.contract = `${+w.date.slice(0, 4) + 3}-06-30`; return []; }
+  if (ownClub(w) && !w.myClub?.goal?.failed) { m.sackAtEnd = false; if (expired) m.contract = `${+w.date.slice(0, 4) + 3}-06-30`; return []; }
   if (!m.sackAtEnd && !expired) return [];
   const reason = m.sackAtEnd ? 'sacked' : m.renewal?.result === 'declined' ? 'declined' : 'expired';
   m.pendingJob = { reason, clubs: jobOffers(w, rng) };

@@ -10,7 +10,7 @@ import { Icon } from '../components/Icon';
 import { ManagerSetup, useManagerSetup } from '../components/ManagerSetup';
 import { money, ratingTone } from '../format';
 import { DEFAULT_DESIGN, designError, MyClubForm } from '../components/MyClubForm';
-import { weakestClub } from '../../engine/myclub';
+import { GOAL_SEASONS, goalText, investGoal, investStart, plainStart, weakestClub } from '../../engine/myclub';
 import type { MyClubDesign } from '../../engine/myclubDesign';
 
 
@@ -55,6 +55,7 @@ function ClubNewGame() {
   };
   const mode = useApp((s) => s.newMode);   // 타이틀의 모드 고르기 팝업에서
   const [design, setDesign] = useState<MyClubDesign>(DEFAULT_DESIGN);
+  const [takeover, setTakeover] = useState<'plain' | 'invest' | null>(null);   // 나의 구단: 인수 방식 (먼저 고름)
   const weakest = clubsData?.length ? weakestClub(clubsData) : null;
   const sel = clubsData?.find((c) => c.club === club);
   const mgr = useManagerSetup();   // 내 감독 이름 · 철학 · 압박 · 강점
@@ -87,7 +88,8 @@ function ClubNewGame() {
   const start = async () => {
     if (mode === 'my') {
       if (designError(design)) return;
-      await newGame(season, league, '', { manager: mgr.m, myClub: { ...design, name: design.name.trim(), short: design.short.trim(), stadium: design.stadium.trim() } });
+      if (!takeover) return;
+      await newGame(season, league, '', { manager: mgr.m, takeover, myClub: { ...design, name: design.name.trim(), short: design.short.trim(), stadium: design.stadium.trim() } });
       setTab('home');
       go('hub');
       return;
@@ -99,6 +101,10 @@ function ClubNewGame() {
   };
 
   const decades = [['2000년대', '2000', '2009'], ['2010년대', '2010', '2019'], ['2020년대', '2020', '2029']] as const;
+  if (mode === 'my' && !takeover) return <TakeoverPick onPick={setTakeover} onBack={() => go('title')} />;
+  const lvl = leagues.find((l) => l.id === league)?.level ?? 1;
+  const tkStart = weakest && clubsData ? (takeover === 'invest' ? investStart(clubsData, weakest) : plainStart(weakest)) : null;
+  const tkGoal = takeover === 'invest' && clubsData ? investGoal(clubsData.length, season, lvl) : null;
 
   return (
     <div className="flex h-full animate-[fade_0.3s_ease-out] flex-col overflow-y-auto bg-ink-950 pb-[env(safe-area-inset-bottom)] lg:flex-row lg:overflow-hidden lg:pb-0">
@@ -108,8 +114,8 @@ function ClubNewGame() {
           <Icon name="back" size={15} /> 메인 메뉴
         </button>
         <h1 className="mt-2 text-[22px] font-semibold lg:text-[26px]">새 게임</h1>
-        <div className="mt-3 inline-flex w-fit items-center gap-2 rounded-md bg-neon-ghost px-2.5 py-1 text-[12px] font-semibold text-neon">{mode === 'my' ? '나의 구단 모드' : '기본 모드'}</div>
-        <div className="mt-1.5 text-[11px] leading-relaxed text-lo">{mode === 'base' ? '실제 구단을 골라 감독으로 시작합니다' : '시즌 · 리그를 고르면 그 리그의 꼴찌 자리에 내 구단을 만들어 시작합니다'}</div>
+        <div className="mt-3 flex flex-wrap items-center gap-2"><span className="inline-flex w-fit items-center gap-2 rounded-md bg-neon-ghost px-2.5 py-1 text-[12px] font-semibold text-neon">{mode === 'my' ? `나의 구단 · ${takeover === 'invest' ? '투자 인수' : '그대로 인수'}` : '기본 모드'}</span>{mode === 'my' && <button onClick={() => setTakeover(null)} className="text-[12px] text-lo underline-offset-2 hover:text-hi hover:underline">인수 방식 바꾸기</button>}</div>
+        <div className="mt-1.5 text-[11px] leading-relaxed text-lo">{mode === 'base' ? '실제 구단을 골라 감독으로 시작합니다' : takeover === 'invest' ? '그 리그 꼴찌 구단을 부자 구단주와 함께 인수합니다. 선수단은 그대로, 재정은 크게 늘지만 구단주 조건이 붙습니다' : '그 리그 꼴찌 구단을 그대로 인수합니다. 선수단 · 재정 그대로 밑에서부터 올라갑니다'}</div>
         {mode === 'base' && <button onClick={randomStart} disabled={loading || rolling} title="시즌 · 리그 · 구단을 모두 무작위로 고릅니다"
           className="mt-5 flex h-11 w-full items-center justify-center gap-2 rounded-lg border border-dashed border-neon/50 text-[13px] font-semibold text-neon transition-colors hover:bg-neon-ghost disabled:opacity-50">
           {rolling ? '구단 고르는 중…' : '완전 랜덤으로 시작'}
@@ -182,7 +188,7 @@ function ClubNewGame() {
           <h2 className="mb-3 text-[13px] font-semibold text-mid lg:mb-4">구단 <span className="text-lo">· 명성 순 · 숫자는 주전 평균 능력</span></h2>
           {mode === 'my' && weakest && (
             <button onClick={() => { setClub(weakest.club); openSheet(); }} className="mb-3 flex w-full items-center gap-3 rounded-lg border border-dashed border-neon/50 px-4 py-3 text-left text-[13px] text-neon hover:bg-neon-ghost lg:pointer-events-none">
-              <span className="font-semibold">나의 구단 만들기</span><span className="text-lo">· {clubKo(weakest.club)} 자리를 대신합니다</span><span className="ml-auto lg:hidden">만들기 →</span>
+              <span className="font-semibold">{takeover === 'invest' ? '투자 인수' : '그대로 인수'}</span><span className="text-lo">· {clubKo(weakest.club)}를 인수해 이름 · 엠블럼을 새로 정합니다</span><span className="ml-auto lg:hidden">만들기 →</span>
             </button>
           )}
           {!clubsData ? <div className="text-[13px] text-lo">불러오는 중…</div> : (
@@ -191,12 +197,12 @@ function ClubNewGame() {
                 const on = c.club === club;
                 const st = strength(c);
                 return (
-                  <button key={c.club} onClick={() => { setClub(c.club); openSheet(); }} title={mode === 'my' && c.club === weakest?.club ? '이 자리를 내 구단이 대신합니다' : undefined}
+                  <button key={c.club} onClick={() => { setClub(c.club); openSheet(); }} title={mode === 'my' && c.club === weakest?.club ? '이 구단을 인수합니다' : undefined}
                     className={`group flex items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors ${
                       on ? 'bg-neon-ghost ring-1 ring-line-strong' : 'bg-ink-850 ring-1 ring-line hover:bg-ink-800 hover:ring-line-strong'}`}>
                     <Crest clubId={c.club} size={26} />
-                    <div className={`min-w-0 flex-1 truncate text-[14px] font-semibold ${mode === 'my' && c.club === weakest?.club ? 'text-lo line-through' : ''}`}>{clubKo(c.club)}</div>
-                    {mode === 'my' && c.club === weakest?.club && <span className="shrink-0 rounded bg-neon/15 px-1.5 text-[11px] font-semibold text-neon">내 구단 자리</span>}
+                    <div className={`min-w-0 flex-1 truncate text-[14px] font-semibold ${mode === 'my' && c.club === weakest?.club ? 'text-neon' : ''}`}>{clubKo(c.club)}</div>
+                    {mode === 'my' && c.club === weakest?.club && <span className="shrink-0 rounded bg-neon/15 px-1.5 text-[11px] font-semibold text-neon">인수</span>}
                     <div className={`tnum text-[17px] font-semibold ${ratingTone(st)}`}>{st}</div>
                   </button>
                 );
@@ -213,13 +219,25 @@ function ClubNewGame() {
           <>
             <button onClick={closeSheet} className="flex h-11 shrink-0 items-center justify-between border-b border-line px-5 text-[14px] text-mid lg:hidden"><span>나의 구단 만들기</span><span>닫기 ✕</span></button>
             <div className="lg:flex-1">
+              {weakest && tkStart && (
+                <div className="border-b border-line px-5 py-4">
+                  <div className="text-[12px] text-lo">{clubKo(weakest.club)} 인수 · 선수단 {weakest.squad.length}명 · 주전 전력 {strength(weakest)}</div>
+                  <div className="mt-3 grid grid-cols-2 gap-3 text-[12px]">
+                    {([['이적 예산', weakest.finance.transferBudget, tkStart.finance.transferBudget], ['잔고', weakest.finance.balance, tkStart.finance.balance], ['주급 예산 (주)', weakest.finance.wageBudget, tkStart.finance.wageBudget], ['명성', weakest.reputation, tkStart.reputation]] as const).map(([k, a, b]) => (
+                      <div key={k}><div className="text-lo">{k}</div><div className="tnum text-[14px] font-semibold">{k === '명성' ? b : money(b)}{b > a && <span className="ml-1 text-[11px] font-normal text-neon">↑ {k === '명성' ? `+${b - a}` : `원래 ${money(a)}`}</span>}</div></div>
+                    ))}
+                  </div>
+                  {tkGoal ? <div className="mt-3 rounded-lg bg-amber/10 px-3 py-2 text-[12px] leading-relaxed text-amber">구단주 조건: <b>{goalText(tkGoal)}</b> ({GOAL_SEASONS}시즌). 못 지키면 그 시즌이 끝날 때 해임되어 다른 구단으로 옮겨야 합니다.</div>
+                    : <div className="mt-3 text-[12px] leading-relaxed text-lo">조건 없음 · 내 구단이라 해임되지 않습니다. 선수 판매 · 유스 아카데미로 키워 올라가세요.</div>}
+                </div>
+              )}
               <MyClubForm clubsData={clubsData} d={design} setD={setDesign} />
               <ManagerSetup {...mgr} />
             </div>
             <div className="sticky bottom-0 border-t border-line bg-ink-900 p-4 pb-[max(16px,env(safe-area-inset-bottom))] lg:p-5">
               <button onClick={start} disabled={loading || !!designError(design)}
                 className="group flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-neon px-5 text-[15px] font-semibold text-ink-950 transition-colors hover:bg-[#5bff3d] disabled:opacity-60">
-                {loading ? '세계를 만드는 중…' : '창단하고 시작'}
+                {loading ? '세계를 만드는 중…' : '인수하고 시작'}
                 {!loading && <Icon name="arrow" size={18} className="transition-transform" />}
               </button>
             </div>
@@ -281,6 +299,39 @@ function ClubNewGame() {
           </>
         ) : null}
       </aside>
+    </div>
+  );
+}
+
+/** 나의 구단: 인수 방식 고르기 (모드를 고른 다음) */
+function TakeoverPick({ onPick, onBack }: { onPick: (t: 'plain' | 'invest') => void; onBack: () => void }) {
+  const card = (t: 'plain' | 'invest', title: string, sub: string, pros: string[], cons: string[]) => (
+    <button onClick={() => onPick(t)} className="group flex flex-col rounded-xl bg-ink-900 p-5 text-left ring-1 ring-line transition-colors hover:bg-ink-850 hover:ring-neon/60 lg:p-7">
+      <div className="text-[20px] font-semibold text-hi lg:text-[22px]">{title}</div>
+      <div className="mt-1 text-[13px] text-mid">{sub}</div>
+      <ul className="mt-4 space-y-1.5 text-[13px] leading-relaxed">
+        {pros.map((x) => <li key={x} className="flex gap-2"><span className="text-neon">+</span><span className="text-mid">{x}</span></li>)}
+        {cons.map((x) => <li key={x} className="flex gap-2"><span className="text-amber">−</span><span className="text-mid">{x}</span></li>)}
+      </ul>
+      <div className="mt-auto flex items-center gap-2 pt-5 text-[14px] font-semibold text-neon">이 방식으로 <Icon name="arrow" size={16} className="transition-transform group-hover:translate-x-0.5" /></div>
+    </button>
+  );
+  return (
+    <div className="flex h-full animate-[fade_0.3s_ease-out] flex-col overflow-y-auto bg-ink-950 px-4 pt-[max(16px,env(safe-area-inset-top))] pb-[max(24px,env(safe-area-inset-bottom))] lg:px-10 lg:py-10">
+      <button onClick={onBack} className="flex w-fit items-center gap-2 text-[13px] text-lo hover:text-hi"><Icon name="back" size={15} /> 메인 메뉴</button>
+      <div className="mx-auto mt-6 w-full max-w-[920px] lg:mt-12">
+        <div className="inline-flex rounded-md bg-neon-ghost px-2.5 py-1 text-[12px] font-semibold text-neon">나의 구단 모드</div>
+        <h1 className="mt-3 text-[24px] font-semibold lg:text-[30px]">어떻게 인수할까요?</h1>
+        <p className="mt-2 text-[13px] leading-relaxed text-lo">고른 리그의 꼴찌 구단을 인수해 이름 · 엠블럼 · 경기장을 새로 정합니다. 선수단은 그 구단 선수 그대로입니다.</p>
+        <div className="mt-6 grid gap-3 lg:mt-8 lg:grid-cols-2 lg:gap-5">
+          {card('plain', '그대로 인수', '있는 그대로 받아 밑에서부터',
+            ['선수단 · 재정 · 시설을 그대로 이어받습니다', '구단주 조건 없음 · 해임되지 않습니다', '유스 · 선수 판매로 천천히 키우는 재미'],
+            ['돈이 적어 처음 몇 시즌은 강등권 싸움'])}
+          {card('invest', '투자 인수', '부자 구단주와 함께 빠르게',
+            ['이적 자금 · 잔고가 리그 상위권 구단 수준', '첫 시즌부터 좋은 선수 몇 명을 데려올 수 있습니다'],
+            ['주급 예산은 리그 중간 정도 (스타를 많이 모으면 재정이 무너짐)', `구단주 조건: ${GOAL_SEASONS}시즌 안에 리그 6위 이내 (2부면 승격) · 못 지키면 해임`])}
+        </div>
+      </div>
     </div>
   );
 }

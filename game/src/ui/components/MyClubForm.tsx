@@ -3,10 +3,9 @@ import { useMemo, useState } from 'react';
 import type { ClubSeasonFile } from '../../data/types';
 import { clubKo, clubs as clubMasters } from '../../data/db';
 import { myClubMaster, type MyClubDesign } from '../../engine/myclubDesign';
-import { MY_YOUTH, myStart, weakestClub } from '../../engine/myclub';
+import { weakestClub } from '../../engine/myclub';
 import type { CrestCharge, CrestPattern, CrestShape } from '../crests/types';
 import { Crest } from './Crest';
-import { money } from '../format';
 
 const SHAPES: [CrestShape, string][] = [['shield', '방패'], ['round', '원형'], ['oval', '타원'], ['pointed', '뾰족'], ['diamond', '마름모'], ['cut', '모서리']];
 const PATTERNS: [CrestPattern, string][] = [['solid', '단색'], ['stripes', '세로 줄'], ['hoops', '가로 줄'], ['halves', '반반'], ['quarters', '4분할'], ['sash', '사선'], ['band', '띠']];
@@ -42,7 +41,6 @@ const Chip = ({ on, onClick, children }: { on: boolean; onClick: () => void; chi
 
 export function MyClubForm({ clubsData, d, setD }: { clubsData: ClubSeasonFile[]; d: MyClubDesign; setD: (d: MyClubDesign) => void }) {
   const rep = useMemo(() => weakestClub(clubsData), [clubsData]);
-  const st = useMemo(() => myStart(clubsData, rep), [clubsData, rep]);
   const [tick, setTick] = useState(0);
   // 미리 보기: 임시 구단으로 등록해 다른 엠블럼과 똑같이 그린다
   clubMasters.set('my-preview', myClubMaster({ id: 'my-preview', replaced: rep.club, nation: clubMasters.get(rep.club)?.nation ?? 'ENG', founded: +rep.season.slice(0, 4), design: d, setup: true }));
@@ -57,7 +55,7 @@ export function MyClubForm({ clubsData, d, setD }: { clubsData: ClubSeasonFile[]
         <div className="min-w-0">
           <div className="truncate text-[20px] font-semibold">{d.name || '구단 이름'}</div>
           <div className="text-[12px] text-lo">{d.stadium || '경기장'} · {rep.season.slice(0, 4)}년 창단</div>
-          <div className="mt-1 text-[12px] text-amber">{clubKo(rep.club)} 자리를 대신합니다 (꼴찌 자리 · 그 선수들은 자유계약으로 풀림)</div>
+          <div className="mt-1 text-[12px] text-amber">{clubKo(rep.club)}를 인수해 새 이름으로 (선수단은 그대로)</div>
         </div>
       </div>
 
@@ -111,13 +109,6 @@ export function MyClubForm({ clubsData, d, setD }: { clubsData: ClubSeasonFile[]
         <label className="flex items-center gap-2 text-[12px] text-mid"><input type="checkbox" checked={!!d.star} onChange={(e) => up({ star: e.target.checked })} className="accent-[#39ff14]" />별 달기</label>
       </div>
 
-      {/* 시작 조건 */}
-      <div className="rounded-lg bg-ink-850 px-4 py-3 text-[12px] leading-relaxed text-mid">
-        <div className="mb-1 font-semibold text-hi">시작 조건</div>
-        명성 {st.reputation} · 이적 예산 <b className="text-hi">{money(st.finance.transferBudget)}</b> · 주급 예산 {money(st.finance.wageBudget)} · 잔고 {money(st.finance.balance)}
-        <div className="text-lo">리그 아래쪽 구단 기준보다 넉넉하게 (사용자 구단 혜택). 첫 스폰서 계약 포함 · 경기장 {st.stadiumCapacity?.toLocaleString()}석</div>
-        <div className="mt-1 text-lo">유스 {MY_YOUTH}명으로 시작합니다. 나머지는 영입 · 자유계약으로 채우고, 포지션별 인원과 후보까지 다 채워야 시즌을 시작할 수 있습니다.</div>
-      </div>
       {err && <div className="text-[12px] text-red">{err}</div>}
     </div>
   );

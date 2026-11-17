@@ -40,6 +40,7 @@ function WindowBar({ w, onOpen }: { w: World; onOpen: () => void }) {
   );
 }
 import { resultFor, userFixtures } from './ScheduleView';
+import { goalText } from '../../engine/myclub';
 
 /** 주전 11명 평균 능력 */
 export const strength = (w: World, club: string) => {
@@ -230,6 +231,11 @@ function SeasonGoal({ w, pos }: { w: World; pos: number | null }) {
         <div className="text-[12px] text-lo">이사회 기대</div>
         <div className="mt-1 text-[20px] font-semibold">{o.goal}</div>
         <div className="text-[13px] text-mid">{o.detail}</div>
+        {w.myClub?.goal && w.userClubId === w.myClub.id && (
+          <div className={`mt-3 rounded-lg px-3 py-2 text-[12px] leading-relaxed ${w.myClub.goal.met ? 'bg-neon/10 text-neon' : 'bg-amber/10 text-amber'}`}>
+            구단주 조건: <b>{goalText(w.myClub.goal)}</b>{w.myClub.goal.met ? ' · 달성' : ' · 못 지키면 해임'}
+          </div>
+        )}
         <div className="mt-5 grid grid-cols-2 gap-4">
           <div>
             <div className="text-[12px] text-lo">전력 순위</div>
