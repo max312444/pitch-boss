@@ -11,7 +11,7 @@ import { posGroup } from '../data/rating';
 import { book } from './finance';
 import { WAGE_SLACK, ruleWageRoom, withinRules } from './rules';
 import { youthIntake } from './youth';
-import { aiBuyoutRaids, buyoutOf, buyoutWageFactor } from './clauses';
+import { aiBuyoutRaids, buyoutOf, buyoutWageFactor, relJoinBonus, relWageFactor } from './clauses';
 import { aiOfferBonus, aiTerms, sellOnFactor, setTerms, settleSellOn, termsWorth, type DealTerms } from './addons';
 import { bargainOf } from './firesale';
 import { saleTag } from './market';
@@ -200,8 +200,8 @@ export function evaluateBid(w: World, p: PlayerState, buyer: string, fee: number
 }
 
 /** 선수가 이 구단으로 오겠는지 */
-export function playerWillJoin(w: World, p: PlayerState, buyer: string, wage: number, role?: Role, clause?: number, bosman?: boolean): { ok: boolean; reason: string; low?: boolean } {
-  const demand = wageDemand(w, p, buyer) * (clause == null ? 1 : buyoutWageFactor(w, p, clause));   // 계약에 거는 바이아웃 (낮을수록 덜 요구)
+export function playerWillJoin(w: World, p: PlayerState, buyer: string, wage: number, role?: Role, clause?: number, bosman?: boolean, rel?: number): { ok: boolean; reason: string; low?: boolean } {
+  const demand = wageDemand(w, p, buyer) * (clause == null ? 1 : buyoutWageFactor(w, p, clause)) * (rel == null ? 1 : relWageFactor(w, p, rel));   // 바이아웃 · 강등 조항을 넣으면 주급을 깎아 준다   // 계약에 거는 바이아웃 (낮을수록 덜 요구)
   if (wage < demand * 0.9) return { ok: false, low: true, reason: `원하는 주급보다 낮습니다. 주급 ${Math.round(demand / 1000)}K 유로 정도를 원합니다` };
   const buyerRep = w.clubs[buyer].reputation;
   const curRep = p.clubId ? w.clubs[p.clubId].reputation : 30;
@@ -214,7 +214,8 @@ export function playerWillJoin(w: World, p: PlayerState, buyer: string, wage: nu
   if (role) score += ROLE_JOIN[role];   // 약속한 역할: 높을수록 오려고 한다
   // 구단이 이적 명단에 올린 선수는 "팀에서 원하지 않는다"고 느껴 작은 구단 이적도 받아들이기 쉽다
   if ((w.transferList ?? []).includes(p.id)) score += 1.5;
-  if (!p.clubId || bosman) score += 1.5;   // 자유계약 · 보스만 사전 계약 (이적료가 없어 몸값 · 계약금 여유)
+  if (!p.clubId || bosman) score += 1.5;
+  score += relJoinBonus(w, buyer, rel);   // 강등 조항: 넣으면 오려는 마음 ↑, 강등 위험 구단이 안 넣으면 ↓   // 자유계약 · 보스만 사전 계약 (이적료가 없어 몸값 · 계약금 여유)
   return score > -0.6 ? { ok: true, reason: '이적에 동의했습니다' } : { ok: false, reason: diff < 0 ? '더 큰 구단으로 가고 싶어 합니다' : '지금 구단에 남고 싶어 합니다' };
 }
 

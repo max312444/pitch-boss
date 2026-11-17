@@ -51,6 +51,10 @@ export interface PlayerState {
   height?: number;
   /** 몸무게 kg (데이터에 있을 때만) */
   weight?: number;
+  /** 포지션 전환 훈련 중 (retrain.ts) · 멈춘 훈련 진행도 · 익힌 포지션 (시즌이 바뀌어도 유지) */
+  retrain?: { pos: Position; progress: number; since: string };
+  retrainSaved?: Partial<Record<Position, number>>;
+  learned?: Position[];
   /** 이번 시즌 체형이 바뀌었으면 예전 체형 (body.ts) */
   bodyChange?: { from: import('./body').BodyType; season: string };
   /** 능력이 깎이지 않는 보조 포지션 (데이터 + 능력치로 정함, positions.ts). 없으면 처음 쓸 때 계산 */
@@ -291,6 +295,8 @@ export type GameEvent =
   | { type: 'leave'; date: string; player: string; club?: string }
   | { type: 'cup'; date: string; cup: string; club: string; round: string; result: 'through' | 'out' | 'champion'; prize?: number }
   | { type: 'youth'; date: string; players: string[]; star?: string }
+  | { type: 'retrain'; date: string; player: string; pos: Position }
+  | { type: 'academy'; date: string; /** 입단 선수 번호 */ joined: string[]; /** 떠난 선수 이름 */ left: string[]; star?: string }
   | { type: 'callup'; date: string; players: string[]; injured: string[] }
   | { type: 'worldcup'; date: string; year: number; result: 'start' | 'champion'; nation: string; players?: string[]; text?: string; scorer?: string };
 
@@ -374,6 +380,8 @@ export interface World {
   myClub?: import('./myclubDesign').MyClubState;
   /** 이적 명단에 올린 내 선수 */
   transferList?: string[];
+  /** 내 구단 유스 아카데미 (academy.ts, 1군 밖 유망주) */
+  academy?: import('./academy').AcademyState;
   /** 내 선수에게 들어온 제안 */
   offers?: TransferOffer[];
   /** 관심 목록 */

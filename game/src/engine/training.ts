@@ -16,6 +16,8 @@ import type { Rng } from './rng';
 import { ageOn } from './condition';
 import { devBonus } from './managers';
 import { book, clubRevenue, TRAINING_COST } from './finance';
+import { academyMonth } from './academy';
+import { retrainMonth, RETRAIN_GROWTH } from './retrain';
 
 export type TrainFocus = 'balanced' | 'attack' | 'defense' | 'physical' | 'technical';
 export type Intensity = 0 | 1 | 2;
@@ -81,7 +83,8 @@ export function trainingMonth(w: World, rng: Rng) {
     for (const id of club.squad) {
       const p = w.players[id];
       if (p.injury) { p.dev = 0; continue; }
-      const dev = monthlyDev(w, p, rng);
+      // 포지션 전환 훈련 중인 내 선수는 일반 성장이 조금 줄어든다
+      const dev = monthlyDev(w, p, rng) * (p.retrain && club.id === w.userClubId ? RETRAIN_GROWTH : 1);
       p.dev = Math.round(dev * 100) / 100;
       if (!dev) continue;
       for (const k of Object.keys(p.base) as AttrKey[]) {
@@ -91,6 +94,8 @@ export function trainingMonth(w: World, rng: Rng) {
       }
     }
   }
+  retrainMonth(w);   // 포지션 전환 훈련 진행 (내 선수)
+  academyMonth(w, rng);   // 유스 아카데미 성장
 }
 
 /** 훈련 강도가 체력 회복에 주는 배율 */

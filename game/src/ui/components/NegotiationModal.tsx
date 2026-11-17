@@ -18,7 +18,7 @@ import { useWorld } from '../hooks';
 import { Crest } from './Crest';
 import { PosTag } from './bits';
 import { money } from '../format';
-import { buyoutOf, buyoutOptions, buyoutWageFactor } from '../../engine/clauses';
+import { buyoutOf, buyoutOptions, buyoutWageFactor, relClauseAllowed, relegationRisk, relOptions, relWageFactor } from '../../engine/clauses';
 import { bosmanEligible } from '../../engine/bosman';
 import { bargainOf, relClauseOf } from '../../engine/firesale';
 import type { World } from '../../engine/types';
@@ -31,6 +31,18 @@ export function BuyoutSelect({ w, p, value, onChange }: { w: World; p: PlayerSta
     <select value={value} onChange={(e) => onChange(+e.target.value)} title="바이아웃 (선택): 넣으면 선수가 주급을 깎아 줍니다 (낮을수록 더). 대신 이 금액 이상을 내는 구단에는 거절 못 하고 보내야 합니다"
       className="h-11 rounded-lg border border-line bg-ink-850 px-3 text-[13px] text-hi max-sm:flex-1">
       {opts.map((o) => <option key={o.mult} value={o.fee}>{o.fee ? `바이아웃 ${money(o.fee)}` : '바이아웃 없음'}{o.mult < 0 ? ' (지금)' : ''}</option>)}
+    </select>
+  );
+}
+/** 강등 조항 고르기 (1부 리그 구단만): 넣으면 선수가 주급을 조금 깎아 주고 오려는 마음도 커진다. 강등되면 그 금액에 보내야 한다 */
+export function RelSelect({ w, p, value, onChange, current }: { w: World; p: PlayerState; value: number; onChange: (v: number) => void; current?: number }) {
+  if (!relClauseAllowed(w, w.userClubId)) return null;
+  const opts = relOptions(w, p);
+  if (current != null && !opts.some((o) => o.fee === current)) opts.unshift({ mult: -1, fee: current });
+  return (
+    <select value={value} onChange={(e) => onChange(+e.target.value)} title={`강등 조항 (선택): 넣으면 선수가 주급을 조금 깎아 주고 오려는 마음도 커집니다. 대신 구단이 강등되면 다음 여름 이 금액을 내는 구단에 거절할 수 없습니다${relegationRisk(w, w.userClubId) ? ' · 우리 구단은 강등 위험 구단이라 조항이 없으면 선수가 망설입니다' : ''}`}
+      className="h-11 rounded-lg border border-line bg-ink-850 px-3 text-[13px] text-hi max-sm:flex-1">
+      {opts.map((o) => <option key={o.mult} value={o.fee}>{o.fee ? `강등 조항 ${money(o.fee)}` : '강등 조항 없음'}{o.mult < 0 ? ' (지금)' : ''}</option>)}
     </select>
   );
 }
@@ -49,7 +61,9 @@ export function NegotiationModal({ p, onClose }: { p: PlayerState; onClose: () =
   const talk = w.talks?.[p.id];
   const value = marketValue(w, p);
   const [clause, setClause] = useState(() => defaultBuyout(w, p));
-  const demand = Math.round(wageDemand(w, p, w.userClubId) * buyoutWageFactor(w, p, clause) / 500) * 500;
+  const [rel, setRel] = useState(0);   // 강등 조항 (1부 리그 구단만)
+  const demandOf = (c: number, r: number) => wageDemand(w, p, w.userClubId) * buyoutWageFactor(w, p, c) * relWageFactor(w, p, r);
+  const demand = Math.round(demandOf(clause, rel) / 500) * 500;
   const theirClause = club ? buyoutOf(w, p) : 0;
   const bargain = club ? bargainOf(w, p) : null;   // 급매물 (강제 매각 · 강등 조항 발동)
   const relClause = club && !bargain ? relClauseOf(w, p) : 0;
@@ -101,8 +115,8 @@ export function NegotiationModal({ p, onClose }: { p: PlayerState; onClose: () =
     if (r.broken) fail();
   };
   const sendContract = () => {
-    const r = bosman ? precontract(p.id, wage * 1000, years, role, clause) : sign(p.id, wage * 1000, years, role, clause);
-    push({ who: 'me', text: `주급 ${money(wage * 1000)} · ${years}년 · ${clause ? `바이아웃 ${money(clause)}` : '바이아웃 없음'} 제안` });
+    const r = bosman ? precontract(p.id, wage * 1000, years, role, clause) : sign(p.id, wage * 1000, years, role, clause, relClauseAllowed(w, w.userClubId) ? rel : undefined);
+    push({ who: 'me', text: `주급 ${money(wage * 1000)} · ${years}년 · ${clause ? `바이아웃 ${money(clause)}` : '바이아웃 없음'}${!bosman && rel ? ` · 강등 조항 ${money(rel)}` : ''} 제안` });
     if (r.ok) { if (bosman) { push({ who: 'player', tone: 'ok', text: r.reason }); setBroken(true); return; } onClose(); return; }
     push({ who: r.left === undefined ? 'sys' : 'player', tone: 'warn', text: r.reason });
     if (r.broken) fail();
@@ -200,7 +214,8 @@ export function NegotiationModal({ p, onClose }: { p: PlayerState; onClose: () =
                 <select value={years} onChange={(e) => setYears(+e.target.value)} className="h-11 rounded-lg border border-line bg-ink-850 px-3 text-[13px] text-hi max-sm:flex-1">
                   {[1, 2, 3, 4, 5].map((y) => <option key={y} value={y}>{y}년</option>)}
                 </select>
-                <BuyoutSelect w={w} p={p} value={clause} onChange={(v) => { setClause(v); setWage(Math.round(wageDemand(w, p, w.userClubId) * buyoutWageFactor(w, p, v) / 1000)); }} />
+                <BuyoutSelect w={w} p={p} value={clause} onChange={(v) => { setClause(v); setWage(Math.round(demandOf(v, rel) / 1000)); }} />
+                {!bosman && <RelSelect w={w} p={p} value={rel} onChange={(v) => { setRel(v); setWage(Math.round(demandOf(clause, v) / 1000)); }} />}
                 <button onClick={sendContract} disabled={room < 0} className="h-11 grow rounded-lg bg-neon px-6 text-[14px] font-semibold text-ink-950 transition-colors hover:bg-[#5bff3d] disabled:bg-ink-700 disabled:text-lo">계약 제안</button>
               </div>
             </div>

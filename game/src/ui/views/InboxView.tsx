@@ -79,6 +79,16 @@ export function describe(e: GameEvent, w: World): { tag: string; tone: string; t
       if (e.result === 'through') return { tag: '컵', tone: 'text-neon', title: `${cup} ${e.round} 통과`, body: e.prize ? `상금 ${money(e.prize)}` : undefined };
       return { tag: '컵', tone: 'text-red', title: `${cup} ${e.round}${e.round === '결승' ? ' 패배 · 준우승' : ' 탈락'}` };
     }
+    case 'academy': {
+      const nm = (id: string) => playerKo(id, (w.academy?.players.find((x) => x.id === id) ?? w.players[id])?.name ?? id);
+      const star = e.star ? nm(e.star) : null;
+      const parts = [e.joined.length ? `입단 ${e.joined.length}명: ${e.joined.map(nm).join(', ')}` : '', e.left.length ? `19세가 되어 떠난 선수 ${e.left.length}명: ${e.left.join(', ')}` : ''].filter(Boolean);
+      return { tag: '유스', tone: star ? 'text-[#f2c94c]' : 'text-neon', title: `유스 아카데미 · 새 유망주 ${e.joined.length}명${star ? ` · 코치진이 ${star}${josa(star, '을', '를')} 주목합니다` : ''}`, body: `${parts.join(' · ')} — 선수단 → 유스 아카데미에서 승격 · 방출` };
+    }
+    case 'retrain': {
+      const name = playerKo(e.player, w.players[e.player]?.name ?? e.player);
+      return { tag: '훈련', tone: 'text-neon', title: `${name}${josa(name, '이', '가')} ${e.pos} 전환 훈련을 마쳤습니다`, body: `이제 ${e.pos} 자리에서도 능력이 깎이지 않습니다 (보조 포지션)` };
+    }
     case 'youth': {
       const names = e.players.map((id) => playerKo(id, w.players[id]?.name ?? id));
       const star = e.star ? playerKo(e.star, w.players[e.star]?.name ?? e.star) : null;

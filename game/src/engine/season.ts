@@ -39,6 +39,7 @@ import { createCups } from './cup';
 import { academyFill, growTowardPotential, youthIntake } from './youth';
 import { createEurope } from './europe';
 import { clearWorldCup, createWorldCup } from './worldcup';
+import { academyOn, academySeason } from './academy';
 import { bodyType } from './body';
 
 export const MAX_SQUAD = 32;
@@ -381,8 +382,10 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
   }
 
   // 유스 입단: 다음 시즌 실제 데이터가 없는 리그의 구단 (데이터가 있으면 실제 신인이 등장하므로)
-  const youthClubs = Object.values(w.clubs).filter((c) => newMembers[c.league]?.includes(c.id) && !nextLeague.has(c.league));
+  //  내 구단은 1군 대신 유스 아카데미로 받는다 (academy.ts)
+  const youthClubs = Object.values(w.clubs).filter((c) => newMembers[c.league]?.includes(c.id) && !nextLeague.has(c.league) && (c.id !== w.userClubId || !academyOn(w)));
   report.youth = youthIntake(w, youthClubs, to, MAX_SQUAD);
+  academySeason(w, to);   // 내 구단 유스 아카데미: 19세 떠남 · 새 유망주
   // 선수단 구성이 모자란 구단은 아카데미에서 끌어올림 (실제 데이터 시즌 포함)
   report.academy = academyFill(w, Object.values(w.clubs).filter((c) => newMembers[c.league]?.includes(c.id)), to);
   const myYouth = report.youth.find((y) => y.club === w.userClubId);

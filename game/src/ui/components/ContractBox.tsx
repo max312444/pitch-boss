@@ -8,8 +8,9 @@ import { ageOn } from '../../engine/condition';
 import { playerKo } from '../../data/db';
 import { useGame } from '../../store/game';
 import { useWorld } from '../hooks';
-import { Bubble, BuyoutSelect, type Msg } from './NegotiationModal';
-import { buyoutOf, buyoutWageFactor } from '../../engine/clauses';
+import { Bubble, BuyoutSelect, RelSelect, type Msg } from './NegotiationModal';
+import { buyoutOf, buyoutWageFactor, relClauseAllowed, relWageFactor } from '../../engine/clauses';
+import { relClauseOf } from '../../engine/firesale';
 import { PosTag } from './bits';
 import { koDate, money, ratingTone } from '../format';
 
@@ -25,7 +26,7 @@ export function ContractBox({ p, extra }: { p: PlayerState; extra?: ReactNode })
         <span className="text-lo">계약 <span className={`tnum font-semibold ${soon ? 'text-amber' : 'text-mid'}`}>{p.contract ? koDate(p.contract) : '정보 없음'}</span>{p.contractGen ? ' (게임 설정)' : ''}</span>
         <span className={soon ? 'font-semibold text-amber' : 'text-lo'}>{soon ? '이번 시즌 끝에 만료' : `남은 기간 ${yl.toFixed(1)}년`}</span>
       </div>
-      <div className="-mt-2 mb-3 text-[12px] text-lo">바이아웃 <span className="tnum font-semibold text-mid">{buyoutOf(w, p) ? money(buyoutOf(w, p)) : '없음'}</span></div>
+      <div className="-mt-2 mb-3 text-[12px] text-lo">바이아웃 <span className="tnum font-semibold text-mid">{buyoutOf(w, p) ? money(buyoutOf(w, p)) : '없음'}</span>{relClauseAllowed(w, w.userClubId) && <> · 강등 조항 <span className="tnum font-semibold text-mid">{relClauseOf(w, p) ? money(relClauseOf(w, p)) : '없음'}</span></>}</div>
       {ban && <div className="mb-2 rounded-lg border border-red/40 bg-red/10 px-3 py-2 text-[12px] text-red">재계약 결렬 · {koDate(ban)} 이후 다시 협상 가능</div>}
       <div className="flex gap-2">
         <button onClick={() => setOpen(true)} disabled={!!ban}
@@ -41,7 +42,9 @@ export function RenewModal({ p, onClose }: { p: PlayerState; onClose: () => void
   const w = useWorld();
   const { renew } = useGame();
   const [clause, setClause] = useState(() => buyoutOf(w, p));
-  const demand = Math.round(renewDemand(w, p) * buyoutWageFactor(w, p, clause) / 500) * 500;
+  const [rel, setRel] = useState(() => relClauseOf(w, p));   // 강등 조항: 지금 조건에서 시작
+  const demandOf = (c: number, r: number) => renewDemand(w, p) * buyoutWageFactor(w, p, c) * relWageFactor(w, p, r);
+  const demand = Math.round(demandOf(clause, rel) / 500) * 500;
   const age = ageOn(p.birth, w.date);
   const [wage, setWage] = useState(Math.round(demand / 1000));
   const [years, setYears] = useState(age >= 33 ? 1 : 3);
@@ -63,8 +66,8 @@ export function RenewModal({ p, onClose }: { p: PlayerState; onClose: () => void
   const room = wageRoom(w, w.userClubId) - (wage * 1000 - p.wage);
   const push = (...m: Msg[]) => setMsgs((x) => [...x, ...m]);
   const send = () => {
-    push({ who: 'me', text: `주급 ${money(wage * 1000)} · ${years}년 (${renewEnd(w, years).slice(0, 4)}년 6월까지) · ${clause ? `바이아웃 ${money(clause)}` : '바이아웃 없음'} 제안` });
-    const r = renew(p.id, wage * 1000, years, clause);
+    push({ who: 'me', text: `주급 ${money(wage * 1000)} · ${years}년 (${renewEnd(w, years).slice(0, 4)}년 6월까지) · ${clause ? `바이아웃 ${money(clause)}` : '바이아웃 없음'}${rel ? ` · 강등 조항 ${money(rel)}` : ''} 제안` });
+    const r = renew(p.id, wage * 1000, years, clause, relClauseAllowed(w, w.userClubId) ? rel : undefined);
     if (r.ok) { push({ who: 'player', tone: 'ok', text: r.reason }); setEnded(true); return; }
     push({ who: r.left === undefined ? 'sys' : 'player', tone: 'warn', text: r.reason });
     if (r.broken) { setEnded(true); push({ who: 'sys', tone: 'bad', text: '재계약 협상 결렬 — 30일 뒤에 다시 시도할 수 있습니다.' }); }
@@ -104,7 +107,8 @@ export function RenewModal({ p, onClose }: { p: PlayerState; onClose: () => void
                 <select value={years} onChange={(e) => setYears(+e.target.value)} className="h-11 rounded-lg border border-line bg-ink-850 px-3 text-[13px] text-hi max-sm:flex-1">
                   {[1, 2, 3, 4, 5].map((y) => <option key={y} value={y}>{y}년</option>)}
                 </select>
-                <BuyoutSelect w={w} p={p} value={clause} onChange={(v) => { setClause(v); setWage(Math.round(renewDemand(w, p) * buyoutWageFactor(w, p, v) / 1000)); }} />
+                <BuyoutSelect w={w} p={p} value={clause} onChange={(v) => { setClause(v); setWage(Math.round(demandOf(v, rel) / 1000)); }} />
+                <RelSelect w={w} p={p} value={rel} current={relClauseOf(w, p)} onChange={(v) => { setRel(v); setWage(Math.round(demandOf(clause, v) / 1000)); }} />
                 <button onClick={send} disabled={room < 0} className="h-11 rounded-lg bg-neon px-6 max-sm:flex-1 text-[14px] font-semibold text-ink-950 hover:bg-[#5bff3d] disabled:bg-ink-700 disabled:text-lo">제안</button>
               </div>
             </div>

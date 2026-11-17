@@ -39,7 +39,7 @@ import { evaluateLoan, exerciseBuy, loanMove, loanReturn, playerWillLoan, type L
 import { breakTalks, cleanOffers, completeTransfer, counterOffer, offerValid, evaluateBid, MAX_TRIES, playerWillJoin, releasePlayer, talkBanned, talkOf, wageDemand, wageRoom, windowOpen, type BidResult } from '../engine/transfer';
 import type { RetireNews, TransferOffer } from '../engine/types';
 import { applyRenewal, evaluateRenewal } from '../engine/contract';
-import { buyoutMandatory, setBuyout } from '../engine/clauses';
+import { buyoutMandatory, setBuyout, setRelClause } from '../engine/clauses';
 import { bosmanEligible, signPrecontract } from '../engine/bosman';
 import { meetingReady, teamMeeting } from '../engine/chemistry';
 const addDaysIso = (iso: string, n: number) => new Date(Date.parse(iso + 'T00:00:00Z') + n * 86400000).toISOString().slice(0, 10);
@@ -70,6 +70,9 @@ import { startScout } from '../engine/scout';
 import type { Mentality, Pressing } from '../engine/types';
 import { exportSaveFile, readSave, readSaveFile, writeSave } from './save';
 import type { Ceremony } from '../ui/components/TransferCeremony';
+import { startRetrain, stopRetrain } from '../engine/retrain';
+import { academyOn, academySeason, promote, releaseAcademy } from '../engine/academy';
+import { MAX_SQUAD } from '../engine/season';
 import type { Award } from '../engine/awards';
 
 /** 시즌 데이터 불러오기: 그 시즌 데이터가 있는 1부 · 2부 리그 전부 */
@@ -192,9 +195,9 @@ interface GameStore {
   clearDeadline(): void;
   setCaptain(playerId: string | null): void;
   holdMeeting(): { ok: boolean; text: string };
-  renew(playerId: string, wage: number, years: number, clause?: number): { ok: boolean; reason: string; left?: number; broken?: boolean };
+  renew(playerId: string, wage: number, years: number, clause?: number, rel?: number): { ok: boolean; reason: string; left?: number; broken?: boolean };
   /** 개인 계약 제안 (이적료는 합의된 금액, 자유계약은 0) */
-  sign(playerId: string, wage: number, years: number, role?: Role, clause?: number): { ok: boolean; reason: string; left?: number; broken?: boolean };
+  sign(playerId: string, wage: number, years: number, role?: Role, clause?: number, rel?: number): { ok: boolean; reason: string; left?: number; broken?: boolean };
   /** 내 선수 역할 바꾸기 */
   setRole(playerId: string, role: Role): void;
   /** 세계 대회 모드: 대표 소집 (넣기 · 빼기) · 추천 명단. 실패하면 이유 */
@@ -214,6 +217,10 @@ interface GameStore {
   /** 받은 제안에 역제안 (이적료). done = 이적 성사, gone = 제안이 사라짐 */
   counter(offerId: string, ask: number, sellOn?: number): { result: 'accept' | 'raise' | 'reject' | 'withdraw' | 'gone'; fee: number; reason: string; done?: boolean };
   stepMatch(n?: number): void;
+  /** 포지션 전환 훈련 시작 · 멈춤 (내 선수) */
+  retrain(playerId: string, pos: Position | null): { ok: boolean; reason: string };
+  /** 유스 아카데미: 1군 승격 · 방출 */
+  academyAct(id: string, act: 'promote' | 'release'): { ok: boolean; reason: string };
   /** 패러디 이름 세이브를 실명 데이터로 바꿔 불러오기 (실명 데이터가 있을 때) */
   convertToReal(slot: string): void;
   changeTactics(t: Partial<Tactics>): void;
@@ -313,6 +320,7 @@ export const useGame = create<GameStore>((set, get) => {
       const world = createWorld(input, clubId, seed, { manager: opts.manager, settings: gameSettingsOf(useSettings.getState().s), ...(my ? { skipFill: [my.id] } : {}) });
       if (my) setupMyClub(world, my, freed);
       if (opts.intl) setupIntl(world, opts.intl.nation);   // 세계 대회 모드: 내 대표팀 · 국내파 · 첫 일정
+      else { academySeason(world, season); registerGeneratedNames(Object.fromEntries((world.academy?.players ?? []).map((x) => [x.id, x]))); }   // 내 구단 유스 아카데미 첫 유망주 (한국어 이름 등록)
       registerGeneratedNames(world.managers ?? {});   // 가상 감독 한국어 이름
       world.dataset = dataset;
       world.careerId = newCareerId();
@@ -344,7 +352,7 @@ export const useGame = create<GameStore>((set, get) => {
       // 설정 '계속이 멈추는 곳': 내 경기마다 (기본) · 중요한 일만 · 이적시장 · 시즌 끝까지
       for (let guard = 0; guard < 400; guard++) {
         const { events, matchToday } = advanceToUserMatch(w);
-        registerGeneratedNames(w.players);   // 세계 대회 국내파 가상 선수 한국어 이름
+        registerGeneratedNames({ ...w.players, ...Object.fromEntries((w.academy?.players ?? []).map((x) => [x.id, x])) });   // 세계 대회 국내파 가상 선수 한국어 이름
         all.push(...events);
         const m = w.manager;
         const halt = !!(m?.pendingJob || m?.boardEvent || m?.press || w.sagaPrompt || w.scandalPrompt || w.pendingRenewals?.length || seasonOver(w)
@@ -410,6 +418,22 @@ export const useGame = create<GameStore>((set, get) => {
     convertToReal(slot) {
       try { sessionStorage.setItem('pitchboss.convert', slot); sessionStorage.setItem('pitchboss.resume', slot); } catch { /* 무시 */ }
       setDataset('real');   // 새로 고침 → 실명 데이터로 켜진 뒤 resume 이 load(slot) → 위에서 바꾼다
+    },
+    academyAct(id, act) {
+      const w = get().world!;
+      if (act === 'release') { releaseAcademy(w, id); autosave(w); bump(); return { ok: true, reason: '아카데미에서 내보냈습니다' }; }
+      const r = promote(w, id, MAX_SQUAD);
+      if (r.ok) { registerGeneratedNames({ ...w.players, ...Object.fromEntries((w.academy?.players ?? []).map((x) => [x.id, x])) }); autosave(w); bump(); }
+      return r;
+    },
+    retrain(playerId, pos) {
+      const w = get().world!;
+      const p = w.players[playerId];
+      if (!p) return { ok: false, reason: '선수를 찾을 수 없습니다' };
+      if (!pos) { stopRetrain(p); autosave(w); bump(); return { ok: true, reason: '전환 훈련을 멈췄습니다 (나중에 다시 하면 이어서)' }; }
+      const r = startRetrain(w, p, pos);
+      if (r.ok) { autosave(w); bump(); }
+      return r;
     },
     stepMatch(n = 1) {
       const { match: m, world: w } = get();
@@ -556,7 +580,7 @@ export const useGame = create<GameStore>((set, get) => {
       const rng = createRng((w.rng ^ 0x77) >>> 0);
       w.inbox.push(...acceptOffer(w, idx, rng));
       w.rng = rng.state();
-      registerGeneratedNames(w.players);
+      registerGeneratedNames({ ...w.players, ...Object.fromEntries((w.academy?.players ?? []).map((x) => [x.id, x])) });
       autosave(w);
       bump();
     },
@@ -832,7 +856,7 @@ export const useGame = create<GameStore>((set, get) => {
       changeRole(w, w.players[playerId], role);
       autosave(w); bump();
     },
-    sign(playerId, wage, years, role, clause) {
+    sign(playerId, wage, years, role, clause, rel) {
       const w = get().world!;
       const p = w.players[playerId];
       const ban = talkBanned(w, playerId);
@@ -848,7 +872,7 @@ export const useGame = create<GameStore>((set, get) => {
       const rule = withinRules(w, w.userClubId, wage, fee, years);
       if (!rule.ok) return { ok: false, reason: rule.reason! };
       if (clause === 0 && buyoutMandatory(w, w.userClubId)) return { ok: false, reason: '이 리그는 모든 선수 계약에 바이아웃이 있어야 합니다' };
-      const r = playerWillJoin(w, p, w.userClubId, wage, role, clause);
+      const r = playerWillJoin(w, p, w.userClubId, wage, role, clause, undefined, rel);
       if (!r.ok) {
         // 주급이 낮으면 기회 1번 소모, 구단 자체가 싫다면 바로 결렬
         if (r.low) t.wage++;
@@ -862,6 +886,7 @@ export const useGame = create<GameStore>((set, get) => {
       const ev = completeTransfer(w, p, w.userClubId, fee, wage, years, p.clubId ? t.terms : undefined);
       if (role) p.role = role;   // 약속한 역할
       if (clause != null) setBuyout(p, clause);   // 계약에 건 바이아웃
+      setRelClause(p, w.userClubId, rel ?? 0);   // 강등 조항 (넣지 않으면 없음)
       w.inbox.push(ev);
       set({ ceremony: { player: p.id, playerName: p.name, from, to: w.userClubId, fee, wage, years, kind: 'in' } });
       autosave(w);
@@ -921,7 +946,7 @@ export const useGame = create<GameStore>((set, get) => {
       bump();
     },
 
-    renew(playerId, wage, years, clause) {
+    renew(playerId, wage, years, clause, rel) {
       const w = get().world!;
       const p = w.players[playerId];
       const key = `renew:${playerId}`;
@@ -932,7 +957,7 @@ export const useGame = create<GameStore>((set, get) => {
       if (wage - p.wage > room) return { ok: false, reason: `주급 예산 초과 — 남은 주급 여유 ${Math.max(0, Math.round(room / 1000))}K 유로` };
       const t = talkOf(w, key);
       if (clause === 0 && buyoutMandatory(w, w.userClubId)) return { ok: false, reason: '이 리그는 모든 선수 계약에 바이아웃이 있어야 합니다' };
-      const r = evaluateRenewal(w, p, wage, years, clause);
+      const r = evaluateRenewal(w, p, wage, years, clause, rel);
       if (!r.ok) {
         if (r.low) t.wage++;
         const left = r.low ? MAX_TRIES - t.wage : 0;
@@ -940,7 +965,7 @@ export const useGame = create<GameStore>((set, get) => {
         autosave(w); bump();
         return { ok: false, reason: r.reason, left, broken: left <= 0 };
       }
-      applyRenewal(w, p, wage, years, clause);
+      applyRenewal(w, p, wage, years, clause, rel);
       if (w.talks) delete w.talks[key];
       autosave(w); bump();
       return { ok: true, reason: `재계약 완료 · ${p.contract!.slice(0, 4)}년 6월까지` };
@@ -1008,7 +1033,7 @@ export const useGame = create<GameStore>((set, get) => {
       if (w.myClub) input = swapInput(input, w.myClub, currentAsData(w.clubs[w.myClub.id])).input;   // 나의 구단: 대신한 구단 자리
       const report = startNextSeason(w, input);
       if (w.intl) intlNextSeason(w, intlStage);   // 세계 대회 모드: 다음 일정 (새 주기면 국내파 · 목표)
-      registerGeneratedNames(w.players);   // 유스 선수 한국어 이름
+      registerGeneratedNames({ ...w.players, ...Object.fromEntries((w.academy?.players ?? []).map((x) => [x.id, x])) });   // 유스 선수 한국어 이름
       const awards = w.pendingAwards?.length ? w.pendingAwards : null;
       const news = w.pendingNews?.length ? w.pendingNews : null;
       w.pendingAwards = undefined;
@@ -1081,8 +1106,9 @@ export const useGame = create<GameStore>((set, get) => {
       set({ loadError: null });
       world.careerId ??= newCareerId();
       fillContracts(world);
-      registerGeneratedNames(world.players);   // 유스 선수 한국어 이름
+      registerGeneratedNames({ ...world.players, ...Object.fromEntries((world.academy?.players ?? []).map((x) => [x.id, x])) });   // 유스 선수 한국어 이름
       ensureManagers(world);   // 감독이 없던 예전 세이브: 가상 감독으로 채움
+      if (academyOn(world) && world.academy?.club !== world.userClubId) academySeason(world, world.season);   // 유스 아카데미가 없던 세이브
       syncWorld(world);
       set({ world, match: null, lastEvents: [], seasonReport: null });
       bump();

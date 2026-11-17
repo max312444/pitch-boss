@@ -35,6 +35,8 @@ export const overLimit = (w: World, clubId: string) => squadCost(w, clubId) / Ma
 export function relClauseOf(w: World, p: PlayerState): number {
   if (!p.clubId || p.clubId.startsWith('nt-') || p.retired || p.loan) return 0;
   if (p.relClub === p.clubId && p.relClause != null) return p.relClause;
+  // 내 구단 선수: 감독이 영입 · 재계약 때 정한다 (무작위로 붙이지 않음)
+  if (p.clubId === w.userClubId) { p.relClause = 0; p.relClub = p.clubId; return 0; }
   const club = w.clubs[p.clubId];
   let v = 0;
   if (club && w.competitions[club.league] && levelOf(club.league) === 1) {
@@ -64,6 +66,8 @@ export function triggerRelClauses(w: World, relegated: string[], season: string)
     p.relClause = 0;   // 한 번 발동하면 끝
     out.push(id);
   }
+  const mine = out.filter((id) => w.players[id].clubId === w.userClubId);
+  if (mine.length) w.inbox.push({ type: 'info', date: `${season.slice(0, 4)}-07-01`, text: `강등으로 내 선수 ${mine.length}명의 강등 조항이 발동했습니다. 여름 이적시장 동안 조항 금액을 내는 구단에는 거절할 수 없습니다 (이적 → 급매물)` });
   return out;
 }
 

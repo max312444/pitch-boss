@@ -84,11 +84,18 @@ export function altPositions(p: PlayerState): Position[] {
     let added = 0;
     for (const c of near) { if (out.length >= 3 || added >= 2) break; out.push(c.x); added++; }
   }
+  // 포지션 전환 훈련으로 익힌 포지션 (개수 제한 없음)
+  for (const x of p.learned ?? []) if (x !== p.pos && !out.includes(x)) out.push(x);
   p.alt = out;
   return out;
 }
 /** 이 선수의 그 자리 친숙도: 주 포지션 · 보조 포지션 1, 그 밖은 포지션 거리로 */
-export const playerFamiliarity = (p: PlayerState, slot: Position) => (slot === p.pos || altPositions(p).includes(slot) ? 1 : familiarity(p.pos, slot));
+export const playerFamiliarity = (p: PlayerState, slot: Position) => {
+  if (slot === p.pos || altPositions(p).includes(slot)) return 1;
+  const f = familiarity(p.pos, slot);
+  // 전환 훈련 중인 자리: 진행도만큼 익숙해진다 (다 익히면 보조 포지션 = 1)
+  return p.retrain?.pos === slot ? f + (1 - f) * (p.retrain.progress / 100) * 0.9 : f;
+};
 
 /** 자리 적합 능력 = 그 자리 능력 × (0.7 + 0.3 × 친숙도) */
 export function slotRating(p: PlayerState, slot: Position): number {

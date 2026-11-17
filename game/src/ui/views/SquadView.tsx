@@ -19,9 +19,11 @@ import type { AttrKey } from '../../data/types';
 import { attr } from '../../engine/ratings';
 import { heightOf } from '../../engine/body';
 import { nextSort, SortPicker, SortTh, STAT_KEYS, TopAttrs, type SortState } from '../components/SortTh';
+import { AcademyList } from './AcademyList';
+import { academyOn } from '../../engine/academy';
 import { ATTR_KO } from '../format';
 
-type Group = 'ALL' | 'XI' | 'GK' | 'DF' | 'MF' | 'FW';
+type Group = 'ALL' | 'XI' | 'GK' | 'DF' | 'MF' | 'FW' | 'YOUTH';
 type SortKey = 'pos' | 'name' | 'age' | 'ovr' | 'fit' | 'form' | 'apps' | 'goals' | 'wage' | 'height' | `a_${AttrKey}`;
 const ASC_FIRST = ['pos', 'name', 'age'];
 const SORT_OPTIONS: [SortKey, string][] = [
@@ -30,7 +32,7 @@ const SORT_OPTIONS: [SortKey, string][] = [
 ];
 const GROUPS: { key: Group; label: string }[] = [
   { key: 'ALL', label: '전체' }, { key: 'XI', label: '선발 · 후보' }, { key: 'GK', label: '골키퍼' }, { key: 'DF', label: '수비수' },
-  { key: 'MF', label: '미드필더' }, { key: 'FW', label: '공격수' },
+  { key: 'MF', label: '미드필더' }, { key: 'FW', label: '공격수' }, { key: 'YOUTH', label: '유스 아카데미' },
 ];
 
 interface Row { p: PlayerState; ovr: number; age: number; ko: string; form: number }
@@ -111,10 +113,10 @@ export function SquadView() {
         {locker && <LockerRoom onClose={() => setLocker(false)} />}
 
         <div data-tour="squad-filter" className="mb-3 flex items-center gap-1 overflow-x-auto">
-          {GROUPS.map((g) => (
+          {GROUPS.filter((g) => g.key !== 'YOUTH' || academyOn(w)).map((g) => (
             <button key={g.key} onClick={() => setGroup(g.key)}
               className={`h-8 shrink-0 rounded-md px-3 text-[13px] transition-colors lg:px-4 ${group === g.key ? 'bg-ink-700 font-semibold text-hi' : 'text-mid hover:bg-ink-800 hover:text-hi'}`}>
-              {g.label}
+              {g.label}{g.key === 'YOUTH' && w.academy?.club === w.userClubId && w.academy.players.length ? <span className="ml-1 text-neon">{w.academy.players.length}</span> : null}
             </button>
           ))}
           <span className="ml-auto flex shrink-0 items-center gap-3 pl-3 text-[12px] text-lo">
@@ -123,6 +125,7 @@ export function SquadView() {
           </span>
         </div>
 
+        {group === 'YOUTH' ? <AcademyList /> : <>
         <SortPicker className="mb-2 xl:hidden" s={sort} options={SORT_OPTIONS} onPick={(k) => setSort({ k, desc: !ASC_FIRST.includes(k) })} onFlip={() => setSort((x) => ({ ...x, desc: !x.desc }))} />
         <div className="panel min-h-0 flex-1 overflow-auto">
           <table className="w-full border-collapse text-[14px]">
@@ -190,6 +193,7 @@ export function SquadView() {
             </tbody>
           </table>
         </div>
+        </>}
       </section>
       {sel && <PlayerPanel p={sel.p} age={sel.age} ko={sel.ko} nation={nations.get(sel.p.nation)?.ko ?? sel.p.nation} actions={<ContractBox p={sel.p} />} sheet={{ open: !!selected, onClose: () => setSelected(null) }} />}
     </div>

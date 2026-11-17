@@ -50,7 +50,8 @@ describe('유스 · 신규 선수', () => {
     const r = startNextSeason(w, { season: '2026-27', leagues: [] });
     const all = (r.youth ?? []).flatMap((y) => y.players).map((id) => w.players[id]);
     console.log('입단', all.length, '명 · 예시', all.slice(0, 4).map((p) => `${p.name}(${p.nation}, ${p.pos}, 능력 ${overall(p)}, 잠재력 ${p.potential})`).join(' / '));
-    expect(r.youth!.length).toBe(20);
+    expect(r.youth!.length).toBe(19);   // 내 구단은 1군 대신 유스 아카데미로 (academy.ts)
+    expect(w.academy?.players.length).toBeGreaterThanOrEqual(3);
     for (const y of r.youth!) { expect(y.players.length).toBeGreaterThanOrEqual(2); expect(y.players.length).toBeLessThanOrEqual(4); }
     for (const p of all) {
       const age = 2026 - +p.birth.slice(0, 4);
@@ -62,7 +63,7 @@ describe('유스 · 신규 선수', () => {
       expect(w.players[src].nation).toBe(p.nation);              // 같은 국적 선수의 성
       expect(p.name.endsWith(w.players[src].name.split(' ').at(-1)!)).toBe(true);
     }
-    expect(w.inbox.some((e) => e.type === 'youth')).toBe(true);
+    expect(w.inbox.some((e) => e.type === 'youth' || e.type === 'academy')).toBe(true);
   });
 
   it('데이터가 있는 시즌에는 유스를 만들지 않는다 (실제 신인이 등장)', () => {

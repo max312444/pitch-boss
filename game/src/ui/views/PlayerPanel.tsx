@@ -10,14 +10,16 @@ import { ROLE_HINT, ROLE_KO, ROLES, roleOf, type Role } from '../../engine/roles
 import { useGame } from '../../store/game';
 import { PhotoCredit, PlayerPhoto } from '../components/PlayerPhoto';
 import type { PlayerState, World } from '../../engine/types';
-import { altPositions, attr, formAvg } from '../../engine/ratings';
-import { POS_KO } from '../../data/rating';
+import { altPositions, attr, formAvg, ratingAt, slotRating } from '../../engine/ratings';
+import { canRetrain, MAX_RETRAIN, retrainMonthsLeft } from '../../engine/retrain';
+import type { Position } from '../../data/types';
+import { POS_KO, POS_ORDER } from '../../data/rating';
 import { ATTR_GROUPS, ATTR_KO, GK_GROUP, money, ratingBar, ratingTone } from '../format';
 import { ConditionIcon, FitnessBar } from '../components/bits';
 import { loyaltyLabel, UNHAPPY, unrestReasons } from '../../engine/loyalty';
 import { TRAIT, type PlayerHistory, type TraitKind } from '../../engine/traits';
 import { AWARD_KO, isTrophy } from '../../engine/awards';
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { clubKo, compKo } from '../../data/db';
 import { useHistory, useWorld } from '../hooks';
 import { Crest } from '../components/Crest';
@@ -197,6 +199,7 @@ export function PlayerPanel({ p, age, ko, nation, actions, club, sheet }: { p: P
         )}
         <ScoutBox p={p} />
         <PositionRatings p={p} />
+        <RetrainBox p={p} />
         {groups.map((g) => {
           const keys = g.keys.filter((k) => p.base[k] != null);
           if (!keys.length) return null;
@@ -284,6 +287,46 @@ function RoleRow({ p }: { p: PlayerState }) {
         {ROLES.map((x) => <option key={x} value={x}>{ROLE_KO[x]}</option>)}
       </select>
       <span className="min-w-0 flex-1 truncate text-lo" title="올려 주면 사기 +, 내리면 사기 · 충성도 −">{ROLE_HINT[r]}{p.role ? ' · 약속함' : ' · 자동'}</span>
+    </div>
+  );
+}
+
+/** 포지션 전환 훈련 (내 선수): 몇 달 동안 다른 포지션을 익혀 그 자리에서도 능력이 깎이지 않게 */
+function RetrainBox({ p }: { p: PlayerState }) {
+  const w = useWorld();
+  const retrain = useGame((s) => s.retrain);
+  const [pick, setPick] = useState<Position | ''>('');
+  const [msg, setMsg] = useState('');
+  if (p.clubId !== w.userClubId || w.intl) return null;
+  const learned = p.learned ?? [];
+  const cands = POS_ORDER.filter((x) => canRetrain(p, x));
+  const r = p.retrain;
+  return (
+    <div className="mb-4 rounded-lg bg-ink-900 px-3 py-3 text-[12px]">
+      <div className="mb-2 flex items-center justify-between">
+        <span className="font-semibold text-mid">포지션 전환 훈련</span>
+        <span className="text-lo">{learned.length ? `익힌 포지션 ${learned.join(' · ')}` : `한 번에 ${MAX_RETRAIN}명까지`}</span>
+      </div>
+      {r ? (
+        <>
+          <div className="flex items-center justify-between text-mid">
+            <span><span className="font-semibold text-hi">{r.pos}</span> 익히는 중 · <span className="tnum">{Math.round(r.progress)}%</span></span>
+            <span className="text-lo">약 {retrainMonthsLeft(w, p, r.pos, r.progress)}달 남음 (매달 1일 훈련)</span>
+          </div>
+          <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-ink-700"><div className="h-full rounded-full bg-sky" style={{ width: `${r.progress}%` }} /></div>
+          <div className="mt-1.5 text-lo">지금 {r.pos} 능력 <span className="tnum text-mid">{Math.round(slotRating(p, r.pos))}</span> → 다 익히면 <span className="tnum text-neon">{Math.round(ratingAt(p, r.pos))}</span> · 훈련 중에는 일반 성장이 조금 느립니다</div>
+          <button onClick={() => setMsg(retrain(p.id, null).reason)} className="mt-2 h-9 w-full rounded-lg text-[12px] text-mid ring-1 ring-line hover:text-hi">훈련 멈추기 (진행도는 남음)</button>
+        </>
+      ) : cands.length ? (
+        <div className="flex gap-2">
+          <select value={pick} onChange={(e) => setPick(e.target.value as Position)} className="h-9 min-w-0 flex-1 rounded-lg border border-line bg-ink-850 px-2 text-[12px] text-hi">
+            <option value="">익힐 포지션 고르기</option>
+            {cands.map((x) => <option key={x} value={x}>{x} · 약 {retrainMonthsLeft(w, p, x, p.retrainSaved?.[x] ?? 0)}달 · {Math.round(slotRating(p, x))} → {Math.round(ratingAt(p, x))}{p.retrainSaved?.[x] ? ` (${Math.round(p.retrainSaved[x]!)}% 했음)` : ''}</option>)}
+          </select>
+          <button disabled={!pick} onClick={() => pick && setMsg(retrain(p.id, pick).reason)} className="h-9 shrink-0 rounded-lg bg-sky/15 px-3 text-[12px] font-semibold text-sky disabled:opacity-40">시작</button>
+        </div>
+      ) : <div className="text-lo">더 익힐 수 있는 포지션이 없습니다</div>}
+      {msg && <div className="mt-1.5 text-sky">{msg}</div>}
     </div>
   );
 }

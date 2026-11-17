@@ -8,6 +8,7 @@ import type { GameEvent, PlayerState, World } from './types';
 import type { Rng } from './rng';
 import { createRng, hashSeed } from './rng';
 import { overall } from './ratings';
+import { levelOf } from './pyramid';
 import { canAfford, clubLevel, completeTransfer, marketValue, playerWillJoin, wageDemand } from './transfer';
 
 const r05 = (v: number) => Math.max(1e6, Math.round(v / 5e5) * 5e5);
@@ -78,3 +79,37 @@ export function aiBuyoutRaids(w: World, rng: Rng): GameEvent[] {
   }
   return [];
 }
+
+// ── 강등 조항 (내 선수) ─────────────────────────────
+//  1부 리그 구단이 영입 · 재계약 때 넣을 수 있다 (선택). 넣으면 선수가 주급을 조금 깎아 주고 오려는 마음도 커진다 (강등돼도 떠날 길이 있으니까)
+//  구단이 강등되면 발동 → 다음 여름 이적시장 동안 그 금액을 내는 구단에는 거절 못 하고 보내야 한다 (firesale.ts triggerRelClauses)
+//  명성 하위 40% 구단(강등 위험)이 조항 없이 데려오려 하면 선수가 조금 망설인다
+export const REL_MULTS = [0, 1, 1.5] as const;
+/** 강등 조항을 넣을 수 있는 구단인가 (1부 리그) */
+export function relClauseAllowed(w: World, clubId: string): boolean {
+  const lg = w.clubs[clubId]?.league;
+  return !!lg && !!w.competitions[lg] && levelOf(lg) === 1 && !clubId.startsWith('nt-');
+}
+/** 강등 위험 구단 (1부 리그 명성 하위 40%) */
+export function relegationRisk(w: World, clubId: string): boolean {
+  if (!relClauseAllowed(w, clubId)) return false;
+  const lg = w.clubs[clubId].league;
+  const mates = Object.values(w.clubs).filter((c) => c.league === lg).sort((a, b) => a.reputation - b.reputation);
+  return mates.findIndex((c) => c.id === clubId) < Math.ceil(mates.length * 0.4);
+}
+export function relOptions(w: World, p: PlayerState): { mult: number; fee: number }[] {
+  const value = valueOf(w, p);
+  return REL_MULTS.map((m) => ({ mult: m, fee: m ? r05(value * m) : 0 }));
+}
+/** 강등 조항에 따른 주급 요구 배율: 낮게 걸수록 더 깎아 준다 */
+export function relWageFactor(w: World, p: PlayerState, fee: number): number {
+  if (!fee || fee <= 0) return 1;
+  return fee / valueOf(w, p) <= 1.15 ? 0.95 : 0.97;
+}
+/** 선수가 오려는 마음 보정 (playerWillJoin 점수) */
+export function relJoinBonus(w: World, clubId: string, fee: number | undefined): number {
+  if (fee == null || !relClauseAllowed(w, clubId)) return 0;
+  return fee > 0 ? 0.6 : relegationRisk(w, clubId) ? -0.4 : 0;
+}
+/** 계약에 강등 조항을 넣는다 (0 = 없음, 이 구단에서는 무작위로 정하지 않게 기록) */
+export function setRelClause(p: PlayerState, clubId: string, fee: number) { p.relClause = Math.max(0, fee); p.relClub = clubId; }
