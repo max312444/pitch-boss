@@ -32,7 +32,12 @@ export const TUNING = {
   penPerSeg: 0.0095,     // 구간당 페널티 얻을 확률
   duelPerSeg: 0.02,      // 구간당 수비 실책 · 피지컬 대결 패배 기본 확률 (능력 · 체격 차이에 따라 0.4 ~ 2.5배)
   duelXg: 0.3,           // 실책으로 생긴 기회의 xG
+  easeLead: 3,           // 이만큼 앞서면 경기 운영 (템포 ↓) — 비현실적인 대승 (7~10골 차) 방지
+  easeMul: 0.75,         // 앞선 골 차가 easeLead 부터 1골 늘 때마다 기회 배율 (3골 0.75 · 4골 0.56 · 5골 0.42)
 };
+
+/** 크게 앞선 팀은 무리하지 않는다 (교체 · 볼 돌리기): 득점 기회 배율 */
+export const easeOf = (lead: number) => (lead >= TUNING.easeLead ? TUNING.easeMul ** (lead - TUNING.easeLead + 1) : 1);
 
 /** 수비 실책 종류: 속도에서 밀림 (뒷공간) · 몸싸움에서 밀림 · 공중볼 경합 패배 · 빌드업 패스 실수 */
 export type DuelKind = 'pace' | 'power' | 'air' | 'pass';
@@ -399,6 +404,7 @@ export function step(m: MatchState, ctx: MatchCtx): void {
     const me = m[side], opp = m[side === 'home' ? 'away' : 'home'];
     const s = str[side], o = str[side === 'home' ? 'away' : 'home'];
     const poss = side === 'home' ? possHome : 1 - possHome;
+    const ease = easeOf(me.goals - opp.goals);
     const ratio = s.att / (0.78 * o.def + 0.22 * o.gk);
     const xg = TUNING.baseXg
       * (2 * poss) ** 0.6
@@ -407,7 +413,8 @@ export function step(m: MatchState, ctx: MatchCtx): void {
       * (side === 'home' ? TUNING.homeAdv : 2 - TUNING.homeAdv)
       * (1 + 0.1 * me.tactics.mentality)      // 내가 공격적이면 기회 ↑
       * (1 + 0.08 * opp.tactics.mentality)    // 상대가 공격적이면 뒷공간 ↑
-      * (1 - 0.04 * (opp.tactics.pressing - 1));
+      * (1 - 0.04 * (opp.tactics.pressing - 1))
+      * ease;
     const openXg = xg * TUNING.openShare;
     me.xg += openXg;
     const shots = poisson(openXg * 9.5, rng);
@@ -428,8 +435,8 @@ export function step(m: MatchState, ctx: MatchCtx): void {
       }
     }
 
-    setPieces(m, side, ctx, air[side], air[side === 'home' ? 'away' : 'home']);
-    duels(m, side, ctx, poss);
+    setPieces(m, side, ctx, air[side], air[side === 'home' ? 'away' : 'home'], ease);
+    duels(m, side, ctx, poss, ease);
 
     // 카드
     const aggression = 1 + 0.1 * (me.tactics.pressing - 1);
@@ -498,7 +505,7 @@ export function goalAt(m: MatchState, side: Side, scorer: string, assist: string
   me.goals++; me.shots++; me.onTarget++;
   m.summary.goals.push({ minute: m.segment * SEG_MIN + rng.int(1, SEG_MIN), side, scorer, ...(assist ? { assist } : {}), kind });
 }
-function setPieces(m: MatchState, side: Side, ctx: MatchCtx, myAir: number, theirAir: number) {
+function setPieces(m: MatchState, side: Side, ctx: MatchCtx, myAir: number, theirAir: number, ease = 1) {
   const { rng } = ctx;
   const me = m[side], opp = m[side === 'home' ? 'away' : 'home'];
   if (!outfield(me).length) return;
@@ -508,7 +515,7 @@ function setPieces(m: MatchState, side: Side, ctx: MatchCtx, myAir: number, thei
   const kq = k ? (attr(ctx.players[k.id], 'pas') + 0.5 * attr(ctx.players[k.id], 'vis')) / 1.5 / 70 : 0.8;
   const gk = opp.onPitch.find((o) => o.slot === 'GK');
   const oppAir = theirAir * 0.85 + (gk ? attr(ctx.players[gk.id], 'aer') : 40) * 0.15;
-  const setXg = TUNING.setXg * clamp((myAir / oppAir) ** 2, 0.4, 2.2) * clamp(kq, 0.6, 1.4) * home;
+  const setXg = TUNING.setXg * clamp((myAir / oppAir) ** 2, 0.4, 2.2) * clamp(kq, 0.6, 1.4) * home * ease;
   me.xg += setXg;
   if (rng.chance(setXg)) {
     const direct = !!k && rng.chance(0.15 * clamp(attr(ctx.players[k.id], 'sho') / 75, 0.5, 1.3));   // 직접 프리킥
@@ -516,7 +523,7 @@ function setPieces(m: MatchState, side: Side, ctx: MatchCtx, myAir: number, thei
     if (scorer) goalAt(m, side, scorer.id, !direct && k && rng.chance(0.75) ? k.id : undefined, 'set', rng);
   }
   // 페널티: 공격적일수록 조금 더 얻음 · 키커 슈팅 · 침착함 vs 골키퍼
-  if (rng.chance(TUNING.penPerSeg * (1 + 0.1 * me.tactics.mentality) * home)) {
+  if (rng.chance(TUNING.penPerSeg * (1 + 0.1 * me.tactics.mentality) * home * ease)) {
     const pk = taker(me, ctx, 'pen');
     if (!pk) return;
     const p = ctx.players[pk.id];
@@ -532,7 +539,7 @@ function setPieces(m: MatchState, side: Side, ctx: MatchCtx, myAir: number, thei
 //  수비의 침착성 · 위치 선정이 낮거나 지쳤을수록 실책이 잦다. 빌드업 실수는 상대 압박이 강하고 수비의 패스 · 침착성이 낮을 때
 //  실책 → 큰 기회 (xG 0.3). 실책한 선수는 평점이 깎인다
 const ATT_MIN = 0.55, DEF_MIN = 0.5;
-function duels(m: MatchState, side: Side, ctx: MatchCtx, poss: number) {
+function duels(m: MatchState, side: Side, ctx: MatchCtx, poss: number, ease = 1) {
   const { rng } = ctx;
   const me = m[side], opp = m[side === 'home' ? 'away' : 'home'];
   const atk = me.onPitch.filter((o) => (CONTRIB[o.slot].att ?? 0) >= ATT_MIN);
@@ -554,7 +561,7 @@ function duels(m: MatchState, side: Side, ctx: MatchCtx, poss: number) {
   const g = rng.weighted(gaps, (x) => Math.max(1, x.gap + 12));
   const sloppy = clamp(1 + (65 - (attr(D, 'com') + attr(D, 'pos')) / 2) / 40, 0.6, 1.7) * (d.fitness < 45 ? 1.3 : 1) * traitMul(D, 'spread')
     * (d.instr === 'attack' ? 1.3 : d.instr === 'hold' ? 0.65 : 1);   // 공격 가담한 수비는 뒷공간이 비고, 위치를 지키면 덜 흔들린다
-  const chance = TUNING.duelPerSeg * clamp(1 + g.gap / 25, 0.4, 2.5) * sloppy * clamp(0.6 + poss * 0.8, 0.8, 1.2) * (m.intl?.form[side] ?? 1);
+  const chance = TUNING.duelPerSeg * clamp(1 + g.gap / 25, 0.4, 2.5) * sloppy * clamp(0.6 + poss * 0.8, 0.8, 1.2) * (m.intl?.form[side] ?? 1) * ease;
   if (!rng.chance(chance)) return;
   const xg = TUNING.duelXg * clamp(attr(A, 'sho') / 72, 0.7, 1.25) * (g.k === 'pass' ? 0.9 : 1);
   me.xg += xg; me.shots++;

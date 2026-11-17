@@ -109,3 +109,14 @@ describe('경기 균형 (3개 리그 900경기)', () => {
     expect(set / n).toBeGreaterThan(0.3); expect(set / n).toBeLessThan(0.7);
   }, 120000);
 });
+
+describe('경기 운영 (크게 앞서면 템포 ↓)', () => {
+  it('2골 차까지는 그대로, 3골 차부터 기회가 줄어든다', async () => {
+    const { easeOf } = await import('./match');
+    expect(easeOf(0)).toBe(1);
+    expect(easeOf(2)).toBe(1);
+    expect(easeOf(-5)).toBe(1);
+    expect(easeOf(3)).toBeLessThan(1);
+    expect(easeOf(4)).toBeLessThan(easeOf(3));
+  });
+});
