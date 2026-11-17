@@ -1,12 +1,15 @@
 // 게임 버전 (첫 화면에 표시). 기능을 넣거나 고칠 때마다 올린다 — 기능 추가 0.1 단위, 작은 수정 0.0.1 단위
 //  바꿀 때 아래 CHANGELOG 맨 위에 한 줄 요약을 넣고, README 개발 현황에도 적는다
 //  첫 화면은 새 버전을 처음 본 뒤 24시간 동안 '업데이트 소식'을 보여 준다 (UpdateNotes.tsx)
-export const GAME_VERSION = '2.4.1';
+export const GAME_VERSION = '2.4.2';
 
 export interface ChangeEntry { version: string; date: string; items: string[] }
 
 /** 업데이트 내역 (새 것이 위). 플레이어가 읽는 글이므로 쉬운 말로 */
 export const CHANGELOG: ChangeEntry[] = [
+  { version: '2.4.2', date: '2026-11-17', items: [
+    '휴대폰 첫 화면: 업데이트 소식을 펼쳐 두지 않고 위쪽 한 줄 바로 — 눌러서 내역을 보고, 바로 게임을 시작할 수 있습니다',
+  ] },
   { version: '2.4.1', date: '2026-11-17', items: [
     '고지: 첫 인트로가 끝나면 바로 보여 줍니다. 내용 새로 고침 — 실명 데이터 · 선수 사진은 사용자가 직접 파일을 업로드해야 함 (이 브라우저에만 저장), 가상의 세계 대회 · 가상 엠블럼, 저장은 브라우저에 (파일로 내보내기 권장)',
   ] },

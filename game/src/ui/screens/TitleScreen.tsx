@@ -1,8 +1,7 @@
 import { ModePicker } from '../components/ModePicker';
 import { GAME_VERSION } from '../../version';
-import { UpdateNotes } from '../components/UpdateNotes';
+import { UpdateBar, UpdateNotes } from '../components/UpdateNotes';
 /** 휴대폰: 업데이트 소식을 로고와 메뉴 사이에 (스크롤로 다 볼 수 있게) */
-const UpdateNotesSlot = () => <div className="mt-6 sm:hidden"><UpdateNotes inline /></div>;
 import { HelpDialog } from '../components/HelpDialog';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { listSaves, type SaveMeta } from '../../store/save';
@@ -73,6 +72,7 @@ export function TitleScreen() {
       {/* 왼쪽 메뉴 */}
       <div className="relative z-10 flex h-full w-full max-w-[560px] flex-col justify-between overflow-y-auto px-6 pt-[max(32px,env(safe-area-inset-top))] pb-[max(24px,env(safe-area-inset-bottom))] sm:px-16 sm:py-14">
         <header className="animate-[rise_0.8s_var(--ease-out-quart)_both]">
+          {!intro && !notice && <UpdateBar />}
           <div className="flex items-center gap-3 text-[11px] font-semibold text-lo">
             <span className="h-px w-8 bg-neon" />
             축구 감독 시뮬레이션
@@ -85,7 +85,6 @@ export function TitleScreen() {
           </p>
         </header>
 
-        <UpdateNotesSlot />
         <nav className="my-6 flex flex-col sm:my-10" onMouseLeave={() => setHover(null)}>
           {items.map((it, i) => {
             const active = hover === it.key && !it.disabled;
