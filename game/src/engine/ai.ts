@@ -62,7 +62,7 @@ export function recommend(w: World, clubId: string, oppId: string, home: boolean
 
   // 사용자가 직접 고정한 선발이 있으면 그 포메이션 유지
   if (club.lineup?.starters.some(Boolean)) {
-    const lineup = pickLineup(players, club.tactics.formation, bench, club.lineup.starters, club.lineup.bench);
+    const lineup = pickLineup(players, club.tactics.formation, bench, club.lineup.starters, club.lineup.bench, undefined, !!club.lineup.benchExact);
     reasons.push(`직접 정한 선발 유지 (${lineup.formation})`);
     return { tactics: { formation: lineup.formation, mentality, pressing }, lineup, edge, reasons };
   }

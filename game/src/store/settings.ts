@@ -13,7 +13,8 @@ export interface Settings {
   /** 경기 중 자동 교체 (지친 선수 → 후보, 55~80분) */
   autoSubs: boolean;
   /** 경기 화면 기본 속도 (0 보통 · 1 빠르게 · 2 매우 빠르게) */
-  matchSpeed: 0 | 1 | 2;
+  /** 0 보통 · 1 빠르게 · 2 매우 빠르게 · 3 느리게 */
+  matchSpeed: 0 | 1 | 2 | 3;
   popups: Record<PopupKind, Freq>;
   patience: NonNullable<GameSettings['patience']>;
   rules: NonNullable<GameSettings['rules']>;

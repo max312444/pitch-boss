@@ -15,7 +15,7 @@ export function FamBar({ v, on }: { v: number; on?: boolean }) {
 }
 import { FormationEditor } from '../components/FormationEditor';
 import { DragGhost, usePitchDrag } from '../components/PitchDrag';
-import { slotRating } from '../../engine/ratings';
+import { bySlotFit, slotRating } from '../../engine/ratings';
 import { playerKo } from '../../data/db';
 import { useGame } from '../../store/game';
 import { useWorld } from '../hooks';
@@ -79,7 +79,7 @@ export function TacticsView() {
   const setInstr = (i: number, v: Instr | null) => { const list = [...instrList]; while (list.length < 11) list.push(null); list[i] = v; setClubTactics({ instr: { formation: t.formation, list } }); };
   const squad = club.squad.map((id) => w.players[id]);
   const rules = matchRules(w.season);
-  const lineup = pickLineup(squad, t.formation, rules.benchSize, club.lineup?.starters, club.lineup?.bench);
+  const lineup = pickLineup(squad, t.formation, rules.benchSize, club.lineup?.starters, club.lineup?.bench, undefined, !!club.lineup?.benchExact);
   const slots = FORMATIONS[lineup.formation];
   const pos = slotXY(slots);
   const fixed = club.lineup?.starters ?? [];
@@ -121,7 +121,7 @@ export function TacticsView() {
     </div>
   );
 
-  const candidates = sel == null ? [] : [...squad].sort((a, b) => slotRating(b, slots[sel]) - slotRating(a, slots[sel]));
+  const candidates = sel == null ? [] : [...squad].sort(bySlotFit(slots[sel]));   // 그 포지션 선수 먼저 → 같은 묶음 → 그 밖
 
   return (
     <div className="flex h-full flex-col gap-4 overflow-y-auto p-3 lg:flex-row lg:gap-6 lg:overflow-hidden lg:p-6">
@@ -236,7 +236,7 @@ export function TacticsView() {
             <SetPieceCard />
             <TrainingCard />
             <Card tour="tactics-bench" title={`후보 ${lineup.bench.length}명`}>
-              <BenchEditor squad={squad} starters={current} bench={lineup.bench} size={rules.benchSize} onChange={(b) => setLineup(slots.map((_, i) => fixed[i] ?? null), b)} />
+              <BenchEditor squad={squad} starters={current} bench={lineup.bench} size={rules.benchSize} onChange={(b) => setLineup(slots.map((_, i) => fixed[i] ?? null), b, true)} />
               <p className="px-5 pb-4 text-[12px] leading-relaxed text-lo">직접 지정하지 않은 자리와 부상 · 징계로 빠진 자리는 체력과 자리 적합도로 자동 선택됩니다. 후보로 정한 선수는 자동 선발에 쓰지 않습니다.</p>
             </Card>
           </div>

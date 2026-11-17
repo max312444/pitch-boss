@@ -121,6 +121,8 @@ export interface MatchDraft {
   /** 포메이션 자리 순서대로 선발 */
   starters: (string | null)[];
   bench: string[];
+  /** 후보를 직접 정함 (빈자리 자동으로 안 채움) */
+  benchExact?: boolean;
 }
 
 export interface LiveMatch {
@@ -168,7 +170,7 @@ interface GameStore {
   /** 파일로 내보내기 · 파일에서 불러오기 (.pitchboss) */
   exportFile(): Promise<void>;
   importFile(file: File): Promise<boolean>;
-  setLineup(starters: (string | null)[] | null, bench?: string[]): void;
+  setLineup(starters: (string | null)[] | null, bench?: string[], benchExact?: boolean): void;
   /** 전술 화면: 선수를 빈 곳에 끌어다 놓아 그 자리 포지션을 바꿈 → 포메이션 자동 변경. 결과 문장 */
   reshapeTactics(slotIdx: number, pos: Position): string;
   /** 경기 준비 화면: 같은 동작을 이번 경기 선발에 */
@@ -392,7 +394,7 @@ export const useGame = create<GameStore>((set, get) => {
       if (!m || !w || m.phase !== 'squad') return;
       const d = m.draft;
       const players = w.clubs[w.userClubId].squad.map((id) => w.players[id]);
-      const lineup = pickLineup(players, d.formation, matchRules(w.season).benchSize, d.starters, d.bench);
+      const lineup = pickLineup(players, d.formation, matchRules(w.season).benchSize, d.starters, d.bench, undefined, !!d.benchExact);
       m.state = prepareMatch(w, m.fixture, m.rng, {
         manualSide: m.side,
         lineups: { [m.side]: lineup },
@@ -1071,7 +1073,7 @@ export const useGame = create<GameStore>((set, get) => {
       if (slots[slotIdx] === 'GK') return '골키퍼 자리는 옮길 수 없습니다';
       const players = c.squad.map((id) => w.players[id]);
       const rules = matchRules(w.season);
-      const l = pickLineup(players, c.tactics.formation, rules.benchSize, c.lineup?.starters, c.lineup?.bench);
+      const l = pickLineup(players, c.tactics.formation, rules.benchSize, c.lineup?.starters, c.lineup?.bench, undefined, !!c.lineup?.benchExact);
       const cur = slots.map((_, i) => l.starters[i]?.id ?? null);
       const r = reshape(slots, slotIdx, pos);
       let key = r.formation;
@@ -1097,10 +1099,11 @@ export const useGame = create<GameStore>((set, get) => {
       return `${slots[slotIdx]} → ${pos} · 포메이션 ${key}${r.formation ? '' : ` (${formationShape(r.slots)} 모양 · 내 포메이션으로 저장)`}`;
     },
 
-    setLineup(starters, bench = []) {
+    setLineup(starters, bench = [], benchExact) {
       const w = get().world;
       if (!w) return;
-      w.clubs[w.userClubId].lineup = starters ? { starters, bench } : null;
+      const prev = w.clubs[w.userClubId].lineup;
+      w.clubs[w.userClubId].lineup = starters ? { starters, bench, ...((benchExact ?? prev?.benchExact) ? { benchExact: true } : {}) } : null;
       autosave(w);
       bump();
     },

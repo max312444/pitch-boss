@@ -107,7 +107,7 @@ export const FILL_ORDER: Position[] = ['GK', 'ST', 'CB', 'DM', 'AM', 'LB', 'RB',
  * 체력이 낮은 선수는 자연스럽게 로테이션된다.
  * fixed: 사용자가 정한 자리별 선수(없거나 못 뛰면 자동으로 채움), fixedBench: 정한 후보
  */
-export function pickLineup(players: PlayerState[], formation: string, benchSize: number, fixed?: (string | null)[], fixedBench?: string[], bias?: (p: PlayerState) => number): Lineup {
+export function pickLineup(players: PlayerState[], formation: string, benchSize: number, fixed?: (string | null)[], fixedBench?: string[], bias?: (p: PlayerState) => number, benchExact = false): Lineup {
   const slots = FORMATIONS[formation] ?? FORMATIONS[DEFAULT_FORMATION];
   const pool = players.filter(available);
   const used = new Set<string>();
@@ -145,6 +145,8 @@ export function pickLineup(players: PlayerState[], formation: string, benchSize:
   const rest = pool.filter((p) => !used.has(p.id));
   const bench: string[] = [];
   for (const id of fixedBench ?? []) if (bench.length < benchSize && rest.some((p) => p.id === id)) bench.push(id);
+  // 감독이 후보를 직접 정했으면 (benchExact) 빈자리를 자동으로 채우지 않는다 — 빼면 빈자리로 남고, 원하는 선수를 넣으면 된다
+  if (benchExact) return { formation: FORMATIONS[formation] ? formation : DEFAULT_FORMATION, starters: starters.filter(Boolean), bench } as Lineup;
   const gk = rest.filter((p) => p.pos === 'GK').sort((a, b) => slotRating(b, 'GK') - slotRating(a, 'GK'))[0];
   if (gk && !bench.some((id) => players.find((p) => p.id === id)?.pos === 'GK') && bench.length < benchSize) bench.push(gk.id);
   const outfield = rest.filter((p) => p.pos !== 'GK').sort((a, b) => slotRating(b, b.pos) - slotRating(a, a.pos));
@@ -209,7 +211,7 @@ export function reshape(slots: Position[], i: number, pos: Position): { slots: P
 }
 
 /** 지금 선발 · 후보 (직접 지정 + 자동 선택, 전술 화면과 같은 규칙) */
-export function currentLineup(players: PlayerState[], club: { tactics: { formation: string }; lineup?: { starters: (string | null)[]; bench: string[] } | null }, benchSize: number): { starters: Set<string>; bench: Set<string> } {
-  const l = pickLineup(players, club.tactics.formation, benchSize, club.lineup?.starters, club.lineup?.bench);
+export function currentLineup(players: PlayerState[], club: { tactics: { formation: string }; lineup?: { starters: (string | null)[]; bench: string[]; benchExact?: boolean } | null }, benchSize: number): { starters: Set<string>; bench: Set<string> } {
+  const l = pickLineup(players, club.tactics.formation, benchSize, club.lineup?.starters, club.lineup?.bench, undefined, !!club.lineup?.benchExact);
   return { starters: new Set(l.starters.map((x) => x.id)), bench: new Set(l.bench) };
 }

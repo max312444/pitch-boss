@@ -153,7 +153,8 @@ export interface ClubState {
   /** revenue = 연 매출 기준값 (데이터 · 시즌 시작 때 정함). 모든 구단이 이 매출로 수입 · 지출이 생긴다 */
   finance: { balance: number; transferBudget: number; wageBudget: number; revenue?: number };
   /** 사용자가 직접 정한 선발 (없으면 자동 선택). 자리 순서는 포메이션 자리 순서 */
-  lineup?: { starters: (string | null)[]; bench: string[] } | null;
+  /** benchExact: 감독이 후보를 직접 정함 (빈자리 자동으로 안 채움) */
+  lineup?: { starters: (string | null)[]; bench: string[]; benchExact?: boolean } | null;
   /** 팬 수 */
   fans?: number;
   /** 내 구단 재정 장부 */

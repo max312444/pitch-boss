@@ -12,7 +12,7 @@ import { BenchEditor } from '../components/BenchEditor';
 import { unrestReasons } from '../../engine/loyalty';
 import { FamBar } from '../views/TacticsView';
 import { DragGhost, usePitchDrag } from '../components/PitchDrag';
-import { overall, slotRating } from '../../engine/ratings';
+import { overall, bySlotFit, slotRating } from '../../engine/ratings';
 import { recommend, teamStrength } from '../../engine/ai';
 import { Crest } from '../components/Crest';
 import { Icon } from '../components/Icon';
@@ -82,7 +82,7 @@ export function MatchPrep() {
     </div>
   );
 
-  const candidates = sel == null ? [] : [...squad].sort((a, b) => slotRating(b, slots[sel]) - slotRating(a, slots[sel]));
+  const candidates = sel == null ? [] : [...squad].sort(bySlotFit(slots[sel]));   // 그 포지션 선수 먼저 → 같은 묶음 → 그 밖
 
   return (
     <div className="flex h-full flex-col bg-ink-950">
@@ -225,7 +225,7 @@ export function MatchPrep() {
               </Card>
               <Card title={`후보 ${d.bench.length}명`} className="min-h-0 flex-1">
                 <div className="h-full overflow-auto">
-                  <BenchEditor squad={squad} starters={d.starters} bench={d.bench} size={matchRules(w.season).benchSize} onChange={(b) => updateDraft({ bench: b })} />
+                  <BenchEditor squad={squad} starters={d.starters} bench={d.bench} size={matchRules(w.season).benchSize} onChange={(b) => updateDraft({ bench: b, benchExact: true })} />
                 </div>
               </Card>
             </>

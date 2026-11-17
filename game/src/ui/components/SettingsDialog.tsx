@@ -100,7 +100,7 @@ export function SettingsDialog({ onClose }: { onClose: () => void }) {
               <Seg value={s.matchMode} options={[['manage', '직접 지휘'], ['result', '결과만 보기']]} onChange={(v) => change({ matchMode: v })} />
             </Row>
             <Row label="경기 화면 기본 속도">
-              <Seg value={s.matchSpeed} options={[[0, '보통'], [1, '빠르게'], [2, '매우 빠르게']]} onChange={(v) => change({ matchSpeed: v })} />
+              <Seg value={s.matchSpeed} options={[[3, '느리게'], [0, '보통'], [1, '빠르게'], [2, '매우 빠르게']]} onChange={(v) => change({ matchSpeed: v })} />
             </Row>
           </Section>
 

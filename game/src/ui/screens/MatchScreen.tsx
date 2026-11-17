@@ -18,7 +18,9 @@ import { LivePitch } from '../components/LivePitch';
 import { FinalIntro, isFinal, ShootoutOverlay, TrophyOverlay } from '../components/BigMoments';
 import { roundLabel } from '../format';
 
-const SPEEDS = [{ label: '보통', ms: 1100 }, { label: '빠르게', ms: 450 }, { label: '매우 빠르게', ms: 150 }];
+/** 경기 속도: id 는 설정에 저장되는 값 (예전 값 0 · 1 · 2 그대로, 느리게는 3) · 화면에는 느린 순으로 */
+const SPEEDS = [{ id: 3, label: '느리게', ms: 2200 }, { id: 0, label: '보통', ms: 1100 }, { id: 1, label: '빠르게', ms: 450 }, { id: 2, label: '매우 빠르게', ms: 150 }];
+const speedMs = (id: number) => (SPEEDS.find((x) => x.id === id) ?? SPEEDS[1]).ms;
 
 export function MatchScreen() {
   const w = useWorld();
@@ -57,7 +59,7 @@ export function MatchScreen() {
   const live = m?.phase === 'live';
   useEffect(() => {
     if (!live || !playing) return;
-    const t = setInterval(() => stepMatch(1), SPEEDS[speed].ms);
+    const t = setInterval(() => stepMatch(1), speedMs(speed));
     return () => clearInterval(t);
   }, [live, playing, speed, stepMatch]);
 
@@ -232,8 +234,8 @@ export function MatchScreen() {
               <>
                 <button onClick={() => (half === 'now' ? resume() : setPlaying((p) => !p))} className={`h-12 w-20 shrink-0 rounded-lg text-[14px] font-semibold lg:w-28 ${half === 'now' ? 'bg-neon text-ink-950' : 'bg-ink-700 hover:bg-ink-750'}`}>{half === 'now' ? '후반 시작' : playing ? '일시정지' : '재개'}</button>
                 <div className="flex h-12 flex-1 gap-1 rounded-lg bg-ink-900 p-1">
-                  {SPEEDS.map((sp, i) => (
-                    <button key={sp.label} onClick={() => setSpeed(i)} className={`flex-1 rounded-md text-[12px] whitespace-nowrap lg:text-[13px] ${speed === i ? 'bg-ink-700 font-semibold text-hi' : 'text-mid hover:text-hi'}`}>{sp.label}</button>
+                  {SPEEDS.map((sp) => (
+                    <button key={sp.label} onClick={() => setSpeed(sp.id)} className={`flex-1 rounded-md text-[12px] whitespace-nowrap lg:text-[13px] ${speed === sp.id ? 'bg-ink-700 font-semibold text-hi' : 'text-mid hover:text-hi'}`}>{sp.label}</button>
                   ))}
                 </div>
               </>

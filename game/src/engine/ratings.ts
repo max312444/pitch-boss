@@ -35,8 +35,12 @@ function rawAt(p: PlayerState, slot: Position): number {
  * 다른 자리 능력은 주 포지션 능력을 넘지 않는다 (호칭 보너스 · 성장으로 공식상 다른 자리가 높아져도 주 포지션이 가장 높게).
  * 경기 중 힘은 공격 · 중원 · 수비 능력치로 따로 계산하므로 (match.ts unitValue) 이 상한은 표시 · 선발 판단에만 쓰인다
  */
+/** 윙어 ↔ 측면 미드필더 (LW↔LM · RW↔RM): 축구 게임에서 사실상 같은 자리 → 짝 자리 능력에서 1만 빼고 쓸 수 있게 */
+const WIDE_PAIR: Partial<Record<Position, Position>> = { LM: 'LW', LW: 'LM', RM: 'RW', RW: 'RM' };
+const rawSlot = (p: PlayerState, slot: Position) => { const r = rawAt(p, slot); const pair = WIDE_PAIR[slot]; return pair ? Math.max(r, rawAt(p, pair) - 1) : r; };
+
 export function ratingAt(p: PlayerState, slot: Position): number {
-  const r = rawAt(p, slot);
+  const r = rawSlot(p, slot);
   // 필드 플레이어가 GK 자리에 서거나 그 반대면 사실상 못 뛴다
   if ((slot === 'GK') !== (p.pos === 'GK')) return r * 0.35;
   return slot === p.pos ? r : Math.min(r, rawAt(p, p.pos));
@@ -49,7 +53,7 @@ const NEAR: [Position, Position, number][] = [
   ['AM', 'LW', 0.82], ['AM', 'RW', 0.82], ['LW', 'RW', 0.9], ['LW', 'ST', 0.8], ['RW', 'ST', 0.8],
   ['AM', 'ST', 0.8], ['RWB', 'RW', 0.8], ['LWB', 'LW', 0.8], ['RB', 'RW', 0.7], ['LB', 'LW', 0.7],
   ['CM', 'RW', 0.72], ['CM', 'LW', 0.72],
-  ['RM', 'RW', 0.9], ['LM', 'LW', 0.9], ['RM', 'LM', 0.85], ['RM', 'CM', 0.8], ['LM', 'CM', 0.8],
+  ['RM', 'RW', 0.97], ['LM', 'LW', 0.97], ['RM', 'LM', 0.85], ['RM', 'CM', 0.8], ['LM', 'CM', 0.8],
   ['RM', 'RB', 0.7], ['LM', 'LB', 0.7], ['RM', 'RWB', 0.82], ['LM', 'LWB', 0.82], ['RM', 'AM', 0.75], ['LM', 'AM', 0.75],
 ];
 const FAM = new Map<string, number>();
@@ -108,3 +112,12 @@ export function preMatchFactor(p: PlayerState): number {
 
 /** 체력에 따른 배율 (경기 중): 60 미만부터 떨어짐 */
 export const fitnessFactor = (fitness: number) => (fitness >= 60 ? 1 : 1 - (60 - fitness) * 0.006);
+
+/**
+ * 자리 고르기 목록 순서: 그 포지션 선수 (주 · 보조) → 같은 묶음 (수비 · 미드필더 · 공격) → 그 밖, 묶음 안에서는 그 자리 능력 순
+ */
+const GROUP_OF: Record<Position, string> = { GK: 'G', CB: 'D', LB: 'D', RB: 'D', LWB: 'D', RWB: 'D', DM: 'M', CM: 'M', AM: 'M', LM: 'M', RM: 'M', LW: 'F', RW: 'F', ST: 'F' };
+export function bySlotFit(slot: Position) {
+  const tier = (p: PlayerState) => (playerFamiliarity(p, slot) >= 0.97 ? 0 : GROUP_OF[p.pos] === GROUP_OF[slot] ? 1 : 2);
+  return (a: PlayerState, b: PlayerState) => tier(a) - tier(b) || slotRating(b, slot) - slotRating(a, slot);
+}

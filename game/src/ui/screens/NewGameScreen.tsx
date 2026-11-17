@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useApp } from '../../store/app';
 import { useGame } from '../../store/game';
 import { availableSeasons, clubKo, compKo, clubs as clubMasters, dataset, leagues, loadLeagueSeason, playerKo, realAvailable, setDataset } from '../../data/db';
-import { overall } from '../../data/rating';
+import { ageAt, overall, posGroup } from '../../data/rating';
 import type { ClubSeasonFile } from '../../data/types';
 import { Crest } from '../components/Crest';
 import { Icon } from '../components/Icon';
@@ -208,15 +208,15 @@ function ClubNewGame() {
 
       {/* 오른쪽: 요약 (휴대폰은 구단을 눌렀을 때 팝업) */}
       {sheet && <div className="fixed inset-0 z-40 animate-[fade_0.2s_ease-out] bg-ink-950/75 lg:hidden" onClick={closeSheet} />}
-      <aside className={`flex w-full shrink-0 flex-col border-line bg-ink-900 lg:static lg:w-[340px] lg:border-l ${sheet ? 'fixed inset-x-0 top-[6dvh] bottom-0 z-50 animate-[rise_0.25s_ease-out] overflow-y-auto rounded-t-2xl border-t' : 'max-lg:hidden'}`}>
+      <aside className={`flex w-full shrink-0 flex-col border-line bg-ink-900 lg:static lg:w-[340px] lg:overflow-y-auto lg:border-l ${sheet ? 'fixed inset-x-0 top-[6dvh] bottom-0 z-50 animate-[rise_0.25s_ease-out] overflow-y-auto rounded-t-2xl border-t' : 'max-lg:hidden'}`}>
         {mode === 'my' && clubsData ? (
           <>
             <button onClick={closeSheet} className="flex h-11 shrink-0 items-center justify-between border-b border-line px-5 text-[14px] text-mid lg:hidden"><span>나의 구단 만들기</span><span>닫기 ✕</span></button>
-            <div className="lg:min-h-0 lg:flex-1 lg:overflow-auto">
+            <div className="lg:flex-1">
               <MyClubForm clubsData={clubsData} d={design} setD={setDesign} />
               <ManagerSetup {...mgr} />
             </div>
-            <div className="sticky bottom-0 border-t border-line bg-ink-900 p-4 pb-[max(16px,env(safe-area-inset-bottom))] lg:static lg:p-5">
+            <div className="sticky bottom-0 border-t border-line bg-ink-900 p-4 pb-[max(16px,env(safe-area-inset-bottom))] lg:p-5">
               <button onClick={start} disabled={loading || !!designError(design)}
                 className="group flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-neon px-5 text-[15px] font-semibold text-ink-950 transition-colors hover:bg-[#5bff3d] disabled:opacity-60">
                 {loading ? '세계를 만드는 중…' : '창단하고 시작'}
@@ -251,18 +251,27 @@ function ClubNewGame() {
               ))}
             </div>
             <ManagerSetup {...mgr} />
-            <div className="px-7 py-5 lg:flex-1 lg:overflow-auto">
-              <div className="mb-3 text-[11px] font-semibold text-lo">핵심 선수</div>
-              {[...sel.squad].sort((a, b) => overall(b) - overall(a)).slice(0, 6).map((p) => (
-                <div key={p.id} className="flex items-center gap-3 py-1.5 text-[13px]">
-                  <span className="w-9 text-[11px] font-semibold text-lo">{p.pos}</span>
-                  <span className="flex-1 truncate">{playerKo(p.id, p.name)}</span>
-                  <span className={`tnum font-semibold ${ratingTone(overall(p))}`}>{overall(p)}</span>
-                </div>
-              ))}
+            <div className="px-7 py-5 lg:flex-1">
+              <div className="mb-1 text-[11px] font-semibold text-lo">선수단 {sel.squad.length}명</div>
+              {(['GK', 'DF', 'MF', 'FW'] as const).map((g) => {
+                const list = [...sel.squad].filter((p) => posGroup(p.pos) === g).sort((a, b) => overall(b) - overall(a));
+                return list.length ? (
+                  <div key={g} className="mt-3">
+                    <div className="mb-1 text-[11px] text-lo">{({ GK: '골키퍼', DF: '수비수', MF: '미드필더', FW: '공격수' } as const)[g]} {list.length}</div>
+                    {list.map((p) => (
+                      <div key={p.id} className="flex items-center gap-3 py-1 text-[13px]">
+                        <span className="w-9 text-[11px] font-semibold text-lo">{p.pos}</span>
+                        <span className="flex-1 truncate">{playerKo(p.id, p.name)}</span>
+                        <span className="tnum text-[11px] text-lo">{ageAt(p.birth, `${season.slice(0, 4)}-07-01`)}세</span>
+                        <span className={`tnum w-7 text-right font-semibold ${ratingTone(overall(p))}`}>{overall(p)}</span>
+                      </div>
+                    ))}
+                  </div>
+                ) : null;
+              })}
             </div>
             {/* 휴대폰 팝업: 시작 버튼은 팝업 아래에 붙어 있음 */}
-            <div className="sticky bottom-0 border-t border-line bg-ink-900 p-4 pb-[max(16px,env(safe-area-inset-bottom))] lg:static lg:p-5">
+            <div className="sticky bottom-0 border-t border-line bg-ink-900 p-4 pb-[max(16px,env(safe-area-inset-bottom))] lg:p-5">
               <button onClick={start} disabled={loading}
                 className="group flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-neon px-5 text-[15px] font-semibold text-ink-950 transition-colors hover:bg-[#5bff3d] disabled:opacity-60">
                 {loading ? '세계를 만드는 중…' : '감독 커리어 시작'}
