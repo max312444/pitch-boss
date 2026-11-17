@@ -39,6 +39,7 @@ import { createCups } from './cup';
 import { academyFill, growTowardPotential, youthIntake } from './youth';
 import { createEurope } from './europe';
 import { clearWorldCup, createWorldCup } from './worldcup';
+import { bodyType } from './body';
 
 export const MAX_SQUAD = 32;
 export const nextSeasonOf = (s: string) => {
@@ -289,6 +290,7 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
   const rankOf = new Map<string, number>();
   for (const c of Object.values(w.clubs)) c.squad.map((id) => w.players[id]).sort((a, b) => overall(b) - overall(a)).forEach((p, i) => rankOf.set(p.id, i + 1));
   for (const p of Object.values(w.players)) {
+    const bodyBefore = p.retired ? null : bodyType(p);
     resetSeason(p);
     p.alt = undefined;   // 보조 포지션은 새 능력치로 다시 정한다
     if (p.retired) continue;
@@ -299,6 +301,7 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
       p.pos = d.sp.pos;
       p.dataAlt = d.sp.alt?.length ? d.sp.alt : undefined;
       if (d.sp.foot) p.foot = d.sp.foot;
+      if (d.sp.height) p.height = d.sp.height;
       // AI 구단: 실제로도 같은 구단에 남아 있고 실제 주급이 더 높으면 실제 재계약 반영 (내 구단 선수는 직접 재계약)
       if (p.clubId && p.clubId !== w.userClubId && d.club === p.clubId && d.sp.wage > p.wage) {
         p.wage = d.sp.wage;
@@ -310,6 +313,8 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
       ageAttributes(p, age, rng);
       report.aged++;
     }
+    // 체형: 새 능력치로 바뀌었으면 기록 (선수 정보에 이번 시즌 체형 변화로 표시)
+    if (bodyBefore) { const now = bodyType(p); if (now !== bodyBefore) p.bodyChange = { from: bodyBefore, season: to }; else if (p.bodyChange && p.bodyChange.season !== to) p.bodyChange = undefined; }
     // 은퇴: 다음 시즌 데이터에 없고 나이가 많으면 확률적으로
     // 자유계약으로 시즌을 넘긴 선수: 29세 이상 · 또는 22세 이상이면서 능력 62 미만이면 은퇴 (FA 가 끝없이 쌓이지 않게)
     const faDone = !p.clubId && !d && (age >= 29 || (age >= 22 && overall(p) < 62));

@@ -18,6 +18,10 @@ import { NegotiationModal } from './NegotiationModal';
 import { ContractBox } from './ContractBox';
 import { Crest } from './Crest';
 import { PosTag } from './bits';
+import { nextSort, SortTh, TopAttrs, type SortState } from './SortTh';
+import { heightOf } from '../../engine/body';
+import type { PlayerState } from '../../engine/types';
+import { estOverall } from '../../engine/scout';
 import { money } from '../format';
 
 function useEsc(onClose: () => void, on: boolean) {
@@ -80,9 +84,12 @@ function ClubModal() {
   const { openClub, openProfile, openTable } = useApp();
   const profileOpen = useApp((s) => !!s.profile);
   useEsc(() => openClub(null), !!id && !profileOpen);
+  const [sort, setSort] = useState<SortState<ClubSort>>({ k: 'pos', desc: false });
+  const sortBy = (k: ClubSort) => setSort((x) => nextSort(x, k, ['pos', 'name', 'age']));
   const c = id ? w.clubs[id] : null;
   if (!c) return null;
-  const ps = c.squad.map((x) => w.players[x]).sort((a, b) => POS_ORDER.indexOf(a.pos) - POS_ORDER.indexOf(b.pos) || overall(b) - overall(a));
+  const keyOf = (p: PlayerState): number | string => sort.k === 'pos' ? POS_ORDER.indexOf(p.pos) : sort.k === 'name' ? playerKo(p.id, p.name) : sort.k === 'age' ? ageOn(p.birth, w.date) : sort.k === 'value' ? marketValue(w, p) : sort.k === 'height' ? heightOf(p) : estOverall(w, p);
+  const ps = c.squad.map((x) => w.players[x]).sort((a, b) => { const ka = keyOf(a), kb = keyOf(b); const d = typeof ka === 'string' ? ka.localeCompare(kb as string, 'ko') : ka - (kb as number); return d * (sort.desc ? -1 : 1) || overall(b) - overall(a); });
   const top = [...ps].map(overall).sort((a, b) => b - a).slice(0, 11);
   const lv = Math.round(top.reduce((a, b) => a + b, 0) / Math.max(1, top.length));
   const lg = compKo(c.league) ?? c.league;
@@ -106,11 +113,24 @@ function ClubModal() {
         <ClubScoutBar clubId={c.id} />
         <div className="min-h-0 flex-1 overflow-auto">
           <table className="w-full text-[13px]">
+            <thead className="sticky top-0 z-10 bg-ink-800 text-left text-[12px] text-lo">
+              <tr className="h-9 shadow-[inset_0_-1px_0_var(--color-line)]">
+                <SortTh k="pos" s={sort} on={sortBy} className="w-14 pl-6">포지션</SortTh>
+                <SortTh k="name" s={sort} on={sortBy}>선수</SortTh>
+                <th className="hidden font-medium sm:table-cell">주요 능력치</th>
+                <SortTh k="height" s={sort} on={sortBy} right className="hidden w-12 sm:table-cell">키</SortTh>
+                <SortTh k="age" s={sort} on={sortBy} right className="w-12">나이</SortTh>
+                <SortTh k="value" s={sort} on={sortBy} right className="w-24">가치</SortTh>
+                <SortTh k="ovr" s={sort} on={sortBy} right className="w-20 pr-6">능력</SortTh>
+              </tr>
+            </thead>
             <tbody>
               {ps.map((p) => { return (
                 <tr key={p.id} onClick={() => openProfile(p.id)} className="h-10 cursor-pointer shadow-[inset_0_-1px_0_var(--color-line)] hover:bg-ink-800">
                   <td className="w-14 pl-6"><PosTag pos={p.pos} /></td>
                   <td className="font-medium">{playerKo(p.id, p.name)}</td>
+                  <td className="hidden sm:table-cell"><TopAttrs w={w} p={p} /></td>
+                  <td className="tnum hidden w-12 text-right text-lo sm:table-cell">{heightOf(p)}</td>
                   <td className="tnum w-12 text-right text-mid">{ageOn(p.birth, w.date)}</td>
                   <td className="tnum w-24 text-right text-mid">{money(marketValue(w, p))}</td>
                   <td className="w-20 pr-6 text-right"><OvrText w={w} p={p} /></td>
@@ -123,3 +143,5 @@ function ClubModal() {
     </div>
   );
 }
+
+type ClubSort = 'pos' | 'name' | 'age' | 'value' | 'height' | 'ovr';

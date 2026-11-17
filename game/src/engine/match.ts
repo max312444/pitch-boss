@@ -8,6 +8,7 @@ import { attr, overall, playerFamiliarity, fitnessFactor, preMatchFactor, slotRa
 import { FILL_ORDER, FORMATIONS, type Lineup } from './squad';
 import { commentSegment, initCommentary, type CommentaryState, type MatchNote } from './commentary';
 import { traitForm, traitMul } from './traits';
+import { bodyTireMul, heightAirMul } from './body';
 
 export const SEGMENTS = 18;
 const SEG_MIN = 5;
@@ -17,7 +18,7 @@ const SEG_MIN = 5;
 export const INTL_RATIO_K = 0.45;
 
 export const TUNING = {
-  baseXg: 0.068,        // 구간당 팀 평균 xG
+  baseXg: 0.0612,       // 구간당 팀 평균 xG (수비 실책 · 피지컬 대결 골 몫만큼 낮춤)
   homeAdv: 1.1,          // 홈 xG 배율 (원정은 2 - homeAdv)
   ratioExp: 2.3,         // 공격/수비 비율 민감도
   possExp: 4,            // 중원 비율 → 점유율 민감도
@@ -29,7 +30,12 @@ export const TUNING = {
   openShare: 0.8,        // 일반 공격 xG 비율 (나머지는 세트피스 · 페널티)
   setXg: 0.0115,         // 구간당 세트피스(코너 · 프리킥) 기본 xG
   penPerSeg: 0.0095,     // 구간당 페널티 얻을 확률
+  duelPerSeg: 0.02,      // 구간당 수비 실책 · 피지컬 대결 패배 기본 확률 (능력 · 체격 차이에 따라 0.4 ~ 2.5배)
+  duelXg: 0.3,           // 실책으로 생긴 기회의 xG
 };
+
+/** 수비 실책 종류: 속도에서 밀림 (뒷공간) · 몸싸움에서 밀림 · 공중볼 경합 패배 · 빌드업 패스 실수 */
+export type DuelKind = 'pace' | 'power' | 'air' | 'pass';
 
 // 선수별 지시: 유닛별 기여 배율 · 체력 소모 · 득점 · 카드
 const INSTR: Record<Instr, { u: Partial<Record<'att' | 'mid' | 'def', number>>; tire: number; score: number; card: number }> = {
@@ -423,6 +429,7 @@ export function step(m: MatchState, ctx: MatchCtx): void {
     }
 
     setPieces(m, side, ctx, air[side], air[side === 'home' ? 'away' : 'home']);
+    duels(m, side, ctx, poss);
 
     // 카드
     const aggression = 1 + 0.1 * (me.tactics.pressing - 1);
@@ -460,7 +467,7 @@ export function step(m: MatchState, ctx: MatchCtx): void {
     const pressMult = 1 + 0.25 * (me.tactics.pressing - 1);
     for (const op of me.onPitch) {
       const p = ctx.players[op.id];
-      op.fitness = Math.max(0, op.fitness - TUNING.tire * pressMult * (1.25 - attr(p, 'sta') / 200) * (op.slot === 'GK' ? 0.3 : 1) * (op.instr ? INSTR[op.instr].tire : 1));
+      op.fitness = Math.max(0, op.fitness - TUNING.tire * pressMult * (1.25 - attr(p, 'sta') / 200) * (op.slot === 'GK' ? 0.3 : 1) * (op.instr ? INSTR[op.instr].tire : 1) * bodyTireMul(p));
     }
   }
 
@@ -474,7 +481,7 @@ export function step(m: MatchState, ctx: MatchCtx): void {
 const outfield = (t: TeamInMatch) => t.onPitch.filter((o) => o.slot !== 'GK');
 /** 공중 경합 힘: 필드 선수 중 상위 4명의 (헤더 + 힘 0.4) 평균 */
 function aerial(t: TeamInMatch, ctx: MatchCtx): number {
-  const v = outfield(t).map((o) => { const p = ctx.players[o.id]; return ((attr(p, 'aer') + 0.4 * attr(p, 'str')) / 1.4) * o.factor * fitnessFactor(o.fitness); }).sort((a, b) => b - a).slice(0, 4);
+  const v = outfield(t).map((o) => { const p = ctx.players[o.id]; return ((attr(p, 'aer') + 0.4 * attr(p, 'str')) / 1.4) * heightAirMul(p) * o.factor * fitnessFactor(o.fitness); }).sort((a, b) => b - a).slice(0, 4);
   return v.length ? v.reduce((a, b) => a + b, 0) / v.length : 40;
 }
 /** 키커: 지정한 선수가 뛰고 있으면 그 선수, 아니면 가장 잘 차는 선수 */
@@ -505,7 +512,7 @@ function setPieces(m: MatchState, side: Side, ctx: MatchCtx, myAir: number, thei
   me.xg += setXg;
   if (rng.chance(setXg)) {
     const direct = !!k && rng.chance(0.15 * clamp(attr(ctx.players[k.id], 'sho') / 75, 0.5, 1.3));   // 직접 프리킥
-    const scorer = direct ? k : pickPlayer(me, ctx, (o, p) => (o.slot === 'GK' ? 0 : ((attr(p, 'aer') + 0.4 * attr(p, 'str')) / 100) ** 4 * (o.slot === 'CB' || o.slot === 'ST' ? 1 : 0.5)), k?.id);
+    const scorer = direct ? k : pickPlayer(me, ctx, (o, p) => (o.slot === 'GK' ? 0 : (((attr(p, 'aer') + 0.4 * attr(p, 'str')) / 100) * heightAirMul(p)) ** 4 * (o.slot === 'CB' || o.slot === 'ST' ? 1 : 0.5)), k?.id);
     if (scorer) goalAt(m, side, scorer.id, !direct && k && rng.chance(0.75) ? k.id : undefined, 'set', rng);
   }
   // 페널티: 공격적일수록 조금 더 얻음 · 키커 슈팅 · 침착함 vs 골키퍼
@@ -518,6 +525,50 @@ function setPieces(m: MatchState, side: Side, ctx: MatchCtx, myAir: number, thei
     if (rng.chance(conv)) goalAt(m, side, pk.id, undefined, 'pen', rng);
     else { me.shots++; if (rng.chance(0.6)) me.onTarget++; m.notes?.push({ minute: m.segment * SEG_MIN + 3, side, kind: 'penMiss', player: pk.id }); }
   }
+}
+
+// ── 피지컬 대결 · 수비 실책 ──
+//  구간마다 공격 쪽 (side) 공격수 한 명과 상대 수비 한 명이 맞붙는다. 속도 · 몸싸움 · 공중볼 (키 포함) 차이가 크고
+//  수비의 침착성 · 위치 선정이 낮거나 지쳤을수록 실책이 잦다. 빌드업 실수는 상대 압박이 강하고 수비의 패스 · 침착성이 낮을 때
+//  실책 → 큰 기회 (xG 0.3). 실책한 선수는 평점이 깎인다
+const ATT_MIN = 0.55, DEF_MIN = 0.5;
+function duels(m: MatchState, side: Side, ctx: MatchCtx, poss: number) {
+  const { rng } = ctx;
+  const me = m[side], opp = m[side === 'home' ? 'away' : 'home'];
+  const atk = me.onPitch.filter((o) => (CONTRIB[o.slot].att ?? 0) >= ATT_MIN);
+  const defs = opp.onPitch.filter((o) => (CONTRIB[o.slot].def ?? 0) >= DEF_MIN || o.slot === 'GK');
+  if (!atk.length || !defs.length) return;
+  const a = rng.weighted(atk, (o) => CONTRIB[o.slot].att ?? 0.5);
+  const d = rng.weighted(defs, (o) => (o.slot === 'GK' ? 0.15 : CONTRIB[o.slot].def ?? 0.5));
+  const A = ctx.players[a.id], D = ctx.players[d.id];
+  const fA = a.factor * fitnessFactor(a.fitness), fD = d.factor * fitnessFactor(d.fitness);
+  // 각 대결의 차이 (양수 = 공격수가 앞섬)
+  const gaps: { k: DuelKind; gap: number }[] = d.slot === 'GK'
+    ? [{ k: 'pass', gap: 6 * (me.tactics.pressing - 1) + (65 - attr(D, 'pas')) / 2 }]
+    : [
+      { k: 'pace', gap: attr(A, 'pac') * fA - attr(D, 'pac') * fD },
+      { k: 'power', gap: attr(A, 'str') * fA - attr(D, 'str') * fD },
+      { k: 'air', gap: attr(A, 'aer') * heightAirMul(A) * fA - attr(D, 'aer') * heightAirMul(D) * fD },
+      { k: 'pass', gap: 6 * (me.tactics.pressing - 1) + (65 - attr(D, 'pas')) / 2 },
+    ];
+  const g = rng.weighted(gaps, (x) => Math.max(1, x.gap + 12));
+  const sloppy = clamp(1 + (65 - (attr(D, 'com') + attr(D, 'pos')) / 2) / 40, 0.6, 1.7) * (d.fitness < 45 ? 1.3 : 1) * traitMul(D, 'spread')
+    * (d.instr === 'attack' ? 1.3 : d.instr === 'hold' ? 0.65 : 1);   // 공격 가담한 수비는 뒷공간이 비고, 위치를 지키면 덜 흔들린다
+  const chance = TUNING.duelPerSeg * clamp(1 + g.gap / 25, 0.4, 2.5) * sloppy * clamp(0.6 + poss * 0.8, 0.8, 1.2) * (m.intl?.form[side] ?? 1);
+  if (!rng.chance(chance)) return;
+  const xg = TUNING.duelXg * clamp(attr(A, 'sho') / 72, 0.7, 1.25) * (g.k === 'pass' ? 0.9 : 1);
+  me.xg += xg; me.shots++;
+  const goal = rng.chance(xg);
+  const minute = m.segment * SEG_MIN + rng.int(1, SEG_MIN);
+  // 득점자: 대결에서 이긴 선수 (빌드업 실수는 가까운 공격수 아무나)
+  const scorer = g.k === 'pass' ? pickPlayer(me, ctx, (op, p) => SCORE_W[op.slot] * (attr(p, 'sho') / 70) ** 2) ?? a : a;
+  if (goal) {
+    me.goals++; me.onTarget++;
+    const assist = scorer.id !== a.id ? a.id : undefined;
+    m.summary.goals.push({ minute, side, scorer: scorer.id, ...(assist ? { assist } : {}) });
+  } else if (rng.chance(0.4)) me.onTarget++;
+  const oside: Side = side === 'home' ? 'away' : 'home';
+  (m.summary.errors ??= []).push({ minute, side: oside, player: d.id, by: scorer.id, kind: g.k, goal });
 }
 
 function sendOff(m: MatchState, side: Side, o: OnPitch, minute: number) {
@@ -559,6 +610,7 @@ function finish(m: MatchState, ctx: MatchCtx) {
       let r = 6.4 + clamp(diff, -3, 3) * 0.15 + goals * 0.9 + assists * 0.55
         + (defensive && conceded === 0 && mins >= 60 ? 0.5 : 0) - (defensive ? conceded * 0.12 : 0)
         + (zOf.get(id) ?? 0) * 0.6 + ctx.rng.normal() * 0.3;
+      for (const e of s.errors ?? []) if (e.player === id) r -= e.goal ? 0.7 : 0.3;
       if (s.cards.some((c) => c.player === id && c.red)) r -= 1.5;
       else if (s.cards.some((c) => c.player === id)) r -= 0.2;
       if (mins < 25) r = 6.3 + (r - 6.3) * 0.5;

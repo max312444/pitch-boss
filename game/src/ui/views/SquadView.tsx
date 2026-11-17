@@ -15,9 +15,19 @@ import { PlayerPanel } from './PlayerPanel';
 import { ContractBox } from '../components/ContractBox';
 import { expiring } from '../../engine/contract';
 import { TRAIT } from '../../engine/traits';
+import type { AttrKey } from '../../data/types';
+import { attr } from '../../engine/ratings';
+import { heightOf } from '../../engine/body';
+import { nextSort, SortPicker, SortTh, STAT_KEYS, TopAttrs, type SortState } from '../components/SortTh';
+import { ATTR_KO } from '../format';
 
 type Group = 'ALL' | 'XI' | 'GK' | 'DF' | 'MF' | 'FW';
-type SortKey = 'pos' | 'name' | 'age' | 'ovr' | 'fit' | 'form' | 'apps' | 'goals' | 'wage';
+type SortKey = 'pos' | 'name' | 'age' | 'ovr' | 'fit' | 'form' | 'apps' | 'goals' | 'wage' | 'height' | `a_${AttrKey}`;
+const ASC_FIRST = ['pos', 'name', 'age'];
+const SORT_OPTIONS: [SortKey, string][] = [
+  ['pos', '포지션'], ['ovr', '능력'], ['age', '나이'], ['fit', '체력'], ['form', '폼'], ['apps', '출전'], ['goals', '골'], ['wage', '주급'], ['height', '키'], ['name', '이름'],
+  ...STAT_KEYS.map((k) => [`a_${k}` as SortKey, `능력치 · ${ATTR_KO[k]}`] as [SortKey, string]),
+];
 const GROUPS: { key: Group; label: string }[] = [
   { key: 'ALL', label: '전체' }, { key: 'XI', label: '선발 · 후보' }, { key: 'GK', label: '골키퍼' }, { key: 'DF', label: '수비수' },
   { key: 'MF', label: '미드필더' }, { key: 'FW', label: '공격수' },
@@ -29,7 +39,9 @@ export function SquadView() {
   const w = useWorld();
   const club = w.clubs[w.userClubId];
   const [group, setGroup] = useState<Group>('ALL');
-  const [sort, setSort] = useState<{ key: SortKey; dir: 1 | -1 }>({ key: 'pos', dir: 1 });
+  const [sort, setSort] = useState<SortState<SortKey>>({ k: 'pos', desc: false });
+  const sortBy = (k: SortKey) => setSort((x) => nextSort(x, k, ASC_FIRST));
+  const statSort = sort.k.startsWith('a_') ? (sort.k.slice(2) as AttrKey) : undefined;
   const [selected, setSelected] = useState<string | null>(null);
   const [locker, setLocker] = useState(false);
 
@@ -43,7 +55,7 @@ export function SquadView() {
 
   const shown = useMemo(() => {
     const f = rows.filter((r) => group === 'ALL' || (group === 'XI' ? xi.starters.has(r.p.id) || xi.bench.has(r.p.id) : posGroup(r.p.pos) === group));
-    const cmp: Record<SortKey, (a: Row, b: Row) => number> = {
+    const cmp: Record<string, (a: Row, b: Row) => number> = {
       pos: (a, b) => POS_ORDER.indexOf(a.p.pos) - POS_ORDER.indexOf(b.p.pos) || b.ovr - a.ovr,
       name: (a, b) => a.ko.localeCompare(b.ko, 'ko'),
       age: (a, b) => a.age - b.age,
@@ -53,25 +65,20 @@ export function SquadView() {
       apps: (a, b) => a.p.stats.apps + a.p.stats.subApps - b.p.stats.apps - b.p.stats.subApps,
       goals: (a, b) => a.p.stats.goals - b.p.stats.goals,
       wage: (a, b) => a.p.wage - b.p.wage,
+      height: (a, b) => heightOf(a.p) - heightOf(b.p),
     };
+    const by = cmp[sort.k] ?? ((a: Row, b: Row) => attr(a.p, statSort!) - attr(b.p, statSort!));
     // 선발 · 후보만 볼 때는 선발 → 후보 순서로 묶어서
     const rank = (r: Row) => (group === 'XI' ? (xi.starters.has(r.p.id) ? 0 : 1) : 0);
-    return [...f].sort((a, b) => rank(a) - rank(b) || cmp[sort.key](a, b) * sort.dir);
-  }, [rows, group, sort, xi]);
+    return [...f].sort((a, b) => rank(a) - rank(b) || by(a, b) * (sort.desc ? -1 : 1) || b.ovr - a.ovr);
+  }, [rows, group, sort, xi, statSort]);
 
   const injured = rows.filter((r) => r.p.injury).length;
   const suspended = rows.filter((r) => r.p.suspension > 0).length;
   const avgFit = rows.reduce((s, r) => s + r.p.fitness, 0) / rows.length;
   const top11 = [...rows].sort((a, b) => b.ovr - a.ovr).slice(0, 11);
 
-  const th = (key: SortKey, label: string, cls = '') => (
-    <th className={`px-3 font-medium ${cls}`}>
-      <button onClick={() => setSort((s) => ({ key, dir: s.key === key ? (-s.dir as 1 | -1) : ['pos', 'name', 'age'].includes(key) ? 1 : -1 }))}
-        className={`inline-flex items-center gap-1 hover:text-hi ${sort.key === key ? 'text-hi' : ''}`}>
-        {label}<span className={`text-[9px] ${sort.key === key ? 'text-neon' : 'opacity-0'}`}>{sort.dir === 1 ? '▲' : '▼'}</span>
-      </button>
-    </th>
-  );
+  const th = (key: SortKey, label: string, cls = '') => <SortTh k={key} s={sort} on={sortBy} right={cls.includes('text-right')} className={`px-3 ${cls.replace('text-right', '')}`}>{label}</SortTh>;
 
   return (
     <div className="flex h-full min-h-0 gap-5 p-3 lg:p-6">
@@ -116,6 +123,7 @@ export function SquadView() {
           </span>
         </div>
 
+        <SortPicker className="mb-2 xl:hidden" s={sort} options={SORT_OPTIONS} onPick={(k) => setSort({ k, desc: !ASC_FIRST.includes(k) })} onFlip={() => setSort((x) => ({ ...x, desc: !x.desc }))} />
         <div className="panel min-h-0 flex-1 overflow-auto">
           <table className="w-full border-collapse text-[14px]">
             <thead className="sticky top-0 z-10 bg-ink-800 text-left text-[12px] text-lo">
@@ -124,10 +132,18 @@ export function SquadView() {
                 {th('name', '선수')}
                 {th('pos', '포지션')}
                 {th('age', '나이', 'text-right hidden lg:table-cell')}
+                {th('height', '키', 'text-right hidden xl:table-cell')}
                 <th className="hidden px-3 text-center font-medium lg:table-cell">상태</th>
                 {th('fit', '체력', 'hidden sm:table-cell')}
                 {th('form', '폼', 'text-right hidden lg:table-cell')}
                 {th('ovr', '능력', 'text-right')}
+                <th className="hidden px-3 font-medium xl:table-cell">
+                  <select value={statSort ?? ''} onChange={(e) => (e.target.value ? setSort({ k: `a_${e.target.value}` as SortKey, desc: true }) : setSort({ k: 'ovr', desc: true }))} title="능력치를 고르면 그 능력치로 정렬" className={`h-7 rounded bg-transparent text-[12px] ${statSort ? 'text-hi' : 'text-lo'}`}>
+                    <option value="">주요 능력치 ↕</option>
+                    {STAT_KEYS.map((k) => <option key={k} value={k}>{ATTR_KO[k]} 순</option>)}
+                  </select>
+                  {statSort && <button onClick={() => setSort((x) => ({ ...x, desc: !x.desc }))} className="ml-1 text-[9px] text-neon" title="방향 바꾸기">{sort.desc ? '▼' : '▲'}</button>}
+                </th>
                 {th('apps', '출전', 'text-right hidden lg:table-cell')}
                 {th('goals', '골', 'text-right hidden lg:table-cell')}
                 {th('wage', '주급', 'text-right hidden lg:table-cell')}
@@ -155,13 +171,16 @@ export function SquadView() {
                         {p.unhappy && <span className="rounded bg-amber/15 px-1 text-[11px] font-semibold text-amber">불만</span>}
                       </div>
                       {(() => { const rs = unrestReasons(w, p); return rs.length ? <div className="mt-0.5 text-[11px] text-amber">{rs.join(' · ')}</div> : null; })()}
+                      <TopAttrs w={w} p={p} first={statSort} className="mt-0.5 xl:hidden" />
                     </td>
                     <td className="px-2 lg:px-3"><PosTag pos={p.pos} /></td>
                     <td className="tnum hidden px-3 text-right text-mid lg:table-cell">{age}</td>
+                    <td className="tnum hidden px-3 text-right text-lo xl:table-cell">{heightOf(p)}</td>
                     <td className="hidden px-3 text-center lg:table-cell"><ConditionIcon value={p.condition} /></td>
                     <td className="hidden px-3 sm:table-cell"><FitnessBar value={p.fitness} /></td>
                     <td className={`tnum hidden px-3 text-right lg:table-cell ${p.recentRatings.length ? ratingTone(form * 11) : 'text-lo'}`}>{p.recentRatings.length ? form.toFixed(1) : '–'}</td>
                     <td className={`tnum px-2 text-right text-[15px] font-semibold lg:px-3 ${ratingTone(ovr)}`}>{ovr}</td>
+                    <td className="hidden px-3 xl:table-cell"><TopAttrs w={w} p={p} first={statSort} /></td>
                     <td className="tnum hidden px-3 text-right text-mid lg:table-cell">{p.stats.apps}{p.stats.subApps ? <span className="text-lo"> ({p.stats.subApps})</span> : ''}</td>
                     <td className="tnum hidden px-3 text-right text-mid lg:table-cell">{p.stats.goals || '–'}</td>
                     <td className="tnum hidden px-3 text-right text-mid lg:table-cell">{money(p.wage)}</td>

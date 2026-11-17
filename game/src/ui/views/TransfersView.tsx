@@ -23,7 +23,11 @@ import { bargainOf, relClauseOf } from '../../engine/firesale';
 import { currentLineup, matchRules } from '../../engine/squad';
 import { useApp } from '../../store/app';
 import { analyzeClub, searchPreset } from '../../engine/analysis';
-import type { Position } from '../../data/types';
+import type { AttrKey, Position } from '../../data/types';
+import { nextSort, seenAttr, SortPicker, SortTh, STAT_KEYS, TopAttrs, type SortState } from '../components/SortTh';
+import { SALE_KO, saleTag } from '../../engine/market';
+import { heightOf } from '../../engine/body';
+import { ATTR_KO } from '../format';
 
 type Tab = 'search' | 'shortlist' | 'mine' | 'offers';
 type Group = 'ALL' | 'GK' | 'DF' | 'MF' | 'FW';
@@ -47,6 +51,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
   const [pos, setPos] = useState<Position[]>([]);            // 세부 포지션 (비어 있으면 위 그룹 기준)
   const [clubPick, setClubPick] = useState<string | null>(null);   // 구단만 보기
   const [clubQ, setClubQ] = useState('');
+  const [marketOnly, setMarketOnly] = useState(false);   // 이적 허용 선수만 (기본은 전체: 비매물도 웃돈 · 바이아웃 · 보스만으로 영입 가능)
   const listRef = useRef<HTMLDivElement>(null);
   const [sel, setSel] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
@@ -63,8 +68,11 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
   const xi = currentLineup(club.squad.map((id) => w.players[id]), club, matchRules(w.season).benchSize);   // 내 선수: 지금 선발 · 후보 표시
 
   // 정렬: 표 머리를 누르면 그 항목으로 (한 번 더 누르면 반대로). 기본은 능력 높은 순
-  const [sort, setSort] = useState<{ k: SortKey; desc: boolean }>({ k: 'ovr', desc: true });
-  const sortBy = (k: SortKey) => setSort((x) => (x.k === k ? { k, desc: !x.desc } : { k, desc: k !== 'name' && k !== 'pos' && k !== 'club' }));
+  const [sort, setSort] = useState<SortState<SortKey>>({ k: 'ovr', desc: true });
+  const sortBy = (k: SortKey) => setSort((x) => nextSort(x, k, ['name', 'pos', 'club']));
+  const statSort = sort.k.startsWith('a_') ? (sort.k.slice(2) as AttrKey) : undefined;
+  /** 매물만 보는 중인가 (이름 검색 · 구단 고르기 · 자유계약 · 보스만 · 급매물 목록은 전체) */
+  const marketFilter = tab === 'search' && marketOnly && !q && !clubPick && (league === 'ALL' || !!w.competitions[league]);
   const rows = useMemo(() => {
     const name = (p: PlayerState) => playerKo(p.id, p.name);
     let ps: PlayerState[];
@@ -76,10 +84,11 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
       ps = ps.filter((p) => (posSet ? posSet.positions.includes(p.pos) : pos.length ? pos.includes(p.pos) : group === 'ALL' || posGroup(p.pos) === group) && ageOn(p.birth, w.date) <= maxAge && seenOverall(w, p)[1] >= minOvr
         && (!q || name(p).includes(q) || p.name.toLowerCase().includes(q.toLowerCase())));
       if (maxValue) ps = ps.filter((p) => marketValue(w, p) <= maxValue);
+      if (marketFilter) ps = ps.filter((p) => saleTag(w, p));
     }
     // 능력은 아는 만큼 (스카우트): 범위 가운데 값으로 정렬
     const keyOf = (x: { p: PlayerState; ovr: number; age: number; value: number }): number | string => {
-      switch (sort.k) {
+      switch (sort.k as string) {
         case 'name': return name(x.p);
         case 'pos': return POS_ORDER.indexOf(x.p.pos);
         case 'age': return x.age;
@@ -87,15 +96,17 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
         case 'value': return x.value;
         case 'wage': return x.p.wage;
         case 'contract': return x.p.contract ?? '9999';
-        default: return x.ovr;
+        case 'height': return heightOf(x.p);
+        case 'ovr': return x.ovr;
+        default: return seenAttr(w, x.p, sort.k.slice(2) as AttrKey);
       }
     };
     const dir = sort.desc ? -1 : 1;
     return ps.map((p) => ({ p, ovr: estOverall(w, p), age: ageOn(p.birth, w.date), value: marketValue(w, p) }))
       .sort((a, b) => { const ka = keyOf(a), kb = keyOf(b); const c = typeof ka === 'string' ? ka.localeCompare(kb as string, 'ko') : ka - (kb as number); return c * dir || b.ovr - a.ovr || a.age - b.age; }).slice(0, 200);
-  }, [w, tab, group, league, maxAge, minOvr, maxValue, q, shortlist, club.squad, posSet, pos, clubPick, sort]);
+  }, [w, tab, group, league, maxAge, minOvr, maxValue, q, shortlist, club.squad, posSet, pos, clubPick, sort, marketFilter]);
   // 조건을 바꾸면 목록을 맨 위로
-  useEffect(() => { listRef.current?.scrollTo({ top: 0 }); }, [tab, group, league, maxAge, minOvr, maxValue, q, posSet, pos, clubPick]);
+  useEffect(() => { listRef.current?.scrollTo({ top: 0 }); }, [tab, group, league, maxAge, minOvr, maxValue, q, posSet, pos, clubPick, marketOnly]);
   /** 구단 고르기: 그 구단 선수단 전체가 보이게 능력 · 나이 조건을 넓힌다 */
   const pickClub = (id: string | null) => { setClubPick(id); setClubQ(''); if (id) { setMinOvr(40); setMaxAge(45); setPosSet(null); } };
   const clubHits = useMemo(() => {
@@ -132,6 +143,16 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
               className={`h-8 shrink-0 rounded-md px-3 text-[13px] whitespace-nowrap transition-colors lg:px-4 ${tab === k ? 'bg-ink-700 font-semibold text-hi' : 'text-mid hover:bg-ink-800 hover:text-hi'}`}>{label}</button>
           ))}
         </div>
+        {tab === 'search' && (
+          <div className="mb-3 flex flex-wrap items-center gap-2 text-[12px]">
+            <div className="flex gap-1 rounded-lg bg-ink-900 p-1">
+              {([[false, '모든 선수'], [true, '이적 허용 선수만']] as const).map(([v, label]) => (
+                <button key={label} onClick={() => setMarketOnly(v)} className={`h-7 rounded-md px-3 transition-colors ${marketOnly === v ? 'bg-ink-700 font-semibold text-hi' : 'text-mid hover:text-hi'}`}>{label}</button>
+              ))}
+            </div>
+            <span className="text-lo">{marketFilter ? '이적 희망 · 만료 임박 · 구단 판매 · 급매물 · 자유계약만' : marketOnly ? '이름 · 구단으로 찾을 때는 모든 선수가 보입니다' : '표시 없는 선수도 웃돈 · 바이아웃 · 보스만으로 영입할 수 있습니다 (구단이 더 비싸게 부름)'}</span>
+          </div>
+        )}
         {/* 휴대폰: 검색 조건은 접어 둔다 */}
         {tab === 'search' && (
           <button onClick={() => setFilters((v) => !v)} className="mb-3 flex h-10 items-center justify-between rounded-lg bg-ink-850 px-4 text-[13px] text-mid ring-1 ring-line lg:hidden">
@@ -231,26 +252,28 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
           </div>
         ) : (
           <>
-          <div className="flex items-center justify-end gap-2 text-[12px] text-lo lg:hidden">정렬
-            <select value={sort.k} onChange={(e) => sortBy(e.target.value as SortKey)} className="h-8 rounded-md border border-line bg-ink-850 px-2 text-[12px] text-hi">
-              {(Object.keys(SORT_KO) as SortKey[]).map((k) => <option key={k} value={k}>{SORT_KO[k]}</option>)}
-            </select>
-            <button onClick={() => setSort((x) => ({ ...x, desc: !x.desc }))} className="h-8 rounded-md px-2.5 text-mid ring-1 ring-line">{sort.desc ? '높은 순 ▼' : '낮은 순 ▲'}</button>
-          </div>
+          <SortPicker className="mb-2 lg:hidden" s={sort} options={SORT_OPTIONS} onPick={(k) => setSort({ k, desc: !['name', 'pos', 'club'].includes(k) })} onFlip={() => setSort((x) => ({ ...x, desc: !x.desc }))} />
           <div ref={listRef} className="panel min-h-0 overflow-auto lg:flex-1">
             <table className="w-full border-collapse text-[13px]">
               <thead className="sticky top-0 z-10 bg-ink-800 text-left text-[12px] text-lo">
                 <tr className="h-9 shadow-[inset_0_-1px_0_var(--color-line)]">
-                  <SortTh k="name" s={sort} on={sortBy} className="px-3 lg:px-4">선수</SortTh><SortTh k="pos" s={sort} on={sortBy} className="px-2">포지션</SortTh><SortTh k="age" s={sort} on={sortBy} right className="hidden px-2 lg:table-cell">나이</SortTh>
+                  <SortTh k="name" s={sort} on={sortBy} className="px-3 lg:px-4">선수</SortTh><SortTh k="pos" s={sort} on={sortBy} className="px-2">포지션</SortTh><SortTh k="age" s={sort} on={sortBy} right className="hidden px-2 lg:table-cell">나이</SortTh><SortTh k="height" s={sort} on={sortBy} right className="hidden px-2 xl:table-cell">키</SortTh>
                   <SortTh k="club" s={sort} on={sortBy} className="hidden px-3 lg:table-cell">소속</SortTh><SortTh k="ovr" s={sort} on={sortBy} right className="px-2">능력</SortTh>
+                  <th className="hidden px-3 font-medium lg:table-cell">
+                    <select value={statSort ?? ''} onChange={(e) => (e.target.value ? setSort({ k: `a_${e.target.value}` as SortKey, desc: true }) : setSort({ k: 'ovr', desc: true }))} title="능력치를 고르면 그 능력치로 정렬" className={`h-7 rounded bg-transparent text-[12px] ${statSort ? 'text-hi' : 'text-lo'}`}>
+                      <option value="">주요 능력치 ↕</option>
+                      {STAT_KEYS.map((k) => <option key={k} value={k}>{ATTR_KO[k]} 순</option>)}
+                    </select>
+                    {statSort && <button onClick={() => setSort((x) => ({ ...x, desc: !x.desc }))} className="ml-1 text-[9px] text-neon" title="방향 바꾸기">{sort.desc ? '▼' : '▲'}</button>}
+                  </th>
                   <SortTh k="value" s={sort} on={sortBy} right className="hidden px-3 sm:table-cell">시장 가치</SortTh><SortTh k="wage" s={sort} on={sortBy} right className="hidden px-3 lg:table-cell">주급</SortTh><SortTh k="contract" s={sort} on={sortBy} right className="hidden px-4 lg:table-cell">계약</SortTh>
                 </tr>
               </thead>
               <tbody>
-                {rows.length === 0 && <tr><td colSpan={8} className="px-4 py-10 text-center text-lo">조건에 맞는 선수가 없습니다</td></tr>}
+                {rows.length === 0 && <tr><td colSpan={10} className="px-4 py-10 text-center text-lo">조건에 맞는 선수가 없습니다</td></tr>}
                 {rows.map(({ p, age, value }) => (
                   <tr key={p.id} onClick={() => setSel(p.id)} className={`h-12 cursor-pointer lg:h-11 shadow-[inset_0_-1px_0_var(--color-line)] transition-colors ${sel === p.id ? 'bg-neon-ghost' : p.clubId ? 'hover:bg-ink-800' : 'bg-sky/[0.06] hover:bg-sky/10'}`}>
-                    <td className={`px-3 py-1.5 lg:px-4 lg:py-0 ${!p.clubId ? 'shadow-[inset_3px_0_0_var(--color-sky)]' : p.clubId === w.userClubId && xi.starters.has(p.id) ? 'shadow-[inset_4px_0_0_var(--color-neon)]' : p.clubId === w.userClubId && xi.bench.has(p.id) ? 'shadow-[inset_4px_0_0_var(--color-sky)]' : ''}`}><span className="font-medium">{playerKo(p.id, p.name)}</span>
+                    <td className={`px-3 py-1.5 lg:min-w-[210px] lg:px-4 lg:py-0 ${!p.clubId ? 'shadow-[inset_3px_0_0_var(--color-sky)]' : p.clubId === w.userClubId && xi.starters.has(p.id) ? 'shadow-[inset_4px_0_0_var(--color-neon)]' : p.clubId === w.userClubId && xi.bench.has(p.id) ? 'shadow-[inset_4px_0_0_var(--color-sky)]' : ''}`}><span className="font-medium">{playerKo(p.id, p.name)}</span>
                       {!p.clubId && <span className="ml-2 rounded bg-sky/15 px-1.5 py-px text-[11px] font-semibold text-sky">FA</span>}
                       {p.clubId === w.userClubId && (xi.starters.has(p.id) ? <span title="지금 선발 (전술 화면 기준)" className="ml-2 rounded bg-neon px-1.5 text-[11px] font-semibold text-ink-950">선발</span>
                         : xi.bench.has(p.id) ? <span title="지금 후보" className="ml-2 rounded px-1.5 text-[11px] font-semibold text-sky ring-1 ring-sky">후보</span> : null)}
@@ -262,12 +285,16 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
                       {p.precontract ? <span title={`${clubKo(p.precontract.club)}와 사전 계약 · 시즌 끝에 합류`} className="ml-2 rounded bg-red/15 px-1 text-[11px] font-semibold text-red">사전 계약 → {clubKo(p.precontract.club)}</span>
                         : bosmanEligible(w, p, w.userClubId) ? <span title="계약 마지막 6개월 · 다른 나라 구단이라 이적료 없이 사전 계약할 수 있습니다 (7월 합류)" className="ml-2 rounded bg-neon-ghost px-1 text-[11px] font-semibold text-neon">보스만</span>
                         : p.clubId !== w.userClubId && inFinalMonths(w, p) ? <span title="이번 시즌 끝에 계약 만료 (같은 나라 구단은 사전 계약 불가 · 7월 자유계약)" className="ml-2 rounded bg-amber/15 px-1 text-[11px] text-amber">계약 만료 예정</span> : null}
+                      {(() => { const tg = p.clubId && p.clubId !== w.userClubId ? saleTag(w, p) : null; return tg === 'request' || tg === 'surplus' || (tg === 'expiring' && !inFinalMonths(w, p)) ? <span title={SALE_KO[tg].how} className={`ml-2 rounded px-1 text-[11px] whitespace-nowrap ${tg === 'request' ? 'bg-amber/15 font-semibold text-amber' : 'bg-neon-ghost text-neon'}`}>{SALE_KO[tg].ko}</span> : null; })()}
                       <div className="truncate text-[11px] text-lo lg:hidden">{p.clubId ? clubKo(p.clubId) : 'FA'} · {age}세<span className="sm:hidden">{p.clubId ? ` · ${money(value)}` : ''}</span></div>
+                      <TopAttrs w={w} p={p} first={statSort} className="mt-0.5 lg:hidden" />
                     </td>
                     <td className="px-2"><PosTag pos={p.pos} /></td>
                     <td className="tnum hidden px-2 text-right text-mid lg:table-cell">{age}</td>
+                    <td className="tnum hidden px-2 text-right text-lo xl:table-cell">{heightOf(p)}</td>
                     <td className="hidden px-3 lg:table-cell"><span className="flex items-center gap-2">{p.clubId ? <button title={p.clubId === w.userClubId ? '' : '이 구단 선수만 보기'} onClick={(e) => { if (p.clubId === w.userClubId) return; e.stopPropagation(); setTab('search'); pickClub(p.clubId); }} className="flex min-w-0 items-center gap-2 hover:text-hi"><Crest clubId={p.clubId} size={16} /><span className="truncate text-mid underline-offset-2 hover:underline">{clubKo(p.clubId)}</span></button> : <span className="text-sky">소속 없음 · 이적료 없음</span>}</span></td>
                     <td className="px-2 text-right"><OvrText w={w} p={p} /></td>
+                    <td className="hidden px-3 lg:table-cell"><TopAttrs w={w} p={p} first={statSort} /></td>
                     <td className="tnum hidden px-3 text-right sm:table-cell">{p.clubId ? money(value) : '–'}</td>
                     <td className="tnum hidden px-3 text-right text-mid lg:table-cell">{money(p.wage)}</td>
                     <td className="tnum hidden px-4 text-right text-mid lg:table-cell">{p.contract ? p.contract.slice(0, 7).replace('-', '.') : p.clubId ? '–' : <span className="text-sky">FA</span>}</td>
@@ -341,6 +368,7 @@ function Side({ p, mine, listed, shortlisted, onList, onShort, onRelease, onTalk
         <span>{p.clubId ? <>시장 가치 <span className="tnum text-mid">{money(value)}</span></> : <span className="text-neon">자유계약 · 이적료 없음</span>}</span>
         <span>원하는 주급 약 <span className="tnum text-mid">{money(wageDemand(w, p, w.userClubId))}</span></span>
       </div>
+      {p.clubId && (() => { const tg = saleTag(w, p); return <div className={`mb-3 rounded-lg px-3 py-2 text-[12px] ${tg ? 'bg-neon-ghost text-neon' : 'bg-ink-900 text-mid'}`}>{tg ? <><span className="font-semibold">이적 허용 · {SALE_KO[tg].ko}</span> — {SALE_KO[tg].how}</> : <><span className="font-semibold text-hi">비매물</span> — 구단이 팔 생각이 없는 선수입니다. 웃돈을 얹거나 바이아웃 · 보스만(계약 마지막 6개월)으로 데려올 수 있습니다</>}</div>; })()}
       {ban && <div className="mb-2 rounded-lg border border-red/40 bg-red/10 px-3 py-2 text-[12px] text-red">협상 결렬 · {koDate(ban)}까지 협상 불가</div>}
       <div className="flex gap-2">
         <button onClick={onTalk} disabled={!!ban || p.precontract?.club === w.userClubId} className="h-10 flex-1 rounded-lg bg-neon text-[14px] font-semibold text-ink-950 transition-colors hover:bg-[#5bff3d] disabled:bg-ink-700 disabled:text-lo">
@@ -355,14 +383,8 @@ function Side({ p, mine, listed, shortlisted, onList, onShort, onRelease, onTalk
   return <PlayerPanel p={p} age={ageOn(p.birth, w.date)} ko={playerKo(p.id, p.name)} nation={nations.get(p.nation)?.ko ?? p.nation} club sheet={{ open: true, onClose }} actions={actions} />;
 }
 
-type SortKey = 'name' | 'pos' | 'age' | 'club' | 'ovr' | 'value' | 'wage' | 'contract';
-const SORT_KO: Record<SortKey, string> = { ovr: '능력', value: '시장 가치', age: '나이', wage: '주급', contract: '계약 만료', pos: '포지션', name: '이름', club: '소속' };
-/** 정렬되는 표 머리: 누르면 그 항목으로 정렬 (▼ 높은 순 · ▲ 낮은 순) */
-function SortTh({ k, s, on, right, className = '', children }: { k: SortKey; s: { k: SortKey; desc: boolean }; on: (k: SortKey) => void; right?: boolean; className?: string; children: React.ReactNode }) {
-  const active = s.k === k;
-  return (
-    <th className={`font-medium ${right ? 'text-right' : ''} ${className}`}>
-      <button onClick={() => on(k)} className={`inline-flex items-center gap-0.5 ${active ? 'text-hi' : 'hover:text-mid'}`}>{children}<span className="w-2.5 text-[9px]">{active ? (s.desc ? '▼' : '▲') : ''}</span></button>
-    </th>
-  );
-}
+type SortKey = 'name' | 'pos' | 'age' | 'club' | 'ovr' | 'value' | 'wage' | 'contract' | 'height' | `a_${AttrKey}`;
+const SORT_OPTIONS: [SortKey, string][] = [
+  ['ovr', '능력'], ['value', '시장 가치'], ['age', '나이'], ['wage', '주급'], ['contract', '계약 만료'], ['height', '키'], ['pos', '포지션'], ['name', '이름'], ['club', '소속'],
+  ...STAT_KEYS.map((k) => [`a_${k}` as SortKey, `능력치 · ${ATTR_KO[k]}`] as [SortKey, string]),
+];

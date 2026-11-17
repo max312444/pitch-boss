@@ -14,6 +14,7 @@ import { youthIntake } from './youth';
 import { aiBuyoutRaids, buyoutOf, buyoutWageFactor } from './clauses';
 import { aiOfferBonus, aiTerms, sellOnFactor, setTerms, settleSellOn, termsWorth, type DealTerms } from './addons';
 import { bargainOf } from './firesale';
+import { saleTag } from './market';
 
 const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v));
 const addDays = (iso: string, n: number) => new Date(Date.parse(iso + 'T00:00:00Z') + n * 86400000).toISOString().slice(0, 10);
@@ -162,7 +163,9 @@ export function askingPrice(w: World, p: PlayerState): number {
   if (bg) return bg.price;   // 급매물: 내놓은 가격
   const rank = rankInClub(w, p);
   const mult = rank <= 3 ? 1.6 : rank <= 8 ? 1.3 : rank <= 15 ? 1.1 : 0.9;
-  const listed = (w.transferList ?? []).includes(p.id) ? 0.85 : 1;
+  // 이적 명단 · 시장에 나온 선수 (이적 희망 · 계약 만료 임박 · 구단 판매)는 조금 싸게 (market.ts)
+  const tag = saleTag(w, p);
+  const listed = (w.transferList ?? []).includes(p.id) || (tag === 'request' && p.saga?.kind !== 'move') || tag === 'expiring' || tag === 'surplus' ? 0.85 : 1;
   return Math.round((marketValue(w, p) * mult * listed) / 50000) * 50000;
 }
 

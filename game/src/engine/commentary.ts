@@ -15,7 +15,7 @@ export interface CommentaryState {
   feed: FeedLine[];
   seed: number;
   /** 지난 구간까지 본 개수 */
-  seen: { goals: number; cards: number; injuries: number; notes: number; shots: Record<Side, number>; onTarget: Record<Side, number> };
+  seen: { goals: number; cards: number; injuries: number; notes: number; errors?: number; shots: Record<Side, number>; onTarget: Record<Side, number> };
   /** 해설이 마지막으로 의견을 낸 구간 */
   lastPundit: number;
   /** 경기 전 전력 차 (홈 - 원정, 대략 능력 점수) */
@@ -74,7 +74,7 @@ export function commentSegment(m: MatchState, _ctx: MatchCtx, notes: MatchNote[]
   for (const side of ['home', 'away'] as Side[]) {
     const t = m[side], opp = m[other(side)];
     const g = goalsThis.filter((x) => x.side === side).length;
-    const shots = t.shots - cm.seen.shots[side] - g;
+    const shots = t.shots - cm.seen.shots[side] - g - (s.errors ?? []).slice(cm.seen.errors ?? 0).filter((e) => e.side !== side && !e.goal).length;   // 실책 장면은 따로 중계
     const onT = Math.max(0, t.onTarget - cm.seen.onTarget[side] - g);
     cm.seen.shots[side] = t.shots; cm.seen.onTarget[side] = t.onTarget;
     for (let i = 0; i < Math.min(2, shots); i++) {
@@ -125,6 +125,20 @@ export function commentSegment(m: MatchState, _ctx: MatchCtx, notes: MatchNote[]
       if (n.pressing != null) lines.push({ minute: n.minute, side: n.side, voice: 'pundit', kind: 'press', text: n.pressing >= 2 ? `${club}가 압박 강도를 높입니다. 체력 소모가 커지겠지만 상대 실수를 노리겠다는 거죠.` : n.pressing <= 0 ? `${club}가 압박을 풀고 체력을 아낍니다.` : `${club}가 압박을 보통으로 되돌립니다.` });
     }
   }
+
+  // ── 피지컬 대결 · 수비 실책 ──
+  for (const e of (s.errors ?? []).slice(cm.seen.errors ?? 0)) {
+    const d = P(e.player), a = P(e.by), att = other(e.side);
+    const what: Record<string, string[]> = {
+      pace: [`${a}가 속도로 ${d}를 따돌립니다! 뒷공간이 완전히 열렸어요!`, `${d}가 ${a}의 스피드를 따라가지 못합니다!`],
+      power: [`${a}가 몸싸움에서 ${d}를 밀어내고 공을 따냅니다!`, `${d}, ${a}와의 몸싸움에서 버티지 못합니다!`],
+      air: [`공중볼 경합에서 ${a}가 ${d}를 압도합니다!`, `${d}가 ${a}와의 헤딩 경합에서 밀립니다!`],
+      pass: [`${d}의 빌드업 패스가 끊깁니다! 치명적인 실수!`, `${d}, 압박에 쫓겨 공을 뺏깁니다!`],
+    };
+    lines.push({ minute: e.minute, side: att, voice: 'caster', kind: 'duel', text: r.pick(what[e.kind]) + (e.goal ? '' : r.pick([' 하지만 슈팅이 빗나갑니다.', ' 골키퍼가 겨우 막아 냅니다!', ' 아슬아슬하게 수비가 걷어 냅니다.'])) });
+    if (e.goal) lines.push({ minute: e.minute, side: e.side, voice: 'pundit', kind: 'critErr', text: r.pick([`${d}의 실책이 그대로 실점으로 이어졌습니다. 뼈아프네요.`, e.kind === 'pass' ? '빌드업에서 나온 실수, 이런 실점은 정말 아깝죠.' : `체격 · 속도 차이가 그대로 드러난 장면입니다. 매치업을 바꿔야 할 수도 있어요.`]) });
+  }
+  cm.seen.errors = s.errors?.length ?? 0;
 
   // ── 카드 · 부상 ──
   for (const c of s.cards.slice(cm.seen.cards)) {

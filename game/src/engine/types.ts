@@ -47,6 +47,10 @@ export interface PlayerState {
   dataAlt?: Position[];
   /** 주발 (데이터에 있을 때) */
   foot?: 'L' | 'R' | 'B' | null;
+  /** 키 cm (데이터에 있을 때, 없으면 body.ts heightOf 가 추정) */
+  height?: number;
+  /** 이번 시즌 체형이 바뀌었으면 예전 체형 (body.ts) */
+  bodyChange?: { from: import('./body').BodyType; season: string };
   /** 능력이 깎이지 않는 보조 포지션 (데이터 + 능력치로 정함, positions.ts). 없으면 처음 쓸 때 계산 */
   alt?: Position[];
   number: number | null;
@@ -213,6 +217,8 @@ export interface MatchSummary {
   goals: { minute: number; side: Side; scorer: string; assist?: string; kind?: 'pen' | 'set' }[];
   cards: { minute: number; side: Side; player: string; red: boolean }[];
   injuries: { minute: number; side: Side; player: string }[];
+  /** 수비 실책 · 피지컬 대결에서 진 장면 (side = 실책한 팀, by = 이긴 상대 선수, goal = 실점으로 이어짐) */
+  errors?: { minute: number; side: Side; player: string; by: string; kind: import('./match').DuelKind; goal: boolean }[];
   stats: Record<Side, { shots: number; onTarget: number; xg: number; possession: number }>;
   ratings: Record<string, number>;
   /** 경기 최우수 선수 · 최악의 선수 (30분 이상 출전) */

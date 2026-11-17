@@ -5,6 +5,7 @@ import { buyoutOf } from '../../engine/clauses';
 import { relClauseOf } from '../../engine/firesale';
 import { HiddenTraits, PositionRatings, ScoutBox } from '../components/Scout';
 import { knowledge, seenOverall, seenRange } from '../../engine/scout';
+import { BODY, bodyType, heightOf } from '../../engine/body';
 import { ROLE_HINT, ROLE_KO, ROLES, roleOf, type Role } from '../../engine/roles';
 import { useGame } from '../../store/game';
 import { PhotoCredit, PlayerPhoto } from '../components/PlayerPhoto';
@@ -150,6 +151,20 @@ export function PlayerPanel({ p, age, ko, nation, actions, club, sheet }: { p: P
           <FitnessBar value={p.fitness} />
           <div className="text-[12px] text-mid">사기 <span className="tnum font-semibold text-hi">{Math.round(p.morale)}</span></div>
         </div>
+        {(() => {
+          // 키 · 체형 (체형은 그 시즌 능력치로 정해져 시즌마다 바뀔 수 있음)
+          const bt = bodyType(p), ch = p.bodyChange?.season === w.season ? p.bodyChange.from : null;
+          return (
+            <div className="mt-2 rounded-lg bg-ink-900 px-3 py-2.5 text-[12px]" title={BODY[bt].how}>
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-mid">키 <span className="tnum font-semibold text-hi">{heightOf(p)}cm</span>{p.foot ? <span className="text-lo"> · {p.foot === 'L' ? '왼발' : p.foot === 'R' ? '오른발' : '양발'}</span> : null}</span>
+                <span className="text-mid">체형 <span className="font-semibold text-hi">{BODY[bt].ko}</span></span>
+              </div>
+              <div className="mt-1 text-[11px] leading-snug text-lo">{BODY[bt].how}</div>
+              {ch && ch !== bt && <div className="mt-1 text-[11px] text-sky">이번 시즌 체형 변화: {BODY[ch].ko} → {BODY[bt].ko}</div>}
+            </div>
+          );
+        })()}
         <div className="mt-2 rounded-lg bg-ink-900 px-3 py-3">
           <div className="mb-2 flex items-center justify-between text-[12px]">
             <span className="text-mid">충성도 <span className={`font-semibold ${p.loyalty < UNHAPPY ? 'text-amber' : 'text-hi'}`}>{loyaltyLabel(p.loyalty)}</span></span>
