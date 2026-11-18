@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useApp } from '../../store/app';
 import { sortTable } from '../../engine/standings';
-import { levelOf, pairRule, nationOf, zoneOf, type Tie } from '../../engine/pyramid';
+import { levelOf, pairOf, pairRule, nationOf, reserveBlocked, zoneOf, type Tie } from '../../engine/pyramid';
 import { clubKo, compKo } from '../../data/db';
 import { Crest } from '../components/Crest';
 import { ResultDot } from '../components/bits';
@@ -22,12 +22,19 @@ export function LeagueTable({ league, compact = false }: { league: string; compa
   const shown = compact ? rows.map((r, i) => ({ r, i })).filter(({ i }) => (started ? i < 3 || Math.abs(i - me) <= 2 || i === n - 1 : i < 5 || Math.abs(i - me) <= 1 || i === n - 1)) : rows.map((r, i) => ({ r, i }));
   const season = w.competitions[league].season;
   const second = levelOf(league) === 2;
+  const topLeague = second ? pairOf(league)?.[0] : undefined;
+  const blocked = new Set(rows.map((r) => r.club).filter((c) => topLeague && w.competitions[topLeague] && reserveBlocked(w, c, Object.keys(w.competitions[topLeague].table))));
   const zone = (i: number) => {
     if (!started) return 'bg-transparent';
     const z = zoneOf(league, season, i + 1, n);
     if (z === 'down') return 'bg-red';
     if (z === 'barrage') return 'bg-amber';
-    if (second) return z === 'up' ? 'bg-neon' : z === 'playoff' ? 'bg-sky' : 'bg-transparent';
+    if (second) {
+      // B팀 (모구단이 1부) 은 승격권에서 빠지고, 다른 구단의 승격 순위는 B팀을 건너뛰고 센다
+      if (blocked.has(rows[i].club)) return 'bg-transparent';
+      const up = zoneOf(league, season, rows.slice(0, i + 1).filter((r) => !blocked.has(r.club)).length, n);
+      return up === 'up' ? 'bg-neon' : up === 'playoff' ? 'bg-sky' : 'bg-transparent';
+    }
     return i < 4 ? 'bg-neon' : i === 4 ? 'bg-sky' : 'bg-transparent';   // 1부: 유럽 대회 (대회는 아직 없음)
   };
 

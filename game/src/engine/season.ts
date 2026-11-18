@@ -31,7 +31,7 @@ import { FORMATIONS, guessFormation } from './squad';
 import { boardReview, book, clubRevenue, prizeMoney, seasonBudgets } from './finance';
 import { traitSeasonEnd } from './traits';
 import { overall } from './ratings';
-import { levelOf, pairRule, PAIRS, poolOf } from './pyramid';
+import { levelOf, pairRule, PAIRS, poolOf, reserveBlocked } from './pyramid';
 import { cleanOffers } from './transfer';
 import { money } from '../ui/format';
 import { seasonAwards } from './awards';
@@ -172,18 +172,20 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
       handled.add(second);
       const secCur = Object.keys(S.table);
       const secOrder = sortTable(S.table).map((r) => r.club);
-      const up = secOrder.slice(0, rule.up);
+      // 승격 순위: 모구단이 1부에 있는 B팀은 건너뛴다 (강등 순위는 그대로 secOrder)
+      const upOrder = secOrder.filter((c) => !reserveBlocked(w, c, topCur));
+      const up = upOrder.slice(0, rule.up);
       const down = topOrder.slice(topOrder.length - rule.topDown);
       const po = S.playoff;
       if (rule.barrage) {
         const b = po?.barrage;
         if (b && b.winner === b.challenger) { up.push(b.challenger); down.push(b.top); }
-      } else if (rule.playoff) up.push(po?.winner ?? secOrder[rule.up]);
+      } else if (rule.playoff) up.push(po?.winner ?? upOrder[rule.up]);
       // 1부 크기 맞추기
       const tSize = realTop?.length ?? topCur.length;
       let topNext = [...topCur.filter((c) => !down.includes(c)), ...up];
       while (topNext.length > tSize) { const c = [...topOrder].reverse().find((x) => topNext.includes(x))!; topNext = topNext.filter((x) => x !== c); down.push(c); }
-      for (const c of secOrder) { if (topNext.length >= tSize) break; if (!topNext.includes(c)) { topNext.push(c); up.push(c); } }
+      for (const c of upOrder) { if (topNext.length >= tSize) break; if (!topNext.includes(c)) { topNext.push(c); up.push(c); } }
       // 2부: 아래로 떨어질 구단 (내 구단은 3부가 없어 잔류)
       const rest = secOrder.filter((c) => !up.includes(c));
       const sDown: string[] = [];
@@ -192,9 +194,11 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
         sDown.push(rest[i]);
       }
       let secNext = [...secCur.filter((c) => !up.includes(c) && !sDown.includes(c)), ...down];
+      // 모구단이 2부로 내려오면 그 B팀은 아래로 (같은 리그에 둘 수 없음)
+      for (const c of [...secNext]) if (c !== w.userClubId && reserveBlocked(w, c, secNext)) { secNext = secNext.filter((x) => x !== c); sDown.push(c); }
       const sSize = realSecond?.length ?? secCur.length;
-      const fromReal = realSecond ? realSecond.filter((c) => !topCur.includes(c) && !secCur.includes(c)) : [];
-      const fromPool = byRep(Object.values(w.clubs).filter((c) => c.league === poolOf(second) && !fromReal.includes(c.id)).map((c) => c.id));
+      const fromReal = realSecond ? realSecond.filter((c) => !topCur.includes(c) && !secCur.includes(c) && !reserveBlocked(w, c, secNext)) : [];
+      const fromPool = byRep(Object.values(w.clubs).filter((c) => c.league === poolOf(second) && !fromReal.includes(c.id) && !reserveBlocked(w, c.id, secNext)).map((c) => c.id));
       const fromBelow: string[] = [];
       for (const c of [...fromReal, ...fromPool]) { if (secNext.length >= sSize) break; secNext.push(c); fromBelow.push(c); }
       while (secNext.length > sSize) {

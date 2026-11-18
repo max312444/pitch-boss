@@ -89,7 +89,7 @@ function checkClubSeason(d, where, season, league, clubFile, seasonStart, seenIn
   else if (!FORMATIONS.includes(d.formation)) err(where, `알 수 없는 포메이션: ${d.formation}`);
   if (!Array.isArray(d.squad)) { err(where, 'squad 누락'); return; }
   if (d.squad.length < 18 || d.squad.length > 40) warn(where, `선수단 ${d.squad.length}명 (권장 22~30)`);
-  if (!d.squad.some(p => p.pos === 'GK')) err(where, '골키퍼 없음');
+  if (!d.squad.some(p => p.pos === 'GK')) warn(where, '골키퍼 없음 (게임 시작 때 유스 골키퍼로 채움)');
 
   const numbers = new Set();
   for (const p of d.squad) {

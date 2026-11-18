@@ -9,6 +9,12 @@ import type { Fixture, World } from './types';
 import { sortTable } from './standings';
 import { createRng } from './rng';
 
+/** B팀 (리저브): 모구단이 그 리그(clubs)에 있으면 그 리그로 갈 수 없다 → 승격 · 플레이오프 자리는 다음 순위 구단에게 */
+export const reserveBlocked = (w: World, club: string, clubs: string[]): boolean => {
+  const parent = w.reserves?.[club];
+  return !!parent && clubs.includes(parent);
+};
+
 export interface PairRule {
   top: string;
   second: string;
@@ -89,7 +95,9 @@ export function playoffDay(w: World) {
     if (st.done) continue;
     const today = w.date;
     const base = () => { const d = lastDate(S.fixtures); return d > today ? d : today; };
-    const order = sortTable(S.table).map((r) => r.club);
+    // 승격 자격이 없는 B팀 (모구단이 1부) 은 빼고 순위를 센다
+    const topClubs = Object.keys(T.table);
+    const order = sortTable(S.table).map((r) => r.club).filter((c) => !reserveBlocked(w, c, topClubs));
     const seed = (pos: number) => order[pos - 1];
     const mk = (kind: Tie['kind'], a: string, b: string, dates: string[]) => {
       // 2경기면 1차전은 하위 시드 홈

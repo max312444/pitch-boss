@@ -9,7 +9,7 @@ import { aiLoanDay } from './loan';
 import { aiBosmanDay, deadlineCheck } from './bosman';
 import { bargainDay } from './firesale';
 import { shortlistDay } from './shortlist';
-import { appealDay } from './appeal';
+import { aiAppealDay, appealDay } from './appeal';
 import { sponsorDay } from './sponsors';
 import { newsDay } from './news';
 import { chemistry, chemMult, lockerDay } from './chemistry';
@@ -345,6 +345,12 @@ export function advanceDay(w: World): GameEvent[] {
   events.push(...ffpMidSeason(w));   // 재정 규정: 1월 1일 한도 초과 경고
   if (!w.intl) events.push(...sponsorDay(w, rng));   // 스폰서: 만료 시즌 봄 제안 · 기한 지나면 자동 계약
   if (!w.intl) events.push(...appealDay(w, rng));   // 이적 어필: 우리 구단에 오고 싶은 선수
+  events.push(...aiAppealDay(w, (p, to, fee) => {   // 역제안: 갈등 선수가 겨룰 만한 다른 구단에 먼저 연락
+    const wage = Math.max(p.wage, wageDemand(w, p));
+    if (!canAfford(w, to, fee, wage, 4)) return false;
+    events.push(completeTransfer(w, p, to, fee, wage, 4));
+    return true;
+  }));
   if (!w.intl) events.push(...shortlistDay(w));   // 관심 선수: 급매물 · 자유계약 · 보스만 · 계약 만료 임박
   events.push(...traitMonth(w, rng));
   if (!w.intl) events.push(...managerDay(w, rng));

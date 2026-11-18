@@ -61,10 +61,22 @@ function firstTeamPlayers(wikitext) {
     // 같은 섹션 안의 "out on loan" 표 이후는 제외
     const cut = body.search(/out on loan|on loan to other clubs|loaned out/i);
     const scope = cut > 0 ? body.slice(0, cut) : body;
-    for (const t of findTemplates(scope, ['Fs player', 'football squad player', 'Fs2 player'])) {
+    for (const t of findTemplates(scope, ['Fs player2 sort', 'Fs player2', 'Fs player sort', 'Fs player', 'football squad player', 'Fs2 player'])) {
       const f = {};
       splitParams(t).forEach(p => { const k = p.indexOf('='); if (k > 0) f[p.slice(0, k).trim().toLowerCase()] = p.slice(k + 1).trim(); });
-      const name = f.name || '';
+      // 새 형식 {{fs player2 sort |first= |last= |dab=문서 제목}}: 이름은 first+last, 링크는 dab (없으면 이름 그대로)
+      const fl = [f.first, f.last].filter(Boolean).join(' ');
+      let name = f.name || (fl ? '[[' + (f.dab || fl) + '|' + fl + ']]' : '');
+      // {{sortname|이름|성|문서 제목|dab=footballer}} → [[문서 제목 또는 '이름 성 (dab)'|이름 성]] (nolink 면 링크 없음)
+      const sn = name.match(/^\{\{\s*sortname\s*\|([^}]*)\}\}/i);
+      if (sn) {
+        const ps = sn[1].split('|').map(x => x.trim());
+        const pos = ps.filter(x => !x.includes('='));
+        const kv = Object.fromEntries(ps.filter(x => x.includes('=')).map(x => [x.slice(0, x.indexOf('=')).trim().toLowerCase(), x.slice(x.indexOf('=') + 1).trim()]));
+        const full = pos.slice(0, 2).filter(Boolean).join(' ');
+        const target = pos[2] || (kv.dab ? full + ' (' + kv.dab + ')' : full);
+        name = kv.nolink ? full : '[[' + target + '|' + full + ']]';
+      }
       const other = f.other || '';
       rows.push({
         number: /^\d{1,2}$/.test(f.no || '') ? Number(f.no) : null,
@@ -172,12 +184,12 @@ async function seasonTableTeams(title, opts = {}) {
   let teams = leagueTableTeams(rev.slots.main.content, info);
   let revid = rev.revid;
   // 순위표를 별도 틀로 빼 둔 문서: {{2023–24 La Liga table}} 같은 틀을 따라가 읽는다
-  if (opts.order && !teams.length) {
+  if (!teams.length) {
     const subs = [...rev.slots.main.content.matchAll(/\{\{\s*(?:Template:)?([^{}|]*\btable\b[^{}|]*?)\s*[|}]/gi)].map((m) => m[1].trim()).filter((t) => !/^[#:]|sports table/i.test(t));
     for (const t of [...new Set(subs)].slice(0, 3)) {
       const r2 = await fetchPage(`Template:${t}`);
       if (!r2) continue;
-      const i2 = { order: true };
+      const i2 = { order: !!opts.order };
       const t2 = leagueTableTeams(r2.slots.main.content, i2);
       if (t2.length) { teams = t2; info.ongoing = i2.ongoing; revid = `${revid}+${r2.revid}`; break; }
     }

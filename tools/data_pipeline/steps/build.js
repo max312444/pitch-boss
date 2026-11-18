@@ -199,6 +199,7 @@ async function buildLeague({ league, apply, overwrite, seasonFilter, log }) {
     if (teamIds.has(t.qid)) continue;
     const r = clubIdFor(t, ctx);
     teamIds.set(t.qid, r.id);
+    if (['exact', 'suffix', 'prefix'].includes(r.method)) (clubReport.guessed ??= []).push(`${t.enwiki || t.label} → ${r.id} (${r.method})`);
     if (r.method === 'new') clubReport.new.push(`${r.id} (${t.enwiki || t.label})`); else clubReport[r.method]++;
     clubMap[r.id] ??= { wikidata: t.qid, label: t.enwiki || t.label, status: 'valid', method: `league-participant:${r.method}` };
   }
@@ -206,7 +207,9 @@ async function buildLeague({ league, apply, overwrite, seasonFilter, log }) {
   for (const id of teamIds.values()) idCount.set(id, (idCount.get(id) || 0) + 1);
   const same = new Set(readJson(SAME_FILE, []));
   const clashes = [...idCount].filter(([id, n]) => n > 1 && !same.has(id)).map(([id]) => id);
-  log(`② 구단 ${teamIds.size}개 연결 · ${JSON.stringify({ ...clubReport, new: clubReport.new.length })}`);
+  log(`② 구단 ${teamIds.size}개 연결 · ${JSON.stringify({ ...clubReport, new: clubReport.new.length, guessed: undefined })}`);
+  // 이름이 비슷해서 연결한 구단은 B팀 · 다른 구단이 섞일 수 있어 따로 보여 준다
+  if (clubReport.guessed?.length) log(`  이름으로 연결한 구단 (확인 필요): ${clubReport.guessed.join(', ')}`);
   if (clubReport.new.length) log(`  고정 목록에 없는 구단: ${clubReport.new.join(', ')}`);
   if (clashes.length) {
     const who = clashes.map((id) => `${id} [${[...teamIds].filter(([, v]) => v === id).map(([q]) => `${q} ${seasonTeams.get(q) ?? ''}`).join(' / ')}]`);
@@ -322,6 +325,9 @@ async function buildLeague({ league, apply, overwrite, seasonFilter, log }) {
         if (left) { stats.excluded[left === 'elsewhere' ? 'loanedOut' : 'staleMembership']++; continue; }
         // 출전 기록이 없고 만 20세 미만 → 유스로 본다
         if (c.apps === 0 || (c.apps == null && age < 20 && (p.sitelinks ?? 0) < 8)) { stats.excluded.youthNoApps++; continue; }
+      } else if (age < 15 || age > 45) {
+        // 위키백과 명단 링크가 지금은 동명이인(다른 시대 사람)을 가리키는 경우
+        stats.excluded.age++; continue;
       }
       const wpNation = c.nat ? (nationCodes.has(c.nat) ? c.nat : toCode(c.nat)) : null;
       const nations = [...new Set([wpNation, ...[...p.sportCountries, ...p.citizenships].map(toCode)].filter(Boolean))];
@@ -473,6 +479,7 @@ ${d.squad.map(player).join(',\n')}
   return true;
 }
 
+const RESERVES = readJson(path.join(CANONICAL_DIR, 'club-reserves.json'), {});
 function writeClubMaster(id, info, nation) {
   const p = path.join(CLUBS_DIR, `${id}.json`);
   if (fs.existsSync(p)) return;
@@ -483,6 +490,8 @@ function writeClubMaster(id, info, nation) {
     id, name, ko: info.ko || name, short, nation, city: info.city ?? null, founded: info.founded ?? null,
     kits: { home: { primary: c1, secondary: c2, pattern: 'solid' }, away: { primary: c2, secondary: c1, pattern: 'solid' } },
     kitsEstimated: true, source: 'wikidata',
+    // B팀 (리저브): 모구단 (게임에서 모구단과 같은 리그로 승격할 수 없음)
+    ...(RESERVES[id] ? { parent: RESERVES[id] } : {}),
   });
 }
 

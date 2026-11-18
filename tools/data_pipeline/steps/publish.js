@@ -250,6 +250,7 @@ async function publish({ apply = false, log = console.log } = {}) {
     out.set(path.join('clubs', `${m.id}.json`), {
       id: m.id, name: m.en, ko: m.ko, short: m.short, nation: c.nation, city: c.city ? plainAscii(c.city) : undefined,
       founded: c.founded, kits: c.kits, rivals: (c.rivals || []).map(mapClub), crest: m.crest,
+      ...(c.parent && clubMap[c.parent] ? { parent: mapClub(c.parent) } : {}),
     });
   }
   const leagues = readJson(path.join(DATA, 'meta', 'leagues.json'));

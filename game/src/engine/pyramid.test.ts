@@ -80,4 +80,37 @@ describe('승강제 · 플레이오프', () => {
     expect(w.clubs[weakest].league).toBe(last.includes(weakest) ? 'eng2' : 'eng1');
     expect(r.userKept).toBe(false);
   }, 120000);
+
+  it('B팀: 모구단이 1부면 승격 · 플레이오프에서 빠지고, 모구단이 2부로 내려오면 B팀은 아래로', () => {
+    const inp = input('2024-25', 'esp1', 'esp2', 'ita1');
+    const w = createWorld(inp, inp.leagues[0].clubs[0].club, 23);
+    // 2부에서 가장 강한 구단을 1부 첫 구단의 B팀으로 (승격권에 들 가능성이 큼)
+    const sec = inp.leagues[1].clubs.map((c) => c.club);
+    const top = inp.leagues[0].clubs.map((c) => c.club);
+    const strong = [...inp.leagues[1].clubs].sort((a, b) => b.reputation - a.reputation)[0].club;
+    w.reserves = { [strong]: top[1] };
+    run(w);
+    const S = w.competitions.esp2;
+    const secOrder = sortTable(S.table).map((r) => r.club);
+    const inPo = S.playoff!.ties.some((t) => t.a === strong || t.b === strong);
+    expect(inPo).toBe(false);
+    // 강등될 1부 구단의 B팀도 하나 지정 (승격권 밖 구단)
+    const topOrder = sortTable(w.competitions.esp1.table).map((r) => r.club);
+    const goingDown = topOrder.at(-1)!;
+    const mid = secOrder.find((c) => c !== strong && secOrder.indexOf(c) > 8 && secOrder.indexOf(c) < secOrder.length - 5)!;
+    w.reserves[mid] = goingDown;
+    closeSeason(w);
+    const r = startNextSeason(w, input('2025-26', 'esp1', 'esp2', 'ita1'));
+    console.log('B팀', strong, secOrder.indexOf(strong) + 1, '위 · 승격', r.promoted.esp1, '· 모구단 강등 B팀', mid, '→', w.clubs[mid].league);
+    expect(r.promoted.esp1).not.toContain(strong);
+    expect(r.promoted.esp1).toHaveLength(3);
+    // 자동 승격 2자리는 B팀을 건너뛴 상위 2팀
+    const elig = secOrder.filter((c) => c !== strong);
+    expect(r.promoted.esp1.slice(0, 2)).toEqual(elig.slice(0, 2));
+    expect(r.relegated.esp1).toContain(goingDown);
+    expect(r.relegated.esp2).toContain(mid);
+    expect(w.clubs[mid].league).toBe(poolOf('esp2'));
+    expect(Object.keys(w.competitions.esp2.table)).not.toContain(mid);
+    expect(sec.length).toBeGreaterThan(0);
+  }, 120000);
 });

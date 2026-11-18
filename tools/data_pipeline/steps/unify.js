@@ -36,7 +36,9 @@ function unifyNames({ apply = false, log = console.log } = {}) {
   let ok = 0;
   for (const [p, list] of byFile) {
     let text = fs.readFileSync(p, 'utf8');
-    for (const [id, from, to] of list) text = text.split(`"id": "${id}", "name": ${JSON.stringify(from)}`).join(`"id": "${id}", "name": ${JSON.stringify(to)}`);
+    // 한 줄 형식 ("id": …, "name": …) 과 여러 줄 형식 (id 다음 줄에 name) 모두
+    const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    for (const [id, from, to] of list) text = text.replace(new RegExp(`("id": "${esc(id)}",\\s*"name": )${esc(JSON.stringify(from))}`, 'g'), (_, a) => a + JSON.stringify(to));
     const j = JSON.parse(text);   // 형식이 맞는지 확인
     if (j.squad.every((x) => x.name === latest.get(x.id).name)) { fs.writeFileSync(p, text); ok++; }
     else log(`  ⚠ ${path.relative(SEASONS_DIR, p)}: 줄 형식이 달라 건너뜀`);

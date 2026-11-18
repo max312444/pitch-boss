@@ -8,6 +8,24 @@ import { useWorld } from '../hooks';
 import { boardEventText, boardTag } from '../components/BoardEventModal';
 import { SCANDAL_KO, SCANDAL_TITLE } from '../../engine/scandal';
 import { COMP_TONE, compKind } from '../components/bits';
+import { overall } from '../../engine/ratings';
+
+/** 이적 어필: 떠나려는 이유 (지금 구단과의 갈등) + 겨룰 우리 주전 */
+function appealWhy(w: World, id: string, rival?: string, to?: string): string {
+  const p = w.players[id];
+  if (!p) return '';
+  const why: string[] = [];
+  if (p.saga?.kind === 'move' && p.saga.club === p.clubId) why.push('지금 구단에 이적을 요청한 상태');
+  else if (p.unhappy || p.benchStreak >= 4) why.push(p.benchStreak >= 4 ? `${p.benchStreak}경기 연속 벤치라 출전 시간에 불만` : '출전 시간에 불만');
+  else if (p.loyalty < 40) why.push('지금 구단에 대한 애정이 식음');
+  if (p.contract && p.contract <= `${+w.season.slice(0, 4) + 1}-06-30`) why.push('계약이 이번 시즌에 끝남');
+  const r = rival ? w.players[rival] : null;
+  const fight = to ? `${clubKo(to)}에서 주전 경쟁을 해 보고 싶다고 합니다`   // 우리 선수가 다른 구단에 연락
+    : r && r.clubId === w.userClubId
+    ? `${playerKo(r.id, r.name)}(능력 ${overall(r)})와 주전 경쟁을 하겠다고 합니다 (본인 ${overall(p)})`
+    : `우리 팀 ${p.pos} 자리가 비어 있어 주전으로 뛸 수 있다고 봅니다 (능력 ${overall(p)})`;
+  return `${why.length ? why.join(' · ') + ' · ' : ''}${fight}. `;
+}
 
 export function describe(e: GameEvent, w: World): { tag: string; tone: string; title: string; body?: string } {
   switch (e.type) {
@@ -28,6 +46,7 @@ export function describe(e: GameEvent, w: World): { tag: string; tone: string; t
       return { tag: '이적', tone: e.user ? 'text-neon' : 'text-sky', title: `${name} · ${from} → ${clubKo(e.to)}`, body: e.fee > 0 ? `이적료 ${money(e.fee)}` : '이적료 없음 (자유계약)' };
     }
     case 'offer':
+      if (e.appeal) { const n = playerKo(e.player, w.players[e.player]?.name ?? e.player); const c = clubKo(e.from); return { tag: '제안', tone: 'text-amber', title: `${n} — ${c}에 직접 이적 의사를 전했습니다`, body: `${appealWhy(w, e.player, undefined, e.from)}${c}${josa(c, '이', '가')} 이적료 ${money(e.fee)}를 제안했습니다 · 이적 화면 '받은 제안'에서 수락 · 거절 · 역제안 (거절하면 선수가 더 실망할 수 있습니다)` }; }
       return { tag: '제안', tone: 'text-amber', title: `${playerKo(e.player, w.players[e.player]?.name ?? e.player)} 영입 제안 · ${clubKo(e.from)}`, body: `이적료 ${money(e.fee)} · 이적 화면 '받은 제안'에서 수락 · 거절 · 역제안` };
     case 'clause': {
       const name = playerKo(e.player, w.players[e.player]?.name ?? e.player);
@@ -126,7 +145,7 @@ export function describe(e: GameEvent, w: World): { tag: string; tone: string; t
       const p = w.players[e.player];
       const name = playerKo(e.player, p?.name ?? e.player);
       const full = p ? wageDemand(w, p) : 0, cut = p ? wageDemand(w, p, w.userClubId) : 0;
-      return { tag: '어필', tone: 'text-neon', title: `${name}(${clubKo(e.club)}) — 우리 구단으로 오고 싶다고 연락해 왔습니다`, body: `에이전트: 주급은 덜 받아도 된다고 합니다 (원래 ${money(full)} → ${money(cut)}). 이적료는 ${clubKo(e.club)}와 협상해야 합니다 · ${e.until.slice(5).replace('-', '.')}까지 · 관심 목록에 넣어 두었습니다` };
+      return { tag: '어필', tone: 'text-neon', title: `${name}(${clubKo(e.club)}) — 우리 구단으로 오고 싶다고 연락해 왔습니다`, body: `${appealWhy(w, e.player, e.rival)}에이전트: 주급은 덜 받아도 된다고 합니다 (원래 ${money(full)} → ${money(cut)}). 이적료는 ${clubKo(e.club)}와 협상해야 합니다 · ${e.until.slice(5).replace('-', '.')}까지 · 관심 목록에 넣어 두었습니다` };
     }
     case 'shortlist': {
       const name = playerKo(e.player, w.players[e.player]?.name ?? e.player);

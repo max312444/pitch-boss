@@ -35,14 +35,32 @@ async function searchClub(name, opts) {
 }
 
 // 구단의 모든 선수 소속 기록 (1999년 이후 끝났거나 아직 진행 중인 것). 구단당 요청 1번.
+//  응답이 잘리면 (선수가 아주 많은 오래된 구단) 진행 중인 소속 + 끝난 연도 구간으로 나눠 다시 받는다 (구간은 계속 반씩)
 async function clubMemberships(clubQid, opts) {
+  const ask = (filter) => clubMembershipRows(clubQid, filter, opts);
+  const truncated = (e) => /잘린 응답/.test(e.message);
+  try { return await ask('FILTER(!BOUND(?end) || YEAR(?end) >= 1999)'); } catch (e) { if (!truncated(e)) throw e; }
+  const rows = [...await ask('FILTER(!BOUND(?end))')];
+  const range = async (lo, hi) => {
+    try { rows.push(...await ask(`FILTER(BOUND(?end) && YEAR(?end) >= ${lo} && YEAR(?end) <= ${hi})`)); } catch (e) {
+      if (!truncated(e) || lo >= hi) throw e;
+      const mid = Math.floor((lo + hi) / 2);
+      await range(lo, mid); await range(mid + 1, hi);
+    }
+  };
+  await range(1999, new Date().getFullYear() + 6);
+  console.log(`  ${clubQid}: 응답이 커서 연도 구간으로 나눠 받음 (${rows.length}줄)`);
+  return rows;
+}
+
+async function clubMembershipRows(clubQid, filter, opts) {
   const rows = await sparql(`
     SELECT ?p ?label ?title ?dob ?dobPrec ?start ?sp ?end ?ep ?num ?apps WHERE {
       ?p p:P54 ?st . ?st ps:P54 wd:${clubQid} .
       ?p wdt:P21 wd:Q6581097 .
       OPTIONAL { ?st pqv:P580 ?sv . ?sv wikibase:timeValue ?start ; wikibase:timePrecision ?sp . }
       OPTIONAL { ?st pqv:P582 ?ev . ?ev wikibase:timeValue ?end ; wikibase:timePrecision ?ep . }
-      FILTER(!BOUND(?end) || YEAR(?end) >= 1999)
+      ${filter}
       OPTIONAL { ?st pq:P1618 ?num }
       OPTIONAL { ?st pq:P1350 ?apps }
       OPTIONAL { ?p p:P569/psv:P569 ?dv . ?dv wikibase:timeValue ?dob ; wikibase:timePrecision ?dobPrec . }

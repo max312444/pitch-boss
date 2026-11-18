@@ -133,6 +133,9 @@ function autosave(w: World, force = false) {
   autoTimer = setTimeout(() => { writeSave('auto', w).catch((e) => console.error('자동 저장 실패', e)); }, 800);
 }
 
+/** 구단 정보의 B팀 → 모구단 (승격 제한 규칙용) */
+const reservesOf = (): Record<string, string> => Object.fromEntries([...clubMasters.values()].filter((m) => m.parent).map((m) => [m.id, m.parent!]));
+
 /** 경기 전 스쿼드 설정 (AI 추천으로 시작, 사용자가 수정) */
 /** 이벤트 선택 결과 (팝업 자리에 이어서 보여 줌) */
 export interface EventResult { tag: string; tone: string; choice?: string; lines: string[]; next?: string }
@@ -363,6 +366,7 @@ export const useGame = create<GameStore>((set, get) => {
       else { academySeason(world, season); registerGeneratedNames(Object.fromEntries((world.academy?.players ?? []).map((x) => [x.id, x]))); }   // 내 구단 유스 아카데미 첫 유망주 (한국어 이름 등록)
       registerGeneratedNames(world.managers ?? {});   // 가상 감독 한국어 이름
       world.dataset = dataset;
+      world.reserves = reservesOf();   // B팀 → 모구단 (승격 제한)
       world.careerId = newCareerId();
       // 베테랑 · 스타 선수 시작 호칭 (실제 시즌 기록 기준)
       const hist = await loadHistory();
@@ -1094,7 +1098,10 @@ export const useGame = create<GameStore>((set, get) => {
       const o = (w.offers ?? []).find((x) => x.id === offerId);
       if (!o || !offerValid(w, o)) { cleanOffers(w); w.offers = (w.offers ?? []).filter((x) => x.id !== offerId); bump(); return '이미 끝난 제안입니다 (선수가 팀을 떠났거나 기한 · 이적시장이 끝났습니다)'; }
       w.offers = (w.offers ?? []).filter((x) => x.id !== offerId);
-      const msg = accept ? sellTo(o).msg : '제안을 거절했습니다';
+      let msg = accept ? sellTo(o).msg : '제안을 거절했습니다';
+      // 선수가 먼저 그 구단에 연락해서 온 제안을 거절: 선수가 실망 (충성도 · 사기 ↓)
+      const p = w.players[o.player];
+      if (!accept && o.appeal && p) { p.loyalty = Math.max(0, p.loyalty - 8); p.morale = Math.max(0, p.morale - 6); msg += ` · ${playerKo(p.id, p.name)} 선수가 크게 실망했습니다`; }
       autosave(w);
       bump();
       return msg;
@@ -1201,6 +1208,7 @@ export const useGame = create<GameStore>((set, get) => {
       fillContracts(world);
       registerGeneratedNames({ ...world.players, ...Object.fromEntries((world.academy?.players ?? []).map((x) => [x.id, x])) });   // 유스 선수 한국어 이름
       ensureManagers(world);   // 감독이 없던 예전 세이브: 가상 감독으로 채움
+      world.reserves = reservesOf();   // B팀 → 모구단 (예전 세이브에도 채움)
       if (academyOn(world) && world.academy?.club !== world.userClubId) academySeason(world, world.season);   // 유스 아카데미가 없던 세이브
       syncWorld(world);
       set({ world, match: null, lastEvents: [], seasonReport: null });

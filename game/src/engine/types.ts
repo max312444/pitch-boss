@@ -265,7 +265,7 @@ export type GameEvent =
   /** 스폰서: 제안 도착 · 계약 · 자동 계약 · 성과 보너스 */
   | { type: 'sponsor'; date: string; kind: 'offers' | 'signed' | 'auto' | 'bonus'; slot: import('./sponsors').SponsorSlot; name?: string; amount?: number }
   /** 이적 어필: 우리 구단에 오고 싶다는 선수 (appeal.ts) */
-  | { type: 'appeal'; date: string; player: string; club: string; until: string }
+  | { type: 'appeal'; date: string; player: string; club: string; until: string; /** 겨룰 우리 주전 (없으면 빈 자리) */ rival?: string }
   | { type: 'shortlist'; date: string; player: string; kind: 'bargain' | 'free' | 'bosman' | 'expiring'; club?: string | null }
   /** 감독: 제안 · 재계약 · 경질 · 이동 · 따라오는 선수 */
   /** AI 구단 감독 교체 (season: 시즌 중 경질 · end: 시즌 끝 교체), news = 받은편지함에 남길 만한 소식 */
@@ -282,7 +282,7 @@ export type GameEvent =
   | { type: 'board'; date: string; kind: import('./boardEvents').BoardEventKind | 'ownerRich' | 'ownerCut'; player?: string }
   | { type: 'manager'; date: string; kind: 'offer' | 'renew' | 'norenew' | 'renewed' | 'sacked' | 'expired' | 'moved' | 'follow' | 'followDone' | 'followFail'; club: string; from?: string; years?: number; players?: string[]; fee?: number }
   | { type: 'transfer'; date: string; player: string; from: string | null; to: string; fee: number; user: boolean }
-  | { type: 'offer'; date: string; player: string; from: string; fee: number }
+  | { type: 'offer'; date: string; player: string; from: string; fee: number; /** 우리 선수가 먼저 그 구단에 연락해서 온 제안 (이적 어필) */ appeal?: boolean }
   /** 다른 구단이 내 선수의 바이아웃을 내고 데려감 */
   | { type: 'buyout'; date: string; player: string; to: string; fee: number }
   /** 보스만 사전 계약 (내 선수가 해외 구단과 · 또는 내가 영입) */
@@ -313,6 +313,8 @@ export interface TransferOffer {
   id: string;
   player: string;
   from: string;      // 제안한 구단
+  /** 우리 선수가 먼저 연락해서 온 제안 (거절하면 선수가 실망) */
+  appeal?: boolean;
   fee: number;
   date: string;
   expires: string;
@@ -343,6 +345,8 @@ export interface World {
   version: typeof WORLD_VERSION;
   seed: number;
   rng: number;               // 난수 상태 (이어서 진행용)
+  /** B팀 (리저브) → 모구단. 모구단이 1부에 있으면 1부로 승격할 수 없다 (게임 시작 · 불러오기 때 구단 정보에서 채움) */
+  reserves?: Record<string, string>;
   /** 지난 시즌 내 구단 리그 상금 */
   lastPrize?: number;
   /** 지난 시즌 말 사라진 내 선수 호칭 */

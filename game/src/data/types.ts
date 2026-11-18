@@ -53,6 +53,8 @@ export interface ClubMaster {
   founded?: number;
   kits?: { home: Kit; away?: Kit };
   rivals?: string[];
+  /** B팀 (리저브) 의 모구단 ID: 모구단이 1부에 있으면 1부로 승격할 수 없다 */
+  parent?: string;
   /** 경기장 이름 (나의 구단) */
   stadiumName?: string;
   /** 직접 넣은 로고 이미지 (data URL, 나의 구단) */
