@@ -44,7 +44,7 @@ export function IntlNewGame() {
   return (
     <div className="flex h-full animate-[fade_0.3s_ease-out] flex-col overflow-y-auto bg-ink-950 pb-[env(safe-area-inset-bottom)] lg:flex-row lg:overflow-hidden lg:pb-0">
       <aside className="flex w-full shrink-0 flex-col border-b border-line bg-ink-900 px-4 pt-[max(16px,env(safe-area-inset-top))] pb-5 lg:w-[260px] lg:border-r lg:border-b-0 lg:px-7 lg:py-8">
-        <button onClick={() => go('title')} className="mb-4 flex items-center gap-2 text-[13px] text-lo hover:text-hi lg:mb-10"><Icon name="back" size={15} /> 메인 메뉴</button>
+        <button onClick={() => go('title')} className="tap mb-4 flex items-center gap-2 text-[13px] text-lo hover:text-hi lg:mb-10"><Icon name="back" size={15} /> 메인 메뉴</button>
         <h1 className="mt-2 text-[22px] font-semibold lg:text-[26px]">새 게임</h1>
         <div className="mt-3 inline-flex w-fit rounded-md bg-neon-ghost px-2.5 py-1 text-[12px] font-semibold text-neon">세계 대회 모드</div>
         <div className="mt-1.5 text-[11px] leading-relaxed text-lo">대표팀 감독이 되어 예선 → 본선 → 다음 세계 대회를 이어 갑니다. 이적시장은 없고 대표 소집 · 전술만 다룹니다.</div>

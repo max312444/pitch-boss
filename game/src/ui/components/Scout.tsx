@@ -100,7 +100,7 @@ export function ScoutBox({ p }: { p: PlayerState }) {
       {league && k < 65 && (ljob
         ? <div className="mt-1.5 text-lo">{compKo(league)} 전체 관찰 중 · {left(ljob.done)}일 뒤</div>
         : !w.scout?.jobs.some((j) => j.kind === 'league') && (
-          <button onClick={() => { const r = scout('league', league); if (!r.ok) alert(r.reason); }} className="mt-1.5 w-full text-left text-lo hover:text-hi">
+          <button onClick={() => { const r = scout('league', league); if (!r.ok) alert(r.reason); }} className="tap mt-1.5 w-full text-left text-lo hover:text-hi">
             또는 {compKo(league)} 전체 관찰 · {money(scoutCost(w, 'league'))} · 28일 →
           </button>))}
     </div>

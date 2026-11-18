@@ -110,7 +110,7 @@ function ClubNewGame() {
     <div className="flex h-full animate-[fade_0.3s_ease-out] flex-col overflow-y-auto bg-ink-950 pb-[env(safe-area-inset-bottom)] lg:flex-row lg:overflow-hidden lg:pb-0">
       {/* 왼쪽: 단계 */}
       <aside className="flex w-full shrink-0 flex-col border-b border-line bg-ink-900 px-4 pt-[max(16px,env(safe-area-inset-top))] pb-5 lg:w-[260px] lg:border-r lg:border-b-0 lg:px-7 lg:py-8">
-        <button onClick={() => go('title')} className="mb-4 flex items-center gap-2 text-[13px] text-lo hover:text-hi lg:mb-10">
+        <button onClick={() => go('title')} className="tap mb-4 flex items-center gap-2 text-[13px] text-lo hover:text-hi lg:mb-10">
           <Icon name="back" size={15} /> 메인 메뉴
         </button>
         <h1 className="mt-2 text-[22px] font-semibold lg:text-[26px]">새 게임</h1>
@@ -318,7 +318,7 @@ function TakeoverPick({ onPick, onBack }: { onPick: (t: 'plain' | 'invest') => v
   );
   return (
     <div className="flex h-full animate-[fade_0.3s_ease-out] flex-col overflow-y-auto bg-ink-950 px-4 pt-[max(16px,env(safe-area-inset-top))] pb-[max(24px,env(safe-area-inset-bottom))] lg:px-10 lg:py-10">
-      <button onClick={onBack} className="flex w-fit items-center gap-2 text-[13px] text-lo hover:text-hi"><Icon name="back" size={15} /> 메인 메뉴</button>
+      <button onClick={onBack} className="tap flex w-fit items-center gap-2 text-[13px] text-lo hover:text-hi"><Icon name="back" size={15} /> 메인 메뉴</button>
       <div className="mx-auto mt-6 w-full max-w-[920px] lg:mt-12">
         <div className="inline-flex rounded-md bg-neon-ghost px-2.5 py-1 text-[12px] font-semibold text-neon">나의 구단 모드</div>
         <h1 className="mt-3 text-[24px] font-semibold lg:text-[30px]">어떻게 인수할까요?</h1>

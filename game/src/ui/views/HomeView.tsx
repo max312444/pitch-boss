@@ -65,7 +65,7 @@ export function objective(rank: number, n: number, level = 1) {
 }
 
 const ActionLink = ({ onClick, children }: { onClick: () => void; children: React.ReactNode }) => (
-  <button onClick={onClick} className="text-[12px] text-lo transition-colors hover:text-hi">{children}</button>
+  <button onClick={onClick} className="tap text-[12px] text-lo transition-colors hover:text-hi">{children}</button>
 );
 const Row = ({ children }: { children: React.ReactNode }) => (
   <div className="flex items-center gap-3 px-5 py-3 text-[13px] shadow-[inset_0_-1px_0_var(--color-line)] last:shadow-none">{children}</div>

@@ -100,7 +100,7 @@ function ClubModal() {
           <Crest clubId={c.id} size={44} />
           <div className="min-w-0 flex-1">
             <div className="flex min-w-0 flex-wrap items-center"><span className="min-w-0 truncate text-[20px] font-semibold">{clubKo(c.id)}</span>{c.id === w.userClubId && <span className="ml-2 shrink-0 text-[12px] text-neon">내 구단</span>}<NameEdit kind="clubs" id={c.id} current={clubKo(c.id)} /></div>
-            <button onClick={() => openTable(c.league)} className="text-[12px] text-lo hover:text-hi">{lg} · 순위 보기</button>
+            <button onClick={() => openTable(c.league)} className="tap text-[12px] text-lo hover:text-hi">{lg} · 순위 보기</button>
           </div>
           <dl className="order-last flex w-full justify-around gap-5 text-center text-[12px] text-lo sm:order-none sm:w-auto sm:justify-start">
             <div><dd className="tnum text-[18px] font-semibold text-hi">{lv}</dd><dt>주전 평균</dt></div>

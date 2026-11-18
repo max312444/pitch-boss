@@ -9,7 +9,7 @@ export function NameEdit({ kind, id, current }: { kind: NameKind; id: string; cu
   const [short, setShort] = useState(c?.short ?? '');
   if (!open) return (
     <button onClick={(e) => { e.stopPropagation(); setName(c?.name ?? current); setShort(c?.short ?? ''); setOpen(true); }} title="이름 바꾸기 (이 기기에만 저장)"
-      className="ml-1.5 inline-grid h-6 w-6 place-items-center rounded-md align-middle text-[13px] text-lo hover:bg-ink-800 hover:text-hi">✎</button>
+      className="tap ml-1.5 inline-grid h-6 w-6 place-items-center rounded-md align-middle text-[13px] text-lo hover:bg-ink-800 hover:text-hi">✎</button>
   );
   const save = async (v: { name: string; short?: string } | null) => { await setCustomName(kind, id, v); setOpen(false); };
   return (

@@ -2,6 +2,12 @@
 @import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
 @import '@fontsource-variable/jetbrains-mono/wght.css';
 
+/* 터치 화면: 작은 글자 버튼 (표 머리 정렬 · 전체 보기 · 메인 메뉴 …) 의 누르는 영역만 넓힌다. 보이는 크기 · 배치는 그대로 */
+@media (pointer: coarse) {
+  .tap:not(.absolute):not(.fixed) { position: relative; }
+  .tap::after { content: ''; position: absolute; inset: -11px -6px; }
+}
+
 /* ── 디자인 토큰 ─────────────────────────────────────────────
    세계: 야간 경기장. 바탕은 거의 무채색 검정, 네온 그린은 LED 전광판 색.
    네온은 진행 버튼 · 점수판 · 전술 피치 · 높은 수치에만. 빛 번짐 효과는 쓰지 않는다.

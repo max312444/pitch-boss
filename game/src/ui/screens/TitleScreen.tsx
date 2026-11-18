@@ -152,7 +152,7 @@ export function TitleScreen() {
       {helpOpen && <HelpDialog onClose={() => setHelpOpen(false)} />}
       {intro && <IntroScreen onClose={() => { setIntro(false); setNotice((n) => n ?? 'first'); }} />}   {/* 인트로가 끝나면 바로 고지 */}
       {!intro && (
-        <button onClick={() => setIntro(true)} className="absolute top-[max(16px,env(safe-area-inset-top))] right-4 z-10 text-[11px] text-lo transition-colors hover:text-mid sm:top-auto sm:right-8 sm:bottom-6">인트로 다시 보기</button>
+        <button onClick={() => setIntro(true)} className="tap absolute top-[max(16px,env(safe-area-inset-top))] right-4 z-10 text-[11px] text-lo transition-colors hover:text-mid sm:top-auto sm:right-8 sm:bottom-6">인트로 다시 보기</button>
       )}
       {notice && !intro && <NoticeDialog confirmLabel={notice === 'start' ? '확인하고 시작' : notice === 'first' ? '확인' : '닫기'} onClose={() => { const n = notice; setNotice(null); if (n === 'start') setModeOpen(true); }} />}
       {modeOpen && <ModePicker onClose={() => setModeOpen(false)} onPick={(m) => { setNewMode(m); setModeOpen(false); go('newgame'); }} />}

@@ -149,7 +149,7 @@ export function TacticsView() {
             <span className="flex items-center gap-2"><span className="inline-block h-3 w-3 rounded-full ring-1 ring-mid/40" />자동 선택</span>
           </span>
           <span className="flex gap-4">
-            <button onClick={fixAll} className="text-mid transition-colors hover:text-hi">현재 선발 고정</button>
+            <button onClick={fixAll} className="tap text-mid transition-colors hover:text-hi">현재 선발 고정</button>
             <button onClick={() => setLineup(null)} disabled={!club.lineup} className="text-mid transition-colors hover:text-hi disabled:opacity-40">모두 자동으로</button>
           </span>
         </div>
@@ -206,7 +206,7 @@ export function TacticsView() {
               <div className="border-t border-line px-4 py-3">
                 <div className="mb-2 flex items-center justify-between text-[12px] text-lo">
                   <span>내 포메이션</span>
-                  {Object.keys(w.customFormations ?? {}).length < MAX_CUSTOM && <button onClick={() => setEditor({})} className="text-neon hover:underline">+ 만들기</button>}
+                  {Object.keys(w.customFormations ?? {}).length < MAX_CUSTOM && <button onClick={() => setEditor({})} className="tap text-neon hover:underline">+ 만들기</button>}
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {Object.keys(w.customFormations ?? {}).map((f) => (
