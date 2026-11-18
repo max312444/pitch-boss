@@ -39,3 +39,23 @@ describe('자유계약 선수', () => {
     expect(young.retired).toBeFalsy();
   });
 });
+
+describe('임대 선수 방출', () => {
+  it('빌린 구단이 내보내면 무소속이 아니라 원소속 구단으로 돌아간다', () => {
+    const w = createWorld(load('2025-26', ['eng1']), LIV, 3);
+    const [a, b] = Object.keys(w.clubs).filter((id) => id !== LIV);
+    const p = w.players[w.clubs[a].squad[5]];
+    // a → b 임대
+    w.clubs[a].squad = w.clubs[a].squad.filter((id) => id !== p.id);
+    w.clubs[a].loanedOut = [p.id];
+    w.clubs[b].squad.push(p.id);
+    p.clubId = b;
+    p.loan = { from: a, until: '2026-06-30', share: 0.5, fee: 0, start: w.date };
+    releasePlayer(w, p);
+    expect(p.clubId).toBe(a);
+    expect(p.loan).toBeUndefined();
+    expect(w.clubs[a].squad).toContain(p.id);
+    expect(w.clubs[b].squad).not.toContain(p.id);
+    expect(w.clubs[a].loanedOut).not.toContain(p.id);
+  });
+});

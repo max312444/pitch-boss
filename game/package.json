@@ -1,7 +1,7 @@
 {
   "name": "pitch-boss",
   "private": true,
-  "version": "2.9.2",
+  "version": "2.9.4",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,6 +12,7 @@
     "sim": "vite-node scripts/sim.ts --",
     "fairness": "vite-node scripts/fairness.ts --",
     "economy": "vite-node scripts/economy.ts --",
+    "invariants": "vite-node scripts/invariants.ts --",
     "history": "vite-node scripts/history.ts --"
   },
   "dependencies": {

@@ -278,9 +278,21 @@ export function completeTransfer(w: World, p: PlayerState, to: string, fee: numb
 
 export function releasePlayer(w: World, p: PlayerState): void {
   if (!p.clubId) return;
-  p.sellOn = undefined; p.addOn = undefined;   // 방출하면 이적 조건도 끝
   w.offers = (w.offers ?? []).filter((o) => o.player !== p.id);
   const c = w.clubs[p.clubId];
+  // 임대로 온 선수: 빌린 구단이 내보내면 원소속 구단으로 돌아간다 (계약은 원소속 구단 것이라 그대로)
+  if (p.loan) {
+    const parent = w.clubs[p.loan.from];
+    p.loan = undefined;
+    if (parent) {
+      c.squad = c.squad.filter((id) => id !== p.id); c.lineup = null;
+      parent.loanedOut = (parent.loanedOut ?? []).filter((id) => id !== p.id);
+      parent.squad.push(p.id); parent.lineup = null;
+      p.clubId = parent.id;
+      return;
+    }
+  }
+  p.sellOn = undefined; p.addOn = undefined;   // 방출하면 이적 조건도 끝
   c.squad = c.squad.filter((id) => id !== p.id);
   p.clubId = null;
   p.contract = null;

@@ -34,6 +34,9 @@ type Group = 'ALL' | 'GK' | 'DF' | 'MF' | 'FW';
 /** 세부 포지션 (여러 개 골라서 보기) */
 const POS_CHIPS: Position[] = ['GK', 'CB', 'LB', 'RB', 'LWB', 'RWB', 'DM', 'CM', 'AM', 'LM', 'RM', 'LW', 'RW', 'ST'];
 
+/** 터치 화면 (태블릿 · 휴대폰): 표의 구단 이름을 눌러도 필터를 걸지 않고 줄을 누른 것처럼 선수 정보를 연다 (손가락으로는 구단 칸만 정확히 누르기 어려움) */
+const touchOnly = () => typeof window !== 'undefined' && !!window.matchMedia?.('(hover: none) and (pointer: coarse)').matches;
+
 export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
   const w = useWorld();
   const preset = useApp((s) => s.transferPreset);
@@ -292,7 +295,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
                     <td className="px-2"><PosTag pos={p.pos} /></td>
                     <td className="tnum hidden px-2 text-right text-mid lg:table-cell">{age}</td>
                     <td className="tnum hidden px-2 text-right text-lo xl:table-cell">{heightOf(p)}</td>
-                    <td className="hidden px-3 lg:table-cell"><span className="flex items-center gap-2">{p.clubId ? <button title={p.clubId === w.userClubId ? '' : '이 구단 선수만 보기'} onClick={(e) => { if (p.clubId === w.userClubId) return; e.stopPropagation(); setTab('search'); pickClub(p.clubId); }} className="flex min-w-0 items-center gap-2 hover:text-hi"><Crest clubId={p.clubId} size={16} /><span className="truncate text-mid underline-offset-2 hover:underline">{clubKo(p.clubId)}</span></button> : <span className="text-sky">소속 없음 · 이적료 없음</span>}</span></td>
+                    <td className="hidden px-3 lg:table-cell"><span className="flex items-center gap-2">{p.clubId ? <button title={p.clubId === w.userClubId ? '' : '이 구단 선수만 보기'} onClick={(e) => { if (p.clubId === w.userClubId || touchOnly()) return; e.stopPropagation(); setTab('search'); pickClub(p.clubId); }} className="flex min-w-0 items-center gap-2 hover:text-hi"><Crest clubId={p.clubId} size={16} /><span className="truncate text-mid underline-offset-2 hover:underline">{clubKo(p.clubId)}</span></button> : <span className="text-sky">소속 없음 · 이적료 없음</span>}</span></td>
                     <td className="px-2 text-right"><OvrText w={w} p={p} /></td>
                     <td className="hidden px-3 lg:table-cell"><TopAttrs w={w} p={p} first={statSort} /></td>
                     <td className="tnum hidden px-3 text-right sm:table-cell">{p.clubId ? money(value) : '–'}</td>
