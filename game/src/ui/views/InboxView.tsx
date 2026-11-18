@@ -192,7 +192,7 @@ export function describe(e: GameEvent, w: World): { tag: string; tone: string; t
       return { tag: '감독', tone: 'text-mid', title: c };
     }
     default:
-      return { tag: '알림', tone: 'text-mid', title: e.text };
+      return { tag: '알림', tone: 'text-mid', title: e.text.replace(/{p:([^}]+)}/g, (_, id: string) => playerKo(id, w.players[id]?.name ?? id)) };   // 엔진 알림의 {p:선수ID} → 한국어 이름
   }
 }
 

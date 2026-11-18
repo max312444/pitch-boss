@@ -70,7 +70,7 @@ export function updatePlaytime(w: World, clubs: string[], minutes: Record<string
         if (p.loyalty < UNHAPPY && !p.unhappy) {
           p.unhappy = true;
           const r = roleOf(w, p);
-          w.inbox.push({ type: 'info', date: w.date, text: `${p.name} — ${p.role && (r === 'key' || r === 'regular') ? `'${ROLE_KO[r]}'로 약속받았는데 ` : ''}출전 시간이 부족하다며 불만을 드러냈습니다 (연속 ${p.benchStreak}경기 결장)` });
+          w.inbox.push({ type: 'info', date: w.date, text: `{p:${p.id}} — ${p.role && (r === 'key' || r === 'regular') ? `'${ROLE_KO[r]}'로 약속받았는데 ` : ''}출전 시간이 부족하다며 불만을 드러냈습니다 (연속 ${p.benchStreak}경기 결장)` });
         } else if (p.loyalty >= UNHAPPY + 10 && p.unhappy) {
           p.unhappy = false;
         }

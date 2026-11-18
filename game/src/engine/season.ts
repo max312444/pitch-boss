@@ -274,9 +274,9 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
     // 강등 임금 삭감 조항: 지난 시즌보다 아래 리그로 내려가면 선수 주급 40% 삭감 (실제 계약의 강등 조항처럼, 모든 구단 같음)
     if (levelOf(club.league) > (prevLevel.get(club.id) ?? levelOf(club.league)))
       for (const id of club.squad) w.players[id].wage = Math.max(500, Math.round((w.players[id].wage * 0.6) / 500) * 500);
-    // 현금을 무한정 쌓지 않는다: 잔고가 연 매출의 60% 를 넘으면 넘는 돈의 60% 는 구단주 배당 · 부채 상환 (모든 구단 같은 규칙)
+    // 현금을 무한정 쌓지 않는다: 잔고가 연 매출의 40% 를 넘으면 넘는 돈의 80% 는 구단주 배당 · 부채 상환 (모든 구단 같은 규칙)
     const rev = clubRevenue(w, club.id);
-    if (w.competitions[club.league] && club.finance.balance > rev * 0.6) book(w, club.id, 'owner', Math.round((club.finance.balance - rev * 0.6) * 0.6));
+    if (w.competitions[club.league] && club.finance.balance > rev * 0.4) book(w, club.id, 'owner', Math.round((club.finance.balance - rev * 0.4) * 0.8));
     const fin = adjust(d ? d.c.finance : club.finance, steps);
     club.sales = 0;   // 재정 규정의 판매 수입은 시즌마다 새로
     if (club.id !== w.userClubId) seasonBudgets(club, fin);

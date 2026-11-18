@@ -419,9 +419,49 @@ export function aiFillSquads(w: World, rng: Rng): GameEvent[] {
   return events;
 }
 
+/** 자유계약 선수 계약 기간: 31세 이상은 1년, 나머지 1~3년 */
+const faYears = (w: World, p: PlayerState, rng: Rng) => (ageOn(p.birth, w.date) >= 31 ? 1 : rng.int(1, 3));
+
+/**
+ * 이적시장 밖: 자유계약 선수는 언제든 계약할 수 있다 (실제 규정). AI 구단은 하루 1.5% 확률로
+ * 선수단이 27명 미만이면 구단 수준에 맞는 FA (−7 ~ +5, 또는 잠재력 있는 21세 이하)를 데려온다
+ */
+export function aiFreeAgentDay(w: World, rng: Rng): GameEvent[] {
+  const events: GameEvent[] = [];
+  const fa = Object.values(w.players).filter((p) => !p.clubId && !p.retired && ageOn(p.birth, w.date) <= 35);
+  if (!fa.length) return events;
+  for (const club of Object.values(w.clubs)) {
+    if (club.id === w.userClubId || !w.competitions[club.league] || club.squad.length >= 27 || !rng.chance(0.015)) continue;
+    const level = clubLevel(w, club.id);
+    const pool = fa.filter((p) => !p.clubId && ((overall(p) >= level - 7 && overall(p) <= level + 5) || (ageOn(p.birth, w.date) <= 21 && (p.potential ?? 0) >= level - 3)))
+      .sort((a, b) => overall(b) - overall(a)).slice(0, 6);
+    for (const p of pool) {
+      const wage = wageDemand(w, p), years = faYears(w, p, rng);
+      if (!canAfford(w, club.id, 0, wage, years) || !playerWillJoin(w, p, club.id, wage).ok) continue;
+      events.push(completeTransfer(w, p, club.id, 0, wage, years));
+      break;
+    }
+  }
+  return events;
+}
+
+/**
+ * 이적시장이 닫히는 날: 끝내 아무도 데려가지 않은 자유계약 선수 정리 (은퇴 · 하부 리그로 떠남)
+ *  33세 이상 · 22세 이상이면서 능력 62 미만 · 21세 이하면서 잠재력 65 미만
+ */
+export function faCleanup(w: World): string[] {
+  const out: string[] = [];
+  for (const p of Object.values(w.players)) {
+    if (p.clubId || p.retired) continue;
+    const age = ageOn(p.birth, w.date), ovr = overall(p);
+    if (age >= 33 || (age >= 22 && ovr < 62) || (age < 22 && (p.potential ?? ovr) < 65)) { p.retired = true; out.push(p.id); }
+  }
+  return out;
+}
+
 export function aiTransferDay(w: World, rng: Rng): GameEvent[] {
   const events: GameEvent[] = aiFillSquads(w, rng);
-  if (!windowOpen(w.season, w.date)) { cleanOffers(w); return events; }
+  if (!windowOpen(w.season, w.date)) { events.push(...aiFreeAgentDay(w, rng)); cleanOffers(w); return events; }
   const active = Object.values(w.clubs).filter((c) => c.id !== w.userClubId && w.competitions[c.league]);
   const players = Object.values(w.players).filter((p) => !p.retired);
   const listed = new Set(w.transferList ?? []);
@@ -432,7 +472,9 @@ export function aiTransferDay(w: World, rng: Rng): GameEvent[] {
   // 후보 몇 명을 보고 예산 · 재정 규정 · 상대 구단 · 선수 마음이 맞는 첫 선수와 계약 (AI · 사용자 같은 규칙)
   const frenzy = windowEnd(w.season, w.date) === w.date ? 3 : 1;   // 데드라인 데이: 막판 영입 3배
   for (const club of active) {
-    if (!rng.chance(0.08 * frenzy)) continue;
+    // 이적 예산이 넉넉한 구단 (€30M 이상)은 더 자주 시도 — 쓸 돈이 있으면 쓴다 (부자 구단 잔고가 끝없이 쌓이지 않게)
+    const rich = club.finance.transferBudget >= 30e6;
+    if (!rng.chance(0.08 * frenzy * (rich ? 2 : 1))) continue;
     if (club.squad.length > 30) {
       const weakest = club.squad.map((id) => w.players[id]).sort((a, b) => overall(a) - overall(b))[0];
       releasePlayer(w, weakest);
@@ -443,21 +485,26 @@ export function aiTransferDay(w: World, rng: Rng): GameEvent[] {
     if (upgrade && club.finance.transferBudget < 1e6) continue;
     const group = need.length ? rng.pick(need) : rng.pick(['DF', 'MF', 'MF', 'FW', 'FW']);
     const level = clubLevel(w, club.id);
-    const [lo, hi] = upgrade ? [level + 1, level + 7] : [level - 8, level + 4];
+    // 전력 보강: 주전 평균보다 나은 선수. 부자 구단은 그 포지션 주전 중 가장 약한 선수 (수비 4 · 미드 3 · 공격 3번째)보다 나으면 산다
+    //  (최상위 구단은 '평균 +1 이상'인 선수가 거의 없어 돈을 못 쓰던 문제)
+    const floor = club.squad.map((id) => w.players[id]).filter((p) => posGroup(p.pos) === group).map(overall).sort((a, b) => b - a)[group === 'DF' ? 3 : 2] ?? 0;
+    const [lo, hi] = upgrade ? [rich ? Math.min(level + 1, floor + 2) : level + 1, level + 7] : [level - 8, level + 4];
     // 인원을 채울 때는 남은 주급 여유를 채울 자리 수로 나눈 만큼 (×1.5) 안의 선수만 — 비싼 선수 한 명에 여유를 다 쓰지 않게
     const perSlot = upgrade ? Infinity : (wageRoom(w, club.id) / Math.max(1, 25 - club.squad.length)) * 1.5;
     const pool = players.filter((p) => posGroup(p.pos) === group && p.clubId !== club.id
       && (p.clubId !== w.userClubId || listed.has(p.id))
-      && overall(p) >= lo && overall(p) <= hi && ageOn(p.birth, w.date) <= 32 && wageDemand(w, p) <= perSlot);
+      && overall(p) >= lo && overall(p) <= hi && ageOn(p.birth, w.date) <= (p.clubId ? 32 : 35) && wageDemand(w, p) <= perSlot);   // 자유계약은 35세까지 (1년 계약)
     if (!pool.length) continue;
     // 이적 명단에 오른 선수는 관심을 더 받는다 (실제 시장처럼)
     const onList = pool.filter((p) => listed.has(p.id));
-    const cands = [...(onList.length && rng.chance(0.45) ? [rng.pick(onList)] : []), ...Array.from({ length: 6 }, () => rng.pick(pool))]
+    // 자유계약 선수는 이적료가 없어 먼저 본다 (실제 시장처럼 쓸 만한 FA 는 빨리 팀을 찾는다)
+    const free = pool.filter((p) => !p.clubId);
+    const cands = [...(free.length && rng.chance(0.6) ? [rng.pick(free)] : []), ...(onList.length && rng.chance(0.45) ? [rng.pick(onList)] : []), ...Array.from({ length: 6 }, () => rng.pick(pool))]
       .sort((a, b) => overall(b) - overall(a));
     for (const target of cands) {
       const fee = target.clubId ? askingPrice(w, target) : 0;
       const wage = wageDemand(w, target);
-      const years = rng.int(2, 5);
+      const years = target.clubId ? rng.int(2, 5) : faYears(w, target, rng);
       if (!canAfford(w, club.id, fee, wage, years)) continue;
       // 전력 보강은 25명까지 채울 주급 여유를 남겨 둘 때만 (값싼 선수 기준)
       if (upgrade && wageRoom(w, club.id) - wage < Math.max(0, 25 - club.squad.length - 1) * wageForAbility(w, level - 8) * 0.6) continue;
@@ -490,5 +537,6 @@ export function aiTransferDay(w: World, rng: Rng): GameEvent[] {
   userOffers(w, rng, active);
   // 기한 지난 제안 정리
   cleanOffers(w);
+  if (windowEnd(w.season, w.date) === w.date) faCleanup(w);   // 마감일: 아무도 데려가지 않은 FA 정리
   return events;
 }

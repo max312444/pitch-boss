@@ -39,7 +39,7 @@ export function approvalChance(w: World, a: BoardAsk): number {
   let p = a.kind === 'facility' ? 0.6 : a.kind === 'transfer' ? 0.5 : 0.45;
   p += ((rel - 50) / 50) * 0.3;                         // 관계
   p += ((m.confidence - 50) / 50) * 0.15;               // 성적
-  p += clamp(c.finance.balance / rev, -0.5, 0.6) * 0.3;  // 재정 (잔고가 매출의 60% 이상이면 최대)
+  p += clamp(c.finance.balance / rev, -0.5, 0.45) * 0.4;  // 재정 (잔고가 매출의 45% 이상이면 최대 — 시즌마다 40% 넘는 돈은 배당으로 나가므로)
   p -= askSize(w, a) * (a.kind === 'facility' ? 1.2 : 2.2);   // 요구가 클수록
   const recent = (m.denials ?? []).filter((d) => daysBetween(d, w.date) < 90).length;
   p -= recent * 0.12;                                   // 최근 거절이 잦으면

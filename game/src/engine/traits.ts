@@ -234,7 +234,7 @@ export function traitMonth(w: World, rng: Rng): GameEvent[] {
       p.traits.push(t.id);
       if (t.id === 'legend' || t.id === 'oneclub') p.loyalty = 100;
       if (t.id === 'flop') p.morale = Math.max(0, p.morale - 15);
-      if (p.clubId === w.userClubId) events.push({ type: 'info', date: w.date, text: `${p.name} 선수에게 호칭 「${t.ko}」${eunNeun(t.ko)} 붙었습니다 — ${t.how}` });
+      if (p.clubId === w.userClubId) events.push({ type: 'info', date: w.date, text: `{p:${p.id}} 선수에게 호칭 「${t.ko}」${eunNeun(t.ko)} 붙었습니다 — ${t.how}` });
       break;    // 한 달에 하나까지
     }
   }
@@ -261,20 +261,20 @@ export function traitSeasonEnd(w: World, rng: Rng): string[] {
       if (t.permanent) return true;
       if (t.id === 'decline') {
         if (c.ovr < c.peak - 3) return true;
-        if (mine) notes.push(`${p.name} — 기량을 되찾아 「하락세」에서 벗어났습니다`);
+        if (mine) notes.push(`{p:${p.id}} — 기량을 되찾아 「하락세」에서 벗어났습니다`);
         return false;
       }
       if (t.check(p, c)) return true;
       const styleOk = t.style ? t.style(p, c.group, 4) : null;
       if (styleOk === true && c.ovr > c.peak - 6) return true;
       const gone = rng.chance(styleOk === null ? 0.4 : 0.7);
-      if (gone && mine) notes.push(`${p.name} — 「${t.ko}」${eulReul(t.ko)} 잃었습니다 (${c.age >= 30 && c.ovr <= c.peak - 4 ? '나이로 인한 기량 저하' : styleOk === false ? '플레이 스타일 변화' : '활약이 이어지지 않음'})`);
+      if (gone && mine) notes.push(`{p:${p.id}} — 「${t.ko}」${eulReul(t.ko)} 잃었습니다 (${c.age >= 30 && c.ovr <= c.peak - 4 ? '나이로 인한 기량 저하' : styleOk === false ? '플레이 스타일 변화' : '활약이 이어지지 않음'})`);
       return !gone;
     });
     const dec = TRAIT.get('decline')!;
     if (p.traits.length < MAX_TRAITS && canTake(p, dec) && dec.check(p, c) && rng.chance(0.5)) {
       p.traits.push('decline');
-      if (mine) notes.push(`${p.name} — 「하락세」 (전성기 ${c.peak} → 현재 ${c.ovr})`);
+      if (mine) notes.push(`{p:${p.id}} — 「하락세」 (전성기 ${c.peak} → 현재 ${c.ovr})`);
     }
   }
   for (const n of notes) w.inbox.push({ type: 'info', date: w.date, text: `호칭 변화 · ${n}` });
