@@ -3,7 +3,8 @@ import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createWorld, type SeasonInput } from './world';
-import { acceptOffer, boardTarget, chooseJob, declineOffer, ensureManager, managerDay, managerNewSeason, moveTo } from './manager';
+import { acceptOffer, boardTarget, chooseJob, declineOffer, ensureManager, managerDay, managerNewSeason, managerSeasonEnd, moveTo } from './manager';
+import { sortTable } from './standings';
 import { createRng } from './rng';
 import { overall } from './ratings';
 import type { ClubSeasonFile, LeagueSeasonFile } from '../data/types';
@@ -122,5 +123,55 @@ describe('감독', () => {
       }
     }
     expect(follow.length).toBeGreaterThan(0);
+  });
+
+  describe('강등 · 경질', () => {
+    // 우리 구단을 pos 위로 놓고 시즌 끝 판정
+    const end = (w: ReturnType<typeof fresh>, club: string, pos: number) => {
+      forcePos(w, club, pos);
+      const lg = w.clubs[club].league;
+      return managerSeasonEnd(w, [{ season: w.season, league: lg, table: sortTable(w.competitions[lg].table), champion: '', topScorer: null }]);
+    };
+    const second = () => { const w = createWorld(load('2025-26', ['esp1', 'esp2']), 'x', 11); const id = Object.keys(w.competitions.esp2.table)[0]; return { w: createWorld(load('2025-26', ['esp1', 'esp2']), id, 11), id }; };
+
+    it('1부 강등 + 이사회와 사이가 나쁘면 바로 경질 (이유가 받은편지함에)', () => {
+      const w = fresh(); const m = ensureManager(w);
+      m.relation = 30;
+      expect(end(w, LIV, 20)?.relegated).toBe(true);
+      expect(m.sackAtEnd).toBe(true);
+      w.season = '2026-27';
+      const ev = managerNewSeason(w, createRng(1));
+      expect(ev.some((e) => e.type === 'manager' && e.kind === 'sacked')).toBe(true);
+      expect(ev.some((e) => e.type === 'info' && e.text.includes('이사회와의 관계'))).toBe(true);
+    });
+
+    it('1부 강등이어도 이사회와 사이가 좋고 신뢰가 남아 있으면 경질 안 됨', () => {
+      const w = fresh(); const m = ensureManager(w);
+      m.relation = 80; m.confidence = 100;
+      end(w, LIV, 20);
+      expect(m.sackAtEnd).toBeFalsy();
+    });
+
+    it('2부 강등권: 처음엔 마지막 기회 (잔류 · 벌칙), 다음 시즌도 강등권이면 확실히 경질', () => {
+      const { w, id } = second(); const m = ensureManager(w);
+      m.relation = 60; m.confidence = 30;
+      const n = Object.keys(w.competitions.esp2.table).length;
+      end(w, id, n);
+      expect(m.sackAtEnd).toBeFalsy();
+      expect(m.dropSeason).toBe('2025-26');
+      expect(m.relation).toBeLessThan(60);
+      // 다음 시즌도 강등권
+      w.season = '2026-27'; m.confidence = 100; m.relation = 90;
+      end(w, id, n);
+      expect(m.sackAtEnd).toBe(true);
+      expect(m.sackWhy).toContain('두 시즌 연속');
+    });
+
+    it('2부 강등권 + 이사회와 사이가 나쁘면 처음이라도 경질', () => {
+      const { w, id } = second(); const m = ensureManager(w);
+      m.relation = 30;
+      end(w, id, Object.keys(w.competitions.esp2.table).length);
+      expect(m.sackAtEnd).toBe(true);
+    });
   });
 });

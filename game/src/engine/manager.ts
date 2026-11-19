@@ -6,7 +6,8 @@ import type { GameEvent, PlayerState, SeasonRecord, World } from './types';
 import type { Rng } from './rng';
 import { overall } from './ratings';
 import { sortTable } from './standings';
-import { levelOf } from './pyramid';
+import { levelOf, nationOf, pairRule } from './pyramid';
+import { relationOf } from './board';
 import { ageOn } from './condition';
 import { hireManager, placeDisplaced } from './managers';
 import { canAfford, completeTransfer, marketValue, wageDemand, windowOpen } from './transfer';
@@ -49,6 +50,10 @@ export interface ManagerState {
   renewal?: { contract: string; result: 'renew' | 'none' | 'declined' };
   /** 시즌 끝에 경질 */
   sackAtEnd?: boolean;
+  /** 경질 이유 (받은편지함에 보임) */
+  sackWhy?: string;
+  /** 2부 강등권으로 끝난 마지막 시즌 (3부가 게임에 없어 잔류 · 벌칙. 다음 시즌도 그러면 경질) */
+  dropSeason?: string;
   /** 새 구단을 골라야 함 (계속 진행 막음) */
   pendingJob?: { reason: 'sacked' | 'expired' | 'declined'; clubs: string[] };
   /** 감독을 따라 이적하고 싶어 하는 선수 (다음 이적시장에 처리) */
@@ -279,21 +284,37 @@ export function managerSeasonEnd(w: World, recs: SeasonRecord[]): { titles: numb
   const n = rec.table.length;
   const target = boardTarget(w);
   const titles = (w.cupHistory ?? []).filter((h) => h.season === w.season && h.winner === club.id).length + (pos === 1 ? 1 : 0);
-  const relegated = levelOf(club.league) === 1 && pos > n - 3;
+  // 강등권: 리그 규칙 (나라 · 시즌) 의 바로 강등 수. 2부 강등권은 3부가 게임에 없어 잔류하지만 강등처럼 벌칙 (season.ts)
+  const nat = nationOf(club.league);
+  const rule = nat ? pairRule(nat, w.season) : null;
+  const lvl = levelOf(club.league);
+  const relegated = lvl === 1 && pos > n - (rule?.topDown ?? 3);
+  const dropped = lvl === 2 && pos > n - (rule?.secondDown ?? 3);
+  const relBefore = relationOf(w);
   let dc = pos <= target ? 12 + (target - pos) * 2 : -12 - (pos - target) * 2;
   dc += titles * 10;
-  if (relegated) dc -= 30;
+  if (relegated || dropped) dc -= 30;
   if (club.finance.balance < 0) dc -= 5;
   m.confidence = clamp(m.confidence + dc, 0, 100);
-  m.reputation = clamp(m.reputation + (pos <= target ? 2 : -2) + titles * 3 + (relegated ? -5 : 0), 20, 99);
-  m.relation = clamp((m.relation ?? 55) + titles * 4 + (pos <= target ? 2 : -3), 0, 100);   // 이사회 관계: 우승 · 목표
+  m.reputation = clamp(m.reputation + (pos <= target ? 2 : -2) + titles * 3 + (relegated || dropped ? -5 : 0), 20, 99);
+  m.relation = clamp((m.relation ?? 55) + titles * 4 + (pos <= target ? 2 : -3) + (relegated || dropped ? -10 : 0), 0, 100);   // 이사회 관계: 우승 · 목표 · 강등
   const cur = m.history.find((h) => h.to === null);
   if (cur && titles) {
     const won = [...(pos === 1 ? [`${w.season} ${club.league}`] : []), ...(w.cupHistory ?? []).filter((h) => h.season === w.season && h.winner === club.id).map((h) => `${w.season} ${h.cup}`)];
     cur.titles = [...(cur.titles ?? []), ...won];
   }
-  if (m.confidence < patienceOf(w).end && !ownClub(w)) m.sackAtEnd = true;
-  if (ownerGoalSeasonEnd(w, recs)) m.sackAtEnd = true;   // 투자 인수: 구단주 조건 실패 → 해임
+  m.sackWhy = undefined;
+  const sack = (why: string) => { if (!ownClub(w) && !m.sackAtEnd) { m.sackAtEnd = true; m.sackWhy = why; } };
+  // 강등 + 이사회와 사이가 나쁨 (나쁨 40 미만) → 바로 경질
+  if ((relegated || dropped) && relBefore < 40) sack(`${relegated ? '강등' : '2부 강등권'}에 이사회와의 관계까지 나빠 경질됐습니다`);
+  // 2부 강등권 두 시즌 연속 (지난 시즌 벌칙을 받고도 성적이 안 남) → 확실히 경질
+  const prevSeason = `${+w.season.slice(0, 4) - 1}-${w.season.slice(2, 4)}`;
+  if (dropped && m.dropSeason === prevSeason) sack('두 시즌 연속 2부 강등권 · 이사회가 더는 기다리지 않습니다');
+  // 처음 2부 강등권 (관계가 괜찮으면): 이사회가 마지막 기회를 준다 — 신뢰도를 시즌 중 경질선 조금 위로, 다음 시즌 성적이 안 나오면 시즌 중에도 경질
+  if (dropped && !m.sackAtEnd) m.confidence = Math.max(m.confidence, patienceOf(w).mid + 10);
+  if (dropped) m.dropSeason = w.season;
+  if (m.confidence < patienceOf(w).end && !(dropped && m.dropSeason === w.season && !m.sackAtEnd)) sack('이사회 신뢰가 바닥나 시즌이 끝나고 경질됐습니다');
+  if (ownerGoalSeasonEnd(w, recs)) { m.sackAtEnd = true; m.sackWhy ??= '구단주 조건을 채우지 못해 해임됐습니다'; }   // 투자 인수: 구단주 조건 실패 → 해임
   return { titles, relegated, met: pos <= target };
 }
 
@@ -308,7 +329,9 @@ export function managerNewSeason(w: World, rng: Rng): GameEvent[] {
   if (!m.sackAtEnd && !expired) return [];
   const reason = m.sackAtEnd ? 'sacked' : m.renewal?.result === 'declined' ? 'declined' : 'expired';
   m.pendingJob = { reason, clubs: jobOffers(w, rng) };
-  return [{ type: 'manager', date: w.date, kind: reason === 'sacked' ? 'sacked' : 'expired', club: w.userClubId }];
+  const why = reason === 'sacked' && m.sackWhy ? [{ type: 'info' as const, date: w.date, text: `이사회: ${m.sackWhy}` }] : [];
+  m.sackWhy = undefined;
+  return [{ type: 'manager', date: w.date, kind: reason === 'sacked' ? 'sacked' : 'expired', club: w.userClubId }, ...why];
 }
 
 /** 새 구단 고르기 (pendingJob 에서) */

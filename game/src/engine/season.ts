@@ -267,16 +267,19 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
     const f = steps > 0 ? 2 ** steps : 0.45 ** -steps;
     return { ...fin, transferBudget: Math.round(fin.transferBudget * f), wageBudget: Math.round(fin.wageBudget * f), ...(fin.revenue ? { revenue: Math.round(fin.revenue * f) } : {}) };
   };
+  // 2부 강등권인데 3부가 게임에 없어 잔류한 내 구단: 리그는 그대로, 강등처럼 명성 · 재정 한 단계 아래 · 주급 삭감
+  const userDrop = report.userKept && levelOf(w.clubs[w.userClubId].league) === 2;
   for (const club of Object.values(w.clubs)) {
     const d = dataClub.get(club.id);
     const baseLevel = d ? levelOf(d.lg) : prevLevel.get(club.id) ?? levelOf(club.league);
-    const steps = baseLevel - levelOf(club.league);    // 양수 = 실제(또는 지난 시즌)보다 위 리그
+    const drop = userDrop && club.id === w.userClubId ? 1 : 0;
+    const steps = baseLevel - levelOf(club.league) - drop;    // 양수 = 실제(또는 지난 시즌)보다 위 리그
     if (d || steps) {
       const rep = (d ? d.c.reputation : club.reputation) + (steps > 0 ? 4 * steps : 5 * steps);
       club.reputation = Math.max(30, Math.min(99, rep));
     }
     // 강등 임금 삭감 조항: 지난 시즌보다 아래 리그로 내려가면 선수 주급 40% 삭감 (실제 계약의 강등 조항처럼, 모든 구단 같음)
-    if (levelOf(club.league) > (prevLevel.get(club.id) ?? levelOf(club.league)))
+    if (drop || levelOf(club.league) > (prevLevel.get(club.id) ?? levelOf(club.league)))
       for (const id of club.squad) w.players[id].wage = Math.max(500, Math.round((w.players[id].wage * 0.6) / 500) * 500);
     // 현금을 무한정 쌓지 않는다: 잔고가 연 매출의 40% 를 넘으면 넘는 돈의 80% 는 구단주 배당 · 부채 상환 (모든 구단 같은 규칙)
     const rev = clubRevenue(w, club.id);
@@ -432,7 +435,9 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
   w.inbox = w.inbox.filter((e) => e.date >= `${from.slice(0, 4)}-07-01`).slice(-100);
   w.inbox.push({ type: 'info', date: startDate, text: `${to.replace('-', '/')} 시즌 시작 · 새로 등장한 선수 ${report.debuts.length}명 · 은퇴 ${report.retired.length}명` });
   if (report.board) w.inbox.push({ type: 'info', date: startDate, text: `이사회 예산 배정 · 이적 예산 ${money(report.board.transferBudget)} · 주급 예산 ${money(report.board.wageBudget)}/주` });
-  if (report.userKept) w.inbox.push({ type: 'info', date: startDate, text: '강등권이었지만 2부 리그가 아직 없어 잔류 처리됐습니다' });
+  if (report.userKept) w.inbox.push({ type: 'info', date: startDate, text: levelOf(w.clubs[w.userClubId].league) === 2
+    ? `2부 강등권으로 시즌을 마쳤습니다. 3부 리그가 게임에 없어 2부에서 다시 시작하지만, 강등과 똑같이 명성 · 예산이 줄고 선수 주급 강등 조항(40% 삭감)이 발동했습니다${w.manager?.sackAtEnd ? '' : '. 이사회가 마지막 기회를 줬습니다 — 다음 시즌도 강등권이면 경질됩니다'}`
+    : '강등권이었지만 2부 리그가 아직 없어 잔류 처리됐습니다' });
   // AI 구단 감독: 실제 다음 시즌 데이터가 있으면 그 감독으로 (없는 구단은 지금 감독 그대로)
   if (next.managers) assignManagers(w, next.managers, to, createRng((w.rng ^ 0x7a11) >>> 0));
   // 감독: 경질 · 계약 만료면 새 구단 고르기
