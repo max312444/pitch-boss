@@ -1,5 +1,6 @@
 // 세이브: 브라우저 IndexedDB에 월드를 통째로 저장한다.
 // 슬롯: 'auto'(자동 저장) + 'slot-1' ~ 'slot-3'(직접 저장)
+import { packWorld, unpackPlayer } from '../engine/archive';
 import { registerMyClub } from '../data/db';
 import type { MyClubState } from '../engine/myclubDesign';
 import { WORLD_VERSION, type World } from '../engine/types';
@@ -42,7 +43,7 @@ function tx<T>(mode: IDBTransactionMode, fn: (s: IDBObjectStore) => IDBRequest<T
 export async function writeSave(slot: string, world: World): Promise<SaveMeta> {
   const meta: SaveMeta = { slot, savedAt: new Date().toISOString(), season: world.season, date: world.date, clubId: world.userClubId, version: world.version, ...(world.myClub ? { myClub: world.myClub } : {}) };
   // 구조화 복제로 저장 (월드는 함수 없는 순수 데이터)
-  await tx('readwrite', (s) => s.put({ ...meta, world } satisfies SaveRecord));
+  await tx('readwrite', (s) => s.put({ ...meta, world: packWorld(world) } satisfies SaveRecord));
   return meta;
 }
 
@@ -68,6 +69,11 @@ function migrate(w: World): World {
   if (v === 1) {
     for (const p of Object.values(w.players)) p.career ??= [];
     w.history ??= [];
+  }
+  // 보관한 은퇴 선수: 빠진 칸 채우기 · 은퇴 시즌 기록 전 세이브는 경력이 있는 은퇴 선수에 표시 (다음 저장부터 가볍게)
+  for (const p of Object.values(w.players)) {
+    unpackPlayer(p);
+    if (p.retired && !p.retiredOn && !p.intlOnly && !p.generated && p.career.length) p.retiredOn = '0000-00';
   }
   // 충성도 도입 전 세이브
   for (const p of Object.values(w.players)) {
@@ -97,7 +103,7 @@ async function gunzip(buf: ArrayBuffer): Promise<string> {
 
 /** 지금 게임을 파일로 내려받기 */
 export async function exportSaveFile(world: World, label: string): Promise<void> {
-  const text = JSON.stringify({ app: 'pitch-boss', format: FILE_FORMAT, savedAt: new Date().toISOString(), world });
+  const text = JSON.stringify({ app: 'pitch-boss', format: FILE_FORMAT, savedAt: new Date().toISOString(), world: packWorld(world) });
   const blob = await gzip(text);
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);

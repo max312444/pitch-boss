@@ -128,6 +128,10 @@ export interface PlayerState {
   /** 지난 시즌 기록 (시즌이 끝날 때 쌓임) */
   career: CareerEntry[];
   retired?: boolean;
+  /** 은퇴한 시즌 (은퇴 처리 · FA 정리에서). 대표팀 전용 가상 선수처럼 retired 만 빌려 쓰는 선수는 없음 */
+  retiredOn?: string;
+  /** 세이브에서 가벼운 기록으로 줄인 은퇴 선수 (engine/archive.ts) */
+  archived?: boolean;
   /** 게임이 만든 선수 (유스 · 신규) */
   generated?: boolean;
   /** 지난달 훈련 성장 크기 (화면의 성장 추세 표시) */

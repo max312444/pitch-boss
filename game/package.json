@@ -1,7 +1,7 @@
 {
   "name": "pitch-boss",
   "private": true,
-  "version": "2.11.0",
+  "version": "2.11.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,8 @@
     "fairness": "vite-node scripts/fairness.ts --",
     "economy": "vite-node scripts/economy.ts --",
     "invariants": "vite-node scripts/invariants.ts --",
-    "history": "vite-node scripts/history.ts --"
+    "history": "vite-node scripts/history.ts --",
+    "savesize": "vite-node scripts/savesize.ts --"
   },
   "dependencies": {
     "@fontsource-variable/jetbrains-mono": "^5.2.5",

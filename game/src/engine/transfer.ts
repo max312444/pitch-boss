@@ -466,7 +466,7 @@ export function faCleanup(w: World): string[] {
   for (const p of Object.values(w.players)) {
     if (p.clubId || p.retired) continue;
     const age = ageOn(p.birth, w.date), ovr = overall(p);
-    if (age >= 33 || (age >= 22 && ovr < 62) || (age < 22 && (p.potential ?? ovr) < 65)) { p.retired = true; out.push(p.id); }
+    if (age >= 33 || (age >= 22 && ovr < 62) || (age < 22 && (p.potential ?? ovr) < 65)) { p.retired = true; p.retiredOn = w.season; out.push(p.id); }
   }
   return out;
 }

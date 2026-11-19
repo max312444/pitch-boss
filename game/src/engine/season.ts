@@ -446,6 +446,7 @@ function retire(w: World, p: PlayerState) {
   if (p.clubId) w.clubs[p.clubId].squad = w.clubs[p.clubId].squad.filter((id) => id !== p.id);
   p.clubId = null;
   p.retired = true;
+  p.retiredOn = w.season;
 }
 
 function releasePlayer(w: World, p: PlayerState) {
