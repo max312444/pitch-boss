@@ -37,9 +37,10 @@ import { resolveBoardEvent } from '../engine/boardEvents';
 import { answerPress, pressReaction } from '../engine/press';
 import { sagaRespond, type SagaAction } from '../engine/saga';
 import { pressPlay } from '../engine/appeal';
+import { negotiateFee, type FeeResult } from '../engine/negotiation';
 import { scandalRespond, type ScandalAction } from '../engine/scandal';
 import { evaluateLoan, exerciseBuy, loanMove, loanReturn, playerWillLoan, type LoanTerms } from '../engine/loan';
-import { breakTalks, cleanOffers, completeTransfer, counterOffer, offerValid, evaluateBid, MAX_TRIES, playerWillJoin, releasePlayer, talkBanned, talkOf, wageDemand, wageRoom, windowOpen, type BidResult } from '../engine/transfer';
+import { breakTalks, cleanOffers, completeTransfer, counterOffer, offerValid, MAX_TRIES, playerWillJoin, releasePlayer, talkBanned, talkOf, wageDemand, wageRoom, windowOpen } from '../engine/transfer';
 import type { RetireNews, TransferOffer } from '../engine/types';
 import { applyRenewal, evaluateRenewal } from '../engine/contract';
 import { buyoutMandatory, setBuyout, setRelClause } from '../engine/clauses';
@@ -230,7 +231,7 @@ interface GameStore {
   confirmLineup(): void;
   /** 이적: 구단에 이적료 제안 (수락되면 계약 협상 단계로) */
   /** 이적료 제안. left = 남은 기회, broken = 협상 결렬 (이번 이적시장 동안 다시 협상 불가) */
-  bid(playerId: string, fee: number, terms?: DealTerms): BidResult & { blocked?: string; left?: number; broken?: boolean };
+  bid(playerId: string, fee: number, terms?: DealTerms): FeeResult & { blocked?: string };
   /** 이적: 선수에게 계약 제안 (fee는 합의된 이적료, 자유계약이면 0) */
   /** 재계약 요청 팝업 닫기 */
   clearRenewals(): void;
@@ -909,22 +910,18 @@ export const useGame = create<GameStore>((set, get) => {
       const w = get().world!;
       const p = w.players[playerId];
       const ban = talkBanned(w, playerId);
-      if (ban) return { decision: 'reject', ask: 0, reason: '', blocked: `협상이 결렬된 선수입니다. ${ban.slice(5).replace('-', '/')}까지 다시 협상할 수 없습니다` };
-      if (p.clubId && !windowOpen(w.season, w.date)) return { decision: 'reject', ask: 0, reason: '', blocked: '이적시장이 닫혀 있어 다른 구단 선수는 영입할 수 없습니다 (자유계약 선수는 가능)' };
+      if (ban) return { decision: 'reject', ask: 0, reason: '', left: 0, mood: 100, blocked: `협상이 결렬된 선수입니다. ${ban.slice(5).replace('-', '/')}까지 다시 협상할 수 없습니다` };
+      if (p.clubId && !windowOpen(w.season, w.date)) return { decision: 'reject', ask: 0, reason: '', left: 0, mood: 100, blocked: '이적시장이 닫혀 있어 다른 구단 선수는 영입할 수 없습니다 (자유계약 선수는 가능)' };
       const fban = p.clubId ? transferBan(w, w.userClubId) : null;
-      if (fban) return { decision: 'reject', ask: 0, reason: '', blocked: fban };
-      if (p.clubId && fee > w.clubs[w.userClubId].finance.transferBudget) return { decision: 'reject', ask: 0, reason: '', blocked: '이적 예산이 부족합니다' };
+      if (fban) return { decision: 'reject', ask: 0, reason: '', left: 0, mood: 100, blocked: fban };
+      if (p.clubId && fee > w.clubs[w.userClubId].finance.transferBudget) return { decision: 'reject', ask: 0, reason: '', left: 0, mood: 100, blocked: '이적 예산이 부족합니다' };
       const te = termsError(fee, terms);
-      if (te) return { decision: 'reject', ask: 0, reason: '', blocked: te };
-      const t = talkOf(w, playerId);
-      const r = evaluateBid(w, p, w.userClubId, fee, terms);
-      if (r.decision === 'accept') { t.agreed = fee; t.terms = terms?.sellOn || terms?.bonus?.amount ? terms : undefined; autosave(w); bump(); return { ...r, left: MAX_TRIES - t.fee }; }
-      t.fee++;
-      const left = MAX_TRIES - t.fee;
-      if (left <= 0) breakTalks(w, playerId);
+      if (te) return { decision: 'reject', ask: 0, reason: '', left: 0, mood: 100, blocked: te };
+      // 밀고 당기기: 역제안 · 인내심 · 최저선 (engine/negotiation.ts)
+      const r = negotiateFee(w, p, fee, terms);
       autosave(w);
       bump();
-      return { ...r, left, broken: left <= 0 };
+      return r;
     },
 
     callUp(playerId, on) {
@@ -981,7 +978,7 @@ export const useGame = create<GameStore>((set, get) => {
       const rule = withinRules(w, w.userClubId, wage, fee, years);
       if (!rule.ok) return { ok: false, reason: rule.reason! };
       if (clause === 0 && buyoutMandatory(w, w.userClubId)) return { ok: false, reason: '이 리그는 모든 선수 계약에 바이아웃이 있어야 합니다' };
-      const r = playerWillJoin(w, p, w.userClubId, wage, role, clause, undefined, rel);
+      const r = playerWillJoin(w, p, w.userClubId, wage, role, clause, undefined, rel, years);
       if (!r.ok) {
         // 주급이 낮으면 기회 1번 소모, 구단 자체가 싫다면 바로 결렬
         if (r.low) t.wage++;

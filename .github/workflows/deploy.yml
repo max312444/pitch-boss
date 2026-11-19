@@ -29,6 +29,8 @@ jobs:
         working-directory: game
         env:
           PUBLIC_ONLY: '1'
+          # 공개 데이터 (시즌 · 구단 파일 5천 개 넘음) 를 묶느라 빌드가 메모리 4GB 가까이 쓴다 → 넉넉히 (기본 한도면 꺼짐, 종료 코드 134)
+          NODE_OPTIONS: --max-old-space-size=6144
           BASE: /pitch-boss/
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -27,6 +27,11 @@ export default defineConfig({
   // data/_pipeline (위키백과 캐시 · 백업 · 보고서, 수만 개 파일)은 감시하지 않는다 — 감시하다 메모리 부족으로 꺼짐
   // hmr: false — 켜 둔 채 코드를 고치면 상태 모듈(store/game.ts)이 두 주소(?t=)로 갈라져 두 벌이 생기고,
   //  새 게임이 타이틀로 튕기거나 불러오기가 안 됐다 (새로 고침해도 그대로, 2026-11-16). 고친 뒤에는 새로 고침으로 반영
+  // 빌드: 공개 데이터가 시즌 · 구단 파일마다 조각(5천 개 넘음)이라, 조각마다 gzip 크기를 재서 보여 주는 단계가
+  //  메모리 4GB 를 넘겨 GitHub Actions 빌드가 꺼졌다 (종료 코드 134, 2026-11-19). 크기 표시는 배포와 상관없으므로 끈다
+  build: { reportCompressedSize: false },
+  // JSON 은 코드로 풀지 않고 JSON.parse("…") 문자열로 (빌드 메모리 · 시간 ↓, 브라우저에서도 더 빨리 읽음)
+  json: { stringify: true },
   server: { hmr: false, fs: { allow: ['..'] }, watch: { ignored: ['**/data/_pipeline/**', '**/tools/**'] } },
   // 시즌을 통째로 돌리는 테스트가 많아 기본 제한 시간을 넉넉히
   test: { include: ['src/**/*.test.ts'], testTimeout: 20000 },

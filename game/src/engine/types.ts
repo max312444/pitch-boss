@@ -310,7 +310,8 @@ export type GameEvent =
 export interface RetireNews { player: string; club: string | null; season: string; ovr: number; mine: boolean; /** leave = 계약 만료로 팀을 떠남 (없으면 은퇴) */ kind?: 'retire' | 'leave' }
 
 /** 영입 협상 진행 상황 (창을 닫았다 열어도 유지) */
-export interface Talk { fee: number; wage: number; agreed?: number; until: string; /** 합의한 조건 (셀온 · 보너스) */ terms?: import('./addons').DealTerms }
+export interface Talk { fee: number; wage: number; agreed?: number; until: string; /** 합의한 조건 (셀온 · 보너스) */ terms?: import('./addons').DealTerms;
+  /** 파는 구단의 지금 역제안 (현금 + 조건 값어치 기준, negotiation.ts) */ counter?: number; /** 파는 구단 인내심 0~100 (바닥나면 결렬) */ mood?: number; /** 더는 안 내려감 */ final?: boolean }
 
 /** 사용자 선수에게 들어온 영입 제안 */
 export interface TransferOffer {

@@ -148,14 +148,14 @@ export const canAfford = (w: World, clubId: string, fee: number, wage: number, y
   !(fee > 0 && transferBan(w, clubId)) && fee <= w.clubs[clubId].finance.transferBudget && wage <= wageRoom(w, clubId) && withinRules(w, clubId, wage, fee, years).ok;
 
 /** 구단 안에서 능력 순위 (1부터) */
-function rankInClub(w: World, p: PlayerState): number {
+export function rankInClub(w: World, p: PlayerState): number {
   if (!p.clubId) return 99;
   const ovr = overall(p);
   return w.clubs[p.clubId].squad.filter((id) => overall(w.players[id]) > ovr).length + 1;
 }
 
 // ── 제안 판단 ────────────────────────────────────────
-export interface BidResult { decision: 'accept' | 'counter' | 'reject'; ask: number; reason: string }
+export interface BidResult { decision: 'accept' | 'counter' | 'reject'; ask: number; reason: string; /** 값과 상관없는 거절 (임대 · 사전 계약 · 인원 부족) */ hard?: boolean; /** 핵심 선수라 시장가보다 훨씬 비싸야 함 */ core?: boolean; /** 조건 포함 원하는 값 (현금 + 셀온 · 보너스 값어치) */ full?: number }
 
 /** 파는 구단이 부르는 가격 */
 export function askingPrice(w: World, p: PlayerState): number {
@@ -182,8 +182,8 @@ export function cashNeeded(w: World, p: PlayerState, ask: number, terms?: DealTe
 /** 파는 구단의 판단 */
 export function evaluateBid(w: World, p: PlayerState, buyer: string, fee: number, terms?: DealTerms): BidResult {
   if (!p.clubId) return { decision: 'accept', ask: 0, reason: '자유계약 선수' };
-  if (p.loan) return { decision: 'reject', ask: 0, reason: '임대 중인 선수라 지금은 이적할 수 없습니다' };
-  if (p.precontract) return { decision: 'reject', ask: 0, reason: '이미 다른 구단과 사전 계약(보스만)한 선수입니다' };
+  if (p.loan) return { decision: 'reject', ask: 0, hard: true, reason: '임대 중인 선수라 지금은 이적할 수 없습니다' };
+  if (p.precontract) return { decision: 'reject', ask: 0, hard: true, reason: '이미 다른 구단과 사전 계약(보스만)한 선수입니다' };
   const clause = buyoutOf(w, p);
   if (clause > 0 && fee >= clause) return { decision: 'accept', ask: clause, reason: '바이아웃 금액을 냈습니다. 구단은 거절할 수 없습니다' };
   // 급매물 (강제 매각 · 강등 조항 발동): 핵심 선수 · 선수단 인원 규칙 없이 그 가격이면 판다
@@ -202,35 +202,61 @@ export function evaluateBid(w: World, p: PlayerState, buyer: string, fee: number
   // 셀온 · 보너스: 파는 구단은 이적료에 조건의 값어치를 더해 본다 (바이아웃 · 급매물은 현금만)
   const cash = fee;
   fee = cash + termsWorth(w, p, cash, terms);
-  if (seller.squad.length <= 18) return { decision: 'reject', ask, reason: '선수단 인원이 부족해 팔 수 없다고 합니다' };
+  if (seller.squad.length <= 18) return { decision: 'reject', ask, hard: true, reason: '선수단 인원이 부족해 팔 수 없다고 합니다' };
   // 핵심 선수는 비슷한 급 이상 구단이 크게 쓸 때만
-  if (rank <= 2 && w.clubs[buyer].reputation + 5 < seller.reputation && fee < ask * 1.5) return { decision: 'reject', ask, reason: '팀의 핵심 선수라 팔 생각이 없다고 합니다' };
+  if (rank <= 2 && w.clubs[buyer].reputation + 5 < seller.reputation && fee < ask * 1.5) return { decision: 'reject', ask, core: true, full: ask * 1.5, reason: '팀의 핵심 선수라 팔 생각이 없다고 합니다' };
   if (fee >= ask) return { decision: 'accept', ask, reason: fee > cash ? '조건을 포함해 제안을 받아들였습니다' : '제안을 받아들였습니다' };
   // 조건을 걸었으면 그 값어치만큼 덜 받는다: 알려 주는 금액 = 이 조건으로 필요한 현금 이적료
   const need = cashNeeded(w, p, ask, terms);
   const withTerms = need < ask ? ` (셀온 · 보너스 포함, 조건 없이는 ${Math.round(ask / 1e5) / 10}M 유로)` : '';
-  if (fee >= ask * 0.75) return { decision: 'counter', ask: need, reason: `원하는 가격보다 낮습니다. ${Math.round(need / 1e5) / 10}M 유로면 보내겠다고 합니다${withTerms}` };
-  return { decision: 'reject', ask: need, reason: '원하는 가격보다 한참 낮습니다. 금액을 크게 올려야 합니다' };
+  if (fee >= ask * 0.75) return { decision: 'counter', ask: need, full: ask, reason: `원하는 가격보다 낮습니다. ${Math.round(need / 1e5) / 10}M 유로면 보내겠다고 합니다${withTerms}` };
+  return { decision: 'reject', ask: need, full: ask, reason: '원하는 가격보다 한참 낮습니다. 금액을 크게 올려야 합니다' };
 }
 
-/** 선수가 이 구단으로 오겠는지 */
-export function playerWillJoin(w: World, p: PlayerState, buyer: string, wage: number, role?: Role, clause?: number, bosman?: boolean, rel?: number): { ok: boolean; reason: string; low?: boolean } {
-  const demand = wageDemand(w, p, buyer) * (clause == null ? 1 : buyoutWageFactor(w, p, clause)) * (rel == null ? 1 : relWageFactor(w, p, rel));   // 바이아웃 · 강등 조항을 넣으면 주급을 깎아 준다   // 계약에 거는 바이아웃 (낮을수록 덜 요구)
-  if (wage < demand * 0.9) return { ok: false, low: true, reason: `원하는 주급보다 낮습니다. 주급 ${Math.round(demand / 1000)}K 유로 정도를 원합니다` };
+/** 선수 마음의 한 요인 (협상 화면에 + · − 로 보임) */
+export interface JoinFactor { label: string; v: number }
+/** 오겠다고 하는 기준 점수 */
+export const JOIN_LINE = -0.6;
+
+/**
+ * 선수가 이 구단으로 오려는 마음: 요인별 점수 (합이 JOIN_LINE 보다 크면 온다)
+ * years: 계약 기간 (30세 이상은 긴 계약, 23세 이하는 너무 긴 계약을 싫어함). 주지 않으면 반영 안 함 (AI)
+ */
+export function joinFactors(w: World, p: PlayerState, buyer: string, wage: number, role?: Role, clause?: number, bosman?: boolean, rel?: number, years?: number): { demand: number; score: number; factors: JoinFactor[] } {
+  const demand = wageDemand(w, p, buyer) * (clause == null ? 1 : buyoutWageFactor(w, p, clause)) * (rel == null ? 1 : relWageFactor(w, p, rel));   // 바이아웃 · 강등 조항을 넣으면 주급을 깎아 준다
   const buyerRep = w.clubs[buyer].reputation;
   const curRep = p.clubId ? w.clubs[p.clubId].reputation : 30;
   const diff = buyerRep - curRep;
-  let score = diff / 10 + (wage / Math.max(1, p.wage) - 1) * 2 + ((p.hidden.ambition - 10) / 10) * (diff > 0 ? 1 : -0.6) - (p.loyalty - 50) / 40;
-  if (p.unhappy) score += 1;
-  if (p.saga?.kind === 'move' && p.saga.target === buyer) score += 3;   // 가고 싶다고 지목한 구단
-  if (buyer === w.userClubId && appealOf(w, p)) score += 2.5;          // 우리 구단에 먼저 어필한 선수
-  if (buyer === w.userClubId) score += transferFactor(w).will;   // 설정: 이적 협상 난이도
-  if (role) score += ROLE_JOIN[role];   // 약속한 역할: 높을수록 오려고 한다
-  // 구단이 이적 명단에 올린 선수는 "팀에서 원하지 않는다"고 느껴 작은 구단 이적도 받아들이기 쉽다
-  if ((w.transferList ?? []).includes(p.id)) score += 1.5;
-  if (!p.clubId || bosman) score += 1.5;
-  score += relJoinBonus(w, buyer, rel);   // 강등 조항: 넣으면 오려는 마음 ↑, 강등 위험 구단이 안 넣으면 ↓   // 자유계약 · 보스만 사전 계약 (이적료가 없어 몸값 · 계약금 여유)
-  return score > -0.6 ? { ok: true, reason: '이적에 동의했습니다' } : { ok: false, reason: diff < 0 ? '더 큰 구단으로 가고 싶어 합니다' : '지금 구단에 남고 싶어 합니다' };
+  const f: JoinFactor[] = [];
+  const add = (label: string, v: number) => { if (Math.abs(v) >= 0.05) f.push({ label, v }); };
+  add(diff >= 0 ? '더 큰 구단' : '더 작은 구단', diff / 10);
+  add('주급 인상', (wage / Math.max(1, p.wage) - 1) * 2);
+  add(diff > 0 ? '야망 (큰 무대)' : '야망 (작은 구단 꺼림)', ((p.hidden.ambition - 10) / 10) * (diff > 0 ? 1 : -0.6));
+  add('지금 구단 충성', -(p.loyalty - 50) / 40);
+  if (p.unhappy) add('지금 구단에 불만', 1);
+  if (p.saga?.kind === 'move' && p.saga.target === buyer) add('이 구단을 지목해 이적 요구', 3);
+  if (buyer === w.userClubId && appealOf(w, p)) add('먼저 오고 싶다고 연락', 2.5);
+  if (buyer === w.userClubId) add('난이도 설정', transferFactor(w).will);
+  if (role) add('약속한 역할', ROLE_JOIN[role]);
+  if ((w.transferList ?? []).includes(p.id)) add('지금 구단이 내놓음', 1.5);
+  if (!p.clubId || bosman) add(bosman ? '보스만 (이적료 없음)' : '자유계약', 1.5);
+  add('강등 조항', relJoinBonus(w, buyer, rel));
+  if (years != null) {
+    const age = ageOn(p.birth, w.date);
+    add('계약 기간', age >= 30 ? (years >= 2 ? 0.2 + Math.min(2, years - 2) * 0.15 : -0.6) : age <= 23 ? (years >= 5 ? -0.3 : years <= 1 ? -0.3 : 0) : years <= 1 ? -0.2 : 0);
+  }
+  return { demand, score: f.reduce((a, x) => a + x.v, 0), factors: f.sort((a, b) => Math.abs(b.v) - Math.abs(a.v)) };
+}
+
+/** 선수가 이 구단으로 오겠는지 */
+export function playerWillJoin(w: World, p: PlayerState, buyer: string, wage: number, role?: Role, clause?: number, bosman?: boolean, rel?: number, years?: number): { ok: boolean; reason: string; low?: boolean; score?: number } {
+  const j = joinFactors(w, p, buyer, wage, role, clause, bosman, rel, years);
+  if (wage < j.demand * 0.9) return { ok: false, low: true, score: j.score, reason: `원하는 주급보다 낮습니다. 주급 ${Math.round(j.demand / 1000)}K 유로 정도를 원합니다` };
+  if (j.score > JOIN_LINE) return { ok: true, score: j.score, reason: '이적에 동의했습니다' };
+  // 거절 이유: 가장 크게 깎인 요인
+  const worst = j.factors.filter((x) => x.v < 0).slice(0, 2).map((x) => x.label);
+  const diff = w.clubs[buyer].reputation - (p.clubId ? w.clubs[p.clubId].reputation : 30);
+  return { ok: false, score: j.score, reason: `${diff < 0 ? '더 큰 구단으로 가고 싶어 합니다' : '지금 구단에 남고 싶어 합니다'}${worst.length ? ` (걸리는 점: ${worst.join(' · ')})` : ''}` };
 }
 
 // ── 협상 횟수 · 결렬 ──────────────────────────────
