@@ -166,33 +166,6 @@
       "weight": 71
     },
     {
-      "attrs": {
-        "aer": 60,
-        "com": 67,
-        "dri": 66,
-        "ldr": 64,
-        "pac": 72,
-        "pas": 65,
-        "pos": 67,
-        "sho": 51,
-        "sta": 77,
-        "str": 65,
-        "tac": 70,
-        "vis": 63
-      },
-      "birth": "1982-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0wcucmf",
-      "name": "Domingo Cysma",
-      "nation": "ESP",
-      "number": 6,
-      "pos": "LB",
-      "wage": 15000,
-      "weight": 76
-    },
-    {
       "alt": [
         "LW"
       ],

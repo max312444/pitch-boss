@@ -559,35 +559,6 @@
     },
     {
       "alt": [
-        "AM"
-      ],
-      "attrs": {
-        "aer": 48,
-        "com": 61,
-        "dri": 72,
-        "ldr": 57,
-        "pac": 68,
-        "pas": 61,
-        "pos": 49,
-        "sho": 62,
-        "sta": 64,
-        "str": 59,
-        "tac": 42,
-        "vis": 62
-      },
-      "birth": "1980-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 171,
-      "id": "p1q83cen",
-      "name": "Geoffrey Darnis",
-      "nation": "FRA",
-      "number": null,
-      "pos": "LW",
-      "wage": 3500
-    },
-    {
-      "alt": [
         "LW"
       ],
       "attrs": {
@@ -754,33 +725,6 @@
       "wage": 3500
     },
     {
-      "attrs": {
-        "aer": 66,
-        "com": 69,
-        "dri": 64,
-        "ldr": 63,
-        "pac": 69,
-        "pas": 60,
-        "pos": 61,
-        "sho": 69,
-        "sta": 60,
-        "str": 67,
-        "tac": 37,
-        "vis": 55
-      },
-      "birth": "1973-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0jbx6qk",
-      "name": "Ted Kelton Agesson",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000
-    },
-    {
       "alt": [
         "ST",
         "CM",
@@ -898,32 +842,6 @@
       "number": null,
       "pos": "CM",
       "wage": 3000
-    },
-    {
-      "attrs": {
-        "aer": 56,
-        "com": 59,
-        "dri": 52,
-        "ldr": 55,
-        "pac": 57,
-        "pas": 48,
-        "pos": 53,
-        "sho": 59,
-        "sta": 52,
-        "str": 59,
-        "tac": 27,
-        "vis": 50
-      },
-      "birth": "1981-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0qdgoc8",
-      "name": "Mathieu Matun",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 2000
     },
     {
       "attrs": {

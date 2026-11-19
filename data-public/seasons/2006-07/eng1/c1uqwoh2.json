@@ -461,33 +461,6 @@
     },
     {
       "attrs": {
-        "aer": 60,
-        "com": 69,
-        "dri": 70,
-        "ldr": 66,
-        "pac": 75,
-        "pas": 67,
-        "pos": 68,
-        "sho": 50,
-        "sta": 74,
-        "str": 62,
-        "tac": 69,
-        "vis": 63
-      },
-      "birth": "1980-11-01",
-      "contract": "2009-06-30",
-      "foot": "R",
-      "height": 178,
-      "id": "p10hn9da",
-      "name": "James Chambars",
-      "nation": "ENG",
-      "number": 19,
-      "pos": "RB",
-      "verify": true,
-      "wage": 25500
-    },
-    {
-      "attrs": {
         "aer": 61,
         "com": 65,
         "dri": 61,

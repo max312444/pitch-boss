@@ -141,35 +141,6 @@
     },
     {
       "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 68,
-        "dri": 66,
-        "ldr": 60,
-        "pac": 62,
-        "pas": 69,
-        "pos": 66,
-        "sho": 56,
-        "sta": 64,
-        "str": 63,
-        "tac": 58,
-        "vis": 66
-      },
-      "birth": "1980-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 168,
-      "id": "p0xw6z77",
-      "name": "Geoffrey Doumang",
-      "nation": "FRA",
-      "number": 8,
-      "pos": "CM",
-      "wage": 23500
-    },
-    {
-      "alt": [
         "RW",
         "LW"
       ],
@@ -587,37 +558,6 @@
       "number": 29,
       "pos": "CB",
       "wage": 8000
-    },
-    {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 67,
-        "dri": 69,
-        "ldr": 69,
-        "pac": 66,
-        "pas": 73,
-        "pos": 71,
-        "sho": 65,
-        "sta": 72,
-        "str": 68,
-        "tac": 63,
-        "vis": 73
-      },
-      "birth": "1981-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0xjrrm6",
-      "name": "Kanga Akele",
-      "nation": "CIV",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 23500
     }
   ],
   "stadiumCapacity": 38223

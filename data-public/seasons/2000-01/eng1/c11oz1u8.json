@@ -572,34 +572,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 69,
-        "dri": 61,
-        "ldr": 63,
-        "pac": 67,
-        "pas": 57,
-        "pos": 64,
-        "sho": 66,
-        "sta": 62,
-        "str": 65,
-        "tac": 36,
-        "vis": 61
-      },
-      "birth": "1978-10-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 175,
-      "id": "p0tinymp",
-      "name": "Kevin Lisbia",
-      "nation": "JAM",
-      "nation2": "ENG",
-      "number": 29,
-      "pos": "ST",
-      "wage": 8500,
-      "weight": 69
-    },
-    {
-      "attrs": {
         "aer": 65,
         "com": 64,
         "dri": 47,
@@ -618,41 +590,11 @@
       "foot": "R",
       "height": 188,
       "id": "p13cn1xh",
-      "name": "Jon Furtune",
+      "name": "Jonathan Furtune",
       "nation": "ENG",
       "number": 24,
       "pos": "CB",
       "wage": 7500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 66,
-        "com": 74,
-        "dri": 75,
-        "ldr": 76,
-        "pac": 74,
-        "pas": 75,
-        "pos": 75,
-        "sho": 70,
-        "sta": 81,
-        "str": 73,
-        "tac": 72,
-        "vis": 77
-      },
-      "birth": "1980-10-01",
-      "contract": "2004-06-30",
-      "foot": "R",
-      "height": 170,
-      "id": "p126hi5h",
-      "name": "Scott Perker",
-      "nation": "ENG",
-      "number": 17,
-      "pos": "CM",
-      "wage": 29500,
-      "weight": 70
     },
     {
       "attrs": {

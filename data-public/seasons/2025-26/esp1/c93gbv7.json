@@ -352,35 +352,6 @@
     },
     {
       "alt": [
-        "CM"
-      ],
-      "attrs": {
-        "aer": 67,
-        "com": 70,
-        "dri": 65,
-        "ldr": 73,
-        "pac": 61,
-        "pas": 70,
-        "pos": 71,
-        "sho": 55,
-        "sta": 68,
-        "str": 68,
-        "tac": 73,
-        "vis": 65
-      },
-      "birth": "2000-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0ak69e6",
-      "name": "Unai Vencador",
-      "nation": "ESP",
-      "number": 13,
-      "pos": "DM",
-      "wage": 97000
-    },
-    {
-      "alt": [
         "LB"
       ],
       "attrs": {

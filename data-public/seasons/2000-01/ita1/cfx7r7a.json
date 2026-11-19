@@ -661,33 +661,6 @@
       "weight": 70
     },
     {
-      "attrs": {
-        "aer": 62,
-        "com": 63,
-        "han": 68,
-        "ldr": 59,
-        "one": 66,
-        "pac": 44,
-        "pas": 55,
-        "pos": 62,
-        "ref": 63,
-        "sta": 54,
-        "str": 58,
-        "vis": 51
-      },
-      "birth": "1974-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p0que55m",
-      "name": "Alberto Fontane",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "wage": 2500,
-      "weight": 83
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -745,34 +718,6 @@
       "verify": true,
       "wage": 3000,
       "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 72,
-        "han": 72,
-        "ldr": 68,
-        "one": 72,
-        "pac": 57,
-        "pas": 61,
-        "pos": 72,
-        "ref": 71,
-        "sta": 56,
-        "str": 64,
-        "vis": 59
-      },
-      "birth": "1970-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 191,
-      "id": "p1swmi8c",
-      "name": "Graziano Battistiny",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 2500,
-      "weight": 91
     },
     {
       "attrs": {
@@ -834,37 +779,6 @@
       "weight": 71
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 67,
-        "dri": 67,
-        "ldr": 67,
-        "pac": 63,
-        "pas": 69,
-        "pos": 61,
-        "sho": 63,
-        "sta": 68,
-        "str": 62,
-        "tac": 62,
-        "vis": 65
-      },
-      "birth": "1978-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p0lnnx4u",
-      "name": "Claudio Ferraresa",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3500,
-      "weight": 64
-    },
-    {
       "attrs": {
         "aer": 67,
         "com": 65,
@@ -891,65 +805,6 @@
       "verify": true,
       "wage": 2500,
       "weight": 76
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 61,
-        "dri": 48,
-        "ldr": 59,
-        "pac": 52,
-        "pas": 53,
-        "pos": 66,
-        "sho": 36,
-        "sta": 55,
-        "str": 60,
-        "tac": 62,
-        "vis": 45
-      },
-      "birth": "1975-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p16kc0y5",
-      "name": "Tonci Zylic",
-      "nation": "CRO",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000,
-      "weight": 72
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 70,
-        "dri": 67,
-        "ldr": 69,
-        "pac": 64,
-        "pas": 72,
-        "pos": 64,
-        "sho": 64,
-        "sta": 71,
-        "str": 66,
-        "tac": 67,
-        "vis": 68
-      },
-      "birth": "1970-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0gabuju",
-      "name": "Antonio Merasco",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3500,
-      "weight": 72
     },
     {
       "attrs": {
@@ -1142,59 +997,6 @@
       "verify": true,
       "wage": 2000,
       "weight": 70
-    },
-    {
-      "attrs": {
-        "aer": 57,
-        "com": 55,
-        "dri": 41,
-        "ldr": 56,
-        "pac": 53,
-        "pas": 51,
-        "pos": 61,
-        "sho": 29,
-        "sta": 49,
-        "str": 55,
-        "tac": 62,
-        "vis": 42
-      },
-      "birth": "1979-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0k3gmoe",
-      "name": "Dario Byasi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 1000,
-      "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 65,
-        "han": 65,
-        "ldr": 62,
-        "one": 63,
-        "pac": 46,
-        "pas": 52,
-        "pos": 64,
-        "ref": 66,
-        "sta": 51,
-        "str": 62,
-        "vis": 53
-      },
-      "birth": "1977-10-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0s97b4b",
-      "name": "Davide Zumer",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "wage": 1000
     },
     {
       "alt": [

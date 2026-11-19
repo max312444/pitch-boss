@@ -1,0 +1,33 @@
+{
+  "city": "Pau",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "PAU",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1959,
+  "id": "c1prga1p",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "포o FC",
+  "name": "Pauo FC",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "PAU"
+}

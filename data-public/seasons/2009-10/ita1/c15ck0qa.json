@@ -390,33 +390,6 @@
       "weight": 78
     },
     {
-      "attrs": {
-        "aer": 59,
-        "com": 65,
-        "dri": 60,
-        "ldr": 62,
-        "pac": 66,
-        "pas": 57,
-        "pos": 60,
-        "sho": 63,
-        "sta": 61,
-        "str": 64,
-        "tac": 35,
-        "vis": 57
-      },
-      "birth": "1987-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p0d9fr2w",
-      "name": "Federico Diunisi",
-      "nation": "ITA",
-      "number": 18,
-      "pos": "ST",
-      "wage": 3500,
-      "weight": 68
-    },
-    {
       "alt": [
         "DM",
         "AM"

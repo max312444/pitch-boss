@@ -344,34 +344,6 @@
     },
     {
       "attrs": {
-        "aer": 76,
-        "com": 78,
-        "dri": 74,
-        "ldr": 71,
-        "pac": 73,
-        "pas": 69,
-        "pos": 75,
-        "sho": 80,
-        "sta": 70,
-        "str": 74,
-        "tac": 45,
-        "vis": 65
-      },
-      "birth": "1975-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p097vtlp",
-      "name": "Diego Alonsu",
-      "nation": "ITA",
-      "nation2": "URU",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 20000
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 77,
         "dri": 69,
@@ -731,32 +703,6 @@
       "pos": "LB",
       "wage": 12000,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 51,
-        "com": 73,
-        "dri": 69,
-        "ldr": 65,
-        "pac": 68,
-        "pas": 70,
-        "pos": 51,
-        "sho": 72,
-        "sta": 68,
-        "str": 58,
-        "tac": 47,
-        "vis": 71
-      },
-      "birth": "1976-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0betqr2",
-      "name": "Dennis Serben",
-      "nation": "ROU",
-      "number": null,
-      "pos": "AM",
-      "wage": 16500
     },
     {
       "attrs": {

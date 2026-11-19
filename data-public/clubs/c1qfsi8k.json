@@ -1,0 +1,34 @@
+{
+  "city": "Villarreal",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "VIA",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1999,
+  "id": "c1qfsi8k",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "비여레알 CF B",
+  "name": "Villarraal CF B",
+  "nation": "ESP",
+  "parent": "c09lwyv",
+  "rivals": [],
+  "short": "VIA"
+}

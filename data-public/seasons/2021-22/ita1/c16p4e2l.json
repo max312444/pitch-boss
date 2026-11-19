@@ -685,32 +685,6 @@
     },
     {
       "attrs": {
-        "aer": 58,
-        "com": 60,
-        "dri": 54,
-        "ldr": 55,
-        "pac": 58,
-        "pas": 51,
-        "pos": 56,
-        "sho": 59,
-        "sta": 51,
-        "str": 60,
-        "tac": 26,
-        "vis": 47
-      },
-      "birth": "1998-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p1o5w08w",
-      "name": "Kevin Piscupo",
-      "nation": "ITA",
-      "number": 98,
-      "pos": "ST",
-      "wage": 4500
-    },
-    {
-      "attrs": {
         "aer": 66,
         "com": 74,
         "dri": 66,

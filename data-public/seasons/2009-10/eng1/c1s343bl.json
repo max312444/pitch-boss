@@ -46,33 +46,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 67,
-        "han": 67,
-        "ldr": 63,
-        "one": 61,
-        "pac": 47,
-        "pas": 55,
-        "pos": 63,
-        "ref": 69,
-        "sta": 52,
-        "str": 63,
-        "vis": 52
-      },
-      "birth": "1984-11-01",
-      "contract": "2011-06-30",
-      "foot": "R",
-      "height": 183,
-      "id": "p18db6df",
-      "name": "Mark Bonn",
-      "nation": "ENG",
-      "number": 26,
-      "pos": "GK",
-      "wage": 12000,
-      "weight": 77
-    },
-    {
-      "attrs": {
         "aer": 69,
         "com": 74,
         "han": 74,

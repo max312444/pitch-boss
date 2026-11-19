@@ -53,33 +53,6 @@
     },
     {
       "attrs": {
-        "aer": 70,
-        "com": 73,
-        "han": 74,
-        "ldr": 69,
-        "one": 74,
-        "pac": 56,
-        "pas": 62,
-        "pos": 75,
-        "ref": 77,
-        "sta": 60,
-        "str": 68,
-        "vis": 63
-      },
-      "birth": "1969-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p14pg3by",
-      "name": "German Borgos",
-      "nation": "ARG",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 24500
-    },
-    {
-      "attrs": {
         "aer": 84,
         "com": 81,
         "dri": 81,
@@ -105,33 +78,6 @@
       "pos": "ST",
       "wage": 22000,
       "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 72,
-        "dri": 72,
-        "ldr": 70,
-        "pac": 80,
-        "pas": 71,
-        "pos": 73,
-        "sho": 61,
-        "sta": 81,
-        "str": 75,
-        "tac": 78,
-        "vis": 68
-      },
-      "birth": "1972-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0w7bcx8",
-      "name": "Lluis Carraras",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 21000
     },
     {
       "alt": [
@@ -420,33 +366,6 @@
       "number": null,
       "pos": "CM",
       "wage": 12000
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 64,
-        "dri": 66,
-        "ldr": 67,
-        "pac": 70,
-        "pas": 67,
-        "pos": 69,
-        "sho": 53,
-        "sta": 74,
-        "str": 67,
-        "tac": 70,
-        "vis": 62
-      },
-      "birth": "1970-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0nexh0v",
-      "name": "Armando Alverez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 8000
     },
     {
       "attrs": {

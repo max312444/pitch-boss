@@ -399,36 +399,6 @@
     },
     {
       "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 66,
-        "com": 74,
-        "dri": 71,
-        "ldr": 72,
-        "pac": 71,
-        "pas": 78,
-        "pos": 71,
-        "sho": 73,
-        "sta": 76,
-        "str": 72,
-        "tac": 73,
-        "vis": 78
-      },
-      "birth": "1981-05-01",
-      "contract": "2008-06-30",
-      "foot": "R",
-      "height": 173,
-      "id": "p02t54vy",
-      "name": "Leon Osmen",
-      "nation": "ENG",
-      "number": 21,
-      "pos": "CM",
-      "wage": 38500,
-      "weight": 67
-    },
-    {
-      "alt": [
         "LW"
       ],
       "attrs": {

@@ -553,37 +553,6 @@
       "wage": 5500
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 68,
-        "dri": 64,
-        "ldr": 66,
-        "pac": 61,
-        "pas": 71,
-        "pos": 65,
-        "sho": 59,
-        "sta": 71,
-        "str": 64,
-        "tac": 63,
-        "vis": 69
-      },
-      "birth": "1968-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p16vwxgl",
-      "name": "Michel Pavun",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 7000,
-      "weight": 78
-    },
-    {
       "attrs": {
         "aer": 64,
         "com": 59,
@@ -723,60 +692,6 @@
       "weight": 60
     },
     {
-      "attrs": {
-        "aer": 55,
-        "com": 64,
-        "dri": 67,
-        "ldr": 67,
-        "pac": 64,
-        "pas": 68,
-        "pos": 61,
-        "sho": 57,
-        "sta": 68,
-        "str": 61,
-        "tac": 60,
-        "vis": 69
-      },
-      "birth": "1975-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p11zbt91",
-      "name": "Marc Zenotti",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 64,
-        "dri": 48,
-        "ldr": 65,
-        "pac": 58,
-        "pas": 58,
-        "pos": 66,
-        "sho": 38,
-        "sta": 57,
-        "str": 63,
-        "tac": 65,
-        "vis": 47
-      },
-      "birth": "1976-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1necp29",
-      "name": "Pascal Philyppe",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -805,36 +720,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 2500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 48,
-        "com": 64,
-        "dri": 57,
-        "ldr": 57,
-        "pac": 53,
-        "pas": 60,
-        "pos": 56,
-        "sho": 54,
-        "sta": 60,
-        "str": 59,
-        "tac": 55,
-        "vis": 62
-      },
-      "birth": "1980-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1sbjr7o",
-      "name": "Nicolas Sahnuun",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2000
     },
     {
       "attrs": {

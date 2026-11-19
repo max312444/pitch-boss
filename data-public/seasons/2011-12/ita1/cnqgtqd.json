@@ -432,33 +432,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 69,
-        "dri": 64,
-        "ldr": 62,
-        "pac": 64,
-        "pas": 57,
-        "pos": 62,
-        "sho": 69,
-        "sta": 62,
-        "str": 65,
-        "tac": 38,
-        "vis": 57
-      },
-      "birth": "1991-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0waz15z",
-      "name": "Manolo Gabbiedini",
-      "nation": "ITA",
-      "number": 28,
-      "pos": "ST",
-      "wage": 14000,
-      "weight": 72
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 66,
         "dri": 54,

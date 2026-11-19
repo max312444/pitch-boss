@@ -696,34 +696,6 @@
       "wage": 4000
     },
     {
-      "attrs": {
-        "aer": 68,
-        "com": 63,
-        "dri": 49,
-        "ldr": 70,
-        "pac": 61,
-        "pas": 58,
-        "pos": 66,
-        "sho": 40,
-        "sta": 61,
-        "str": 67,
-        "tac": 71,
-        "vis": 52
-      },
-      "birth": "1978-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p1v4d7zn",
-      "name": "Pascal Delhommaau",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500,
-      "weight": 85
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -810,33 +782,6 @@
     },
     {
       "attrs": {
-        "aer": 59,
-        "com": 66,
-        "dri": 59,
-        "ldr": 61,
-        "pac": 61,
-        "pas": 53,
-        "pos": 65,
-        "sho": 68,
-        "sta": 59,
-        "str": 67,
-        "tac": 36,
-        "vis": 54
-      },
-      "birth": "1984-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0705xoh",
-      "name": "Luigi Glomberd",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000
-    },
-    {
-      "attrs": {
         "aer": 62,
         "com": 69,
         "han": 67,
@@ -894,60 +839,6 @@
       "pos": "CM",
       "wage": 3000,
       "weight": 70
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 62,
-        "dri": 49,
-        "ldr": 61,
-        "pac": 55,
-        "pas": 55,
-        "pos": 65,
-        "sho": 35,
-        "sta": 58,
-        "str": 65,
-        "tac": 65,
-        "vis": 49
-      },
-      "birth": "1984-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0ub1wqq",
-      "name": "David Laray",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 53,
-        "com": 59,
-        "dri": 59,
-        "ldr": 57,
-        "pac": 61,
-        "pas": 59,
-        "pos": 63,
-        "sho": 42,
-        "sta": 65,
-        "str": 54,
-        "tac": 60,
-        "vis": 52
-      },
-      "birth": "1983-07-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0819btq",
-      "name": "Denis Stinet",
-      "nation": "FRA",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 2500
     },
     {
       "attrs": {

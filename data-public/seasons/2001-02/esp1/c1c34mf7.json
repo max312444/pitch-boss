@@ -767,90 +767,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 67,
-        "dri": 53,
-        "ldr": 68,
-        "pac": 58,
-        "pas": 56,
-        "pos": 68,
-        "sho": 39,
-        "sta": 65,
-        "str": 68,
-        "tac": 68,
-        "vis": 56
-      },
-      "birth": "1970-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p1quuamn",
-      "name": "Luis Miguel Ramys",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6000,
-      "weight": 80
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 68,
-        "dri": 70,
-        "ldr": 65,
-        "pac": 64,
-        "pas": 72,
-        "pos": 68,
-        "sho": 67,
-        "sta": 71,
-        "str": 67,
-        "tac": 65,
-        "vis": 69
-      },
-      "birth": "1973-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0mwwfca",
-      "name": "Jose Menuel",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "wage": 7500
-    },
-    {
-      "attrs": {
-        "aer": 76,
-        "com": 68,
-        "dri": 56,
-        "ldr": 74,
-        "pac": 67,
-        "pas": 62,
-        "pos": 76,
-        "sho": 41,
-        "sta": 69,
-        "str": 71,
-        "tac": 74,
-        "vis": 57
-      },
-      "birth": "1976-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0nj7saf",
-      "name": "Jose Manuel Ayra",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 5500,
-      "weight": 78
-    },
-    {
-      "attrs": {
         "aer": 73,
         "com": 70,
         "dri": 58,
@@ -875,32 +791,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 5000
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 65,
-        "dri": 63,
-        "ldr": 59,
-        "pac": 62,
-        "pas": 57,
-        "pos": 62,
-        "sho": 65,
-        "sta": 60,
-        "str": 65,
-        "tac": 36,
-        "vis": 55
-      },
-      "birth": "1977-04-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1v1a8u3",
-      "name": "Changuy",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 2500
     },
     {
       "attrs": {

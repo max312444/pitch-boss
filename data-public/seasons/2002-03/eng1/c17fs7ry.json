@@ -511,33 +511,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 78,
-        "han": 76,
-        "ldr": 71,
-        "one": 78,
-        "pac": 60,
-        "pas": 66,
-        "pos": 74,
-        "ref": 79,
-        "sta": 61,
-        "str": 68,
-        "vis": 62
-      },
-      "birth": "1973-01-01",
-      "contract": "2004-06-30",
-      "foot": "R",
-      "height": 188,
-      "id": "p168ulg6",
-      "name": "Paul Gerrerd",
-      "nation": "ENG",
-      "number": 20,
-      "pos": "GK",
-      "verify": true,
-      "wage": 30500
-    },
-    {
-      "attrs": {
         "aer": 72,
         "com": 74,
         "dri": 70,

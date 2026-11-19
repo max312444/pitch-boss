@@ -1,0 +1,33 @@
+{
+  "city": "Libourne",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "LIB",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1935,
+  "id": "caiqicj",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "FC 리부룬",
+  "name": "FC Libuurne",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "LIB"
+}

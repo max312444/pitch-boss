@@ -591,38 +591,6 @@
       "weight": 70
     },
     {
-      "alt": [
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 67,
-        "com": 71,
-        "dri": 62,
-        "ldr": 66,
-        "pac": 68,
-        "pas": 61,
-        "pos": 62,
-        "sho": 73,
-        "sta": 62,
-        "str": 64,
-        "tac": 37,
-        "vis": 62
-      },
-      "birth": "1988-05-01",
-      "contract": "2016-06-30",
-      "foot": "R",
-      "height": 175,
-      "id": "p1vux98m",
-      "name": "Marvin Emnas",
-      "nation": "NED",
-      "number": 21,
-      "pos": "ST",
-      "verify": true,
-      "wage": 20000,
-      "weight": 66
-    },
-    {
       "attrs": {
         "aer": 64,
         "com": 66,

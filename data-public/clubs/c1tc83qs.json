@@ -1,0 +1,33 @@
+{
+  "city": "Wasquehal",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "WAQ",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1945,
+  "id": "c1tc83qs",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "Wasquehel FC",
+  "name": "Wasquehel FC",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "WAQ"
+}

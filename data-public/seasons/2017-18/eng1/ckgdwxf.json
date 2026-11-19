@@ -72,34 +72,6 @@
       "weight": 89
     },
     {
-      "attrs": {
-        "aer": 62,
-        "com": 66,
-        "han": 70,
-        "ldr": 65,
-        "one": 64,
-        "pac": 48,
-        "pas": 54,
-        "pos": 65,
-        "ref": 72,
-        "sta": 57,
-        "str": 61,
-        "vis": 55
-      },
-      "birth": "1985-01-01",
-      "contract": "2019-06-30",
-      "foot": "R",
-      "height": 188,
-      "id": "p0de1qfw",
-      "name": "Adam Federicy",
-      "nation": "AUS",
-      "number": 12,
-      "pos": "GK",
-      "verify": true,
-      "wage": 48500,
-      "weight": 95
-    },
-    {
       "alt": [
         "CB",
         "LB"

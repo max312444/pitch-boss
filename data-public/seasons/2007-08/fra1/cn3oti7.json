@@ -746,59 +746,6 @@
       "pos": "GK",
       "wage": 11000,
       "weight": 79
-    },
-    {
-      "attrs": {
-        "aer": 57,
-        "com": 64,
-        "dri": 57,
-        "ldr": 59,
-        "pac": 61,
-        "pas": 52,
-        "pos": 56,
-        "sho": 64,
-        "sta": 59,
-        "str": 60,
-        "tac": 30,
-        "vis": 54
-      },
-      "birth": "1986-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p12e6sb1",
-      "name": "Gregory Battiol",
-      "nation": "FRA",
-      "number": 38,
-      "pos": "ST",
-      "wage": 7500,
-      "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 48,
-        "com": 55,
-        "dri": 57,
-        "ldr": 53,
-        "pac": 66,
-        "pas": 55,
-        "pos": 56,
-        "sho": 39,
-        "sta": 61,
-        "str": 56,
-        "tac": 58,
-        "vis": 51
-      },
-      "birth": "1986-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p12pkcs0",
-      "name": "Mourad Benhamide",
-      "nation": "FRA",
-      "number": 39,
-      "pos": "RB",
-      "wage": 7000
     }
   ],
   "stadiumCapacity": 59286

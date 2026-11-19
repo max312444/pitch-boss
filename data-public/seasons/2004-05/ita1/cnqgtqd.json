@@ -56,33 +56,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 76,
-        "dri": 67,
-        "ldr": 67,
-        "pac": 71,
-        "pas": 61,
-        "pos": 70,
-        "sho": 75,
-        "sta": 68,
-        "str": 74,
-        "tac": 39,
-        "vis": 61
-      },
-      "birth": "1975-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p0a813aw",
-      "name": "Davor Vugrynec",
-      "nation": "CRO",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 18000
-    },
-    {
-      "attrs": {
         "aer": 72,
         "com": 76,
         "dri": 72,
@@ -107,33 +80,6 @@
       "pos": "ST",
       "wage": 14000,
       "weight": 74
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 75,
-        "dri": 70,
-        "ldr": 69,
-        "pac": 70,
-        "pas": 62,
-        "pos": 72,
-        "sho": 76,
-        "sta": 68,
-        "str": 75,
-        "tac": 45,
-        "vis": 66
-      },
-      "birth": "1977-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1p351xd",
-      "name": "Gianni Comandiny",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "wage": 12500,
-      "weight": 75
     },
     {
       "attrs": {
@@ -423,33 +369,6 @@
     },
     {
       "attrs": {
-        "aer": 70,
-        "com": 65,
-        "dri": 51,
-        "ldr": 68,
-        "pac": 57,
-        "pas": 60,
-        "pos": 72,
-        "sho": 36,
-        "sta": 63,
-        "str": 65,
-        "tac": 72,
-        "vis": 49
-      },
-      "birth": "1976-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0cli9ql",
-      "name": "Natale Gonnelle",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 7000,
-      "weight": 77
-    },
-    {
-      "attrs": {
         "aer": 64,
         "com": 62,
         "han": 62,
@@ -589,33 +508,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 60,
-        "dri": 51,
-        "ldr": 66,
-        "pac": 57,
-        "pas": 52,
-        "pos": 67,
-        "sho": 35,
-        "sta": 61,
-        "str": 65,
-        "tac": 63,
-        "vis": 50
-      },
-      "birth": "1977-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 192,
-      "id": "p10qhirc",
-      "name": "Stefano Lorenzy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 4000,
-      "weight": 82
-    },
-    {
-      "attrs": {
         "aer": 57,
         "com": 64,
         "dri": 61,
@@ -699,37 +591,6 @@
       "pos": "CM",
       "wage": 5000,
       "weight": 62
-    },
-    {
-      "alt": [
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 65,
-        "com": 67,
-        "dri": 63,
-        "ldr": 63,
-        "pac": 64,
-        "pas": 56,
-        "pos": 65,
-        "sho": 68,
-        "sta": 59,
-        "str": 66,
-        "tac": 34,
-        "vis": 56
-      },
-      "birth": "1982-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p1ci6ggs",
-      "name": "Piao",
-      "nation": "BRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 3000,
-      "weight": 68
     },
     {
       "attrs": {

@@ -1,0 +1,33 @@
+{
+  "city": "Vannes",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "VEE",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1998,
+  "id": "c1je2nxd",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "반o OC",
+  "name": "Vennes OC",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "VEE"
+}

@@ -52,33 +52,6 @@
     },
     {
       "attrs": {
-        "aer": 73,
-        "com": 68,
-        "dri": 56,
-        "ldr": 72,
-        "pac": 63,
-        "pas": 62,
-        "pos": 78,
-        "sho": 47,
-        "sta": 71,
-        "str": 72,
-        "tac": 73,
-        "vis": 59
-      },
-      "birth": "1982-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0wpq51u",
-      "name": "John Mansah",
-      "nation": "GHA",
-      "number": null,
-      "pos": "CB",
-      "wage": 14500,
-      "weight": 72
-    },
-    {
-      "attrs": {
         "aer": 54,
         "com": 68,
         "dri": 77,
@@ -167,33 +140,6 @@
     {
       "attrs": {
         "aer": 73,
-        "com": 71,
-        "dri": 53,
-        "ldr": 72,
-        "pac": 62,
-        "pas": 65,
-        "pos": 73,
-        "sho": 40,
-        "sta": 68,
-        "str": 75,
-        "tac": 74,
-        "vis": 53
-      },
-      "birth": "1976-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1pjur8i",
-      "name": "Emanuele Pasaresi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 11000,
-      "weight": 77
-    },
-    {
-      "attrs": {
-        "aer": 73,
         "com": 64,
         "dri": 52,
         "ldr": 71,
@@ -217,34 +163,6 @@
       "pos": "CB",
       "wage": 10000,
       "weight": 77
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 69,
-        "dri": 63,
-        "ldr": 62,
-        "pac": 69,
-        "pas": 56,
-        "pos": 68,
-        "sho": 70,
-        "sta": 63,
-        "str": 70,
-        "tac": 38,
-        "vis": 56
-      },
-      "birth": "1984-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0r7bx05",
-      "name": "Mauricio Pinille",
-      "nation": "CHI",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 8000,
-      "weight": 78
     },
     {
       "attrs": {
@@ -386,61 +304,6 @@
       "pos": "CB",
       "wage": 6000,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 61,
-        "dri": 62,
-        "ldr": 62,
-        "pac": 66,
-        "pas": 59,
-        "pos": 61,
-        "sho": 42,
-        "sta": 66,
-        "str": 58,
-        "tac": 68,
-        "vis": 56
-      },
-      "birth": "1980-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0pxx8q9",
-      "name": "Francesco Carbona",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RB",
-      "wage": 6500,
-      "weight": 70
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 70,
-        "han": 69,
-        "ldr": 67,
-        "one": 69,
-        "pac": 52,
-        "pas": 61,
-        "pos": 70,
-        "ref": 72,
-        "sta": 59,
-        "str": 66,
-        "vis": 58
-      },
-      "birth": "1976-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p11k5ham",
-      "name": "Giorgio Frazzolini",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 6000,
-      "weight": 80
     },
     {
       "alt": [
@@ -644,37 +507,6 @@
       "weight": 74
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 46,
-        "com": 61,
-        "dri": 67,
-        "ldr": 56,
-        "pac": 65,
-        "pas": 61,
-        "pos": 46,
-        "sho": 62,
-        "sta": 62,
-        "str": 55,
-        "tac": 40,
-        "vis": 62
-      },
-      "birth": "1974-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0hyfjqf",
-      "name": "Ivone De Franceschy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 5000,
-      "weight": 74
-    },
-    {
       "attrs": {
         "aer": 64,
         "com": 66,
@@ -841,36 +673,6 @@
       "pos": "GK",
       "verify": true,
       "wage": 2500,
-      "weight": 75
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 68,
-        "dri": 60,
-        "ldr": 64,
-        "pac": 63,
-        "pas": 66,
-        "pos": 60,
-        "sho": 60,
-        "sta": 66,
-        "str": 59,
-        "tac": 60,
-        "vis": 66
-      },
-      "birth": "1981-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1er4hrn",
-      "name": "Stefano Gerzon",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 3000,
       "weight": 75
     },
     {

@@ -1,0 +1,33 @@
+{
+  "city": "Valence",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "VAN",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1920,
+  "id": "c1qakpdo",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "ASOA Valance",
+  "name": "ASOA Valance",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "VAN"
+}

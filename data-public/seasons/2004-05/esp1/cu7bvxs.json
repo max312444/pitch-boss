@@ -615,36 +615,6 @@
       "wage": 5500
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 75,
-        "dri": 70,
-        "ldr": 67,
-        "pac": 65,
-        "pas": 71,
-        "pos": 71,
-        "sho": 68,
-        "sta": 72,
-        "str": 69,
-        "tac": 68,
-        "vis": 72
-      },
-      "birth": "1976-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0r496t5",
-      "name": "Santiago Cerpintero",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 8000
-    },
-    {
       "attrs": {
         "aer": 65,
         "com": 68,

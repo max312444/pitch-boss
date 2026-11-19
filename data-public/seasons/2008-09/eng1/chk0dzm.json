@@ -571,39 +571,6 @@
       "verify": true,
       "wage": 10000,
       "weight": 66
-    },
-    {
-      "alt": [
-        "CB",
-        "LB",
-        "CM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 67,
-        "dri": 64,
-        "ldr": 64,
-        "pac": 67,
-        "pas": 62,
-        "pos": 68,
-        "sho": 50,
-        "sta": 72,
-        "str": 65,
-        "tac": 69,
-        "vis": 61
-      },
-      "birth": "1986-03-01",
-      "contract": "2010-06-30",
-      "foot": "R",
-      "height": 178,
-      "id": "p13s4ywa",
-      "name": "Tony McMahun",
-      "nation": "ENG",
-      "number": 22,
-      "pos": "RB",
-      "verify": true,
-      "wage": 17000,
-      "weight": 71
     }
   ],
   "stadiumCapacity": 35100

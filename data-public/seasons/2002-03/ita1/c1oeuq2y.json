@@ -575,33 +575,6 @@
       "weight": 77
     },
     {
-      "attrs": {
-        "aer": 77,
-        "com": 75,
-        "dri": 63,
-        "ldr": 77,
-        "pac": 70,
-        "pas": 65,
-        "pos": 74,
-        "sho": 50,
-        "sta": 69,
-        "str": 73,
-        "tac": 76,
-        "vis": 59
-      },
-      "birth": "1981-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p16mu01w",
-      "name": "Paolo Cannevaro",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 8500,
-      "weight": 83
-    },
-    {
       "alt": [
         "DM"
       ],

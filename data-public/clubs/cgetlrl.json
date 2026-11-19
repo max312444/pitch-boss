@@ -7,7 +7,7 @@
       "#000000",
       "#000000"
     ],
-    "mark": "GRN",
+    "mark": "GRB",
     "pattern": "solid",
     "shape": "shield"
   },
@@ -29,5 +29,5 @@
   "name": "Grenuble Foot 38",
   "nation": "FRA",
   "rivals": [],
-  "short": "GRN"
+  "short": "GRB"
 }

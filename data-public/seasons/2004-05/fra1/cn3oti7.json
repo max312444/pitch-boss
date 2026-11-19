@@ -713,91 +713,6 @@
       "weight": 74
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 65,
-        "com": 62,
-        "dri": 50,
-        "ldr": 67,
-        "pac": 53,
-        "pas": 57,
-        "pos": 67,
-        "sho": 34,
-        "sta": 59,
-        "str": 63,
-        "tac": 67,
-        "vis": 50
-      },
-      "birth": "1969-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p1lth4hx",
-      "name": "Christophe Delmutte",
-      "nation": "BEL",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 7000,
-      "weight": 84
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 69,
-        "dri": 70,
-        "ldr": 68,
-        "pac": 70,
-        "pas": 63,
-        "pos": 65,
-        "sho": 72,
-        "sta": 69,
-        "str": 68,
-        "tac": 39,
-        "vis": 59
-      },
-      "birth": "1982-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p1kkxwtp",
-      "name": "Julien Viala",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 5000
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 58,
-        "dri": 47,
-        "ldr": 62,
-        "pac": 54,
-        "pas": 51,
-        "pos": 66,
-        "sho": 36,
-        "sta": 55,
-        "str": 62,
-        "tac": 64,
-        "vis": 45
-      },
-      "birth": "1982-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p08jytow",
-      "name": "Romain Sartra",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5000
-    },
-    {
       "attrs": {
         "aer": 71,
         "com": 69,
@@ -822,35 +737,6 @@
       "number": null,
       "pos": "CB",
       "wage": 5500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 67,
-        "dri": 68,
-        "ldr": 65,
-        "pac": 62,
-        "pas": 73,
-        "pos": 68,
-        "sho": 62,
-        "sta": 69,
-        "str": 68,
-        "tac": 65,
-        "vis": 70
-      },
-      "birth": "1982-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p1g6oypc",
-      "name": "Alexandre Haow",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 6000
     },
     {
       "attrs": {

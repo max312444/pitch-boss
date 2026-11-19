@@ -610,38 +610,6 @@
       "verify": true,
       "wage": 49000,
       "weight": 90
-    },
-    {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 49,
-        "com": 62,
-        "dri": 59,
-        "ldr": 55,
-        "pac": 57,
-        "pas": 63,
-        "pos": 56,
-        "sho": 56,
-        "sta": 63,
-        "str": 58,
-        "tac": 55,
-        "vis": 58
-      },
-      "birth": "1991-12-01",
-      "contract": "2012-06-30",
-      "foot": "R",
-      "height": 177,
-      "id": "p1u3a4so",
-      "name": "Jordon Motch",
-      "nation": "ENG",
-      "number": 29,
-      "pos": "CM",
-      "verify": true,
-      "wage": 13500,
-      "weight": 64
     }
   ],
   "stadiumCapacity": 30016

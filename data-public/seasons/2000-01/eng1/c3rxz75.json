@@ -81,33 +81,6 @@
     },
     {
       "attrs": {
-        "aer": 76,
-        "com": 78,
-        "han": 77,
-        "ldr": 75,
-        "one": 74,
-        "pac": 60,
-        "pas": 64,
-        "pos": 74,
-        "ref": 75,
-        "sta": 60,
-        "str": 73,
-        "vis": 64
-      },
-      "birth": "1980-11-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 193,
-      "id": "p01bt5k7",
-      "name": "Stuart Teylor",
-      "nation": "ENG",
-      "number": 31,
-      "pos": "GK",
-      "wage": 10500,
-      "weight": 85
-    },
-    {
-      "attrs": {
         "aer": 73,
         "com": 79,
         "dri": 83,
@@ -134,35 +107,6 @@
         "leader"
       ],
       "wage": 46500
-    },
-    {
-      "attrs": {
-        "aer": 71,
-        "com": 79,
-        "dri": 79,
-        "ldr": 82,
-        "pac": 84,
-        "pas": 77,
-        "pos": 84,
-        "sho": 65,
-        "sta": 86,
-        "str": 81,
-        "tac": 85,
-        "vis": 73
-      },
-      "birth": "1980-12-01",
-      "contract": "2003-06-30",
-      "foot": "L",
-      "height": 176,
-      "id": "p1a5701k",
-      "name": "Ashley Cola",
-      "nation": "ENG",
-      "number": 29,
-      "pos": "LB",
-      "traits": [
-        "speedster"
-      ],
-      "wage": 31000
     },
     {
       "alt": [
@@ -585,32 +529,6 @@
     },
     {
       "attrs": {
-        "aer": 76,
-        "com": 74,
-        "dri": 63,
-        "ldr": 79,
-        "pac": 71,
-        "pas": 67,
-        "pos": 76,
-        "sho": 50,
-        "sta": 70,
-        "str": 76,
-        "tac": 79,
-        "vis": 61
-      },
-      "birth": "1979-04-01",
-      "contract": "2003-06-30",
-      "foot": "L",
-      "height": 185,
-      "id": "p1forsk0",
-      "name": "Matthew Upsun",
-      "nation": "ENG",
-      "number": 20,
-      "pos": "CB",
-      "wage": 17000
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 71,
         "dri": 71,
@@ -656,7 +574,7 @@
       "fullName": "Nwankwo Kanu",
       "height": 197,
       "id": "p1utxi4q",
-      "name": "Kano",
+      "name": "Nwankwo Kano",
       "nation": "NGA",
       "number": 25,
       "pos": "ST",

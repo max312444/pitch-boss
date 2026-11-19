@@ -449,33 +449,6 @@
       "wage": 20500
     },
     {
-      "attrs": {
-        "aer": 73,
-        "com": 65,
-        "dri": 52,
-        "ldr": 73,
-        "pac": 66,
-        "pas": 62,
-        "pos": 71,
-        "sho": 44,
-        "sta": 63,
-        "str": 74,
-        "tac": 75,
-        "vis": 56
-      },
-      "birth": "1966-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1546vpu",
-      "name": "Miroslav Đokic",
-      "nation": "SRB",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 24500
-    },
-    {
       "alt": [
         "LW"
       ],
@@ -729,34 +702,6 @@
       "number": null,
       "pos": "CM",
       "wage": 8000
-    },
-    {
-      "attrs": {
-        "aer": 72,
-        "com": 63,
-        "dri": 53,
-        "ldr": 68,
-        "pac": 61,
-        "pas": 58,
-        "pos": 69,
-        "sho": 42,
-        "sta": 64,
-        "str": 71,
-        "tac": 72,
-        "vis": 51
-      },
-      "birth": "1979-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0ou98o2",
-      "name": "Javier Garrydo",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000,
-      "weight": 70
     },
     {
       "attrs": {

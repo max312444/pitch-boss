@@ -445,36 +445,6 @@
       "weight": 79
     },
     {
-      "alt": [
-        "RM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 64,
-        "dri": 63,
-        "ldr": 68,
-        "pac": 74,
-        "pas": 64,
-        "pos": 67,
-        "sho": 48,
-        "sta": 74,
-        "str": 62,
-        "tac": 72,
-        "vis": 61
-      },
-      "birth": "1975-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p10f932c",
-      "name": "Felipe Gorendez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 11000
-    },
-    {
       "attrs": {
         "aer": 60,
         "com": 71,
@@ -674,33 +644,6 @@
       "weight": 89
     },
     {
-      "attrs": {
-        "aer": 64,
-        "com": 65,
-        "dri": 62,
-        "ldr": 60,
-        "pac": 67,
-        "pas": 61,
-        "pos": 61,
-        "sho": 72,
-        "sta": 62,
-        "str": 68,
-        "tac": 37,
-        "vis": 57
-      },
-      "birth": "1982-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 171,
-      "id": "p0vs9nwe",
-      "name": "Joseba Arryaga",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 6000
-    },
-    {
       "alt": [
         "CM"
       ],
@@ -756,34 +699,6 @@
       "pos": "LB",
       "wage": 6000,
       "weight": 85
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 68,
-        "dri": 68,
-        "ldr": 66,
-        "pac": 69,
-        "pas": 65,
-        "pos": 68,
-        "sho": 47,
-        "sta": 69,
-        "str": 63,
-        "tac": 67,
-        "vis": 60
-      },
-      "birth": "1984-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0t7zce8",
-      "name": "Javier Terantino",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 6000,
-      "weight": 77
     },
     {
       "attrs": {

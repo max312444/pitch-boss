@@ -279,37 +279,6 @@
       "weight": 76
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 44,
-        "com": 58,
-        "dri": 67,
-        "ldr": 60,
-        "pac": 66,
-        "pas": 60,
-        "pos": 44,
-        "sho": 62,
-        "sta": 60,
-        "str": 48,
-        "tac": 38,
-        "vis": 59
-      },
-      "birth": "1967-11-01",
-      "contract": "2002-06-30",
-      "foot": "R",
-      "height": 180,
-      "id": "p0z34drw",
-      "name": "Stuart Riplei",
-      "nation": "ENG",
-      "number": 11,
-      "pos": "RW",
-      "verify": true,
-      "wage": 17500,
-      "weight": 79
-    },
-    {
       "attrs": {
         "aer": 67,
         "com": 72,
@@ -505,7 +474,7 @@
       "foot": "R",
       "height": 170,
       "id": "p1vsm28x",
-      "name": "Marian Pehars",
+      "name": "Marians Pehars",
       "nation": "LVA",
       "number": 18,
       "pos": "ST",

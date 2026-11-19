@@ -217,39 +217,6 @@
       "weight": 89
     },
     {
-      "alt": [
-        "CM",
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 71,
-        "com": 76,
-        "dri": 73,
-        "ldr": 67,
-        "pac": 72,
-        "pas": 65,
-        "pos": 70,
-        "sho": 72,
-        "sta": 67,
-        "str": 73,
-        "tac": 43,
-        "vis": 61
-      },
-      "birth": "1974-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0ie9vta",
-      "name": "Davide Dionigy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 11000,
-      "weight": 73
-    },
-    {
       "attrs": {
         "aer": 66,
         "com": 68,
@@ -532,33 +499,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 57,
-        "dri": 50,
-        "ldr": 63,
-        "pac": 52,
-        "pas": 56,
-        "pos": 64,
-        "sho": 34,
-        "sta": 56,
-        "str": 61,
-        "tac": 65,
-        "vis": 48
-      },
-      "birth": "1979-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p1ky2zcu",
-      "name": "Alessandro Zuppetti",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 3000,
-      "weight": 75
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 65,
         "dri": 59,
@@ -640,38 +580,6 @@
       "pos": "CM",
       "wage": 4000,
       "weight": 73
-    },
-    {
-      "alt": [
-        "ST",
-        "CM",
-        "DM"
-      ],
-      "attrs": {
-        "aer": 41,
-        "com": 61,
-        "dri": 58,
-        "ldr": 57,
-        "pac": 54,
-        "pas": 57,
-        "pos": 43,
-        "sho": 55,
-        "sta": 52,
-        "str": 49,
-        "tac": 33,
-        "vis": 63
-      },
-      "birth": "1981-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1h040t5",
-      "name": "Salvatore Vicary",
-      "nation": "ITA",
-      "number": null,
-      "pos": "AM",
-      "wage": 2000,
-      "weight": 66
     },
     {
       "attrs": {

@@ -354,35 +354,6 @@
       "wage": 30000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 74,
-        "dri": 72,
-        "ldr": 69,
-        "pac": 67,
-        "pas": 71,
-        "pos": 68,
-        "sho": 64,
-        "sta": 76,
-        "str": 63,
-        "tac": 67,
-        "vis": 70
-      },
-      "birth": "1979-09-01",
-      "contract": "2007-06-30",
-      "foot": "R",
-      "height": 173,
-      "id": "p0x4tsmx",
-      "name": "James O'Cunnor",
-      "nation": "IRL",
-      "number": 23,
-      "pos": "CM",
-      "wage": 23500
-    },
-    {
       "attrs": {
         "aer": 57,
         "com": 79,
@@ -521,7 +492,7 @@
       "fullName": "Nwankwo Kanu",
       "height": 197,
       "id": "p1utxi4q",
-      "name": "Kano",
+      "name": "Nwankwo Kano",
       "nation": "NGA",
       "number": 25,
       "pos": "ST",
@@ -669,32 +640,6 @@
       "number": 15,
       "pos": "CB",
       "wage": 16000
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 76,
-        "dri": 72,
-        "ldr": 72,
-        "pac": 70,
-        "pas": 65,
-        "pos": 69,
-        "sho": 79,
-        "sta": 72,
-        "str": 73,
-        "tac": 45,
-        "vis": 62
-      },
-      "birth": "1978-10-01",
-      "contract": "2005-06-30",
-      "foot": "R",
-      "height": 185,
-      "id": "p0tbvlg4",
-      "name": "Scott Dobye",
-      "nation": "SCO",
-      "number": 12,
-      "pos": "ST",
-      "wage": 9000
     },
     {
       "attrs": {

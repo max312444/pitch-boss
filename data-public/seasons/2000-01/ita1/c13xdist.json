@@ -636,34 +636,6 @@
     },
     {
       "attrs": {
-        "aer": 55,
-        "com": 75,
-        "dri": 76,
-        "ldr": 66,
-        "pac": 77,
-        "pas": 74,
-        "pos": 52,
-        "sho": 72,
-        "sta": 73,
-        "str": 62,
-        "tac": 53,
-        "vis": 71
-      },
-      "birth": "1975-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p12na9h3",
-      "name": "Lociano",
-      "nation": "BRA",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 5000,
-      "weight": 77
-    },
-    {
-      "attrs": {
         "aer": 72,
         "com": 68,
         "dri": 56,
@@ -864,37 +836,6 @@
       "weight": 77
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 44,
-        "com": 63,
-        "dri": 63,
-        "ldr": 54,
-        "pac": 65,
-        "pas": 59,
-        "pos": 45,
-        "sho": 62,
-        "sta": 63,
-        "str": 50,
-        "tac": 35,
-        "vis": 59
-      },
-      "birth": "1966-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p13voosz",
-      "name": "Davide Fontolen",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 3500,
-      "weight": 76
-    },
-    {
       "attrs": {
         "aer": 61,
         "com": 66,
@@ -976,34 +917,6 @@
       "verify": true,
       "wage": 1500,
       "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 61,
-        "dri": 52,
-        "ldr": 63,
-        "pac": 56,
-        "pas": 56,
-        "pos": 69,
-        "sho": 36,
-        "sta": 61,
-        "str": 63,
-        "tac": 64,
-        "vis": 47
-      },
-      "birth": "1972-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p0znkuju",
-      "name": "Nicola Bosalli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 1500,
-      "weight": 74
     },
     {
       "alt": [

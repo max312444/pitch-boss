@@ -319,33 +319,6 @@
       "weight": 72
     },
     {
-      "attrs": {
-        "aer": 76,
-        "com": 68,
-        "dri": 61,
-        "ldr": 73,
-        "pac": 67,
-        "pas": 62,
-        "pos": 74,
-        "sho": 48,
-        "sta": 67,
-        "str": 78,
-        "tac": 79,
-        "vis": 56
-      },
-      "birth": "1981-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p06xkjhk",
-      "name": "Alessandro Gamberyni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 8000,
-      "weight": 80
-    },
-    {
       "alt": [
         "LW"
       ],
@@ -610,33 +583,6 @@
     },
     {
       "attrs": {
-        "aer": 60,
-        "com": 64,
-        "dri": 63,
-        "ldr": 60,
-        "pac": 64,
-        "pas": 56,
-        "pos": 64,
-        "sho": 64,
-        "sta": 59,
-        "str": 64,
-        "tac": 35,
-        "vis": 54
-      },
-      "birth": "1980-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p0mrmwll",
-      "name": "Giacomo Cypriani",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "wage": 4000,
-      "weight": 90
-    },
-    {
-      "attrs": {
         "aer": 73,
         "com": 67,
         "dri": 53,
@@ -722,68 +668,6 @@
       "weight": 70
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 49,
-        "com": 59,
-        "dri": 60,
-        "ldr": 58,
-        "pac": 60,
-        "pas": 63,
-        "pos": 58,
-        "sho": 58,
-        "sta": 63,
-        "str": 55,
-        "tac": 57,
-        "vis": 66
-      },
-      "birth": "1971-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p1j4kpjf",
-      "name": "Renato Olyve",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4000,
-      "weight": 77
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 62,
-        "dri": 65,
-        "ldr": 64,
-        "pac": 57,
-        "pas": 68,
-        "pos": 61,
-        "sho": 56,
-        "sta": 69,
-        "str": 60,
-        "tac": 59,
-        "vis": 66
-      },
-      "birth": "1982-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0ec0rz1",
-      "name": "Alessandro Frare",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4000,
-      "weight": 72
-    },
-    {
       "attrs": {
         "aer": 61,
         "com": 61,
@@ -809,33 +693,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 3000
-    },
-    {
-      "attrs": {
-        "aer": 56,
-        "com": 61,
-        "dri": 61,
-        "ldr": 57,
-        "pac": 65,
-        "pas": 60,
-        "pos": 60,
-        "sho": 44,
-        "sta": 70,
-        "str": 58,
-        "tac": 65,
-        "vis": 54
-      },
-      "birth": "1980-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1czhzs8",
-      "name": "Vlado Smyt",
-      "nation": "SRB",
-      "number": null,
-      "pos": "LB",
-      "wage": 2500,
-      "weight": 78
     },
     {
       "alt": [
@@ -868,33 +725,6 @@
       "verify": true,
       "wage": 2500,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 63,
-        "dri": 62,
-        "ldr": 60,
-        "pac": 62,
-        "pas": 57,
-        "pos": 59,
-        "sho": 66,
-        "sta": 58,
-        "str": 63,
-        "tac": 34,
-        "vis": 58
-      },
-      "birth": "1984-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0k5xwhc",
-      "name": "Luigi Della Rucca",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "wage": 2000,
-      "weight": 75
     },
     {
       "attrs": {

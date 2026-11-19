@@ -1,0 +1,33 @@
+{
+  "city": "Lorca",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "LOR",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 2003,
+  "id": "c14v3z8e",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "라 호야 로루카 CF",
+  "name": "Lorce FC",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "LOR"
+}

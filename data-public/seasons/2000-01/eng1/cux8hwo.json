@@ -635,7 +635,7 @@
       "foot": "R",
       "height": 180,
       "id": "p0wzbq4o",
-      "name": "Matthew Jonas",
+      "name": "Matt Jonas",
       "nation": "WAL",
       "number": 24,
       "pos": "CM",
@@ -668,36 +668,6 @@
       "pos": "DM",
       "verify": true,
       "wage": 18000
-    },
-    {
-      "alt": [
-        "LB"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 63,
-        "dri": 64,
-        "ldr": 62,
-        "pac": 69,
-        "pas": 62,
-        "pos": 63,
-        "sho": 48,
-        "sta": 68,
-        "str": 62,
-        "tac": 68,
-        "vis": 56
-      },
-      "birth": "1978-08-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 178,
-      "id": "p18yjrsn",
-      "name": "Alan Meybury",
-      "nation": "IRL",
-      "number": 26,
-      "pos": "RB",
-      "verify": true,
-      "wage": 14000
     }
   ],
   "stadiumCapacity": 40204

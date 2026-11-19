@@ -712,34 +712,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 64,
-        "dri": 62,
-        "ldr": 59,
-        "pac": 66,
-        "pas": 58,
-        "pos": 63,
-        "sho": 66,
-        "sta": 59,
-        "str": 62,
-        "tac": 37,
-        "vis": 58
-      },
-      "birth": "1980-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1fanahc",
-      "name": "Romain Puyet",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 7000,
-      "weight": 76
-    },
-    {
-      "attrs": {
         "aer": 73,
         "com": 70,
         "han": 70,
@@ -764,61 +736,6 @@
       "pos": "GK",
       "verify": true,
       "wage": 6000
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 67,
-        "dri": 62,
-        "ldr": 65,
-        "pac": 63,
-        "pas": 56,
-        "pos": 61,
-        "sho": 70,
-        "sta": 62,
-        "str": 64,
-        "tac": 36,
-        "vis": 57
-      },
-      "birth": "1986-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p131flfk",
-      "name": "Garra Dembela",
-      "nation": "MLI",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4500
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 63,
-        "dri": 48,
-        "ldr": 64,
-        "pac": 60,
-        "pas": 55,
-        "pos": 68,
-        "sho": 33,
-        "sta": 58,
-        "str": 67,
-        "tac": 66,
-        "vis": 50
-      },
-      "birth": "1984-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p1sc0yas",
-      "name": "Mamoutou Coolibaly",
-      "nation": "MLI",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500
     },
     {
       "attrs": {

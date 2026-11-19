@@ -79,61 +79,6 @@
       "wage": 15000
     },
     {
-      "attrs": {
-        "aer": 76,
-        "com": 77,
-        "dri": 77,
-        "ldr": 71,
-        "pac": 76,
-        "pas": 67,
-        "pos": 76,
-        "sho": 82,
-        "sta": 72,
-        "str": 77,
-        "tac": 49,
-        "vis": 66
-      },
-      "birth": "1978-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p126iiht",
-      "name": "Louis Seha",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 14500,
-      "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 65,
-        "dri": 53,
-        "ldr": 71,
-        "pac": 65,
-        "pas": 60,
-        "pos": 72,
-        "sho": 42,
-        "sta": 65,
-        "str": 67,
-        "tac": 71,
-        "vis": 57
-      },
-      "birth": "1968-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p14gywjp",
-      "name": "David Regys",
-      "nation": "FRA",
-      "nation2": "USA",
-      "number": null,
-      "pos": "CB",
-      "wage": 15000
-    },
-    {
       "alt": [
         "LW"
       ],
@@ -470,36 +415,6 @@
       "number": null,
       "pos": "ST",
       "wage": 3500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 69,
-        "dri": 63,
-        "ldr": 67,
-        "pac": 61,
-        "pas": 72,
-        "pos": 64,
-        "sho": 59,
-        "sta": 67,
-        "str": 60,
-        "tac": 67,
-        "vis": 71
-      },
-      "birth": "1971-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 171,
-      "id": "p18jxxeb",
-      "name": "Franck Ryzzetto",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 5000
     },
     {
       "alt": [

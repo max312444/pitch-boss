@@ -1,0 +1,33 @@
+{
+  "city": "Reus",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "DEP",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1909,
+  "id": "c0fpxdd",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "CF 레우수",
+  "name": "CF Reus Deportio",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "DEP"
+}

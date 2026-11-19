@@ -139,36 +139,6 @@
       "weight": 77
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 68,
-        "com": 71,
-        "dri": 72,
-        "ldr": 66,
-        "pac": 74,
-        "pas": 62,
-        "pos": 73,
-        "sho": 75,
-        "sta": 71,
-        "str": 72,
-        "tac": 45,
-        "vis": 64
-      },
-      "birth": "1978-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0l0d01q",
-      "name": "Peter Medsen",
-      "nation": "DEN",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 10500
-    },
-    {
       "attrs": {
         "aer": 64,
         "com": 70,
@@ -255,34 +225,6 @@
       "verify": true,
       "wage": 6000,
       "weight": 67
-    },
-    {
-      "attrs": {
-        "aer": 75,
-        "com": 71,
-        "dri": 60,
-        "ldr": 70,
-        "pac": 65,
-        "pas": 64,
-        "pos": 75,
-        "sho": 42,
-        "sta": 70,
-        "str": 71,
-        "tac": 71,
-        "vis": 57
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p11yd2e8",
-      "name": "Fabio Bilyca",
-      "nation": "BRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6000,
-      "weight": 80
     },
     {
       "attrs": {

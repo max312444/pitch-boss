@@ -766,35 +766,6 @@
       "weight": 80
     },
     {
-      "attrs": {
-        "aer": 46,
-        "com": 61,
-        "dri": 67,
-        "ldr": 56,
-        "pac": 69,
-        "pas": 57,
-        "pos": 42,
-        "sho": 63,
-        "sta": 58,
-        "str": 54,
-        "tac": 37,
-        "vis": 61
-      },
-      "birth": "1983-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p19w1tfd",
-      "name": "Catilina Aobameyang",
-      "nation": "GAB",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "LW",
-      "verify": true,
-      "wage": 16000,
-      "weight": 68
-    },
-    {
       "alt": [
         "RB"
       ],

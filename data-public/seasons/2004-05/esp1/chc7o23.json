@@ -675,33 +675,6 @@
     },
     {
       "attrs": {
-        "aer": 56,
-        "com": 66,
-        "dri": 62,
-        "ldr": 61,
-        "pac": 69,
-        "pas": 62,
-        "pos": 67,
-        "sho": 47,
-        "sta": 69,
-        "str": 64,
-        "tac": 65,
-        "vis": 63
-      },
-      "birth": "1977-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0l2ebp3",
-      "name": "Alejandro Marenon",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 5000
-    },
-    {
-      "attrs": {
         "aer": 67,
         "com": 67,
         "dri": 64,
@@ -815,59 +788,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 5500
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 66,
-        "dri": 59,
-        "ldr": 62,
-        "pac": 63,
-        "pas": 54,
-        "pos": 60,
-        "sho": 64,
-        "sta": 62,
-        "str": 66,
-        "tac": 36,
-        "vis": 54
-      },
-      "birth": "1982-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0s9vkek",
-      "name": "German Hornus",
-      "nation": "URU",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4000
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 66,
-        "dri": 53,
-        "ldr": 69,
-        "pac": 60,
-        "pas": 58,
-        "pos": 72,
-        "sho": 42,
-        "sta": 61,
-        "str": 66,
-        "tac": 72,
-        "vis": 55
-      },
-      "birth": "1980-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p00e3bve",
-      "name": "Oscar Rodryguez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 4000
     },
     {
       "alt": [
@@ -1017,36 +937,6 @@
       "verify": true,
       "wage": 4000,
       "weight": 74
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 60,
-        "dri": 63,
-        "ldr": 58,
-        "pac": 55,
-        "pas": 63,
-        "pos": 57,
-        "sho": 53,
-        "sta": 67,
-        "str": 55,
-        "tac": 58,
-        "vis": 65
-      },
-      "birth": "1981-12-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0znrapz",
-      "name": "David Arteage",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3500
     },
     {
       "attrs": {

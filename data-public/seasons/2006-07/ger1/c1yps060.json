@@ -24,34 +24,6 @@
   },
   "squad": [
     {
-      "attrs": {
-        "aer": 73,
-        "com": 72,
-        "dri": 69,
-        "ldr": 69,
-        "pac": 72,
-        "pas": 67,
-        "pos": 69,
-        "sho": 77,
-        "sta": 71,
-        "str": 70,
-        "tac": 41,
-        "vis": 62
-      },
-      "birth": "1977-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1133idl",
-      "name": "Szilard Nameth",
-      "nation": "SVK",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 26500,
-      "weight": 75
-    },
-    {
       "alt": [
         "DM"
       ],

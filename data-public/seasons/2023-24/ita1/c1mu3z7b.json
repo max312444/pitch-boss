@@ -164,37 +164,6 @@
     },
     {
       "alt": [
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 67,
-        "dri": 64,
-        "ldr": 63,
-        "pac": 64,
-        "pas": 72,
-        "pos": 67,
-        "sho": 64,
-        "sta": 68,
-        "str": 65,
-        "tac": 65,
-        "vis": 68
-      },
-      "birth": "1996-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0ht7rnq",
-      "name": "Remi Oudyn",
-      "nation": "FRA",
-      "number": 10,
-      "pos": "CM",
-      "wage": 39500,
-      "weight": 79
-    },
-    {
-      "alt": [
         "LB"
       ],
       "attrs": {
@@ -666,33 +635,6 @@
       "number": 59,
       "pos": "CB",
       "wage": 25000
-    },
-    {
-      "attrs": {
-        "aer": 55,
-        "com": 59,
-        "dri": 52,
-        "ldr": 62,
-        "pac": 50,
-        "pas": 59,
-        "pos": 61,
-        "sho": 52,
-        "sta": 64,
-        "str": 59,
-        "tac": 65,
-        "vis": 62
-      },
-      "birth": "2001-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p068l94w",
-      "name": "Mohamed Kabe",
-      "nation": "FRA",
-      "nation2": "GUI",
-      "number": 77,
-      "pos": "DM",
-      "wage": 11000
     },
     {
       "attrs": {

@@ -322,34 +322,6 @@
     },
     {
       "attrs": {
-        "aer": 74,
-        "com": 75,
-        "dri": 73,
-        "ldr": 75,
-        "pac": 66,
-        "pas": 76,
-        "pos": 81,
-        "sho": 64,
-        "sta": 75,
-        "str": 75,
-        "tac": 76,
-        "vis": 73
-      },
-      "birth": "1976-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0u4iw3h",
-      "name": "Sylvain N'Diaie",
-      "nation": "FRA",
-      "nation2": "SEN",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 25000
-    },
-    {
-      "attrs": {
         "aer": 76,
         "com": 76,
         "dri": 59,
@@ -631,33 +603,6 @@
     },
     {
       "attrs": {
-        "aer": 76,
-        "com": 74,
-        "han": 76,
-        "ldr": 76,
-        "one": 77,
-        "pac": 58,
-        "pas": 62,
-        "pos": 73,
-        "ref": 79,
-        "sta": 60,
-        "str": 71,
-        "vis": 61
-      },
-      "birth": "1981-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p1uttiiq",
-      "name": "Cedric Cerrasso",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "wage": 10500,
-      "weight": 87
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 75,
         "dri": 72,
@@ -794,33 +739,6 @@
       "pos": "RW",
       "wage": 5000,
       "weight": 69
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 72,
-        "han": 75,
-        "ldr": 67,
-        "one": 68,
-        "pac": 56,
-        "pas": 64,
-        "pos": 73,
-        "ref": 73,
-        "sta": 59,
-        "str": 65,
-        "vis": 61
-      },
-      "birth": "1983-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0l05vk2",
-      "name": "Jeremy Gavanun",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "wage": 6000,
-      "weight": 74
     },
     {
       "attrs": {
@@ -963,33 +881,6 @@
     },
     {
       "attrs": {
-        "aer": 70,
-        "com": 59,
-        "dri": 48,
-        "ldr": 65,
-        "pac": 60,
-        "pas": 57,
-        "pos": 69,
-        "sho": 39,
-        "sta": 61,
-        "str": 67,
-        "tac": 69,
-        "vis": 48
-      },
-      "birth": "1973-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p00una99",
-      "name": "Johnny Eckar",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3500
-    },
-    {
-      "attrs": {
         "aer": 64,
         "com": 72,
         "dri": 71,
@@ -1013,70 +904,6 @@
       "number": null,
       "pos": "LB",
       "wage": 3000
-    },
-    {
-      "alt": [
-        "ST",
-        "RB",
-        "LB"
-      ],
-      "attrs": {
-        "aer": 63,
-        "com": 55,
-        "dri": 41,
-        "ldr": 59,
-        "pac": 49,
-        "pas": 50,
-        "pos": 62,
-        "sho": 33,
-        "sta": 57,
-        "str": 57,
-        "tac": 63,
-        "vis": 43
-      },
-      "birth": "1986-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p183nd6p",
-      "name": "Rahmane Barri",
-      "nation": "FRA",
-      "nation2": "SEN",
-      "number": null,
-      "pos": "CB",
-      "wage": 2500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 50,
-        "com": 61,
-        "dri": 57,
-        "ldr": 59,
-        "pac": 56,
-        "pas": 64,
-        "pos": 62,
-        "sho": 57,
-        "sta": 64,
-        "str": 56,
-        "tac": 59,
-        "vis": 63
-      },
-      "birth": "1984-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p00qj7ny",
-      "name": "Therry Racun",
-      "nation": "GLP",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4000,
-      "weight": 80
     },
     {
       "attrs": {

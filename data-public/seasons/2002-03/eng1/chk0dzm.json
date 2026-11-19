@@ -292,34 +292,6 @@
     {
       "attrs": {
         "aer": 67,
-        "com": 67,
-        "han": 69,
-        "ldr": 68,
-        "one": 69,
-        "pac": 52,
-        "pas": 53,
-        "pos": 64,
-        "ref": 70,
-        "sta": 57,
-        "str": 62,
-        "vis": 57
-      },
-      "birth": "1969-06-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 183,
-      "id": "p1ppe0lz",
-      "name": "Mark Crosslay",
-      "nation": "WAL",
-      "number": 13,
-      "pos": "GK",
-      "verify": true,
-      "wage": 22500,
-      "weight": 89
-    },
-    {
-      "attrs": {
-        "aer": 67,
         "com": 68,
         "dri": 53,
         "ldr": 71,
@@ -343,33 +315,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 25500
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 76,
-        "dri": 73,
-        "ldr": 68,
-        "pac": 69,
-        "pas": 64,
-        "pos": 70,
-        "sho": 75,
-        "sta": 70,
-        "str": 73,
-        "tac": 43,
-        "vis": 65
-      },
-      "birth": "1977-12-01",
-      "contract": "2005-06-30",
-      "foot": "R",
-      "height": 177,
-      "id": "p1gby63s",
-      "name": "Joseph-Desyre Job",
-      "nation": "CMR",
-      "number": 18,
-      "pos": "ST",
-      "wage": 18500,
-      "weight": 70
     },
     {
       "alt": [
@@ -435,33 +380,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 60,
-        "dri": 52,
-        "ldr": 64,
-        "pac": 57,
-        "pas": 57,
-        "pos": 66,
-        "sho": 35,
-        "sta": 60,
-        "str": 66,
-        "tac": 66,
-        "vis": 51
-      },
-      "birth": "1980-03-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 185,
-      "id": "p1ualap1",
-      "name": "Jason Gevin",
-      "nation": "IRL",
-      "number": 21,
-      "pos": "CB",
-      "verify": true,
-      "wage": 13000
-    },
-    {
-      "attrs": {
         "aer": 68,
         "com": 66,
         "dri": 66,
@@ -519,36 +437,6 @@
       "pos": "RB",
       "verify": true,
       "wage": 18500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 62,
-        "dri": 65,
-        "ldr": 60,
-        "pac": 58,
-        "pas": 68,
-        "pos": 62,
-        "sho": 62,
-        "sta": 68,
-        "str": 62,
-        "tac": 62,
-        "vis": 66
-      },
-      "birth": "1979-02-01",
-      "contract": "2005-06-30",
-      "foot": "R",
-      "height": 180,
-      "id": "p1kbr9jo",
-      "name": "Mark Wylson",
-      "nation": "ENG",
-      "number": 17,
-      "pos": "CM",
-      "verify": true,
-      "wage": 17000
     },
     {
       "attrs": {

@@ -713,37 +713,6 @@
     },
     {
       "alt": [
-        "LB",
-        "CB"
-      ],
-      "attrs": {
-        "aer": 50,
-        "com": 64,
-        "dri": 59,
-        "ldr": 63,
-        "pac": 55,
-        "pas": 64,
-        "pos": 60,
-        "sho": 55,
-        "sta": 66,
-        "str": 55,
-        "tac": 57,
-        "vis": 61
-      },
-      "birth": "1989-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p10aklyf",
-      "name": "Nikola Golan",
-      "nation": "SRB",
-      "number": 30,
-      "pos": "CM",
-      "wage": 18500,
-      "weight": 73
-    },
-    {
-      "alt": [
         "LW"
       ],
       "attrs": {

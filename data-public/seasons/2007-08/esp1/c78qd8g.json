@@ -789,32 +789,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 68,
-        "dri": 58,
-        "ldr": 68,
-        "pac": 57,
-        "pas": 70,
-        "pos": 69,
-        "sho": 51,
-        "sta": 68,
-        "str": 64,
-        "tac": 68,
-        "vis": 62
-      },
-      "birth": "1975-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0ybw7xm",
-      "name": "Itoo",
-      "nation": "ESP",
-      "number": null,
-      "pos": "DM",
-      "wage": 13500
-    },
-    {
-      "attrs": {
         "aer": 69,
         "com": 72,
         "dri": 69,
@@ -838,35 +812,6 @@
       "number": null,
       "pos": "DM",
       "wage": 12000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 60,
-        "dri": 60,
-        "ldr": 57,
-        "pac": 58,
-        "pas": 65,
-        "pos": 62,
-        "sho": 56,
-        "sta": 61,
-        "str": 58,
-        "tac": 59,
-        "vis": 64
-      },
-      "birth": "1987-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0wdddcl",
-      "name": "Julian Lopez de Larma",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "wage": 3000
     }
   ],
   "stadiumCapacity": 43667

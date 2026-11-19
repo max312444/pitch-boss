@@ -7,7 +7,7 @@
       "#000000",
       "#000000"
     ],
-    "mark": "ROT",
+    "mark": "ROW",
     "pattern": "solid",
     "shape": "round"
   },
@@ -29,5 +29,5 @@
   "name": "FC Rot-Waiss Erfurt",
   "nation": "GER",
   "rivals": [],
-  "short": "ROT"
+  "short": "ROW"
 }

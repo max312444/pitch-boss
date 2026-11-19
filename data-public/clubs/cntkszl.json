@@ -1,0 +1,33 @@
+{
+  "city": "Bolzano",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "SUD",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1974,
+  "id": "cntkszl",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "FC 쥐트티룰",
+  "name": "FC Sudtyrol",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "SUD"
+}

@@ -797,33 +797,6 @@
     },
     {
       "attrs": {
-        "aer": 72,
-        "com": 72,
-        "dri": 55,
-        "ldr": 70,
-        "pac": 63,
-        "pas": 60,
-        "pos": 74,
-        "sho": 47,
-        "sta": 70,
-        "str": 74,
-        "tac": 77,
-        "vis": 54
-      },
-      "birth": "1982-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0kqjlwy",
-      "name": "Maurizio Lanzero",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 10500,
-      "weight": 80
-    },
-    {
-      "attrs": {
         "aer": 67,
         "com": 70,
         "dri": 64,
@@ -904,36 +877,6 @@
       "verify": true,
       "wage": 11500,
       "weight": 78
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 70,
-        "dri": 70,
-        "ldr": 70,
-        "pac": 67,
-        "pas": 74,
-        "pos": 69,
-        "sho": 66,
-        "sta": 72,
-        "str": 71,
-        "tac": 67,
-        "vis": 76
-      },
-      "birth": "1980-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0u03mdr",
-      "name": "Daniele De Vezza",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 9500
     },
     {
       "attrs": {

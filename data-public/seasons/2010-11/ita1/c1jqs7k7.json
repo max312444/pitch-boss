@@ -611,32 +611,6 @@
     },
     {
       "attrs": {
-        "aer": 53,
-        "com": 59,
-        "dri": 51,
-        "ldr": 54,
-        "pac": 59,
-        "pas": 46,
-        "pos": 54,
-        "sho": 62,
-        "sta": 55,
-        "str": 56,
-        "tac": 26,
-        "vis": 46
-      },
-      "birth": "1985-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1tm61ho",
-      "name": "Domenico Girardy",
-      "nation": "ITA",
-      "number": 39,
-      "pos": "ST",
-      "wage": 4000
-    },
-    {
-      "attrs": {
         "aer": 69,
         "com": 70,
         "dri": 72,

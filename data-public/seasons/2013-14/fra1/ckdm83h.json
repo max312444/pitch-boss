@@ -316,37 +316,6 @@
         "LW"
       ],
       "attrs": {
-        "aer": 51,
-        "com": 65,
-        "dri": 72,
-        "ldr": 59,
-        "pac": 70,
-        "pas": 65,
-        "pos": 47,
-        "sho": 67,
-        "sta": 64,
-        "str": 57,
-        "tac": 43,
-        "vis": 64
-      },
-      "birth": "1988-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1n4sw7x",
-      "name": "Lynel Kitambale",
-      "nation": "FRA",
-      "nation2": "COD",
-      "number": 14,
-      "pos": "RW",
-      "wage": 15500,
-      "weight": 72
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
         "aer": 48,
         "com": 59,
         "dri": 65,
@@ -398,33 +367,6 @@
       "pos": "GK",
       "wage": 33500,
       "weight": 74
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 61,
-        "dri": 61,
-        "ldr": 59,
-        "pac": 61,
-        "pas": 56,
-        "pos": 60,
-        "sho": 67,
-        "sta": 56,
-        "str": 64,
-        "tac": 31,
-        "vis": 55
-      },
-      "birth": "1993-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1n4lonu",
-      "name": "Kevin Maii",
-      "nation": "FRA",
-      "number": 17,
-      "pos": "ST",
-      "wage": 10000,
-      "weight": 78
     },
     {
       "alt": [

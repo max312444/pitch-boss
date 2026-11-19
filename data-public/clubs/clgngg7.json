@@ -1,0 +1,33 @@
+{
+  "city": "Chateauroux",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "CHT",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1883,
+  "id": "clgngg7",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "LB 샤토로",
+  "name": "LB Chateauruux",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "CHT"
+}

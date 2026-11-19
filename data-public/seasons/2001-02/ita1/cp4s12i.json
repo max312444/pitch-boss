@@ -253,34 +253,6 @@
     },
     {
       "attrs": {
-        "aer": 72,
-        "com": 66,
-        "dri": 53,
-        "ldr": 71,
-        "pac": 60,
-        "pas": 60,
-        "pos": 69,
-        "sho": 38,
-        "sta": 62,
-        "str": 71,
-        "tac": 69,
-        "vis": 52
-      },
-      "birth": "1978-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0kwqg3w",
-      "name": "Claudio Ryvalta",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6000,
-      "weight": 68
-    },
-    {
-      "attrs": {
         "aer": 63,
         "com": 73,
         "dri": 70,
@@ -305,33 +277,6 @@
       "pos": "CM",
       "wage": 8000,
       "weight": 68
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 72,
-        "dri": 65,
-        "ldr": 65,
-        "pac": 66,
-        "pas": 63,
-        "pos": 64,
-        "sho": 71,
-        "sta": 63,
-        "str": 71,
-        "tac": 38,
-        "vis": 61
-      },
-      "birth": "1977-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p1qpi0ae",
-      "name": "Cristian Bocchi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "wage": 4500,
-      "weight": 79
     },
     {
       "attrs": {

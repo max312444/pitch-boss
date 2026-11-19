@@ -524,36 +524,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 69,
-        "com": 78,
-        "dri": 78,
-        "ldr": 78,
-        "pac": 74,
-        "pas": 82,
-        "pos": 75,
-        "sho": 72,
-        "sta": 79,
-        "str": 72,
-        "tac": 70,
-        "vis": 81
-      },
-      "birth": "1981-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1dzm7je",
-      "name": "Enzo Meresca",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 84500,
-      "weight": 77
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 74,
         "com": 82,
         "dri": 78,
@@ -753,38 +723,6 @@
       "pos": "CB",
       "wage": 32000,
       "weight": 72
-    },
-    {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 71,
-        "com": 80,
-        "dri": 75,
-        "ldr": 73,
-        "pac": 72,
-        "pas": 79,
-        "pos": 76,
-        "sho": 74,
-        "sta": 81,
-        "str": 73,
-        "tac": 73,
-        "vis": 80
-      },
-      "birth": "1980-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p08vmhaf",
-      "name": "Marco Rygoni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 25000,
-      "weight": 74
     },
     {
       "attrs": {

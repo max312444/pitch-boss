@@ -644,35 +644,6 @@
       "weight": 73
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 64,
-        "dri": 61,
-        "ldr": 59,
-        "pac": 60,
-        "pas": 67,
-        "pos": 62,
-        "sho": 58,
-        "sta": 68,
-        "str": 64,
-        "tac": 61,
-        "vis": 65
-      },
-      "birth": "1985-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1mawa6s",
-      "name": "Roberto Suusa",
-      "nation": "BRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 8500
-    },
-    {
       "attrs": {
         "aer": 68,
         "com": 71,

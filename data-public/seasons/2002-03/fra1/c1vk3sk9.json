@@ -623,33 +623,6 @@
       "weight": 72
     },
     {
-      "attrs": {
-        "aer": 66,
-        "com": 65,
-        "han": 65,
-        "ldr": 66,
-        "one": 68,
-        "pac": 47,
-        "pas": 54,
-        "pos": 68,
-        "ref": 64,
-        "sta": 50,
-        "str": 64,
-        "vis": 50
-      },
-      "birth": "1976-06-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0tnowos",
-      "name": "Eric Allibart",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 4500
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -882,32 +855,6 @@
       "pos": "AM",
       "verify": true,
       "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 61,
-        "dri": 55,
-        "ldr": 52,
-        "pac": 57,
-        "pas": 54,
-        "pos": 56,
-        "sho": 63,
-        "sta": 53,
-        "str": 57,
-        "tac": 29,
-        "vis": 51
-      },
-      "birth": "1981-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0qdgoc8",
-      "name": "Mathieu Matun",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 2000
     },
     {
       "alt": [

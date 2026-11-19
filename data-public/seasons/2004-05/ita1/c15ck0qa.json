@@ -430,61 +430,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 64,
-        "dri": 53,
-        "ldr": 70,
-        "pac": 63,
-        "pas": 59,
-        "pos": 71,
-        "sho": 38,
-        "sta": 61,
-        "str": 66,
-        "tac": 66,
-        "vis": 49
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0meh6io",
-      "name": "Stefano Fenucci",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 5000,
-      "weight": 74
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 68,
-        "dri": 66,
-        "ldr": 64,
-        "pac": 66,
-        "pas": 57,
-        "pos": 65,
-        "sho": 65,
-        "sta": 64,
-        "str": 66,
-        "tac": 36,
-        "vis": 57
-      },
-      "birth": "1980-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p177gq9p",
-      "name": "Andrea Rabyto",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4500,
-      "weight": 72
-    },
-    {
-      "attrs": {
         "aer": 65,
         "com": 67,
         "dri": 62,
@@ -539,65 +484,6 @@
       "pos": "RWB",
       "wage": 4000,
       "weight": 75
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 67,
-        "dri": 67,
-        "ldr": 64,
-        "pac": 62,
-        "pas": 67,
-        "pos": 62,
-        "sho": 58,
-        "sta": 68,
-        "str": 60,
-        "tac": 61,
-        "vis": 69
-      },
-      "birth": "1982-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0aioh61",
-      "name": "Maurizio Ciaramytaro",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 5000,
-      "weight": 76
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 62,
-        "dri": 49,
-        "ldr": 62,
-        "pac": 60,
-        "pas": 53,
-        "pos": 66,
-        "sho": 36,
-        "sta": 62,
-        "str": 68,
-        "tac": 67,
-        "vis": 48
-      },
-      "birth": "1971-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p058k5yg",
-      "name": "Richard Vanygli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000,
-      "weight": 70
     },
     {
       "attrs": {
@@ -744,34 +630,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 53,
-        "com": 65,
-        "dri": 64,
-        "ldr": 65,
-        "pac": 63,
-        "pas": 64,
-        "pos": 64,
-        "sho": 59,
-        "sta": 67,
-        "str": 60,
-        "tac": 62,
-        "vis": 69
-      },
-      "birth": "1974-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p1vuv23y",
-      "name": "Emiliano Byliotti",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000,
-      "weight": 68
     },
     {
       "alt": [

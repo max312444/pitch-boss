@@ -330,36 +330,6 @@
       "weight": 85
     },
     {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 65,
-        "com": 72,
-        "dri": 73,
-        "ldr": 74,
-        "pac": 70,
-        "pas": 77,
-        "pos": 73,
-        "sho": 66,
-        "sta": 77,
-        "str": 72,
-        "tac": 71,
-        "vis": 75
-      },
-      "birth": "1975-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0rxhsiu",
-      "name": "Jose Felix Guerreru",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "wage": 17000
-    },
-    {
       "attrs": {
         "aer": 72,
         "com": 71,
@@ -468,33 +438,6 @@
       "pos": "ST",
       "wage": 9000,
       "weight": 74
-    },
-    {
-      "attrs": {
-        "aer": 53,
-        "com": 69,
-        "dri": 70,
-        "ldr": 65,
-        "pac": 70,
-        "pas": 70,
-        "pos": 55,
-        "sho": 72,
-        "sta": 64,
-        "str": 60,
-        "tac": 47,
-        "vis": 72
-      },
-      "birth": "1979-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p19blrt6",
-      "name": "Jose Barkaro",
-      "nation": "ESP",
-      "number": null,
-      "pos": "AM",
-      "wage": 7000,
-      "weight": 75
     },
     {
       "attrs": {
@@ -744,37 +687,6 @@
       "number": null,
       "pos": "DM",
       "wage": 7500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 68,
-        "dri": 60,
-        "ldr": 60,
-        "pac": 61,
-        "pas": 67,
-        "pos": 60,
-        "sho": 61,
-        "sta": 67,
-        "str": 61,
-        "tac": 61,
-        "vis": 66
-      },
-      "birth": "1972-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 168,
-      "id": "p1cp2355",
-      "name": "Stephane Cullet",
-      "nation": "FRA",
-      "nation2": "MAD",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 7000
     },
     {
       "alt": [

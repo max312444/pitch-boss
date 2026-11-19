@@ -423,34 +423,6 @@
       "weight": 81
     },
     {
-      "attrs": {
-        "aer": 51,
-        "com": 66,
-        "dri": 72,
-        "ldr": 59,
-        "pac": 67,
-        "pas": 64,
-        "pos": 48,
-        "sho": 63,
-        "sta": 62,
-        "str": 53,
-        "tac": 44,
-        "vis": 61
-      },
-      "birth": "1984-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0p9gxxi",
-      "name": "Jimmy Keba",
-      "nation": "MLI",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 8000
-    },
-    {
       "alt": [
         "LW"
       ],
@@ -735,32 +707,6 @@
       "weight": 90
     },
     {
-      "attrs": {
-        "aer": 49,
-        "com": 63,
-        "dri": 62,
-        "ldr": 59,
-        "pac": 59,
-        "pas": 63,
-        "pos": 46,
-        "sho": 65,
-        "sta": 60,
-        "str": 52,
-        "tac": 41,
-        "vis": 65
-      },
-      "birth": "1982-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p1axb5lu",
-      "name": "Mounir Diene",
-      "nation": "MAR",
-      "number": null,
-      "pos": "AM",
-      "wage": 5500
-    },
-    {
       "alt": [
         "LW"
       ],
@@ -880,34 +826,6 @@
       "weight": 66
     },
     {
-      "attrs": {
-        "aer": 56,
-        "com": 65,
-        "dri": 58,
-        "ldr": 54,
-        "pac": 59,
-        "pas": 52,
-        "pos": 56,
-        "sho": 63,
-        "sta": 60,
-        "str": 61,
-        "tac": 31,
-        "vis": 52
-      },
-      "birth": "1985-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 171,
-      "id": "p0s0iox4",
-      "name": "Seid Khitar",
-      "nation": "FRA",
-      "nation2": "ALG",
-      "number": null,
-      "pos": "ST",
-      "wage": 2000,
-      "weight": 71
-    },
-    {
       "alt": [
         "LW"
       ],
@@ -991,33 +909,6 @@
       "number": null,
       "pos": "ST",
       "wage": 1500
-    },
-    {
-      "attrs": {
-        "aer": 45,
-        "com": 63,
-        "dri": 60,
-        "ldr": 58,
-        "pac": 56,
-        "pas": 59,
-        "pos": 43,
-        "sho": 57,
-        "sta": 58,
-        "str": 49,
-        "tac": 37,
-        "vis": 61
-      },
-      "birth": "1985-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p1b8rapt",
-      "name": "Simon Feinduuno",
-      "nation": "GUI",
-      "number": null,
-      "pos": "AM",
-      "wage": 1500,
-      "weight": 64
     },
     {
       "alt": [

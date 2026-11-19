@@ -197,34 +197,6 @@
     },
     {
       "attrs": {
-        "aer": 51,
-        "com": 63,
-        "dri": 66,
-        "ldr": 62,
-        "pac": 66,
-        "pas": 67,
-        "pos": 51,
-        "sho": 66,
-        "sta": 62,
-        "str": 56,
-        "tac": 42,
-        "vis": 71
-      },
-      "birth": "1969-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p16tyf26",
-      "name": "Corentin Mertins",
-      "nation": "FRA",
-      "nation2": "POR",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 16000
-    },
-    {
-      "attrs": {
         "aer": 63,
         "com": 74,
         "dri": 70,
@@ -423,34 +395,6 @@
       "verify": true,
       "wage": 12000,
       "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 74,
-        "han": 73,
-        "ldr": 73,
-        "one": 68,
-        "pac": 57,
-        "pas": 61,
-        "pos": 75,
-        "ref": 75,
-        "sta": 60,
-        "str": 70,
-        "vis": 62
-      },
-      "birth": "1975-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0o64ka5",
-      "name": "Vincent Fernendez",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 10500,
-      "weight": 84
     },
     {
       "attrs": {

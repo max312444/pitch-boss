@@ -1073,35 +1073,6 @@
       "wage": 2500
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 62,
-        "com": 68,
-        "dri": 66,
-        "ldr": 70,
-        "pac": 69,
-        "pas": 76,
-        "pos": 71,
-        "sho": 63,
-        "sta": 74,
-        "str": 69,
-        "tac": 68,
-        "vis": 73
-      },
-      "birth": "1979-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1omt4fc",
-      "name": "Marco Bonora",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 4500
-    },
-    {
       "attrs": {
         "aer": 66,
         "com": 72,

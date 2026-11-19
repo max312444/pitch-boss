@@ -1,0 +1,33 @@
+{
+  "city": "Beauvais",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "BEE",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1945,
+  "id": "c62270q",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "AS 보베 우어즈",
+  "name": "AS Beeuvais Oise",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "BEE"
+}

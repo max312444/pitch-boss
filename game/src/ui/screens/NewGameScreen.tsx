@@ -173,7 +173,7 @@ function ClubNewGame() {
               );
             })}
           </div>
-          <div className="-mx-4 mt-5 flex gap-2 overflow-x-auto px-4 pb-1 lg:mx-0 lg:mt-6 lg:px-0 lg:pb-0">
+          <div className="-mx-4 mt-5 flex gap-2 overflow-x-auto px-4 pb-1 lg:mx-0 lg:mt-6 lg:flex-wrap lg:overflow-visible lg:px-0 lg:pb-0">
             {lgOptions.map((l) => (
               <button key={l.id} onClick={() => setLeague(l.id)}
                 className={`h-10 shrink-0 rounded-lg px-4 text-[14px] font-semibold whitespace-nowrap transition-colors lg:px-5 ${

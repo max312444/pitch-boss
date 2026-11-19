@@ -603,33 +603,6 @@
     },
     {
       "attrs": {
-        "aer": 58,
-        "com": 65,
-        "dri": 58,
-        "ldr": 57,
-        "pac": 63,
-        "pas": 53,
-        "pos": 58,
-        "sho": 62,
-        "sta": 55,
-        "str": 65,
-        "tac": 30,
-        "vis": 56
-      },
-      "birth": "1983-09-01",
-      "contract": "2006-06-30",
-      "foot": "R",
-      "height": 178,
-      "id": "p1wt8y9t",
-      "name": "Stefan Muore",
-      "nation": "ENG",
-      "number": 26,
-      "pos": "ST",
-      "wage": 11000,
-      "weight": 68
-    },
-    {
-      "attrs": {
         "aer": 72,
         "com": 72,
         "dri": 60,

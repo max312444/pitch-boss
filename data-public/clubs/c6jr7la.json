@@ -1,0 +1,33 @@
+{
+  "city": "Castellammare di Stabia",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#000000",
+      "#FFFF00",
+      "#FFFF00"
+    ],
+    "mark": "STA",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1907,
+  "id": "c6jr7la",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FFFF00",
+      "secondary": "#000000"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFF00"
+    }
+  },
+  "ko": "SS 유베 스타비어",
+  "name": "SS Juve Stabya",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "STA"
+}

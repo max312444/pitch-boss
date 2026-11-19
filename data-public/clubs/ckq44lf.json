@@ -1,0 +1,33 @@
+{
+  "city": "Stockport",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#0000FF",
+      "#0000FF"
+    ],
+    "mark": "STC",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1883,
+  "id": "ckq44lf",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#0000FF",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#0000FF"
+    }
+  },
+  "ko": "스툭포트 카운티 FC",
+  "name": "Stuckport County F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "STC"
+}

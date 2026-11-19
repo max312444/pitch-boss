@@ -377,37 +377,6 @@
       "weight": 64
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 46,
-        "com": 61,
-        "dri": 68,
-        "ldr": 61,
-        "pac": 70,
-        "pas": 60,
-        "pos": 44,
-        "sho": 61,
-        "sta": 64,
-        "str": 55,
-        "tac": 39,
-        "vis": 64
-      },
-      "birth": "1992-10-01",
-      "contract": "2018-06-30",
-      "foot": "L",
-      "height": 177,
-      "id": "p1w8j1kp",
-      "name": "Modou Berrow",
-      "nation": "GAM",
-      "number": 17,
-      "pos": "RW",
-      "verify": true,
-      "wage": 26500,
-      "weight": 70
-    },
-    {
       "attrs": {
         "aer": 74,
         "com": 80,

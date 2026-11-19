@@ -390,36 +390,6 @@
       "weight": 75
     },
     {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 76,
-        "dri": 70,
-        "ldr": 68,
-        "pac": 71,
-        "pas": 74,
-        "pos": 71,
-        "sho": 70,
-        "sta": 75,
-        "str": 71,
-        "tac": 70,
-        "vis": 73
-      },
-      "birth": "1974-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p08y1v1v",
-      "name": "Jose Caledo",
-      "nation": "POR",
-      "number": null,
-      "pos": "CM",
-      "wage": 16500
-    },
-    {
       "attrs": {
         "aer": 65,
         "com": 67,
@@ -527,7 +497,7 @@
       "foot": null,
       "height": 173,
       "id": "p1g2nsau",
-      "name": "Johannes Karl Guðjonssun",
+      "name": "Joey Guðjonssun",
       "nation": "ISL",
       "number": null,
       "pos": "CM",
@@ -727,34 +697,6 @@
       "pos": "CB",
       "wage": 6000,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 58,
-        "han": 61,
-        "ldr": 60,
-        "one": 63,
-        "pac": 44,
-        "pas": 51,
-        "pos": 59,
-        "ref": 65,
-        "sta": 48,
-        "str": 57,
-        "vis": 52
-      },
-      "birth": "1969-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p0onuwof",
-      "name": "Ronny Gaspercyc",
-      "nation": "BEL",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 7000,
-      "weight": 87
     },
     {
       "attrs": {

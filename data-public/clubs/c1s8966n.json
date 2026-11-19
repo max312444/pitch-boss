@@ -1,0 +1,33 @@
+{
+  "city": "Stade de Paris",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "STE",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1897,
+  "id": "c1s8966n",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "레두 스타 FC",
+  "name": "Red Ster FC",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "STE"
+}

@@ -1,0 +1,33 @@
+{
+  "city": "Portogruaro",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "POO",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1990,
+  "id": "c18qw1si",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "Portogruaru Calcio ASD",
+  "name": "Portogruaru Calcio ASD",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "POO"
+}

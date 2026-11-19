@@ -137,37 +137,6 @@
       "wage": 16500
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 69,
-        "dri": 70,
-        "ldr": 67,
-        "pac": 68,
-        "pas": 71,
-        "pos": 69,
-        "sho": 68,
-        "sta": 76,
-        "str": 69,
-        "tac": 70,
-        "vis": 76
-      },
-      "birth": "1975-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0bqb39j",
-      "name": "Oscar Arpun",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 18500,
-      "weight": 74
-    },
-    {
       "attrs": {
         "aer": 71,
         "com": 72,
@@ -194,33 +163,6 @@
       "verify": true,
       "wage": 13000,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 68,
-        "dri": 65,
-        "ldr": 63,
-        "pac": 66,
-        "pas": 61,
-        "pos": 65,
-        "sho": 71,
-        "sta": 61,
-        "str": 68,
-        "tac": 37,
-        "vis": 57
-      },
-      "birth": "1968-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p0nb0pxs",
-      "name": "Miroslaw Trzeciek",
-      "nation": "POL",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 10000
     },
     {
       "alt": [
@@ -251,33 +193,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 14000
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 71,
-        "dri": 68,
-        "ldr": 74,
-        "pac": 65,
-        "pas": 72,
-        "pos": 75,
-        "sho": 57,
-        "sta": 72,
-        "str": 74,
-        "tac": 72,
-        "vis": 71
-      },
-      "birth": "1975-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p12o2wzj",
-      "name": "Francisco Punel",
-      "nation": "ESP",
-      "number": null,
-      "pos": "DM",
-      "wage": 17000,
-      "weight": 73
     },
     {
       "attrs": {
@@ -358,33 +273,6 @@
       "pos": "CB",
       "wage": 8000,
       "weight": 79
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 65,
-        "dri": 51,
-        "ldr": 69,
-        "pac": 59,
-        "pas": 54,
-        "pos": 71,
-        "sho": 41,
-        "sta": 63,
-        "str": 65,
-        "tac": 67,
-        "vis": 54
-      },
-      "birth": "1969-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0mnvszt",
-      "name": "Risto Videkovic",
-      "nation": "SRB",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 8500
     },
     {
       "attrs": {
@@ -746,33 +634,6 @@
       "wage": 4000
     },
     {
-      "attrs": {
-        "aer": 63,
-        "com": 65,
-        "dri": 60,
-        "ldr": 66,
-        "pac": 60,
-        "pas": 69,
-        "pos": 71,
-        "sho": 55,
-        "sta": 70,
-        "str": 67,
-        "tac": 66,
-        "vis": 66
-      },
-      "birth": "1976-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p01cbccm",
-      "name": "Leandro Sene",
-      "nation": "BRA",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 6000
-    },
-    {
       "alt": [
         "CM",
         "DM",
@@ -888,32 +749,6 @@
       "pos": "RB",
       "verify": true,
       "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 67,
-        "dri": 65,
-        "ldr": 62,
-        "pac": 63,
-        "pas": 59,
-        "pos": 63,
-        "sho": 70,
-        "sta": 61,
-        "str": 62,
-        "tac": 34,
-        "vis": 57
-      },
-      "birth": "1977-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0kbv2cp",
-      "name": "Gorka de Carlos Garcie",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 2000
     }
   ],
   "stadiumCapacity": 23576

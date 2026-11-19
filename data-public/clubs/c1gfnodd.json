@@ -1,0 +1,33 @@
+{
+  "city": "Badalona",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "MAA",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 2022,
+  "id": "c1gfnodd",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "UE 랴고스테러",
+  "name": "Som Marasme FC",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "MAA"
+}

@@ -1,0 +1,33 @@
+{
+  "city": "Cosenza",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "COS",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1914,
+  "id": "c9id16t",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "Cosenze Calcio",
+  "name": "Cosenze Calcio",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "COS"
+}

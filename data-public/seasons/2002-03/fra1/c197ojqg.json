@@ -680,33 +680,6 @@
     },
     {
       "attrs": {
-        "aer": 63,
-        "com": 63,
-        "han": 64,
-        "ldr": 63,
-        "one": 61,
-        "pac": 47,
-        "pas": 54,
-        "pos": 68,
-        "ref": 69,
-        "sta": 51,
-        "str": 62,
-        "vis": 55
-      },
-      "birth": "1976-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p1pzu8og",
-      "name": "Fabien Debac",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 5000
-    },
-    {
-      "attrs": {
         "aer": 67,
         "com": 61,
         "dri": 51,
@@ -1042,36 +1015,6 @@
       "weight": 90
     },
     {
-      "alt": [
-        "CM",
-        "DM"
-      ],
-      "attrs": {
-        "aer": 46,
-        "com": 58,
-        "dri": 64,
-        "ldr": 55,
-        "pac": 57,
-        "pas": 62,
-        "pos": 44,
-        "sho": 60,
-        "sta": 58,
-        "str": 50,
-        "tac": 35,
-        "vis": 65
-      },
-      "birth": "1980-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p04hhrcq",
-      "name": "Michael Cytony",
-      "nation": "FRA",
-      "number": null,
-      "pos": "AM",
-      "wage": 2000
-    },
-    {
       "attrs": {
         "aer": 55,
         "com": 59,
@@ -1125,33 +1068,6 @@
       "number": null,
       "pos": "RB",
       "verify": true,
-      "wage": 1500
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 53,
-        "dri": 41,
-        "ldr": 56,
-        "pac": 50,
-        "pas": 49,
-        "pos": 62,
-        "sho": 30,
-        "sta": 55,
-        "str": 61,
-        "tac": 61,
-        "vis": 45
-      },
-      "birth": "1981-12-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0uvkrc5",
-      "name": "Jure Primurac",
-      "nation": "FRA",
-      "nation2": "CRO",
-      "number": null,
-      "pos": "CB",
       "wage": 1500
     },
     {

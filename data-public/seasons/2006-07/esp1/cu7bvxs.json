@@ -308,34 +308,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 76,
-        "dri": 70,
-        "ldr": 67,
-        "pac": 71,
-        "pas": 63,
-        "pos": 68,
-        "sho": 75,
-        "sta": 66,
-        "str": 73,
-        "tac": 43,
-        "vis": 68
-      },
-      "birth": "1976-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p12djt2r",
-      "name": "Edwin Congu",
-      "nation": "ESP",
-      "nation2": "COL",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 13000
-    },
-    {
-      "attrs": {
         "aer": 74,
         "com": 76,
         "dri": 70,
@@ -479,37 +451,6 @@
       "wage": 16000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 68,
-        "dri": 65,
-        "ldr": 68,
-        "pac": 66,
-        "pas": 71,
-        "pos": 66,
-        "sho": 60,
-        "sta": 73,
-        "str": 63,
-        "tac": 66,
-        "vis": 71
-      },
-      "birth": "1974-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p0y2g4za",
-      "name": "Sandru",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 15500,
-      "weight": 63
-    },
-    {
       "attrs": {
         "aer": 69,
         "com": 63,
@@ -646,33 +587,6 @@
       "wage": 8500
     },
     {
-      "attrs": {
-        "aer": 56,
-        "com": 67,
-        "dri": 67,
-        "ldr": 64,
-        "pac": 70,
-        "pas": 64,
-        "pos": 70,
-        "sho": 46,
-        "sta": 73,
-        "str": 66,
-        "tac": 67,
-        "vis": 62
-      },
-      "birth": "1980-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0npb0s7",
-      "name": "Juenra",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 7500
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -728,33 +642,6 @@
       "pos": "RB",
       "verify": true,
       "wage": 7500
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 71,
-        "dri": 64,
-        "ldr": 72,
-        "pac": 61,
-        "pas": 67,
-        "pos": 72,
-        "sho": 59,
-        "sta": 73,
-        "str": 68,
-        "tac": 72,
-        "vis": 65
-      },
-      "birth": "1974-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0jcyocv",
-      "name": "Txomin Nagora",
-      "nation": "ESP",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 10000
     },
     {
       "attrs": {
@@ -840,33 +727,6 @@
     },
     {
       "attrs": {
-        "aer": 56,
-        "com": 63,
-        "dri": 66,
-        "ldr": 65,
-        "pac": 70,
-        "pas": 67,
-        "pos": 67,
-        "sho": 46,
-        "sta": 73,
-        "str": 59,
-        "tac": 68,
-        "vis": 58
-      },
-      "birth": "1983-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1k0lmxr",
-      "name": "Juan Caballos",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 5000
-    },
-    {
-      "attrs": {
         "aer": 74,
         "com": 68,
         "dri": 56,
@@ -891,33 +751,6 @@
       "pos": "CB",
       "wage": 4000,
       "weight": 85
-    },
-    {
-      "attrs": {
-        "aer": 72,
-        "com": 66,
-        "dri": 50,
-        "ldr": 70,
-        "pac": 62,
-        "pas": 59,
-        "pos": 69,
-        "sho": 40,
-        "sta": 63,
-        "str": 66,
-        "tac": 72,
-        "vis": 52
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p176hwlq",
-      "name": "Jose Antonio Culabras",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5000
     },
     {
       "alt": [

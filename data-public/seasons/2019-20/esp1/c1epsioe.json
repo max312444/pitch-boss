@@ -445,38 +445,6 @@
     },
     {
       "alt": [
-        "ST",
-        "CM",
-        "DM"
-      ],
-      "attrs": {
-        "aer": 50,
-        "com": 67,
-        "dri": 70,
-        "ldr": 67,
-        "pac": 66,
-        "pas": 68,
-        "pos": 46,
-        "sho": 67,
-        "sta": 62,
-        "str": 54,
-        "tac": 41,
-        "vis": 68
-      },
-      "birth": "1991-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1izrc85",
-      "name": "Yannis Salibor",
-      "nation": "FRA",
-      "number": 16,
-      "pos": "AM",
-      "wage": 47000,
-      "weight": 76
-    },
-    {
-      "alt": [
         "LW"
       ],
       "attrs": {

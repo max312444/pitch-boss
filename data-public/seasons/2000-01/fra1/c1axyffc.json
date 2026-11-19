@@ -560,63 +560,6 @@
     },
     {
       "alt": [
-        "CM"
-      ],
-      "attrs": {
-        "aer": 65,
-        "com": 66,
-        "dri": 61,
-        "ldr": 68,
-        "pac": 62,
-        "pas": 67,
-        "pos": 68,
-        "sho": 57,
-        "sta": 67,
-        "str": 68,
-        "tac": 66,
-        "vis": 63
-      },
-      "birth": "1972-12-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1fekm5o",
-      "name": "Eric Crosniar",
-      "nation": "FRA",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 4500
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 63,
-        "dri": 58,
-        "ldr": 55,
-        "pac": 63,
-        "pas": 55,
-        "pos": 60,
-        "sho": 60,
-        "sta": 54,
-        "str": 57,
-        "tac": 30,
-        "vis": 52
-      },
-      "birth": "1977-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1ucnmwa",
-      "name": "Freddy Bourgaois",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {

@@ -253,37 +253,6 @@
     },
     {
       "alt": [
-        "LW",
-        "LB"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 71,
-        "dri": 76,
-        "ldr": 65,
-        "pac": 75,
-        "pas": 73,
-        "pos": 54,
-        "sho": 71,
-        "sta": 69,
-        "str": 63,
-        "tac": 50,
-        "vis": 73
-      },
-      "birth": "1982-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p1un1hde",
-      "name": "Neno",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 20000
-    },
-    {
-      "alt": [
         "ST"
       ],
       "attrs": {

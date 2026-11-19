@@ -559,33 +559,6 @@
       "wage": 5000
     },
     {
-      "attrs": {
-        "aer": 61,
-        "com": 62,
-        "han": 64,
-        "ldr": 61,
-        "one": 62,
-        "pac": 43,
-        "pas": 50,
-        "pos": 61,
-        "ref": 66,
-        "sta": 49,
-        "str": 58,
-        "vis": 52
-      },
-      "birth": "1973-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1ts6skc",
-      "name": "David Kleyn",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 4000
-    },
-    {
       "alt": [
         "LM"
       ],
@@ -861,33 +834,6 @@
       "pos": "ST",
       "verify": true,
       "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 53,
-        "dri": 39,
-        "ldr": 57,
-        "pac": 47,
-        "pas": 50,
-        "pos": 59,
-        "sho": 28,
-        "sta": 49,
-        "str": 59,
-        "tac": 62,
-        "vis": 43
-      },
-      "birth": "1973-12-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0g3cbc4",
-      "name": "Philippe Borle",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000
     }
   ],
   "stadiumCapacity": 25000

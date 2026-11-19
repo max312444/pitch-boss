@@ -190,33 +190,6 @@
     },
     {
       "attrs": {
-        "aer": 75,
-        "com": 76,
-        "dri": 72,
-        "ldr": 73,
-        "pac": 75,
-        "pas": 68,
-        "pos": 75,
-        "sho": 80,
-        "sta": 71,
-        "str": 78,
-        "tac": 49,
-        "vis": 66
-      },
-      "birth": "1975-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p0sy99u8",
-      "name": "Salva Bellesta",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 13500
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 74,
         "dri": 74,

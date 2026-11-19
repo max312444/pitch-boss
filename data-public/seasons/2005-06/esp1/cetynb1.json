@@ -655,33 +655,6 @@
     {
       "attrs": {
         "aer": 80,
-        "com": 74,
-        "dri": 68,
-        "ldr": 82,
-        "pac": 73,
-        "pas": 73,
-        "pos": 81,
-        "sho": 49,
-        "sta": 77,
-        "str": 81,
-        "tac": 80,
-        "vis": 68
-      },
-      "birth": "1982-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p08h902j",
-      "name": "Ruben Gonzalaz",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 41000,
-      "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 80,
         "com": 81,
         "dri": 66,
         "ldr": 79,
@@ -849,61 +822,6 @@
       "pos": "ST",
       "verify": true,
       "wage": 19000
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 69,
-        "han": 70,
-        "ldr": 65,
-        "one": 72,
-        "pac": 56,
-        "pas": 60,
-        "pos": 74,
-        "ref": 70,
-        "sta": 60,
-        "str": 67,
-        "vis": 60
-      },
-      "birth": "1978-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1xhvvq4",
-      "name": "Carlos Senchez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "wage": 19500,
-      "weight": 83
-    },
-    {
-      "attrs": {
-        "aer": 73,
-        "com": 78,
-        "han": 78,
-        "ldr": 73,
-        "one": 81,
-        "pac": 58,
-        "pas": 65,
-        "pos": 79,
-        "ref": 80,
-        "sta": 67,
-        "str": 71,
-        "vis": 69
-      },
-      "birth": "1982-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p1kdi3tb",
-      "name": "David Cubeno",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 18500,
-      "weight": 82
     },
     {
       "attrs": {

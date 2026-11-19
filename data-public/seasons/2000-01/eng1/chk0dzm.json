@@ -637,37 +637,6 @@
       "wage": 6500
     },
     {
-      "alt": [
-        "CB",
-        "LB"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 65,
-        "dri": 63,
-        "ldr": 62,
-        "pac": 72,
-        "pas": 61,
-        "pos": 65,
-        "sho": 49,
-        "sta": 70,
-        "str": 59,
-        "tac": 70,
-        "vis": 59
-      },
-      "birth": "1979-11-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 180,
-      "id": "p0fjrdy4",
-      "name": "Robbie Stockdala",
-      "nation": "SCO",
-      "nation2": "SCO",
-      "number": 27,
-      "pos": "RB",
-      "wage": 10500
-    },
-    {
       "attrs": {
         "aer": 61,
         "com": 63,

@@ -1,0 +1,33 @@
+{
+  "city": "Badajoz",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "BED",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 2012,
+  "id": "c1u55bgq",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "CD 바더호스",
+  "name": "CD Bedajoz",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "BED"
+}

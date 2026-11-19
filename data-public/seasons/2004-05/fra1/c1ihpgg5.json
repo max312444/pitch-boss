@@ -271,36 +271,6 @@
       "wage": 10000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 62,
-        "com": 69,
-        "dri": 67,
-        "ldr": 66,
-        "pac": 66,
-        "pas": 71,
-        "pos": 67,
-        "sho": 68,
-        "sta": 73,
-        "str": 66,
-        "tac": 67,
-        "vis": 71
-      },
-      "birth": "1972-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p15bqo10",
-      "name": "Jocelyn Guurvennec",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 11000
-    },
-    {
       "attrs": {
         "aer": 76,
         "com": 69,
@@ -648,34 +618,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 6000
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 63,
-        "dri": 49,
-        "ldr": 67,
-        "pac": 55,
-        "pas": 57,
-        "pos": 67,
-        "sho": 37,
-        "sta": 63,
-        "str": 68,
-        "tac": 70,
-        "vis": 48
-      },
-      "birth": "1973-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1uutl30",
-      "name": "Frederic Mendi",
-      "nation": "FRA",
-      "nation2": "SEN",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500
     },
     {
       "attrs": {

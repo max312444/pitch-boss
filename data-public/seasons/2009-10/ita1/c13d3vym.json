@@ -591,36 +591,6 @@
       "weight": 83
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 62,
-        "com": 70,
-        "dri": 66,
-        "ldr": 65,
-        "pac": 69,
-        "pas": 70,
-        "pos": 68,
-        "sho": 65,
-        "sta": 72,
-        "str": 66,
-        "tac": 64,
-        "vis": 74
-      },
-      "birth": "1983-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1cihmgo",
-      "name": "Nicolas Amodyo",
-      "nation": "URU",
-      "number": 32,
-      "pos": "CM",
-      "wage": 20000,
-      "weight": 80
-    },
-    {
       "attrs": {
         "aer": 71,
         "com": 68,

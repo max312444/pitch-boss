@@ -373,37 +373,6 @@
     },
     {
       "alt": [
-        "AM"
-      ],
-      "attrs": {
-        "aer": 68,
-        "com": 69,
-        "dri": 65,
-        "ldr": 66,
-        "pac": 65,
-        "pas": 56,
-        "pos": 66,
-        "sho": 73,
-        "sta": 62,
-        "str": 66,
-        "tac": 39,
-        "vis": 59
-      },
-      "birth": "1971-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 168,
-      "id": "p11wtogu",
-      "name": "Benito Carbona",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 10000,
-      "weight": 67
-    },
-    {
-      "alt": [
         "RW",
         "LW"
       ],
@@ -699,34 +668,6 @@
       "weight": 80
     },
     {
-      "attrs": {
-        "aer": 64,
-        "com": 66,
-        "dri": 69,
-        "ldr": 66,
-        "pac": 65,
-        "pas": 63,
-        "pos": 66,
-        "sho": 70,
-        "sta": 64,
-        "str": 65,
-        "tac": 40,
-        "vis": 59
-      },
-      "birth": "1984-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p1aadsgd",
-      "name": "Zlatko Dadic",
-      "nation": "SVN",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3500,
-      "weight": 77
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -756,60 +697,6 @@
       "verify": true,
       "wage": 4500,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 69,
-        "dri": 63,
-        "ldr": 63,
-        "pac": 65,
-        "pas": 56,
-        "pos": 66,
-        "sho": 69,
-        "sta": 61,
-        "str": 67,
-        "tac": 39,
-        "vis": 59
-      },
-      "birth": "1982-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0z6akvt",
-      "name": "Gaetano Griaco",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "wage": 3000,
-      "weight": 69
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 64,
-        "han": 63,
-        "ldr": 64,
-        "one": 61,
-        "pac": 41,
-        "pas": 52,
-        "pos": 62,
-        "ref": 66,
-        "sta": 51,
-        "str": 56,
-        "vis": 50
-      },
-      "birth": "1983-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1v2st60",
-      "name": "Alfonso De Lucie",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "wage": 3500,
-      "weight": 80
     },
     {
       "alt": [

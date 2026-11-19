@@ -1,0 +1,33 @@
+{
+  "city": "Andorra la Vella",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FF0000",
+      "#0000FF",
+      "#0000FF"
+    ],
+    "mark": "AND",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1942,
+  "id": "c1pbcge",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#0000FF",
+      "secondary": "#FF0000"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FF0000",
+      "secondary": "#0000FF"
+    }
+  },
+  "ko": "FC 안두라",
+  "name": "FC Andorre",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "AND"
+}

@@ -1,0 +1,33 @@
+{
+  "city": "Dunkirk",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "DUN",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1909,
+  "id": "c11k2bcy",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "USL 됭케르쿠",
+  "name": "USL Dunkerqoe",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "DUN"
+}

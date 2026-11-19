@@ -734,33 +734,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 74,
-        "dri": 72,
-        "ldr": 68,
-        "pac": 73,
-        "pas": 67,
-        "pos": 73,
-        "sho": 76,
-        "sta": 71,
-        "str": 71,
-        "tac": 42,
-        "vis": 62
-      },
-      "birth": "1982-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p1kkxwtp",
-      "name": "Julien Viala",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 8000
-    },
-    {
-      "attrs": {
         "aer": 49,
         "com": 64,
         "dri": 69,

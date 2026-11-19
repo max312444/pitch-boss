@@ -662,33 +662,6 @@
       "verify": true,
       "wage": 46000,
       "weight": 84
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 70,
-        "dri": 65,
-        "ldr": 65,
-        "pac": 67,
-        "pas": 57,
-        "pos": 62,
-        "sho": 70,
-        "sta": 66,
-        "str": 69,
-        "tac": 40,
-        "vis": 62
-      },
-      "birth": "1983-10-01",
-      "contract": "2006-06-30",
-      "foot": "R",
-      "height": 191,
-      "id": "p1vnf3ci",
-      "name": "Carlton Cola",
-      "nation": "ENG",
-      "number": 34,
-      "pos": "ST",
-      "verify": true,
-      "wage": 12000
     }
   ],
   "stadiumCapacity": 42449

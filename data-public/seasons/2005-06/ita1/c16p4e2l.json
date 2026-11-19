@@ -624,34 +624,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 70,
-        "han": 68,
-        "ldr": 63,
-        "one": 64,
-        "pac": 50,
-        "pas": 56,
-        "pos": 65,
-        "ref": 68,
-        "sta": 54,
-        "str": 66,
-        "vis": 56
-      },
-      "birth": "1983-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1mbjm58",
-      "name": "Mario Cessano",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 4500,
-      "weight": 74
-    },
-    {
-      "attrs": {
         "aer": 58,
         "com": 65,
         "dri": 61,
@@ -790,34 +762,6 @@
       "verify": true,
       "wage": 3500,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 53,
-        "com": 61,
-        "dri": 63,
-        "ldr": 62,
-        "pac": 58,
-        "pas": 67,
-        "pos": 63,
-        "sho": 56,
-        "sta": 65,
-        "str": 61,
-        "tac": 59,
-        "vis": 63
-      },
-      "birth": "1974-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0ty83fr",
-      "name": "Flavio Giempieretti",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000,
-      "weight": 77
     },
     {
       "attrs": {

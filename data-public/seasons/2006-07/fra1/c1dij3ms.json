@@ -487,64 +487,6 @@
     },
     {
       "attrs": {
-        "aer": 72,
-        "com": 66,
-        "dri": 57,
-        "ldr": 74,
-        "pac": 63,
-        "pas": 59,
-        "pos": 74,
-        "sho": 43,
-        "sta": 62,
-        "str": 69,
-        "tac": 74,
-        "vis": 58
-      },
-      "birth": "1976-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 191,
-      "id": "p01rjyyk",
-      "name": "Yoann Poolard",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6000,
-      "weight": 77
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 66,
-        "dri": 67,
-        "ldr": 62,
-        "pac": 62,
-        "pas": 66,
-        "pos": 64,
-        "sho": 60,
-        "sta": 70,
-        "str": 59,
-        "tac": 61,
-        "vis": 69
-      },
-      "birth": "1975-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p1x3u2l3",
-      "name": "Jacques-Desire Perietambee",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6000
-    },
-    {
-      "attrs": {
         "aer": 67,
         "com": 63,
         "dri": 48,
@@ -789,34 +731,6 @@
       "pos": "CB",
       "wage": 3000,
       "weight": 70
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 59,
-        "dri": 57,
-        "ldr": 53,
-        "pac": 59,
-        "pas": 52,
-        "pos": 55,
-        "sho": 62,
-        "sta": 56,
-        "str": 60,
-        "tac": 30,
-        "vis": 49
-      },
-      "birth": "1984-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p13xmu5d",
-      "name": "Alioune Kabe",
-      "nation": "SEN",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2000,
-      "weight": 82
     },
     {
       "attrs": {

@@ -718,37 +718,6 @@
       "wage": 45000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 67,
-        "com": 77,
-        "dri": 75,
-        "ldr": 76,
-        "pac": 69,
-        "pas": 77,
-        "pos": 73,
-        "sho": 70,
-        "sta": 79,
-        "str": 71,
-        "tac": 70,
-        "vis": 73
-      },
-      "birth": "1971-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1fn4za0",
-      "name": "Sabri Lemouchi",
-      "nation": "FRA",
-      "nation2": "TUN",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 53500
-    },
-    {
       "attrs": {
         "aer": 56,
         "com": 71,
@@ -829,36 +798,6 @@
       "pos": "ST",
       "wage": 9500,
       "weight": 70
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 65,
-        "com": 71,
-        "dri": 74,
-        "ldr": 72,
-        "pac": 71,
-        "pas": 75,
-        "pos": 75,
-        "sho": 68,
-        "sta": 73,
-        "str": 66,
-        "tac": 68,
-        "vis": 72
-      },
-      "birth": "1983-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1kymxgx",
-      "name": "Nicola Beaty",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 11000,
-      "weight": 78
     },
     {
       "attrs": {

@@ -109,33 +109,6 @@
     },
     {
       "attrs": {
-        "aer": 63,
-        "com": 75,
-        "dri": 69,
-        "ldr": 70,
-        "pac": 80,
-        "pas": 73,
-        "pos": 77,
-        "sho": 55,
-        "sta": 75,
-        "str": 72,
-        "tac": 78,
-        "vis": 70
-      },
-      "birth": "1971-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p15mztgs",
-      "name": "Mikel Lase",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 25500
-    },
-    {
-      "attrs": {
         "aer": 75,
         "com": 69,
         "dri": 53,
@@ -825,36 +798,6 @@
       "wage": 2500
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 62,
-        "dri": 62,
-        "ldr": 63,
-        "pac": 56,
-        "pas": 65,
-        "pos": 62,
-        "sho": 57,
-        "sta": 66,
-        "str": 58,
-        "tac": 58,
-        "vis": 64
-      },
-      "birth": "1980-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p14y6yt5",
-      "name": "Carlos Marino",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "wage": 3500,
-      "weight": 69
-    },
-    {
       "attrs": {
         "aer": 63,
         "com": 59,
@@ -1167,33 +1110,6 @@
       "nation": "ESP",
       "number": null,
       "pos": "RW",
-      "verify": true,
-      "wage": 1000
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 62,
-        "dri": 58,
-        "ldr": 59,
-        "pac": 60,
-        "pas": 58,
-        "pos": 61,
-        "sho": 69,
-        "sta": 58,
-        "str": 63,
-        "tac": 33,
-        "vis": 56
-      },
-      "birth": "1980-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p1v5ugpi",
-      "name": "David Asensio Lupez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
       "verify": true,
       "wage": 1000
     },

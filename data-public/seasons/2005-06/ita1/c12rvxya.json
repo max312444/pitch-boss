@@ -403,34 +403,6 @@
       "weight": 87
     },
     {
-      "attrs": {
-        "aer": 61,
-        "com": 64,
-        "dri": 70,
-        "ldr": 64,
-        "pac": 71,
-        "pas": 65,
-        "pos": 70,
-        "sho": 49,
-        "sta": 70,
-        "str": 68,
-        "tac": 74,
-        "vis": 64
-      },
-      "birth": "1981-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p09duw8f",
-      "name": "Giuseppe Gamiti",
-      "nation": "GER",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 12500,
-      "weight": 70
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -487,33 +459,6 @@
       "verify": true,
       "wage": 12000,
       "weight": 77
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 68,
-        "dri": 68,
-        "ldr": 62,
-        "pac": 71,
-        "pas": 60,
-        "pos": 64,
-        "sho": 72,
-        "sta": 66,
-        "str": 69,
-        "tac": 38,
-        "vis": 63
-      },
-      "birth": "1984-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p0yak8d7",
-      "name": "Henok Guitom",
-      "nation": "SWE",
-      "number": null,
-      "pos": "ST",
-      "wage": 8000,
-      "weight": 87
     },
     {
       "attrs": {

@@ -114,34 +114,6 @@
       "weight": 75
     },
     {
-      "attrs": {
-        "aer": 70,
-        "com": 73,
-        "dri": 71,
-        "ldr": 70,
-        "pac": 77,
-        "pas": 64,
-        "pos": 71,
-        "sho": 77,
-        "sta": 69,
-        "str": 75,
-        "tac": 46,
-        "vis": 65
-      },
-      "birth": "1973-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p0pdxf4e",
-      "name": "Zisis Vryzes",
-      "nation": "GRE",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 17000,
-      "weight": 80
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -835,34 +807,6 @@
       "weight": 79
     },
     {
-      "attrs": {
-        "aer": 67,
-        "com": 65,
-        "han": 69,
-        "ldr": 65,
-        "one": 64,
-        "pac": 48,
-        "pas": 54,
-        "pos": 66,
-        "ref": 68,
-        "sta": 55,
-        "str": 63,
-        "vis": 54
-      },
-      "birth": "1973-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p10dbokg",
-      "name": "Andrea Iven",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 3000,
-      "weight": 78
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -919,61 +863,6 @@
       "pos": "GK",
       "verify": true,
       "wage": 3500
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 67,
-        "dri": 50,
-        "ldr": 68,
-        "pac": 59,
-        "pas": 60,
-        "pos": 67,
-        "sho": 41,
-        "sta": 65,
-        "str": 67,
-        "tac": 70,
-        "vis": 54
-      },
-      "birth": "1977-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p05k342t",
-      "name": "Massimiliano Sceglia",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3000,
-      "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 61,
-        "dri": 52,
-        "ldr": 67,
-        "pac": 60,
-        "pas": 60,
-        "pos": 66,
-        "sho": 41,
-        "sta": 58,
-        "str": 66,
-        "tac": 71,
-        "vis": 50
-      },
-      "birth": "1981-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p1ps3tax",
-      "name": "Michelangelo Mynieri",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2500
     },
     {
       "attrs": {
@@ -1145,34 +1034,6 @@
       "number": null,
       "pos": "RB",
       "wage": 1500
-    },
-    {
-      "attrs": {
-        "aer": 56,
-        "com": 69,
-        "dri": 67,
-        "ldr": 67,
-        "pac": 64,
-        "pas": 67,
-        "pos": 67,
-        "sho": 60,
-        "sta": 72,
-        "str": 63,
-        "tac": 61,
-        "vis": 65
-      },
-      "birth": "1979-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p125i3d8",
-      "name": "Michele Becis",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2000,
-      "weight": 78
     },
     {
       "alt": [

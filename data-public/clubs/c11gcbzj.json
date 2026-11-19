@@ -1,0 +1,33 @@
+{
+  "city": "Burton upon Trent",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#000000",
+      "#FFFF00",
+      "#FFFF00"
+    ],
+    "mark": "BUT",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1950,
+  "id": "c11gcbzj",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FFFF00",
+      "secondary": "#000000"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFF00"
+    }
+  },
+  "ko": "버탄 앨비언 FC",
+  "name": "Burtun Albion F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "BUT"
+}

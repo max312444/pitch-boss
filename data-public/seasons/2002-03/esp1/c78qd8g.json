@@ -340,34 +340,6 @@
     {
       "attrs": {
         "aer": 76,
-        "com": 75,
-        "han": 78,
-        "ldr": 73,
-        "one": 76,
-        "pac": 61,
-        "pas": 65,
-        "pos": 80,
-        "ref": 81,
-        "sta": 62,
-        "str": 70,
-        "vis": 65
-      },
-      "birth": "1973-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1d31ftg",
-      "name": "Juan Luis More",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 20000,
-      "weight": 85
-    },
-    {
-      "attrs": {
-        "aer": 76,
         "com": 79,
         "dri": 74,
         "ldr": 71,
@@ -478,37 +450,6 @@
       "verify": true,
       "wage": 10500,
       "weight": 85
-    },
-    {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 71,
-        "dri": 67,
-        "ldr": 70,
-        "pac": 64,
-        "pas": 72,
-        "pos": 72,
-        "sho": 68,
-        "sta": 74,
-        "str": 68,
-        "tac": 69,
-        "vis": 72
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p137elv4",
-      "name": "Catalin Munteano",
-      "nation": "ROU",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 14500
     },
     {
       "attrs": {
@@ -923,36 +864,6 @@
       "pos": "DM",
       "verify": true,
       "wage": 3000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 67,
-        "dri": 67,
-        "ldr": 69,
-        "pac": 64,
-        "pas": 72,
-        "pos": 70,
-        "sho": 63,
-        "sta": 73,
-        "str": 65,
-        "tac": 64,
-        "vis": 71
-      },
-      "birth": "1978-07-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0xgxuyq",
-      "name": "Ivan Dyaz",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4500
     },
     {
       "attrs": {

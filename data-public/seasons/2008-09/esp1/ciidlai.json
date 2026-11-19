@@ -396,32 +396,6 @@
     },
     {
       "attrs": {
-        "aer": 72,
-        "com": 73,
-        "dri": 59,
-        "ldr": 72,
-        "pac": 63,
-        "pas": 67,
-        "pos": 77,
-        "sho": 48,
-        "sta": 68,
-        "str": 71,
-        "tac": 72,
-        "vis": 59
-      },
-      "birth": "1979-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p0l55dgy",
-      "name": "Ruben Polido",
-      "nation": "ESP",
-      "number": 14,
-      "pos": "CB",
-      "wage": 9500
-    },
-    {
-      "attrs": {
         "aer": 55,
         "com": 74,
         "dri": 72,
@@ -692,33 +666,6 @@
       "number": null,
       "pos": "RB",
       "wage": 22000
-    },
-    {
-      "attrs": {
-        "aer": 71,
-        "com": 70,
-        "dri": 71,
-        "ldr": 64,
-        "pac": 70,
-        "pas": 65,
-        "pos": 66,
-        "sho": 72,
-        "sta": 66,
-        "str": 70,
-        "tac": 39,
-        "vis": 64
-      },
-      "birth": "1978-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0i5ykuo",
-      "name": "Mario Bermeju",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 16000,
-      "weight": 75
     },
     {
       "attrs": {

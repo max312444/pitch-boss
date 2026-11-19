@@ -277,65 +277,6 @@
     },
     {
       "attrs": {
-        "aer": 54,
-        "com": 76,
-        "dri": 75,
-        "ldr": 67,
-        "pac": 67,
-        "pas": 77,
-        "pos": 52,
-        "sho": 73,
-        "sta": 70,
-        "str": 62,
-        "tac": 48,
-        "vis": 73
-      },
-      "birth": "1981-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p08u6flp",
-      "name": "Coruna",
-      "nation": "ESP",
-      "number": null,
-      "pos": "AM",
-      "wage": 22500,
-      "weight": 68
-    },
-    {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 63,
-        "com": 76,
-        "dri": 70,
-        "ldr": 73,
-        "pac": 70,
-        "pas": 77,
-        "pos": 74,
-        "sho": 70,
-        "sta": 75,
-        "str": 66,
-        "tac": 70,
-        "vis": 75
-      },
-      "birth": "1979-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p0ux9urv",
-      "name": "Fernando Suriano",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 27000,
-      "weight": 81
-    },
-    {
-      "attrs": {
         "aer": 55,
         "com": 72,
         "dri": 71,
@@ -419,34 +360,6 @@
       "verify": true,
       "wage": 10500,
       "weight": 65
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 73,
-        "dri": 72,
-        "ldr": 70,
-        "pac": 69,
-        "pas": 64,
-        "pos": 70,
-        "sho": 74,
-        "sta": 68,
-        "str": 69,
-        "tac": 39,
-        "vis": 62
-      },
-      "birth": "1978-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1sx9gxp",
-      "name": "Iban Espedas",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 10000,
-      "weight": 74
     },
     {
       "alt": [
@@ -619,37 +532,6 @@
       "weight": 70
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 71,
-        "dri": 73,
-        "ldr": 73,
-        "pac": 67,
-        "pas": 72,
-        "pos": 74,
-        "sho": 64,
-        "sta": 77,
-        "str": 65,
-        "tac": 68,
-        "vis": 73
-      },
-      "birth": "1981-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p0fj4bfh",
-      "name": "Juanjo Garcia Granaro",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 11500,
-      "weight": 69
-    },
-    {
       "attrs": {
         "aer": 56,
         "com": 71,
@@ -701,63 +583,6 @@
       "number": null,
       "pos": "CB",
       "wage": 7000
-    },
-    {
-      "attrs": {
-        "aer": 72,
-        "com": 72,
-        "han": 70,
-        "ldr": 68,
-        "one": 75,
-        "pac": 55,
-        "pas": 64,
-        "pos": 71,
-        "ref": 76,
-        "sta": 57,
-        "str": 67,
-        "vis": 63
-      },
-      "birth": "1975-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 193,
-      "id": "p1pyuibd",
-      "name": "Raul Valboena",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "wage": 7500,
-      "weight": 88
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 68,
-        "dri": 69,
-        "ldr": 66,
-        "pac": 65,
-        "pas": 68,
-        "pos": 66,
-        "sho": 65,
-        "sta": 73,
-        "str": 60,
-        "tac": 65,
-        "vis": 71
-      },
-      "birth": "1974-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0v9zab4",
-      "name": "David Pyrri",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 8000
     },
     {
       "attrs": {
@@ -900,32 +725,6 @@
       "verify": true,
       "wage": 3500,
       "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 68,
-        "han": 74,
-        "ldr": 66,
-        "one": 70,
-        "pac": 54,
-        "pas": 64,
-        "pos": 69,
-        "ref": 73,
-        "sta": 57,
-        "str": 68,
-        "vis": 60
-      },
-      "birth": "1981-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1a52f25",
-      "name": "Miguel Martinaz",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "wage": 3500
     },
     {
       "attrs": {

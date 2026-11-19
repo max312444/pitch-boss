@@ -309,34 +309,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 69,
-        "dri": 66,
-        "ldr": 68,
-        "pac": 72,
-        "pas": 60,
-        "pos": 69,
-        "sho": 71,
-        "sta": 68,
-        "str": 67,
-        "tac": 42,
-        "vis": 63
-      },
-      "birth": "1977-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p1qpi0ae",
-      "name": "Cristian Bocchi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 9500,
-      "weight": 79
-    },
-    {
-      "attrs": {
         "aer": 62,
         "com": 72,
         "dri": 73,
@@ -507,35 +479,6 @@
       "weight": 78
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 65,
-        "dri": 62,
-        "ldr": 68,
-        "pac": 62,
-        "pas": 70,
-        "pos": 66,
-        "sho": 59,
-        "sta": 72,
-        "str": 59,
-        "tac": 65,
-        "vis": 70
-      },
-      "birth": "1981-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1dftcmp",
-      "name": "Andrea Capona",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 6000
-    },
-    {
       "attrs": {
         "aer": 69,
         "com": 60,
@@ -592,34 +535,6 @@
       "verify": true,
       "wage": 4000,
       "weight": 82
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 68,
-        "han": 64,
-        "ldr": 66,
-        "one": 63,
-        "pac": 46,
-        "pas": 59,
-        "pos": 68,
-        "ref": 69,
-        "sta": 55,
-        "str": 63,
-        "vis": 54
-      },
-      "birth": "1971-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p10nb1e7",
-      "name": "Armando Pantanelly",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 3500,
-      "weight": 78
     },
     {
       "attrs": {

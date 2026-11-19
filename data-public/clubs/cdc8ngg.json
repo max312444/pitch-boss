@@ -1,0 +1,33 @@
+{
+  "city": "Chiavari",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#007FFF",
+      "#007FFF"
+    ],
+    "mark": "ENT",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2002,
+  "id": "cdc8ngg",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#007FFF",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#007FFF"
+    }
+  },
+  "ko": "비르토스 엔텔라",
+  "name": "Virtus Entelle",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "ENT"
+}

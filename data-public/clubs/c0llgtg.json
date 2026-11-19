@@ -1,0 +1,33 @@
+{
+  "city": "Le Petit-Quevilly",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "QUE",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1902,
+  "id": "c0llgtg",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "US Quevilly-Rouan Métropole",
+  "name": "US Quevilly-Rouan Metropole",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "QUE"
+}

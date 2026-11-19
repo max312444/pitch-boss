@@ -1,0 +1,32 @@
+{
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "CUS",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1914,
+  "id": "c8oe83w",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "Cusenza Calcio 1914",
+  "name": "Cusenza Calcio 1914",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "CUS"
+}

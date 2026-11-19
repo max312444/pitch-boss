@@ -338,34 +338,6 @@
       "weight": 79
     },
     {
-      "attrs": {
-        "aer": 57,
-        "com": 62,
-        "dri": 65,
-        "ldr": 67,
-        "pac": 70,
-        "pas": 64,
-        "pos": 70,
-        "sho": 48,
-        "sta": 71,
-        "str": 66,
-        "tac": 71,
-        "vis": 64
-      },
-      "birth": "1975-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1x35omq",
-      "name": "Paolo Foglyo",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 4500,
-      "weight": 85
-    },
-    {
       "alt": [
         "AM"
       ],
@@ -422,36 +394,6 @@
       "pos": "ST",
       "wage": 3500,
       "weight": 85
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 68,
-        "dri": 69,
-        "ldr": 69,
-        "pac": 62,
-        "pas": 71,
-        "pos": 70,
-        "sho": 64,
-        "sta": 70,
-        "str": 66,
-        "tac": 63,
-        "vis": 68
-      },
-      "birth": "1975-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p04kksha",
-      "name": "Mauro Bryano",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 4500,
-      "weight": 65
     },
     {
       "attrs": {
@@ -747,39 +689,6 @@
       "weight": 80
     },
     {
-      "alt": [
-        "CM",
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 66,
-        "dri": 61,
-        "ldr": 62,
-        "pac": 59,
-        "pas": 54,
-        "pos": 58,
-        "sho": 68,
-        "sta": 60,
-        "str": 64,
-        "tac": 35,
-        "vis": 52
-      },
-      "birth": "1975-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p00pxrut",
-      "name": "Alessandro Iannozzi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000,
-      "weight": 70
-    },
-    {
       "attrs": {
         "aer": 65,
         "com": 63,
@@ -806,34 +715,6 @@
       "verify": true,
       "wage": 2000,
       "weight": 70
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 56,
-        "dri": 50,
-        "ldr": 61,
-        "pac": 54,
-        "pas": 51,
-        "pos": 66,
-        "sho": 37,
-        "sta": 54,
-        "str": 64,
-        "tac": 66,
-        "vis": 50
-      },
-      "birth": "1969-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0pech9m",
-      "name": "Simone Giacchette",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000,
-      "weight": 74
     },
     {
       "attrs": {

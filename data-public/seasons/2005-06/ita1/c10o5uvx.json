@@ -344,34 +344,6 @@
     },
     {
       "attrs": {
-        "aer": 54,
-        "com": 67,
-        "dri": 72,
-        "ldr": 68,
-        "pac": 68,
-        "pas": 67,
-        "pos": 48,
-        "sho": 70,
-        "sta": 66,
-        "str": 60,
-        "tac": 42,
-        "vis": 68
-      },
-      "birth": "1973-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0rn0da6",
-      "name": "Massimo Brembilla",
-      "nation": "ITA",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 15000,
-      "weight": 63
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 67,
         "dri": 57,
@@ -458,62 +430,6 @@
       "verify": true,
       "wage": 9500,
       "weight": 64
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 70,
-        "dri": 65,
-        "ldr": 62,
-        "pac": 68,
-        "pas": 57,
-        "pos": 63,
-        "sho": 72,
-        "sta": 60,
-        "str": 67,
-        "tac": 35,
-        "vis": 55
-      },
-      "birth": "1982-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p1jrfumd",
-      "name": "Horacio Peralte",
-      "nation": "URU",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 6500,
-      "weight": 68
-    },
-    {
-      "attrs": {
-        "aer": 73,
-        "com": 68,
-        "dri": 62,
-        "ldr": 75,
-        "pac": 68,
-        "pas": 67,
-        "pos": 78,
-        "sho": 43,
-        "sta": 68,
-        "str": 73,
-        "tac": 75,
-        "vis": 58
-      },
-      "birth": "1976-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p09ahkqm",
-      "name": "Simone Luria",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6500,
-      "weight": 82
     },
     {
       "attrs": {
@@ -716,34 +632,6 @@
     },
     {
       "attrs": {
-        "aer": 59,
-        "com": 67,
-        "dri": 65,
-        "ldr": 62,
-        "pac": 62,
-        "pas": 68,
-        "pos": 66,
-        "sho": 60,
-        "sta": 65,
-        "str": 61,
-        "tac": 59,
-        "vis": 70
-      },
-      "birth": "1975-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 167,
-      "id": "p1or0kuk",
-      "name": "Loris Del Navo",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000,
-      "weight": 73
-    },
-    {
-      "attrs": {
         "aer": 56,
         "com": 51,
         "dri": 40,
@@ -768,34 +656,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 2000
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 58,
-        "dri": 51,
-        "ldr": 67,
-        "pac": 57,
-        "pas": 52,
-        "pos": 65,
-        "sho": 33,
-        "sta": 56,
-        "str": 64,
-        "tac": 69,
-        "vis": 48
-      },
-      "birth": "1982-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1lonij7",
-      "name": "Rocco Sabatu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000,
-      "weight": 82
     },
     {
       "attrs": {
@@ -881,34 +741,6 @@
       "pos": "CM",
       "wage": 2000,
       "weight": 69
-    },
-    {
-      "attrs": {
-        "aer": 50,
-        "com": 57,
-        "dri": 56,
-        "ldr": 53,
-        "pac": 51,
-        "pas": 61,
-        "pos": 54,
-        "sho": 48,
-        "sta": 58,
-        "str": 51,
-        "tac": 52,
-        "vis": 60
-      },
-      "birth": "1971-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p1cat721",
-      "name": "Marcello Albyno",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2000,
-      "weight": 73
     },
     {
       "attrs": {

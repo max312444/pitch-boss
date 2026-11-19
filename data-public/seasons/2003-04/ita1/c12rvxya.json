@@ -223,34 +223,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 67,
-        "dri": 68,
-        "ldr": 67,
-        "pac": 73,
-        "pas": 65,
-        "pos": 70,
-        "sho": 53,
-        "sta": 72,
-        "str": 64,
-        "tac": 75,
-        "vis": 61
-      },
-      "birth": "1975-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1ve32ij",
-      "name": "Mauricio Pinede",
-      "nation": "ARG",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 13500,
-      "weight": 75
-    },
-    {
-      "attrs": {
         "aer": 75,
         "com": 72,
         "dri": 55,
@@ -305,33 +277,6 @@
       "pos": "CM",
       "wage": 15500,
       "weight": 68
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 69,
-        "dri": 53,
-        "ldr": 73,
-        "pac": 66,
-        "pas": 63,
-        "pos": 75,
-        "sho": 43,
-        "sta": 68,
-        "str": 69,
-        "tac": 73,
-        "vis": 58
-      },
-      "birth": "1975-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p03kr91d",
-      "name": "Mohammed Gargu",
-      "nation": "GHA",
-      "number": null,
-      "pos": "CB",
-      "wage": 13000,
-      "weight": 80
     },
     {
       "attrs": {
@@ -680,37 +625,6 @@
       "weight": 74
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 73,
-        "dri": 70,
-        "ldr": 67,
-        "pac": 62,
-        "pas": 72,
-        "pos": 65,
-        "sho": 64,
-        "sta": 72,
-        "str": 62,
-        "tac": 64,
-        "vis": 68
-      },
-      "birth": "1976-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p04mntfw",
-      "name": "Luis Helgoera",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6500,
-      "weight": 72
-    },
-    {
       "attrs": {
         "aer": 70,
         "com": 62,
@@ -791,38 +705,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 4000,
-      "weight": 82
-    },
-    {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 71,
-        "dri": 71,
-        "ldr": 66,
-        "pac": 64,
-        "pas": 71,
-        "pos": 65,
-        "sho": 66,
-        "sta": 75,
-        "str": 66,
-        "tac": 64,
-        "vis": 70
-      },
-      "birth": "1980-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1mkg6hq",
-      "name": "Sergio Almyron",
-      "nation": "ARG",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 5500,
       "weight": 82
     },
     {

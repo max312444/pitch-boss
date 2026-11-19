@@ -562,37 +562,6 @@
       "weight": 71
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 69,
-        "dri": 79,
-        "ldr": 66,
-        "pac": 75,
-        "pas": 74,
-        "pos": 50,
-        "sho": 68,
-        "sta": 69,
-        "str": 65,
-        "tac": 49,
-        "vis": 72
-      },
-      "birth": "1988-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p16zb3hv",
-      "name": "Bakary Saku",
-      "nation": "FRA",
-      "nation2": "MLI",
-      "number": 26,
-      "pos": "RW",
-      "wage": 35000,
-      "weight": 76
-    },
-    {
       "attrs": {
         "aer": 66,
         "com": 69,

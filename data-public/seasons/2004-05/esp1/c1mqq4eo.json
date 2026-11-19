@@ -608,33 +608,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 67,
-        "dri": 67,
-        "ldr": 66,
-        "pac": 69,
-        "pas": 58,
-        "pos": 66,
-        "sho": 73,
-        "sta": 67,
-        "str": 70,
-        "tac": 38,
-        "vis": 62
-      },
-      "birth": "1974-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 195,
-      "id": "p1ba36tg",
-      "name": "Manuel Cenabal",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 6000
-    },
-    {
-      "attrs": {
         "aer": 60,
         "com": 71,
         "dri": 66,

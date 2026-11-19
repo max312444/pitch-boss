@@ -1,0 +1,33 @@
+{
+  "city": "Cittadella",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "CIT",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1973,
+  "id": "c1euipim",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "AS 치타댈라",
+  "name": "AS Cittedella",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "CIT"
+}

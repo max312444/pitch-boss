@@ -778,36 +778,6 @@
       "pos": "CM",
       "wage": 8500,
       "weight": 75
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 65,
-        "dri": 60,
-        "ldr": 58,
-        "pac": 56,
-        "pas": 66,
-        "pos": 65,
-        "sho": 58,
-        "sta": 64,
-        "str": 56,
-        "tac": 59,
-        "vis": 63
-      },
-      "birth": "1986-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0c6tlzb",
-      "name": "Stefano Botte",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 5500,
-      "weight": 69
     }
   ],
   "stadiumCapacity": 31045

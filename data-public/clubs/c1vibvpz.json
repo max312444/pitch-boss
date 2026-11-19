@@ -1,0 +1,33 @@
+{
+  "city": "Murcia",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "CIU",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1999,
+  "id": "c1vibvpz",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "Ciuded de Murcia",
+  "name": "Ciuded de Murcia",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "CIU"
+}

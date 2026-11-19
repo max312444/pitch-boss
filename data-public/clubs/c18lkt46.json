@@ -1,0 +1,33 @@
+{
+  "city": "Foggia",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "FOG",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2019,
+  "id": "c18lkt46",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "ACD 포저 칼초",
+  "name": "Calcio Foggya 1920",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "FOG"
+}

@@ -1,0 +1,33 @@
+{
+  "city": "Varese",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "VER",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2019,
+  "id": "cjshamx",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "AS 바레새 1910",
+  "name": "Verese FC",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "VER"
+}

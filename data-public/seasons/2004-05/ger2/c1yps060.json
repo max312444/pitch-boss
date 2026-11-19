@@ -245,34 +245,6 @@
     },
     {
       "attrs": {
-        "aer": 61,
-        "com": 67,
-        "dri": 66,
-        "ldr": 65,
-        "pac": 63,
-        "pas": 57,
-        "pos": 60,
-        "sho": 69,
-        "sta": 64,
-        "str": 67,
-        "tac": 38,
-        "vis": 57
-      },
-      "birth": "1978-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 191,
-      "id": "p03dmjoh",
-      "name": "Chris Iwalumo",
-      "nation": "SCO",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000,
-      "weight": 85
-    },
-    {
-      "attrs": {
         "aer": 66,
         "com": 68,
         "dri": 65,

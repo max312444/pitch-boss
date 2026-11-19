@@ -19,33 +19,6 @@
   "squad": [
     {
       "attrs": {
-        "aer": 75,
-        "com": 71,
-        "han": 77,
-        "ldr": 74,
-        "one": 75,
-        "pac": 58,
-        "pas": 64,
-        "pos": 77,
-        "ref": 75,
-        "sta": 63,
-        "str": 69,
-        "vis": 64
-      },
-      "birth": "1993-03-01",
-      "contract": "2023-06-30",
-      "foot": "R",
-      "height": 196,
-      "id": "p10sveim",
-      "name": "Jack Botland",
-      "nation": "ENG",
-      "number": 1,
-      "pos": "GK",
-      "wage": 82500,
-      "weight": 94
-    },
-    {
-      "attrs": {
         "aer": 69,
         "com": 72,
         "han": 73,

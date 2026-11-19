@@ -140,37 +140,6 @@
       "wage": 24000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 73,
-        "dri": 73,
-        "ldr": 70,
-        "pac": 72,
-        "pas": 79,
-        "pos": 70,
-        "sho": 67,
-        "sta": 76,
-        "str": 67,
-        "tac": 68,
-        "vis": 73
-      },
-      "birth": "1977-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p157hyjq",
-      "name": "Ismael Roiz",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 24000,
-      "weight": 76
-    },
-    {
       "attrs": {
         "aer": 70,
         "com": 79,
@@ -256,34 +225,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 15000
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 71,
-        "dri": 69,
-        "ldr": 68,
-        "pac": 74,
-        "pas": 69,
-        "pos": 69,
-        "sho": 51,
-        "sta": 76,
-        "str": 68,
-        "tac": 75,
-        "vis": 66
-      },
-      "birth": "1974-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1k18ari",
-      "name": "Syetes",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 14500,
-      "weight": 73
     },
     {
       "alt": [
@@ -559,37 +500,6 @@
       "pos": "RW",
       "verify": true,
       "wage": 8000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 69,
-        "com": 60,
-        "dri": 52,
-        "ldr": 63,
-        "pac": 57,
-        "pas": 55,
-        "pos": 68,
-        "sho": 40,
-        "sta": 58,
-        "str": 64,
-        "tac": 71,
-        "vis": 52
-      },
-      "birth": "1971-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p1lid5d4",
-      "name": "Txema Alunso",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5500,
-      "weight": 84
     },
     {
       "alt": [

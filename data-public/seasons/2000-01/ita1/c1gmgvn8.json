@@ -505,33 +505,6 @@
     },
     {
       "attrs": {
-        "aer": 54,
-        "com": 65,
-        "dri": 64,
-        "ldr": 62,
-        "pac": 69,
-        "pas": 62,
-        "pos": 63,
-        "sho": 45,
-        "sta": 71,
-        "str": 60,
-        "tac": 65,
-        "vis": 58
-      },
-      "birth": "1979-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1srjujx",
-      "name": "Alessandro Agostyni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "LB",
-      "wage": 10000,
-      "weight": 67
-    },
-    {
-      "attrs": {
         "aer": 65,
         "com": 61,
         "han": 66,
@@ -669,34 +642,6 @@
       "weight": 78
     },
     {
-      "attrs": {
-        "aer": 64,
-        "com": 62,
-        "han": 68,
-        "ldr": 61,
-        "one": 61,
-        "pac": 46,
-        "pas": 57,
-        "pos": 68,
-        "ref": 69,
-        "sta": 49,
-        "str": 59,
-        "vis": 50
-      },
-      "birth": "1967-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p13ua19a",
-      "name": "Gianmatteo Maregginy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 6000,
-      "weight": 82
-    },
-    {
       "alt": [
         "RB"
       ],
@@ -785,32 +730,6 @@
     },
     {
       "attrs": {
-        "aer": 53,
-        "com": 62,
-        "dri": 56,
-        "ldr": 57,
-        "pac": 60,
-        "pas": 48,
-        "pos": 53,
-        "sho": 62,
-        "sta": 55,
-        "str": 60,
-        "tac": 29,
-        "vis": 47
-      },
-      "birth": "1980-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 192,
-      "id": "p02z46k9",
-      "name": "Georgios Vekouftsis",
-      "nation": "GRE",
-      "number": null,
-      "pos": "ST",
-      "wage": 3000
-    },
-    {
-      "attrs": {
         "aer": 52,
         "com": 65,
         "dri": 61,
@@ -836,34 +755,6 @@
       "verify": true,
       "wage": 2500,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 52,
-        "com": 65,
-        "dri": 63,
-        "ldr": 59,
-        "pac": 60,
-        "pas": 67,
-        "pos": 61,
-        "sho": 60,
-        "sta": 66,
-        "str": 63,
-        "tac": 58,
-        "vis": 63
-      },
-      "birth": "1980-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0wjhu3j",
-      "name": "Roberto Mosso",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2000,
-      "weight": 74
     }
   ],
   "stadiumCapacity": 43325

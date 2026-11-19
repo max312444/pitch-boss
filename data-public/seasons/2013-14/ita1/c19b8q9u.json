@@ -679,36 +679,6 @@
     },
     {
       "alt": [
-        "AM"
-      ],
-      "attrs": {
-        "aer": 51,
-        "com": 60,
-        "dri": 52,
-        "ldr": 54,
-        "pac": 59,
-        "pas": 45,
-        "pos": 57,
-        "sho": 61,
-        "sta": 52,
-        "str": 54,
-        "tac": 28,
-        "vis": 51
-      },
-      "birth": "1990-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0rw3jfd",
-      "name": "Alfredo Donnarumme",
-      "nation": "ITA",
-      "number": 37,
-      "pos": "ST",
-      "wage": 5000,
-      "weight": 75
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {

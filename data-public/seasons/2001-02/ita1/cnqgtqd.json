@@ -404,36 +404,6 @@
       "weight": 80
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 65,
-        "dri": 68,
-        "ldr": 63,
-        "pac": 63,
-        "pas": 69,
-        "pos": 63,
-        "sho": 60,
-        "sta": 67,
-        "str": 62,
-        "tac": 65,
-        "vis": 70
-      },
-      "birth": "1972-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1estwov",
-      "name": "Ljubisa Donderski",
-      "nation": "SRB",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6500
-    },
-    {
       "attrs": {
         "aer": 67,
         "com": 69,
@@ -918,34 +888,6 @@
     },
     {
       "attrs": {
-        "aer": 52,
-        "com": 57,
-        "dri": 51,
-        "ldr": 48,
-        "pac": 53,
-        "pas": 47,
-        "pos": 50,
-        "sho": 59,
-        "sta": 47,
-        "str": 56,
-        "tac": 21,
-        "vis": 44
-      },
-      "birth": "1966-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p14qjmqp",
-      "name": "Marco Nappy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 1500,
-      "weight": 65
-    },
-    {
-      "attrs": {
         "aer": 51,
         "com": 58,
         "han": 55,
@@ -971,34 +913,6 @@
       "verify": true,
       "wage": 1500,
       "weight": 87
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 60,
-        "dri": 46,
-        "ldr": 64,
-        "pac": 55,
-        "pas": 48,
-        "pos": 63,
-        "sho": 32,
-        "sta": 57,
-        "str": 60,
-        "tac": 64,
-        "vis": 45
-      },
-      "birth": "1978-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1y4a2k5",
-      "name": "Danilo Ziny",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 1500,
-      "weight": 72
     },
     {
       "alt": [

@@ -1,0 +1,33 @@
+{
+  "city": "Concarneau",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FF0000",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "CUN",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1911,
+  "id": "c1tbpnpk",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FF0000"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FF0000",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "US Cuncarneau",
+  "name": "US Cuncarneau",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "CUN"
+}

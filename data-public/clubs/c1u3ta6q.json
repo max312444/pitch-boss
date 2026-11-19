@@ -1,0 +1,33 @@
+{
+  "city": "Preston",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "PRE",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1880,
+  "id": "c1u3ta6q",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "프레수턴 노스 엔드 FC",
+  "name": "Prestun North End F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "PRE"
+}

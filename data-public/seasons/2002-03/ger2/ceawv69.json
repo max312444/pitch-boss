@@ -591,34 +591,6 @@
     {
       "attrs": {
         "aer": 60,
-        "com": 66,
-        "dri": 61,
-        "ldr": 62,
-        "pac": 66,
-        "pas": 58,
-        "pos": 61,
-        "sho": 70,
-        "sta": 57,
-        "str": 63,
-        "tac": 32,
-        "vis": 53
-      },
-      "birth": "1979-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0xv505a",
-      "name": "Regis Durn",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 1500,
-      "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 60,
         "com": 68,
         "han": 68,
         "ldr": 64,

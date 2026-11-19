@@ -1,0 +1,33 @@
+{
+  "city": "Santiago de Compostela",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "COP",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1962,
+  "id": "c9a6c1k",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "SD 콤푸스텔라",
+  "name": "SD Compustela",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "COP"
+}

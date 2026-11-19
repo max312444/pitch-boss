@@ -629,34 +629,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 67,
-        "han": 65,
-        "ldr": 66,
-        "one": 67,
-        "pac": 44,
-        "pas": 53,
-        "pos": 68,
-        "ref": 69,
-        "sta": 54,
-        "str": 57,
-        "vis": 51
-      },
-      "birth": "1984-01-01",
-      "contract": "2008-06-30",
-      "foot": "R",
-      "height": 191,
-      "id": "p11owr9k",
-      "name": "Iain Torner",
-      "nation": "SCO",
-      "number": 30,
-      "pos": "GK",
-      "verify": true,
-      "wage": 26000,
-      "weight": 88
-    },
-    {
-      "attrs": {
         "aer": 87,
         "com": 79,
         "dri": 67,

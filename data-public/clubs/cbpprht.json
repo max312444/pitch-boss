@@ -1,0 +1,33 @@
+{
+  "city": "Wrexham",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#FF0000",
+      "#FF0000"
+    ],
+    "mark": "WRE",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1864,
+  "id": "cbpprht",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FF0000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#FF0000"
+    }
+  },
+  "ko": "렉삼 FC",
+  "name": "Wrexhem A.F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "WRE"
+}

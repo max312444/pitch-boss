@@ -97,8 +97,9 @@ export function TableView() {
   );
   return (
     <div className="flex h-full flex-col p-3 lg:p-6">
-      <div className="mb-1 flex flex-col gap-2 lg:flex-row lg:items-center">
-        <div className="flex min-w-0 items-center gap-1 overflow-x-auto">{ids.map((id) => tab(id))}</div>
+      <div className="mb-1 flex flex-col gap-2 lg:flex-row lg:items-start">
+        {/* 리그가 많으면 PC 는 줄을 넘겨 모두 보이게 (휴대폰은 가로 스크롤) */}
+        <div className="flex min-w-0 items-center gap-1 overflow-x-auto lg:flex-1 lg:flex-wrap lg:overflow-visible">{ids.map((id) => tab(id))}</div>
         {!isCup && <Legend league={league} />}
       </div>
       {(euroIds.length > 0 || cupIds.length > 0) && (
@@ -127,7 +128,7 @@ function Legend({ league }: { league: string }) {
   const items = levelOf(league) === 2 && r
     ? [item('bg-neon', `자동 승격 (${r.up}팀)`), r.playoff && item('bg-sky', `승격 플레이오프 (${r.playoff.seeds.join('·')}위)`), r.barrage && !r.playoff && item('bg-amber', `승강 플레이오프 (${r.up + 1}위)`), item('bg-red', `3부 강등 (${r.secondDown}팀)`)]
     : [item('bg-neon', '챔피언스리그권'), item('bg-sky', '유로파리그권'), r?.barrage && item('bg-amber', '승강 플레이오프'), item('bg-red', r ? `2부 강등 (${r.topDown}팀)` : '강등')];
-  return <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px] text-lo lg:ml-auto">{items.filter(Boolean)}</div>;
+  return <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[12px] text-lo lg:ml-auto lg:max-w-[340px] lg:shrink-0 lg:pt-1.5">{items.filter(Boolean)}</div>;
 }
 
 /** 승격 · 승강 플레이오프 대진과 결과 */

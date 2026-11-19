@@ -263,34 +263,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 68,
-        "dri": 69,
-        "ldr": 62,
-        "pac": 72,
-        "pas": 63,
-        "pos": 67,
-        "sho": 73,
-        "sta": 68,
-        "str": 67,
-        "tac": 38,
-        "vis": 60
-      },
-      "birth": "1976-10-01",
-      "contract": "2009-06-30",
-      "foot": "R",
-      "height": 185,
-      "id": "p1utkal7",
-      "name": "Stern Juhn",
-      "nation": "TRI",
-      "number": 9,
-      "pos": "ST",
-      "verify": true,
-      "wage": 22000,
-      "weight": 83
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 73,
         "dri": 73,
@@ -374,34 +346,6 @@
       "verify": true,
       "wage": 48500,
       "weight": 83
-    },
-    {
-      "attrs": {
-        "aer": 74,
-        "com": 72,
-        "han": 72,
-        "ldr": 69,
-        "one": 70,
-        "pac": 53,
-        "pas": 65,
-        "pos": 76,
-        "ref": 75,
-        "sta": 59,
-        "str": 68,
-        "vis": 63
-      },
-      "birth": "1983-05-01",
-      "contract": "2010-06-30",
-      "foot": "R",
-      "height": 198,
-      "id": "p00q3hcr",
-      "name": "Marton Fulup",
-      "nation": "HUN",
-      "number": 13,
-      "pos": "GK",
-      "verify": true,
-      "wage": 26000,
-      "weight": 92
     },
     {
       "alt": [

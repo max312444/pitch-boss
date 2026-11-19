@@ -507,34 +507,6 @@
     },
     {
       "attrs": {
-        "aer": 66,
-        "com": 64,
-        "dri": 60,
-        "ldr": 61,
-        "pac": 68,
-        "pas": 59,
-        "pos": 66,
-        "sho": 68,
-        "sta": 64,
-        "str": 68,
-        "tac": 34,
-        "vis": 58
-      },
-      "birth": "1986-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1t60ygg",
-      "name": "Jean-Eudes Meurice",
-      "nation": "FRA",
-      "nation2": "HAI",
-      "number": 21,
-      "pos": "ST",
-      "wage": 37000,
-      "weight": 73
-    },
-    {
-      "attrs": {
         "aer": 76,
         "com": 79,
         "dri": 76,

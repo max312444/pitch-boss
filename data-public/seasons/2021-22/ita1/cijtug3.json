@@ -394,32 +394,6 @@
     },
     {
       "attrs": {
-        "aer": 56,
-        "com": 56,
-        "dri": 57,
-        "ldr": 52,
-        "pac": 59,
-        "pas": 50,
-        "pos": 57,
-        "sho": 61,
-        "sta": 53,
-        "str": 55,
-        "tac": 28,
-        "vis": 46
-      },
-      "birth": "2002-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p17usej8",
-      "name": "Janis Antyste",
-      "nation": "FRA",
-      "number": 22,
-      "pos": "ST",
-      "wage": 5000
-    },
-    {
-      "attrs": {
         "aer": 64,
         "com": 68,
         "dri": 62,

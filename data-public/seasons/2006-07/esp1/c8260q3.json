@@ -321,37 +321,6 @@
       "weight": 78
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 71,
-        "dri": 67,
-        "ldr": 73,
-        "pac": 66,
-        "pas": 75,
-        "pos": 70,
-        "sho": 64,
-        "sta": 77,
-        "str": 67,
-        "tac": 69,
-        "vis": 75
-      },
-      "birth": "1976-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p07wobsa",
-      "name": "Benjamin Zerandona",
-      "nation": "EQG",
-      "nation2": "ESP",
-      "number": null,
-      "pos": "CM",
-      "wage": 22500,
-      "weight": 76
-    },
-    {
       "attrs": {
         "aer": 56,
         "com": 70,
@@ -762,63 +731,6 @@
       "verify": true,
       "wage": 6500,
       "weight": 71
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 71,
-        "dri": 69,
-        "ldr": 68,
-        "pac": 73,
-        "pas": 60,
-        "pos": 68,
-        "sho": 71,
-        "sta": 70,
-        "str": 69,
-        "tac": 44,
-        "vis": 65
-      },
-      "birth": "1981-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0m38sfv",
-      "name": "Tati Maldonedo",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 6000,
-      "weight": 76
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 50,
-        "com": 67,
-        "dri": 69,
-        "ldr": 63,
-        "pac": 71,
-        "pas": 65,
-        "pos": 51,
-        "sho": 69,
-        "sta": 63,
-        "str": 57,
-        "tac": 43,
-        "vis": 66
-      },
-      "birth": "1981-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p1mc4y9w",
-      "name": "Pablo Nyno",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 6500
     },
     {
       "alt": [

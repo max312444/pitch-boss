@@ -7,7 +7,7 @@
       "#000000",
       "#000000"
     ],
-    "mark": "MAH",
+    "mark": "MAL",
     "pattern": "solid",
     "shape": "shield"
   },
@@ -29,5 +29,5 @@
   "name": "Stade Malharbe Caen",
   "nation": "FRA",
   "rivals": [],
-  "short": "MAH"
+  "short": "MAL"
 }

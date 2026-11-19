@@ -732,32 +732,6 @@
     },
     {
       "attrs": {
-        "aer": 54,
-        "com": 54,
-        "dri": 56,
-        "ldr": 56,
-        "pac": 53,
-        "pas": 47,
-        "pos": 54,
-        "sho": 61,
-        "sta": 54,
-        "str": 59,
-        "tac": 28,
-        "vis": 48
-      },
-      "birth": "2004-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1pexawg",
-      "name": "Karim Cissa",
-      "nation": "GUI",
-      "number": 32,
-      "pos": "ST",
-      "wage": 8500
-    },
-    {
-      "attrs": {
         "aer": 33,
         "com": 55,
         "dri": 53,

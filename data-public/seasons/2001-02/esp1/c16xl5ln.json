@@ -434,33 +434,6 @@
       "wage": 11000
     },
     {
-      "attrs": {
-        "aer": 64,
-        "com": 67,
-        "dri": 66,
-        "ldr": 65,
-        "pac": 65,
-        "pas": 61,
-        "pos": 63,
-        "sho": 74,
-        "sta": 64,
-        "str": 71,
-        "tac": 41,
-        "vis": 60
-      },
-      "birth": "1972-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1wzjvke",
-      "name": "Alen Peternec",
-      "nation": "CRO",
-      "number": null,
-      "pos": "ST",
-      "wage": 7500,
-      "weight": 80
-    },
-    {
       "alt": [
         "LB"
       ],
@@ -659,34 +632,6 @@
       "pos": "ST",
       "verify": true,
       "wage": 7000
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 64,
-        "dri": 48,
-        "ldr": 62,
-        "pac": 54,
-        "pas": 56,
-        "pos": 65,
-        "sho": 36,
-        "sta": 60,
-        "str": 66,
-        "tac": 68,
-        "vis": 52
-      },
-      "birth": "1968-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p1avx2mh",
-      "name": "Marco Lanne",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 7000,
-      "weight": 78
     },
     {
       "attrs": {

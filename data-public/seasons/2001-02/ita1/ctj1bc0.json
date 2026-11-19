@@ -640,37 +640,6 @@
     },
     {
       "alt": [
-        "RWB"
-      ],
-      "attrs": {
-        "aer": 62,
-        "com": 76,
-        "dri": 82,
-        "ldr": 71,
-        "pac": 78,
-        "pas": 75,
-        "pos": 58,
-        "sho": 76,
-        "sta": 77,
-        "str": 68,
-        "tac": 53,
-        "vis": 73
-      },
-      "birth": "1966-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1rm3ocx",
-      "name": "Attilio Lombardu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 25000,
-      "weight": 73
-    },
-    {
-      "alt": [
         "LB"
       ],
       "attrs": {

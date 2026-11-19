@@ -512,34 +512,6 @@
       "weight": 77
     },
     {
-      "attrs": {
-        "aer": 72,
-        "com": 62,
-        "dri": 49,
-        "ldr": 66,
-        "pac": 59,
-        "pas": 61,
-        "pos": 68,
-        "sho": 41,
-        "sta": 60,
-        "str": 69,
-        "tac": 70,
-        "vis": 54
-      },
-      "birth": "1970-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0szn64c",
-      "name": "Ludovic Pullet",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500,
-      "weight": 79
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -568,33 +540,6 @@
       "pos": "CM",
       "wage": 6500,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 64,
-        "dri": 48,
-        "ldr": 63,
-        "pac": 58,
-        "pas": 56,
-        "pos": 64,
-        "sho": 38,
-        "sta": 59,
-        "str": 65,
-        "tac": 69,
-        "vis": 52
-      },
-      "birth": "1975-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p175xyj8",
-      "name": "Xavier Meryde",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 5000,
-      "weight": 78
     },
     {
       "attrs": {
@@ -654,37 +599,6 @@
       "pos": "RW",
       "wage": 5000,
       "weight": 71
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 73,
-        "dri": 66,
-        "ldr": 69,
-        "pac": 65,
-        "pas": 75,
-        "pos": 69,
-        "sho": 67,
-        "sta": 70,
-        "str": 65,
-        "tac": 68,
-        "vis": 70
-      },
-      "birth": "1978-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p00r8d4a",
-      "name": "Abdelmajid Oulmars",
-      "nation": "FRA",
-      "nation2": "MAR",
-      "number": null,
-      "pos": "CM",
-      "wage": 4500,
-      "weight": 66
     },
     {
       "alt": [
@@ -774,36 +688,6 @@
       "wage": 4000
     },
     {
-      "alt": [
-        "CM",
-        "DM"
-      ],
-      "attrs": {
-        "aer": 42,
-        "com": 60,
-        "dri": 60,
-        "ldr": 56,
-        "pac": 59,
-        "pas": 63,
-        "pos": 42,
-        "sho": 59,
-        "sta": 59,
-        "str": 51,
-        "tac": 38,
-        "vis": 61
-      },
-      "birth": "1980-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p12wz0v8",
-      "name": "Ludovic Dalporte",
-      "nation": "FRA",
-      "number": null,
-      "pos": "AM",
-      "wage": 2500
-    },
-    {
       "attrs": {
         "aer": 61,
         "com": 63,
@@ -829,35 +713,6 @@
       "pos": "GK",
       "wage": 3000,
       "weight": 79
-    },
-    {
-      "attrs": {
-        "aer": 52,
-        "com": 56,
-        "dri": 61,
-        "ldr": 60,
-        "pac": 67,
-        "pas": 58,
-        "pos": 60,
-        "sho": 43,
-        "sta": 67,
-        "str": 58,
-        "tac": 63,
-        "vis": 56
-      },
-      "birth": "1978-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1gaovq3",
-      "name": "Aboubacar Senkhare",
-      "nation": "FRA",
-      "nation2": "MLI",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 2500,
-      "weight": 71
     },
     {
       "alt": [
@@ -940,33 +795,6 @@
       "number": null,
       "pos": "ST",
       "wage": 1500
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 63,
-        "dri": 60,
-        "ldr": 62,
-        "pac": 64,
-        "pas": 53,
-        "pos": 58,
-        "sho": 67,
-        "sta": 61,
-        "str": 63,
-        "tac": 31,
-        "vis": 52
-      },
-      "birth": "1976-07-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0ef3bog",
-      "name": "Olivier Bogeczyk",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 1000
     },
     {
       "attrs": {

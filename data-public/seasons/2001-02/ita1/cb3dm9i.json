@@ -107,60 +107,6 @@
       "weight": 80
     },
     {
-      "attrs": {
-        "aer": 60,
-        "com": 66,
-        "dri": 60,
-        "ldr": 69,
-        "pac": 55,
-        "pas": 66,
-        "pos": 71,
-        "sho": 57,
-        "sta": 67,
-        "str": 65,
-        "tac": 69,
-        "vis": 63
-      },
-      "birth": "1969-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p0nieusj",
-      "name": "Krunoslav Jurcyc",
-      "nation": "CRO",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 16000
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 68,
-        "dri": 70,
-        "ldr": 71,
-        "pac": 75,
-        "pas": 67,
-        "pos": 72,
-        "sho": 56,
-        "sta": 77,
-        "str": 66,
-        "tac": 77,
-        "vis": 63
-      },
-      "birth": "1981-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p1e2ckwx",
-      "name": "Federico Balzaretty",
-      "nation": "ITA",
-      "number": null,
-      "pos": "LB",
-      "wage": 9000,
-      "weight": 70
-    },
-    {
       "alt": [
         "RW",
         "LW"
@@ -272,34 +218,6 @@
       "pos": "ST",
       "wage": 6000,
       "weight": 79
-    },
-    {
-      "attrs": {
-        "aer": 75,
-        "com": 70,
-        "dri": 56,
-        "ldr": 70,
-        "pac": 67,
-        "pas": 64,
-        "pos": 77,
-        "sho": 46,
-        "sta": 71,
-        "str": 77,
-        "tac": 72,
-        "vis": 61
-      },
-      "birth": "1972-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0noqpiu",
-      "name": "Mauro Bunomi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 7500,
-      "weight": 80
     },
     {
       "attrs": {
@@ -619,33 +537,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 68,
-        "dri": 51,
-        "ldr": 69,
-        "pac": 60,
-        "pas": 58,
-        "pos": 69,
-        "sho": 38,
-        "sta": 61,
-        "str": 67,
-        "tac": 72,
-        "vis": 54
-      },
-      "birth": "1977-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p026gp5o",
-      "name": "Davide Mandelly",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 3000,
-      "weight": 83
-    },
-    {
-      "attrs": {
         "aer": 65,
         "com": 57,
         "dri": 49,
@@ -699,33 +590,6 @@
       "weight": 86
     },
     {
-      "attrs": {
-        "aer": 56,
-        "com": 62,
-        "dri": 65,
-        "ldr": 63,
-        "pac": 73,
-        "pas": 62,
-        "pos": 68,
-        "sho": 52,
-        "sta": 72,
-        "str": 64,
-        "tac": 69,
-        "vis": 60
-      },
-      "birth": "1978-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1wps013",
-      "name": "Gianluca Comottu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RB",
-      "wage": 3000,
-      "weight": 78
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -757,34 +621,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 70,
-        "dri": 63,
-        "ldr": 63,
-        "pac": 65,
-        "pas": 61,
-        "pos": 67,
-        "sho": 72,
-        "sta": 64,
-        "str": 67,
-        "tac": 38,
-        "vis": 63
-      },
-      "birth": "1969-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p1rh2ts0",
-      "name": "Stefan Schwuch",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2500,
-      "weight": 70
-    },
-    {
-      "attrs": {
         "aer": 49,
         "com": 45,
         "han": 52,
@@ -810,34 +646,6 @@
       "verify": true,
       "wage": 3500,
       "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 63,
-        "dri": 49,
-        "ldr": 67,
-        "pac": 60,
-        "pas": 57,
-        "pos": 66,
-        "sho": 33,
-        "sta": 57,
-        "str": 67,
-        "tac": 68,
-        "vis": 48
-      },
-      "birth": "1973-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p13l1c0x",
-      "name": "Mirko Cudiny",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3000,
-      "weight": 75
     },
     {
       "attrs": {
@@ -869,33 +677,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 67,
-        "dri": 65,
-        "ldr": 62,
-        "pac": 65,
-        "pas": 62,
-        "pos": 64,
-        "sho": 71,
-        "sta": 65,
-        "str": 69,
-        "tac": 37,
-        "vis": 59
-      },
-      "birth": "1978-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0p4dann",
-      "name": "Simone Tiribocchy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "wage": 2000,
-      "weight": 85
-    },
-    {
-      "attrs": {
         "aer": 63,
         "com": 60,
         "dri": 48,
@@ -920,33 +701,6 @@
       "pos": "CB",
       "wage": 2000,
       "weight": 74
-    },
-    {
-      "attrs": {
-        "aer": 46,
-        "com": 63,
-        "dri": 64,
-        "ldr": 61,
-        "pac": 60,
-        "pas": 65,
-        "pos": 47,
-        "sho": 62,
-        "sta": 62,
-        "str": 50,
-        "tac": 41,
-        "vis": 67
-      },
-      "birth": "1981-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p01qqcx2",
-      "name": "Pinge",
-      "nation": "BRA",
-      "number": null,
-      "pos": "AM",
-      "wage": 3000,
-      "weight": 73
     },
     {
       "attrs": {
@@ -977,36 +731,6 @@
       "weight": 78
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 69,
-        "dri": 67,
-        "ldr": 66,
-        "pac": 60,
-        "pas": 67,
-        "pos": 64,
-        "sho": 59,
-        "sta": 71,
-        "str": 61,
-        "tac": 65,
-        "vis": 68
-      },
-      "birth": "1976-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p10g26or",
-      "name": "Vincenzo Sommesa",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 3000,
-      "weight": 72
-    },
-    {
       "attrs": {
         "aer": 58,
         "com": 55,
@@ -1032,61 +756,6 @@
       "pos": "CB",
       "wage": 2000,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 71,
-        "com": 63,
-        "dri": 54,
-        "ldr": 62,
-        "pac": 58,
-        "pas": 60,
-        "pos": 65,
-        "sho": 41,
-        "sta": 60,
-        "str": 65,
-        "tac": 67,
-        "vis": 48
-      },
-      "birth": "1976-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p15gk8li",
-      "name": "Luigi Penarelli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 2000,
-      "weight": 83
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 67,
-        "dri": 62,
-        "ldr": 59,
-        "pac": 62,
-        "pas": 55,
-        "pos": 64,
-        "sho": 63,
-        "sta": 57,
-        "str": 61,
-        "tac": 34,
-        "vis": 54
-      },
-      "birth": "1969-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p15gasoq",
-      "name": "Edoardo Artistyco",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 1500,
-      "weight": 78
     },
     {
       "attrs": {
@@ -1141,34 +810,6 @@
       "pos": "CB",
       "wage": 1500,
       "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 52,
-        "com": 60,
-        "dri": 63,
-        "ldr": 63,
-        "pac": 55,
-        "pas": 62,
-        "pos": 58,
-        "sho": 59,
-        "sta": 66,
-        "str": 58,
-        "tac": 59,
-        "vis": 64
-      },
-      "birth": "1969-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0wafdlr",
-      "name": "Fabio Tricaricu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2000,
-      "weight": 69
     },
     {
       "attrs": {

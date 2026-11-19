@@ -709,60 +709,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 71,
-        "dri": 67,
-        "ldr": 66,
-        "pac": 72,
-        "pas": 64,
-        "pos": 68,
-        "sho": 72,
-        "sta": 71,
-        "str": 75,
-        "tac": 40,
-        "vis": 65
-      },
-      "birth": "1983-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p16cj3ta",
-      "name": "Tocha",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 7500
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 67,
-        "dri": 70,
-        "ldr": 69,
-        "pac": 73,
-        "pas": 67,
-        "pos": 72,
-        "sho": 51,
-        "sta": 73,
-        "str": 65,
-        "tac": 73,
-        "vis": 62
-      },
-      "birth": "1981-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p1t517rk",
-      "name": "Mana",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 9000,
-      "weight": 73
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 72,
         "han": 73,
@@ -871,35 +817,6 @@
       "number": null,
       "pos": "ST",
       "wage": 3500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 69,
-        "dri": 66,
-        "ldr": 69,
-        "pac": 63,
-        "pas": 71,
-        "pos": 63,
-        "sho": 62,
-        "sta": 69,
-        "str": 61,
-        "tac": 61,
-        "vis": 68
-      },
-      "birth": "1983-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1v4r048",
-      "name": "Raul Madina",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "wage": 4000
     }
   ],
   "stadiumCapacity": 70813

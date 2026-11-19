@@ -278,36 +278,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 62,
-        "com": 69,
-        "dri": 67,
-        "ldr": 69,
-        "pac": 68,
-        "pas": 77,
-        "pos": 68,
-        "sho": 64,
-        "sta": 74,
-        "str": 66,
-        "tac": 68,
-        "vis": 71
-      },
-      "birth": "1972-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1by9jyb",
-      "name": "Roberto Acune",
-      "nation": "ARG",
-      "nation2": "PAR",
-      "number": null,
-      "pos": "CM",
-      "wage": 34000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 66,
         "com": 79,
         "dri": 76,
@@ -471,33 +441,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 62,
-        "dri": 53,
-        "ldr": 69,
-        "pac": 57,
-        "pas": 60,
-        "pos": 68,
-        "sho": 39,
-        "sta": 63,
-        "str": 68,
-        "tac": 72,
-        "vis": 50
-      },
-      "birth": "1971-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0iahu7e",
-      "name": "Goran Đorovyc",
-      "nation": "SRB",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 19500
-    },
-    {
-      "attrs": {
         "aer": 76,
         "com": 79,
         "dri": 75,
@@ -658,32 +601,6 @@
       "pos": "GK",
       "wage": 14000,
       "weight": 82
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 68,
-        "han": 73,
-        "ldr": 68,
-        "one": 69,
-        "pac": 55,
-        "pas": 62,
-        "pos": 70,
-        "ref": 73,
-        "sta": 55,
-        "str": 63,
-        "vis": 57
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0acee4i",
-      "name": "Dani Mallu",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "wage": 13000
     },
     {
       "attrs": {

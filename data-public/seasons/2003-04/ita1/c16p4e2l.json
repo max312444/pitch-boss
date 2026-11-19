@@ -593,34 +593,6 @@
     {
       "attrs": {
         "aer": 68,
-        "com": 66,
-        "dri": 51,
-        "ldr": 65,
-        "pac": 59,
-        "pas": 56,
-        "pos": 66,
-        "sho": 39,
-        "sta": 59,
-        "str": 69,
-        "tac": 65,
-        "vis": 48
-      },
-      "birth": "1978-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0ahf5ug",
-      "name": "Roberto Mirry",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3500,
-      "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 68,
         "com": 68,
         "dri": 56,
         "ldr": 66,
@@ -671,60 +643,6 @@
       "pos": "AM",
       "wage": 4500,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 62,
-        "dri": 49,
-        "ldr": 63,
-        "pac": 58,
-        "pas": 54,
-        "pos": 65,
-        "sho": 35,
-        "sta": 61,
-        "str": 68,
-        "tac": 67,
-        "vis": 51
-      },
-      "birth": "1971-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0vneht4",
-      "name": "Gianluca Atzory",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3000,
-      "weight": 76
-    },
-    {
-      "attrs": {
-        "aer": 45,
-        "com": 64,
-        "dri": 61,
-        "ldr": 56,
-        "pac": 60,
-        "pas": 60,
-        "pos": 41,
-        "sho": 57,
-        "sta": 56,
-        "str": 51,
-        "tac": 35,
-        "vis": 64
-      },
-      "birth": "1983-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0y5b1e6",
-      "name": "Ibrahim Abdul Razek",
-      "nation": "GHA",
-      "number": null,
-      "pos": "AM",
-      "wage": 4500
     },
     {
       "attrs": {
@@ -929,34 +847,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 70,
-        "dri": 62,
-        "ldr": 61,
-        "pac": 64,
-        "pas": 58,
-        "pos": 64,
-        "sho": 69,
-        "sta": 64,
-        "str": 64,
-        "tac": 36,
-        "vis": 58
-      },
-      "birth": "1982-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0z6akvt",
-      "name": "Gaetano Griaco",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 1500,
-      "weight": 69
-    },
-    {
-      "attrs": {
         "aer": 62,
         "com": 59,
         "han": 65,
@@ -1037,34 +927,6 @@
       "verify": true,
       "wage": 2000,
       "weight": 74
-    },
-    {
-      "attrs": {
-        "aer": 56,
-        "com": 57,
-        "han": 59,
-        "ldr": 53,
-        "one": 59,
-        "pac": 43,
-        "pas": 47,
-        "pos": 58,
-        "ref": 60,
-        "sta": 43,
-        "str": 54,
-        "vis": 49
-      },
-      "birth": "1967-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p0n0spwc",
-      "name": "Gianluca Barti",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 1500,
-      "weight": 78
     },
     {
       "attrs": {

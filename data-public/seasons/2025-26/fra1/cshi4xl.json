@@ -412,35 +412,6 @@
     },
     {
       "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 46,
-        "com": 59,
-        "dri": 59,
-        "ldr": 51,
-        "pac": 65,
-        "pas": 54,
-        "pos": 36,
-        "sho": 58,
-        "sta": 55,
-        "str": 49,
-        "tac": 37,
-        "vis": 59
-      },
-      "birth": "2004-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0c5q90h",
-      "name": "Morgan Bokela",
-      "nation": "CMR",
-      "number": 19,
-      "pos": "RW",
-      "wage": 7500
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {

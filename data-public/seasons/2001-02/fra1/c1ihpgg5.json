@@ -425,34 +425,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 64,
-        "dri": 49,
-        "ldr": 64,
-        "pac": 58,
-        "pas": 56,
-        "pos": 67,
-        "sho": 36,
-        "sta": 59,
-        "str": 70,
-        "tac": 69,
-        "vis": 53
-      },
-      "birth": "1971-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0mee6rq",
-      "name": "Bernard Lambourda",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000,
-      "weight": 77
-    },
-    {
-      "attrs": {
         "aer": 54,
         "com": 60,
         "dri": 63,
@@ -558,33 +530,6 @@
       "nation": "FRA",
       "number": null,
       "pos": "CB",
-      "wage": 3500
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 67,
-        "dri": 66,
-        "ldr": 64,
-        "pac": 65,
-        "pas": 57,
-        "pos": 60,
-        "sho": 70,
-        "sta": 63,
-        "str": 64,
-        "tac": 33,
-        "vis": 59
-      },
-      "birth": "1970-12-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p19qw5ci",
-      "name": "Pierre Leurent",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
       "wage": 3500
     },
     {
@@ -726,35 +671,6 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 3500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 61,
-        "dri": 57,
-        "ldr": 58,
-        "pac": 54,
-        "pas": 67,
-        "pos": 57,
-        "sho": 57,
-        "sta": 67,
-        "str": 57,
-        "tac": 60,
-        "vis": 60
-      },
-      "birth": "1981-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0w80phl",
-      "name": "Pascal Berengoer",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
       "wage": 3500
     },
     {

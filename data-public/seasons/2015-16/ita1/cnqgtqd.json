@@ -79,33 +79,6 @@
       "weight": 89
     },
     {
-      "attrs": {
-        "aer": 57,
-        "com": 62,
-        "dri": 62,
-        "ldr": 57,
-        "pac": 65,
-        "pas": 58,
-        "pos": 61,
-        "sho": 45,
-        "sta": 67,
-        "str": 60,
-        "tac": 67,
-        "vis": 54
-      },
-      "birth": "1983-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0drgcoz",
-      "name": "Cristiano Del Grusso",
-      "nation": "ITA",
-      "number": 3,
-      "pos": "LB",
-      "wage": 16500,
-      "weight": 70
-    },
-    {
       "alt": [
         "DM"
       ],

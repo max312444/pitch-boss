@@ -422,91 +422,6 @@
     },
     {
       "attrs": {
-        "aer": 76,
-        "com": 71,
-        "dri": 62,
-        "ldr": 74,
-        "pac": 69,
-        "pas": 67,
-        "pos": 76,
-        "sho": 50,
-        "sta": 69,
-        "str": 77,
-        "tac": 75,
-        "vis": 60
-      },
-      "birth": "1978-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0x2u60j",
-      "name": "Ivan Ameya",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 11500,
-      "weight": 85
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 68,
-        "dri": 73,
-        "ldr": 68,
-        "pac": 78,
-        "pas": 69,
-        "pos": 75,
-        "sho": 56,
-        "sta": 74,
-        "str": 67,
-        "tac": 73,
-        "vis": 69
-      },
-      "birth": "1974-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0t8goj1",
-      "name": "Xavi Ruca",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 13000
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 66,
-        "dri": 75,
-        "ldr": 65,
-        "pac": 75,
-        "pas": 65,
-        "pos": 51,
-        "sho": 64,
-        "sta": 70,
-        "str": 59,
-        "tac": 48,
-        "vis": 64
-      },
-      "birth": "1982-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 165,
-      "id": "p13s5dud",
-      "name": "Albert Cruset",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 11500
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 72,
         "dri": 66,
@@ -532,32 +447,6 @@
       "verify": true,
       "wage": 7500,
       "weight": 70
-    },
-    {
-      "attrs": {
-        "aer": 71,
-        "com": 73,
-        "dri": 69,
-        "ldr": 69,
-        "pac": 71,
-        "pas": 65,
-        "pos": 72,
-        "sho": 74,
-        "sta": 69,
-        "str": 70,
-        "tac": 43,
-        "vis": 65
-      },
-      "birth": "1975-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p105douq",
-      "name": "Martin Pusse",
-      "nation": "ARG",
-      "number": null,
-      "pos": "ST",
-      "wage": 6500
     },
     {
       "attrs": {
@@ -664,33 +553,6 @@
       "number": null,
       "pos": "DM",
       "wage": 9500
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 67,
-        "han": 67,
-        "ldr": 69,
-        "one": 67,
-        "pac": 55,
-        "pas": 57,
-        "pos": 72,
-        "ref": 74,
-        "sta": 54,
-        "str": 64,
-        "vis": 55
-      },
-      "birth": "1977-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p1p7m530",
-      "name": "Sergio Senchez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 7000
     },
     {
       "attrs": {
@@ -802,33 +664,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 71,
-        "dri": 69,
-        "ldr": 68,
-        "pac": 73,
-        "pas": 67,
-        "pos": 69,
-        "sho": 54,
-        "sta": 78,
-        "str": 67,
-        "tac": 73,
-        "vis": 64
-      },
-      "birth": "1974-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0qh3eg5",
-      "name": "Mauro Nevas",
-      "nation": "ARG",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 4500
-    },
-    {
-      "attrs": {
         "aer": 67,
         "com": 76,
         "dri": 67,
@@ -881,34 +716,6 @@
       "verify": true,
       "wage": 5500,
       "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 63,
-        "dri": 46,
-        "ldr": 61,
-        "pac": 54,
-        "pas": 55,
-        "pos": 63,
-        "sho": 38,
-        "sta": 58,
-        "str": 62,
-        "tac": 66,
-        "vis": 45
-      },
-      "birth": "1980-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1so7wop",
-      "name": "David Catale",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000,
-      "weight": 77
     },
     {
       "alt": [

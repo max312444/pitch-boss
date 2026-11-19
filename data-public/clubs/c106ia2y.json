@@ -1,0 +1,33 @@
+{
+  "city": "Salamanca",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "SAA",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1923,
+  "id": "c106ia2y",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "UD 살라멍카",
+  "name": "UD Salamance",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "SAA"
+}

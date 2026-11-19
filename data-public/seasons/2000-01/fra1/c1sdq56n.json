@@ -445,33 +445,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 65,
-        "han": 66,
-        "ldr": 68,
-        "one": 69,
-        "pac": 54,
-        "pas": 60,
-        "pos": 68,
-        "ref": 71,
-        "sta": 56,
-        "str": 64,
-        "vis": 57
-      },
-      "birth": "1972-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0idzove",
-      "name": "Laurent Webar",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 4000
-    },
-    {
-      "attrs": {
         "aer": 63,
         "com": 63,
         "dri": 46,
@@ -639,36 +612,6 @@
       "wage": 2500
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 67,
-        "dri": 65,
-        "ldr": 66,
-        "pac": 59,
-        "pas": 68,
-        "pos": 67,
-        "sho": 60,
-        "sta": 68,
-        "str": 59,
-        "tac": 63,
-        "vis": 69
-      },
-      "birth": "1971-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p098dn45",
-      "name": "Emmanuel Rivel",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3500
-    },
-    {
       "attrs": {
         "aer": 54,
         "com": 64,
@@ -747,33 +690,6 @@
       "number": null,
       "pos": "CB",
       "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 63,
-        "dri": 57,
-        "ldr": 57,
-        "pac": 59,
-        "pas": 50,
-        "pos": 55,
-        "sho": 61,
-        "sta": 56,
-        "str": 58,
-        "tac": 31,
-        "vis": 50
-      },
-      "birth": "1967-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1uvi6ad",
-      "name": "Samuel Loba",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2000
     },
     {
       "attrs": {

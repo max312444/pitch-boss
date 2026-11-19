@@ -638,36 +638,6 @@
       "wage": 20000
     },
     {
-      "attrs": {
-        "aer": 69,
-        "com": 63,
-        "dri": 56,
-        "ldr": 70,
-        "pac": 61,
-        "pas": 61,
-        "pos": 69,
-        "sho": 43,
-        "sta": 65,
-        "str": 70,
-        "tac": 70,
-        "vis": 51
-      },
-      "birth": "1973-08-01",
-      "contract": "2005-06-30",
-      "foot": "R",
-      "height": 185,
-      "id": "p0z4kn62",
-      "name": "Florent Lavilla",
-      "nation": "FRA",
-      "number": 17,
-      "pos": "CB",
-      "traits": [
-        "injury_prone"
-      ],
-      "wage": 20500,
-      "weight": 83
-    },
-    {
       "alt": [
         "DM"
       ],

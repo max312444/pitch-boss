@@ -576,33 +576,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 68,
-        "dri": 64,
-        "ldr": 64,
-        "pac": 66,
-        "pas": 56,
-        "pos": 68,
-        "sho": 69,
-        "sta": 65,
-        "str": 67,
-        "tac": 35,
-        "vis": 58
-      },
-      "birth": "1975-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p002g666",
-      "name": "Djezon Boutoylle",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4500
-    },
-    {
-      "attrs": {
         "aer": 68,
         "com": 67,
         "dri": 51,

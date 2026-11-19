@@ -80,65 +80,6 @@
     },
     {
       "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 73,
-        "dri": 77,
-        "ldr": 70,
-        "pac": 79,
-        "pas": 77,
-        "pos": 59,
-        "sho": 77,
-        "sta": 73,
-        "str": 64,
-        "tac": 54,
-        "vis": 71
-      },
-      "birth": "1980-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p03ykper",
-      "name": "Marco Marchyonni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 28000,
-      "weight": 71
-    },
-    {
-      "attrs": {
-        "aer": 81,
-        "com": 74,
-        "dri": 66,
-        "ldr": 78,
-        "pac": 75,
-        "pas": 69,
-        "pos": 82,
-        "sho": 50,
-        "sta": 75,
-        "str": 81,
-        "tac": 80,
-        "vis": 61
-      },
-      "birth": "1981-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p16mu01w",
-      "name": "Paolo Cannevaro",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 24500,
-      "weight": 83
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {
@@ -540,34 +481,6 @@
       "number": null,
       "pos": "CB",
       "wage": 7500,
-      "weight": 83
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 66,
-        "dri": 69,
-        "ldr": 61,
-        "pac": 71,
-        "pas": 63,
-        "pos": 64,
-        "sho": 70,
-        "sta": 62,
-        "str": 67,
-        "tac": 37,
-        "vis": 60
-      },
-      "birth": "1983-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p18nxibi",
-      "name": "Francesco Roopolo",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 5500,
       "weight": 83
     },
     {

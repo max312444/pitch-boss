@@ -272,35 +272,6 @@
       "wage": 12000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 63,
-        "com": 73,
-        "dri": 68,
-        "ldr": 70,
-        "pac": 70,
-        "pas": 75,
-        "pos": 73,
-        "sho": 69,
-        "sta": 77,
-        "str": 67,
-        "tac": 71,
-        "vis": 76
-      },
-      "birth": "1972-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0e5mdzm",
-      "name": "Juan Carlos Socorru",
-      "nation": "VEN",
-      "number": null,
-      "pos": "CM",
-      "wage": 13500
-    },
-    {
       "attrs": {
         "aer": 74,
         "com": 70,
@@ -326,34 +297,6 @@
       "pos": "GK",
       "wage": 9500,
       "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 71,
-        "com": 75,
-        "dri": 68,
-        "ldr": 67,
-        "pac": 73,
-        "pas": 67,
-        "pos": 72,
-        "sho": 75,
-        "sta": 71,
-        "str": 71,
-        "tac": 41,
-        "vis": 63
-      },
-      "birth": "1970-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 165,
-      "id": "p1xgcukw",
-      "name": "Ranaldo",
-      "nation": "BRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 8000,
-      "weight": 71
     },
     {
       "attrs": {
@@ -475,32 +418,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 68,
-        "dri": 67,
-        "ldr": 69,
-        "pac": 71,
-        "pas": 58,
-        "pos": 67,
-        "sho": 75,
-        "sta": 63,
-        "str": 66,
-        "tac": 36,
-        "vis": 59
-      },
-      "birth": "1974-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p04ql20s",
-      "name": "Luis Tevenat",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 5000
-    },
-    {
-      "attrs": {
         "aer": 66,
         "com": 73,
         "dri": 64,
@@ -524,33 +441,6 @@
       "number": null,
       "pos": "ST",
       "wage": 4500
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 66,
-        "dri": 63,
-        "ldr": 66,
-        "pac": 73,
-        "pas": 67,
-        "pos": 69,
-        "sho": 46,
-        "sta": 74,
-        "str": 66,
-        "tac": 68,
-        "vis": 61
-      },
-      "birth": "1971-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p11v9nb3",
-      "name": "Jaime Quesade",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 6000
     },
     {
       "alt": [

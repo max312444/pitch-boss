@@ -245,36 +245,6 @@
       "wage": 49500
     },
     {
-      "alt": [
-        "ST",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 46,
-        "com": 60,
-        "dri": 63,
-        "ldr": 56,
-        "pac": 66,
-        "pas": 58,
-        "pos": 44,
-        "sho": 59,
-        "sta": 63,
-        "str": 55,
-        "tac": 37,
-        "vis": 61
-      },
-      "birth": "2003-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 169,
-      "id": "p11f7peq",
-      "name": "Axel Cemblan",
-      "nation": "FRA",
-      "number": 11,
-      "pos": "RW",
-      "wage": 11000
-    },
-    {
       "attrs": {
         "aer": 49,
         "com": 55,

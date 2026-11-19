@@ -589,33 +589,6 @@
     {
       "attrs": {
         "aer": 65,
-        "com": 71,
-        "dri": 69,
-        "ldr": 64,
-        "pac": 72,
-        "pas": 67,
-        "pos": 68,
-        "sho": 50,
-        "sta": 71,
-        "str": 67,
-        "tac": 70,
-        "vis": 61
-      },
-      "birth": "1974-10-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0n6f3z9",
-      "name": "Jesus Gelvan",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 5000
-    },
-    {
-      "attrs": {
-        "aer": 65,
         "com": 61,
         "dri": 49,
         "ldr": 65,
@@ -640,33 +613,6 @@
       "verify": true,
       "wage": 4000,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 63,
-        "han": 64,
-        "ldr": 61,
-        "one": 68,
-        "pac": 50,
-        "pas": 53,
-        "pos": 66,
-        "ref": 69,
-        "sta": 56,
-        "str": 62,
-        "vis": 52
-      },
-      "birth": "1969-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0e3adwu",
-      "name": "Jesus Unenua",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 5000
     },
     {
       "attrs": {

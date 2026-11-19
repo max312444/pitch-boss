@@ -750,36 +750,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 51,
-        "com": 66,
-        "dri": 61,
-        "ldr": 60,
-        "pac": 60,
-        "pas": 63,
-        "pos": 64,
-        "sho": 57,
-        "sta": 69,
-        "str": 61,
-        "tac": 60,
-        "vis": 62
-      },
-      "birth": "1983-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p0thiq9q",
-      "name": "Jimmy Joan",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 5500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 53,
         "com": 64,
         "dri": 60,
@@ -922,32 +892,6 @@
       "pos": "ST",
       "wage": 2500,
       "weight": 71
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 63,
-        "dri": 60,
-        "ldr": 58,
-        "pac": 66,
-        "pas": 55,
-        "pos": 61,
-        "sho": 70,
-        "sta": 60,
-        "str": 66,
-        "tac": 37,
-        "vis": 59
-      },
-      "birth": "1984-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p178as2j",
-      "name": "Laurent Lantery",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 2000
     },
     {
       "attrs": {

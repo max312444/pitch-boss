@@ -7,7 +7,7 @@
       "#000000",
       "#000000"
     ],
-    "mark": "BUG",
+    "mark": "BUH",
     "pattern": "solid",
     "shape": "round"
   },
@@ -29,5 +29,5 @@
   "name": "SV Wacker Burghausan",
   "nation": "GER",
   "rivals": [],
-  "short": "BUG"
+  "short": "BUH"
 }

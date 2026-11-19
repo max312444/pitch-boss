@@ -57,6 +57,8 @@ export interface SeasonInput {
   worldCups?: Record<string, import('./worldcup').WorldCupMeta>;
   /** 감독 데이터 (history/managers.json) */
   managers?: import('./managers').ManagerData;
+  /** 아래 리그 대기열 (경기 안 함): 직전 시즌 실제로 2부에서 3부로 내려간 구단. 데이터가 끝난 뒤 2부를 채운다 */
+  pools?: { league: string; clubs: ClubSeasonFile[] }[];
 }
 
 const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v));
@@ -141,6 +143,25 @@ export function createWorld(input: SeasonInput, userClubId: string, seed: number
     };
   }
 
+  // 아래 리그 대기열 구단: 이번 시즌 데이터에 있는 선수 (이적한 선수) 는 빼고 넣는다
+  for (const pool of input.pools ?? []) {
+    for (const c of pool.clubs) {
+      if (clubs[c.club]) continue;
+      const squad: string[] = [];
+      for (const sp of c.squad) {
+        if (players[sp.id]) continue;
+        players[sp.id] = newPlayer(sp, c.club, seed, input.season);
+        squad.push(sp.id);
+      }
+      clubs[c.club] = {
+        id: c.club, league: pool.league, reputation: c.reputation, squad,
+        tactics: { formation: (c.formation && FORMATIONS[c.formation] ? c.formation : guessFormation(squad.map((id) => players[id]))) || DEFAULT_FORMATION, mentality: 0, pressing: 1 },
+        finance: { ...c.finance },
+        facilities: c.facilities, stadium: c.stadiumCapacity ?? undefined,
+      };
+    }
+  }
+
   const w: World = {
     version: WORLD_VERSION, seed, rng: 0, date: seasonStart(input.season), season: input.season, userClubId,
     players, clubs, competitions, inbox: [], warnings, history: [],
@@ -148,7 +169,7 @@ export function createWorld(input: SeasonInput, userClubId: string, seed: number
   w.europe = createEurope(w, rng, input.prevStandings);
   w.cups = createCups(w, rng);
   w.worldCup = createWorldCup(w, input.season, input.worldCups);
-  academyFill(w, Object.values(clubs).filter((c) => !opts.skipFill?.includes(c.id)), input.season);   // 선수단 구성이 모자란 구단은 유스에서 끌어올림
+  academyFill(w, Object.values(clubs).filter((c) => !opts.skipFill?.includes(c.id) && w.competitions[c.league]), input.season);   // 선수단 구성이 모자란 구단은 유스에서 끌어올림
   if (opts.settings) w.settings = { ...opts.settings };
   // 감독: 데이터의 그 시즌 감독 (없으면 가상) · 내 감독
   assignManagers(w, input.managers, input.season, createRng((seed ^ 0x3a9e) >>> 0));

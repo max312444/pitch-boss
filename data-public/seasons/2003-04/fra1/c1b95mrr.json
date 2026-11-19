@@ -474,70 +474,6 @@
       "weight": 71
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 65,
-        "dri": 64,
-        "ldr": 66,
-        "pac": 58,
-        "pas": 69,
-        "pos": 63,
-        "sho": 59,
-        "sta": 69,
-        "str": 62,
-        "tac": 60,
-        "vis": 65
-      },
-      "birth": "1972-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p18c2xjj",
-      "name": "Yannick Barat",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 7000,
-      "weight": 76
-    },
-    {
-      "alt": [
-        "CM",
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 47,
-        "com": 67,
-        "dri": 68,
-        "ldr": 61,
-        "pac": 73,
-        "pas": 65,
-        "pos": 49,
-        "sho": 67,
-        "sta": 66,
-        "str": 54,
-        "tac": 44,
-        "vis": 67
-      },
-      "birth": "1981-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p1wfpxfo",
-      "name": "Gael Danyc",
-      "nation": "FRA",
-      "number": null,
-      "pos": "LW",
-      "verify": true,
-      "wage": 4500,
-      "weight": 65
-    },
-    {
       "attrs": {
         "aer": 68,
         "com": 59,
@@ -647,33 +583,6 @@
       "wage": 3500
     },
     {
-      "attrs": {
-        "aer": 64,
-        "com": 57,
-        "dri": 44,
-        "ldr": 58,
-        "pac": 53,
-        "pas": 55,
-        "pos": 61,
-        "sho": 31,
-        "sta": 57,
-        "str": 62,
-        "tac": 60,
-        "vis": 48
-      },
-      "birth": "1981-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1xg98yl",
-      "name": "Jonathan Joseph-Augustyn",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3500
-    },
-    {
       "alt": [
         "ST",
         "CM",
@@ -704,33 +613,6 @@
       "number": null,
       "pos": "AM",
       "wage": 3000
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 60,
-        "dri": 45,
-        "ldr": 60,
-        "pac": 51,
-        "pas": 54,
-        "pos": 66,
-        "sho": 34,
-        "sta": 59,
-        "str": 64,
-        "tac": 62,
-        "vis": 48
-      },
-      "birth": "1971-04-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p11ccfwr",
-      "name": "Juan-Luis Montaro",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3500
     },
     {
       "alt": [

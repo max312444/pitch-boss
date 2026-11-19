@@ -108,33 +108,6 @@
       "weight": 63
     },
     {
-      "attrs": {
-        "aer": 65,
-        "com": 60,
-        "dri": 44,
-        "ldr": 67,
-        "pac": 54,
-        "pas": 51,
-        "pos": 67,
-        "sho": 31,
-        "sta": 54,
-        "str": 63,
-        "tac": 67,
-        "vis": 45
-      },
-      "birth": "1989-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p03jv61q",
-      "name": "Fabrizio Puli",
-      "nation": "ITA",
-      "number": 5,
-      "pos": "CB",
-      "wage": 9500,
-      "weight": 75
-    },
-    {
       "alt": [
         "LB"
       ],

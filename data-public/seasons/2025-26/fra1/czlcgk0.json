@@ -184,32 +184,6 @@
     },
     {
       "attrs": {
-        "aer": 61,
-        "com": 67,
-        "dri": 59,
-        "ldr": 62,
-        "pac": 59,
-        "pas": 62,
-        "pos": 64,
-        "sho": 53,
-        "sta": 66,
-        "str": 62,
-        "tac": 65,
-        "vis": 64
-      },
-      "birth": "2002-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p13vjbfh",
-      "name": "Lohann Doucat",
-      "nation": "FRA",
-      "number": 8,
-      "pos": "DM",
-      "wage": 15000
-    },
-    {
-      "attrs": {
         "aer": 67,
         "com": 71,
         "dri": 67,
@@ -788,34 +762,6 @@
       "number": 36,
       "pos": "CM",
       "wage": 6500
-    },
-    {
-      "attrs": {
-        "aer": 53,
-        "com": 59,
-        "dri": 62,
-        "ldr": 62,
-        "pac": 63,
-        "pas": 63,
-        "pos": 61,
-        "sho": 46,
-        "sta": 68,
-        "str": 58,
-        "tac": 66,
-        "vis": 59
-      },
-      "birth": "2001-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p1g0iqn9",
-      "name": "Mathys Tuurraine",
-      "nation": "MAR",
-      "nation2": "FRA",
-      "number": 39,
-      "pos": "RB",
-      "verify": true,
-      "wage": 17000
     },
     {
       "attrs": {

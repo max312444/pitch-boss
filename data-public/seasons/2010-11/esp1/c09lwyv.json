@@ -221,33 +221,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 69,
-        "dri": 67,
-        "ldr": 64,
-        "pac": 66,
-        "pas": 63,
-        "pos": 68,
-        "sho": 70,
-        "sta": 61,
-        "str": 66,
-        "tac": 35,
-        "vis": 60
-      },
-      "birth": "1986-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p1wbk539",
-      "name": "Marco Ruban",
-      "nation": "ARG",
-      "number": 9,
-      "pos": "ST",
-      "wage": 9000,
-      "weight": 72
-    },
-    {
-      "attrs": {
         "aer": 55,
         "com": 68,
         "dri": 67,
@@ -696,33 +669,6 @@
       "pos": "ST",
       "wage": 21000,
       "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 55,
-        "dri": 47,
-        "ldr": 64,
-        "pac": 54,
-        "pas": 55,
-        "pos": 60,
-        "sho": 36,
-        "sta": 54,
-        "str": 61,
-        "tac": 66,
-        "vis": 48
-      },
-      "birth": "1988-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 191,
-      "id": "p1ew9ngb",
-      "name": "Dorian Dervita",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 15500,
-      "weight": 85
     }
   ],
   "stadiumCapacity": 24891

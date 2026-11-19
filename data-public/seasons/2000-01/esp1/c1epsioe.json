@@ -335,36 +335,6 @@
       "wage": 13000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 73,
-        "dri": 71,
-        "ldr": 72,
-        "pac": 69,
-        "pas": 74,
-        "pos": 68,
-        "sho": 65,
-        "sta": 76,
-        "str": 68,
-        "tac": 68,
-        "vis": 74
-      },
-      "birth": "1975-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0ysv2mx",
-      "name": "Jose Luis Merti",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 12500
-    },
-    {
       "attrs": {
         "aer": 63,
         "com": 66,
@@ -474,34 +444,6 @@
       "verify": true,
       "wage": 7000,
       "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 72,
-        "dri": 68,
-        "ldr": 73,
-        "pac": 79,
-        "pas": 70,
-        "pos": 74,
-        "sho": 53,
-        "sta": 74,
-        "str": 70,
-        "tac": 75,
-        "vis": 69
-      },
-      "birth": "1974-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 165,
-      "id": "p1hg43qz",
-      "name": "David Castado",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 7000,
-      "weight": 65
     },
     {
       "attrs": {
@@ -721,63 +663,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 5500
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 66,
-        "han": 69,
-        "ldr": 68,
-        "one": 70,
-        "pac": 55,
-        "pas": 58,
-        "pos": 67,
-        "ref": 68,
-        "sta": 59,
-        "str": 68,
-        "vis": 60
-      },
-      "birth": "1973-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p0bxsxdc",
-      "name": "Cesar Augusto Galvez Espynar",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 2500
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 42,
-        "com": 59,
-        "dri": 61,
-        "ldr": 53,
-        "pac": 62,
-        "pas": 58,
-        "pos": 36,
-        "sho": 57,
-        "sta": 60,
-        "str": 48,
-        "tac": 38,
-        "vis": 58
-      },
-      "birth": "1979-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1jlifhn",
-      "name": "Ardian Đukaj",
-      "nation": "MNE",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 2500
     },
     {
       "alt": [

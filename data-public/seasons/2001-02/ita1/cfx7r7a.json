@@ -544,34 +544,6 @@
     },
     {
       "attrs": {
-        "aer": 59,
-        "com": 67,
-        "han": 68,
-        "ldr": 59,
-        "one": 61,
-        "pac": 49,
-        "pas": 53,
-        "pos": 65,
-        "ref": 64,
-        "sta": 51,
-        "str": 62,
-        "vis": 50
-      },
-      "birth": "1974-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p0que55m",
-      "name": "Alberto Fontane",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 3500,
-      "weight": 83
-    },
-    {
-      "attrs": {
         "aer": 51,
         "com": 66,
         "dri": 69,
@@ -1049,34 +1021,6 @@
       "number": null,
       "pos": "GK",
       "wage": 2000
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 57,
-        "dri": 40,
-        "ldr": 61,
-        "pac": 50,
-        "pas": 49,
-        "pos": 61,
-        "sho": 31,
-        "sta": 52,
-        "str": 57,
-        "tac": 61,
-        "vis": 41
-      },
-      "birth": "1968-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1xm6jnz",
-      "name": "Giancarlo Filyppini",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 1500,
-      "weight": 77
     },
     {
       "alt": [

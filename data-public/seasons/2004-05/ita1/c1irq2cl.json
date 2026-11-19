@@ -486,33 +486,6 @@
       "weight": 84
     },
     {
-      "attrs": {
-        "aer": 60,
-        "com": 66,
-        "dri": 68,
-        "ldr": 62,
-        "pac": 71,
-        "pas": 65,
-        "pos": 67,
-        "sho": 50,
-        "sta": 71,
-        "str": 66,
-        "tac": 66,
-        "vis": 64
-      },
-      "birth": "1975-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1x35omq",
-      "name": "Paolo Foglyo",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RB",
-      "wage": 7000,
-      "weight": 85
-    },
-    {
       "alt": [
         "DM"
       ],

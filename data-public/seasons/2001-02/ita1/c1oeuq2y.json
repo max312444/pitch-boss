@@ -809,34 +809,6 @@
     },
     {
       "attrs": {
-        "aer": 63,
-        "com": 63,
-        "han": 66,
-        "ldr": 62,
-        "one": 59,
-        "pac": 44,
-        "pas": 55,
-        "pos": 66,
-        "ref": 66,
-        "sta": 50,
-        "str": 61,
-        "vis": 51
-      },
-      "birth": "1971-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 191,
-      "id": "p14678cz",
-      "name": "Davide Micyllo",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 2500,
-      "weight": 83
-    },
-    {
-      "attrs": {
         "aer": 61,
         "com": 68,
         "dri": 65,

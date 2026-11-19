@@ -366,36 +366,6 @@
       "wage": 8000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 74,
-        "com": 66,
-        "dri": 54,
-        "ldr": 67,
-        "pac": 61,
-        "pas": 61,
-        "pos": 70,
-        "sho": 44,
-        "sta": 64,
-        "str": 69,
-        "tac": 71,
-        "vis": 57
-      },
-      "birth": "1971-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p1lid5d4",
-      "name": "Txema Alunso",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 6500,
-      "weight": 84
-    },
-    {
       "attrs": {
         "aer": 49,
         "com": 66,
@@ -422,33 +392,6 @@
       "verify": true,
       "wage": 8000,
       "weight": 77
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 69,
-        "dri": 65,
-        "ldr": 63,
-        "pac": 67,
-        "pas": 64,
-        "pos": 64,
-        "sho": 75,
-        "sta": 62,
-        "str": 66,
-        "tac": 36,
-        "vis": 58
-      },
-      "birth": "1972-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p12udg8n",
-      "name": "Javier Mezzoni",
-      "nation": "ARG",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4500
     },
     {
       "attrs": {

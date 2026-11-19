@@ -592,34 +592,6 @@
       "weight": 72
     },
     {
-      "attrs": {
-        "aer": 65,
-        "com": 67,
-        "dri": 63,
-        "ldr": 62,
-        "pac": 69,
-        "pas": 56,
-        "pos": 67,
-        "sho": 71,
-        "sta": 63,
-        "str": 69,
-        "tac": 35,
-        "vis": 56
-      },
-      "birth": "1981-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p1a5c4td",
-      "name": "Marc-Antoine Furtune",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4000,
-      "weight": 76
-    },
-    {
       "alt": [
         "CB",
         "CM",

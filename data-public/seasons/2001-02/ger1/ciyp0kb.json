@@ -398,32 +398,6 @@
     },
     {
       "attrs": {
-        "aer": 66,
-        "com": 68,
-        "dri": 70,
-        "ldr": 63,
-        "pac": 68,
-        "pas": 60,
-        "pos": 66,
-        "sho": 73,
-        "sta": 66,
-        "str": 67,
-        "tac": 43,
-        "vis": 62
-      },
-      "birth": "1969-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p0dx7xwd",
-      "name": "Erik Meyjer",
-      "nation": "NED",
-      "number": null,
-      "pos": "ST",
-      "wage": 7500
-    },
-    {
-      "attrs": {
         "aer": 72,
         "com": 67,
         "dri": 56,

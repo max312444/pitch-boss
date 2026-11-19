@@ -333,34 +333,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 63,
-        "dri": 51,
-        "ldr": 66,
-        "pac": 58,
-        "pas": 56,
-        "pos": 69,
-        "sho": 42,
-        "sta": 59,
-        "str": 69,
-        "tac": 71,
-        "vis": 49
-      },
-      "birth": "1967-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p03ekw9f",
-      "name": "Nandu",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 13000,
-      "weight": 84
-    },
-    {
-      "attrs": {
         "aer": 68,
         "com": 73,
         "dri": 71,
@@ -602,33 +574,6 @@
       "number": null,
       "pos": "LB",
       "wage": 4000
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 61,
-        "dri": 46,
-        "ldr": 65,
-        "pac": 58,
-        "pas": 50,
-        "pos": 67,
-        "sho": 35,
-        "sta": 54,
-        "str": 63,
-        "tac": 66,
-        "vis": 45
-      },
-      "birth": "1981-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0zmhiku",
-      "name": "Innocent Hemga",
-      "nation": "CMR",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500
     },
     {
       "attrs": {

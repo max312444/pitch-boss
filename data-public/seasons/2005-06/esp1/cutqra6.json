@@ -890,33 +890,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 72,
-        "dri": 68,
-        "ldr": 71,
-        "pac": 67,
-        "pas": 76,
-        "pos": 75,
-        "sho": 62,
-        "sta": 72,
-        "str": 69,
-        "tac": 77,
-        "vis": 73
-      },
-      "birth": "1981-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1os6tuz",
-      "name": "Remon Ros",
-      "nation": "ESP",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 15500
-    },
-    {
-      "attrs": {
         "aer": 58,
         "com": 63,
         "dri": 60,

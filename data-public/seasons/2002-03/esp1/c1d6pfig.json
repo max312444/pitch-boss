@@ -724,33 +724,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 64,
-        "dri": 49,
-        "ldr": 62,
-        "pac": 56,
-        "pas": 58,
-        "pos": 64,
-        "sho": 34,
-        "sta": 59,
-        "str": 67,
-        "tac": 66,
-        "vis": 51
-      },
-      "birth": "1976-07-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1inteix",
-      "name": "Francisco Noguarol",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5500
-    },
-    {
-      "attrs": {
         "aer": 60,
         "com": 69,
         "dri": 65,
@@ -804,36 +777,6 @@
       "pos": "RW",
       "verify": true,
       "wage": 7000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 69,
-        "dri": 68,
-        "ldr": 64,
-        "pac": 64,
-        "pas": 71,
-        "pos": 68,
-        "sho": 61,
-        "sta": 73,
-        "str": 61,
-        "tac": 63,
-        "vis": 66
-      },
-      "birth": "1981-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1y7bqrn",
-      "name": "Jacobo Cempos",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 5500
     },
     {
       "attrs": {

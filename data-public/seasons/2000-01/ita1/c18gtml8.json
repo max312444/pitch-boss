@@ -506,62 +506,6 @@
       "weight": 73
     },
     {
-      "attrs": {
-        "aer": 69,
-        "com": 60,
-        "dri": 49,
-        "ldr": 68,
-        "pac": 60,
-        "pas": 57,
-        "pos": 68,
-        "sho": 39,
-        "sta": 60,
-        "str": 68,
-        "tac": 70,
-        "vis": 53
-      },
-      "birth": "1967-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1iafsy7",
-      "name": "Francesco Zenoncelli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500,
-      "weight": 76
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 65,
-        "han": 65,
-        "ldr": 66,
-        "one": 64,
-        "pac": 49,
-        "pas": 54,
-        "pos": 67,
-        "ref": 69,
-        "sta": 54,
-        "str": 64,
-        "vis": 51
-      },
-      "birth": "1962-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0qd0pue",
-      "name": "Gilbert Budart",
-      "nation": "BEL",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 4500,
-      "weight": 82
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -936,34 +880,6 @@
       "pos": "LB",
       "verify": true,
       "wage": 1500,
-      "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 63,
-        "dri": 60,
-        "ldr": 59,
-        "pac": 60,
-        "pas": 55,
-        "pos": 58,
-        "sho": 64,
-        "sta": 60,
-        "str": 65,
-        "tac": 33,
-        "vis": 57
-      },
-      "birth": "1969-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p1qsbo48",
-      "name": "Raffaele Cerbona",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 1000,
       "weight": 75
     },
     {

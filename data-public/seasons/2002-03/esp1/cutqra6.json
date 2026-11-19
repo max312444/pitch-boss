@@ -718,36 +718,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 64,
-        "com": 75,
-        "dri": 72,
-        "ldr": 75,
-        "pac": 69,
-        "pas": 79,
-        "pos": 71,
-        "sho": 66,
-        "sta": 79,
-        "str": 71,
-        "tac": 70,
-        "vis": 74
-      },
-      "birth": "1980-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1r7l5rp",
-      "name": "Jofre Mateo",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 19500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 67,
         "com": 82,
         "dri": 75,
@@ -800,33 +770,6 @@
       "verify": true,
       "wage": 13000,
       "weight": 82
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 73,
-        "dri": 74,
-        "ldr": 73,
-        "pac": 71,
-        "pas": 78,
-        "pos": 59,
-        "sho": 71,
-        "sta": 72,
-        "str": 67,
-        "tac": 52,
-        "vis": 78
-      },
-      "birth": "1980-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p04zup3d",
-      "name": "Sergio Santamarya",
-      "nation": "ESP",
-      "number": null,
-      "pos": "AM",
-      "wage": 19000,
-      "weight": 68
     },
     {
       "alt": [

@@ -448,36 +448,6 @@
       "wage": 19500
     },
     {
-      "alt": [
-        "CB",
-        "RB"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 60,
-        "dri": 62,
-        "ldr": 63,
-        "pac": 70,
-        "pas": 66,
-        "pos": 62,
-        "sho": 45,
-        "sta": 71,
-        "str": 62,
-        "tac": 67,
-        "vis": 62
-      },
-      "birth": "1979-01-01",
-      "contract": "2003-06-30",
-      "foot": "L",
-      "height": 178,
-      "id": "p1babau3",
-      "name": "Paul Boertian",
-      "nation": "ENG",
-      "number": 23,
-      "pos": "LB",
-      "wage": 10500
-    },
-    {
       "attrs": {
         "aer": 72,
         "com": 64,

@@ -1,0 +1,34 @@
+{
+  "city": "Barcelona",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "BAC",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1970,
+  "id": "c18x24hl",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "FC 바르셀로너 아틀레틱",
+  "name": "FC Barceluna Atletic",
+  "nation": "ESP",
+  "parent": "cutqra6",
+  "rivals": [],
+  "short": "BAC"
+}

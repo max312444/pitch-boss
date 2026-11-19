@@ -57,34 +57,6 @@
     },
     {
       "attrs": {
-        "aer": 61,
-        "com": 76,
-        "dri": 75,
-        "ldr": 74,
-        "pac": 70,
-        "pas": 79,
-        "pos": 55,
-        "sho": 74,
-        "sta": 73,
-        "str": 66,
-        "tac": 51,
-        "vis": 75
-      },
-      "birth": "1979-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1jfq44s",
-      "name": "Roberto De Zarbi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 19500,
-      "weight": 67
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 76,
         "dri": 72,
@@ -949,37 +921,6 @@
       "weight": 82
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 50,
-        "com": 65,
-        "dri": 62,
-        "ldr": 62,
-        "pac": 54,
-        "pas": 62,
-        "pos": 57,
-        "sho": 56,
-        "sta": 62,
-        "str": 58,
-        "tac": 60,
-        "vis": 64
-      },
-      "birth": "1983-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0weu8zl",
-      "name": "Adriano Mezavylla",
-      "nation": "BRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4000,
-      "weight": 76
-    },
-    {
       "attrs": {
         "aer": 61,
         "com": 63,
@@ -1005,124 +946,6 @@
       "pos": "GK",
       "wage": 3000,
       "weight": 78
-    },
-    {
-      "alt": [
-        "DM",
-        "AM",
-        "CB"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 65,
-        "dri": 62,
-        "ldr": 62,
-        "pac": 61,
-        "pas": 65,
-        "pos": 65,
-        "sho": 60,
-        "sta": 69,
-        "str": 62,
-        "tac": 57,
-        "vis": 64
-      },
-      "birth": "1983-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p03sly4q",
-      "name": "Riccardo Nerdini",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 4000,
-      "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 61,
-        "dri": 48,
-        "ldr": 65,
-        "pac": 55,
-        "pas": 53,
-        "pos": 64,
-        "sho": 39,
-        "sta": 62,
-        "str": 65,
-        "tac": 70,
-        "vis": 52
-      },
-      "birth": "1982-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1lonij7",
-      "name": "Rocco Sabatu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 2500,
-      "weight": 82
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 45,
-        "com": 58,
-        "dri": 50,
-        "ldr": 54,
-        "pac": 52,
-        "pas": 57,
-        "pos": 50,
-        "sho": 51,
-        "sta": 54,
-        "str": 53,
-        "tac": 50,
-        "vis": 54
-      },
-      "birth": "1971-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p1j4kpjf",
-      "name": "Renato Olyve",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000,
-      "weight": 77
-    },
-    {
-      "attrs": {
-        "aer": 52,
-        "com": 64,
-        "dri": 60,
-        "ldr": 62,
-        "pac": 58,
-        "pas": 66,
-        "pos": 64,
-        "sho": 57,
-        "sta": 66,
-        "str": 58,
-        "tac": 58,
-        "vis": 64
-      },
-      "birth": "1975-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0z627ir",
-      "name": "Giovanni Paschette",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000,
-      "weight": 75
     },
     {
       "alt": [

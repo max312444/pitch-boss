@@ -1,0 +1,33 @@
+{
+  "city": "High Wycombe",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "WIC",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1887,
+  "id": "c1hiomtx",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "위캄 원더러스 FC",
+  "name": "Wicombe Wanderers F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "WIC"
+}

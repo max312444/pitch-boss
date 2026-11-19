@@ -101,36 +101,6 @@
     },
     {
       "alt": [
-        "CM"
-      ],
-      "attrs": {
-        "aer": 80,
-        "com": 78,
-        "dri": 75,
-        "ldr": 79,
-        "pac": 72,
-        "pas": 79,
-        "pos": 82,
-        "sho": 71,
-        "sta": 82,
-        "str": 78,
-        "tac": 84,
-        "vis": 79
-      },
-      "birth": "1975-01-01",
-      "contract": "2010-06-30",
-      "foot": "R",
-      "height": 178,
-      "id": "p1t14sv2",
-      "name": "Nicky Bott",
-      "nation": "ENG",
-      "number": 4,
-      "pos": "DM",
-      "verify": true,
-      "wage": 67500
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {

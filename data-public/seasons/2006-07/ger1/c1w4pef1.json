@@ -334,33 +334,6 @@
       "wage": 8500
     },
     {
-      "attrs": {
-        "aer": 64,
-        "com": 71,
-        "dri": 66,
-        "ldr": 63,
-        "pac": 70,
-        "pas": 64,
-        "pos": 65,
-        "sho": 71,
-        "sta": 62,
-        "str": 71,
-        "tac": 36,
-        "vis": 60
-      },
-      "birth": "1979-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0m9vzzq",
-      "name": "Daniel Gumez",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 7000
-    },
-    {
       "alt": [
         "AM"
       ],

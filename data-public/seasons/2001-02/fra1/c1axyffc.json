@@ -277,32 +277,6 @@
       "weight": 67
     },
     {
-      "attrs": {
-        "aer": 66,
-        "com": 65,
-        "dri": 49,
-        "ldr": 63,
-        "pac": 58,
-        "pas": 58,
-        "pos": 67,
-        "sho": 41,
-        "sta": 64,
-        "str": 65,
-        "tac": 70,
-        "vis": 51
-      },
-      "birth": "1975-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1eob6ao",
-      "name": "Pascal Gourvilla",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 6000
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -797,36 +771,6 @@
       "pos": "GK",
       "verify": true,
       "wage": 2000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 64,
-        "dri": 59,
-        "ldr": 61,
-        "pac": 57,
-        "pas": 62,
-        "pos": 61,
-        "sho": 58,
-        "sta": 63,
-        "str": 60,
-        "tac": 58,
-        "vis": 63
-      },
-      "birth": "1979-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1v9g0g8",
-      "name": "Xavier Bacas",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2500
     },
     {
       "attrs": {

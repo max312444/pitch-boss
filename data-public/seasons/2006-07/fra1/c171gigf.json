@@ -675,91 +675,6 @@
       "weight": 78
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 62,
-        "com": 72,
-        "dri": 70,
-        "ldr": 67,
-        "pac": 65,
-        "pas": 75,
-        "pos": 68,
-        "sho": 66,
-        "sta": 73,
-        "str": 68,
-        "tac": 66,
-        "vis": 68
-      },
-      "birth": "1984-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1mbmntq",
-      "name": "Renaud Cohada",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 7000,
-      "weight": 74
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 64,
-        "han": 66,
-        "ldr": 59,
-        "one": 65,
-        "pac": 46,
-        "pas": 54,
-        "pos": 64,
-        "ref": 66,
-        "sta": 55,
-        "str": 60,
-        "vis": 52
-      },
-      "birth": "1973-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p14vuey3",
-      "name": "Frederic Roox",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 3500,
-      "weight": 79
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 63,
-        "dri": 51,
-        "ldr": 63,
-        "pac": 55,
-        "pas": 57,
-        "pos": 68,
-        "sho": 39,
-        "sta": 61,
-        "str": 65,
-        "tac": 68,
-        "vis": 49
-      },
-      "birth": "1983-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p17su0w7",
-      "name": "Garald Cid",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 4000
-    },
-    {
       "attrs": {
         "aer": 57,
         "com": 63,
@@ -812,34 +727,6 @@
       "verify": true,
       "wage": 3500,
       "weight": 82
-    },
-    {
-      "attrs": {
-        "aer": 56,
-        "com": 64,
-        "dri": 58,
-        "ldr": 58,
-        "pac": 59,
-        "pas": 52,
-        "pos": 61,
-        "sho": 67,
-        "sta": 56,
-        "str": 61,
-        "tac": 29,
-        "vis": 51
-      },
-      "birth": "1987-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1xsyqk0",
-      "name": "Boubacar Keba",
-      "nation": "MLI",
-      "nation2": "BFA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2500
     },
     {
       "attrs": {
@@ -1062,36 +949,6 @@
       "number": null,
       "pos": "CB",
       "wage": 1500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 47,
-        "com": 55,
-        "dri": 55,
-        "ldr": 56,
-        "pac": 55,
-        "pas": 58,
-        "pos": 57,
-        "sho": 53,
-        "sta": 62,
-        "str": 54,
-        "tac": 52,
-        "vis": 57
-      },
-      "birth": "1986-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1sioymx",
-      "name": "Ted Lavia",
-      "nation": "FRA",
-      "nation2": "COD",
-      "number": null,
-      "pos": "CM",
-      "wage": 2500
     },
     {
       "alt": [

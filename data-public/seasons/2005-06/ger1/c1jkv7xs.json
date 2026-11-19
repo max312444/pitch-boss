@@ -109,36 +109,6 @@
       "weight": 88
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 66,
-        "com": 77,
-        "dri": 77,
-        "ldr": 78,
-        "pac": 72,
-        "pas": 78,
-        "pos": 72,
-        "sho": 73,
-        "sta": 78,
-        "str": 74,
-        "tac": 74,
-        "vis": 77
-      },
-      "birth": "1977-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p0qog0t5",
-      "name": "Kamil Kosowsky",
-      "nation": "POL",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 35500
-    },
-    {
       "attrs": {
         "aer": 65,
         "com": 74,

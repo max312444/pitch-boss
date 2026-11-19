@@ -107,37 +107,6 @@
       "wage": 20000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 68,
-        "com": 68,
-        "dri": 53,
-        "ldr": 68,
-        "pac": 64,
-        "pas": 62,
-        "pos": 68,
-        "sho": 41,
-        "sta": 61,
-        "str": 68,
-        "tac": 67,
-        "vis": 54
-      },
-      "birth": "1974-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0earijk",
-      "name": "Pape Malick Dyop",
-      "nation": "SEN",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 20000,
-      "weight": 82
-    },
-    {
       "attrs": {
         "aer": 75,
         "com": 74,
@@ -219,35 +188,6 @@
       "pos": "AM",
       "wage": 17500,
       "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 72,
-        "com": 75,
-        "han": 75,
-        "ldr": 70,
-        "one": 69,
-        "pac": 56,
-        "pas": 60,
-        "pos": 75,
-        "ref": 74,
-        "sta": 60,
-        "str": 67,
-        "vis": 59
-      },
-      "birth": "1967-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p1gx23yn",
-      "name": "Alexander Vancel",
-      "nation": "CZE",
-      "nation2": "SVK",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 10500,
-      "weight": 84
     },
     {
       "attrs": {
@@ -386,34 +326,6 @@
       "number": null,
       "pos": "LM",
       "wage": 6500,
-      "weight": 76
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 69,
-        "dri": 68,
-        "ldr": 62,
-        "pac": 66,
-        "pas": 62,
-        "pos": 67,
-        "sho": 70,
-        "sta": 63,
-        "str": 66,
-        "tac": 36,
-        "vis": 57
-      },
-      "birth": "1970-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p09oewc4",
-      "name": "Lionel Rooxel",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4000,
       "weight": 76
     },
     {

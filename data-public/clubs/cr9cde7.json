@@ -1,0 +1,33 @@
+{
+  "city": "Alcoy",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "ALO",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1928,
+  "id": "cr9cde7",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "CD 알쿠야노",
+  "name": "CD Alcoiano",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "ALO"
+}

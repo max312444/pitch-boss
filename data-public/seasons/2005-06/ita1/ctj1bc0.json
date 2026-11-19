@@ -79,37 +79,6 @@
       "wage": 53500
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 63,
-        "com": 70,
-        "dri": 70,
-        "ldr": 67,
-        "pac": 68,
-        "pas": 72,
-        "pos": 65,
-        "sho": 63,
-        "sta": 69,
-        "str": 65,
-        "tac": 68,
-        "vis": 70
-      },
-      "birth": "1971-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p1h2drbo",
-      "name": "Dino Baggyo",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 61500,
-      "weight": 80
-    },
-    {
       "attrs": {
         "aer": 75,
         "com": 82,
@@ -405,34 +374,6 @@
       "verify": true,
       "wage": 36500,
       "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 70,
-        "dri": 66,
-        "ldr": 69,
-        "pac": 74,
-        "pas": 65,
-        "pos": 67,
-        "sho": 76,
-        "sta": 66,
-        "str": 69,
-        "tac": 40,
-        "vis": 66
-      },
-      "birth": "1971-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0usfki7",
-      "name": "Roberto Mozzi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 24000,
-      "weight": 77
     },
     {
       "attrs": {
@@ -890,34 +831,6 @@
       "weight": 78
     },
     {
-      "attrs": {
-        "aer": 55,
-        "com": 63,
-        "dri": 59,
-        "ldr": 56,
-        "pac": 58,
-        "pas": 49,
-        "pos": 58,
-        "sho": 61,
-        "sta": 58,
-        "str": 57,
-        "tac": 32,
-        "vis": 52
-      },
-      "birth": "1985-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0d9p5di",
-      "name": "Claudio de Suusa",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3500,
-      "weight": 77
-    },
-    {
       "alt": [
         "LW"
       ],
@@ -947,37 +860,6 @@
       "verify": true,
       "wage": 3000,
       "weight": 79
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 43,
-        "com": 53,
-        "dri": 54,
-        "ldr": 53,
-        "pac": 50,
-        "pas": 61,
-        "pos": 54,
-        "sho": 48,
-        "sta": 56,
-        "str": 54,
-        "tac": 54,
-        "vis": 59
-      },
-      "birth": "1984-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p1n5zaos",
-      "name": "Braian Rubert",
-      "nation": "ARG",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2500,
-      "weight": 68
     }
   ],
   "stadiumCapacity": 70634

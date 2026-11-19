@@ -7,7 +7,7 @@
       "#000000",
       "#000000"
     ],
-    "mark": "LUI",
+    "mark": "LUR",
     "pattern": "solid",
     "shape": "shield"
   },
@@ -29,5 +29,5 @@
   "name": "FC Lurient",
   "nation": "FRA",
   "rivals": [],
-  "short": "LUI"
+  "short": "LUR"
 }

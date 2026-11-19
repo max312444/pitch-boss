@@ -1,0 +1,33 @@
+{
+  "city": "Pistoia",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFA500",
+      "#0000FF",
+      "#0000FF"
+    ],
+    "mark": "PIT",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2024,
+  "id": "c8xfq84",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#0000FF",
+      "secondary": "#FFA500"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFA500",
+      "secondary": "#0000FF"
+    }
+  },
+  "ko": "US 피스토이에새 1921",
+  "name": "FC Pistoiesa SSD",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "PIT"
+}

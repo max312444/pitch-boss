@@ -448,36 +448,6 @@
       "weight": 69
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 65,
-        "dri": 69,
-        "ldr": 66,
-        "pac": 75,
-        "pas": 65,
-        "pos": 47,
-        "sho": 68,
-        "sta": 67,
-        "str": 56,
-        "tac": 44,
-        "vis": 64
-      },
-      "birth": "1978-12-01",
-      "contract": "2005-06-30",
-      "foot": "R",
-      "height": 175,
-      "id": "p1em773i",
-      "name": "John Ostar",
-      "nation": "WAL",
-      "number": 22,
-      "pos": "RW",
-      "verify": true,
-      "wage": 20000
-    },
-    {
       "attrs": {
         "aer": 66,
         "com": 70,

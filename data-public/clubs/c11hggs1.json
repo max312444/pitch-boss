@@ -6,7 +6,7 @@
       "#000000",
       "#000000"
     ],
-    "mark": "REG",
+    "mark": "REA",
     "pattern": "solid",
     "shape": "round"
   },
@@ -28,5 +28,5 @@
   "name": "SSV Jahn 2000 Regansburg",
   "nation": "GER",
   "rivals": [],
-  "short": "REG"
+  "short": "REA"
 }

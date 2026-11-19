@@ -1,0 +1,33 @@
+{
+  "city": "Catanzaro",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "CAA",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1929,
+  "id": "c190bq5u",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "US 카탄차루 1929",
+  "name": "US Catanzaru 1929",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "CAA"
+}

@@ -826,38 +826,6 @@
       "wage": 6500
     },
     {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 68,
-        "dri": 61,
-        "ldr": 65,
-        "pac": 61,
-        "pas": 70,
-        "pos": 60,
-        "sho": 61,
-        "sta": 67,
-        "str": 63,
-        "tac": 58,
-        "vis": 66
-      },
-      "birth": "1980-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0gt6m31",
-      "name": "Benjamin Gavenon",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 8500,
-      "weight": 75
-    },
-    {
       "attrs": {
         "aer": 63,
         "com": 60,
@@ -1051,33 +1019,6 @@
       "number": null,
       "pos": "CB",
       "wage": 4000
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 66,
-        "dri": 51,
-        "ldr": 63,
-        "pac": 57,
-        "pas": 57,
-        "pos": 69,
-        "sho": 37,
-        "sta": 63,
-        "str": 70,
-        "tac": 65,
-        "vis": 49
-      },
-      "birth": "1982-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p152zvm7",
-      "name": "Jerome Peraz",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3500
     },
     {
       "alt": [

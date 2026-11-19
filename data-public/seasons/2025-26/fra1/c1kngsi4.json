@@ -569,32 +569,6 @@
     },
     {
       "attrs": {
-        "aer": 47,
-        "com": 50,
-        "dri": 54,
-        "ldr": 53,
-        "pac": 57,
-        "pas": 52,
-        "pos": 58,
-        "sho": 35,
-        "sta": 59,
-        "str": 49,
-        "tac": 54,
-        "vis": 47
-      },
-      "birth": "2006-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p01xrfrg",
-      "name": "Hamza Koutouna",
-      "nation": "MAR",
-      "number": 36,
-      "pos": "RB",
-      "wage": 6000
-    },
-    {
-      "attrs": {
         "aer": 65,
         "com": 66,
         "dri": 50,

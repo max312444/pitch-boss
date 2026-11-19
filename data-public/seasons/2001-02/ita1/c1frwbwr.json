@@ -345,33 +345,6 @@
       "weight": 76
     },
     {
-      "attrs": {
-        "aer": 65,
-        "com": 73,
-        "dri": 64,
-        "ldr": 68,
-        "pac": 67,
-        "pas": 60,
-        "pos": 69,
-        "sho": 70,
-        "sta": 68,
-        "str": 72,
-        "tac": 38,
-        "vis": 58
-      },
-      "birth": "1980-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1pp5tnm",
-      "name": "Igor Bodan",
-      "nation": "CRO",
-      "number": null,
-      "pos": "ST",
-      "wage": 6000,
-      "weight": 80
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -628,33 +601,6 @@
     },
     {
       "attrs": {
-        "aer": 66,
-        "com": 62,
-        "dri": 51,
-        "ldr": 68,
-        "pac": 57,
-        "pas": 56,
-        "pos": 68,
-        "sho": 36,
-        "sta": 63,
-        "str": 68,
-        "tac": 70,
-        "vis": 53
-      },
-      "birth": "1979-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p17kcjf0",
-      "name": "Ruben Maldonadu",
-      "nation": "PAR",
-      "number": null,
-      "pos": "CB",
-      "wage": 4000,
-      "weight": 77
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 69,
         "dri": 56,
@@ -707,36 +653,6 @@
       "pos": "GK",
       "wage": 3500,
       "weight": 85
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 49,
-        "com": 63,
-        "dri": 68,
-        "ldr": 56,
-        "pac": 68,
-        "pas": 59,
-        "pos": 46,
-        "sho": 62,
-        "sta": 59,
-        "str": 55,
-        "tac": 38,
-        "vis": 64
-      },
-      "birth": "1974-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0hyfjqf",
-      "name": "Ivone De Franceschy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RW",
-      "wage": 4000,
-      "weight": 74
     },
     {
       "attrs": {
@@ -917,34 +833,6 @@
     },
     {
       "attrs": {
-        "aer": 61,
-        "com": 56,
-        "dri": 47,
-        "ldr": 56,
-        "pac": 49,
-        "pas": 48,
-        "pos": 62,
-        "sho": 31,
-        "sta": 53,
-        "str": 63,
-        "tac": 60,
-        "vis": 45
-      },
-      "birth": "1966-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p1ori80z",
-      "name": "Gianluca Luppy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 1500,
-      "weight": 73
-    },
-    {
-      "attrs": {
         "aer": 56,
         "com": 57,
         "dri": 59,
@@ -1052,36 +940,6 @@
       "verify": true,
       "wage": 1500,
       "weight": 83
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 49,
-        "com": 58,
-        "dri": 55,
-        "ldr": 56,
-        "pac": 51,
-        "pas": 63,
-        "pos": 59,
-        "sho": 50,
-        "sta": 60,
-        "str": 54,
-        "tac": 54,
-        "vis": 62
-      },
-      "birth": "1968-06-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0acj5hi",
-      "name": "Francesco Pedune",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 1500
     },
     {
       "alt": [

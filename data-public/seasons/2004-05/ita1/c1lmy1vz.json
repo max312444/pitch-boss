@@ -401,33 +401,6 @@
     },
     {
       "attrs": {
-        "aer": 72,
-        "com": 75,
-        "dri": 76,
-        "ldr": 76,
-        "pac": 75,
-        "pas": 67,
-        "pos": 75,
-        "sho": 83,
-        "sta": 72,
-        "str": 79,
-        "tac": 48,
-        "vis": 68
-      },
-      "birth": "1978-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p0t0e8g8",
-      "name": "Marcelo Zelayeta",
-      "nation": "URU",
-      "number": null,
-      "pos": "ST",
-      "wage": 63000,
-      "weight": 93
-    },
-    {
-      "attrs": {
         "aer": 83,
         "com": 78,
         "dri": 64,
@@ -904,33 +877,6 @@
       "weight": 63
     },
     {
-      "attrs": {
-        "aer": 66,
-        "com": 68,
-        "dri": 65,
-        "ldr": 67,
-        "pac": 69,
-        "pas": 62,
-        "pos": 66,
-        "sho": 70,
-        "sta": 62,
-        "str": 66,
-        "tac": 41,
-        "vis": 58
-      },
-      "birth": "1982-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1wu4d1b",
-      "name": "Tomas Guzmen",
-      "nation": "PAR",
-      "number": null,
-      "pos": "ST",
-      "wage": 8500,
-      "weight": 70
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -960,33 +906,6 @@
       "verify": true,
       "wage": 8500,
       "weight": 68
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 65,
-        "dri": 56,
-        "ldr": 56,
-        "pac": 60,
-        "pas": 52,
-        "pos": 62,
-        "sho": 61,
-        "sta": 57,
-        "str": 62,
-        "tac": 30,
-        "vis": 54
-      },
-      "birth": "1984-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 171,
-      "id": "p1wuwge3",
-      "name": "Benjamin Onwuachy",
-      "nation": "NGA",
-      "number": null,
-      "pos": "ST",
-      "wage": 3500,
-      "weight": 65
     }
   ],
   "stadiumCapacity": 41700

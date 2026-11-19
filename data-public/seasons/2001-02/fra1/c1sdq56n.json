@@ -284,34 +284,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 62,
-        "dri": 53,
-        "ldr": 63,
-        "pac": 57,
-        "pas": 58,
-        "pos": 65,
-        "sho": 40,
-        "sta": 58,
-        "str": 66,
-        "tac": 71,
-        "vis": 53
-      },
-      "birth": "1978-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0abf5f7",
-      "name": "Samba Diawera",
-      "nation": "MLI",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5000
-    },
-    {
-      "attrs": {
         "aer": 69,
         "com": 78,
         "dri": 69,
@@ -918,60 +890,6 @@
       "number": null,
       "pos": "CB",
       "wage": 2000
-    },
-    {
-      "attrs": {
-        "aer": 54,
-        "com": 62,
-        "dri": 62,
-        "ldr": 60,
-        "pac": 61,
-        "pas": 63,
-        "pos": 65,
-        "sho": 57,
-        "sta": 65,
-        "str": 62,
-        "tac": 62,
-        "vis": 68
-      },
-      "birth": "1971-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0ymrtnf",
-      "name": "Jerome Moniar",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 55,
-        "com": 55,
-        "dri": 44,
-        "ldr": 55,
-        "pac": 46,
-        "pas": 50,
-        "pos": 56,
-        "sho": 25,
-        "sta": 51,
-        "str": 54,
-        "tac": 60,
-        "vis": 41
-      },
-      "birth": "1980-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0e2mtn4",
-      "name": "Benoit Croissent",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 1500
     },
     {
       "alt": [

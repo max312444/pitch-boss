@@ -137,8 +137,8 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 
 ### ▶ 새 세션은 여기부터: 지금 하던 일 (2026-11-19 기준)
 
-**현재 버전 v2.11.1** (은퇴 선수 보관으로 세이브 약 20% ↓, 2026-11-19) — 커밋 · 푸시 완료 (실명 데이터는 원래 커밋 안 함).
-진행 중인 일은 **2부 리그 데이터 수집** — esp2 · ita2 끝 (2026-11-19), **fra2 미리보기 진행 중** (CA Bastia 는 `ca-bastia` 로 분리, 2024-25~ 18팀은 실제). 끊겼으면 미리보기부터 다시.
+**현재 버전 v2.12.1** (은퇴 선수 보관으로 세이브 약 20% ↓, 2026-11-19) — 커밋 · 푸시 완료 (실명 데이터는 원래 커밋 안 함).
+2부 리그 5개 수집 · publish · 게임 확인까지 끝 (2026-11-19). 다음 할 일은 아래 로드맵.
 
 | 리그 | 상태 (실명 데이터는 로컬 `data/` 에만, 커밋 안 함) |
 |---|---|
@@ -146,7 +146,7 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 | eng2 | **완료** — build · names · dedupe · fix-league · unify-names · validate 오류 0 (26시즌 × 24팀) |
 | esp2 | **완료** (2026-11-19) — 26시즌 × 22팀, validate 오류 0 |
 | ita2 | **완료** (2026-11-19) — 551 구단 시즌 (실제 구단 수와 일치: 03-04 24팀 · 18-19 19팀), validate 오류 0. Pordenone (Q257078) · Ternana (Q8623) 는 한 항목인데 영어 문서 제목만 재창단 이름 → 별칭 `pordenone` · `ternana`. Vicenza 2001~17 이 LR Vicenza 로 잡히던 것 (14-15 · 16-17 은 두 번 들어가 23팀) · A.C. Ancona 0명은 `club-era.json` 으로 바로잡음. 남은 16명 미만 8개 (mantova 24-25 · ternana 17-18 · virtus-entella 25-26 등, 출처 한계 → 유스로 채움) |
-| fra2 | 미리보기 중 (2026-11-19) — SC Bastia · CA Bastia (Q670795 → `ca-bastia`) 분리 |
+| fra2 | **완료** (2026-11-19) — 26시즌 (2024-25~ 18팀은 실제), CA Bastia → `ca-bastia` 분리, 2025-26 최소 12명 (2월 판 · Wikidata 보충), validate 오류 0 |
 
 리그마다 순서 (미리보기 결과에서 **시즌별 구단 수 · 16명 미만 선수단 · 구단 충돌 · "이름으로 연결한 구단 (확인 필요)"** 을 꼭 볼 것):
 ```bash
@@ -186,15 +186,12 @@ cd game && npm run history                 # 역대 기록 (감독 기록의 ces
 
 ### 다음 로드맵 (2부 데이터 다음)
 
-1. **2부 리그 마무리** (위) → 게임 확인 → 커밋
-2. 사진 · 실제 이름 넣는 방법 안내 문서 (사용자 요청). 화면에 사진 출처 표시는 하지 않음
-3. 문의 (구글 폼) 연결 — 사용자가 폼 링크를 주면
-4. ~~세이브 크기~~ (v2.11.1 은퇴 선수 보관으로 약 20% ↓). 더 줄이려면: 현역 선수 경력 (0경기 시즌도 연속 시즌 판정에 씀) · 숨은 속성
-5. 나중 후보: 대륙 대회 (유로 · 코파), 유럽 대회 36팀 리그 페이즈, 재판매 · 보너스 조항 보강
+1. 사진 · 실제 이름 넣는 방법 안내 문서 (사용자 요청). 화면에 사진 출처 표시는 하지 않음
+2. ~~세이브 크기~~ (v2.11.1 은퇴 선수 보관으로 약 20% ↓). 더 줄이려면: 현역 선수 경력 (0경기 시즌도 연속 시즌 판정에 씀) · 숨은 속성
+3. 나중 후보: 대륙 대회 (유로 · 코파), 유럽 대회 36팀 리그 페이즈, 재판매 · 보너스 조항 보강
 
 ### 남은 과제 · 알려진 문제
 
-- 1부만 있는 리그는 실제 데이터가 끝난 뒤 (2026-27~) 강등이 없다 → 2부 데이터가 들어오면 해결.
 - 데이터에 계약 정보는 약 19%만 있음 → 나머지는 게임이 1~5년 부여 (`contractGen`, 화면에 "게임 설정" 표시).
 - 로컬에서 실명 데이터까지 넣은 `npm run build` 는 메모리 부족 — 배포는 `PUBLIC_ONLY=1` 이라 무관.
 - 점검 스크립트: `npm run fairness` (경기 형평성) · `npm run economy` (FA · 잔고) · `npm run invariants` (여러 시즌 불변 조건).
@@ -209,6 +206,9 @@ cd game && npm run history                 # 역대 기록 (감독 기록의 ces
 > 버전: `game/src/version.ts` (첫 화면 표시). 기능 추가 +0.1 · 작은 수정 +0.0.1, 바꿀 때마다 여기에 적는다.
 > 같은 파일의 `CHANGELOG` 맨 위에 플레이어용 한 줄 요약도 넣는다 → 첫 화면 '업데이트 소식' (새 버전을 처음 본 뒤 24시간 표시, `UpdateNotes.tsx`).
 
+0. **v2.12.1 포지션별 능력 범위 순서** (2026-11-19) — 다른 구단 선수 포지션 표가 `seenRange(..., 'pos:' + 자리)` 로 자리마다 흔들림이 달라 보조 포지션(LW 75–85)이 주 포지션(ST 69–79)보다 높게 보이던 문제. 모든 자리를 `'ovr'` 흔들림으로 통일 (Scout.tsx) → 주 포지션 범위 = 맨 위 능력 범위, 다른 자리는 절대 위로 안 보임. 엔진 값 (`ratingAt` 상한) 은 원래 맞았음. 테스트 posOrder.test.ts (2005-06 · 2025-26 전체 선수 × 13자리 × 스카우트 0~100%).
+0. **v2.12 2부 리그 5개 · 데이터 끝난 뒤 승강 · 아래 리그 대기열** (2026-11-19) — esp2 · ita2 · fra2 수집 (eng2 · ger2 와 함께 5개, validate 오류 0), publish · history. 아래 리그 대기열: `SeasonInput.pools` (store `loadSeasonInput` 이 직전 시즌 2부에 있다가 이번 시즌 1부 · 2부에 없는 구단을 `poolOf(2부)` 로, 이번 시즌 데이터에 있는 선수는 뺌) → createWorld 가 경기 안 하는 구단으로 만듦 (컵 · 유럽 · 아카데미 채우기 제외). 최근 시즌으로 시작해도 데이터 끝난 첫 전환에서 2부 크기 유지 (확인: 2025-26 → 2026-27 eng2 24 · esp2 22 · ita2 20 · fra2 18 · ger2 18, 1부 2~3팀씩 승강, 플레이오프 21경기, B팀 규칙 위반 0, AI 역제안 이적 시즌 ~10건). invariants · savesize 스크립트도 같은 대기열. 파이프라인: build 가 시즌 초 판에 링크가 16명 미만이면 2월 판도 보고, 8명 이상이면 쓰고 Wikidata 로 보충 (fra2 2025-26 0명 → 최소 12명), publish `club-public-seed.json` (공개 데이터가 나간 뒤 ID 를 바꾼 구단은 옛 ID 로 공개 ID · 가상 이름 — cesena-1 → c16lcttc 유지. 예전 "public-map 키 옮기기" 는 효과가 없었음: 공개 ID 는 실제 ID 해시). 화면: TableView · NewGameScreen 리그 탭 PC 에서 줄바꿈, SquadView 필터 줄, screens.mjs 에 '잘린 줄' (PC 가로로 넘쳐 숨은 버튼 줄) 점검.
+0. **v2.11.2 첫 화면 의견 보내기 하나로** (2026-11-19) — TitleScreen 아래 「의견 보내기 · 버그 제보」 버튼 삭제 (메뉴 08 「의견 보내기」 와 같은 FeedbackDialog). 문의는 이 의견 보내기 (구글 설문) 로 이미 연결됨.
 0. **v2.11.1 은퇴 선수 보관 (세이브 크기)** (2026-11-19) — `engine/archive.ts`: `retiredOn` (은퇴 시즌, season.ts retire · transfer.ts FA 정리) 이 지금 시즌보다 앞이고 intlOnly 가 아니면 `packWorld` (writeSave · 파일 내보내기) 가 능력치 · 숨은 속성 · 성장 · 시즌 기록 · 컨디션 · 계약 등을 빼고 `archived: true` 로 저장 (경력은 뛴 시즌만, 평점 뺌). 원본 월드는 그대로. 불러올 때 `migrate` → `unpackPlayer` 가 기본값으로 채움. 예전 세이브는 경력이 있는 은퇴 선수 (generated · intlOnly 제외) 에 `retiredOn '0000-00'` → 다음 저장부터. `npm run savesize -- [시즌] [시작 연도] [덤프 파일]` (항목별 크기): 공개 데이터 8시즌 9.68MB → 7.79MB (gzip 1.34 → 1.10), 은퇴 선수 2,003명 보관. 테스트 `archive.test.ts` · 브라우저 저장/불러오기 확인.
 0. **v2.11 호칭 8개 추가 · 기기별 화면 점검** (2026-11-19) — `traits.ts`: 골잡이 (poacher, 경기당 0.5골↑ 12골↑) · 원더키드 (wonderkid, 21세↓ 15경기 평점 7.0↑, `maxAge` 23 넘으면 시즌 말 졸업) · 페널티 장인 (spotkick, PK 골 4↑, `pen` +0.06 → `match.ts` 성공률 상한 0.95) · 세트피스 달인 (setpiece, 세트피스 골+도움 5↑, `set` ×1.12 키커 정확도) · 슈퍼 서브 (supersub, 교체 골 3↑, bench 0.5) · 철인 (ironman, 선발 32↑ 부상 0, injury 0.8) · 노장의 품격 (elder, 33세↑ 20경기 평점 6.9↑) · 실수 제조기 (blunder, 실점 실책 3↑). `TraitLog` subG · pen · set · err (`world.ts` 경기 뒤 기록, 예전 세이브는 없으면 0). excludes 는 양쪽에 적음 (테스트). 화면: `game/scripts/screens.mjs` (아래 남은 과제 참고) 7기기 × 19화면 — 팝업 15개 `max-h-[calc(100dvh-3rem)] overflow-y-auto` (낮은 화면에서 아래 선택지가 잘리던 문제), SquadView 낮은 화면 스크롤 (표 높이 0 이던 문제), MatchPrep 오른쪽 칸 스크롤 · 후보 칸 최소 높이, Sidebar 메인 메뉴 아이콘 `exit`, 태블릿 작은 버튼 `.tap`. 휴대폰 보기: `ui/components/fold.ts` (`useCompact` = 폭 768 미만 또는 높이 500 이하 · `useFold` localStorage `pitchboss.fold`), `Card` 에 `fold` (기억 키) · `shut` (처음 접힘) · `peek` (접혔을 때 요약) — 홈 · 구단 · 재정 · 전술 · 경기 준비 카드 30개 (휴대폰 스크롤 홈 3.4→1.7 · 구단 4.4→2.5 · 재정 3.0→1.8 · 전술/경기 준비 3.5→2.1 화면). PlayerPanel 휴대폰 탭 (능력치 · 호칭 성향 · 경력 평가, 위에 붙음). ScheduleView 열면 다음 경기 위로 자동 스크롤. 데이터 파이프라인: 미리보기에 16명 미만 선수단 목록, `data/canonical/club-era.json` (재창단 구단 시즌별 항목 바로잡기: `use` · `members`).
 0. **v2.10 이적 어필 (역제안) · B팀 승격 규칙 · 2부 리그 수집 준비** (2026-11-18) — `appeal.ts`: `troubleOf` (충성도 55 미만 · 불만 · 벤치 4경기+ · 사가 · 사기 35 미만 · 계약 만료 임박) > 0 인 선수만 어필, 겨룰 주전 = 받는 구단의 같은 포지션 (보조 포지션 포함) 최고 선수, 능력 차 −3~+6 (빈 자리면 팀 전력 ±6), 명성 −5 (갈등 2 이상 −10) 까지. 우리 구단 대상 `appealDay` (이벤트에 `rival`, 받은편지함 `appealWhy`), 다른 구단 대상 `aiAppealDay` (이적시장 중 하루 25%, 날짜 시드 난수라 다른 시스템 난수 순서 그대로, 시세 80% 이적), 우리 선수가 연락하면 그 구단이 `offers` 에 `appeal: true` 제안 (85%, 역제안 95%까지) · 거절하면 충성도 −8 · 사기 −6 (`answerOffer`). B팀: `World.reserves` (B팀 → 모구단, 새 게임 · 불러오기 때 구단 정보 `parent` 로 채움), `pyramid.ts reserveBlocked` — 플레이오프 시드 · 자동 승격 · 승격 채우기에서 제외, 모구단이 2부로 오면 B팀은 대기 리그, `TableView` 승격권 색. 데이터: `data/canonical/club-reserves.json` (B팀 ID → 모구단 ID, build 가 구단 정보에 `parent`, publish 가 공개 ID 로). 파이프라인: `wikidata.js clubMemberships` 잘린 응답이면 종료 연도 구간으로 나눠 받음, `wikipedia.js` 선수단 틀 `fs player2 (sort)` · `first/last/dab` · `{{sortname}}`, 시즌 순위표가 별도 틀이면 항상 따라가 읽음, `build.js` 위키백과 명단도 15세 미만 · 45세 초과 제외 (동명이인 링크), 이름으로 추측 연결한 구단 (exact · suffix · prefix) 을 미리보기에 표시, `unify.js` 여러 줄 형식 파일도 이름 통일, `validate.js` GK 없음은 경고 (게임 시작 때 유스로 채움). 구단 나눔 (합치기 규칙): B팀 7개 · extremadura-1/-2 · cesena-1/-2 (cesena → cesena-1, 공개 ID 유지) · cosenza-1/-2 · granada-74 · universidad-las-palmas. 테스트 `appeal.test.ts` · `pyramid.test.ts` B팀.

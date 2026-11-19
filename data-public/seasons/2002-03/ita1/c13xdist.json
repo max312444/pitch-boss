@@ -347,33 +347,6 @@
     {
       "attrs": {
         "aer": 74,
-        "com": 70,
-        "dri": 60,
-        "ldr": 73,
-        "pac": 68,
-        "pas": 63,
-        "pos": 73,
-        "sho": 46,
-        "sta": 67,
-        "str": 74,
-        "tac": 74,
-        "vis": 56
-      },
-      "birth": "1981-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p06xkjhk",
-      "name": "Alessandro Gamberyni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 7500,
-      "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 74,
         "com": 67,
         "dri": 55,
         "ldr": 66,
@@ -457,34 +430,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 7000
-    },
-    {
-      "attrs": {
-        "aer": 50,
-        "com": 68,
-        "dri": 73,
-        "ldr": 63,
-        "pac": 65,
-        "pas": 70,
-        "pos": 53,
-        "sho": 65,
-        "sta": 67,
-        "str": 57,
-        "tac": 45,
-        "vis": 74
-      },
-      "birth": "1971-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p1hwav3i",
-      "name": "Lamberto Zeuli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 6500,
-      "weight": 83
     },
     {
       "attrs": {
@@ -688,34 +633,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 3500
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 67,
-        "dri": 53,
-        "ldr": 69,
-        "pac": 59,
-        "pas": 61,
-        "pos": 69,
-        "sho": 39,
-        "sta": 62,
-        "str": 71,
-        "tac": 66,
-        "vis": 53
-      },
-      "birth": "1975-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1cae7ry",
-      "name": "Emanuele Brioschy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3000,
-      "weight": 79
     },
     {
       "attrs": {

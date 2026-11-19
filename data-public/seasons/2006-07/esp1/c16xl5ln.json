@@ -509,37 +509,6 @@
       "weight": 81
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 69,
-        "dri": 74,
-        "ldr": 66,
-        "pac": 75,
-        "pas": 71,
-        "pos": 48,
-        "sho": 72,
-        "sta": 66,
-        "str": 61,
-        "tac": 46,
-        "vis": 70
-      },
-      "birth": "1981-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p0s2ag0d",
-      "name": "Pity",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 19500,
-      "weight": 69
-    },
-    {
       "attrs": {
         "aer": 55,
         "com": 72,
@@ -705,62 +674,6 @@
       "pos": "RW",
       "verify": true,
       "wage": 8000
-    },
-    {
-      "attrs": {
-        "aer": 73,
-        "com": 71,
-        "han": 70,
-        "ldr": 66,
-        "one": 70,
-        "pac": 53,
-        "pas": 64,
-        "pos": 72,
-        "ref": 74,
-        "sta": 57,
-        "str": 71,
-        "vis": 63
-      },
-      "birth": "1975-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 193,
-      "id": "p1pyuibd",
-      "name": "Raul Valboena",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 6500,
-      "weight": 88
-    },
-    {
-      "attrs": {
-        "aer": 72,
-        "com": 69,
-        "dri": 55,
-        "ldr": 70,
-        "pac": 65,
-        "pas": 60,
-        "pos": 74,
-        "sho": 46,
-        "sta": 63,
-        "str": 69,
-        "tac": 70,
-        "vis": 53
-      },
-      "birth": "1981-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p111xs20",
-      "name": "Capy",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500,
-      "weight": 78
     },
     {
       "attrs": {

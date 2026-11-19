@@ -529,90 +529,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 74,
-        "dri": 70,
-        "ldr": 70,
-        "pac": 67,
-        "pas": 60,
-        "pos": 66,
-        "sho": 75,
-        "sta": 66,
-        "str": 73,
-        "tac": 41,
-        "vis": 62
-      },
-      "birth": "1978-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1pbivff",
-      "name": "Antonitu",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 6000
-    },
-    {
-      "attrs": {
-        "aer": 54,
-        "com": 60,
-        "dri": 61,
-        "ldr": 63,
-        "pac": 68,
-        "pas": 63,
-        "pos": 66,
-        "sho": 48,
-        "sta": 67,
-        "str": 62,
-        "tac": 68,
-        "vis": 61
-      },
-      "birth": "1978-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0ziex9y",
-      "name": "Cristian Alvaraz",
-      "nation": "ARG",
-      "number": null,
-      "pos": "RB",
-      "wage": 6500,
-      "weight": 73
-    },
-    {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 71,
-        "dri": 68,
-        "ldr": 69,
-        "pac": 60,
-        "pas": 67,
-        "pos": 63,
-        "sho": 59,
-        "sta": 73,
-        "str": 62,
-        "tac": 64,
-        "vis": 69
-      },
-      "birth": "1984-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 171,
-      "id": "p1w29n9g",
-      "name": "Jonatan Velle",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "wage": 8500
-    },
-    {
-      "attrs": {
         "aer": 66,
         "com": 67,
         "dri": 55,
@@ -858,33 +774,6 @@
       "pos": "RW",
       "verify": true,
       "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 64,
-        "dri": 49,
-        "ldr": 65,
-        "pac": 58,
-        "pas": 54,
-        "pos": 69,
-        "sho": 35,
-        "sta": 57,
-        "str": 67,
-        "tac": 65,
-        "vis": 48
-      },
-      "birth": "1984-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1bcmkcw",
-      "name": "Samuel San Josa",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 3000,
-      "weight": 72
     },
     {
       "attrs": {

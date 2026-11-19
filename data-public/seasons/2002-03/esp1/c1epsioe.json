@@ -167,33 +167,6 @@
       "weight": 81
     },
     {
-      "attrs": {
-        "aer": 68,
-        "com": 70,
-        "han": 74,
-        "ldr": 67,
-        "one": 67,
-        "pac": 56,
-        "pas": 63,
-        "pos": 71,
-        "ref": 73,
-        "sta": 55,
-        "str": 66,
-        "vis": 61
-      },
-      "birth": "1969-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 191,
-      "id": "p0xh3ru6",
-      "name": "Cerlos Roa",
-      "nation": "ARG",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 18000
-    },
-    {
       "alt": [
         "RB",
         "LB",
@@ -313,32 +286,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 74,
-        "dri": 67,
-        "ldr": 65,
-        "pac": 68,
-        "pas": 61,
-        "pos": 70,
-        "sho": 76,
-        "sta": 66,
-        "str": 71,
-        "tac": 38,
-        "vis": 62
-      },
-      "birth": "1977-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p05hn1jc",
-      "name": "Leonardo Biegini",
-      "nation": "ARG",
-      "number": null,
-      "pos": "ST",
-      "wage": 8500
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 68,
         "dri": 66,
@@ -366,38 +313,6 @@
       "weight": 82
     },
     {
-      "alt": [
-        "ST"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 77,
-        "dri": 76,
-        "ldr": 73,
-        "pac": 72,
-        "pas": 73,
-        "pos": 58,
-        "sho": 77,
-        "sta": 68,
-        "str": 62,
-        "tac": 54,
-        "vis": 78
-      },
-      "birth": "1977-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0cay58x",
-      "name": "Veljko Peunovic",
-      "nation": "SRB",
-      "nation2": "ESP",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 14000,
-      "weight": 80
-    },
-    {
       "attrs": {
         "aer": 55,
         "com": 63,
@@ -423,38 +338,6 @@
       "pos": "LB",
       "wage": 8500,
       "weight": 70
-    },
-    {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 62,
-        "dri": 62,
-        "ldr": 62,
-        "pac": 57,
-        "pas": 68,
-        "pos": 61,
-        "sho": 57,
-        "sta": 69,
-        "str": 62,
-        "tac": 62,
-        "vis": 67
-      },
-      "birth": "1965-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p00a9rm3",
-      "name": "Vicente Engunga",
-      "nation": "EQG",
-      "nation2": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 11000
     },
     {
       "attrs": {
@@ -623,34 +506,6 @@
     },
     {
       "attrs": {
-        "aer": 59,
-        "com": 61,
-        "dri": 62,
-        "ldr": 66,
-        "pac": 72,
-        "pas": 64,
-        "pos": 69,
-        "sho": 51,
-        "sta": 68,
-        "str": 61,
-        "tac": 68,
-        "vis": 59
-      },
-      "birth": "1976-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p08yentt",
-      "name": "Christian Diez",
-      "nation": "ARG",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 7000,
-      "weight": 74
-    },
-    {
-      "attrs": {
         "aer": 74,
         "com": 65,
         "dri": 52,
@@ -790,34 +645,6 @@
       "number": null,
       "pos": "CM",
       "wage": 4500
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 61,
-        "dri": 48,
-        "ldr": 60,
-        "pac": 53,
-        "pas": 56,
-        "pos": 68,
-        "sho": 34,
-        "sta": 57,
-        "str": 65,
-        "tac": 63,
-        "vis": 47
-      },
-      "birth": "1969-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0emzjj4",
-      "name": "Gustavo Sivieru",
-      "nation": "ARG",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3500,
-      "weight": 72
     },
     {
       "alt": [

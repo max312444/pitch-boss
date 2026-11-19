@@ -768,34 +768,6 @@
     },
     {
       "attrs": {
-        "aer": 66,
-        "com": 62,
-        "dri": 51,
-        "ldr": 67,
-        "pac": 60,
-        "pas": 57,
-        "pos": 71,
-        "sho": 38,
-        "sta": 59,
-        "str": 70,
-        "tac": 67,
-        "vis": 55
-      },
-      "birth": "1970-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 171,
-      "id": "p1etscz2",
-      "name": "Filippo Dal Moru",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6500,
-      "weight": 66
-    },
-    {
-      "attrs": {
         "aer": 65,
         "com": 69,
         "han": 70,

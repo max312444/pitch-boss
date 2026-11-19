@@ -209,34 +209,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 63,
-        "dri": 56,
-        "ldr": 66,
-        "pac": 59,
-        "pas": 57,
-        "pos": 71,
-        "sho": 42,
-        "sta": 63,
-        "str": 69,
-        "tac": 72,
-        "vis": 55
-      },
-      "birth": "1971-03-01",
-      "contract": "2004-06-30",
-      "foot": "R",
-      "height": 185,
-      "id": "p0coyp9u",
-      "name": "Kit Symuns",
-      "nation": "WAL",
-      "number": 4,
-      "pos": "CB",
-      "verify": true,
-      "wage": 23500,
-      "weight": 83
-    },
-    {
-      "attrs": {
         "aer": 63,
         "com": 60,
         "dri": 50,
@@ -592,33 +564,6 @@
       "verify": true,
       "wage": 13000,
       "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 67,
-        "dri": 60,
-        "ldr": 63,
-        "pac": 66,
-        "pas": 59,
-        "pos": 63,
-        "sho": 67,
-        "sta": 63,
-        "str": 64,
-        "tac": 36,
-        "vis": 55
-      },
-      "birth": "1980-10-01",
-      "contract": "2006-06-30",
-      "foot": "R",
-      "height": 178,
-      "id": "p1m3h7uc",
-      "name": "Elvis Hemmond",
-      "nation": "GHA",
-      "number": 25,
-      "pos": "ST",
-      "verify": true,
-      "wage": 9000
     }
   ],
   "stadiumCapacity": 22646

@@ -653,35 +653,6 @@
       "pos": "GK",
       "wage": 12000,
       "weight": 90
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 51,
-        "com": 61,
-        "dri": 55,
-        "ldr": 53,
-        "pac": 52,
-        "pas": 58,
-        "pos": 58,
-        "sho": 52,
-        "sta": 60,
-        "str": 52,
-        "tac": 56,
-        "vis": 58
-      },
-      "birth": "1987-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p1sds43w",
-      "name": "Asier Arrenz",
-      "nation": "ESP",
-      "number": 28,
-      "pos": "CM",
-      "wage": 5000
     }
   ],
   "stadiumCapacity": 27618

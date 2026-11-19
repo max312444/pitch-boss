@@ -246,33 +246,6 @@
       "weight": 89
     },
     {
-      "attrs": {
-        "aer": 63,
-        "com": 68,
-        "dri": 64,
-        "ldr": 62,
-        "pac": 69,
-        "pas": 61,
-        "pos": 63,
-        "sho": 71,
-        "sta": 59,
-        "str": 63,
-        "tac": 39,
-        "vis": 57
-      },
-      "birth": "1974-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p0s0n0yr",
-      "name": "Bolu",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 11000
-    },
-    {
       "alt": [
         "LW"
       ],
@@ -581,36 +554,6 @@
       "weight": 82
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 65,
-        "dri": 66,
-        "ldr": 62,
-        "pac": 59,
-        "pas": 70,
-        "pos": 61,
-        "sho": 60,
-        "sta": 70,
-        "str": 57,
-        "tac": 62,
-        "vis": 68
-      },
-      "birth": "1980-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0zgg41s",
-      "name": "Miguel Parez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 9500
-    },
-    {
       "attrs": {
         "aer": 72,
         "com": 74,
@@ -663,33 +606,6 @@
       "pos": "ST",
       "verify": true,
       "wage": 5500
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 62,
-        "dri": 55,
-        "ldr": 64,
-        "pac": 60,
-        "pas": 61,
-        "pos": 66,
-        "sho": 37,
-        "sta": 63,
-        "str": 69,
-        "tac": 70,
-        "vis": 54
-      },
-      "birth": "1980-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p06gobe0",
-      "name": "Egoitz Jeio",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6000
     },
     {
       "attrs": {
@@ -860,33 +776,6 @@
       "verify": true,
       "wage": 5000,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 67,
-        "dri": 61,
-        "ldr": 61,
-        "pac": 66,
-        "pas": 56,
-        "pos": 63,
-        "sho": 69,
-        "sta": 60,
-        "str": 65,
-        "tac": 32,
-        "vis": 56
-      },
-      "birth": "1982-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p00p8f55",
-      "name": "Abdulrazak Ekpuki",
-      "nation": "NGA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4000
     },
     {
       "attrs": {

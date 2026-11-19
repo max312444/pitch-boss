@@ -1,0 +1,33 @@
+{
+  "city": "Logrono",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "LUO",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 2009,
+  "id": "c19q4a8g",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "UD 로구로녜스",
+  "name": "UD Lugrones",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "LUO"
+}

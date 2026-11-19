@@ -105,37 +105,6 @@
       "weight": 77
     },
     {
-      "alt": [
-        "RB"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 66,
-        "dri": 65,
-        "ldr": 68,
-        "pac": 62,
-        "pas": 68,
-        "pos": 67,
-        "sho": 61,
-        "sta": 67,
-        "str": 62,
-        "tac": 63,
-        "vis": 72
-      },
-      "birth": "1981-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p06wx02l",
-      "name": "Goran Rubyl",
-      "nation": "CRO",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 18500,
-      "weight": 76
-    },
-    {
       "attrs": {
         "aer": 66,
         "com": 67,
@@ -444,32 +413,6 @@
     },
     {
       "attrs": {
-        "aer": 60,
-        "com": 63,
-        "dri": 60,
-        "ldr": 58,
-        "pac": 62,
-        "pas": 49,
-        "pos": 57,
-        "sho": 61,
-        "sta": 58,
-        "str": 58,
-        "tac": 30,
-        "vis": 55
-      },
-      "birth": "1983-10-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1tbgfok",
-      "name": "Shiva N'Ziguu",
-      "nation": "GAB",
-      "number": null,
-      "pos": "ST",
-      "wage": 5500
-    },
-    {
-      "attrs": {
         "aer": 52,
         "com": 66,
         "dri": 68,
@@ -495,33 +438,6 @@
       "verify": true,
       "wage": 7000,
       "weight": 63
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 71,
-        "han": 71,
-        "ldr": 65,
-        "one": 72,
-        "pac": 55,
-        "pas": 56,
-        "pos": 67,
-        "ref": 70,
-        "sta": 60,
-        "str": 68,
-        "vis": 59
-      },
-      "birth": "1974-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p09o88yw",
-      "name": "Willy Grondyn",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 6000
     },
     {
       "attrs": {

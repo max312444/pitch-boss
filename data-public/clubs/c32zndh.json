@@ -1,0 +1,33 @@
+{
+  "city": "Orleans",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "ORL",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1976,
+  "id": "c32zndh",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "US 오를래앙",
+  "name": "US Orleens",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "ORL"
+}

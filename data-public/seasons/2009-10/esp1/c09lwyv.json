@@ -636,36 +636,6 @@
     },
     {
       "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 49,
-        "com": 66,
-        "dri": 69,
-        "ldr": 58,
-        "pac": 68,
-        "pas": 62,
-        "pos": 50,
-        "sho": 65,
-        "sta": 64,
-        "str": 56,
-        "tac": 42,
-        "vis": 67
-      },
-      "birth": "1989-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 169,
-      "id": "p1wqbsqk",
-      "name": "Jefferson Montaro",
-      "nation": "ECU",
-      "number": 28,
-      "pos": "RW",
-      "wage": 22500,
-      "weight": 64
-    },
-    {
-      "alt": [
         "LW",
         "CM"
       ],
@@ -694,33 +664,6 @@
       "pos": "RW",
       "wage": 9000,
       "weight": 67
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 69,
-        "dri": 62,
-        "ldr": 65,
-        "pac": 65,
-        "pas": 58,
-        "pos": 60,
-        "sho": 70,
-        "sta": 60,
-        "str": 68,
-        "tac": 32,
-        "vis": 60
-      },
-      "birth": "1986-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p1wbk539",
-      "name": "Marco Ruban",
-      "nation": "ARG",
-      "number": null,
-      "pos": "ST",
-      "wage": 8500,
-      "weight": 72
     }
   ],
   "stadiumCapacity": 24891

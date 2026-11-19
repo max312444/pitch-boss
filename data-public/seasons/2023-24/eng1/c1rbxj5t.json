@@ -458,32 +458,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 63,
-        "dri": 47,
-        "ldr": 65,
-        "pac": 60,
-        "pas": 54,
-        "pos": 68,
-        "sho": 39,
-        "sta": 62,
-        "str": 66,
-        "tac": 66,
-        "vis": 47
-      },
-      "birth": "2002-06-01",
-      "contract": "2025-06-30",
-      "foot": "R",
-      "height": 188,
-      "id": "p0y03oyy",
-      "name": "Andrew Omubamidele",
-      "nation": "IRL",
-      "number": 32,
-      "pos": "CB",
-      "wage": 31000
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 74,
         "dri": 71,

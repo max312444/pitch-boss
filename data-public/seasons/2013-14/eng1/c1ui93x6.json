@@ -605,36 +605,6 @@
       "weight": 76
     },
     {
-      "alt": [
-        "RW"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 66,
-        "dri": 70,
-        "ldr": 59,
-        "pac": 71,
-        "pas": 65,
-        "pos": 45,
-        "sho": 65,
-        "sta": 62,
-        "str": 56,
-        "tac": 42,
-        "vis": 61
-      },
-      "birth": "1991-08-01",
-      "contract": "2015-06-30",
-      "foot": "L",
-      "height": 180,
-      "id": "p036j3jx",
-      "name": "Alexander Kacaniklyc",
-      "nation": "SWE",
-      "number": 11,
-      "pos": "LW",
-      "wage": 26500,
-      "weight": 66
-    },
-    {
       "attrs": {
         "aer": 75,
         "com": 79,

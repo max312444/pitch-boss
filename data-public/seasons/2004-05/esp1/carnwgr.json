@@ -24,33 +24,6 @@
   },
   "squad": [
     {
-      "attrs": {
-        "aer": 62,
-        "com": 69,
-        "dri": 70,
-        "ldr": 71,
-        "pac": 75,
-        "pas": 73,
-        "pos": 72,
-        "sho": 53,
-        "sta": 75,
-        "str": 66,
-        "tac": 75,
-        "vis": 65
-      },
-      "birth": "1977-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0q5htow",
-      "name": "Marc Bernaos",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 21500
-    },
-    {
       "alt": [
         "DM",
         "AM"
@@ -165,36 +138,6 @@
       "verify": true,
       "wage": 17500,
       "weight": 82
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 76,
-        "com": 66,
-        "dri": 56,
-        "ldr": 69,
-        "pac": 67,
-        "pas": 65,
-        "pos": 72,
-        "sho": 40,
-        "sta": 63,
-        "str": 71,
-        "tac": 71,
-        "vis": 54
-      },
-      "birth": "1980-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p0h0qrqd",
-      "name": "Javier Beraja",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 14000
     },
     {
       "alt": [

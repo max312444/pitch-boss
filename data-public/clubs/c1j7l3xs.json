@@ -1,0 +1,33 @@
+{
+  "city": "Latina",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFD700",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "LAT",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2017,
+  "id": "c1j7l3xs",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFD700"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFD700",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "US 라테나 칼초",
+  "name": "Latine Calcio 1932",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "LAT"
+}

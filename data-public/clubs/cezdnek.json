@@ -1,0 +1,33 @@
+{
+  "city": "Lanciano",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "LAC",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2017,
+  "id": "cezdnek",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "SS 비르투수 란차노 1924",
+  "name": "SS Virtus Lancyano 1924",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "LAC"
+}

@@ -1,0 +1,34 @@
+{
+  "city": "San Sebastian",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "SOI",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1951,
+  "id": "c164vvv9",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "레알 소시에다두 B",
+  "name": "Real Socieded B",
+  "nation": "ESP",
+  "parent": "c1hjaaqi",
+  "rivals": [],
+  "short": "SOI"
+}

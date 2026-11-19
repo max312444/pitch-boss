@@ -329,36 +329,6 @@
       "weight": 82
     },
     {
-      "alt": [
-        "LB"
-      ],
-      "attrs": {
-        "aer": 72,
-        "com": 66,
-        "dri": 49,
-        "ldr": 68,
-        "pac": 57,
-        "pas": 57,
-        "pos": 70,
-        "sho": 39,
-        "sta": 64,
-        "str": 67,
-        "tac": 67,
-        "vis": 50
-      },
-      "birth": "1994-02-01",
-      "contract": "2024-06-30",
-      "foot": "L",
-      "height": 186,
-      "id": "p1bkpymn",
-      "name": "Terence Kungolo",
-      "nation": "NED",
-      "number": 30,
-      "pos": "CB",
-      "wage": 49000,
-      "weight": 70
-    },
-    {
       "attrs": {
         "aer": 69,
         "com": 66,
@@ -501,7 +471,7 @@
       "foot": "R",
       "height": 170,
       "id": "p0dvqxox",
-      "name": "Bobby Reyd",
+      "name": "Bobby De Cordova-Reyd",
       "nation": "ENG",
       "nation2": "JAM",
       "number": 14,

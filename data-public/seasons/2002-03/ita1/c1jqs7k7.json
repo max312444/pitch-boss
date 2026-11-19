@@ -570,36 +570,6 @@
       "weight": 67
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 71,
-        "dri": 64,
-        "ldr": 66,
-        "pac": 67,
-        "pas": 69,
-        "pos": 68,
-        "sho": 60,
-        "sta": 68,
-        "str": 64,
-        "tac": 67,
-        "vis": 71
-      },
-      "birth": "1974-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p1ie9vg8",
-      "name": "Dario Passuni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 4500,
-      "weight": 74
-    },
-    {
       "attrs": {
         "aer": 67,
         "com": 60,
@@ -656,33 +626,6 @@
       "pos": "RW",
       "wage": 4500,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 55,
-        "com": 61,
-        "dri": 61,
-        "ldr": 58,
-        "pac": 64,
-        "pas": 60,
-        "pos": 61,
-        "sho": 45,
-        "sta": 65,
-        "str": 57,
-        "tac": 61,
-        "vis": 56
-      },
-      "birth": "1980-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0pxx8q9",
-      "name": "Francesco Carbona",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RB",
-      "wage": 3500,
-      "weight": 70
     },
     {
       "attrs": {
@@ -914,37 +857,6 @@
       "weight": 82
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 50,
-        "com": 61,
-        "dri": 60,
-        "ldr": 63,
-        "pac": 54,
-        "pas": 67,
-        "pos": 62,
-        "sho": 56,
-        "sta": 64,
-        "str": 54,
-        "tac": 55,
-        "vis": 66
-      },
-      "birth": "1976-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0wzqc7t",
-      "name": "Giorgio Gurgone",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000,
-      "weight": 71
-    },
-    {
       "attrs": {
         "aer": 54,
         "com": 58,
@@ -998,34 +910,6 @@
       "pos": "ST",
       "wage": 1500,
       "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 62,
-        "dri": 53,
-        "ldr": 66,
-        "pac": 58,
-        "pas": 53,
-        "pos": 66,
-        "sho": 37,
-        "sta": 60,
-        "str": 63,
-        "tac": 64,
-        "vis": 51
-      },
-      "birth": "1973-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p1dflvdq",
-      "name": "Enrico Franchy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 1500,
-      "weight": 75
     },
     {
       "attrs": {

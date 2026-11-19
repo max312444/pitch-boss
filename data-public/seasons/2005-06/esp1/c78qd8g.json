@@ -584,87 +584,6 @@
     },
     {
       "attrs": {
-        "aer": 73,
-        "com": 67,
-        "dri": 54,
-        "ldr": 70,
-        "pac": 67,
-        "pas": 65,
-        "pos": 71,
-        "sho": 41,
-        "sta": 70,
-        "str": 72,
-        "tac": 72,
-        "vis": 58
-      },
-      "birth": "1978-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0qv3mqx",
-      "name": "Antonio Soldevylla",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 8500
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 70,
-        "dri": 56,
-        "ldr": 72,
-        "pac": 63,
-        "pas": 61,
-        "pos": 73,
-        "sho": 40,
-        "sta": 68,
-        "str": 70,
-        "tac": 72,
-        "vis": 54
-      },
-      "birth": "1984-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1r8tln2",
-      "name": "Carlos Garcie",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 9500,
-      "weight": 82
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 68,
-        "dri": 65,
-        "ldr": 69,
-        "pac": 63,
-        "pas": 70,
-        "pos": 73,
-        "sho": 57,
-        "sta": 75,
-        "str": 69,
-        "tac": 73,
-        "vis": 71
-      },
-      "birth": "1981-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0nsob95",
-      "name": "Moises Hortado",
-      "nation": "ESP",
-      "number": null,
-      "pos": "DM",
-      "wage": 11500
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 76,
         "dri": 76,
@@ -801,33 +720,6 @@
       "verify": true,
       "wage": 7500,
       "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 68,
-        "dri": 66,
-        "ldr": 73,
-        "pac": 60,
-        "pas": 73,
-        "pos": 71,
-        "sho": 55,
-        "sta": 73,
-        "str": 71,
-        "tac": 70,
-        "vis": 66
-      },
-      "birth": "1975-07-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0o1zg6h",
-      "name": "Angel Moreles",
-      "nation": "ESP",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 8500
     },
     {
       "attrs": {
@@ -973,36 +865,6 @@
       "verify": true,
       "wage": 4500,
       "weight": 86
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 50,
-        "com": 63,
-        "dri": 68,
-        "ldr": 63,
-        "pac": 70,
-        "pas": 60,
-        "pos": 44,
-        "sho": 60,
-        "sta": 64,
-        "str": 55,
-        "tac": 40,
-        "vis": 66
-      },
-      "birth": "1983-07-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p176c9q0",
-      "name": "Loismi",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 3000
     },
     {
       "attrs": {

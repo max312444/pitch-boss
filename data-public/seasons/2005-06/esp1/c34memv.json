@@ -162,36 +162,6 @@
       "wage": 14500
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 63,
-        "com": 70,
-        "dri": 69,
-        "ldr": 73,
-        "pac": 66,
-        "pas": 77,
-        "pos": 70,
-        "sho": 69,
-        "sta": 74,
-        "str": 70,
-        "tac": 66,
-        "vis": 76
-      },
-      "birth": "1979-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1sneg6z",
-      "name": "Juvenal Edjogo-Owuno",
-      "nation": "EQG",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 20500
-    },
-    {
       "attrs": {
         "aer": 51,
         "com": 66,
@@ -416,60 +386,6 @@
     },
     {
       "attrs": {
-        "aer": 57,
-        "com": 74,
-        "dri": 78,
-        "ldr": 74,
-        "pac": 73,
-        "pas": 75,
-        "pos": 61,
-        "sho": 76,
-        "sta": 75,
-        "str": 65,
-        "tac": 52,
-        "vis": 79
-      },
-      "birth": "1980-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p04zup3d",
-      "name": "Sergio Santamarya",
-      "nation": "ESP",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 14000,
-      "weight": 68
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 71,
-        "dri": 69,
-        "ldr": 70,
-        "pac": 73,
-        "pas": 71,
-        "pos": 69,
-        "sho": 57,
-        "sta": 73,
-        "str": 69,
-        "tac": 76,
-        "vis": 69
-      },
-      "birth": "1979-10-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1c2cest",
-      "name": "Pablo Cuira",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RB",
-      "wage": 10000
-    },
-    {
-      "attrs": {
         "aer": 74,
         "com": 67,
         "dri": 60,
@@ -664,34 +580,6 @@
       "weight": 78
     },
     {
-      "attrs": {
-        "aer": 70,
-        "com": 73,
-        "han": 73,
-        "ldr": 68,
-        "one": 71,
-        "pac": 56,
-        "pas": 67,
-        "pos": 72,
-        "ref": 74,
-        "sta": 61,
-        "str": 67,
-        "vis": 65
-      },
-      "birth": "1978-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p1w5jxs6",
-      "name": "Juan Peblo",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 6000,
-      "weight": 85
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -720,39 +608,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 8000
-    },
-    {
-      "alt": [
-        "CM",
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 71,
-        "dri": 68,
-        "ldr": 67,
-        "pac": 68,
-        "pas": 61,
-        "pos": 66,
-        "sho": 72,
-        "sta": 62,
-        "str": 66,
-        "tac": 36,
-        "vis": 57
-      },
-      "birth": "1976-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0ghbqvo",
-      "name": "Juan Epitia",
-      "nation": "ESP",
-      "nation2": "EQG",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 7500
     },
     {
       "alt": [
@@ -1034,38 +889,6 @@
       "wage": 4500
     },
     {
-      "alt": [
-        "ST",
-        "CM",
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 69,
-        "dri": 71,
-        "ldr": 67,
-        "pac": 63,
-        "pas": 69,
-        "pos": 51,
-        "sho": 67,
-        "sta": 65,
-        "str": 55,
-        "tac": 45,
-        "vis": 70
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1axw2gi",
-      "name": "Eneko Romu",
-      "nation": "ESP",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 4000
-    },
-    {
       "attrs": {
         "aer": 59,
         "com": 62,
@@ -1092,38 +915,6 @@
       "verify": true,
       "wage": 3500,
       "weight": 82
-    },
-    {
-      "alt": [
-        "CB",
-        "CM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 63,
-        "com": 68,
-        "dri": 58,
-        "ldr": 69,
-        "pac": 58,
-        "pas": 66,
-        "pos": 70,
-        "sho": 53,
-        "sta": 68,
-        "str": 70,
-        "tac": 71,
-        "vis": 65
-      },
-      "birth": "1980-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1iro04d",
-      "name": "Nacho Fernandaz",
-      "nation": "ESP",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 4000
     },
     {
       "alt": [
@@ -1219,32 +1010,6 @@
       "pos": "RB",
       "wage": 3500,
       "weight": 76
-    },
-    {
-      "attrs": {
-        "aer": 54,
-        "com": 61,
-        "dri": 61,
-        "ldr": 61,
-        "pac": 65,
-        "pas": 64,
-        "pos": 66,
-        "sho": 46,
-        "sta": 69,
-        "str": 58,
-        "tac": 67,
-        "vis": 55
-      },
-      "birth": "1982-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0qcu5ck",
-      "name": "Angel Senchez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "wage": 2500
     },
     {
       "alt": [

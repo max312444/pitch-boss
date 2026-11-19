@@ -176,7 +176,7 @@
       "foot": "R",
       "height": 188,
       "id": "p13cn1xh",
-      "name": "Jon Furtune",
+      "name": "Jonathan Furtune",
       "nation": "ENG",
       "number": 24,
       "pos": "CB",
@@ -655,34 +655,6 @@
     },
     {
       "attrs": {
-        "aer": 66,
-        "com": 70,
-        "dri": 66,
-        "ldr": 63,
-        "pac": 67,
-        "pas": 61,
-        "pos": 66,
-        "sho": 73,
-        "sta": 64,
-        "str": 72,
-        "tac": 40,
-        "vis": 61
-      },
-      "birth": "1978-10-01",
-      "contract": "2007-06-30",
-      "foot": "R",
-      "height": 175,
-      "id": "p0tinymp",
-      "name": "Kevin Lisbia",
-      "nation": "JAM",
-      "nation2": "ENG",
-      "number": 12,
-      "pos": "ST",
-      "wage": 15000,
-      "weight": 69
-    },
-    {
-      "attrs": {
         "aer": 64,
         "com": 73,
         "dri": 66,
@@ -762,36 +734,6 @@
       "pos": "CB",
       "wage": 22500,
       "weight": 85
-    },
-    {
-      "attrs": {
-        "aer": 72,
-        "com": 70,
-        "dri": 56,
-        "ldr": 71,
-        "pac": 67,
-        "pas": 63,
-        "pos": 77,
-        "sho": 43,
-        "sta": 64,
-        "str": 73,
-        "tac": 74,
-        "vis": 54
-      },
-      "birth": "1974-03-01",
-      "contract": "2006-06-30",
-      "foot": "R",
-      "height": 191,
-      "id": "p1sq2yil",
-      "name": "Mark Fysh",
-      "nation": "RSA",
-      "number": 6,
-      "pos": "CB",
-      "traits": [
-        "injury_prone"
-      ],
-      "wage": 16000,
-      "weight": 81
     }
   ],
   "stadiumCapacity": 27111

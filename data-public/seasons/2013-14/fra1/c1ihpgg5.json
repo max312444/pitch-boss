@@ -287,33 +287,6 @@
     },
     {
       "attrs": {
-        "aer": 60,
-        "com": 65,
-        "dri": 58,
-        "ldr": 56,
-        "pac": 60,
-        "pas": 53,
-        "pos": 57,
-        "sho": 61,
-        "sta": 58,
-        "str": 60,
-        "tac": 28,
-        "vis": 56
-      },
-      "birth": "1987-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p0akg3q0",
-      "name": "Ludovic Ganest",
-      "nation": "FRA",
-      "number": 14,
-      "pos": "ST",
-      "wage": 9000,
-      "weight": 66
-    },
-    {
-      "attrs": {
         "aer": 49,
         "com": 64,
         "dri": 70,

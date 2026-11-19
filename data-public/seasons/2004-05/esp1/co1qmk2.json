@@ -109,37 +109,6 @@
       "wage": 14500
     },
     {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 62,
-        "com": 74,
-        "dri": 69,
-        "ldr": 72,
-        "pac": 69,
-        "pas": 77,
-        "pos": 73,
-        "sho": 65,
-        "sta": 77,
-        "str": 68,
-        "tac": 68,
-        "vis": 73
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p137elv4",
-      "name": "Catalin Munteano",
-      "nation": "ROU",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 24000
-    },
-    {
       "attrs": {
         "aer": 68,
         "com": 70,
@@ -249,34 +218,6 @@
       "verify": true,
       "wage": 13000,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 72,
-        "com": 64,
-        "dri": 56,
-        "ldr": 71,
-        "pac": 62,
-        "pas": 63,
-        "pos": 72,
-        "sho": 40,
-        "sta": 64,
-        "str": 72,
-        "tac": 74,
-        "vis": 53
-      },
-      "birth": "1977-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p1sww2r4",
-      "name": "Unai Vargara",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 12000,
-      "weight": 90
     },
     {
       "attrs": {
@@ -673,33 +614,6 @@
       "number": null,
       "pos": "CM",
       "wage": 7500
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 65,
-        "dri": 65,
-        "ldr": 58,
-        "pac": 69,
-        "pas": 59,
-        "pos": 64,
-        "sho": 46,
-        "sta": 69,
-        "str": 61,
-        "tac": 63,
-        "vis": 55
-      },
-      "birth": "1978-10-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p13p9hb7",
-      "name": "Pedro Harnandez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 5500
     },
     {
       "alt": [

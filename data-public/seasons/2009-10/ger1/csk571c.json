@@ -455,33 +455,6 @@
       "weight": 80
     },
     {
-      "attrs": {
-        "aer": 73,
-        "com": 70,
-        "dri": 56,
-        "ldr": 70,
-        "pac": 63,
-        "pas": 62,
-        "pos": 71,
-        "sho": 45,
-        "sta": 64,
-        "str": 70,
-        "tac": 71,
-        "vis": 58
-      },
-      "birth": "1986-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p1ddheam",
-      "name": "Habib Bellayd",
-      "nation": "FRA",
-      "nation2": "ALG",
-      "number": 19,
-      "pos": "CB",
-      "wage": 25000
-    },
-    {
       "alt": [
         "CB"
       ],

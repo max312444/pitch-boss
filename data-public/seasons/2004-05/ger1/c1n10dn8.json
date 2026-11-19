@@ -25,34 +25,6 @@
   "squad": [
     {
       "attrs": {
-        "aer": 81,
-        "com": 80,
-        "han": 85,
-        "ldr": 83,
-        "one": 82,
-        "pac": 69,
-        "pas": 74,
-        "pos": 85,
-        "ref": 83,
-        "sta": 70,
-        "str": 80,
-        "vis": 74
-      },
-      "birth": "1977-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p1uxj4zu",
-      "name": "Robert Enka",
-      "nation": "GER",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 38000,
-      "weight": 78
-    },
-    {
-      "attrs": {
         "aer": 68,
         "com": 78,
         "dri": 75,

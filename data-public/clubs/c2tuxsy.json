@@ -1,0 +1,33 @@
+{
+  "city": "Sete",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "SET",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1900,
+  "id": "c2tuxsy",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "FC 세투 34",
+  "name": "SC Seta",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "SET"
+}

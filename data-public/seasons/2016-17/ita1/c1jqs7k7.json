@@ -704,37 +704,6 @@
       "pos": "CM",
       "wage": 41000,
       "weight": 70
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 61,
-        "dri": 55,
-        "ldr": 57,
-        "pac": 52,
-        "pas": 64,
-        "pos": 58,
-        "sho": 53,
-        "sta": 65,
-        "str": 55,
-        "tac": 54,
-        "vis": 63
-      },
-      "birth": "1996-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1v6dsp5",
-      "name": "Samuel Bestien",
-      "nation": "BEL",
-      "nation2": "COD",
-      "number": null,
-      "pos": "CM",
-      "wage": 10000,
-      "weight": 73
     }
   ],
   "stadiumCapacity": 31045

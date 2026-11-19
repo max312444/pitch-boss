@@ -1,0 +1,33 @@
+{
+  "city": "Lecco",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "LEU",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1912,
+  "id": "c1l66d1h",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "칼초 레쿠 1912",
+  "name": "Calcio Leccu 1912",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "LEU"
+}

@@ -272,36 +272,6 @@
       "weight": 71
     },
     {
-      "alt": [
-        "ST"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 68,
-        "dri": 64,
-        "ldr": 63,
-        "pac": 66,
-        "pas": 69,
-        "pos": 63,
-        "sho": 61,
-        "sta": 71,
-        "str": 63,
-        "tac": 67,
-        "vis": 69
-      },
-      "birth": "1973-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p00h4v2l",
-      "name": "Þorður Guðjonssun",
-      "nation": "ISL",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 7000
-    },
-    {
       "attrs": {
         "aer": 68,
         "com": 68,

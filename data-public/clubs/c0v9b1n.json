@@ -1,0 +1,33 @@
+{
+  "city": "Grosseto",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "GRU",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1912,
+  "id": "c0v9b1n",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "US 그로새토 FC",
+  "name": "US Grusseto 1912",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "GRU"
+}

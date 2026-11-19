@@ -223,34 +223,6 @@
       "weight": 71
     },
     {
-      "attrs": {
-        "aer": 66,
-        "com": 73,
-        "dri": 65,
-        "ldr": 75,
-        "pac": 67,
-        "pas": 76,
-        "pos": 74,
-        "sho": 63,
-        "sta": 75,
-        "str": 74,
-        "tac": 73,
-        "vis": 68
-      },
-      "birth": "1974-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p19wox4j",
-      "name": "Lassina Diebate",
-      "nation": "FRA",
-      "nation2": "CIV",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 12000
-    },
-    {
       "alt": [
         "LW"
       ],
@@ -724,34 +696,6 @@
       "pos": "CM",
       "wage": 5000,
       "weight": 70
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 57,
-        "dri": 44,
-        "ldr": 61,
-        "pac": 50,
-        "pas": 47,
-        "pos": 62,
-        "sho": 30,
-        "sta": 49,
-        "str": 55,
-        "tac": 62,
-        "vis": 44
-      },
-      "birth": "1969-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0ok0085",
-      "name": "Cyrille Megnier",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3500,
-      "weight": 78
     },
     {
       "alt": [

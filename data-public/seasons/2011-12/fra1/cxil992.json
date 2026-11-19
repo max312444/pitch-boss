@@ -136,35 +136,6 @@
     },
     {
       "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 69,
-        "dri": 63,
-        "ldr": 68,
-        "pac": 59,
-        "pas": 70,
-        "pos": 64,
-        "sho": 61,
-        "sta": 71,
-        "str": 61,
-        "tac": 66,
-        "vis": 67
-      },
-      "birth": "1981-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0w80phl",
-      "name": "Pascal Berengoer",
-      "nation": "FRA",
-      "number": 6,
-      "pos": "CM",
-      "wage": 22000
-    },
-    {
-      "alt": [
         "RW",
         "LW"
       ],

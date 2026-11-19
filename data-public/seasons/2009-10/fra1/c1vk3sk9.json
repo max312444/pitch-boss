@@ -702,32 +702,6 @@
       "weight": 71
     },
     {
-      "attrs": {
-        "aer": 75,
-        "com": 74,
-        "dri": 74,
-        "ldr": 67,
-        "pac": 76,
-        "pas": 68,
-        "pos": 70,
-        "sho": 76,
-        "sta": 68,
-        "str": 72,
-        "tac": 43,
-        "vis": 66
-      },
-      "birth": "1984-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 193,
-      "id": "p0irj72k",
-      "name": "Nicolas Fauvergua",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 13000
-    },
-    {
       "alt": [
         "CM",
         "RW",
@@ -784,33 +758,6 @@
       "pos": "CB",
       "wage": 5500,
       "weight": 81
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 61,
-        "dri": 62,
-        "ldr": 55,
-        "pac": 61,
-        "pas": 55,
-        "pos": 61,
-        "sho": 63,
-        "sta": 56,
-        "str": 62,
-        "tac": 30,
-        "vis": 52
-      },
-      "birth": "1987-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 195,
-      "id": "p00s9wu7",
-      "name": "Cedric Beseya",
-      "nation": "COD",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 2500
     }
   ],
   "stadiumCapacity": 50000

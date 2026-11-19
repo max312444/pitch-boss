@@ -154,7 +154,7 @@
       "foot": "R",
       "height": 188,
       "id": "p13cn1xh",
-      "name": "Jon Furtune",
+      "name": "Jonathan Furtune",
       "nation": "ENG",
       "number": 5,
       "pos": "CB",
@@ -628,33 +628,6 @@
       "verify": true,
       "wage": 33500,
       "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 64,
-        "han": 71,
-        "ldr": 65,
-        "one": 64,
-        "pac": 52,
-        "pas": 57,
-        "pos": 68,
-        "ref": 69,
-        "sta": 55,
-        "str": 63,
-        "vis": 57
-      },
-      "birth": "1975-06-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 185,
-      "id": "p0bhha9r",
-      "name": "Ben Ruberts",
-      "nation": "ENG",
-      "number": 13,
-      "pos": "GK",
-      "verify": true,
-      "wage": 15500
     }
   ],
   "stadiumCapacity": 26875

@@ -313,34 +313,6 @@
     },
     {
       "attrs": {
-        "aer": 77,
-        "com": 73,
-        "dri": 63,
-        "ldr": 76,
-        "pac": 73,
-        "pas": 71,
-        "pos": 82,
-        "sho": 49,
-        "sta": 70,
-        "str": 77,
-        "tac": 80,
-        "vis": 59
-      },
-      "birth": "1974-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0vmz8x1",
-      "name": "Javi Naverro",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 36500,
-      "weight": 75
-    },
-    {
-      "attrs": {
         "aer": 79,
         "com": 76,
         "dri": 62,
@@ -729,33 +701,6 @@
       "verify": true,
       "wage": 10500,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 69,
-        "dri": 72,
-        "ldr": 69,
-        "pac": 78,
-        "pas": 75,
-        "pos": 76,
-        "sho": 54,
-        "sta": 76,
-        "str": 67,
-        "tac": 78,
-        "vis": 67
-      },
-      "birth": "1976-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1gykffw",
-      "name": "Curro Torras",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RB",
-      "wage": 8000,
-      "weight": 76
     },
     {
       "attrs": {

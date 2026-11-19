@@ -362,36 +362,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 57,
-        "com": 71,
-        "dri": 65,
-        "ldr": 68,
-        "pac": 60,
-        "pas": 71,
-        "pos": 67,
-        "sho": 63,
-        "sta": 68,
-        "str": 60,
-        "tac": 66,
-        "vis": 68
-      },
-      "birth": "1966-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0s6iu9m",
-      "name": "Juan Vizceino",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 13500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 58,
         "com": 68,
         "dri": 66,
@@ -475,37 +445,6 @@
       "pos": "AM",
       "verify": true,
       "wage": 12000
-    },
-    {
-      "alt": [
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 76,
-        "dri": 73,
-        "ldr": 71,
-        "pac": 73,
-        "pas": 78,
-        "pos": 55,
-        "sho": 71,
-        "sta": 69,
-        "str": 66,
-        "tac": 51,
-        "vis": 77
-      },
-      "birth": "1978-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1fp6t8y",
-      "name": "Luis Garcie",
-      "nation": "ESP",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 11500
     },
     {
       "attrs": {
@@ -643,32 +582,6 @@
       "number": null,
       "pos": "CB",
       "wage": 3500
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 63,
-        "dri": 48,
-        "ldr": 65,
-        "pac": 61,
-        "pas": 54,
-        "pos": 68,
-        "sho": 38,
-        "sta": 63,
-        "str": 68,
-        "tac": 67,
-        "vis": 48
-      },
-      "birth": "1976-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0pi32qo",
-      "name": "Manuel Tana",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 4000
     },
     {
       "alt": [
@@ -814,34 +727,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 3500
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 71,
-        "dri": 65,
-        "ldr": 66,
-        "pac": 64,
-        "pas": 70,
-        "pos": 63,
-        "sho": 61,
-        "sta": 68,
-        "str": 61,
-        "tac": 63,
-        "vis": 66
-      },
-      "birth": "1976-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p0i36qks",
-      "name": "Javier Jimenez Puzo",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000,
-      "weight": 79
     },
     {
       "alt": [

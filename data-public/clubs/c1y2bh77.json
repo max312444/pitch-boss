@@ -1,0 +1,33 @@
+{
+  "city": "Madrid",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "MAJ",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1976,
+  "id": "c1y2bh77",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "CF 라요 마하더온다",
+  "name": "CF Rayo Majadahunda",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "MAJ"
+}

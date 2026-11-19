@@ -1,0 +1,33 @@
+{
+  "city": "Almendralejo",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "EXR",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 2007,
+  "id": "c1ot12ue",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "엑스트레마두러 UD",
+  "name": "Extramadura UD",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "EXR"
+}

@@ -173,34 +173,6 @@
     },
     {
       "attrs": {
-        "aer": 75,
-        "com": 74,
-        "dri": 61,
-        "ldr": 77,
-        "pac": 70,
-        "pas": 66,
-        "pos": 75,
-        "sho": 49,
-        "sta": 71,
-        "str": 75,
-        "tac": 75,
-        "vis": 60
-      },
-      "birth": "1980-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0vejw9h",
-      "name": "Maurizio Domizzy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 12500,
-      "weight": 80
-    },
-    {
-      "attrs": {
         "aer": 69,
         "com": 74,
         "han": 75,
@@ -374,62 +346,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 74,
-        "han": 74,
-        "ldr": 72,
-        "one": 73,
-        "pac": 58,
-        "pas": 64,
-        "pos": 74,
-        "ref": 75,
-        "sta": 64,
-        "str": 75,
-        "vis": 62
-      },
-      "birth": "1978-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p0f0rtf4",
-      "name": "Ferdinando Coppole",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 7000,
-      "weight": 86
-    },
-    {
-      "attrs": {
-        "aer": 55,
-        "com": 65,
-        "dri": 63,
-        "ldr": 61,
-        "pac": 67,
-        "pas": 67,
-        "pos": 66,
-        "sho": 45,
-        "sta": 73,
-        "str": 60,
-        "tac": 65,
-        "vis": 60
-      },
-      "birth": "1980-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0pxx8q9",
-      "name": "Francesco Carbona",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 7000,
-      "weight": 70
-    },
-    {
-      "attrs": {
         "aer": 57,
         "com": 65,
         "dri": 61,
@@ -541,34 +457,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 63,
-        "dri": 62,
-        "ldr": 63,
-        "pac": 63,
-        "pas": 58,
-        "pos": 61,
-        "sho": 67,
-        "sta": 64,
-        "str": 65,
-        "tac": 35,
-        "vis": 55
-      },
-      "birth": "1971-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p09nrj2i",
-      "name": "Marco Ferranta",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4000,
-      "weight": 70
-    },
-    {
-      "attrs": {
         "aer": 72,
         "com": 63,
         "dri": 55,
@@ -650,37 +538,6 @@
       "pos": "CB",
       "wage": 4000,
       "weight": 84
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 66,
-        "dri": 67,
-        "ldr": 63,
-        "pac": 62,
-        "pas": 70,
-        "pos": 67,
-        "sho": 63,
-        "sta": 68,
-        "str": 61,
-        "tac": 66,
-        "vis": 72
-      },
-      "birth": "1976-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1cbf0n6",
-      "name": "Domenico Crystiano",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4500,
-      "weight": 63
     },
     {
       "attrs": {
@@ -915,34 +772,6 @@
       "verify": true,
       "wage": 4500,
       "weight": 68
-    },
-    {
-      "attrs": {
-        "aer": 52,
-        "com": 66,
-        "dri": 69,
-        "ldr": 65,
-        "pac": 70,
-        "pas": 67,
-        "pos": 60,
-        "sho": 59,
-        "sta": 73,
-        "str": 58,
-        "tac": 57,
-        "vis": 64
-      },
-      "birth": "1979-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p11y2omh",
-      "name": "Alfredo Ceriello",
-      "nation": "ITA",
-      "number": null,
-      "pos": "LM",
-      "verify": true,
-      "wage": 4000,
-      "weight": 70
     },
     {
       "alt": [

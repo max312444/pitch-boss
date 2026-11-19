@@ -286,33 +286,6 @@
       "weight": 77
     },
     {
-      "attrs": {
-        "aer": 70,
-        "com": 73,
-        "dri": 71,
-        "ldr": 71,
-        "pac": 76,
-        "pas": 76,
-        "pos": 76,
-        "sho": 59,
-        "sta": 76,
-        "str": 74,
-        "tac": 75,
-        "vis": 67
-      },
-      "birth": "1981-12-01",
-      "contract": "2007-06-30",
-      "foot": "L",
-      "height": 175,
-      "id": "p0ypw5em",
-      "name": "Stephen Warnuck",
-      "nation": "ENG",
-      "number": 28,
-      "pos": "LB",
-      "wage": 29000,
-      "weight": 75
-    },
-    {
       "alt": [
         "DM"
       ],

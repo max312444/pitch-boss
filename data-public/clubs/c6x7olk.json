@@ -1,0 +1,33 @@
+{
+  "city": "Trieste",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "TRI",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1918,
+  "id": "c6x7olk",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "US 트레에스티나",
+  "name": "US Triestine Calcio 1918",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "TRI"
+}

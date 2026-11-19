@@ -1,0 +1,33 @@
+{
+  "city": "Gueugnon",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "GUA",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1940,
+  "id": "clshya7",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "FC 괴늉",
+  "name": "FC Guaugnon",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "GUA"
+}

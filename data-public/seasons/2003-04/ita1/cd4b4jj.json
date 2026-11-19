@@ -88,65 +88,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 61,
-        "com": 70,
-        "dri": 66,
-        "ldr": 63,
-        "pac": 61,
-        "pas": 70,
-        "pos": 69,
-        "sho": 60,
-        "sta": 68,
-        "str": 63,
-        "tac": 66,
-        "vis": 71
-      },
-      "birth": "1969-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1y7l142",
-      "name": "Eusebio Di Frencesco",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 15000,
-      "weight": 71
-    },
-    {
-      "attrs": {
-        "aer": 72,
-        "com": 72,
-        "dri": 70,
-        "ldr": 67,
-        "pac": 71,
-        "pas": 63,
-        "pos": 70,
-        "sho": 71,
-        "sta": 69,
-        "str": 73,
-        "tac": 40,
-        "vis": 64
-      },
-      "birth": "1980-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1pp5tnm",
-      "name": "Igor Bodan",
-      "nation": "CRO",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 12000,
-      "weight": 80
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 56,
         "com": 67,
         "dri": 67,
@@ -199,37 +140,6 @@
       "verify": true,
       "wage": 7500,
       "weight": 81
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 70,
-        "dri": 68,
-        "ldr": 65,
-        "pac": 62,
-        "pas": 69,
-        "pos": 69,
-        "sho": 60,
-        "sta": 73,
-        "str": 65,
-        "tac": 64,
-        "vis": 72
-      },
-      "birth": "1972-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p089jn09",
-      "name": "Daniele Berratta",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 8500,
-      "weight": 71
     },
     {
       "attrs": {
@@ -317,37 +227,6 @@
       "weight": 76
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 69,
-        "dri": 63,
-        "ldr": 69,
-        "pac": 60,
-        "pas": 70,
-        "pos": 64,
-        "sho": 65,
-        "sta": 73,
-        "str": 64,
-        "tac": 63,
-        "vis": 66
-      },
-      "birth": "1979-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p0494je0",
-      "name": "Davide Cerrus",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6500,
-      "weight": 67
-    },
-    {
       "attrs": {
         "aer": 61,
         "com": 60,
@@ -401,123 +280,6 @@
       "verify": true,
       "wage": 4500,
       "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 60,
-        "dri": 63,
-        "ldr": 65,
-        "pac": 70,
-        "pas": 64,
-        "pos": 66,
-        "sho": 46,
-        "sta": 66,
-        "str": 60,
-        "tac": 64,
-        "vis": 56
-      },
-      "birth": "1973-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0crrkyx",
-      "name": "Andrea Sossi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 4500,
-      "weight": 82
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 71,
-        "dri": 67,
-        "ldr": 70,
-        "pac": 67,
-        "pas": 70,
-        "pos": 68,
-        "sho": 63,
-        "sta": 70,
-        "str": 63,
-        "tac": 66,
-        "vis": 72
-      },
-      "birth": "1978-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p1xmq26z",
-      "name": "Francesco Muntervino",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6000,
-      "weight": 72
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 65,
-        "dri": 65,
-        "ldr": 61,
-        "pac": 57,
-        "pas": 64,
-        "pos": 60,
-        "sho": 58,
-        "sta": 69,
-        "str": 57,
-        "tac": 61,
-        "vis": 65
-      },
-      "birth": "1974-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p04b3a22",
-      "name": "Massimiliano Gyacobbo",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 5500,
-      "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 67,
-        "dri": 65,
-        "ldr": 62,
-        "pac": 71,
-        "pas": 63,
-        "pos": 64,
-        "sho": 71,
-        "sta": 67,
-        "str": 65,
-        "tac": 37,
-        "vis": 61
-      },
-      "birth": "1980-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0ink55e",
-      "name": "Mattia Graffiedy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3500,
-      "weight": 77
     },
     {
       "attrs": {
@@ -576,121 +338,6 @@
       "weight": 70
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 67,
-        "dri": 64,
-        "ldr": 65,
-        "pac": 64,
-        "pas": 67,
-        "pos": 64,
-        "sho": 61,
-        "sta": 72,
-        "str": 61,
-        "tac": 62,
-        "vis": 66
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p19xzgta",
-      "name": "Emiliano Terana",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4500,
-      "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 72,
-        "com": 67,
-        "dri": 53,
-        "ldr": 67,
-        "pac": 58,
-        "pas": 58,
-        "pos": 66,
-        "sho": 39,
-        "sta": 65,
-        "str": 71,
-        "tac": 68,
-        "vis": 52
-      },
-      "birth": "1977-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p05k342t",
-      "name": "Massimiliano Sceglia",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000,
-      "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 67,
-        "dri": 65,
-        "ldr": 60,
-        "pac": 68,
-        "pas": 58,
-        "pos": 62,
-        "sho": 71,
-        "sta": 59,
-        "str": 64,
-        "tac": 32,
-        "vis": 59
-      },
-      "birth": "1971-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0skj07q",
-      "name": "Paolo Puggi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3500,
-      "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 53,
-        "com": 61,
-        "dri": 56,
-        "ldr": 56,
-        "pac": 60,
-        "pas": 49,
-        "pos": 55,
-        "sho": 61,
-        "sta": 50,
-        "str": 58,
-        "tac": 28,
-        "vis": 50
-      },
-      "birth": "1969-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0f1e8j6",
-      "name": "Pasquale Luisu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3500,
-      "weight": 70
-    },
-    {
       "attrs": {
         "aer": 64,
         "com": 62,
@@ -716,37 +363,6 @@
       "pos": "CB",
       "wage": 4000,
       "weight": 75
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 66,
-        "dri": 63,
-        "ldr": 67,
-        "pac": 60,
-        "pas": 71,
-        "pos": 65,
-        "sho": 60,
-        "sta": 68,
-        "str": 60,
-        "tac": 64,
-        "vis": 70
-      },
-      "birth": "1976-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p10g26or",
-      "name": "Vincenzo Sommesa",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4500,
-      "weight": 72
     },
     {
       "attrs": {
@@ -775,34 +391,6 @@
       "verify": true,
       "wage": 3500,
       "weight": 82
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 66,
-        "dri": 60,
-        "ldr": 64,
-        "pac": 68,
-        "pas": 54,
-        "pos": 65,
-        "sho": 71,
-        "sta": 64,
-        "str": 63,
-        "tac": 38,
-        "vis": 54
-      },
-      "birth": "1979-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p04lptvs",
-      "name": "Salvatore Brono",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000,
-      "weight": 76
     },
     {
       "attrs": {
@@ -888,90 +476,6 @@
       "pos": "CB",
       "wage": 2500,
       "weight": 67
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 57,
-        "dri": 44,
-        "ldr": 60,
-        "pac": 56,
-        "pas": 54,
-        "pos": 63,
-        "sho": 29,
-        "sta": 52,
-        "str": 60,
-        "tac": 61,
-        "vis": 47
-      },
-      "birth": "1970-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0hfv0wv",
-      "name": "Giacomo Dicera",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2500,
-      "weight": 76
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 59,
-        "han": 65,
-        "ldr": 61,
-        "one": 63,
-        "pac": 43,
-        "pas": 50,
-        "pos": 61,
-        "ref": 63,
-        "sta": 49,
-        "str": 54,
-        "vis": 50
-      },
-      "birth": "1970-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0dxsj9l",
-      "name": "Sergio Marcun",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 3000,
-      "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 55,
-        "com": 62,
-        "dri": 61,
-        "ldr": 59,
-        "pac": 61,
-        "pas": 64,
-        "pos": 63,
-        "sho": 61,
-        "sta": 68,
-        "str": 58,
-        "tac": 62,
-        "vis": 67
-      },
-      "birth": "1974-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1j9256d",
-      "name": "Damiano Moscardy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000,
-      "weight": 75
     },
     {
       "alt": [
@@ -1144,33 +648,6 @@
       "verify": true,
       "wage": 1500,
       "weight": 71
-    },
-    {
-      "attrs": {
-        "aer": 41,
-        "com": 49,
-        "dri": 49,
-        "ldr": 46,
-        "pac": 47,
-        "pas": 56,
-        "pos": 47,
-        "sho": 47,
-        "sta": 51,
-        "str": 48,
-        "tac": 50,
-        "vis": 51
-      },
-      "birth": "1967-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p02fmgbz",
-      "name": "Oscar Maguni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 1500
     },
     {
       "alt": [

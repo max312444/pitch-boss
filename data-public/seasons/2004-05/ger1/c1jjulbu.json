@@ -486,37 +486,6 @@
       "wage": 21000
     },
     {
-      "alt": [
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 74,
-        "dri": 71,
-        "ldr": 74,
-        "pac": 69,
-        "pas": 75,
-        "pos": 71,
-        "sho": 66,
-        "sta": 76,
-        "str": 68,
-        "tac": 69,
-        "vis": 71
-      },
-      "birth": "1977-12-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0na9il2",
-      "name": "Marco Reych",
-      "nation": "GER",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 22500
-    },
-    {
       "attrs": {
         "aer": 58,
         "com": 65,

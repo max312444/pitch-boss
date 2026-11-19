@@ -627,34 +627,6 @@
       "weight": 90
     },
     {
-      "attrs": {
-        "aer": 69,
-        "com": 68,
-        "dri": 69,
-        "ldr": 69,
-        "pac": 67,
-        "pas": 60,
-        "pos": 67,
-        "sho": 75,
-        "sta": 65,
-        "str": 69,
-        "tac": 37,
-        "vis": 65
-      },
-      "birth": "1981-03-01",
-      "contract": "2004-06-30",
-      "foot": "R",
-      "height": 185,
-      "id": "p18rrnbp",
-      "name": "Mikael Forssall",
-      "nation": "FIN",
-      "number": 27,
-      "pos": "ST",
-      "verify": true,
-      "wage": 12500,
-      "weight": 68
-    },
-    {
       "alt": [
         "LB"
       ],

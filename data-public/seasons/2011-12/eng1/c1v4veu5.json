@@ -47,34 +47,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 74,
-        "han": 72,
-        "ldr": 74,
-        "one": 74,
-        "pac": 60,
-        "pas": 61,
-        "pos": 75,
-        "ref": 76,
-        "sta": 64,
-        "str": 73,
-        "vis": 62
-      },
-      "birth": "1982-11-01",
-      "contract": "2014-06-30",
-      "foot": "R",
-      "height": 191,
-      "id": "p0ulu30o",
-      "name": "Boaz Myhyll",
-      "nation": "WAL",
-      "number": 13,
-      "pos": "GK",
-      "verify": true,
-      "wage": 40000,
-      "weight": 91
-    },
-    {
-      "attrs": {
         "aer": 63,
         "com": 72,
         "dri": 71,
@@ -167,61 +139,6 @@
       "weight": 80
     },
     {
-      "attrs": {
-        "aer": 79,
-        "com": 72,
-        "dri": 60,
-        "ldr": 72,
-        "pac": 68,
-        "pas": 63,
-        "pos": 74,
-        "sho": 45,
-        "sta": 66,
-        "str": 72,
-        "tac": 78,
-        "vis": 56
-      },
-      "birth": "1981-08-01",
-      "contract": "2012-06-30",
-      "foot": "R",
-      "height": 189,
-      "id": "p0go733f",
-      "name": "Pablo Ibenez",
-      "nation": "ESP",
-      "number": 5,
-      "pos": "CB",
-      "verify": true,
-      "wage": 40000,
-      "weight": 86
-    },
-    {
-      "attrs": {
-        "aer": 82,
-        "com": 76,
-        "dri": 60,
-        "ldr": 79,
-        "pac": 71,
-        "pas": 72,
-        "pos": 77,
-        "sho": 48,
-        "sta": 71,
-        "str": 76,
-        "tac": 82,
-        "vis": 61
-      },
-      "birth": "1984-07-01",
-      "contract": "2014-06-30",
-      "foot": "L",
-      "height": 188,
-      "id": "p17uoiuj",
-      "name": "Liam Ridgawell",
-      "nation": "ENG",
-      "number": 6,
-      "pos": "CB",
-      "wage": 60500,
-      "weight": 78
-    },
-    {
       "alt": [
         "CM",
         "DM",
@@ -312,34 +229,6 @@
       "pos": "ST",
       "wage": 57000,
       "weight": 79
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 67,
-        "dri": 61,
-        "ldr": 63,
-        "pac": 64,
-        "pas": 60,
-        "pos": 67,
-        "sho": 69,
-        "sta": 60,
-        "str": 66,
-        "tac": 36,
-        "vis": 56
-      },
-      "birth": "1987-03-01",
-      "contract": "2012-06-30",
-      "foot": "R",
-      "height": 191,
-      "id": "p0sv4vcu",
-      "name": "Ishmael Millar",
-      "nation": "ENG",
-      "number": 10,
-      "pos": "ST",
-      "verify": true,
-      "wage": 22000,
-      "weight": 86
     },
     {
       "alt": [

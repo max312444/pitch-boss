@@ -690,36 +690,6 @@
       "weight": 77
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 68,
-        "com": 74,
-        "dri": 72,
-        "ldr": 74,
-        "pac": 68,
-        "pas": 78,
-        "pos": 73,
-        "sho": 69,
-        "sta": 78,
-        "str": 67,
-        "tac": 68,
-        "vis": 79
-      },
-      "birth": "1971-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p17a9oni",
-      "name": "Giampiero Mayni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 12500,
-      "weight": 69
-    },
-    {
       "attrs": {
         "aer": 75,
         "com": 70,
@@ -747,38 +717,6 @@
       "weight": 83
     },
     {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 63,
-        "com": 69,
-        "dri": 67,
-        "ldr": 67,
-        "pac": 63,
-        "pas": 71,
-        "pos": 69,
-        "sho": 66,
-        "sta": 75,
-        "str": 67,
-        "tac": 65,
-        "vis": 74
-      },
-      "birth": "1978-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0v36mca",
-      "name": "Simone Barune",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 8500,
-      "weight": 75
-    },
-    {
       "attrs": {
         "aer": 78,
         "com": 74,
@@ -803,37 +741,6 @@
       "number": null,
       "pos": "CB",
       "wage": 6500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 62,
-        "com": 74,
-        "dri": 68,
-        "ldr": 68,
-        "pac": 64,
-        "pas": 76,
-        "pos": 66,
-        "sho": 65,
-        "sta": 73,
-        "str": 66,
-        "tac": 68,
-        "vis": 72
-      },
-      "birth": "1969-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0nklfax",
-      "name": "Roberto Brede",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 8000,
-      "weight": 73
     },
     {
       "attrs": {

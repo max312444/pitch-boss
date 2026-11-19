@@ -674,33 +674,6 @@
       "pos": "LB",
       "wage": 67500,
       "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 73,
-        "han": 72,
-        "ldr": 67,
-        "one": 67,
-        "pac": 56,
-        "pas": 59,
-        "pos": 70,
-        "ref": 75,
-        "sta": 55,
-        "str": 67,
-        "vis": 59
-      },
-      "birth": "2002-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p1g5qsl6",
-      "name": "Filip Jurgensen",
-      "nation": "DEN",
-      "nation2": "SWE",
-      "number": 35,
-      "pos": "GK",
-      "wage": 35500
     }
   ],
   "stadiumCapacity": 24891

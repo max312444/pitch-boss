@@ -7,7 +7,7 @@
       "#000000",
       "#000000"
     ],
-    "mark": "LUR",
+    "mark": "LUA",
     "pattern": "solid",
     "shape": "shield"
   },
@@ -29,5 +29,5 @@
   "name": "AS Nancy Lurraine",
   "nation": "FRA",
   "rivals": [],
-  "short": "LUR"
+  "short": "LUA"
 }

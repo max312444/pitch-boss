@@ -282,37 +282,6 @@
       "weight": 68
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 71,
-        "dri": 73,
-        "ldr": 68,
-        "pac": 79,
-        "pas": 69,
-        "pos": 54,
-        "sho": 73,
-        "sta": 74,
-        "str": 65,
-        "tac": 50,
-        "vis": 72
-      },
-      "birth": "1980-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p03ykper",
-      "name": "Marco Marchyonni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 17000,
-      "weight": 71
-    },
-    {
       "attrs": {
         "aer": 79,
         "com": 73,
@@ -751,36 +720,6 @@
       "weight": 83
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 64,
-        "dri": 62,
-        "ldr": 62,
-        "pac": 61,
-        "pas": 64,
-        "pos": 65,
-        "sho": 56,
-        "sta": 64,
-        "str": 58,
-        "tac": 60,
-        "vis": 67
-      },
-      "birth": "1983-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p16a92aj",
-      "name": "Johnnier Montanu",
-      "nation": "COL",
-      "number": null,
-      "pos": "CM",
-      "wage": 4000,
-      "weight": 81
-    },
-    {
       "attrs": {
         "aer": 67,
         "com": 67,
@@ -866,33 +805,6 @@
       "verify": true,
       "wage": 1500,
       "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 60,
-        "han": 62,
-        "ldr": 59,
-        "one": 63,
-        "pac": 47,
-        "pas": 53,
-        "pos": 63,
-        "ref": 62,
-        "sta": 52,
-        "str": 56,
-        "vis": 48
-      },
-      "birth": "1983-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1v2st60",
-      "name": "Alfonso De Lucie",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "wage": 2000,
-      "weight": 80
     },
     {
       "alt": [

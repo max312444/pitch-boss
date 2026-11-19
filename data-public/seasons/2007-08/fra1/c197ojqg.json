@@ -385,34 +385,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 70,
-        "dri": 68,
-        "ldr": 64,
-        "pac": 71,
-        "pas": 64,
-        "pos": 69,
-        "sho": 73,
-        "sta": 63,
-        "str": 69,
-        "tac": 43,
-        "vis": 63
-      },
-      "birth": "1986-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1p6ak2u",
-      "name": "Moossa Sow",
-      "nation": "FRA",
-      "nation2": "SEN",
-      "number": 15,
-      "pos": "ST",
-      "wage": 15500,
-      "weight": 83
-    },
-    {
-      "attrs": {
         "aer": 69,
         "com": 65,
         "han": 70,

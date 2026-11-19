@@ -311,39 +311,6 @@
     },
     {
       "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 62,
-        "com": 71,
-        "dri": 66,
-        "ldr": 68,
-        "pac": 68,
-        "pas": 74,
-        "pos": 69,
-        "sho": 67,
-        "sta": 73,
-        "str": 62,
-        "tac": 69,
-        "vis": 72
-      },
-      "birth": "1968-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 171,
-      "id": "p1wncyz3",
-      "name": "Ali Benerbia",
-      "nation": "FRA",
-      "nation2": "ALG",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 14000,
-      "weight": 67
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {
@@ -430,34 +397,6 @@
       "verify": true,
       "wage": 8500,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 71,
-        "dri": 65,
-        "ldr": 61,
-        "pac": 67,
-        "pas": 62,
-        "pos": 68,
-        "sho": 68,
-        "sta": 63,
-        "str": 65,
-        "tac": 37,
-        "vis": 62
-      },
-      "birth": "1968-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p1x8yal4",
-      "name": "Mickael Mader",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 8000,
-      "weight": 83
     },
     {
       "alt": [
@@ -630,60 +569,6 @@
       "pos": "GK",
       "verify": true,
       "wage": 6000
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 70,
-        "dri": 68,
-        "ldr": 63,
-        "pac": 71,
-        "pas": 58,
-        "pos": 67,
-        "sho": 73,
-        "sta": 66,
-        "str": 72,
-        "tac": 39,
-        "vis": 58
-      },
-      "birth": "1975-12-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0g3tlfz",
-      "name": "Kaba Diawera",
-      "nation": "GUI",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 5500
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 67,
-        "han": 69,
-        "ldr": 65,
-        "one": 70,
-        "pac": 49,
-        "pas": 58,
-        "pos": 65,
-        "ref": 66,
-        "sta": 53,
-        "str": 60,
-        "vis": 55
-      },
-      "birth": "1971-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p0rek6gj",
-      "name": "Dominique Casagrende",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 5500
     },
     {
       "attrs": {
@@ -909,35 +794,6 @@
       "wage": 6000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 67,
-        "dri": 65,
-        "ldr": 64,
-        "pac": 66,
-        "pas": 72,
-        "pos": 65,
-        "sho": 62,
-        "sta": 67,
-        "str": 65,
-        "tac": 65,
-        "vis": 67
-      },
-      "birth": "1979-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p0q0hvhm",
-      "name": "Fabrice Abrial",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 5000
-    },
-    {
       "attrs": {
         "aer": 59,
         "com": 65,
@@ -964,34 +820,6 @@
       "verify": true,
       "wage": 4000,
       "weight": 76
-    },
-    {
-      "attrs": {
-        "aer": 46,
-        "com": 66,
-        "dri": 67,
-        "ldr": 63,
-        "pac": 59,
-        "pas": 61,
-        "pos": 44,
-        "sho": 63,
-        "sta": 61,
-        "str": 50,
-        "tac": 43,
-        "vis": 64
-      },
-      "birth": "1981-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p03u0yxv",
-      "name": "Selim Benachuur",
-      "nation": "TUN",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "AM",
-      "wage": 4500,
-      "weight": 65
     },
     {
       "attrs": {
@@ -1165,32 +993,6 @@
     },
     {
       "attrs": {
-        "aer": 52,
-        "com": 59,
-        "dri": 54,
-        "ldr": 53,
-        "pac": 59,
-        "pas": 50,
-        "pos": 56,
-        "sho": 62,
-        "sta": 53,
-        "str": 54,
-        "tac": 26,
-        "vis": 47
-      },
-      "birth": "1980-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p11dtrl7",
-      "name": "Gael Hiruux",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 1500
-    },
-    {
-      "attrs": {
         "aer": 61,
         "com": 56,
         "dri": 42,
@@ -1215,33 +1017,6 @@
       "pos": "CB",
       "wage": 1500,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 66,
-        "dri": 65,
-        "ldr": 62,
-        "pac": 63,
-        "pas": 54,
-        "pos": 60,
-        "sho": 64,
-        "sta": 61,
-        "str": 67,
-        "tac": 35,
-        "vis": 56
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1qpmct2",
-      "name": "Kenny Vygier",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 1000
     },
     {
       "attrs": {

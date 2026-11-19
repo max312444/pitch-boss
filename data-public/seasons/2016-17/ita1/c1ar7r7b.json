@@ -690,34 +690,6 @@
     },
     {
       "attrs": {
-        "aer": 59,
-        "com": 64,
-        "dri": 61,
-        "ldr": 58,
-        "pac": 61,
-        "pas": 56,
-        "pos": 62,
-        "sho": 64,
-        "sta": 56,
-        "str": 62,
-        "tac": 31,
-        "vis": 55
-      },
-      "birth": "1997-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1cqpsfy",
-      "name": "Federico Bonazzuli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 10000,
-      "weight": 79
-    },
-    {
-      "attrs": {
         "aer": 61,
         "com": 64,
         "dri": 60,
@@ -769,36 +741,6 @@
       "pos": "DM",
       "wage": 13500,
       "weight": 63
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 65,
-        "dri": 64,
-        "ldr": 60,
-        "pac": 59,
-        "pas": 64,
-        "pos": 63,
-        "sho": 62,
-        "sta": 69,
-        "str": 60,
-        "tac": 61,
-        "vis": 65
-      },
-      "birth": "1995-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p1qk1zb7",
-      "name": "David Iven",
-      "nation": "SVK",
-      "number": null,
-      "pos": "CM",
-      "wage": 13500,
-      "weight": 68
     },
     {
       "attrs": {
@@ -880,36 +822,6 @@
       "pos": "GK",
       "wage": 6000,
       "weight": 81
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 47,
-        "com": 55,
-        "dri": 54,
-        "ldr": 54,
-        "pac": 48,
-        "pas": 58,
-        "pos": 50,
-        "sho": 52,
-        "sta": 54,
-        "str": 48,
-        "tac": 50,
-        "vis": 56
-      },
-      "birth": "1996-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1btvefx",
-      "name": "Michele Rocce",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 4500,
-      "weight": 75
     }
   ],
   "stadiumCapacity": 33205

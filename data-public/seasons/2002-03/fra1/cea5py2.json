@@ -395,34 +395,6 @@
       "weight": 77
     },
     {
-      "attrs": {
-        "aer": 65,
-        "com": 63,
-        "dri": 48,
-        "ldr": 68,
-        "pac": 55,
-        "pas": 55,
-        "pos": 68,
-        "sho": 37,
-        "sta": 57,
-        "str": 69,
-        "tac": 69,
-        "vis": 49
-      },
-      "birth": "1971-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p0ijytjo",
-      "name": "Jimmy Algarino",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5000,
-      "weight": 72
-    },
-    {
       "alt": [
         "RW",
         "LW"

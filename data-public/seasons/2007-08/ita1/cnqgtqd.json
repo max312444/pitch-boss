@@ -507,33 +507,6 @@
     },
     {
       "attrs": {
-        "aer": 54,
-        "com": 62,
-        "dri": 59,
-        "ldr": 60,
-        "pac": 70,
-        "pas": 60,
-        "pos": 61,
-        "sho": 46,
-        "sta": 66,
-        "str": 56,
-        "tac": 67,
-        "vis": 59
-      },
-      "birth": "1988-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1kg51o9",
-      "name": "Davide Bryvio",
-      "nation": "ITA",
-      "number": 28,
-      "pos": "LB",
-      "wage": 9500,
-      "weight": 83
-    },
-    {
-      "attrs": {
         "aer": 68,
         "com": 75,
         "han": 70,

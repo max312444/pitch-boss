@@ -341,35 +341,6 @@
     },
     {
       "attrs": {
-        "aer": 75,
-        "com": 67,
-        "dri": 57,
-        "ldr": 76,
-        "pac": 63,
-        "pas": 66,
-        "pos": 78,
-        "sho": 47,
-        "sta": 66,
-        "str": 74,
-        "tac": 75,
-        "vis": 58
-      },
-      "birth": "1988-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 193,
-      "id": "p1l8y63m",
-      "name": "Timm Kluse",
-      "nation": "SUI",
-      "nation2": "GER",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 49500,
-      "weight": 87
-    },
-    {
-      "attrs": {
         "aer": 56,
         "com": 76,
         "dri": 75,

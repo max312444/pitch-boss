@@ -391,34 +391,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 66,
-        "dri": 54,
-        "ldr": 66,
-        "pac": 58,
-        "pas": 60,
-        "pos": 70,
-        "sho": 36,
-        "sta": 58,
-        "str": 67,
-        "tac": 67,
-        "vis": 50
-      },
-      "birth": "1973-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1mvc4ei",
-      "name": "Patrick Moraau",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5500,
-      "weight": 74
-    },
-    {
-      "attrs": {
         "aer": 61,
         "com": 65,
         "dri": 65,
@@ -701,33 +673,6 @@
       "wage": 3000
     },
     {
-      "attrs": {
-        "aer": 67,
-        "com": 61,
-        "dri": 44,
-        "ldr": 65,
-        "pac": 54,
-        "pas": 54,
-        "pos": 62,
-        "sho": 36,
-        "sta": 57,
-        "str": 65,
-        "tac": 63,
-        "vis": 45
-      },
-      "birth": "1970-06-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p06rguhl",
-      "name": "Christophe Daguerville",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3000
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -867,36 +812,6 @@
       "verify": true,
       "wage": 2500,
       "weight": 73
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 48,
-        "com": 59,
-        "dri": 60,
-        "ldr": 54,
-        "pac": 54,
-        "pas": 59,
-        "pos": 54,
-        "sho": 50,
-        "sta": 60,
-        "str": 52,
-        "tac": 55,
-        "vis": 62
-      },
-      "birth": "1981-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p1fplimb",
-      "name": "Paul Essula",
-      "nation": "CMR",
-      "number": null,
-      "pos": "CM",
-      "wage": 3000,
-      "weight": 70
     },
     {
       "attrs": {

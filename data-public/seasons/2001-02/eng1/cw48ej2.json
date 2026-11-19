@@ -453,33 +453,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 63,
-        "dri": 52,
-        "ldr": 69,
-        "pac": 61,
-        "pas": 60,
-        "pos": 71,
-        "sho": 36,
-        "sta": 62,
-        "str": 69,
-        "tac": 67,
-        "vis": 54
-      },
-      "birth": "1977-08-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 183,
-      "id": "p1kocs27",
-      "name": "Wayne Bruwn",
-      "nation": "ENG",
-      "number": 19,
-      "pos": "CB",
-      "verify": true,
-      "wage": 11500
-    },
-    {
-      "attrs": {
         "aer": 60,
         "com": 67,
         "dri": 69,

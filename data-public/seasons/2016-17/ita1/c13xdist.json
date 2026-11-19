@@ -306,33 +306,6 @@
       "weight": 80
     },
     {
-      "attrs": {
-        "aer": 70,
-        "com": 63,
-        "dri": 48,
-        "ldr": 67,
-        "pac": 57,
-        "pas": 53,
-        "pos": 68,
-        "sho": 36,
-        "sta": 63,
-        "str": 67,
-        "tac": 67,
-        "vis": 50
-      },
-      "birth": "1986-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p0urca5l",
-      "name": "Nicolo Cherobin",
-      "nation": "ITA",
-      "number": 12,
-      "pos": "CB",
-      "wage": 12500,
-      "weight": 80
-    },
-    {
       "alt": [
         "LW"
       ],

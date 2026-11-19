@@ -1,0 +1,33 @@
+{
+  "city": "Scunthorpe",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#C0007F",
+      "#AC1E44",
+      "#AC1E44"
+    ],
+    "mark": "SCU",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1899,
+  "id": "c1tvig6q",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#AC1E44",
+      "secondary": "#C0007F"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#C0007F",
+      "secondary": "#AC1E44"
+    }
+  },
+  "ko": "스컨수프 유나이티드 FC",
+  "name": "Scunthorpa United F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "SCU"
+}

@@ -1,0 +1,33 @@
+{
+  "city": "Martigues",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "MAI",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1921,
+  "id": "cgmk3fc",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "FC 마르테그",
+  "name": "FC Martiguas",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "MAI"
+}

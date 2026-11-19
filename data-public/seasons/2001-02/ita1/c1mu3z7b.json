@@ -249,37 +249,6 @@
       "weight": 82
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 71,
-        "dri": 67,
-        "ldr": 72,
-        "pac": 67,
-        "pas": 72,
-        "pos": 69,
-        "sho": 66,
-        "sta": 72,
-        "str": 65,
-        "tac": 69,
-        "vis": 72
-      },
-      "birth": "1976-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p102xixg",
-      "name": "Mark Edosei",
-      "nation": "GHA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 9500,
-      "weight": 70
-    },
-    {
       "attrs": {
         "aer": 69,
         "com": 64,
@@ -655,34 +624,6 @@
     },
     {
       "attrs": {
-        "aer": 60,
-        "com": 64,
-        "dri": 62,
-        "ldr": 69,
-        "pac": 61,
-        "pas": 67,
-        "pos": 66,
-        "sho": 52,
-        "sta": 71,
-        "str": 68,
-        "tac": 70,
-        "vis": 61
-      },
-      "birth": "1978-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1pohmey",
-      "name": "Diego Mateu",
-      "nation": "ARG",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 4000,
-      "weight": 75
-    },
-    {
-      "attrs": {
         "aer": 51,
         "com": 68,
         "dri": 67,
@@ -821,37 +762,6 @@
       "verify": true,
       "wage": 2500,
       "weight": 84
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 68,
-        "dri": 62,
-        "ldr": 65,
-        "pac": 61,
-        "pas": 65,
-        "pos": 67,
-        "sho": 62,
-        "sta": 68,
-        "str": 64,
-        "tac": 65,
-        "vis": 65
-      },
-      "birth": "1971-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p03mfu75",
-      "name": "Davide Oliveres",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000,
-      "weight": 81
     },
     {
       "attrs": {

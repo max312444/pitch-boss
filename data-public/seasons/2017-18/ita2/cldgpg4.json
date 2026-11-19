@@ -1,0 +1,105 @@
+{
+  "club": "cldgpg4",
+  "estimated": true,
+  "facilities": {
+    "training": 2,
+    "youth": 3
+  },
+  "finance": {
+    "balance": 210000,
+    "transferBudget": 140000,
+    "wageBudget": 7700
+  },
+  "league": "ita2",
+  "reputation": 58,
+  "season": "2017-18",
+  "source": {
+    "derived": "pipeline-derived-v1",
+    "facts": "wikidata",
+    "license": "CC0-1.0",
+    "roster": "wikidata",
+    "snapshot": "2017-09-01"
+  },
+  "squad": [
+    {
+      "attrs": {
+        "aer": 52,
+        "com": 63,
+        "dri": 62,
+        "ldr": 62,
+        "pac": 58,
+        "pas": 66,
+        "pos": 62,
+        "sho": 57,
+        "sta": 64,
+        "str": 60,
+        "tac": 58,
+        "vis": 64
+      },
+      "birth": "1995-12-01",
+      "contract": "2018-06-30",
+      "foot": null,
+      "height": 186,
+      "id": "p14yu0mi",
+      "name": "Martin Veljent",
+      "nation": "SVK",
+      "number": 4,
+      "pos": "CM",
+      "wage": 2000
+    },
+    {
+      "attrs": {
+        "aer": 66,
+        "com": 63,
+        "dri": 52,
+        "ldr": 63,
+        "pac": 61,
+        "pas": 56,
+        "pos": 70,
+        "sho": 37,
+        "sta": 61,
+        "str": 66,
+        "tac": 68,
+        "vis": 53
+      },
+      "birth": "1986-08-01",
+      "contract": null,
+      "foot": null,
+      "height": 181,
+      "id": "p1ru52qi",
+      "name": "Fabiano Santacroca",
+      "nation": "BRA",
+      "nation2": "ITA",
+      "number": null,
+      "pos": "CB",
+      "wage": 3000
+    },
+    {
+      "attrs": {
+        "aer": 48,
+        "com": 51,
+        "dri": 49,
+        "ldr": 44,
+        "pac": 51,
+        "pas": 42,
+        "pos": 49,
+        "sho": 57,
+        "sta": 47,
+        "str": 54,
+        "tac": 21,
+        "vis": 42
+      },
+      "birth": "1983-03-01",
+      "contract": null,
+      "foot": null,
+      "height": 193,
+      "id": "p013zip6",
+      "name": "Gennaro Troieniello",
+      "nation": "ITA",
+      "number": null,
+      "pos": "ST",
+      "wage": 1000
+    }
+  ],
+  "stadiumCapacity": 17460
+}

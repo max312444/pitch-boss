@@ -460,37 +460,6 @@
       "weight": 81
     },
     {
-      "alt": [
-        "CM"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 72,
-        "dri": 63,
-        "ldr": 71,
-        "pac": 61,
-        "pas": 68,
-        "pos": 69,
-        "sho": 57,
-        "sta": 71,
-        "str": 68,
-        "tac": 68,
-        "vis": 69
-      },
-      "birth": "1977-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p06oswgc",
-      "name": "Didier Naumann",
-      "nation": "FRA",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 6500,
-      "weight": 79
-    },
-    {
       "attrs": {
         "aer": 61,
         "com": 68,
@@ -718,61 +687,6 @@
     },
     {
       "attrs": {
-        "aer": 59,
-        "com": 68,
-        "dri": 63,
-        "ldr": 63,
-        "pac": 67,
-        "pas": 55,
-        "pos": 62,
-        "sho": 69,
-        "sta": 63,
-        "str": 67,
-        "tac": 35,
-        "vis": 53
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1veqq6d",
-      "name": "Laurent Gagniar",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3500
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 61,
-        "dri": 59,
-        "ldr": 59,
-        "pac": 60,
-        "pas": 55,
-        "pos": 57,
-        "sho": 68,
-        "sta": 57,
-        "str": 65,
-        "tac": 30,
-        "vis": 54
-      },
-      "birth": "1980-07-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0jmshoi",
-      "name": "Marc-Eric Goei",
-      "nation": "FRA",
-      "nation2": "CIV",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 63,
         "dri": 49,
@@ -996,36 +910,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 3500
-    },
-    {
-      "alt": [
-        "LM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 61,
-        "dri": 56,
-        "ldr": 58,
-        "pac": 67,
-        "pas": 60,
-        "pos": 64,
-        "sho": 42,
-        "sta": 65,
-        "str": 59,
-        "tac": 61,
-        "vis": 52
-      },
-      "birth": "1983-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p01s6jic",
-      "name": "Marco Rendriana",
-      "nation": "FRA",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 2500
     },
     {
       "alt": [

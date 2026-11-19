@@ -1,0 +1,33 @@
+{
+  "city": "La Victoria Stadium",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "JEE",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1922,
+  "id": "c1a9ucki",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "레알 하앤",
+  "name": "Real Jeen",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "JEE"
+}

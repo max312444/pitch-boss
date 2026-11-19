@@ -280,38 +280,6 @@
     },
     {
       "alt": [
-        "RB",
-        "LB"
-      ],
-      "attrs": {
-        "aer": 66,
-        "com": 78,
-        "dri": 73,
-        "ldr": 72,
-        "pac": 67,
-        "pas": 77,
-        "pos": 73,
-        "sho": 69,
-        "sta": 75,
-        "str": 69,
-        "tac": 72,
-        "vis": 79
-      },
-      "birth": "1966-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0jx8ewi",
-      "name": "Mazynho",
-      "nation": "BRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 25500,
-      "weight": 74
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {
@@ -507,32 +475,6 @@
       "pos": "RB",
       "wage": 11000,
       "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 73,
-        "com": 73,
-        "dri": 70,
-        "ldr": 71,
-        "pac": 72,
-        "pas": 62,
-        "pos": 71,
-        "sho": 73,
-        "sta": 67,
-        "str": 73,
-        "tac": 41,
-        "vis": 63
-      },
-      "birth": "1979-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1hjqe1f",
-      "name": "Pablo Counagu",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 8500
     },
     {
       "alt": [

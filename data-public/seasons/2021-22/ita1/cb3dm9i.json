@@ -841,32 +841,6 @@
     },
     {
       "attrs": {
-        "aer": 52,
-        "com": 45,
-        "dri": 36,
-        "ldr": 53,
-        "pac": 42,
-        "pas": 39,
-        "pos": 56,
-        "sho": 23,
-        "sta": 47,
-        "str": 49,
-        "tac": 56,
-        "vis": 37
-      },
-      "birth": "2002-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1y2mk6u",
-      "name": "Christian Calesia",
-      "nation": "ITA",
-      "number": 95,
-      "pos": "CB",
-      "wage": 1500
-    },
-    {
-      "attrs": {
         "aer": 77,
         "com": 67,
         "dri": 58,

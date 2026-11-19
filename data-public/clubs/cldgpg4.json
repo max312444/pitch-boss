@@ -1,0 +1,33 @@
+{
+  "city": "Terni",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "TER",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1925,
+  "id": "cldgpg4",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "테루나나 칼초",
+  "name": "Nuova Ternena 1925",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "TER"
+}

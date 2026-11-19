@@ -262,66 +262,6 @@
     },
     {
       "alt": [
-        "DM",
-        "AM",
-        "CB"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 66,
-        "dri": 67,
-        "ldr": 69,
-        "pac": 66,
-        "pas": 71,
-        "pos": 69,
-        "sho": 61,
-        "sta": 72,
-        "str": 61,
-        "tac": 62,
-        "vis": 67
-      },
-      "birth": "1976-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p011rais",
-      "name": "Ludovic Clament",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 11500
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 64,
-        "dri": 67,
-        "ldr": 61,
-        "pac": 73,
-        "pas": 66,
-        "pos": 65,
-        "sho": 47,
-        "sta": 71,
-        "str": 64,
-        "tac": 67,
-        "vis": 62
-      },
-      "birth": "1977-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0rvfsql",
-      "name": "Predrag Ocokoljyc",
-      "nation": "SRB",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 8000,
-      "weight": 80
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {
@@ -433,33 +373,6 @@
       "number": null,
       "pos": "GK",
       "wage": 6000
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 69,
-        "dri": 64,
-        "ldr": 63,
-        "pac": 68,
-        "pas": 58,
-        "pos": 67,
-        "sho": 67,
-        "sta": 65,
-        "str": 65,
-        "tac": 34,
-        "vis": 57
-      },
-      "birth": "1979-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1d8qylp",
-      "name": "David Suerez",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 5000
     },
     {
       "attrs": {

@@ -497,37 +497,6 @@
     },
     {
       "attrs": {
-        "aer": 58,
-        "com": 66,
-        "dri": 59,
-        "ldr": 63,
-        "pac": 53,
-        "pas": 65,
-        "pos": 67,
-        "sho": 49,
-        "sta": 68,
-        "str": 64,
-        "tac": 62,
-        "vis": 64
-      },
-      "birth": "1996-04-01",
-      "contract": "2020-06-30",
-      "foot": "R",
-      "height": 175,
-      "id": "p0pn2eor",
-      "name": "Josh Collen",
-      "nation": "IRL",
-      "number": 24,
-      "pos": "DM",
-      "traits": [
-        "leader"
-      ],
-      "verify": true,
-      "wage": 51000,
-      "weight": 75
-    },
-    {
-      "attrs": {
         "aer": 60,
         "com": 76,
         "dri": 78,

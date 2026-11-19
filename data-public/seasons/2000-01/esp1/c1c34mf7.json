@@ -795,33 +795,6 @@
       "weight": 70
     },
     {
-      "attrs": {
-        "aer": 76,
-        "com": 68,
-        "dri": 56,
-        "ldr": 73,
-        "pac": 64,
-        "pas": 62,
-        "pos": 72,
-        "sho": 45,
-        "sta": 65,
-        "str": 70,
-        "tac": 75,
-        "vis": 55
-      },
-      "birth": "1976-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0nj7saf",
-      "name": "Jose Manuel Ayra",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 4000,
-      "weight": 78
-    },
-    {
       "alt": [
         "DM"
       ],

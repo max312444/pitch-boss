@@ -777,37 +777,6 @@
         "LW"
       ],
       "attrs": {
-        "aer": 60,
-        "com": 68,
-        "dri": 76,
-        "ldr": 65,
-        "pac": 78,
-        "pas": 71,
-        "pos": 50,
-        "sho": 71,
-        "sta": 68,
-        "str": 64,
-        "tac": 47,
-        "vis": 74
-      },
-      "birth": "1989-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0g3rk8u",
-      "name": "Andre Aiew",
-      "nation": "GHA",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "RW",
-      "wage": 34500,
-      "weight": 72
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
         "aer": 50,
         "com": 66,
         "dri": 73,

@@ -85,34 +85,6 @@
     },
     {
       "attrs": {
-        "aer": 70,
-        "com": 70,
-        "dri": 71,
-        "ldr": 66,
-        "pac": 68,
-        "pas": 63,
-        "pos": 70,
-        "sho": 73,
-        "sta": 70,
-        "str": 69,
-        "tac": 38,
-        "vis": 65
-      },
-      "birth": "1970-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0mhrbsp",
-      "name": "Patrice Luko",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 13000,
-      "weight": 64
-    },
-    {
-      "attrs": {
         "aer": 74,
         "com": 79,
         "dri": 77,

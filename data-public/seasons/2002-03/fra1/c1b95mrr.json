@@ -527,33 +527,6 @@
       "wage": 4000
     },
     {
-      "attrs": {
-        "aer": 50,
-        "com": 65,
-        "dri": 64,
-        "ldr": 63,
-        "pac": 62,
-        "pas": 67,
-        "pos": 47,
-        "sho": 62,
-        "sta": 61,
-        "str": 51,
-        "tac": 39,
-        "vis": 68
-      },
-      "birth": "1980-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1952u1x",
-      "name": "Fabrice Pancrata",
-      "nation": "FRA",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 3500
-    },
-    {
       "alt": [
         "CM",
         "DM",
@@ -612,34 +585,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 3000
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 62,
-        "dri": 52,
-        "ldr": 66,
-        "pac": 55,
-        "pas": 55,
-        "pos": 68,
-        "sho": 35,
-        "sta": 60,
-        "str": 63,
-        "tac": 70,
-        "vis": 47
-      },
-      "birth": "1975-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0benhd0",
-      "name": "Pierre-Emmanuel Bourdaau",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3000,
-      "weight": 77
     },
     {
       "alt": [

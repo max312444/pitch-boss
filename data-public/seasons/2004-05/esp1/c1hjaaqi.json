@@ -231,33 +231,6 @@
       "wage": 16500
     },
     {
-      "attrs": {
-        "aer": 55,
-        "com": 73,
-        "dri": 77,
-        "ldr": 72,
-        "pac": 67,
-        "pas": 75,
-        "pos": 56,
-        "sho": 72,
-        "sta": 70,
-        "str": 62,
-        "tac": 49,
-        "vis": 75
-      },
-      "birth": "1979-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p19blrt6",
-      "name": "Jose Barkaro",
-      "nation": "ESP",
-      "number": null,
-      "pos": "AM",
-      "wage": 14000,
-      "weight": 75
-    },
-    {
       "alt": [
         "CM"
       ],
@@ -542,32 +515,6 @@
       "verify": true,
       "wage": 9000,
       "weight": 74
-    },
-    {
-      "attrs": {
-        "aer": 76,
-        "com": 69,
-        "dri": 57,
-        "ldr": 73,
-        "pac": 66,
-        "pas": 62,
-        "pos": 73,
-        "sho": 44,
-        "sta": 69,
-        "str": 71,
-        "tac": 70,
-        "vis": 55
-      },
-      "birth": "1980-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0qhrqax",
-      "name": "Sergio Buris",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 9500
     },
     {
       "attrs": {

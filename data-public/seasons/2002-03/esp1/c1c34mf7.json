@@ -663,32 +663,6 @@
       "wage": 18000
     },
     {
-      "attrs": {
-        "aer": 71,
-        "com": 78,
-        "dri": 75,
-        "ldr": 72,
-        "pac": 74,
-        "pas": 66,
-        "pos": 70,
-        "sho": 79,
-        "sta": 69,
-        "str": 76,
-        "tac": 43,
-        "vis": 65
-      },
-      "birth": "1976-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0n91urg",
-      "name": "Ivan Parez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 14500
-    },
-    {
       "alt": [
         "CB",
         "RB",
@@ -828,34 +802,6 @@
     },
     {
       "attrs": {
-        "aer": 76,
-        "com": 66,
-        "dri": 55,
-        "ldr": 70,
-        "pac": 64,
-        "pas": 66,
-        "pos": 73,
-        "sho": 45,
-        "sta": 67,
-        "str": 73,
-        "tac": 72,
-        "vis": 57
-      },
-      "birth": "1976-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0nj7saf",
-      "name": "Jose Manuel Ayra",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5500,
-      "weight": 78
-    },
-    {
-      "attrs": {
         "aer": 72,
         "com": 70,
         "dri": 55,
@@ -910,32 +856,6 @@
       "verify": true,
       "wage": 7000,
       "weight": 74
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 64,
-        "dri": 64,
-        "ldr": 60,
-        "pac": 65,
-        "pas": 53,
-        "pos": 65,
-        "sho": 70,
-        "sta": 57,
-        "str": 62,
-        "tac": 34,
-        "vis": 54
-      },
-      "birth": "1977-04-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1v1a8u3",
-      "name": "Changuy",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 3000
     },
     {
       "alt": [

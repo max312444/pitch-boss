@@ -618,33 +618,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 68,
-        "dri": 63,
-        "ldr": 66,
-        "pac": 65,
-        "pas": 57,
-        "pos": 63,
-        "sho": 71,
-        "sta": 62,
-        "str": 67,
-        "tac": 35,
-        "vis": 58
-      },
-      "birth": "1982-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p18w1ou9",
-      "name": "Alexandre Geiju",
-      "nation": "ESP",
-      "number": 27,
-      "pos": "ST",
-      "wage": 8000,
-      "weight": 82
-    },
-    {
-      "attrs": {
         "aer": 72,
         "com": 67,
         "dri": 57,
@@ -726,33 +699,6 @@
       "pos": "ST",
       "wage": 18500,
       "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 68,
-        "dri": 67,
-        "ldr": 66,
-        "pac": 70,
-        "pas": 69,
-        "pos": 69,
-        "sho": 48,
-        "sta": 73,
-        "str": 63,
-        "tac": 73,
-        "vis": 60
-      },
-      "birth": "1986-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p1407p28",
-      "name": "Guilherme Siqueyra",
-      "nation": "BRA",
-      "number": 86,
-      "pos": "LB",
-      "wage": 14000,
-      "weight": 76
     },
     {
       "alt": [
@@ -842,33 +788,6 @@
       "pos": "CM",
       "wage": 6500,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 54,
-        "dri": 42,
-        "ldr": 57,
-        "pac": 50,
-        "pas": 52,
-        "pos": 63,
-        "sho": 30,
-        "sta": 52,
-        "str": 58,
-        "tac": 62,
-        "vis": 45
-      },
-      "birth": "1990-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p12a6v2b",
-      "name": "Ricardo Chera",
-      "nation": "COL",
-      "number": null,
-      "pos": "CB",
-      "wage": 1000,
-      "weight": 80
     }
   ],
   "stadiumCapacity": 25312

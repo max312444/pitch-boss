@@ -7,7 +7,7 @@
       "#FFFFFF",
       "#FFFFFF"
     ],
-    "mark": "CES",
+    "mark": "CEA",
     "pattern": "solid",
     "shape": "shield"
   },
@@ -29,5 +29,5 @@
   "name": "AC Cesana",
   "nation": "ITA",
   "rivals": [],
-  "short": "CES"
+  "short": "CEA"
 }

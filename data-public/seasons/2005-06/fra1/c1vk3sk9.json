@@ -709,38 +709,6 @@
     },
     {
       "alt": [
-        "LW",
-        "ST"
-      ],
-      "attrs": {
-        "aer": 50,
-        "com": 62,
-        "dri": 69,
-        "ldr": 63,
-        "pac": 71,
-        "pas": 64,
-        "pos": 44,
-        "sho": 65,
-        "sta": 61,
-        "str": 58,
-        "tac": 39,
-        "vis": 60
-      },
-      "birth": "1983-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1tmn3yp",
-      "name": "Johan Aodel",
-      "nation": "FRA",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 5500,
-      "weight": 73
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {

@@ -574,37 +574,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 64,
-        "com": 69,
-        "dri": 67,
-        "ldr": 69,
-        "pac": 69,
-        "pas": 71,
-        "pos": 70,
-        "sho": 63,
-        "sta": 74,
-        "str": 66,
-        "tac": 65,
-        "vis": 72
-      },
-      "birth": "1973-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p1449rps",
-      "name": "Raffaele Ametranu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 29500,
-      "weight": 68
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 63,
         "com": 70,
         "dri": 71,

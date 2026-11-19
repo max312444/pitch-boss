@@ -103,34 +103,6 @@
     },
     {
       "attrs": {
-        "aer": 76,
-        "com": 67,
-        "dri": 54,
-        "ldr": 69,
-        "pac": 66,
-        "pas": 62,
-        "pos": 76,
-        "sho": 46,
-        "sta": 67,
-        "str": 71,
-        "tac": 70,
-        "vis": 57
-      },
-      "birth": "1971-03-01",
-      "contract": "2004-06-30",
-      "foot": "R",
-      "height": 185,
-      "id": "p0coyp9u",
-      "name": "Kit Symuns",
-      "nation": "WAL",
-      "number": 4,
-      "pos": "CB",
-      "verify": true,
-      "wage": 22000,
-      "weight": 83
-    },
-    {
-      "attrs": {
         "aer": 75,
         "com": 68,
         "dri": 56,

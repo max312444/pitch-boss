@@ -681,37 +681,6 @@
       "wage": 2000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 65,
-        "dri": 61,
-        "ldr": 65,
-        "pac": 55,
-        "pas": 67,
-        "pos": 63,
-        "sho": 60,
-        "sta": 66,
-        "str": 57,
-        "tac": 62,
-        "vis": 63
-      },
-      "birth": "1977-12-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1xpwzp4",
-      "name": "Olivier Ceillas",
-      "nation": "GER",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2000
-    },
-    {
       "attrs": {
         "aer": 61,
         "com": 65,

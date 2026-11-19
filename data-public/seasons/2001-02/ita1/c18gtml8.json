@@ -487,34 +487,6 @@
     },
     {
       "attrs": {
-        "aer": 66,
-        "com": 63,
-        "dri": 51,
-        "ldr": 61,
-        "pac": 56,
-        "pas": 55,
-        "pos": 65,
-        "sho": 40,
-        "sta": 60,
-        "str": 66,
-        "tac": 66,
-        "vis": 52
-      },
-      "birth": "1963-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0sfo4pw",
-      "name": "Filippo Gally",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3500,
-      "weight": 71
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 69,
         "dri": 56,
@@ -661,33 +633,6 @@
       "weight": 85
     },
     {
-      "attrs": {
-        "aer": 70,
-        "com": 62,
-        "dri": 48,
-        "ldr": 65,
-        "pac": 56,
-        "pas": 56,
-        "pos": 69,
-        "sho": 38,
-        "sta": 59,
-        "str": 64,
-        "tac": 70,
-        "vis": 50
-      },
-      "birth": "1974-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0llesk5",
-      "name": "Vittorio Maro",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 2500,
-      "weight": 72
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -746,37 +691,6 @@
       "pos": "CM",
       "wage": 3500,
       "weight": 79
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 64,
-        "dri": 63,
-        "ldr": 63,
-        "pac": 57,
-        "pas": 68,
-        "pos": 62,
-        "sho": 61,
-        "sta": 64,
-        "str": 61,
-        "tac": 60,
-        "vis": 62
-      },
-      "birth": "1966-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1icp9r6",
-      "name": "Pierpaolo Bysoli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3500,
-      "weight": 73
     },
     {
       "attrs": {
@@ -1056,33 +970,6 @@
       "verify": true,
       "wage": 1500,
       "weight": 68
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 64,
-        "dri": 57,
-        "ldr": 60,
-        "pac": 52,
-        "pas": 65,
-        "pos": 61,
-        "sho": 49,
-        "sta": 63,
-        "str": 59,
-        "tac": 66,
-        "vis": 57
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p0vkttge",
-      "name": "Ivan Javurcic",
-      "nation": "CRO",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 1500
     },
     {
       "attrs": {

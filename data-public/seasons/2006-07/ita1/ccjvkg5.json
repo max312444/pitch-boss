@@ -632,39 +632,6 @@
       "weight": 80
     },
     {
-      "alt": [
-        "CB",
-        "CM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 67,
-        "com": 67,
-        "dri": 62,
-        "ldr": 71,
-        "pac": 57,
-        "pas": 71,
-        "pos": 70,
-        "sho": 59,
-        "sta": 68,
-        "str": 68,
-        "tac": 73,
-        "vis": 64
-      },
-      "birth": "1981-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0xdnu4k",
-      "name": "Cristian Raymondi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 6500,
-      "weight": 78
-    },
-    {
       "attrs": {
         "aer": 68,
         "com": 59,

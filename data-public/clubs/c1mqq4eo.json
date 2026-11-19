@@ -6,7 +6,7 @@
       "#f4f4f2",
       "#c9a646"
     ],
-    "mark": "MAL",
+    "mark": "MAE",
     "pattern": "stripes",
     "shape": "pointed"
   },
@@ -28,5 +28,5 @@
   "name": "Malega CF",
   "nation": "ESP",
   "rivals": [],
-  "short": "MAL"
+  "short": "MAE"
 }

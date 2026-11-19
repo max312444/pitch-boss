@@ -599,32 +599,6 @@
       "wage": 5500
     },
     {
-      "attrs": {
-        "aer": 36,
-        "com": 58,
-        "dri": 54,
-        "ldr": 55,
-        "pac": 50,
-        "pas": 57,
-        "pos": 38,
-        "sho": 57,
-        "sta": 48,
-        "str": 43,
-        "tac": 35,
-        "vis": 56
-      },
-      "birth": "2006-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1ce467l",
-      "name": "Mathis Sake",
-      "nation": "FRA",
-      "number": 39,
-      "pos": "AM",
-      "wage": 5500
-    },
-    {
       "alt": [
         "DM"
       ],

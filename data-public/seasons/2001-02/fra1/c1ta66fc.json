@@ -867,33 +867,6 @@
       "wage": 1500
     },
     {
-      "attrs": {
-        "aer": 61,
-        "com": 59,
-        "dri": 42,
-        "ldr": 60,
-        "pac": 54,
-        "pas": 50,
-        "pos": 65,
-        "sho": 31,
-        "sta": 52,
-        "str": 58,
-        "tac": 65,
-        "vis": 48
-      },
-      "birth": "1978-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0y2wy6z",
-      "name": "Michel Rodrigoez",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 1500
-    },
-    {
       "alt": [
         "CM",
         "RB",
@@ -1041,59 +1014,6 @@
       "verify": true,
       "wage": 1000,
       "weight": 67
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 54,
-        "dri": 41,
-        "ldr": 60,
-        "pac": 50,
-        "pas": 45,
-        "pos": 56,
-        "sho": 30,
-        "sta": 50,
-        "str": 60,
-        "tac": 59,
-        "vis": 40
-      },
-      "birth": "1980-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0xajhwx",
-      "name": "Cyril Remond",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 1500
-    },
-    {
-      "attrs": {
-        "aer": 51,
-        "com": 55,
-        "dri": 51,
-        "ldr": 49,
-        "pac": 53,
-        "pas": 49,
-        "pos": 53,
-        "sho": 60,
-        "sta": 51,
-        "str": 55,
-        "tac": 27,
-        "vis": 44
-      },
-      "birth": "1980-07-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0jmshoi",
-      "name": "Marc-Eric Goei",
-      "nation": "FRA",
-      "nation2": "CIV",
-      "number": null,
-      "pos": "ST",
-      "wage": 1500
     },
     {
       "attrs": {

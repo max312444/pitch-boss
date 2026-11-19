@@ -631,36 +631,6 @@
       "weight": 88
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 49,
-        "com": 58,
-        "dri": 58,
-        "ldr": 58,
-        "pac": 49,
-        "pas": 61,
-        "pos": 55,
-        "sho": 51,
-        "sta": 59,
-        "str": 50,
-        "tac": 54,
-        "vis": 61
-      },
-      "birth": "1995-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1giy20d",
-      "name": "Leonardo Cepezzi",
-      "nation": "ITA",
-      "number": 38,
-      "pos": "CM",
-      "wage": 11000,
-      "weight": 75
-    },
-    {
       "attrs": {
         "aer": 80,
         "com": 75,

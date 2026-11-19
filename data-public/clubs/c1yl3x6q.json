@@ -1,0 +1,33 @@
+{
+  "city": "Sheffield",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#0000FF",
+      "#0000FF"
+    ],
+    "mark": "SHA",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1867,
+  "id": "c1yl3x6q",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#0000FF",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#0000FF"
+    }
+  },
+  "ko": "셰필드 웬즈데에 FC",
+  "name": "Shaffield Wednesday F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "SHA"
+}

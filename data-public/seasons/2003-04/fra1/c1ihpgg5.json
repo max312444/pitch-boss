@@ -303,35 +303,6 @@
     },
     {
       "attrs": {
-        "aer": 57,
-        "com": 63,
-        "han": 62,
-        "ldr": 57,
-        "one": 59,
-        "pac": 46,
-        "pas": 49,
-        "pos": 63,
-        "ref": 61,
-        "sta": 52,
-        "str": 59,
-        "vis": 53
-      },
-      "birth": "1966-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p1v5ltyq",
-      "name": "Ali Boomnijel",
-      "nation": "TUN",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 9000,
-      "weight": 80
-    },
-    {
-      "attrs": {
         "aer": 73,
         "com": 68,
         "dri": 61,
@@ -524,36 +495,6 @@
       "wage": 6000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 68,
-        "dri": 65,
-        "ldr": 66,
-        "pac": 59,
-        "pas": 66,
-        "pos": 65,
-        "sho": 59,
-        "sta": 72,
-        "str": 61,
-        "tac": 65,
-        "vis": 67
-      },
-      "birth": "1979-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0pdh4zo",
-      "name": "Nicolas Alnoudjy",
-      "nation": "CMR",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6500
-    },
-    {
       "attrs": {
         "aer": 63,
         "com": 61,
@@ -674,34 +615,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 62,
-        "dri": 47,
-        "ldr": 63,
-        "pac": 57,
-        "pas": 57,
-        "pos": 67,
-        "sho": 37,
-        "sta": 62,
-        "str": 64,
-        "tac": 64,
-        "vis": 50
-      },
-      "birth": "1971-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0mee6rq",
-      "name": "Bernard Lambourda",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000,
-      "weight": 77
-    },
-    {
-      "attrs": {
         "aer": 69,
         "com": 69,
         "dri": 53,
@@ -779,66 +692,6 @@
       "number": null,
       "pos": "CB",
       "wage": 3500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 62,
-        "com": 72,
-        "dri": 68,
-        "ldr": 65,
-        "pac": 66,
-        "pas": 69,
-        "pos": 67,
-        "sho": 62,
-        "sta": 74,
-        "str": 65,
-        "tac": 63,
-        "vis": 72
-      },
-      "birth": "1978-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p067zmao",
-      "name": "Febrice Jau",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 64,
-        "dri": 64,
-        "ldr": 66,
-        "pac": 64,
-        "pas": 65,
-        "pos": 61,
-        "sho": 62,
-        "sta": 68,
-        "str": 60,
-        "tac": 65,
-        "vis": 65
-      },
-      "birth": "1981-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0w80phl",
-      "name": "Pascal Berengoer",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4500
     },
     {
       "alt": [
@@ -1064,37 +917,6 @@
       "number": null,
       "pos": "CB",
       "wage": 2000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 66,
-        "dri": 61,
-        "ldr": 66,
-        "pac": 63,
-        "pas": 67,
-        "pos": 67,
-        "sho": 63,
-        "sta": 66,
-        "str": 59,
-        "tac": 64,
-        "vis": 66
-      },
-      "birth": "1980-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p13w4qlh",
-      "name": "Patrick Beneforty",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000,
-      "weight": 66
     },
     {
       "attrs": {

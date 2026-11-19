@@ -1,0 +1,33 @@
+{
+  "city": "Annecy",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "ANN",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1927,
+  "id": "c1f53ygv",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "FC 안세",
+  "name": "FC Anneci",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "ANN"
+}

@@ -1,0 +1,33 @@
+{
+  "city": "Le Petit-Quevilly",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "RUU",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1899,
+  "id": "c1j7tdfa",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "FC 루엉",
+  "name": "FC Ruuen",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "RUU"
+}

@@ -1,0 +1,33 @@
+{
+  "city": "Cannes",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "CNN",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1902,
+  "id": "c5di625",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "AS 칸o",
+  "name": "AS Cannas",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "CNN"
+}

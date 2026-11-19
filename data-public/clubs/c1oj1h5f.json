@@ -1,0 +1,33 @@
+{
+  "city": "Almendralejo",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "EXT",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1924,
+  "id": "c1oj1h5f",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "CF 엑수트레마두라",
+  "name": "CF Extremadure",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "EXT"
+}

@@ -226,33 +226,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 71,
-        "dri": 70,
-        "ldr": 70,
-        "pac": 75,
-        "pas": 68,
-        "pos": 67,
-        "sho": 50,
-        "sta": 74,
-        "str": 63,
-        "tac": 75,
-        "vis": 61
-      },
-      "birth": "1975-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1ve32ij",
-      "name": "Mauricio Pinede",
-      "nation": "ARG",
-      "number": null,
-      "pos": "LB",
-      "wage": 12000,
-      "weight": 75
-    },
-    {
-      "attrs": {
         "aer": 74,
         "com": 75,
         "dri": 74,
@@ -653,34 +626,6 @@
     },
     {
       "attrs": {
-        "aer": 70,
-        "com": 69,
-        "dri": 65,
-        "ldr": 63,
-        "pac": 69,
-        "pas": 60,
-        "pos": 71,
-        "sho": 72,
-        "sta": 69,
-        "str": 70,
-        "tac": 38,
-        "vis": 64
-      },
-      "birth": "1981-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1djbren",
-      "name": "Winston Perks",
-      "nation": "CRC",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 5500,
-      "weight": 77
-    },
-    {
-      "attrs": {
         "aer": 68,
         "com": 72,
         "dri": 67,
@@ -967,34 +912,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 65,
-        "han": 68,
-        "ldr": 63,
-        "one": 69,
-        "pac": 52,
-        "pas": 56,
-        "pos": 68,
-        "ref": 67,
-        "sta": 54,
-        "str": 66,
-        "vis": 58
-      },
-      "birth": "1970-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p0rx2f9f",
-      "name": "Luigi Torci",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 2500,
-      "weight": 88
-    },
-    {
-      "attrs": {
         "aer": 65,
         "com": 64,
         "han": 66,
@@ -1160,37 +1077,6 @@
       "number": null,
       "pos": "ST",
       "wage": 1000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 65,
-        "dri": 61,
-        "ldr": 60,
-        "pac": 59,
-        "pas": 64,
-        "pos": 60,
-        "sho": 60,
-        "sta": 65,
-        "str": 61,
-        "tac": 60,
-        "vis": 66
-      },
-      "birth": "1980-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p13w4qlh",
-      "name": "Patrick Beneforty",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 1500,
-      "weight": 66
     }
   ],
   "stadiumCapacity": 25312

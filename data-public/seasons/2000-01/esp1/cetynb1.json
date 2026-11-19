@@ -764,33 +764,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 68,
-        "dri": 72,
-        "ldr": 69,
-        "pac": 79,
-        "pas": 70,
-        "pos": 73,
-        "sho": 54,
-        "sta": 76,
-        "str": 71,
-        "tac": 77,
-        "vis": 65
-      },
-      "birth": "1977-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p06iklzv",
-      "name": "Javier Doradu",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 14500
-    },
-    {
-      "attrs": {
         "aer": 67,
         "com": 76,
         "dri": 67,

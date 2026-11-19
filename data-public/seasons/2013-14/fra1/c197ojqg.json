@@ -365,33 +365,6 @@
       "wage": 16500
     },
     {
-      "attrs": {
-        "aer": 54,
-        "com": 57,
-        "dri": 57,
-        "ldr": 55,
-        "pac": 60,
-        "pas": 50,
-        "pos": 58,
-        "sho": 64,
-        "sta": 57,
-        "str": 59,
-        "tac": 30,
-        "vis": 51
-      },
-      "birth": "1992-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p0cn3qy0",
-      "name": "Cheick Fantamady Dierra",
-      "nation": "MLI",
-      "nation2": "FRA",
-      "number": 18,
-      "pos": "ST",
-      "wage": 8000
-    },
-    {
       "alt": [
         "LW"
       ],

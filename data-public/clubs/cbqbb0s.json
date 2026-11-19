@@ -1,0 +1,33 @@
+{
+  "city": "Amorebieta-Etxano",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "AMO",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1925,
+  "id": "cbqbb0s",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "SD 아모래비에타",
+  "name": "SD Amorebiata",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "AMO"
+}

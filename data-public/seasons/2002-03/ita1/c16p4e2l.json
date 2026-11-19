@@ -439,32 +439,6 @@
       "weight": 73
     },
     {
-      "attrs": {
-        "aer": 40,
-        "com": 62,
-        "dri": 57,
-        "ldr": 58,
-        "pac": 59,
-        "pas": 59,
-        "pos": 43,
-        "sho": 60,
-        "sta": 52,
-        "str": 49,
-        "tac": 33,
-        "vis": 60
-      },
-      "birth": "1983-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0y5b1e6",
-      "name": "Ibrahim Abdul Razek",
-      "nation": "GHA",
-      "number": null,
-      "pos": "AM",
-      "wage": 5500
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -493,36 +467,6 @@
       "pos": "CM",
       "wage": 5000,
       "weight": 75
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 61,
-        "dri": 62,
-        "ldr": 61,
-        "pac": 68,
-        "pas": 62,
-        "pos": 65,
-        "sho": 46,
-        "sta": 70,
-        "str": 58,
-        "tac": 68,
-        "vis": 58
-      },
-      "birth": "1979-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p09tu7if",
-      "name": "Riccardo Bunetto",
-      "nation": "ITA",
-      "number": null,
-      "pos": "LB",
-      "wage": 4500,
-      "weight": 68
     },
     {
       "attrs": {
@@ -605,39 +549,6 @@
       "verify": true,
       "wage": 3500,
       "weight": 79
-    },
-    {
-      "alt": [
-        "CM",
-        "RB",
-        "LB"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 62,
-        "dri": 44,
-        "ldr": 62,
-        "pac": 56,
-        "pas": 56,
-        "pos": 62,
-        "sho": 35,
-        "sta": 54,
-        "str": 66,
-        "tac": 63,
-        "vis": 44
-      },
-      "birth": "1971-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p1u3qrcq",
-      "name": "Pietro Fosco",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000,
-      "weight": 69
     },
     {
       "alt": [

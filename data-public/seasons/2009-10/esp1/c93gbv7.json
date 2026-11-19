@@ -536,33 +536,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 67,
-        "dri": 70,
-        "ldr": 66,
-        "pac": 73,
-        "pas": 70,
-        "pos": 71,
-        "sho": 57,
-        "sta": 76,
-        "str": 66,
-        "tac": 74,
-        "vis": 69
-      },
-      "birth": "1983-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p11vncmf",
-      "name": "Iban Zobiaurre",
-      "nation": "ESP",
-      "number": 19,
-      "pos": "RB",
-      "wage": 24500,
-      "weight": 75
-    },
-    {
-      "attrs": {
         "aer": 64,
         "com": 62,
         "dri": 50,

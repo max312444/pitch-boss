@@ -1,0 +1,130 @@
+{
+  "club": "c1h0ii6n",
+  "estimated": true,
+  "facilities": {
+    "training": 2,
+    "youth": 3
+  },
+  "finance": {
+    "balance": 150000,
+    "transferBudget": 100000,
+    "wageBudget": 5500
+  },
+  "league": "eng2",
+  "reputation": 58,
+  "season": "2002-03",
+  "source": {
+    "derived": "pipeline-derived-v1",
+    "facts": "wikidata",
+    "license": "CC0-1.0",
+    "roster": "wikidata",
+    "snapshot": "2002-09-01"
+  },
+  "squad": [
+    {
+      "attrs": {
+        "aer": 64,
+        "com": 66,
+        "dri": 64,
+        "ldr": 63,
+        "pac": 67,
+        "pas": 56,
+        "pos": 67,
+        "sho": 67,
+        "sta": 62,
+        "str": 63,
+        "tac": 39,
+        "vis": 56
+      },
+      "birth": "1969-12-01",
+      "contract": null,
+      "foot": null,
+      "height": 173,
+      "id": "p17yuk6a",
+      "name": "Mark Robyns",
+      "nation": "ENG",
+      "number": null,
+      "pos": "ST",
+      "wage": 2000
+    },
+    {
+      "attrs": {
+        "aer": 57,
+        "com": 60,
+        "han": 61,
+        "ldr": 55,
+        "one": 63,
+        "pac": 44,
+        "pas": 51,
+        "pos": 61,
+        "ref": 63,
+        "sta": 46,
+        "str": 58,
+        "vis": 51
+      },
+      "birth": "1972-02-01",
+      "contract": null,
+      "foot": null,
+      "height": 193,
+      "id": "p0kmi606",
+      "name": "Mike Pullitt",
+      "nation": "ENG",
+      "number": null,
+      "pos": "GK",
+      "wage": 1000
+    },
+    {
+      "attrs": {
+        "aer": 52,
+        "com": 56,
+        "dri": 58,
+        "ldr": 54,
+        "pac": 56,
+        "pas": 50,
+        "pos": 54,
+        "sho": 57,
+        "sta": 50,
+        "str": 58,
+        "tac": 26,
+        "vis": 47
+      },
+      "birth": "1978-08-01",
+      "contract": null,
+      "foot": null,
+      "height": 191,
+      "id": "p1q8wsm2",
+      "name": "Alen Lee",
+      "nation": "IRL",
+      "number": null,
+      "pos": "ST",
+      "wage": 1000
+    },
+    {
+      "attrs": {
+        "aer": 56,
+        "com": 54,
+        "dri": 45,
+        "ldr": 52,
+        "pac": 53,
+        "pas": 50,
+        "pos": 61,
+        "sho": 27,
+        "sta": 54,
+        "str": 61,
+        "tac": 56,
+        "vis": 44
+      },
+      "birth": "1971-03-01",
+      "contract": null,
+      "foot": null,
+      "height": null,
+      "id": "p05x64gx",
+      "name": "Martin McYntosh",
+      "nation": "SCO",
+      "number": null,
+      "pos": "CB",
+      "wage": 1000
+    }
+  ],
+  "stadiumCapacity": 12021
+}

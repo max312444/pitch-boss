@@ -625,34 +625,6 @@
     },
     {
       "attrs": {
-        "aer": 61,
-        "com": 65,
-        "dri": 57,
-        "ldr": 59,
-        "pac": 63,
-        "pas": 53,
-        "pos": 56,
-        "sho": 66,
-        "sta": 58,
-        "str": 63,
-        "tac": 33,
-        "vis": 53
-      },
-      "birth": "1981-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p0nr2asl",
-      "name": "Herve Bognet",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4000,
-      "weight": 68
-    },
-    {
-      "attrs": {
         "aer": 67,
         "com": 59,
         "dri": 44,
@@ -1067,33 +1039,6 @@
       "number": null,
       "pos": "CM",
       "wage": 2000
-    },
-    {
-      "attrs": {
-        "aer": 52,
-        "com": 55,
-        "dri": 51,
-        "ldr": 48,
-        "pac": 57,
-        "pas": 48,
-        "pos": 50,
-        "sho": 57,
-        "sta": 52,
-        "str": 53,
-        "tac": 22,
-        "vis": 45
-      },
-      "birth": "1985-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0qcu1hi",
-      "name": "Cedric Agrein",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 1000
     },
     {
       "attrs": {

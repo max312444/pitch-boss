@@ -391,36 +391,6 @@
       "weight": 86
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 68,
-        "com": 78,
-        "dri": 76,
-        "ldr": 72,
-        "pac": 67,
-        "pas": 79,
-        "pos": 76,
-        "sho": 72,
-        "sta": 77,
-        "str": 71,
-        "tac": 69,
-        "vis": 74
-      },
-      "birth": "1980-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1r7l5rp",
-      "name": "Jofre Mateo",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 22500
-    },
-    {
       "attrs": {
         "aer": 71,
         "com": 73,
@@ -498,33 +468,6 @@
       "number": null,
       "pos": "DM",
       "wage": 18000
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 72,
-        "dri": 71,
-        "ldr": 66,
-        "pac": 71,
-        "pas": 64,
-        "pos": 69,
-        "sho": 72,
-        "sta": 68,
-        "str": 73,
-        "tac": 38,
-        "vis": 65
-      },
-      "birth": "1985-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1p7is2m",
-      "name": "Jonathan Sorianu",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 12000,
-      "weight": 72
     },
     {
       "alt": [

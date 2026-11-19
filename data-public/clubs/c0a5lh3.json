@@ -1,0 +1,33 @@
+{
+  "city": "Avellino",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "AVE",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1912,
+  "id": "c0a5lh3",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "AS 아벨리누 1912",
+  "name": "US Avellyno 1912",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "AVE"
+}

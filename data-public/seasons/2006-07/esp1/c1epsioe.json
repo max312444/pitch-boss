@@ -250,63 +250,6 @@
       "wage": 31000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 68,
-        "com": 77,
-        "dri": 77,
-        "ldr": 73,
-        "pac": 70,
-        "pas": 78,
-        "pos": 79,
-        "sho": 75,
-        "sta": 81,
-        "str": 71,
-        "tac": 73,
-        "vis": 82
-      },
-      "birth": "1978-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p1y5brtv",
-      "name": "Javier Farinus",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 32000
-    },
-    {
-      "attrs": {
-        "aer": 72,
-        "com": 78,
-        "dri": 74,
-        "ldr": 77,
-        "pac": 73,
-        "pas": 79,
-        "pos": 79,
-        "sho": 66,
-        "sta": 78,
-        "str": 79,
-        "tac": 80,
-        "vis": 79
-      },
-      "birth": "1981-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p14czej1",
-      "name": "Borja Fernandaz",
-      "nation": "ESP",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 29500
-    },
-    {
       "attrs": {
         "aer": 61,
         "com": 76,
@@ -729,63 +672,6 @@
       "verify": true,
       "wage": 5500,
       "weight": 75
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 48,
-        "com": 63,
-        "dri": 67,
-        "ldr": 59,
-        "pac": 69,
-        "pas": 63,
-        "pos": 46,
-        "sho": 63,
-        "sta": 62,
-        "str": 55,
-        "tac": 40,
-        "vis": 62
-      },
-      "birth": "1987-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0v8666t",
-      "name": "Carlos Cermona",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 7000
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 68,
-        "dri": 67,
-        "ldr": 65,
-        "pac": 65,
-        "pas": 58,
-        "pos": 65,
-        "sho": 71,
-        "sta": 59,
-        "str": 64,
-        "tac": 39,
-        "vis": 58
-      },
-      "birth": "1974-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0ewrck4",
-      "name": "Yordy",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 5000
     },
     {
       "attrs": {

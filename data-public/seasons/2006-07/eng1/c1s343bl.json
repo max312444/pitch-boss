@@ -440,38 +440,6 @@
       "weight": 87
     },
     {
-      "alt": [
-        "ST",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 66,
-        "dri": 72,
-        "ldr": 62,
-        "pac": 73,
-        "pas": 72,
-        "pos": 49,
-        "sho": 69,
-        "sta": 69,
-        "str": 58,
-        "tac": 45,
-        "vis": 66
-      },
-      "birth": "1984-08-01",
-      "contract": "2008-06-30",
-      "foot": "L",
-      "height": 185,
-      "id": "p1cdkgvi",
-      "name": "Paul Gellagher",
-      "nation": "SCO",
-      "number": 21,
-      "pos": "RW",
-      "verify": true,
-      "wage": 23000,
-      "weight": 79
-    },
-    {
       "attrs": {
         "aer": 74,
         "com": 65,

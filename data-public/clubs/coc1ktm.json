@@ -1,0 +1,33 @@
+{
+  "city": "Crewe",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#FF0000",
+      "#FF0000"
+    ],
+    "mark": "ALX",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1877,
+  "id": "coc1ktm",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FF0000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#FF0000"
+    }
+  },
+  "ko": "크루 알렉산드러 FC",
+  "name": "Crewe Alaxandra F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "ALX"
+}

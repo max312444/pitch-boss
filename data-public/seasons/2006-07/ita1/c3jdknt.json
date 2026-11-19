@@ -511,37 +511,6 @@
       "weight": 92
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 70,
-        "com": 84,
-        "dri": 80,
-        "ldr": 79,
-        "pac": 77,
-        "pas": 86,
-        "pos": 77,
-        "sho": 77,
-        "sta": 82,
-        "str": 74,
-        "tac": 75,
-        "vis": 82
-      },
-      "birth": "1977-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1i8mfdy",
-      "name": "Cristiano Zanatti",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 72500,
-      "weight": 75
-    },
-    {
       "attrs": {
         "aer": 77,
         "com": 79,
@@ -887,34 +856,6 @@
     },
     {
       "attrs": {
-        "aer": 70,
-        "com": 70,
-        "han": 74,
-        "ldr": 68,
-        "one": 69,
-        "pac": 56,
-        "pas": 61,
-        "pos": 70,
-        "ref": 70,
-        "sta": 58,
-        "str": 65,
-        "vis": 58
-      },
-      "birth": "1983-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p1whzir9",
-      "name": "Alex Curdaz",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 12000,
-      "weight": 83
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 73,
         "dri": 70,
@@ -1173,35 +1114,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 3000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 48,
-        "com": 59,
-        "dri": 57,
-        "ldr": 56,
-        "pac": 49,
-        "pas": 61,
-        "pos": 55,
-        "sho": 52,
-        "sta": 61,
-        "str": 51,
-        "tac": 54,
-        "vis": 57
-      },
-      "birth": "1987-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1jshk4j",
-      "name": "Daniel Maa Boumsung",
-      "nation": "CMR",
-      "number": null,
-      "pos": "CM",
-      "wage": 3500
     },
     {
       "attrs": {

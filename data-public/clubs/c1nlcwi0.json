@@ -7,7 +7,7 @@
       "#000000",
       "#000000"
     ],
-    "mark": "CHM",
+    "mark": "CHN",
     "pattern": "solid",
     "shape": "round"
   },
@@ -29,5 +29,5 @@
   "name": "Chemnytzer FC",
   "nation": "GER",
   "rivals": [],
-  "short": "CHM"
+  "short": "CHN"
 }

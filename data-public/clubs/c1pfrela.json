@@ -1,0 +1,33 @@
+{
+  "city": "Plymouth",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#00FF00",
+      "#00FF00"
+    ],
+    "mark": "PLY",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1886,
+  "id": "c1pfrela",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#00FF00",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#00FF00"
+    }
+  },
+  "ko": "플리마스 아가일 FC",
+  "name": "Plymuuth Argyle F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "PLY"
+}

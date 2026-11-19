@@ -755,32 +755,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 3000
-    },
-    {
-      "attrs": {
-        "aer": 52,
-        "com": 56,
-        "dri": 61,
-        "ldr": 60,
-        "pac": 63,
-        "pas": 59,
-        "pos": 60,
-        "sho": 42,
-        "sta": 62,
-        "str": 55,
-        "tac": 62,
-        "vis": 52
-      },
-      "birth": "1986-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1fbuwh4",
-      "name": "Ezequiel Arane",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "wage": 2500
     }
   ],
   "stadiumCapacity": 26000

@@ -399,41 +399,6 @@
       "wage": 25500
     },
     {
-      "alt": [
-        "CM",
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 71,
-        "dri": 70,
-        "ldr": 66,
-        "pac": 73,
-        "pas": 72,
-        "pos": 60,
-        "sho": 65,
-        "sta": 78,
-        "str": 66,
-        "tac": 62,
-        "vis": 73
-      },
-      "birth": "1976-02-01",
-      "contract": "2003-06-30",
-      "foot": "L",
-      "height": 185,
-      "id": "p068t95k",
-      "name": "Keith O'Naill",
-      "nation": "IRL",
-      "number": 16,
-      "pos": "LM",
-      "traits": [
-        "injury_prone"
-      ],
-      "verify": true,
-      "wage": 16500
-    },
-    {
       "attrs": {
         "aer": 72,
         "com": 72,

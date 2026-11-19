@@ -1,0 +1,33 @@
+{
+  "city": "Milton Keynes",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFD700",
+      "#FFFFFF",
+      "#FFFFFF"
+    ],
+    "mark": "MYL",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2004,
+  "id": "c12e02en",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#FFD700"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFD700",
+      "secondary": "#FFFFFF"
+    }
+  },
+  "ko": "밀턴캐인스 던스 FC",
+  "name": "Mylton Keynes Dons F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "MYL"
+}

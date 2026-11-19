@@ -11,6 +11,7 @@ import { changeRole, type Role } from '../engine/roles';
 import { create } from 'zustand';
 import type { Fixture, GameEvent, Side, Tactics, World } from '../engine/types';
 import { advanceDay, advanceToUserMatch, applyMatch, createWorld, prepareMatch, type SeasonInput, decidesOnDraw } from '../engine/world';
+import { levelOf, poolOf } from '../engine/pyramid';
 import { playToEnd, reshapeTeam, setFormation, setTactics, slotOrder, step, substitute, swapSlots, type MatchState, type TeamInMatch } from '../engine/match';
 import type { Instr } from '../engine/types';
 import { createRng, type Rng } from '../engine/rng';
@@ -105,7 +106,15 @@ async function loadSeasonInput(season: string, mustInclude?: string): Promise<Se
   const prev = `${y}-${String((y + 1) % 100).padStart(2, '0')}`;
   const prevStandings: Record<string, string[]> = {};
   for (const id of ids) { const st = await loadStandings(prev, id); if (st) prevStandings[id] = st; }
-  return { season, leagues: loaded, prevStandings, worldCups: worldCupsMeta, managers: await loadManagers() };
+  // 아래 리그 대기열: 직전 시즌 2부에 있다가 이번 시즌 1부 · 2부에 없는 구단 (실제로 3부로 강등) → 데이터가 끝난 뒤 2부를 채운다
+  const here = new Set(loaded.flatMap((l) => l.clubs.map((c) => c.club)));
+  const pools: NonNullable<SeasonInput['pools']> = [];
+  for (const id of ids) {
+    if (levelOf(id) !== 2 || !availableSeasons(id).includes(prev)) continue;
+    const gone = (await loadLeagueSeason(prev, id)).clubs.filter((c) => !here.has(c.club));
+    if (gone.length) pools.push({ league: poolOf(id), clubs: gone });
+  }
+  return { season, leagues: loaded, prevStandings, worldCups: worldCupsMeta, managers: await loadManagers(), ...(pools.length ? { pools } : {}) };
 }
 
 // 자동 저장: 진행 중 연속 호출을 묶어서 한 번만

@@ -652,34 +652,6 @@
     },
     {
       "attrs": {
-        "aer": 60,
-        "com": 64,
-        "dri": 58,
-        "ldr": 61,
-        "pac": 63,
-        "pas": 56,
-        "pos": 61,
-        "sho": 69,
-        "sta": 59,
-        "str": 66,
-        "tac": 35,
-        "vis": 55
-      },
-      "birth": "1972-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p1kc5s2p",
-      "name": "Christophe Sanchaz",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4000,
-      "weight": 81
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 71,
         "dri": 63,
@@ -703,33 +675,6 @@
       "number": null,
       "pos": "DM",
       "wage": 5000
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 67,
-        "dri": 63,
-        "ldr": 60,
-        "pac": 61,
-        "pas": 52,
-        "pos": 61,
-        "sho": 63,
-        "sta": 58,
-        "str": 61,
-        "tac": 33,
-        "vis": 57
-      },
-      "birth": "1981-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p0nr2asl",
-      "name": "Herve Bognet",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 3000,
-      "weight": 68
     },
     {
       "attrs": {
@@ -927,34 +872,6 @@
       "pos": "CB",
       "wage": 2000,
       "weight": 66
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 54,
-        "dri": 42,
-        "ldr": 58,
-        "pac": 52,
-        "pas": 49,
-        "pos": 63,
-        "sho": 30,
-        "sta": 56,
-        "str": 62,
-        "tac": 61,
-        "vis": 45
-      },
-      "birth": "1981-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p07yu4ik",
-      "name": "Patrick Leugoeun",
-      "nation": "FRA",
-      "nation2": "CMR",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000
     },
     {
       "attrs": {

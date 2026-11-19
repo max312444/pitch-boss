@@ -607,33 +607,6 @@
       "number": 35,
       "pos": "AM",
       "wage": 3000
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 61,
-        "dri": 57,
-        "ldr": 52,
-        "pac": 56,
-        "pas": 48,
-        "pos": 56,
-        "sho": 62,
-        "sta": 55,
-        "str": 60,
-        "tac": 30,
-        "vis": 48
-      },
-      "birth": "1991-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p00wgzus",
-      "name": "Danijel Alaksic",
-      "nation": "SRB",
-      "number": null,
-      "pos": "ST",
-      "wage": 3500,
-      "weight": 78
     }
   ],
   "stadiumCapacity": 18500

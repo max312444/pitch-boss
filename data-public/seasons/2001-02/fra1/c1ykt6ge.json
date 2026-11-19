@@ -489,36 +489,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 58,
-        "com": 66,
-        "dri": 63,
-        "ldr": 63,
-        "pac": 61,
-        "pas": 66,
-        "pos": 62,
-        "sho": 60,
-        "sta": 68,
-        "str": 65,
-        "tac": 64,
-        "vis": 71
-      },
-      "birth": "1975-06-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1861dfg",
-      "name": "Xavier Dablamont",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 56,
         "com": 67,
         "dri": 67,

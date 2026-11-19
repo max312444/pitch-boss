@@ -78,34 +78,6 @@
       "weight": 95
     },
     {
-      "attrs": {
-        "aer": 70,
-        "com": 76,
-        "dri": 74,
-        "ldr": 69,
-        "pac": 74,
-        "pas": 64,
-        "pos": 71,
-        "sho": 78,
-        "sta": 72,
-        "str": 71,
-        "tac": 41,
-        "vis": 68
-      },
-      "birth": "1973-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p0pdxf4e",
-      "name": "Zisis Vryzes",
-      "nation": "GRE",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 18500,
-      "weight": 80
-    },
-    {
       "alt": [
         "CM",
         "RW",
@@ -169,35 +141,6 @@
       "verify": true,
       "wage": 18500,
       "weight": 79
-    },
-    {
-      "attrs": {
-        "aer": 81,
-        "com": 70,
-        "dri": 58,
-        "ldr": 74,
-        "pac": 71,
-        "pas": 70,
-        "pos": 77,
-        "sho": 51,
-        "sta": 71,
-        "str": 75,
-        "tac": 78,
-        "vis": 61
-      },
-      "birth": "1975-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0a6kb42",
-      "name": "Rahman Razaei",
-      "nation": "IRN",
-      "nation2": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 18000,
-      "weight": 80
     },
     {
       "alt": [
@@ -537,36 +480,6 @@
       "weight": 79
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 65,
-        "dri": 66,
-        "ldr": 61,
-        "pac": 64,
-        "pas": 70,
-        "pos": 62,
-        "sho": 61,
-        "sta": 71,
-        "str": 59,
-        "tac": 60,
-        "vis": 64
-      },
-      "birth": "1982-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 168,
-      "id": "p0838gcz",
-      "name": "Fabio Getti",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 4500,
-      "weight": 67
-    },
-    {
       "attrs": {
         "aer": 53,
         "com": 61,
@@ -738,34 +651,6 @@
       "verify": true,
       "wage": 3000,
       "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 61,
-        "dri": 52,
-        "ldr": 66,
-        "pac": 59,
-        "pas": 58,
-        "pos": 63,
-        "sho": 33,
-        "sta": 62,
-        "str": 63,
-        "tac": 66,
-        "vis": 49
-      },
-      "birth": "1971-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0g2dcpi",
-      "name": "Sean Soglieno",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2500,
-      "weight": 73
     },
     {
       "attrs": {
@@ -1056,34 +941,6 @@
       "pos": "ST",
       "verify": true,
       "wage": 1500
-    },
-    {
-      "attrs": {
-        "aer": 56,
-        "com": 62,
-        "dri": 64,
-        "ldr": 62,
-        "pac": 62,
-        "pas": 65,
-        "pos": 63,
-        "sho": 58,
-        "sta": 69,
-        "str": 56,
-        "tac": 63,
-        "vis": 68
-      },
-      "birth": "1979-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1ksoaez",
-      "name": "Luigi Paglyuca",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2000,
-      "weight": 73
     }
   ],
   "stadiumCapacity": 28000

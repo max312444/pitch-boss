@@ -318,34 +318,6 @@
     },
     {
       "attrs": {
-        "aer": 72,
-        "com": 74,
-        "dri": 73,
-        "ldr": 67,
-        "pac": 70,
-        "pas": 63,
-        "pos": 72,
-        "sho": 74,
-        "sta": 69,
-        "str": 74,
-        "tac": 41,
-        "vis": 63
-      },
-      "birth": "1981-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p10y9m7v",
-      "name": "Luciano Fygueroa",
-      "nation": "ARG",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 19000,
-      "weight": 72
-    },
-    {
-      "attrs": {
         "aer": 74,
         "com": 65,
         "dri": 58,
@@ -450,37 +422,6 @@
       "pos": "DM",
       "wage": 17000,
       "weight": 73
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 63,
-        "com": 72,
-        "dri": 72,
-        "ldr": 71,
-        "pac": 71,
-        "pas": 79,
-        "pos": 69,
-        "sho": 70,
-        "sta": 73,
-        "str": 67,
-        "tac": 68,
-        "vis": 72
-      },
-      "birth": "1978-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 171,
-      "id": "p1tn0rld",
-      "name": "Javier Celleja",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 14500,
-      "weight": 70
     },
     {
       "attrs": {
@@ -874,36 +815,6 @@
       "verify": true,
       "wage": 8000,
       "weight": 73
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 62,
-        "dri": 67,
-        "ldr": 60,
-        "pac": 70,
-        "pas": 64,
-        "pos": 45,
-        "sho": 67,
-        "sta": 65,
-        "str": 55,
-        "tac": 45,
-        "vis": 64
-      },
-      "birth": "1986-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p084y8hl",
-      "name": "Xisco Nadel",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 6000
     },
     {
       "attrs": {

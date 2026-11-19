@@ -281,37 +281,6 @@
       "weight": 76
     },
     {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 65,
-        "com": 74,
-        "dri": 71,
-        "ldr": 73,
-        "pac": 70,
-        "pas": 76,
-        "pos": 76,
-        "sho": 71,
-        "sta": 79,
-        "str": 71,
-        "tac": 73,
-        "vis": 75
-      },
-      "birth": "1978-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p0fhe1b0",
-      "name": "Alberto Rivere",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 17500
-    },
-    {
       "attrs": {
         "aer": 68,
         "com": 71,
@@ -648,33 +617,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 70,
-        "han": 74,
-        "ldr": 70,
-        "one": 74,
-        "pac": 56,
-        "pas": 64,
-        "pos": 74,
-        "ref": 73,
-        "sta": 60,
-        "str": 65,
-        "vis": 59
-      },
-      "birth": "1981-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p1uttiiq",
-      "name": "Cedric Cerrasso",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "wage": 6500,
-      "weight": 87
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 74,
         "dri": 66,
@@ -760,35 +702,6 @@
       "wage": 6000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 64,
-        "dri": 67,
-        "ldr": 65,
-        "pac": 58,
-        "pas": 68,
-        "pos": 64,
-        "sho": 57,
-        "sta": 68,
-        "str": 61,
-        "tac": 61,
-        "vis": 70
-      },
-      "birth": "1975-12-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0snbmlq",
-      "name": "Mickael Marsiglie",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 6500
-    },
-    {
       "attrs": {
         "aer": 64,
         "com": 68,
@@ -871,33 +784,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 5000
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 61,
-        "dri": 59,
-        "ldr": 59,
-        "pac": 63,
-        "pas": 55,
-        "pos": 58,
-        "sho": 68,
-        "sta": 61,
-        "str": 62,
-        "tac": 33,
-        "vis": 52
-      },
-      "birth": "1978-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0sgw6x9",
-      "name": "Guillaume Deschemps",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000
     },
     {
       "alt": [

@@ -1,0 +1,33 @@
+{
+  "city": "Cartagena",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "CAN",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1995,
+  "id": "cdvw657",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "FC 카르터헤나",
+  "name": "FC Cartegena",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "CAN"
+}

@@ -717,37 +717,6 @@
     },
     {
       "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 68,
-        "dri": 74,
-        "ldr": 62,
-        "pac": 72,
-        "pas": 70,
-        "pos": 52,
-        "sho": 66,
-        "sta": 66,
-        "str": 59,
-        "tac": 42,
-        "vis": 65
-      },
-      "birth": "1979-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p1lsas1x",
-      "name": "David Cuallar",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 5000,
-      "weight": 63
-    },
-    {
-      "alt": [
         "ST",
         "CM",
         "DM"
@@ -859,60 +828,6 @@
       "verify": true,
       "wage": 4500,
       "weight": 76
-    },
-    {
-      "attrs": {
-        "aer": 56,
-        "com": 60,
-        "dri": 60,
-        "ldr": 58,
-        "pac": 68,
-        "pas": 61,
-        "pos": 62,
-        "sho": 46,
-        "sta": 66,
-        "str": 59,
-        "tac": 68,
-        "vis": 61
-      },
-      "birth": "1980-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0xa8ayr",
-      "name": "Unai Expusito",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RB",
-      "wage": 4000,
-      "weight": 70
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 67,
-        "dri": 61,
-        "ldr": 64,
-        "pac": 65,
-        "pas": 57,
-        "pos": 64,
-        "sho": 68,
-        "sta": 65,
-        "str": 68,
-        "tac": 37,
-        "vis": 61
-      },
-      "birth": "1978-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1tnw4t5",
-      "name": "David Karanke",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3500
     },
     {
       "alt": [

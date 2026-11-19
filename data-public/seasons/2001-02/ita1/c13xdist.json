@@ -140,35 +140,6 @@
     },
     {
       "attrs": {
-        "aer": 69,
-        "com": 71,
-        "dri": 70,
-        "ldr": 68,
-        "pac": 71,
-        "pas": 66,
-        "pos": 73,
-        "sho": 74,
-        "sta": 68,
-        "str": 72,
-        "tac": 45,
-        "vis": 66
-      },
-      "birth": "1969-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1fwbtve",
-      "name": "Luis Olivaira",
-      "nation": "BEL",
-      "nation2": "BRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 13000,
-      "weight": 71
-    },
-    {
-      "attrs": {
         "aer": 64,
         "com": 71,
         "dri": 70,
@@ -778,34 +749,6 @@
       "pos": "ST",
       "wage": 2000,
       "weight": 90
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 60,
-        "dri": 49,
-        "ldr": 61,
-        "pac": 59,
-        "pas": 55,
-        "pos": 66,
-        "sho": 37,
-        "sta": 59,
-        "str": 66,
-        "tac": 67,
-        "vis": 48
-      },
-      "birth": "1968-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0tffw8m",
-      "name": "Giuvanni Bia",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3000,
-      "weight": 73
     },
     {
       "attrs": {

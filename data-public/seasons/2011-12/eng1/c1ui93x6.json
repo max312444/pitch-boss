@@ -49,34 +49,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 68,
-        "han": 66,
-        "ldr": 65,
-        "one": 69,
-        "pac": 52,
-        "pas": 61,
-        "pos": 69,
-        "ref": 69,
-        "sta": 55,
-        "str": 67,
-        "vis": 55
-      },
-      "birth": "1985-09-01",
-      "contract": "2014-06-30",
-      "foot": "R",
-      "height": 191,
-      "id": "p1h7pu08",
-      "name": "David Stuckdale",
-      "nation": "ENG",
-      "number": 24,
-      "pos": "GK",
-      "verify": true,
-      "wage": 21000,
-      "weight": 84
-    },
-    {
-      "attrs": {
         "aer": 60,
         "com": 61,
         "han": 65,

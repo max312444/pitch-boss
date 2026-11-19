@@ -450,36 +450,6 @@
       "weight": 69
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 74,
-        "dri": 70,
-        "ldr": 68,
-        "pac": 64,
-        "pas": 72,
-        "pos": 68,
-        "sho": 68,
-        "sta": 75,
-        "str": 69,
-        "tac": 69,
-        "vis": 74
-      },
-      "birth": "1972-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0yipevv",
-      "name": "Francisco Casteno",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 12500
-    },
-    {
       "attrs": {
         "aer": 67,
         "com": 72,
@@ -529,7 +499,7 @@
       "foot": null,
       "height": 173,
       "id": "p1g2nsau",
-      "name": "Johannes Karl Guðjonssun",
+      "name": "Joey Guðjonssun",
       "nation": "ISL",
       "number": null,
       "pos": "CM",
@@ -561,36 +531,6 @@
       "pos": "CB",
       "wage": 8500,
       "weight": 76
-    },
-    {
-      "alt": [
-        "CB"
-      ],
-      "attrs": {
-        "aer": 68,
-        "com": 72,
-        "dri": 68,
-        "ldr": 75,
-        "pac": 61,
-        "pas": 75,
-        "pos": 75,
-        "sho": 59,
-        "sta": 70,
-        "str": 72,
-        "tac": 70,
-        "vis": 70
-      },
-      "birth": "1981-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p1l6wl8f",
-      "name": "Arzo",
-      "nation": "ESP",
-      "number": null,
-      "pos": "DM",
-      "wage": 10500,
-      "weight": 78
     },
     {
       "alt": [
@@ -730,33 +670,6 @@
       "number": null,
       "pos": "CB",
       "wage": 5000
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 70,
-        "dri": 64,
-        "ldr": 61,
-        "pac": 69,
-        "pas": 59,
-        "pos": 66,
-        "sho": 69,
-        "sta": 65,
-        "str": 64,
-        "tac": 34,
-        "vis": 61
-      },
-      "birth": "1970-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1dcqp86",
-      "name": "Gabriel Ameto",
-      "nation": "ARG",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4000
     },
     {
       "attrs": {

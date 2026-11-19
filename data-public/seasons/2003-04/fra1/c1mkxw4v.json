@@ -677,35 +677,6 @@
       "wage": 4000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 69,
-        "dri": 62,
-        "ldr": 66,
-        "pac": 60,
-        "pas": 66,
-        "pos": 65,
-        "sho": 63,
-        "sta": 67,
-        "str": 59,
-        "tac": 63,
-        "vis": 69
-      },
-      "birth": "1977-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1wqhzja",
-      "name": "Gregory Ursole",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 4500
-    },
-    {
       "attrs": {
         "aer": 48,
         "com": 67,
@@ -842,36 +813,6 @@
       "number": null,
       "pos": "ST",
       "wage": 2000
-    },
-    {
-      "alt": [
-        "CM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 61,
-        "dri": 60,
-        "ldr": 62,
-        "pac": 53,
-        "pas": 64,
-        "pos": 64,
-        "sho": 51,
-        "sta": 67,
-        "str": 66,
-        "tac": 67,
-        "vis": 60
-      },
-      "birth": "1979-10-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0jvyz99",
-      "name": "Fabrice Levret",
-      "nation": "FRA",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 3500
     },
     {
       "attrs": {

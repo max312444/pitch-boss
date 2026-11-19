@@ -1,0 +1,33 @@
+{
+  "city": "Valenton",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "SPO",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1936,
+  "id": "c19l00i6",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "US 크레테유-뤼세타노",
+  "name": "Union Sportiva Creteil Football",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "SPO"
+}

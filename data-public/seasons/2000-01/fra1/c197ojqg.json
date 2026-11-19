@@ -389,33 +389,6 @@
       "wage": 5000
     },
     {
-      "attrs": {
-        "aer": 63,
-        "com": 63,
-        "dri": 48,
-        "ldr": 66,
-        "pac": 54,
-        "pas": 58,
-        "pos": 64,
-        "sho": 34,
-        "sta": 62,
-        "str": 64,
-        "tac": 64,
-        "vis": 52
-      },
-      "birth": "1967-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p116aame",
-      "name": "Jean-Luc Dogun",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5500
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -470,34 +443,6 @@
       "pos": "ST",
       "verify": true,
       "wage": 3500
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 65,
-        "dri": 57,
-        "ldr": 67,
-        "pac": 62,
-        "pas": 60,
-        "pos": 69,
-        "sho": 39,
-        "sta": 63,
-        "str": 71,
-        "tac": 68,
-        "vis": 54
-      },
-      "birth": "1971-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0c6i800",
-      "name": "Philippe Brinquyn",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3500,
-      "weight": 70
     },
     {
       "alt": [
@@ -756,36 +701,6 @@
     },
     {
       "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 64,
-        "dri": 70,
-        "ldr": 62,
-        "pac": 70,
-        "pas": 63,
-        "pos": 47,
-        "sho": 60,
-        "sta": 64,
-        "str": 54,
-        "tac": 41,
-        "vis": 62
-      },
-      "birth": "1979-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0x1mp39",
-      "name": "Fabrice Fernandas",
-      "nation": "FRA",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 3500
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {
@@ -870,35 +785,6 @@
       "wage": 3000
     },
     {
-      "alt": [
-        "ST"
-      ],
-      "attrs": {
-        "aer": 66,
-        "com": 60,
-        "dri": 45,
-        "ldr": 67,
-        "pac": 55,
-        "pas": 54,
-        "pos": 67,
-        "sho": 36,
-        "sta": 59,
-        "str": 63,
-        "tac": 65,
-        "vis": 51
-      },
-      "birth": "1976-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p1htdzqf",
-      "name": "Benoit Le Brys",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 2000
-    },
-    {
       "attrs": {
         "aer": 65,
         "com": 59,
@@ -922,36 +808,6 @@
       "nation": "FRA",
       "number": null,
       "pos": "CB",
-      "wage": 2000
-    },
-    {
-      "alt": [
-        "CM",
-        "DM"
-      ],
-      "attrs": {
-        "aer": 44,
-        "com": 63,
-        "dri": 62,
-        "ldr": 58,
-        "pac": 59,
-        "pas": 64,
-        "pos": 40,
-        "sho": 61,
-        "sta": 54,
-        "str": 50,
-        "tac": 35,
-        "vis": 64
-      },
-      "birth": "1980-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0bgzwbb",
-      "name": "Cyril Yepi",
-      "nation": "FRA",
-      "number": null,
-      "pos": "AM",
       "wage": 2000
     },
     {

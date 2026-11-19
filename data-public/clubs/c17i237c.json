@@ -1,0 +1,33 @@
+{
+  "city": "Doncaster",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#FF0000",
+      "#FF0000"
+    ],
+    "mark": "DON",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1879,
+  "id": "c17i237c",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FF0000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#FF0000"
+    }
+  },
+  "ko": "동커스타 로버스 FC",
+  "name": "Doncester Rovers F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "DON"
+}

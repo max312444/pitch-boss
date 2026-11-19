@@ -530,36 +530,6 @@
       "weight": 80
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 67,
-        "dri": 72,
-        "ldr": 63,
-        "pac": 75,
-        "pas": 69,
-        "pos": 50,
-        "sho": 68,
-        "sta": 69,
-        "str": 57,
-        "tac": 46,
-        "vis": 66
-      },
-      "birth": "1987-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p13kxgpq",
-      "name": "Alessio Carci",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RW",
-      "wage": 27500,
-      "weight": 78
-    },
-    {
       "attrs": {
         "aer": 74,
         "com": 76,
@@ -762,33 +732,6 @@
       "weight": 75
     },
     {
-      "attrs": {
-        "aer": 59,
-        "com": 66,
-        "dri": 68,
-        "ldr": 69,
-        "pac": 72,
-        "pas": 69,
-        "pos": 70,
-        "sho": 53,
-        "sta": 73,
-        "str": 62,
-        "tac": 67,
-        "vis": 59
-      },
-      "birth": "1984-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1nnnimj",
-      "name": "Gianluca Galassu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RB",
-      "wage": 7500,
-      "weight": 74
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -817,36 +760,6 @@
       "pos": "CM",
       "wage": 8500,
       "weight": 69
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 68,
-        "dri": 60,
-        "ldr": 61,
-        "pac": 58,
-        "pas": 64,
-        "pos": 61,
-        "sho": 57,
-        "sta": 66,
-        "str": 57,
-        "tac": 63,
-        "vis": 65
-      },
-      "birth": "1986-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p03g8s8m",
-      "name": "Leandro Graco",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 7500,
-      "weight": 75
     },
     {
       "attrs": {
@@ -932,33 +845,6 @@
       "pos": "CM",
       "wage": 7000,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 56,
-        "dri": 39,
-        "ldr": 60,
-        "pac": 50,
-        "pas": 48,
-        "pos": 57,
-        "sho": 29,
-        "sta": 54,
-        "str": 61,
-        "tac": 57,
-        "vis": 41
-      },
-      "birth": "1986-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1m959iz",
-      "name": "Andrea Bryotti",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000
     }
   ],
   "stadiumCapacity": 70634

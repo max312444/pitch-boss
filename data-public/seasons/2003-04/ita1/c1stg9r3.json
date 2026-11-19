@@ -374,34 +374,6 @@
     },
     {
       "attrs": {
-        "aer": 66,
-        "com": 68,
-        "dri": 69,
-        "ldr": 63,
-        "pac": 73,
-        "pas": 60,
-        "pos": 66,
-        "sho": 72,
-        "sta": 69,
-        "str": 71,
-        "tac": 38,
-        "vis": 64
-      },
-      "birth": "1974-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0jusuky",
-      "name": "Andrea Fabbryni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4500,
-      "weight": 80
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 64,
         "dri": 48,
@@ -513,34 +485,6 @@
       "weight": 78
     },
     {
-      "attrs": {
-        "aer": 66,
-        "com": 61,
-        "dri": 45,
-        "ldr": 61,
-        "pac": 57,
-        "pas": 55,
-        "pos": 67,
-        "sho": 34,
-        "sta": 57,
-        "str": 67,
-        "tac": 65,
-        "vis": 46
-      },
-      "birth": "1982-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p0wf6n32",
-      "name": "Alessandro Zamparini",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3000,
-      "weight": 86
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -627,89 +571,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 63,
-        "dri": 58,
-        "ldr": 55,
-        "pac": 62,
-        "pas": 52,
-        "pos": 59,
-        "sho": 66,
-        "sta": 59,
-        "str": 61,
-        "tac": 34,
-        "vis": 54
-      },
-      "birth": "1972-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1tk77zf",
-      "name": "Carlo Taldu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2000
-    },
-    {
-      "attrs": {
-        "aer": 49,
-        "com": 59,
-        "dri": 62,
-        "ldr": 57,
-        "pac": 60,
-        "pas": 64,
-        "pos": 61,
-        "sho": 56,
-        "sta": 65,
-        "str": 59,
-        "tac": 61,
-        "vis": 60
-      },
-      "birth": "1971-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p1cat721",
-      "name": "Marcello Albyno",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3500,
-      "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 51,
-        "com": 61,
-        "dri": 56,
-        "ldr": 56,
-        "pac": 56,
-        "pas": 65,
-        "pos": 60,
-        "sho": 55,
-        "sta": 61,
-        "str": 53,
-        "tac": 57,
-        "vis": 63
-      },
-      "birth": "1971-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 167,
-      "id": "p08x9q6m",
-      "name": "Rubens Pesino",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3500,
-      "weight": 66
-    },
-    {
-      "attrs": {
         "aer": 41,
         "com": 56,
         "dri": 59,
@@ -735,34 +596,6 @@
       "verify": true,
       "wage": 2000,
       "weight": 70
-    },
-    {
-      "attrs": {
-        "aer": 43,
-        "com": 51,
-        "dri": 49,
-        "ldr": 52,
-        "pac": 48,
-        "pas": 54,
-        "pos": 47,
-        "sho": 42,
-        "sta": 51,
-        "str": 43,
-        "tac": 47,
-        "vis": 54
-      },
-      "birth": "1967-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1u11yao",
-      "name": "Giacomo Farrari",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2000,
-      "weight": 84
     }
   ],
   "stadiumCapacity": 21151

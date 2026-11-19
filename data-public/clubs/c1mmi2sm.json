@@ -1,0 +1,33 @@
+{
+  "city": "Nocera Inferiore",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "NOC",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1988,
+  "id": "c1mmi2sm",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "ASG 노체레나",
+  "name": "ASG Nocarina",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "NOC"
+}

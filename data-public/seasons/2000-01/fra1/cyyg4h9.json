@@ -167,38 +167,6 @@
       "wage": 46000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 66,
-        "com": 77,
-        "dri": 78,
-        "ldr": 76,
-        "pac": 73,
-        "pas": 81,
-        "pos": 79,
-        "sho": 74,
-        "sta": 78,
-        "str": 71,
-        "tac": 75,
-        "vis": 79
-      },
-      "birth": "1980-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0ecdlf2",
-      "name": "Seydou Keite",
-      "nation": "MLI",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 52000,
-      "weight": 77
-    },
-    {
       "attrs": {
         "aer": 81,
         "com": 77,
@@ -310,33 +278,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 44000
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 72,
-        "dri": 66,
-        "ldr": 69,
-        "pac": 71,
-        "pas": 65,
-        "pos": 66,
-        "sho": 71,
-        "sta": 68,
-        "str": 70,
-        "tac": 42,
-        "vis": 62
-      },
-      "birth": "1973-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1qe291g",
-      "name": "Arthur Mosas",
-      "nation": "GHA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 22000
     },
     {
       "alt": [
@@ -476,34 +417,6 @@
       "number": null,
       "pos": "RB",
       "wage": 17500
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 63,
-        "dri": 56,
-        "ldr": 70,
-        "pac": 64,
-        "pas": 61,
-        "pos": 70,
-        "sho": 41,
-        "sta": 66,
-        "str": 68,
-        "tac": 71,
-        "vis": 55
-      },
-      "birth": "1969-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1phii1o",
-      "name": "Jean-Pierre Ciprien",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 19000,
-      "weight": 77
     },
     {
       "attrs": {
@@ -1034,33 +947,6 @@
     },
     {
       "attrs": {
-        "aer": 57,
-        "com": 61,
-        "dri": 57,
-        "ldr": 58,
-        "pac": 64,
-        "pas": 52,
-        "pos": 61,
-        "sho": 65,
-        "sta": 61,
-        "str": 62,
-        "tac": 29,
-        "vis": 53
-      },
-      "birth": "1978-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 171,
-      "id": "p1j8weiq",
-      "name": "Cedric Muuret",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 4500,
-      "weight": 62
-    },
-    {
-      "attrs": {
         "aer": 60,
         "com": 65,
         "dri": 58,
@@ -1086,32 +972,6 @@
       "verify": true,
       "wage": 4000,
       "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 56,
-        "dri": 42,
-        "ldr": 60,
-        "pac": 56,
-        "pas": 54,
-        "pos": 59,
-        "sho": 31,
-        "sta": 52,
-        "str": 60,
-        "tac": 61,
-        "vis": 43
-      },
-      "birth": "1980-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1f0xm63",
-      "name": "Loris Raina",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 4500
     },
     {
       "alt": [

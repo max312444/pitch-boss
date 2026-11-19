@@ -347,37 +347,6 @@
     },
     {
       "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 65,
-        "com": 75,
-        "dri": 69,
-        "ldr": 73,
-        "pac": 67,
-        "pas": 75,
-        "pos": 70,
-        "sho": 63,
-        "sta": 71,
-        "str": 69,
-        "tac": 68,
-        "vis": 72
-      },
-      "birth": "1974-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p08y1v1v",
-      "name": "Jose Caledo",
-      "nation": "POR",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 20000
-    },
-    {
-      "alt": [
         "CB"
       ],
       "attrs": {
@@ -846,33 +815,6 @@
       "number": null,
       "pos": "CM",
       "wage": 7000
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 66,
-        "dri": 68,
-        "ldr": 66,
-        "pac": 67,
-        "pas": 57,
-        "pos": 66,
-        "sho": 72,
-        "sta": 65,
-        "str": 71,
-        "tac": 35,
-        "vis": 58
-      },
-      "birth": "1981-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0m38sfv",
-      "name": "Tati Maldonedo",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 4500,
-      "weight": 76
     },
     {
       "alt": [

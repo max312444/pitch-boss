@@ -830,33 +830,6 @@
     },
     {
       "attrs": {
-        "aer": 61,
-        "com": 68,
-        "han": 68,
-        "ldr": 65,
-        "one": 66,
-        "pac": 47,
-        "pas": 55,
-        "pos": 64,
-        "ref": 69,
-        "sta": 52,
-        "str": 60,
-        "vis": 52
-      },
-      "birth": "1964-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p1353a3g",
-      "name": "Marco Ballutta",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "wage": 6000,
-      "weight": 78
-    },
-    {
-      "attrs": {
         "aer": 59,
         "com": 67,
         "han": 68,

@@ -75,33 +75,6 @@
     },
     {
       "attrs": {
-        "aer": 69,
-        "com": 71,
-        "han": 72,
-        "ldr": 66,
-        "one": 70,
-        "pac": 53,
-        "pas": 59,
-        "pos": 68,
-        "ref": 69,
-        "sta": 58,
-        "str": 65,
-        "vis": 55
-      },
-      "birth": "1969-09-01",
-      "contract": "2004-06-30",
-      "foot": "R",
-      "height": 191,
-      "id": "p19zl1l9",
-      "name": "Nico Veesen",
-      "nation": "BEL",
-      "number": 32,
-      "pos": "GK",
-      "verify": true,
-      "wage": 21500
-    },
-    {
-      "attrs": {
         "aer": 65,
         "com": 72,
         "dri": 68,

@@ -1,0 +1,33 @@
+{
+  "city": "Yeovil",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "YEU",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1895,
+  "id": "cuiy52q",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "요벨 타운 FC",
+  "name": "Yeuvil Town F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "YEU"
+}

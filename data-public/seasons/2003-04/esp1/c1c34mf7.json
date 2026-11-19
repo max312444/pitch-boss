@@ -220,36 +220,6 @@
       "weight": 74
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 67,
-        "com": 71,
-        "dri": 74,
-        "ldr": 75,
-        "pac": 70,
-        "pas": 78,
-        "pos": 71,
-        "sho": 65,
-        "sta": 77,
-        "str": 67,
-        "tac": 70,
-        "vis": 76
-      },
-      "birth": "1972-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1by9jyb",
-      "name": "Roberto Acune",
-      "nation": "ARG",
-      "nation2": "PAR",
-      "number": null,
-      "pos": "CM",
-      "wage": 41000
-    },
-    {
       "attrs": {
         "aer": 81,
         "com": 74,
@@ -442,32 +412,6 @@
       "pos": "RM",
       "wage": 29000,
       "weight": 76
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 65,
-        "dri": 52,
-        "ldr": 66,
-        "pac": 65,
-        "pas": 63,
-        "pos": 70,
-        "sho": 44,
-        "sta": 61,
-        "str": 69,
-        "tac": 70,
-        "vis": 54
-      },
-      "birth": "1971-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0iahu7e",
-      "name": "Goran Đorovyc",
-      "nation": "SRB",
-      "number": null,
-      "pos": "CB",
-      "wage": 19500
     },
     {
       "attrs": {
@@ -693,62 +637,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 68,
-        "han": 70,
-        "ldr": 69,
-        "one": 67,
-        "pac": 48,
-        "pas": 56,
-        "pos": 71,
-        "ref": 72,
-        "sta": 57,
-        "str": 64,
-        "vis": 55
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0acee4i",
-      "name": "Dani Mallu",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "wage": 12500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 62,
-        "com": 69,
-        "dri": 67,
-        "ldr": 68,
-        "pac": 63,
-        "pas": 74,
-        "pos": 70,
-        "sho": 63,
-        "sta": 71,
-        "str": 64,
-        "tac": 70,
-        "vis": 72
-      },
-      "birth": "1971-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1crn8vi",
-      "name": "Fernando Senchez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 11500
-    },
-    {
-      "attrs": {
         "aer": 63,
         "com": 63,
         "han": 65,
@@ -854,32 +742,6 @@
       "number": null,
       "pos": "CB",
       "wage": 6000
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 68,
-        "dri": 61,
-        "ldr": 58,
-        "pac": 61,
-        "pas": 58,
-        "pos": 61,
-        "sho": 67,
-        "sta": 61,
-        "str": 67,
-        "tac": 35,
-        "vis": 58
-      },
-      "birth": "1977-04-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1v1a8u3",
-      "name": "Changuy",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 4000
     },
     {
       "alt": [

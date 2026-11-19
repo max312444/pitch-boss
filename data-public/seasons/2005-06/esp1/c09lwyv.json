@@ -761,64 +761,6 @@
       "wage": 5500
     },
     {
-      "attrs": {
-        "aer": 71,
-        "com": 61,
-        "dri": 55,
-        "ldr": 67,
-        "pac": 63,
-        "pas": 59,
-        "pos": 68,
-        "sho": 41,
-        "sta": 59,
-        "str": 69,
-        "tac": 70,
-        "vis": 54
-      },
-      "birth": "1982-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0o67oqy",
-      "name": "Miguel Angel Tana",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 51,
-        "com": 59,
-        "dri": 60,
-        "ldr": 60,
-        "pac": 59,
-        "pas": 61,
-        "pos": 62,
-        "sho": 55,
-        "sta": 60,
-        "str": 57,
-        "tac": 58,
-        "vis": 65
-      },
-      "birth": "1986-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1wy8bga",
-      "name": "Varza",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 5000,
-      "weight": 68
-    },
-    {
       "alt": [
         "DM"
       ],

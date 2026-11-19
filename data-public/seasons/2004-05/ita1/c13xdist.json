@@ -399,34 +399,6 @@
       "wage": 7500
     },
     {
-      "attrs": {
-        "aer": 70,
-        "com": 66,
-        "dri": 51,
-        "ldr": 67,
-        "pac": 63,
-        "pas": 58,
-        "pos": 71,
-        "sho": 39,
-        "sta": 62,
-        "str": 68,
-        "tac": 69,
-        "vis": 54
-      },
-      "birth": "1979-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p18u52ez",
-      "name": "Emanuele Troyse",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6000,
-      "weight": 72
-    },
-    {
       "alt": [
         "RW",
         "LW"

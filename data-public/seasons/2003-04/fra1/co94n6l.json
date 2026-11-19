@@ -429,38 +429,6 @@
       "weight": 72
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 63,
-        "com": 70,
-        "dri": 70,
-        "ldr": 70,
-        "pac": 67,
-        "pas": 75,
-        "pos": 74,
-        "sho": 65,
-        "sta": 75,
-        "str": 69,
-        "tac": 67,
-        "vis": 74
-      },
-      "birth": "1978-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p00r8d4a",
-      "name": "Abdelmajid Oulmars",
-      "nation": "FRA",
-      "nation2": "MAR",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 7500,
-      "weight": 66
-    },
-    {
       "attrs": {
         "aer": 59,
         "com": 67,

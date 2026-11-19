@@ -371,33 +371,6 @@
       "wage": 22500
     },
     {
-      "attrs": {
-        "aer": 61,
-        "com": 67,
-        "han": 68,
-        "ldr": 64,
-        "one": 64,
-        "pac": 50,
-        "pas": 56,
-        "pos": 64,
-        "ref": 69,
-        "sta": 53,
-        "str": 62,
-        "vis": 56
-      },
-      "birth": "1993-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p1y2yc0v",
-      "name": "Saturnin Allagba",
-      "nation": "BEN",
-      "nation2": "FRA",
-      "number": 16,
-      "pos": "GK",
-      "wage": 21500
-    },
-    {
       "alt": [
         "LW",
         "RB"

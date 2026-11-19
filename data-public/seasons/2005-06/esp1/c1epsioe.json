@@ -389,33 +389,6 @@
       "weight": 93
     },
     {
-      "attrs": {
-        "aer": 72,
-        "com": 75,
-        "dri": 68,
-        "ldr": 70,
-        "pac": 69,
-        "pas": 62,
-        "pos": 72,
-        "sho": 74,
-        "sta": 70,
-        "str": 70,
-        "tac": 42,
-        "vis": 62
-      },
-      "birth": "1974-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p1q4x361",
-      "name": "Fernando Corree",
-      "nation": "URU",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 14000
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -821,36 +794,6 @@
       "weight": 82
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 60,
-        "dri": 69,
-        "ldr": 62,
-        "pac": 66,
-        "pas": 65,
-        "pos": 45,
-        "sho": 63,
-        "sta": 63,
-        "str": 56,
-        "tac": 42,
-        "vis": 63
-      },
-      "birth": "1987-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0v8666t",
-      "name": "Carlos Cermona",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 6500
-    },
-    {
       "attrs": {
         "aer": 72,
         "com": 65,
@@ -1048,36 +991,6 @@
       "weight": 62
     },
     {
-      "alt": [
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 49,
-        "com": 66,
-        "dri": 70,
-        "ldr": 62,
-        "pac": 65,
-        "pas": 70,
-        "pos": 51,
-        "sho": 64,
-        "sta": 65,
-        "str": 59,
-        "tac": 45,
-        "vis": 67
-      },
-      "birth": "1982-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p07qn8ij",
-      "name": "Toni Gonzelez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "AM",
-      "wage": 5000
-    },
-    {
       "attrs": {
         "aer": 47,
         "com": 61,
@@ -1158,33 +1071,6 @@
       "verify": true,
       "wage": 3000,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 42,
-        "com": 50,
-        "dri": 58,
-        "ldr": 50,
-        "pac": 62,
-        "pas": 52,
-        "pos": 34,
-        "sho": 50,
-        "sta": 51,
-        "str": 48,
-        "tac": 34,
-        "vis": 51
-      },
-      "birth": "1987-06-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0iigwpu",
-      "name": "David Etu'o",
-      "nation": "CMR",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 2500
     }
   ],
   "stadiumCapacity": 25736

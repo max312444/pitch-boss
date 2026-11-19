@@ -759,35 +759,6 @@
       "pos": "ST",
       "wage": 19500,
       "weight": 88
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 48,
-        "com": 62,
-        "dri": 58,
-        "ldr": 58,
-        "pac": 57,
-        "pas": 60,
-        "pos": 55,
-        "sho": 50,
-        "sta": 63,
-        "str": 53,
-        "tac": 55,
-        "vis": 59
-      },
-      "birth": "1991-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1hks48e",
-      "name": "Enzo Reele",
-      "nation": "FRA",
-      "number": 48,
-      "pos": "CM",
-      "wage": 21000
     }
   ],
   "stadiumCapacity": 59286

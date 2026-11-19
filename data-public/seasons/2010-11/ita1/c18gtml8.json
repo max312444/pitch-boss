@@ -80,33 +80,6 @@
     },
     {
       "attrs": {
-        "aer": 51,
-        "com": 59,
-        "dri": 64,
-        "ldr": 62,
-        "pac": 61,
-        "pas": 67,
-        "pos": 51,
-        "sho": 56,
-        "sta": 66,
-        "str": 52,
-        "tac": 57,
-        "vis": 62
-      },
-      "birth": "1981-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p0y0iamp",
-      "name": "Marco Gurzegno",
-      "nation": "ITA",
-      "number": 3,
-      "pos": "LM",
-      "wage": 8500,
-      "weight": 83
-    },
-    {
-      "attrs": {
         "aer": 52,
         "com": 48,
         "dri": 37,

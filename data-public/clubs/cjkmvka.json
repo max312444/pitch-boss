@@ -1,0 +1,33 @@
+{
+  "city": "Wimbledon",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#0000FF",
+      "#FFFF00",
+      "#FFFF00"
+    ],
+    "mark": "WIM",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1889,
+  "id": "cjkmvka",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FFFF00",
+      "secondary": "#0000FF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#0000FF",
+      "secondary": "#FFFF00"
+    }
+  },
+  "ko": "윔불던 FC",
+  "name": "Wimbledun F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "WIM"
+}

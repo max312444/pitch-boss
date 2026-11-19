@@ -308,36 +308,6 @@
     },
     {
       "alt": [
-        "RWB"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 67,
-        "dri": 71,
-        "ldr": 70,
-        "pac": 79,
-        "pas": 72,
-        "pos": 73,
-        "sho": 56,
-        "sta": 77,
-        "str": 69,
-        "tac": 71,
-        "vis": 68
-      },
-      "birth": "1999-06-01",
-      "contract": "2026-06-30",
-      "foot": "R",
-      "height": 182,
-      "id": "p19aimus",
-      "name": "Mads Roerslav",
-      "nation": "DEN",
-      "number": 30,
-      "pos": "RB",
-      "verify": true,
-      "wage": 66500
-    },
-    {
-      "alt": [
         "DM",
         "AM"
       ],

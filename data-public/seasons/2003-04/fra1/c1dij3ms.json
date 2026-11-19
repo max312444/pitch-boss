@@ -386,33 +386,6 @@
       "wage": 7000
     },
     {
-      "attrs": {
-        "aer": 67,
-        "com": 65,
-        "dri": 50,
-        "ldr": 65,
-        "pac": 59,
-        "pas": 56,
-        "pos": 72,
-        "sho": 37,
-        "sta": 63,
-        "str": 69,
-        "tac": 72,
-        "vis": 53
-      },
-      "birth": "1975-04-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p03qno82",
-      "name": "Damien Bridonneao",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -803,60 +776,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 63,
-        "dri": 61,
-        "ldr": 56,
-        "pac": 61,
-        "pas": 56,
-        "pos": 58,
-        "sho": 65,
-        "sta": 60,
-        "str": 63,
-        "tac": 31,
-        "vis": 56
-      },
-      "birth": "1980-07-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p102x9l9",
-      "name": "Yohann Rengdet",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 58,
-        "dri": 47,
-        "ldr": 61,
-        "pac": 52,
-        "pas": 52,
-        "pos": 59,
-        "sho": 30,
-        "sta": 56,
-        "str": 60,
-        "tac": 60,
-        "vis": 42
-      },
-      "birth": "1971-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1wq7pzp",
-      "name": "Philippe Curreia",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000
     },
     {
       "attrs": {

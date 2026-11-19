@@ -393,33 +393,6 @@
       "weight": 69
     },
     {
-      "attrs": {
-        "aer": 56,
-        "com": 55,
-        "han": 58,
-        "ldr": 55,
-        "one": 59,
-        "pac": 39,
-        "pas": 43,
-        "pos": 59,
-        "ref": 57,
-        "sta": 47,
-        "str": 54,
-        "vis": 43
-      },
-      "birth": "1991-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0e26obg",
-      "name": "Lucas Veronesa",
-      "nation": "FRA",
-      "number": 16,
-      "pos": "GK",
-      "wage": 4000,
-      "weight": 72
-    },
-    {
       "alt": [
         "DM"
       ],

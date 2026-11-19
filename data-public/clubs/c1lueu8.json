@@ -1,0 +1,33 @@
+{
+  "city": "Albino",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "ALI",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1998,
+  "id": "c1lueu8",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "UC 알베노레페",
+  "name": "UC AlbinoLeffa",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "ALI"
+}

@@ -259,34 +259,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 72,
-        "dri": 63,
-        "ldr": 69,
-        "pac": 63,
-        "pas": 72,
-        "pos": 71,
-        "sho": 59,
-        "sta": 75,
-        "str": 68,
-        "tac": 74,
-        "vis": 69
-      },
-      "birth": "1975-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p1kdjls7",
-      "name": "Gianni Guigoo",
-      "nation": "URU",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 32500,
-      "weight": 72
-    },
-    {
-      "attrs": {
         "aer": 77,
         "com": 82,
         "dri": 76,
@@ -740,34 +712,6 @@
       "pos": "LB",
       "wage": 5500,
       "weight": 83
-    },
-    {
-      "attrs": {
-        "aer": 72,
-        "com": 71,
-        "dri": 59,
-        "ldr": 70,
-        "pac": 61,
-        "pas": 60,
-        "pos": 72,
-        "sho": 46,
-        "sta": 63,
-        "str": 74,
-        "tac": 71,
-        "vis": 57
-      },
-      "birth": "1974-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1g6wotm",
-      "name": "William Vyali",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500,
-      "weight": 79
     },
     {
       "attrs": {

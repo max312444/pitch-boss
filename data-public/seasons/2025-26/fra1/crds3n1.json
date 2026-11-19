@@ -189,38 +189,6 @@
       "wage": 23000
     },
     {
-      "alt": [
-        "ST",
-        "CM",
-        "DM"
-      ],
-      "attrs": {
-        "aer": 43,
-        "com": 63,
-        "dri": 66,
-        "ldr": 62,
-        "pac": 60,
-        "pas": 64,
-        "pos": 41,
-        "sho": 63,
-        "sta": 60,
-        "str": 48,
-        "tac": 41,
-        "vis": 65
-      },
-      "birth": "2000-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1macxk3",
-      "name": "Godson Kyeremah",
-      "nation": "FRA",
-      "nation2": "GHA",
-      "number": 11,
-      "pos": "AM",
-      "wage": 18500
-    },
-    {
       "attrs": {
         "aer": 55,
         "com": 63,

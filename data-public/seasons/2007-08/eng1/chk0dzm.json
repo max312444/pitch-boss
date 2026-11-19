@@ -501,34 +501,6 @@
       "weight": 76
     },
     {
-      "attrs": {
-        "aer": 67,
-        "com": 69,
-        "han": 71,
-        "ldr": 65,
-        "one": 69,
-        "pac": 50,
-        "pas": 61,
-        "pos": 69,
-        "ref": 71,
-        "sta": 53,
-        "str": 63,
-        "vis": 58
-      },
-      "birth": "1985-01-01",
-      "contract": "2009-06-30",
-      "foot": "R",
-      "height": 193,
-      "id": "p0q7vn3l",
-      "name": "Ross Turnboll",
-      "nation": "ENG",
-      "number": 21,
-      "pos": "GK",
-      "verify": true,
-      "wage": 20500,
-      "weight": 85
-    },
-    {
       "alt": [
         "CB",
         "LB",

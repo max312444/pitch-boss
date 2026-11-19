@@ -903,34 +903,6 @@
     },
     {
       "attrs": {
-        "aer": 70,
-        "com": 71,
-        "dri": 72,
-        "ldr": 64,
-        "pac": 73,
-        "pas": 63,
-        "pos": 72,
-        "sho": 71,
-        "sta": 66,
-        "str": 71,
-        "tac": 40,
-        "vis": 61
-      },
-      "birth": "1982-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1wu4d1b",
-      "name": "Tomas Guzmen",
-      "nation": "PAR",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 5500,
-      "weight": 70
-    },
-    {
-      "attrs": {
         "aer": 69,
         "com": 65,
         "dri": 54,
@@ -956,34 +928,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 6000
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 73,
-        "dri": 68,
-        "ldr": 65,
-        "pac": 69,
-        "pas": 62,
-        "pos": 70,
-        "sho": 69,
-        "sta": 66,
-        "str": 67,
-        "tac": 36,
-        "vis": 64
-      },
-      "birth": "1982-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1bwsnpe",
-      "name": "Vincent Paricard",
-      "nation": "FRA",
-      "nation2": "CMR",
-      "number": null,
-      "pos": "ST",
-      "wage": 4000,
-      "weight": 86
     }
   ],
   "stadiumCapacity": 41700

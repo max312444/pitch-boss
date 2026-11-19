@@ -552,62 +552,6 @@
     },
     {
       "attrs": {
-        "aer": 63,
-        "com": 68,
-        "dri": 65,
-        "ldr": 61,
-        "pac": 64,
-        "pas": 59,
-        "pos": 63,
-        "sho": 68,
-        "sta": 60,
-        "str": 67,
-        "tac": 33,
-        "vis": 61
-      },
-      "birth": "1978-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0iz6qrj",
-      "name": "Gorka Bryt",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 4500
-    },
-    {
-      "alt": [
-        "LWB"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 65,
-        "dri": 62,
-        "ldr": 60,
-        "pac": 68,
-        "pas": 66,
-        "pos": 64,
-        "sho": 53,
-        "sta": 73,
-        "str": 58,
-        "tac": 66,
-        "vis": 59
-      },
-      "birth": "1975-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1sjvzqw",
-      "name": "Gorka Gercia",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RWB",
-      "verify": true,
-      "wage": 5500
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 71,
         "dri": 67,
@@ -631,33 +575,6 @@
       "number": null,
       "pos": "ST",
       "wage": 4500
-    },
-    {
-      "attrs": {
-        "aer": 73,
-        "com": 66,
-        "dri": 52,
-        "ldr": 66,
-        "pac": 61,
-        "pas": 62,
-        "pos": 69,
-        "sho": 43,
-        "sta": 66,
-        "str": 71,
-        "tac": 68,
-        "vis": 53
-      },
-      "birth": "1975-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1pasfil",
-      "name": "Jose Manuel Matao",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6000
     },
     {
       "alt": [
@@ -782,36 +699,6 @@
       "verify": true,
       "wage": 7000,
       "weight": 70
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 67,
-        "dri": 65,
-        "ldr": 70,
-        "pac": 66,
-        "pas": 73,
-        "pos": 64,
-        "sho": 59,
-        "sta": 71,
-        "str": 62,
-        "tac": 66,
-        "vis": 71
-      },
-      "birth": "1972-12-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1qlqezr",
-      "name": "Alfredo Sanchaz",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6500
     },
     {
       "attrs": {

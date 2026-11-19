@@ -542,34 +542,6 @@
       "weight": 90
     },
     {
-      "attrs": {
-        "aer": 66,
-        "com": 67,
-        "dri": 67,
-        "ldr": 65,
-        "pac": 64,
-        "pas": 59,
-        "pos": 64,
-        "sho": 70,
-        "sta": 65,
-        "str": 70,
-        "tac": 38,
-        "vis": 56
-      },
-      "birth": "1972-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p15cymfc",
-      "name": "Filippo Manyero",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 5500,
-      "weight": 85
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -751,61 +723,6 @@
       "verify": true,
       "wage": 4000,
       "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 65,
-        "dri": 58,
-        "ldr": 60,
-        "pac": 65,
-        "pas": 52,
-        "pos": 57,
-        "sho": 68,
-        "sta": 58,
-        "str": 61,
-        "tac": 34,
-        "vis": 52
-      },
-      "birth": "1981-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1mvvsgz",
-      "name": "Mario Salgedo",
-      "nation": "CHI",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000,
-      "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 58,
-        "dri": 57,
-        "ldr": 53,
-        "pac": 60,
-        "pas": 50,
-        "pos": 58,
-        "sho": 63,
-        "sta": 57,
-        "str": 55,
-        "tac": 26,
-        "vis": 49
-      },
-      "birth": "1985-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0q3qdc4",
-      "name": "Andrea Alberty",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "wage": 2500,
-      "weight": 68
     },
     {
       "alt": [

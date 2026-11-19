@@ -737,35 +737,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 48,
-        "com": 58,
-        "dri": 56,
-        "ldr": 61,
-        "pac": 55,
-        "pas": 60,
-        "pos": 58,
-        "sho": 58,
-        "sta": 66,
-        "str": 57,
-        "tac": 59,
-        "vis": 63
-      },
-      "birth": "1998-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p1hs54y8",
-      "name": "Aboo Ba",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 13500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 45,
         "com": 55,
         "dri": 57,

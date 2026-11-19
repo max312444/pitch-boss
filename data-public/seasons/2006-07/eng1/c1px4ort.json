@@ -622,38 +622,6 @@
         "LB"
       ],
       "attrs": {
-        "aer": 62,
-        "com": 67,
-        "dri": 67,
-        "ldr": 63,
-        "pac": 74,
-        "pas": 63,
-        "pos": 66,
-        "sho": 50,
-        "sta": 75,
-        "str": 61,
-        "tac": 73,
-        "vis": 64
-      },
-      "birth": "1985-06-01",
-      "contract": "2008-06-30",
-      "foot": "R",
-      "height": 180,
-      "id": "p1jfgua9",
-      "name": "Phil Bardslei",
-      "nation": "SCO",
-      "nation2": "ENG",
-      "number": 26,
-      "pos": "RB",
-      "verify": true,
-      "wage": 20000,
-      "weight": 73
-    },
-    {
-      "alt": [
-        "LB"
-      ],
-      "attrs": {
         "aer": 91,
         "com": 84,
         "dri": 73,

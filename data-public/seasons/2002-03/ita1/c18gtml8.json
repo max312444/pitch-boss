@@ -252,37 +252,6 @@
       "weight": 88
     },
     {
-      "alt": [
-        "CB",
-        "RWB"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 67,
-        "dri": 66,
-        "ldr": 67,
-        "pac": 77,
-        "pas": 72,
-        "pos": 69,
-        "sho": 52,
-        "sta": 75,
-        "str": 69,
-        "tac": 72,
-        "vis": 63
-      },
-      "birth": "1981-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p0x74lee",
-      "name": "Marius Stankevicyus",
-      "nation": "LTU",
-      "number": null,
-      "pos": "RB",
-      "wage": 8500,
-      "weight": 85
-    },
-    {
       "attrs": {
         "aer": 75,
         "com": 70,
@@ -398,33 +367,6 @@
       "verify": true,
       "wage": 10000,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 75,
-        "com": 72,
-        "dri": 59,
-        "ldr": 76,
-        "pac": 64,
-        "pas": 65,
-        "pos": 73,
-        "sho": 47,
-        "sta": 72,
-        "str": 73,
-        "tac": 77,
-        "vis": 62
-      },
-      "birth": "1979-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 191,
-      "id": "p0bg6t0m",
-      "name": "Dario Deinelli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 6000,
-      "weight": 78
     },
     {
       "alt": [
@@ -547,36 +489,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 60,
-        "com": 74,
-        "dri": 71,
-        "ldr": 72,
-        "pac": 64,
-        "pas": 73,
-        "pos": 72,
-        "sho": 63,
-        "sta": 75,
-        "str": 64,
-        "tac": 68,
-        "vis": 75
-      },
-      "birth": "1974-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0uijsa6",
-      "name": "Andres Yllane",
-      "nation": "ARG",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 5000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 53,
         "com": 64,
         "dri": 61,
@@ -601,34 +513,6 @@
       "pos": "CM",
       "wage": 4500,
       "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 67,
-        "dri": 69,
-        "ldr": 67,
-        "pac": 74,
-        "pas": 69,
-        "pos": 69,
-        "sho": 53,
-        "sta": 76,
-        "str": 63,
-        "tac": 69,
-        "vis": 61
-      },
-      "birth": "1973-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0crrkyx",
-      "name": "Andrea Sossi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 3500,
-      "weight": 82
     },
     {
       "attrs": {
@@ -775,34 +659,6 @@
     {
       "attrs": {
         "aer": 63,
-        "com": 56,
-        "dri": 42,
-        "ldr": 62,
-        "pac": 55,
-        "pas": 48,
-        "pos": 62,
-        "sho": 32,
-        "sta": 54,
-        "str": 62,
-        "tac": 60,
-        "vis": 47
-      },
-      "birth": "1966-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p1doyb6l",
-      "name": "Alessandro Celori",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2500,
-      "weight": 86
-    },
-    {
-      "attrs": {
-        "aer": 63,
         "com": 61,
         "han": 64,
         "ldr": 64,
@@ -854,34 +710,6 @@
       "pos": "LB",
       "wage": 2500,
       "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 61,
-        "dri": 59,
-        "ldr": 56,
-        "pac": 59,
-        "pas": 53,
-        "pos": 59,
-        "sho": 63,
-        "sta": 57,
-        "str": 65,
-        "tac": 33,
-        "vis": 53
-      },
-      "birth": "1981-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1mvvsgz",
-      "name": "Mario Salgedo",
-      "nation": "CHI",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2000,
-      "weight": 78
     },
     {
       "alt": [

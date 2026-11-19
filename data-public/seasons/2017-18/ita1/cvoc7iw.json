@@ -701,36 +701,6 @@
       "weight": 72
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 80,
-        "com": 69,
-        "dri": 62,
-        "ldr": 77,
-        "pac": 71,
-        "pas": 67,
-        "pos": 79,
-        "sho": 49,
-        "sta": 67,
-        "str": 74,
-        "tac": 78,
-        "vis": 61
-      },
-      "birth": "1992-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p1sudmpj",
-      "name": "Norbert Giomber",
-      "nation": "SVK",
-      "number": null,
-      "pos": "CB",
-      "wage": 59000,
-      "weight": 74
-    },
-    {
       "attrs": {
         "aer": 72,
         "com": 62,

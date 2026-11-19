@@ -297,35 +297,6 @@
       "weight": 79
     },
     {
-      "alt": [
-        "RB"
-      ],
-      "attrs": {
-        "aer": 69,
-        "com": 77,
-        "dri": 72,
-        "ldr": 73,
-        "pac": 81,
-        "pas": 72,
-        "pos": 73,
-        "sho": 57,
-        "sta": 77,
-        "str": 73,
-        "tac": 79,
-        "vis": 73
-      },
-      "birth": "1973-03-01",
-      "contract": "2005-06-30",
-      "foot": "R",
-      "height": 175,
-      "id": "p1iexv8r",
-      "name": "Mauricio Tericco",
-      "nation": "ARG",
-      "number": 3,
-      "pos": "LB",
-      "wage": 27000
-    },
-    {
       "attrs": {
         "aer": 65,
         "com": 76,
@@ -536,32 +507,6 @@
       "pos": "RW",
       "wage": 41000,
       "weight": 76
-    },
-    {
-      "attrs": {
-        "aer": 54,
-        "com": 72,
-        "dri": 68,
-        "ldr": 64,
-        "pac": 65,
-        "pas": 70,
-        "pos": 49,
-        "sho": 72,
-        "sta": 66,
-        "str": 56,
-        "tac": 44,
-        "vis": 72
-      },
-      "birth": "1982-12-01",
-      "contract": "2005-06-30",
-      "foot": "L",
-      "height": 175,
-      "id": "p184fm3i",
-      "name": "Rohan Rickatts",
-      "nation": "ENG",
-      "number": 27,
-      "pos": "AM",
-      "wage": 13500
     },
     {
       "attrs": {

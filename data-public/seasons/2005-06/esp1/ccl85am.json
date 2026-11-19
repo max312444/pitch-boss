@@ -398,36 +398,6 @@
       "weight": 68
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 72,
-        "dri": 72,
-        "ldr": 67,
-        "pac": 67,
-        "pas": 74,
-        "pos": 73,
-        "sho": 63,
-        "sta": 73,
-        "str": 70,
-        "tac": 71,
-        "vis": 70
-      },
-      "birth": "1982-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0quxa56",
-      "name": "Libero Perri",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 11500
-    },
-    {
       "attrs": {
         "aer": 62,
         "com": 73,
@@ -564,33 +534,6 @@
     },
     {
       "attrs": {
-        "aer": 61,
-        "com": 63,
-        "dri": 66,
-        "ldr": 61,
-        "pac": 68,
-        "pas": 62,
-        "pos": 68,
-        "sho": 51,
-        "sta": 70,
-        "str": 60,
-        "tac": 65,
-        "vis": 62
-      },
-      "birth": "1978-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0ziex9y",
-      "name": "Cristian Alvaraz",
-      "nation": "ARG",
-      "number": null,
-      "pos": "RB",
-      "wage": 6000,
-      "weight": 73
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 67,
         "dri": 52,
@@ -678,90 +621,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 59,
-        "dri": 49,
-        "ldr": 66,
-        "pac": 58,
-        "pas": 54,
-        "pos": 67,
-        "sho": 36,
-        "sta": 62,
-        "str": 67,
-        "tac": 68,
-        "vis": 46
-      },
-      "birth": "1974-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1citg59",
-      "name": "Nero",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 5500
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 49,
-        "com": 58,
-        "dri": 68,
-        "ldr": 61,
-        "pac": 68,
-        "pas": 61,
-        "pos": 41,
-        "sho": 63,
-        "sta": 59,
-        "str": 56,
-        "tac": 39,
-        "vis": 64
-      },
-      "birth": "1978-10-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p174ff2k",
-      "name": "Pablo Siarra",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 7000
-    },
-    {
-      "attrs": {
-        "aer": 57,
-        "com": 60,
-        "dri": 62,
-        "ldr": 59,
-        "pac": 68,
-        "pas": 64,
-        "pos": 66,
-        "sho": 48,
-        "sta": 67,
-        "str": 59,
-        "tac": 70,
-        "vis": 56
-      },
-      "birth": "1983-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p1ddu6lg",
-      "name": "Pedro Lupez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 4000,
-      "weight": 72
-    },
-    {
-      "attrs": {
         "aer": 64,
         "com": 69,
         "dri": 60,
@@ -814,34 +673,6 @@
       "nation": "ESP",
       "number": null,
       "pos": "CM",
-      "wage": 5500
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 66,
-        "dri": 56,
-        "ldr": 66,
-        "pac": 64,
-        "pas": 58,
-        "pos": 71,
-        "sho": 41,
-        "sta": 65,
-        "str": 68,
-        "tac": 67,
-        "vis": 54
-      },
-      "birth": "1983-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0momiwl",
-      "name": "Frantz Bertyn",
-      "nation": "FRA",
-      "nation2": "HAI",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
       "wage": 5500
     },
     {

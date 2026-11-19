@@ -1,0 +1,33 @@
+{
+  "city": "Alcorcon",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "ALC",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1970,
+  "id": "c2tkjr2",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "AD 알쿠르콘",
+  "name": "AD Alcorcun",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "ALC"
+}

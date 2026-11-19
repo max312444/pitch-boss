@@ -569,40 +569,6 @@
       "weight": 76
     },
     {
-      "alt": [
-        "CB",
-        "RB",
-        "CM"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 71,
-        "dri": 70,
-        "ldr": 67,
-        "pac": 73,
-        "pas": 70,
-        "pos": 72,
-        "sho": 51,
-        "sta": 74,
-        "str": 70,
-        "tac": 74,
-        "vis": 68
-      },
-      "birth": "1981-03-01",
-      "contract": "2005-06-30",
-      "foot": "L",
-      "height": 180,
-      "id": "p15ojbgh",
-      "name": "Jlloyd Samoel",
-      "nation": "ENG",
-      "nation2": "TRI",
-      "number": 22,
-      "pos": "LB",
-      "verify": true,
-      "wage": 13500,
-      "weight": 72
-    },
-    {
       "attrs": {
         "aer": 74,
         "com": 69,

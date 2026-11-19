@@ -502,36 +502,6 @@
       "weight": 78
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 69,
-        "com": 81,
-        "dri": 76,
-        "ldr": 75,
-        "pac": 74,
-        "pas": 79,
-        "pos": 74,
-        "sho": 76,
-        "sta": 83,
-        "str": 77,
-        "tac": 75,
-        "vis": 80
-      },
-      "birth": "1976-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0epwzlg",
-      "name": "Alvaro Benitu",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 36500
-    },
-    {
       "attrs": {
         "aer": 74,
         "com": 78,

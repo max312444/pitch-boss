@@ -277,33 +277,6 @@
       "weight": 80
     },
     {
-      "attrs": {
-        "aer": 67,
-        "com": 71,
-        "dri": 67,
-        "ldr": 71,
-        "pac": 65,
-        "pas": 75,
-        "pos": 77,
-        "sho": 62,
-        "sta": 77,
-        "str": 69,
-        "tac": 71,
-        "vis": 71
-      },
-      "birth": "1977-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p1hr5l1x",
-      "name": "Kuami Agbuh",
-      "nation": "TOG",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "DM",
-      "wage": 14000
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -644,34 +617,6 @@
     },
     {
       "attrs": {
-        "aer": 58,
-        "com": 67,
-        "dri": 61,
-        "ldr": 59,
-        "pac": 63,
-        "pas": 54,
-        "pos": 60,
-        "sho": 65,
-        "sta": 56,
-        "str": 62,
-        "tac": 35,
-        "vis": 53
-      },
-      "birth": "1980-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1fanahc",
-      "name": "Romain Puyet",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 5000,
-      "weight": 76
-    },
-    {
-      "attrs": {
         "aer": 73,
         "com": 68,
         "dri": 53,
@@ -865,37 +810,6 @@
       "weight": 82
     },
     {
-      "alt": [
-        "CM",
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 60,
-        "dri": 60,
-        "ldr": 57,
-        "pac": 62,
-        "pas": 56,
-        "pos": 59,
-        "sho": 65,
-        "sta": 60,
-        "str": 64,
-        "tac": 30,
-        "vis": 55
-      },
-      "birth": "1980-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0qco3j6",
-      "name": "David Vandenbosscha",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 4500
-    },
-    {
       "attrs": {
         "aer": 65,
         "com": 65,
@@ -978,33 +892,6 @@
       "number": null,
       "pos": "AM",
       "wage": 2000
-    },
-    {
-      "attrs": {
-        "aer": 44,
-        "com": 57,
-        "dri": 62,
-        "ldr": 56,
-        "pac": 61,
-        "pas": 64,
-        "pos": 48,
-        "sho": 50,
-        "sta": 65,
-        "str": 53,
-        "tac": 52,
-        "vis": 62
-      },
-      "birth": "1973-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0gb4hfc",
-      "name": "Pierre Dablock",
-      "nation": "FRA",
-      "number": null,
-      "pos": "RM",
-      "verify": true,
-      "wage": 3000
     },
     {
       "alt": [

@@ -578,32 +578,6 @@
     },
     {
       "attrs": {
-        "aer": 60,
-        "com": 63,
-        "dri": 61,
-        "ldr": 60,
-        "pac": 61,
-        "pas": 52,
-        "pos": 60,
-        "sho": 62,
-        "sta": 58,
-        "str": 62,
-        "tac": 31,
-        "vis": 55
-      },
-      "birth": "1985-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p00u4mhn",
-      "name": "Julien Toodic",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 7500
-    },
-    {
-      "attrs": {
         "aer": 66,
         "com": 56,
         "dri": 49,
@@ -662,36 +636,6 @@
       "pos": "CM",
       "wage": 10500,
       "weight": 82
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 63,
-        "dri": 56,
-        "ldr": 57,
-        "pac": 58,
-        "pas": 63,
-        "pos": 59,
-        "sho": 57,
-        "sta": 65,
-        "str": 56,
-        "tac": 53,
-        "vis": 59
-      },
-      "birth": "1978-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p10w5roa",
-      "name": "Nicolas Flurentin",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 10000
     },
     {
       "attrs": {

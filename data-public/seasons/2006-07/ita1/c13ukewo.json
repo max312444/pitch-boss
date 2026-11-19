@@ -191,36 +191,6 @@
     },
     {
       "alt": [
-        "RB"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 72,
-        "dri": 65,
-        "ldr": 70,
-        "pac": 64,
-        "pas": 74,
-        "pos": 67,
-        "sho": 63,
-        "sta": 72,
-        "str": 66,
-        "tac": 67,
-        "vis": 68
-      },
-      "birth": "1979-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0cdoc96",
-      "name": "Ricardo Estevas",
-      "nation": "POR",
-      "number": null,
-      "pos": "CM",
-      "wage": 14500,
-      "weight": 68
-    },
-    {
-      "alt": [
         "CB",
         "LB"
       ],
@@ -373,34 +343,6 @@
       "pos": "CM",
       "wage": 10500,
       "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 73,
-        "com": 76,
-        "han": 75,
-        "ldr": 69,
-        "one": 71,
-        "pac": 55,
-        "pas": 65,
-        "pos": 75,
-        "ref": 77,
-        "sta": 59,
-        "str": 69,
-        "vis": 59
-      },
-      "birth": "1977-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p1x3f3g2",
-      "name": "Emanuele Belardy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 7500,
-      "weight": 80
     },
     {
       "alt": [
@@ -614,92 +556,6 @@
     },
     {
       "attrs": {
-        "aer": 60,
-        "com": 66,
-        "dri": 60,
-        "ldr": 65,
-        "pac": 59,
-        "pas": 64,
-        "pos": 66,
-        "sho": 55,
-        "sta": 69,
-        "str": 63,
-        "tac": 65,
-        "vis": 67
-      },
-      "birth": "1981-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0g5z0f8",
-      "name": "Ricardo Varon",
-      "nation": "ARG",
-      "number": null,
-      "pos": "DM",
-      "wage": 7000,
-      "weight": 71
-    },
-    {
-      "attrs": {
-        "aer": 71,
-        "com": 66,
-        "dri": 48,
-        "ldr": 66,
-        "pac": 58,
-        "pas": 56,
-        "pos": 70,
-        "sho": 39,
-        "sta": 59,
-        "str": 65,
-        "tac": 69,
-        "vis": 52
-      },
-      "birth": "1976-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0bngeuo",
-      "name": "Juriy Cannarse",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5000,
-      "weight": 71
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 68,
-        "dri": 62,
-        "ldr": 65,
-        "pac": 62,
-        "pas": 70,
-        "pos": 66,
-        "sho": 62,
-        "sta": 66,
-        "str": 60,
-        "tac": 61,
-        "vis": 68
-      },
-      "birth": "1984-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1wtdd3w",
-      "name": "Luca Rygoni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6500,
-      "weight": 72
-    },
-    {
-      "attrs": {
         "aer": 65,
         "com": 62,
         "dri": 54,
@@ -724,34 +580,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 4500,
-      "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 54,
-        "com": 61,
-        "dri": 60,
-        "ldr": 60,
-        "pac": 68,
-        "pas": 60,
-        "pos": 65,
-        "sho": 49,
-        "sta": 67,
-        "str": 64,
-        "tac": 67,
-        "vis": 56
-      },
-      "birth": "1981-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1vuf5u7",
-      "name": "Maurizio Leuro",
-      "nation": "ITA",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 4000,
       "weight": 73
     },
     {
@@ -815,62 +643,6 @@
       "verify": true,
       "wage": 5000,
       "weight": 77
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 65,
-        "dri": 63,
-        "ldr": 64,
-        "pac": 65,
-        "pas": 57,
-        "pos": 61,
-        "sho": 67,
-        "sta": 62,
-        "str": 63,
-        "tac": 34,
-        "vis": 60
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0giq9ji",
-      "name": "Simone Cavelli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000,
-      "weight": 79
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 65,
-        "dri": 49,
-        "ldr": 64,
-        "pac": 61,
-        "pas": 59,
-        "pos": 67,
-        "sho": 37,
-        "sta": 62,
-        "str": 63,
-        "tac": 65,
-        "vis": 47
-      },
-      "birth": "1973-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0syq1uj",
-      "name": "Gaetano De Rusa",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3500,
-      "weight": 79
     },
     {
       "alt": [

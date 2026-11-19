@@ -277,37 +277,6 @@
       "weight": 86
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 70,
-        "dri": 64,
-        "ldr": 63,
-        "pac": 63,
-        "pas": 71,
-        "pos": 69,
-        "sho": 64,
-        "sta": 71,
-        "str": 66,
-        "tac": 61,
-        "vis": 68
-      },
-      "birth": "1970-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1ifnyow",
-      "name": "Riccardo Masparo",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6000,
-      "weight": 71
-    },
-    {
       "attrs": {
         "aer": 70,
         "com": 69,
@@ -474,37 +443,6 @@
       "pos": "CM",
       "wage": 4500,
       "weight": 72
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 64,
-        "dri": 66,
-        "ldr": 63,
-        "pac": 58,
-        "pas": 71,
-        "pos": 62,
-        "sho": 60,
-        "sta": 69,
-        "str": 61,
-        "tac": 60,
-        "vis": 69
-      },
-      "birth": "1975-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0jo76du",
-      "name": "Alessandro Doge",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4500,
-      "weight": 74
     },
     {
       "alt": [
@@ -883,93 +821,6 @@
       "weight": 71
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 51,
-        "com": 65,
-        "dri": 63,
-        "ldr": 61,
-        "pac": 58,
-        "pas": 66,
-        "pos": 64,
-        "sho": 55,
-        "sta": 64,
-        "str": 56,
-        "tac": 63,
-        "vis": 64
-      },
-      "birth": "1972-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1cvam6v",
-      "name": "Claudio Bonumi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2500,
-      "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 59,
-        "dri": 51,
-        "ldr": 60,
-        "pac": 53,
-        "pas": 56,
-        "pos": 66,
-        "sho": 37,
-        "sta": 56,
-        "str": 66,
-        "tac": 64,
-        "vis": 49
-      },
-      "birth": "1972-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0ovyh5z",
-      "name": "Cristiano Pavona",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000,
-      "weight": 77
-    },
-    {
-      "attrs": {
-        "aer": 55,
-        "com": 62,
-        "dri": 61,
-        "ldr": 61,
-        "pac": 57,
-        "pas": 69,
-        "pos": 64,
-        "sho": 56,
-        "sta": 68,
-        "str": 61,
-        "tac": 62,
-        "vis": 67
-      },
-      "birth": "1974-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p1vuv23y",
-      "name": "Emiliano Byliotti",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2500,
-      "weight": 68
-    },
-    {
       "attrs": {
         "aer": 68,
         "com": 62,
@@ -1058,34 +909,6 @@
       "verify": true,
       "wage": 2000,
       "weight": 76
-    },
-    {
-      "attrs": {
-        "aer": 57,
-        "com": 63,
-        "dri": 63,
-        "ldr": 60,
-        "pac": 59,
-        "pas": 67,
-        "pos": 64,
-        "sho": 61,
-        "sta": 63,
-        "str": 59,
-        "tac": 58,
-        "vis": 66
-      },
-      "birth": "1976-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0yfawt9",
-      "name": "Pier Giovanni Rotzittu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2000,
-      "weight": 78
     },
     {
       "attrs": {

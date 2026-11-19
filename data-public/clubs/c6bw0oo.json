@@ -1,0 +1,33 @@
+{
+  "city": "Ponferrada",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "PON",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1922,
+  "id": "c6bw0oo",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "SD 폰패라디나",
+  "name": "SD Ponferradine",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "PON"
+}

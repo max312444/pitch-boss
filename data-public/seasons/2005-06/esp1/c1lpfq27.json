@@ -469,33 +469,6 @@
       "weight": 81
     },
     {
-      "attrs": {
-        "aer": 67,
-        "com": 72,
-        "han": 74,
-        "ldr": 73,
-        "one": 71,
-        "pac": 58,
-        "pas": 63,
-        "pos": 70,
-        "ref": 76,
-        "sta": 59,
-        "str": 68,
-        "vis": 62
-      },
-      "birth": "1976-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p192eqbv",
-      "name": "Ricardo Senzol",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 10000
-    },
-    {
       "alt": [
         "CM",
         "DM"
@@ -728,32 +701,6 @@
       "pos": "LB",
       "wage": 6500,
       "weight": 67
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 70,
-        "dri": 65,
-        "ldr": 61,
-        "pac": 63,
-        "pas": 60,
-        "pos": 64,
-        "sho": 70,
-        "sta": 64,
-        "str": 68,
-        "tac": 38,
-        "vis": 58
-      },
-      "birth": "1974-04-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1u07k2k",
-      "name": "Ivan Rosadu",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 5500
     },
     {
       "attrs": {

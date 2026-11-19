@@ -477,32 +477,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 68,
-        "dri": 61,
-        "ldr": 61,
-        "pac": 64,
-        "pas": 59,
-        "pos": 59,
-        "sho": 66,
-        "sta": 60,
-        "str": 67,
-        "tac": 35,
-        "vis": 59
-      },
-      "birth": "2002-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p14irel9",
-      "name": "Jon Karrikaboru",
-      "nation": "ESP",
-      "number": 19,
-      "pos": "ST",
-      "wage": 28000
-    },
-    {
-      "attrs": {
         "aer": 47,
         "com": 68,
         "dri": 68,

@@ -226,33 +226,6 @@
     },
     {
       "attrs": {
-        "aer": 66,
-        "com": 65,
-        "dri": 62,
-        "ldr": 59,
-        "pac": 62,
-        "pas": 54,
-        "pos": 63,
-        "sho": 65,
-        "sta": 62,
-        "str": 65,
-        "tac": 34,
-        "vis": 60
-      },
-      "birth": "1983-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p014q89d",
-      "name": "Daniele Cecia",
-      "nation": "ITA",
-      "number": 9,
-      "pos": "ST",
-      "wage": 15500,
-      "weight": 74
-    },
-    {
-      "attrs": {
         "aer": 74,
         "com": 75,
         "dri": 73,

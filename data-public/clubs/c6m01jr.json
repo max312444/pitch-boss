@@ -1,0 +1,33 @@
+{
+  "city": "Gillingham",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#0000FF",
+      "#0000FF"
+    ],
+    "mark": "GYL",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1893,
+  "id": "c6m01jr",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#0000FF",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#0000FF"
+    }
+  },
+  "ko": "질렝엄 FC",
+  "name": "Gyllingham F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "GYL"
+}

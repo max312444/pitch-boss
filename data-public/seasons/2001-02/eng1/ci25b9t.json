@@ -350,35 +350,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 73,
-        "han": 69,
-        "ldr": 69,
-        "one": 71,
-        "pac": 56,
-        "pas": 64,
-        "pos": 69,
-        "ref": 70,
-        "sta": 60,
-        "str": 68,
-        "vis": 62
-      },
-      "birth": "1967-02-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 188,
-      "id": "p1jq1i1i",
-      "name": "Tim Fluwers",
-      "nation": "ENG",
-      "number": 13,
-      "pos": "GK",
-      "traits": [
-        "injury_prone"
-      ],
-      "wage": 38500
-    },
-    {
-      "attrs": {
         "aer": 76,
         "com": 68,
         "dri": 59,
@@ -540,7 +511,7 @@
       "foot": "R",
       "height": 180,
       "id": "p0wzbq4o",
-      "name": "Matthew Jonas",
+      "name": "Matt Jonas",
       "nation": "WAL",
       "number": 20,
       "pos": "CM",
@@ -634,36 +605,6 @@
       "pos": "RW",
       "verify": true,
       "wage": 9500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 62,
-        "com": 68,
-        "dri": 72,
-        "ldr": 67,
-        "pac": 63,
-        "pas": 72,
-        "pos": 68,
-        "sho": 63,
-        "sta": 76,
-        "str": 66,
-        "tac": 70,
-        "vis": 73
-      },
-      "birth": "1977-12-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 178,
-      "id": "p0k50akc",
-      "name": "Stuart Cempbell",
-      "nation": "SCO",
-      "number": 21,
-      "pos": "CM",
-      "verify": true,
-      "wage": 16000
     }
   ],
   "stadiumCapacity": 22000

@@ -1,0 +1,33 @@
+{
+  "city": "Vercelli",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "VEA",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2010,
+  "id": "c17qto9z",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "FC 프로 베르챌리 1892",
+  "name": "FC Pro Vercalli 1892",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "VEA"
+}

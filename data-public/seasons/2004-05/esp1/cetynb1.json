@@ -664,33 +664,6 @@
       "weight": 71
     },
     {
-      "attrs": {
-        "aer": 71,
-        "com": 71,
-        "han": 70,
-        "ldr": 71,
-        "one": 67,
-        "pac": 52,
-        "pas": 62,
-        "pos": 68,
-        "ref": 74,
-        "sta": 57,
-        "str": 67,
-        "vis": 58
-      },
-      "birth": "1978-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1xhvvq4",
-      "name": "Carlos Senchez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "wage": 17500,
-      "weight": 83
-    },
-    {
       "alt": [
         "CB",
         "LB"

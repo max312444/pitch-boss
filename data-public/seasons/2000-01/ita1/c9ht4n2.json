@@ -484,33 +484,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 73,
-        "dri": 76,
-        "ldr": 73,
-        "pac": 83,
-        "pas": 75,
-        "pos": 76,
-        "sho": 64,
-        "sta": 82,
-        "str": 71,
-        "tac": 77,
-        "vis": 73
-      },
-      "birth": "1977-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0ofjm5n",
-      "name": "Francesco Cocu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "LWB",
-      "wage": 46000,
-      "weight": 73
-    },
-    {
-      "attrs": {
         "aer": 78,
         "com": 72,
         "dri": 58,
@@ -737,37 +710,6 @@
     },
     {
       "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 65,
-        "com": 75,
-        "dri": 69,
-        "ldr": 70,
-        "pac": 66,
-        "pas": 76,
-        "pos": 70,
-        "sho": 70,
-        "sta": 77,
-        "str": 67,
-        "tac": 73,
-        "vis": 75
-      },
-      "birth": "1976-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1m257ym",
-      "name": "Diego De Ascantis",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 15000,
-      "weight": 77
-    },
-    {
-      "alt": [
         "CM",
         "RB",
         "LB"
@@ -917,35 +859,6 @@
     },
     {
       "attrs": {
-        "aer": 63,
-        "com": 58,
-        "dri": 45,
-        "ldr": 65,
-        "pac": 54,
-        "pas": 56,
-        "pos": 63,
-        "sho": 31,
-        "sta": 56,
-        "str": 65,
-        "tac": 64,
-        "vis": 47
-      },
-      "birth": "1979-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p15uii3x",
-      "name": "Samir Beluufa",
-      "nation": "ALG",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5500,
-      "weight": 80
-    },
-    {
-      "attrs": {
         "aer": 79,
         "com": 71,
         "dri": 64,
@@ -970,62 +883,6 @@
       "pos": "CB",
       "wage": 4500,
       "weight": 71
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 70,
-        "dri": 70,
-        "ldr": 68,
-        "pac": 72,
-        "pas": 63,
-        "pos": 66,
-        "sho": 70,
-        "sta": 69,
-        "str": 72,
-        "tac": 37,
-        "vis": 61
-      },
-      "birth": "1982-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0hzgwnk",
-      "name": "Mohammed Aliyu Detti",
-      "nation": "NGA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4000,
-      "weight": 71
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 69,
-        "dri": 63,
-        "ldr": 63,
-        "pac": 64,
-        "pas": 57,
-        "pos": 61,
-        "sho": 68,
-        "sta": 65,
-        "str": 64,
-        "tac": 33,
-        "vis": 58
-      },
-      "birth": "1981-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p1rrhf8e",
-      "name": "Davide Succy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000,
-      "weight": 80
     },
     {
       "attrs": {

@@ -298,38 +298,6 @@
       "weight": 72
     },
     {
-      "alt": [
-        "CB",
-        "LB"
-      ],
-      "attrs": {
-        "aer": 65,
-        "com": 66,
-        "dri": 65,
-        "ldr": 70,
-        "pac": 76,
-        "pas": 69,
-        "pos": 69,
-        "sho": 55,
-        "sta": 71,
-        "str": 66,
-        "tac": 74,
-        "vis": 64
-      },
-      "birth": "1979-11-01",
-      "contract": "2005-06-30",
-      "foot": "R",
-      "height": 180,
-      "id": "p0fjrdy4",
-      "name": "Robbie Stockdala",
-      "nation": "SCO",
-      "nation2": "SCO",
-      "number": 23,
-      "pos": "RB",
-      "verify": true,
-      "wage": 27500
-    },
-    {
       "attrs": {
         "aer": 78,
         "com": 82,
@@ -486,36 +454,6 @@
       ],
       "wage": 39500,
       "weight": 59
-    },
-    {
-      "alt": [
-        "LB"
-      ],
-      "attrs": {
-        "aer": 49,
-        "com": 65,
-        "dri": 72,
-        "ldr": 64,
-        "pac": 72,
-        "pas": 69,
-        "pos": 47,
-        "sho": 67,
-        "sta": 69,
-        "str": 59,
-        "tac": 41,
-        "vis": 65
-      },
-      "birth": "1984-07-01",
-      "contract": "2009-06-30",
-      "foot": "L",
-      "height": 180,
-      "id": "p0cp1v67",
-      "name": "Stewart Downyng",
-      "nation": "ENG",
-      "number": 19,
-      "pos": "LW",
-      "wage": 17500,
-      "weight": 76
     },
     {
       "alt": [

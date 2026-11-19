@@ -56,36 +56,6 @@
       "weight": 65
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 67,
-        "dri": 67,
-        "ldr": 71,
-        "pac": 63,
-        "pas": 72,
-        "pos": 67,
-        "sho": 65,
-        "sta": 70,
-        "str": 63,
-        "tac": 66,
-        "vis": 72
-      },
-      "birth": "1980-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 168,
-      "id": "p0xw6z77",
-      "name": "Geoffrey Doumang",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 14500
-    },
-    {
       "attrs": {
         "aer": 72,
         "com": 75,
@@ -485,34 +455,6 @@
     },
     {
       "attrs": {
-        "aer": 66,
-        "com": 58,
-        "dri": 46,
-        "ldr": 61,
-        "pac": 58,
-        "pas": 54,
-        "pos": 68,
-        "sho": 33,
-        "sta": 60,
-        "str": 66,
-        "tac": 62,
-        "vis": 50
-      },
-      "birth": "1973-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1mvc4ei",
-      "name": "Patrick Moraau",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5000,
-      "weight": 74
-    },
-    {
-      "attrs": {
         "aer": 73,
         "com": 69,
         "dri": 54,
@@ -675,34 +617,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 67,
-        "dri": 61,
-        "ldr": 57,
-        "pac": 60,
-        "pas": 52,
-        "pos": 62,
-        "sho": 67,
-        "sta": 56,
-        "str": 65,
-        "tac": 36,
-        "vis": 53
-      },
-      "birth": "1972-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p134i6ap",
-      "name": "Laurent Dufrasne",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3500,
-      "weight": 79
-    },
-    {
-      "attrs": {
         "aer": 67,
         "com": 60,
         "dri": 50,
@@ -813,63 +727,6 @@
       "number": null,
       "pos": "CB",
       "wage": 4000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 63,
-        "dri": 63,
-        "ldr": 59,
-        "pac": 63,
-        "pas": 67,
-        "pos": 63,
-        "sho": 59,
-        "sta": 65,
-        "str": 58,
-        "tac": 61,
-        "vis": 66
-      },
-      "birth": "1973-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1h0rr8t",
-      "name": "Philippe Caldran",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 5500
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 68,
-        "dri": 63,
-        "ldr": 62,
-        "pac": 62,
-        "pas": 54,
-        "pos": 64,
-        "sho": 65,
-        "sta": 63,
-        "str": 62,
-        "tac": 37,
-        "vis": 54
-      },
-      "birth": "1975-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1vz65y5",
-      "name": "Bertrand Fayolla",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2500
     },
     {
       "attrs": {

@@ -629,33 +629,6 @@
       "weight": 75
     },
     {
-      "attrs": {
-        "aer": 66,
-        "com": 74,
-        "dri": 67,
-        "ldr": 65,
-        "pac": 71,
-        "pas": 63,
-        "pos": 66,
-        "sho": 75,
-        "sta": 65,
-        "str": 70,
-        "tac": 38,
-        "vis": 64
-      },
-      "birth": "1997-09-01",
-      "contract": "2024-06-30",
-      "foot": "R",
-      "height": 175,
-      "id": "p1urprlg",
-      "name": "Karlan Grent",
-      "nation": "ENG",
-      "number": 9,
-      "pos": "ST",
-      "verify": true,
-      "wage": 45000
-    },
-    {
       "alt": [
         "LW"
       ],

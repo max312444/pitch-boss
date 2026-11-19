@@ -320,33 +320,6 @@
       "weight": 75
     },
     {
-      "attrs": {
-        "aer": 60,
-        "com": 62,
-        "dri": 57,
-        "ldr": 67,
-        "pac": 56,
-        "pas": 63,
-        "pos": 66,
-        "sho": 54,
-        "sta": 70,
-        "str": 67,
-        "tac": 65,
-        "vis": 60
-      },
-      "birth": "1983-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0cqbwh0",
-      "name": "Giuseppe De Feodis",
-      "nation": "ITA",
-      "number": 19,
-      "pos": "DM",
-      "wage": 6000,
-      "weight": 69
-    },
-    {
       "alt": [
         "DM",
         "AM"

@@ -550,33 +550,6 @@
     },
     {
       "attrs": {
-        "aer": 52,
-        "com": 58,
-        "dri": 55,
-        "ldr": 54,
-        "pac": 59,
-        "pas": 48,
-        "pos": 57,
-        "sho": 57,
-        "sta": 56,
-        "str": 58,
-        "tac": 28,
-        "vis": 48
-      },
-      "birth": "1989-11-01",
-      "contract": "2011-06-30",
-      "foot": "R",
-      "height": 175,
-      "id": "p1jyainj",
-      "name": "Freddie Seers",
-      "nation": "ENG",
-      "number": 29,
-      "pos": "ST",
-      "wage": 8500,
-      "weight": 75
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 63,
         "dri": 55,

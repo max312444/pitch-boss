@@ -502,33 +502,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 65,
-        "dri": 48,
-        "ldr": 63,
-        "pac": 57,
-        "pas": 57,
-        "pos": 66,
-        "sho": 39,
-        "sta": 62,
-        "str": 67,
-        "tac": 70,
-        "vis": 50
-      },
-      "birth": "1989-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 196,
-      "id": "p0jet2z4",
-      "name": "Pedro Alcela",
-      "nation": "ESP",
-      "number": 19,
-      "pos": "CB",
-      "wage": 36000,
-      "weight": 93
-    },
-    {
-      "attrs": {
         "aer": 59,
         "com": 64,
         "dri": 65,

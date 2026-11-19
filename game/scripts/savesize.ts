@@ -17,10 +17,15 @@ const worldCups = fs.existsSync(wcPath) ? rj<Record<string, unknown>>(wcPath) : 
 function input(season: string) {
   const dir = path.join(DATA, 'seasons', season);
   const ids = fs.existsSync(dir) ? fs.readdirSync(dir).filter((x) => fs.existsSync(path.join(dir, x, '_league.json'))) : [];
-  return {
-    season, worldCups: worldCups as never,
-    leagues: ids.map((id) => { const m = rj<LeagueSeasonFile>(path.join(dir, id, '_league.json')); return { id, clubs: m.clubs.map((c) => rj<ClubSeasonFile>(path.join(dir, id, `${c}.json`))) }; }),
-  };
+  const leagues = ids.map((id) => { const m = rj<LeagueSeasonFile>(path.join(dir, id, '_league.json')); return { id, clubs: m.clubs.map((c) => rj<ClubSeasonFile>(path.join(dir, id, `${c}.json`))) }; });
+  // 아래 리그 대기열 (게임 store loadSeasonInput 과 같게): 직전 시즌 2부에 있다가 이번 시즌 없는 구단
+  const y = +season.slice(0, 4) - 1, prev = `${y}-${String((y + 1) % 100).padStart(2, '0')}`;
+  const here = new Set(leagues.flatMap((l) => l.clubs.map((c) => c.club)));
+  const pools = ids.filter((id) => /2$/.test(id) && fs.existsSync(path.join(DATA, 'seasons', prev, id, '_league.json'))).map((id) => {
+    const pd = path.join(DATA, 'seasons', prev, id);
+    return { league: `${id}-lower`, clubs: rj<LeagueSeasonFile>(path.join(pd, '_league.json')).clubs.filter((c) => !here.has(c)).map((c) => rj<ClubSeasonFile>(path.join(pd, `${c}.json`))) };
+  });
+  return { season, worldCups: worldCups as never, leagues, pools };
 }
 const mb = (n: number) => `${(n / 1e6).toFixed(2)}MB`;
 const len = (v: unknown) => JSON.stringify(v ?? null).length;

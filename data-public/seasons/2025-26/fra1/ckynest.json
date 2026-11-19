@@ -810,35 +810,6 @@
       "wage": 16500
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 38,
-        "com": 54,
-        "dri": 58,
-        "ldr": 52,
-        "pac": 60,
-        "pas": 56,
-        "pos": 33,
-        "sho": 52,
-        "sta": 53,
-        "str": 44,
-        "tac": 28,
-        "vis": 50
-      },
-      "birth": "2007-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1s0m62r",
-      "name": "Rayane Massi",
-      "nation": "FRA",
-      "number": 47,
-      "pos": "RW",
-      "wage": 8500
-    },
-    {
       "attrs": {
         "aer": 64,
         "com": 62,

@@ -581,33 +581,6 @@
     },
     {
       "attrs": {
-        "aer": 70,
-        "com": 69,
-        "dri": 54,
-        "ldr": 70,
-        "pac": 63,
-        "pas": 61,
-        "pos": 69,
-        "sho": 41,
-        "sta": 65,
-        "str": 73,
-        "tac": 74,
-        "vis": 56
-      },
-      "birth": "1978-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p15kusre",
-      "name": "Arnaod Le Lan",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6500
-    },
-    {
-      "attrs": {
         "aer": 77,
         "com": 69,
         "dri": 58,
@@ -808,61 +781,6 @@
     },
     {
       "attrs": {
-        "aer": 69,
-        "com": 68,
-        "dri": 63,
-        "ldr": 63,
-        "pac": 68,
-        "pas": 62,
-        "pos": 65,
-        "sho": 73,
-        "sta": 66,
-        "str": 68,
-        "tac": 41,
-        "vis": 61
-      },
-      "birth": "1983-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p15t8ibg",
-      "name": "Fabrice Do Marcolyno",
-      "nation": "GAB",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4000,
-      "weight": 85
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 67,
-        "han": 69,
-        "ldr": 68,
-        "one": 65,
-        "pac": 48,
-        "pas": 58,
-        "pos": 68,
-        "ref": 68,
-        "sta": 57,
-        "str": 64,
-        "vis": 53
-      },
-      "birth": "1984-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 197,
-      "id": "p1s0abqg",
-      "name": "Florent Chaygneau",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "wage": 3500,
-      "weight": 90
-    },
-    {
-      "attrs": {
         "aer": 66,
         "com": 70,
         "han": 66,
@@ -945,34 +863,6 @@
       "pos": "RB",
       "verify": true,
       "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 54,
-        "dri": 43,
-        "ldr": 56,
-        "pac": 51,
-        "pas": 47,
-        "pos": 63,
-        "sho": 33,
-        "sta": 52,
-        "str": 57,
-        "tac": 58,
-        "vis": 42
-      },
-      "birth": "1985-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0cn0q0m",
-      "name": "Aurelien Monteroup",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000,
-      "weight": 64
     },
     {
       "attrs": {

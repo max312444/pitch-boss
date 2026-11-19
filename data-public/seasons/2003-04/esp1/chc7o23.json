@@ -641,90 +641,6 @@
       "wage": 5000
     },
     {
-      "attrs": {
-        "aer": 71,
-        "com": 64,
-        "dri": 56,
-        "ldr": 70,
-        "pac": 59,
-        "pas": 59,
-        "pos": 68,
-        "sho": 38,
-        "sta": 67,
-        "str": 67,
-        "tac": 70,
-        "vis": 54
-      },
-      "birth": "1972-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1luri0o",
-      "name": "Juanmi Gelabart",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5000
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 72,
-        "dri": 66,
-        "ldr": 70,
-        "pac": 72,
-        "pas": 62,
-        "pos": 72,
-        "sho": 74,
-        "sta": 65,
-        "str": 71,
-        "tac": 38,
-        "vis": 60
-      },
-      "birth": "1976-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p00fj8pk",
-      "name": "Mariano Toadtli",
-      "nation": "ARG",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 65,
-        "dri": 62,
-        "ldr": 66,
-        "pac": 65,
-        "pas": 71,
-        "pos": 65,
-        "sho": 61,
-        "sta": 71,
-        "str": 65,
-        "tac": 60,
-        "vis": 65
-      },
-      "birth": "1970-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1yk1jj1",
-      "name": "Tomas Harvas",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 7000
-    },
-    {
       "alt": [
         "RB",
         "LB",
@@ -1009,35 +925,6 @@
       "verify": true,
       "wage": 2500,
       "weight": 73
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 48,
-        "com": 58,
-        "dri": 57,
-        "ldr": 56,
-        "pac": 57,
-        "pas": 63,
-        "pos": 59,
-        "sho": 52,
-        "sta": 61,
-        "str": 59,
-        "tac": 59,
-        "vis": 65
-      },
-      "birth": "1981-12-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0znrapz",
-      "name": "David Arteage",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "wage": 3000
     }
   ],
   "stadiumCapacity": 43751

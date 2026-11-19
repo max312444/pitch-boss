@@ -863,36 +863,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 58,
-        "com": 72,
-        "dri": 65,
-        "ldr": 67,
-        "pac": 65,
-        "pas": 71,
-        "pos": 70,
-        "sho": 61,
-        "sta": 70,
-        "str": 65,
-        "tac": 69,
-        "vis": 73
-      },
-      "birth": "1983-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p1o90kpb",
-      "name": "Marco Dunadel",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 18000,
-      "weight": 75
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 60,
         "com": 73,
         "dri": 71,
@@ -917,34 +887,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 14500,
-      "weight": 76
-    },
-    {
-      "attrs": {
-        "aer": 79,
-        "com": 69,
-        "dri": 59,
-        "ldr": 72,
-        "pac": 65,
-        "pas": 63,
-        "pos": 73,
-        "sho": 43,
-        "sta": 71,
-        "str": 74,
-        "tac": 78,
-        "vis": 56
-      },
-      "birth": "1979-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0l1x60q",
-      "name": "Daniele Deino",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 7500,
       "weight": 76
     },
     {
@@ -974,34 +916,6 @@
       "verify": true,
       "wage": 5000,
       "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 70,
-        "dri": 63,
-        "ldr": 63,
-        "pac": 67,
-        "pas": 58,
-        "pos": 63,
-        "sho": 70,
-        "sta": 67,
-        "str": 68,
-        "tac": 37,
-        "vis": 57
-      },
-      "birth": "1982-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0hzgwnk",
-      "name": "Mohammed Aliyu Detti",
-      "nation": "NGA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4500,
-      "weight": 71
     },
     {
       "attrs": {

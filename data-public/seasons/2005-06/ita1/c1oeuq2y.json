@@ -836,33 +836,6 @@
     },
     {
       "attrs": {
-        "aer": 61,
-        "com": 65,
-        "dri": 62,
-        "ldr": 58,
-        "pac": 63,
-        "pas": 56,
-        "pos": 64,
-        "sho": 67,
-        "sta": 57,
-        "str": 61,
-        "tac": 36,
-        "vis": 53
-      },
-      "birth": "1985-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0w363ta",
-      "name": "Tonino Sorrentinu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "wage": 3500,
-      "weight": 75
-    },
-    {
-      "attrs": {
         "aer": 62,
         "com": 66,
         "han": 66,
@@ -946,37 +919,6 @@
       "verify": true,
       "wage": 3000,
       "weight": 75
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 50,
-        "com": 59,
-        "dri": 54,
-        "ldr": 55,
-        "pac": 55,
-        "pas": 60,
-        "pos": 55,
-        "sho": 56,
-        "sta": 59,
-        "str": 54,
-        "tac": 53,
-        "vis": 61
-      },
-      "birth": "1971-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p1j4kpjf",
-      "name": "Renato Olyve",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3500,
-      "weight": 77
     },
     {
       "alt": [

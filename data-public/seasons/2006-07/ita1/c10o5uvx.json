@@ -195,36 +195,6 @@
       "weight": 71
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 74,
-        "dri": 70,
-        "ldr": 74,
-        "pac": 69,
-        "pas": 76,
-        "pos": 70,
-        "sho": 69,
-        "sta": 71,
-        "str": 69,
-        "tac": 69,
-        "vis": 73
-      },
-      "birth": "1980-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p1d4nvjp",
-      "name": "Andrea Cussu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 22000,
-      "weight": 66
-    },
-    {
       "attrs": {
         "aer": 65,
         "com": 69,
@@ -625,34 +595,6 @@
       "verify": true,
       "wage": 5500,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 60,
-        "dri": 47,
-        "ldr": 62,
-        "pac": 55,
-        "pas": 52,
-        "pos": 69,
-        "sho": 35,
-        "sta": 61,
-        "str": 64,
-        "tac": 65,
-        "vis": 52
-      },
-      "birth": "1974-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1ievyjd",
-      "name": "Francesco Baga",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500,
-      "weight": 78
     },
     {
       "attrs": {

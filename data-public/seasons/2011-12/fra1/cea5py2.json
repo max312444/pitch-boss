@@ -341,33 +341,6 @@
       "wage": 6500
     },
     {
-      "attrs": {
-        "aer": 51,
-        "com": 57,
-        "dri": 56,
-        "ldr": 56,
-        "pac": 66,
-        "pas": 59,
-        "pos": 58,
-        "sho": 44,
-        "sta": 64,
-        "str": 57,
-        "tac": 64,
-        "vis": 52
-      },
-      "birth": "1990-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p00zptqn",
-      "name": "Frederic Doplus",
-      "nation": "FRA",
-      "number": 17,
-      "pos": "RB",
-      "wage": 14500,
-      "weight": 73
-    },
-    {
       "alt": [
         "DM"
       ],

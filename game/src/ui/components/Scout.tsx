@@ -126,7 +126,8 @@ export function PositionRatings({ p }: { p: PlayerState }) {
           <div key={i} className="grid grid-cols-3 gap-1">
             {(row.length === 1 ? [null, row[0], null] : row).map((s, j) => {
               if (!s) return <div key={j} />;
-              const [lo, hi] = seenRange(w, p, 'pos:' + s, slotRating(p, s), k);
+              // 모든 자리를 능력(ovr)과 같은 흔들림으로: 주 포지션 범위 = 위의 능력 범위, 다른 자리는 절대 주 포지션보다 높게 안 보인다
+              const [lo, hi] = seenRange(w, p, 'ovr', slotRating(p, s), k);
               const main = s === p.pos, alt = alts.includes(s);
               return (
                 <div key={j} className={`flex items-center justify-between rounded px-2 py-1 text-[11px] ${main ? 'bg-neon/20 ring-1 ring-neon' : alt ? 'bg-neon/5 ring-1 ring-neon/50' : 'bg-ink-900'}`}>

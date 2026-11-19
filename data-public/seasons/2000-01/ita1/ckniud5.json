@@ -317,34 +317,6 @@
     {
       "attrs": {
         "aer": 68,
-        "com": 67,
-        "dri": 52,
-        "ldr": 65,
-        "pac": 60,
-        "pas": 60,
-        "pos": 71,
-        "sho": 37,
-        "sta": 65,
-        "str": 70,
-        "tac": 66,
-        "vis": 52
-      },
-      "birth": "1969-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p0qm6su6",
-      "name": "Luigi Gerzya",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6500,
-      "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 68,
         "com": 70,
         "dri": 68,
         "ldr": 68,
@@ -452,34 +424,6 @@
       "pos": "CB",
       "wage": 3500,
       "weight": 79
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 68,
-        "han": 70,
-        "ldr": 64,
-        "one": 68,
-        "pac": 51,
-        "pas": 58,
-        "pos": 69,
-        "ref": 66,
-        "sta": 52,
-        "str": 60,
-        "vis": 53
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 191,
-      "id": "p1b8v1a9",
-      "name": "Generoso Rossy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 4500,
-      "weight": 84
     },
     {
       "attrs": {

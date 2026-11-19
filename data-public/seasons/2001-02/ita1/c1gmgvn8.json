@@ -530,33 +530,6 @@
     },
     {
       "attrs": {
-        "aer": 54,
-        "com": 61,
-        "dri": 61,
-        "ldr": 63,
-        "pac": 70,
-        "pas": 63,
-        "pos": 62,
-        "sho": 46,
-        "sta": 72,
-        "str": 61,
-        "tac": 65,
-        "vis": 59
-      },
-      "birth": "1979-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1srjujx",
-      "name": "Alessandro Agostyni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "LB",
-      "wage": 4000,
-      "weight": 67
-    },
-    {
-      "attrs": {
         "aer": 69,
         "com": 66,
         "dri": 51,
@@ -699,34 +672,6 @@
       "verify": true,
       "wage": 2000,
       "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 55,
-        "dri": 48,
-        "ldr": 60,
-        "pac": 53,
-        "pas": 49,
-        "pos": 65,
-        "sho": 33,
-        "sta": 55,
-        "str": 58,
-        "tac": 65,
-        "vis": 43
-      },
-      "birth": "1967-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1oiy9cv",
-      "name": "Aldo Fyricano",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000,
-      "weight": 78
     },
     {
       "attrs": {

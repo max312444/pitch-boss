@@ -1,0 +1,33 @@
+{
+  "city": "Bastia",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "BAS",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1920,
+  "id": "conmkr8",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "CA 바스티어",
+  "name": "CA Bastya",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "BAS"
+}

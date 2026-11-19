@@ -201,33 +201,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 69,
-        "dri": 56,
-        "ldr": 71,
-        "pac": 67,
-        "pas": 60,
-        "pos": 77,
-        "sho": 41,
-        "sta": 69,
-        "str": 71,
-        "tac": 74,
-        "vis": 57
-      },
-      "birth": "1976-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1pjur8i",
-      "name": "Emanuele Pasaresi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 11500,
-      "weight": 77
-    },
-    {
-      "attrs": {
         "aer": 73,
         "com": 71,
         "dri": 58,
@@ -423,33 +396,6 @@
       "pos": "GK",
       "wage": 7000,
       "weight": 86
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 72,
-        "dri": 68,
-        "ldr": 63,
-        "pac": 70,
-        "pas": 66,
-        "pos": 69,
-        "sho": 71,
-        "sta": 65,
-        "str": 71,
-        "tac": 39,
-        "vis": 61
-      },
-      "birth": "1978-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0p4dann",
-      "name": "Simone Tiribocchy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "wage": 5500,
-      "weight": 85
     },
     {
       "attrs": {

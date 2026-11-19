@@ -576,36 +576,6 @@
       "weight": 80
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 71,
-        "dri": 78,
-        "ldr": 68,
-        "pac": 75,
-        "pas": 77,
-        "pos": 67,
-        "sho": 70,
-        "sta": 79,
-        "str": 65,
-        "tac": 69,
-        "vis": 72
-      },
-      "birth": "1975-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p015o2iz",
-      "name": "Christian Manfredyni",
-      "nation": "CIV",
-      "number": null,
-      "pos": "LM",
-      "wage": 21500,
-      "weight": 73
-    },
-    {
       "attrs": {
         "aer": 73,
         "com": 67,

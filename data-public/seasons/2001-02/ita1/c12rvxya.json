@@ -224,33 +224,6 @@
     },
     {
       "attrs": {
-        "aer": 61,
-        "com": 72,
-        "dri": 66,
-        "ldr": 66,
-        "pac": 72,
-        "pas": 72,
-        "pos": 73,
-        "sho": 55,
-        "sta": 74,
-        "str": 70,
-        "tac": 74,
-        "vis": 63
-      },
-      "birth": "1975-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1ve32ij",
-      "name": "Mauricio Pinede",
-      "nation": "ARG",
-      "number": null,
-      "pos": "LB",
-      "wage": 11000,
-      "weight": 75
-    },
-    {
-      "attrs": {
         "aer": 80,
         "com": 79,
         "dri": 77,
@@ -644,35 +617,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 70,
-        "dri": 68,
-        "ldr": 65,
-        "pac": 69,
-        "pas": 60,
-        "pos": 68,
-        "sho": 75,
-        "sta": 68,
-        "str": 68,
-        "tac": 40,
-        "vis": 66
-      },
-      "birth": "1977-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0pv2tys",
-      "name": "Massimo Mergiotta",
-      "nation": "ITA",
-      "nation2": "VEN",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4000,
-      "weight": 90
-    },
-    {
-      "attrs": {
         "aer": 63,
         "com": 69,
         "dri": 66,
@@ -951,37 +895,6 @@
       "weight": 88
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 69,
-        "dri": 73,
-        "ldr": 65,
-        "pac": 73,
-        "pas": 71,
-        "pos": 50,
-        "sho": 68,
-        "sta": 66,
-        "str": 61,
-        "tac": 47,
-        "vis": 70
-      },
-      "birth": "1979-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p0j8nc1h",
-      "name": "Mauro Esposyto",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 3500,
-      "weight": 71
-    },
-    {
       "attrs": {
         "aer": 68,
         "com": 59,
@@ -1210,36 +1123,6 @@
       "verify": true,
       "wage": 2000,
       "weight": 78
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 46,
-        "com": 56,
-        "dri": 59,
-        "ldr": 56,
-        "pac": 50,
-        "pas": 63,
-        "pos": 55,
-        "sho": 54,
-        "sta": 62,
-        "str": 55,
-        "tac": 53,
-        "vis": 61
-      },
-      "birth": "1979-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0nu9qor",
-      "name": "Maurizio Bedyn",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 2000,
-      "weight": 76
     },
     {
       "attrs": {

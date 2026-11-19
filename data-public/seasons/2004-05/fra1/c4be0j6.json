@@ -618,33 +618,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 68,
-        "dri": 68,
-        "ldr": 65,
-        "pac": 67,
-        "pas": 60,
-        "pos": 62,
-        "sho": 68,
-        "sta": 60,
-        "str": 69,
-        "tac": 37,
-        "vis": 60
-      },
-      "birth": "1976-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0u6xwud",
-      "name": "Mazhar Abdel Rehman",
-      "nation": "EGY",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 7500
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 65,
         "dri": 54,
@@ -704,90 +677,6 @@
       "weight": 68
     },
     {
-      "attrs": {
-        "aer": 62,
-        "com": 67,
-        "dri": 62,
-        "ldr": 60,
-        "pac": 69,
-        "pas": 62,
-        "pos": 62,
-        "sho": 72,
-        "sta": 65,
-        "str": 69,
-        "tac": 39,
-        "vis": 62
-      },
-      "birth": "1982-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p0epceqg",
-      "name": "Souleymane Camera",
-      "nation": "SEN",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 5500,
-      "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 62,
-        "dri": 61,
-        "ldr": 60,
-        "pac": 70,
-        "pas": 61,
-        "pos": 65,
-        "sho": 49,
-        "sta": 70,
-        "str": 59,
-        "tac": 69,
-        "vis": 60
-      },
-      "birth": "1983-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p1g6ds2a",
-      "name": "Marco Remos",
-      "nation": "POR",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 5000
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 51,
-        "com": 60,
-        "dri": 67,
-        "ldr": 61,
-        "pac": 65,
-        "pas": 62,
-        "pos": 47,
-        "sho": 62,
-        "sta": 63,
-        "str": 51,
-        "tac": 41,
-        "vis": 62
-      },
-      "birth": "1982-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p1wqgzwr",
-      "name": "Sebastien Carola",
-      "nation": "FRA",
-      "number": null,
-      "pos": "RW",
-      "wage": 6000
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -843,33 +732,6 @@
       "pos": "LB",
       "wage": 4500,
       "weight": 68
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 59,
-        "dri": 56,
-        "ldr": 59,
-        "pac": 62,
-        "pas": 51,
-        "pos": 57,
-        "sho": 67,
-        "sta": 55,
-        "str": 63,
-        "tac": 34,
-        "vis": 54
-      },
-      "birth": "1984-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0z3lund",
-      "name": "Sebastien Grex",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 3500,
-      "weight": 74
     },
     {
       "attrs": {
@@ -984,61 +846,6 @@
       "verify": true,
       "wage": 2500,
       "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 63,
-        "dri": 64,
-        "ldr": 58,
-        "pac": 62,
-        "pas": 59,
-        "pos": 64,
-        "sho": 68,
-        "sta": 63,
-        "str": 61,
-        "tac": 36,
-        "vis": 59
-      },
-      "birth": "1984-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p178as2j",
-      "name": "Laurent Lantery",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 2000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 63,
-        "dri": 56,
-        "ldr": 57,
-        "pac": 56,
-        "pas": 59,
-        "pos": 57,
-        "sho": 55,
-        "sta": 64,
-        "str": 56,
-        "tac": 54,
-        "vis": 61
-      },
-      "birth": "1983-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1803ju6",
-      "name": "Nicolas Hislan",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 2500
     },
     {
       "attrs": {

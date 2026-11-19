@@ -1,0 +1,33 @@
+{
+  "city": "Pordenone",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#000000",
+      "#00FF00",
+      "#00FF00"
+    ],
+    "mark": "POD",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2024,
+  "id": "c6iswn3",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#00FF00",
+      "secondary": "#000000"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#00FF00"
+    }
+  },
+  "ko": "포르대노네 칼초",
+  "name": "Nuovo Pordanone 2024 FC ASD",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "POD"
+}

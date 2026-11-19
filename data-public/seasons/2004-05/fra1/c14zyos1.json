@@ -25,35 +25,6 @@
   "squad": [
     {
       "attrs": {
-        "aer": 67,
-        "com": 66,
-        "dri": 65,
-        "ldr": 72,
-        "pac": 57,
-        "pas": 72,
-        "pos": 69,
-        "sho": 57,
-        "sta": 72,
-        "str": 66,
-        "tac": 73,
-        "vis": 66
-      },
-      "birth": "1978-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p149qwdg",
-      "name": "Ousmane N'Doie",
-      "nation": "FRA",
-      "nation2": "SEN",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 15500,
-      "weight": 75
-    },
-    {
-      "attrs": {
         "aer": 75,
         "com": 72,
         "dri": 71,
@@ -275,34 +246,6 @@
       "number": null,
       "pos": "GK",
       "wage": 6500
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 71,
-        "dri": 68,
-        "ldr": 65,
-        "pac": 74,
-        "pas": 62,
-        "pos": 70,
-        "sho": 72,
-        "sta": 66,
-        "str": 72,
-        "tac": 44,
-        "vis": 67
-      },
-      "birth": "1979-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0caxdhk",
-      "name": "Cedric Feure",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4500,
-      "weight": 83
     },
     {
       "alt": [
@@ -568,36 +511,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 57,
-        "com": 67,
-        "dri": 65,
-        "ldr": 67,
-        "pac": 62,
-        "pas": 70,
-        "pos": 65,
-        "sho": 67,
-        "sta": 72,
-        "str": 62,
-        "tac": 66,
-        "vis": 71
-      },
-      "birth": "1981-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p03wuu67",
-      "name": "Thibault Girasse",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 5000,
-      "weight": 65
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 52,
         "com": 63,
         "dri": 64,
@@ -648,36 +561,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 4000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 71,
-        "dri": 67,
-        "ldr": 66,
-        "pac": 62,
-        "pas": 69,
-        "pos": 66,
-        "sho": 60,
-        "sta": 67,
-        "str": 64,
-        "tac": 63,
-        "vis": 66
-      },
-      "birth": "1975-10-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p164xh7f",
-      "name": "Sylvain Didut",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 5000
     },
     {
       "alt": [
@@ -909,34 +792,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 62,
-        "dri": 62,
-        "ldr": 57,
-        "pac": 61,
-        "pas": 55,
-        "pos": 56,
-        "sho": 65,
-        "sta": 56,
-        "str": 61,
-        "tac": 31,
-        "vis": 53
-      },
-      "birth": "1983-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p1c2q12i",
-      "name": "Jeremy Blayec",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2500,
-      "weight": 80
-    },
-    {
-      "attrs": {
         "aer": 54,
         "com": 58,
         "dri": 58,
@@ -962,33 +817,6 @@
       "pos": "RB",
       "wage": 2500,
       "weight": 83
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 59,
-        "dri": 44,
-        "ldr": 65,
-        "pac": 56,
-        "pas": 54,
-        "pos": 64,
-        "sho": 36,
-        "sta": 59,
-        "str": 64,
-        "tac": 62,
-        "vis": 46
-      },
-      "birth": "1982-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1vikddt",
-      "name": "Aurelien Mezel",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2500
     },
     {
       "attrs": {
@@ -1158,33 +986,6 @@
       "nation": "FRA",
       "number": null,
       "pos": "ST",
-      "verify": true,
-      "wage": 1500
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 57,
-        "dri": 43,
-        "ldr": 58,
-        "pac": 53,
-        "pas": 49,
-        "pos": 59,
-        "sho": 31,
-        "sta": 54,
-        "str": 61,
-        "tac": 61,
-        "vis": 41
-      },
-      "birth": "1982-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0ovh84e",
-      "name": "Othmane Hamame",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
       "verify": true,
       "wage": 1500
     },

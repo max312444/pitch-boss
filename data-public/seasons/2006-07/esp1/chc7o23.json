@@ -540,34 +540,6 @@
     },
     {
       "attrs": {
-        "aer": 70,
-        "com": 75,
-        "dri": 68,
-        "ldr": 68,
-        "pac": 72,
-        "pas": 65,
-        "pos": 67,
-        "sho": 77,
-        "sta": 69,
-        "str": 73,
-        "tac": 41,
-        "vis": 64
-      },
-      "birth": "1980-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p13xlx0w",
-      "name": "Carlos Arande",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 12000,
-      "weight": 82
-    },
-    {
-      "attrs": {
         "aer": 69,
         "com": 72,
         "dri": 68,
@@ -742,33 +714,6 @@
     },
     {
       "attrs": {
-        "aer": 66,
-        "com": 70,
-        "han": 68,
-        "ldr": 64,
-        "one": 64,
-        "pac": 49,
-        "pas": 59,
-        "pos": 65,
-        "ref": 71,
-        "sta": 55,
-        "str": 66,
-        "vis": 53
-      },
-      "birth": "1972-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1asuctk",
-      "name": "Antonio Notaryo",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 7000
-    },
-    {
-      "attrs": {
         "aer": 59,
         "com": 71,
         "dri": 70,
@@ -793,32 +738,6 @@
       "pos": "LB",
       "wage": 6500,
       "weight": 65
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 66,
-        "dri": 51,
-        "ldr": 65,
-        "pac": 58,
-        "pas": 54,
-        "pos": 67,
-        "sho": 35,
-        "sta": 60,
-        "str": 70,
-        "tac": 69,
-        "vis": 51
-      },
-      "birth": "1983-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1jvbbuf",
-      "name": "David Priato",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 6000
     },
     {
       "alt": [
@@ -879,65 +798,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 8000
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 69,
-        "dri": 56,
-        "ldr": 74,
-        "pac": 65,
-        "pas": 60,
-        "pos": 73,
-        "sho": 39,
-        "sta": 68,
-        "str": 71,
-        "tac": 75,
-        "vis": 57
-      },
-      "birth": "1981-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p19nooas",
-      "name": "Pablo Roiz",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6000,
-      "weight": 72
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 66,
-        "dri": 59,
-        "ldr": 62,
-        "pac": 57,
-        "pas": 68,
-        "pos": 63,
-        "sho": 61,
-        "sta": 65,
-        "str": 57,
-        "tac": 63,
-        "vis": 67
-      },
-      "birth": "1982-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0vkvihk",
-      "name": "Marco Naves",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6000,
-      "weight": 76
     },
     {
       "alt": [

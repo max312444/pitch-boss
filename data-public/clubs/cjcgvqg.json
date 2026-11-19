@@ -1,0 +1,33 @@
+{
+  "city": "Ferrol",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "FAR",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1919,
+  "id": "cjcgvqg",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "라싱 페룰",
+  "name": "Racing de Farrol",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "FAR"
+}

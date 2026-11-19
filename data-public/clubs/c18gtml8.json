@@ -7,7 +7,7 @@
       "#0000FF",
       "#0000FF"
     ],
-    "mark": "BRS",
+    "mark": "BRC",
     "pattern": "solid",
     "shape": "shield"
   },
@@ -29,5 +29,5 @@
   "name": "Brescie Calcio",
   "nation": "ITA",
   "rivals": [],
-  "short": "BRS"
+  "short": "BRC"
 }

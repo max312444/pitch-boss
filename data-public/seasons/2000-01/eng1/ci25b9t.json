@@ -654,32 +654,6 @@
       "number": 5,
       "pos": "CB",
       "wage": 10500
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 72,
-        "dri": 69,
-        "ldr": 64,
-        "pac": 66,
-        "pas": 60,
-        "pos": 64,
-        "sho": 69,
-        "sta": 68,
-        "str": 66,
-        "tac": 41,
-        "vis": 60
-      },
-      "birth": "1965-07-01",
-      "contract": "2001-06-30",
-      "foot": "R",
-      "height": 173,
-      "id": "p0n1w3uw",
-      "name": "Tony Cottae",
-      "nation": "ENG",
-      "number": 27,
-      "pos": "ST",
-      "wage": 10000
     }
   ],
   "stadiumCapacity": 22000

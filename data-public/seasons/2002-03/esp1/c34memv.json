@@ -221,61 +221,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 71,
-        "dri": 62,
-        "ldr": 62,
-        "pac": 68,
-        "pas": 59,
-        "pos": 63,
-        "sho": 72,
-        "sta": 60,
-        "str": 65,
-        "tac": 39,
-        "vis": 56
-      },
-      "birth": "1976-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0tblsno",
-      "name": "Jurica Vocko",
-      "nation": "CRO",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 8500,
-      "weight": 77
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 72,
-        "han": 73,
-        "ldr": 67,
-        "one": 70,
-        "pac": 54,
-        "pas": 58,
-        "pos": 75,
-        "ref": 73,
-        "sta": 58,
-        "str": 65,
-        "vis": 60
-      },
-      "birth": "1971-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p00hfh1l",
-      "name": "Kike Burgus",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 11000
-    },
-    {
-      "attrs": {
         "aer": 75,
         "com": 76,
         "han": 73,
@@ -300,33 +245,6 @@
       "pos": "GK",
       "verify": true,
       "wage": 11500
-    },
-    {
-      "attrs": {
-        "aer": 53,
-        "com": 70,
-        "dri": 70,
-        "ldr": 66,
-        "pac": 64,
-        "pas": 74,
-        "pos": 49,
-        "sho": 66,
-        "sta": 68,
-        "str": 62,
-        "tac": 50,
-        "vis": 69
-      },
-      "birth": "1980-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 167,
-      "id": "p0nasc4r",
-      "name": "Mario Roses",
-      "nation": "ESP",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 12500
     },
     {
       "attrs": {
@@ -495,33 +413,6 @@
       "number": null,
       "pos": "ST",
       "wage": 5000
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 64,
-        "dri": 51,
-        "ldr": 68,
-        "pac": 64,
-        "pas": 58,
-        "pos": 70,
-        "sho": 42,
-        "sta": 61,
-        "str": 67,
-        "tac": 73,
-        "vis": 50
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p1lpzeiw",
-      "name": "Josu Sarriagi",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 5000,
-      "weight": 83
     },
     {
       "attrs": {

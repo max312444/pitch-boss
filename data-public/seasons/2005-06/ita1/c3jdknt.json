@@ -658,34 +658,6 @@
     },
     {
       "attrs": {
-        "aer": 79,
-        "com": 79,
-        "dri": 75,
-        "ldr": 72,
-        "pac": 80,
-        "pas": 68,
-        "pos": 75,
-        "sho": 82,
-        "sta": 76,
-        "str": 79,
-        "tac": 46,
-        "vis": 72
-      },
-      "birth": "1978-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1ogzejj",
-      "name": "Nicola Ventole",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 33000,
-      "weight": 80
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 65,
         "dri": 58,
@@ -740,33 +712,6 @@
       "pos": "RB",
       "wage": 39500,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 71,
-        "com": 76,
-        "dri": 69,
-        "ldr": 67,
-        "pac": 73,
-        "pas": 65,
-        "pos": 72,
-        "sho": 77,
-        "sta": 70,
-        "str": 74,
-        "tac": 46,
-        "vis": 69
-      },
-      "birth": "1976-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 171,
-      "id": "p0m1orml",
-      "name": "Antonio Pachecu",
-      "nation": "URU",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 22500
     },
     {
       "attrs": {
@@ -907,37 +852,6 @@
       "weight": 89
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 74,
-        "dri": 70,
-        "ldr": 73,
-        "pac": 68,
-        "pas": 76,
-        "pos": 72,
-        "sho": 66,
-        "sta": 76,
-        "str": 65,
-        "tac": 70,
-        "vis": 72
-      },
-      "birth": "1983-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1kymxgx",
-      "name": "Nicola Beaty",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 13500,
-      "weight": 78
-    },
-    {
       "attrs": {
         "aer": 71,
         "com": 67,
@@ -962,34 +876,6 @@
       "number": null,
       "pos": "GK",
       "wage": 9000,
-      "weight": 83
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 65,
-        "dri": 60,
-        "ldr": 62,
-        "pac": 66,
-        "pas": 59,
-        "pos": 62,
-        "sho": 67,
-        "sta": 62,
-        "str": 63,
-        "tac": 34,
-        "vis": 56
-      },
-      "birth": "1984-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p07r73r8",
-      "name": "Dimitar Makriav",
-      "nation": "BUL",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 6000,
       "weight": 83
     },
     {
@@ -1104,37 +990,6 @@
       "number": null,
       "pos": "CM",
       "wage": 4500
-    },
-    {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 64,
-        "dri": 56,
-        "ldr": 58,
-        "pac": 55,
-        "pas": 64,
-        "pos": 57,
-        "sho": 56,
-        "sta": 64,
-        "str": 56,
-        "tac": 56,
-        "vis": 59
-      },
-      "birth": "1985-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0w3w6dm",
-      "name": "Dino Merino",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3500
     },
     {
       "attrs": {

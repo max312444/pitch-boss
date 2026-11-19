@@ -1,0 +1,33 @@
+{
+  "city": "Chambly",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "CHM",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1989,
+  "id": "c17j6i74",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "FC Chembly Oise",
+  "name": "FC Chembly Oise",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "CHM"
+}

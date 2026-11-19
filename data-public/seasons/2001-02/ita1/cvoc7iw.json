@@ -681,37 +681,6 @@
       "weight": 73
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 72,
-        "dri": 67,
-        "ldr": 70,
-        "pac": 66,
-        "pas": 74,
-        "pos": 69,
-        "sho": 69,
-        "sta": 74,
-        "str": 70,
-        "tac": 68,
-        "vis": 73
-      },
-      "birth": "1982-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p09mtkdp",
-      "name": "Gaetano D'Agostyno",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 15500,
-      "weight": 81
-    },
-    {
       "attrs": {
         "aer": 67,
         "com": 64,

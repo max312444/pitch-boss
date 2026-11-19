@@ -201,34 +201,6 @@
     },
     {
       "attrs": {
-        "aer": 56,
-        "com": 76,
-        "dri": 78,
-        "ldr": 68,
-        "pac": 72,
-        "pas": 77,
-        "pos": 57,
-        "sho": 70,
-        "sta": 66,
-        "str": 60,
-        "tac": 53,
-        "vis": 75
-      },
-      "birth": "1973-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1jjb73q",
-      "name": "Oscar Gercia",
-      "nation": "ESP",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 32000,
-      "weight": 77
-    },
-    {
-      "attrs": {
         "aer": 68,
         "com": 76,
         "dri": 78,
@@ -403,35 +375,6 @@
     },
     {
       "attrs": {
-        "aer": 78,
-        "com": 70,
-        "dri": 58,
-        "ldr": 79,
-        "pac": 72,
-        "pas": 65,
-        "pos": 81,
-        "sho": 51,
-        "sta": 74,
-        "str": 74,
-        "tac": 75,
-        "vis": 63
-      },
-      "birth": "1971-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p1jvo9or",
-      "name": "Cyril Domoreud",
-      "nation": "CIV",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 17500,
-      "weight": 80
-    },
-    {
-      "attrs": {
         "aer": 76,
         "com": 70,
         "dri": 58,
@@ -483,34 +426,6 @@
       "pos": "DM",
       "verify": true,
       "wage": 18500
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 69,
-        "dri": 66,
-        "ldr": 63,
-        "pac": 72,
-        "pas": 68,
-        "pos": 67,
-        "sho": 53,
-        "sta": 73,
-        "str": 68,
-        "tac": 69,
-        "vis": 64
-      },
-      "birth": "1970-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p145x99l",
-      "name": "Moreno Torricalli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 14500,
-      "weight": 82
     },
     {
       "attrs": {
@@ -836,32 +751,6 @@
       "weight": 72
     },
     {
-      "attrs": {
-        "aer": 70,
-        "com": 74,
-        "dri": 73,
-        "ldr": 68,
-        "pac": 71,
-        "pas": 66,
-        "pos": 69,
-        "sho": 73,
-        "sta": 68,
-        "str": 74,
-        "tac": 41,
-        "vis": 65
-      },
-      "birth": "1975-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p105douq",
-      "name": "Martin Pusse",
-      "nation": "ARG",
-      "number": null,
-      "pos": "ST",
-      "wage": 6500
-    },
-    {
       "alt": [
         "LW"
       ],
@@ -891,59 +780,6 @@
       "verify": true,
       "wage": 10500,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 68,
-        "dri": 54,
-        "ldr": 72,
-        "pac": 61,
-        "pas": 60,
-        "pos": 71,
-        "sho": 40,
-        "sta": 61,
-        "str": 70,
-        "tac": 73,
-        "vis": 54
-      },
-      "birth": "1984-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1r8tln2",
-      "name": "Carlos Garcie",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 7000,
-      "weight": 82
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 72,
-        "dri": 65,
-        "ldr": 74,
-        "pac": 63,
-        "pas": 70,
-        "pos": 71,
-        "sho": 55,
-        "sta": 75,
-        "str": 70,
-        "tac": 71,
-        "vis": 65
-      },
-      "birth": "1981-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0nsob95",
-      "name": "Moises Hortado",
-      "nation": "ESP",
-      "number": null,
-      "pos": "DM",
-      "wage": 9500
     },
     {
       "attrs": {

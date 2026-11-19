@@ -1,0 +1,33 @@
+{
+  "city": "Peronnas",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "BOU",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1930,
+  "id": "cuv3bbu",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "부루캉브레스 01",
+  "name": "Football Bourg-en-Bressa Peronnas 01",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "BOU"
+}

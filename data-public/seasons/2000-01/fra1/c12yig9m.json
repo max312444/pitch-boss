@@ -79,34 +79,6 @@
       "wage": 14000
     },
     {
-      "attrs": {
-        "aer": 61,
-        "com": 64,
-        "dri": 63,
-        "ldr": 60,
-        "pac": 64,
-        "pas": 61,
-        "pos": 63,
-        "sho": 72,
-        "sta": 59,
-        "str": 66,
-        "tac": 38,
-        "vis": 57
-      },
-      "birth": "1978-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p1h3xjzh",
-      "name": "Patrick Soffo",
-      "nation": "CMR",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 9500
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -528,33 +500,6 @@
       "weight": 80
     },
     {
-      "attrs": {
-        "aer": 61,
-        "com": 62,
-        "dri": 64,
-        "ldr": 63,
-        "pac": 66,
-        "pas": 58,
-        "pos": 61,
-        "sho": 65,
-        "sta": 61,
-        "str": 64,
-        "tac": 35,
-        "vis": 55
-      },
-      "birth": "1974-06-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0kh1y32",
-      "name": "Gaetano Giallanze",
-      "nation": "SUI",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4000
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -755,32 +700,6 @@
       "wage": 3000
     },
     {
-      "attrs": {
-        "aer": 55,
-        "com": 62,
-        "dri": 61,
-        "ldr": 61,
-        "pac": 71,
-        "pas": 60,
-        "pos": 64,
-        "sho": 49,
-        "sta": 71,
-        "str": 61,
-        "tac": 66,
-        "vis": 61
-      },
-      "birth": "1977-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1lx5dk4",
-      "name": "Ludovic Mari",
-      "nation": "FRA",
-      "number": null,
-      "pos": "LB",
-      "wage": 2500
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -809,33 +728,6 @@
       "pos": "CM",
       "wage": 3000,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 63,
-        "dri": 57,
-        "ldr": 60,
-        "pac": 56,
-        "pas": 65,
-        "pos": 62,
-        "sho": 52,
-        "sta": 62,
-        "str": 62,
-        "tac": 66,
-        "vis": 57
-      },
-      "birth": "1979-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0tsavf8",
-      "name": "Charles Devyneau",
-      "nation": "FRA",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 2000
     },
     {
       "alt": [
@@ -1092,33 +984,6 @@
       "nation": "ALG",
       "number": null,
       "pos": "CM",
-      "wage": 1500
-    },
-    {
-      "attrs": {
-        "aer": 54,
-        "com": 60,
-        "dri": 58,
-        "ldr": 56,
-        "pac": 54,
-        "pas": 62,
-        "pos": 59,
-        "sho": 54,
-        "sta": 65,
-        "str": 53,
-        "tac": 55,
-        "vis": 64
-      },
-      "birth": "1978-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1jr9ccu",
-      "name": "Samuel Fenillet",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
       "wage": 1500
     },
     {

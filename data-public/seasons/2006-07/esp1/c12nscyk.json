@@ -566,33 +566,6 @@
     },
     {
       "attrs": {
-        "aer": 75,
-        "com": 72,
-        "dri": 57,
-        "ldr": 71,
-        "pac": 66,
-        "pas": 62,
-        "pos": 73,
-        "sho": 41,
-        "sta": 64,
-        "str": 75,
-        "tac": 75,
-        "vis": 59
-      },
-      "birth": "1975-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0edx0jb",
-      "name": "Jose Garcia Celvo",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 15500
-    },
-    {
-      "attrs": {
         "aer": 77,
         "com": 68,
         "dri": 61,
@@ -645,32 +618,6 @@
       "pos": "GK",
       "wage": 10000,
       "weight": 85
-    },
-    {
-      "attrs": {
-        "aer": 71,
-        "com": 74,
-        "dri": 73,
-        "ldr": 66,
-        "pac": 71,
-        "pas": 63,
-        "pos": 69,
-        "sho": 73,
-        "sta": 66,
-        "str": 74,
-        "tac": 46,
-        "vis": 64
-      },
-      "birth": "1983-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p16cj3ta",
-      "name": "Tocha",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 8000
     },
     {
       "attrs": {
@@ -925,35 +872,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 4500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 67,
-        "dri": 68,
-        "ldr": 65,
-        "pac": 63,
-        "pas": 67,
-        "pos": 66,
-        "sho": 63,
-        "sta": 67,
-        "str": 63,
-        "tac": 66,
-        "vis": 72
-      },
-      "birth": "1983-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1v4r048",
-      "name": "Raul Madina",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "wage": 5000
     },
     {
       "attrs": {

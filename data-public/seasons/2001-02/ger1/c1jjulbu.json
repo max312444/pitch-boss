@@ -476,39 +476,6 @@
       "wage": 10500
     },
     {
-      "alt": [
-        "DM",
-        "AM",
-        "CB"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 78,
-        "dri": 72,
-        "ldr": 75,
-        "pac": 72,
-        "pas": 75,
-        "pos": 76,
-        "sho": 72,
-        "sta": 80,
-        "str": 73,
-        "tac": 68,
-        "vis": 76
-      },
-      "birth": "1977-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1djnd5p",
-      "name": "Raphael Wycky",
-      "nation": "SUI",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 16500,
-      "weight": 74
-    },
-    {
       "attrs": {
         "aer": 68,
         "com": 68,

@@ -308,33 +308,6 @@
       "weight": 77
     },
     {
-      "attrs": {
-        "aer": 63,
-        "com": 71,
-        "dri": 75,
-        "ldr": 69,
-        "pac": 78,
-        "pas": 78,
-        "pos": 62,
-        "sho": 64,
-        "sta": 83,
-        "str": 66,
-        "tac": 68,
-        "vis": 71
-      },
-      "birth": "1980-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 171,
-      "id": "p09401j2",
-      "name": "Salomon Olambe",
-      "nation": "CMR",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "LM",
-      "wage": 40000
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -568,33 +541,6 @@
       "number": null,
       "pos": "DM",
       "wage": 21500
-    },
-    {
-      "attrs": {
-        "aer": 71,
-        "com": 76,
-        "han": 74,
-        "ldr": 71,
-        "one": 73,
-        "pac": 60,
-        "pas": 65,
-        "pos": 79,
-        "ref": 76,
-        "sta": 62,
-        "str": 69,
-        "vis": 63
-      },
-      "birth": "1981-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p1uttiiq",
-      "name": "Cedric Cerrasso",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "wage": 14500,
-      "weight": 87
     },
     {
       "alt": [
@@ -1012,37 +958,6 @@
       "number": null,
       "pos": "LB",
       "wage": 5500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 63,
-        "dri": 61,
-        "ldr": 60,
-        "pac": 58,
-        "pas": 61,
-        "pos": 58,
-        "sho": 52,
-        "sta": 66,
-        "str": 55,
-        "tac": 56,
-        "vis": 61
-      },
-      "birth": "1984-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p00qj7ny",
-      "name": "Therry Racun",
-      "nation": "GLP",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 7000,
-      "weight": 80
     },
     {
       "attrs": {

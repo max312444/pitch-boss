@@ -1,0 +1,33 @@
+{
+  "city": "Leon",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "DAP",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1923,
+  "id": "c8srv7y",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "쿨투랄 레오내사",
+  "name": "Cultural y Daportiva Leonesa",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "DAP"
+}

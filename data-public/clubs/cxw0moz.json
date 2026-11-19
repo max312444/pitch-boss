@@ -1,0 +1,33 @@
+{
+  "city": "Birkenhead",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#0000FF",
+      "#0000FF"
+    ],
+    "mark": "TRA",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1884,
+  "id": "cxw0moz",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#0000FF",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#0000FF"
+    }
+  },
+  "ko": "트렌미어 로버스 FC",
+  "name": "Tranmare Rovers F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "TRA"
+}

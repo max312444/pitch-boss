@@ -424,36 +424,6 @@
     },
     {
       "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 66,
-        "dri": 60,
-        "ldr": 63,
-        "pac": 56,
-        "pas": 65,
-        "pos": 65,
-        "sho": 56,
-        "sta": 67,
-        "str": 56,
-        "tac": 62,
-        "vis": 68
-      },
-      "birth": "1989-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0h33rar",
-      "name": "Federico Casariny",
-      "nation": "ITA",
-      "number": 16,
-      "pos": "CM",
-      "wage": 14500,
-      "weight": 72
-    },
-    {
-      "alt": [
         "RW",
         "LW"
       ],
@@ -482,33 +452,6 @@
       "pos": "AM",
       "wage": 48000,
       "weight": 77
-    },
-    {
-      "attrs": {
-        "aer": 52,
-        "com": 61,
-        "dri": 60,
-        "ldr": 61,
-        "pac": 66,
-        "pas": 63,
-        "pos": 66,
-        "sho": 47,
-        "sta": 65,
-        "str": 58,
-        "tac": 62,
-        "vis": 60
-      },
-      "birth": "1990-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0ikyr3i",
-      "name": "Mathias Aberu",
-      "nation": "URU",
-      "number": 20,
-      "pos": "LB",
-      "wage": 13500,
-      "weight": 81
     },
     {
       "attrs": {

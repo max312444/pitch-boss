@@ -579,36 +579,6 @@
       "weight": 77
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 67,
-        "com": 78,
-        "dri": 78,
-        "ldr": 73,
-        "pac": 71,
-        "pas": 78,
-        "pos": 78,
-        "sho": 72,
-        "sta": 79,
-        "str": 69,
-        "tac": 70,
-        "vis": 75
-      },
-      "birth": "1984-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p1svr12e",
-      "name": "Alberto Aqoilani",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 28500,
-      "weight": 77
-    },
-    {
       "attrs": {
         "aer": 77,
         "com": 84,
@@ -692,33 +662,6 @@
       "verify": true,
       "wage": 16500,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 77,
-        "com": 74,
-        "dri": 61,
-        "ldr": 76,
-        "pac": 68,
-        "pas": 64,
-        "pos": 75,
-        "sho": 47,
-        "sta": 67,
-        "str": 74,
-        "tac": 77,
-        "vis": 62
-      },
-      "birth": "1982-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0kqjlwy",
-      "name": "Maurizio Lanzero",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 13500,
-      "weight": 80
     },
     {
       "alt": [
@@ -1011,36 +954,6 @@
       "verify": true,
       "wage": 3500,
       "weight": 74
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 51,
-        "com": 61,
-        "dri": 63,
-        "ldr": 59,
-        "pac": 58,
-        "pas": 65,
-        "pos": 58,
-        "sho": 54,
-        "sta": 63,
-        "str": 59,
-        "tac": 57,
-        "vis": 65
-      },
-      "birth": "1984-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1nmmpa7",
-      "name": "Adewale Wehab",
-      "nation": "NGA",
-      "number": null,
-      "pos": "CM",
-      "wage": 4500,
-      "weight": 69
     },
     {
       "attrs": {

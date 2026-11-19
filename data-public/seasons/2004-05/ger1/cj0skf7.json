@@ -689,39 +689,6 @@
       "wage": 13000
     },
     {
-      "alt": [
-        "RB",
-        "LB",
-        "CM"
-      ],
-      "attrs": {
-        "aer": 74,
-        "com": 70,
-        "dri": 57,
-        "ldr": 68,
-        "pac": 64,
-        "pas": 63,
-        "pos": 71,
-        "sho": 43,
-        "sta": 70,
-        "str": 75,
-        "tac": 72,
-        "vis": 55
-      },
-      "birth": "1980-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0eqhrju",
-      "name": "Serge Brancu",
-      "nation": "CMR",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 7000,
-      "weight": 76
-    },
-    {
       "attrs": {
         "aer": 68,
         "com": 65,

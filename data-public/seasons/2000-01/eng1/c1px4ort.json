@@ -624,36 +624,6 @@
     },
     {
       "alt": [
-        "RB"
-      ],
-      "attrs": {
-        "aer": 81,
-        "com": 82,
-        "dri": 65,
-        "ldr": 78,
-        "pac": 77,
-        "pas": 70,
-        "pos": 84,
-        "sho": 54,
-        "sta": 77,
-        "str": 83,
-        "tac": 82,
-        "vis": 64
-      },
-      "birth": "1969-09-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 183,
-      "id": "p0o8cuj9",
-      "name": "Henning Barg",
-      "nation": "NOR",
-      "number": 21,
-      "pos": "CB",
-      "wage": 47500,
-      "weight": 79
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {

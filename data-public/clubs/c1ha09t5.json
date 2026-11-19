@@ -1,0 +1,34 @@
+{
+  "city": "Madrid",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "CES",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1930,
+  "id": "c1ha09t5",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "레알 마두리드 카스티야",
+  "name": "Real Madrid Cestilla",
+  "nation": "ESP",
+  "parent": "cetynb1",
+  "rivals": [],
+  "short": "CES"
+}

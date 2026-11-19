@@ -509,33 +509,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 74,
-        "han": 72,
-        "ldr": 73,
-        "one": 69,
-        "pac": 53,
-        "pas": 62,
-        "pos": 72,
-        "ref": 75,
-        "sta": 59,
-        "str": 68,
-        "vis": 56
-      },
-      "birth": "1972-07-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 190,
-      "id": "p1cc4zdf",
-      "name": "Sasa Ilyc",
-      "nation": "SRB",
-      "number": 22,
-      "pos": "GK",
-      "verify": true,
-      "wage": 22000
-    },
-    {
-      "attrs": {
         "aer": 69,
         "com": 69,
         "dri": 56,
@@ -554,7 +527,7 @@
       "foot": "R",
       "height": 188,
       "id": "p13cn1xh",
-      "name": "Jon Furtune",
+      "name": "Jonathan Furtune",
       "nation": "ENG",
       "number": 23,
       "pos": "CB",

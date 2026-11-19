@@ -642,34 +642,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 63,
-        "dri": 46,
-        "ldr": 65,
-        "pac": 58,
-        "pas": 58,
-        "pos": 64,
-        "sho": 38,
-        "sta": 57,
-        "str": 62,
-        "tac": 66,
-        "vis": 46
-      },
-      "birth": "1973-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0n73l7c",
-      "name": "Alberto Sevino",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3500,
-      "weight": 80
-    },
-    {
-      "attrs": {
         "aer": 65,
         "com": 62,
         "dri": 54,

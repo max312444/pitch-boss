@@ -675,32 +675,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 70,
-        "dri": 61,
-        "ldr": 58,
-        "pac": 66,
-        "pas": 56,
-        "pos": 63,
-        "sho": 66,
-        "sta": 64,
-        "str": 64,
-        "tac": 35,
-        "vis": 59
-      },
-      "birth": "1977-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1j53nco",
-      "name": "Christophe Maslin",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 2000
-    },
-    {
-      "attrs": {
         "aer": 61,
         "com": 65,
         "han": 64,
@@ -838,36 +812,6 @@
       "weight": 78
     },
     {
-      "alt": [
-        "CM",
-        "DM"
-      ],
-      "attrs": {
-        "aer": 49,
-        "com": 64,
-        "dri": 67,
-        "ldr": 58,
-        "pac": 60,
-        "pas": 62,
-        "pos": 48,
-        "sho": 60,
-        "sta": 59,
-        "str": 49,
-        "tac": 43,
-        "vis": 68
-      },
-      "birth": "1980-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0bgzwbb",
-      "name": "Cyril Yepi",
-      "nation": "FRA",
-      "number": null,
-      "pos": "AM",
-      "wage": 2000
-    },
-    {
       "attrs": {
         "aer": 65,
         "com": 63,
@@ -976,36 +920,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 2500
-    },
-    {
-      "alt": [
-        "CM",
-        "DM"
-      ],
-      "attrs": {
-        "aer": 43,
-        "com": 61,
-        "dri": 62,
-        "ldr": 60,
-        "pac": 59,
-        "pas": 60,
-        "pos": 42,
-        "sho": 58,
-        "sta": 60,
-        "str": 51,
-        "tac": 36,
-        "vis": 65
-      },
-      "birth": "1980-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p04hhrcq",
-      "name": "Michael Cytony",
-      "nation": "FRA",
-      "number": null,
-      "pos": "AM",
-      "wage": 1500
     },
     {
       "attrs": {

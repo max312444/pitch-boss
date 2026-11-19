@@ -46,33 +46,6 @@
     },
     {
       "attrs": {
-        "aer": 61,
-        "com": 68,
-        "han": 67,
-        "ldr": 66,
-        "one": 65,
-        "pac": 49,
-        "pas": 55,
-        "pos": 69,
-        "ref": 66,
-        "sta": 51,
-        "str": 62,
-        "vis": 53
-      },
-      "birth": "1969-09-01",
-      "contract": "2006-06-30",
-      "foot": "R",
-      "height": 191,
-      "id": "p19zl1l9",
-      "name": "Nico Veesen",
-      "nation": "BEL",
-      "number": 13,
-      "pos": "GK",
-      "verify": true,
-      "wage": 19500
-    },
-    {
-      "attrs": {
         "aer": 72,
         "com": 81,
         "dri": 82,
@@ -430,38 +403,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 51500
-    },
-    {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 66,
-        "dri": 68,
-        "ldr": 69,
-        "pac": 67,
-        "pas": 70,
-        "pos": 67,
-        "sho": 61,
-        "sta": 74,
-        "str": 62,
-        "tac": 66,
-        "vis": 69
-      },
-      "birth": "1983-12-01",
-      "contract": "2007-06-30",
-      "foot": "R",
-      "height": 188,
-      "id": "p1qijs5n",
-      "name": "Darren Certer",
-      "nation": "ENG",
-      "number": 17,
-      "pos": "CM",
-      "verify": true,
-      "wage": 22000,
-      "weight": 78
     },
     {
       "alt": [

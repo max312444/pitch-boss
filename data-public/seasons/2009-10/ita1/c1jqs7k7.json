@@ -581,66 +581,6 @@
       "weight": 83
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 50,
-        "com": 57,
-        "dri": 57,
-        "ldr": 53,
-        "pac": 56,
-        "pas": 62,
-        "pos": 60,
-        "sho": 52,
-        "sta": 61,
-        "str": 57,
-        "tac": 52,
-        "vis": 57
-      },
-      "birth": "1986-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p0khega9",
-      "name": "Andrea De Felco",
-      "nation": "ITA",
-      "number": 40,
-      "pos": "CM",
-      "wage": 9500,
-      "weight": 70
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 46,
-        "com": 62,
-        "dri": 65,
-        "ldr": 58,
-        "pac": 68,
-        "pas": 62,
-        "pos": 40,
-        "sho": 63,
-        "sta": 62,
-        "str": 50,
-        "tac": 36,
-        "vis": 58
-      },
-      "birth": "1984-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p1ttia5j",
-      "name": "Antimo Iuncu",
-      "nation": "ITA",
-      "number": 46,
-      "pos": "RW",
-      "wage": 12500,
-      "weight": 67
-    },
-    {
       "attrs": {
         "aer": 61,
         "com": 64,
@@ -666,33 +606,6 @@
       "pos": "ST",
       "wage": 6000,
       "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 54,
-        "com": 54,
-        "dri": 43,
-        "ldr": 56,
-        "pac": 47,
-        "pas": 47,
-        "pos": 57,
-        "sho": 29,
-        "sta": 51,
-        "str": 56,
-        "tac": 58,
-        "vis": 39
-      },
-      "birth": "1988-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p086iys3",
-      "name": "Simone Gryppo",
-      "nation": "SUI",
-      "number": 88,
-      "pos": "CB",
-      "wage": 7000,
-      "weight": 74
     },
     {
       "attrs": {

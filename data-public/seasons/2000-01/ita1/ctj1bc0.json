@@ -512,38 +512,6 @@
     },
     {
       "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 68,
-        "com": 76,
-        "dri": 76,
-        "ldr": 76,
-        "pac": 72,
-        "pas": 78,
-        "pos": 74,
-        "sho": 72,
-        "sta": 79,
-        "str": 77,
-        "tac": 78,
-        "vis": 82
-      },
-      "birth": "1971-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p06o04yz",
-      "name": "Dario Marcolyn",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 38000,
-      "weight": 75
-    },
-    {
-      "alt": [
         "RWB"
       ],
       "attrs": {
@@ -799,35 +767,6 @@
       "pos": "ST",
       "wage": 2000,
       "weight": 70
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 66,
-        "dri": 68,
-        "ldr": 68,
-        "pac": 65,
-        "pas": 69,
-        "pos": 65,
-        "sho": 62,
-        "sta": 68,
-        "str": 60,
-        "tac": 66,
-        "vis": 66
-      },
-      "birth": "1980-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0412j1b",
-      "name": "Marcello Fiorentyni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 3000
     }
   ],
   "stadiumCapacity": 70634

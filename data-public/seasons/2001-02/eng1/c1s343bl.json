@@ -46,34 +46,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 69,
-        "dri": 73,
-        "ldr": 68,
-        "pac": 80,
-        "pas": 68,
-        "pos": 75,
-        "sho": 58,
-        "sta": 80,
-        "str": 69,
-        "tac": 75,
-        "vis": 68
-      },
-      "birth": "1970-08-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 180,
-      "id": "p0ly2tmo",
-      "name": "Jeff Kenne",
-      "nation": "IRL",
-      "number": 2,
-      "pos": "RB",
-      "verify": true,
-      "wage": 23000,
-      "weight": 79
-    },
-    {
-      "attrs": {
         "aer": 61,
         "com": 71,
         "dri": 70,
@@ -521,33 +493,6 @@
       "pos": "AM",
       "verify": true,
       "wage": 13000
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 70,
-        "dri": 66,
-        "ldr": 68,
-        "pac": 68,
-        "pas": 60,
-        "pos": 70,
-        "sho": 75,
-        "sta": 67,
-        "str": 70,
-        "tac": 37,
-        "vis": 61
-      },
-      "birth": "1972-01-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 183,
-      "id": "p0bjw25q",
-      "name": "Egil Ostensted",
-      "nation": "NOR",
-      "number": 21,
-      "pos": "ST",
-      "verify": true,
-      "wage": 13500
     },
     {
       "alt": [

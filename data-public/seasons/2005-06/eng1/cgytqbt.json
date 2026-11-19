@@ -574,33 +574,6 @@
       "verify": true,
       "wage": 22500,
       "weight": 68
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 66,
-        "dri": 71,
-        "ldr": 66,
-        "pac": 77,
-        "pas": 66,
-        "pos": 53,
-        "sho": 66,
-        "sta": 72,
-        "str": 62,
-        "tac": 46,
-        "vis": 71
-      },
-      "birth": "1973-06-01",
-      "contract": "2006-06-30",
-      "foot": "R",
-      "height": 170,
-      "id": "p0ak0bg5",
-      "name": "Andy Liddall",
-      "nation": "SCO",
-      "number": 15,
-      "pos": "RW",
-      "verify": true,
-      "wage": 11000
     }
   ],
   "stadiumCapacity": 25138

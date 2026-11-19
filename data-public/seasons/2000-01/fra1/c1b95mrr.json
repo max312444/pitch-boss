@@ -505,33 +505,6 @@
       "wage": 3500
     },
     {
-      "attrs": {
-        "aer": 68,
-        "com": 58,
-        "dri": 49,
-        "ldr": 62,
-        "pac": 58,
-        "pas": 55,
-        "pos": 68,
-        "sho": 38,
-        "sta": 56,
-        "str": 61,
-        "tac": 67,
-        "vis": 48
-      },
-      "birth": "1970-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p021hmyx",
-      "name": "Ghislain Anselmyni",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -673,33 +646,6 @@
     },
     {
       "attrs": {
-        "aer": 52,
-        "com": 65,
-        "dri": 65,
-        "ldr": 60,
-        "pac": 57,
-        "pas": 64,
-        "pos": 66,
-        "sho": 58,
-        "sta": 65,
-        "str": 63,
-        "tac": 62,
-        "vis": 64
-      },
-      "birth": "1973-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0vubvpa",
-      "name": "David Garciun",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000
-    },
-    {
-      "attrs": {
         "aer": 62,
         "com": 63,
         "han": 66,
@@ -753,33 +699,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 3000
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 63,
-        "dri": 47,
-        "ldr": 62,
-        "pac": 54,
-        "pas": 52,
-        "pos": 65,
-        "sho": 33,
-        "sta": 56,
-        "str": 61,
-        "tac": 66,
-        "vis": 51
-      },
-      "birth": "1970-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p01m0irt",
-      "name": "Nicolas Baodoin",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000
     },
     {
       "attrs": {

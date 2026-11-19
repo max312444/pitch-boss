@@ -687,35 +687,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 52,
-        "com": 62,
-        "dri": 60,
-        "ldr": 59,
-        "pac": 56,
-        "pas": 59,
-        "pos": 58,
-        "sho": 55,
-        "sta": 60,
-        "str": 57,
-        "tac": 52,
-        "vis": 63
-      },
-      "birth": "2000-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0uwgklq",
-      "name": "Gabriel Baras",
-      "nation": "SUI",
-      "number": null,
-      "pos": "CM",
-      "wage": 19500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 48,
         "com": 58,
         "dri": 56,

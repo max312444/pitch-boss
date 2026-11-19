@@ -365,36 +365,6 @@
       "wage": 8500
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 72,
-        "com": 63,
-        "dri": 55,
-        "ldr": 68,
-        "pac": 61,
-        "pas": 59,
-        "pos": 72,
-        "sho": 39,
-        "sta": 64,
-        "str": 69,
-        "tac": 70,
-        "vis": 54
-      },
-      "birth": "1980-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p0h0qrqd",
-      "name": "Javier Beraja",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 9500
-    },
-    {
       "attrs": {
         "aer": 74,
         "com": 71,
@@ -475,33 +445,6 @@
       "number": null,
       "pos": "CM",
       "wage": 7500
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 62,
-        "dri": 48,
-        "ldr": 65,
-        "pac": 60,
-        "pas": 55,
-        "pos": 71,
-        "sho": 36,
-        "sta": 59,
-        "str": 70,
-        "tac": 68,
-        "vis": 54
-      },
-      "birth": "1976-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0pi32qo",
-      "name": "Manuel Tana",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5500
     },
     {
       "attrs": {
@@ -749,35 +692,6 @@
       "number": null,
       "pos": "LB",
       "verify": true,
-      "wage": 3500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 64,
-        "dri": 61,
-        "ldr": 59,
-        "pac": 58,
-        "pas": 66,
-        "pos": 60,
-        "sho": 62,
-        "sta": 68,
-        "str": 60,
-        "tac": 61,
-        "vis": 64
-      },
-      "birth": "1980-05-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1dm16zb",
-      "name": "Antonio Lopaz",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
       "wage": 3500
     },
     {

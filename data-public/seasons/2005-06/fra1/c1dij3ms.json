@@ -292,33 +292,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 66,
-        "han": 65,
-        "ldr": 62,
-        "one": 65,
-        "pac": 51,
-        "pas": 54,
-        "pos": 69,
-        "ref": 71,
-        "sta": 52,
-        "str": 63,
-        "vis": 58
-      },
-      "birth": "1974-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p09o88yw",
-      "name": "Willy Grondyn",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 5000
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 70,
         "dri": 57,
@@ -619,36 +592,6 @@
       "verify": true,
       "wage": 3500,
       "weight": 75
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 66,
-        "dri": 65,
-        "ldr": 61,
-        "pac": 59,
-        "pas": 66,
-        "pos": 61,
-        "sho": 59,
-        "sta": 66,
-        "str": 61,
-        "tac": 63,
-        "vis": 69
-      },
-      "birth": "1979-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1f0r7ej",
-      "name": "Cedric Liebeuf",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 5000
     },
     {
       "alt": [
@@ -1071,38 +1014,6 @@
       "pos": "ST",
       "wage": 1500,
       "weight": 82
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 50,
-        "com": 60,
-        "dri": 55,
-        "ldr": 61,
-        "pac": 55,
-        "pas": 63,
-        "pos": 60,
-        "sho": 57,
-        "sta": 59,
-        "str": 56,
-        "tac": 53,
-        "vis": 64
-      },
-      "birth": "1984-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0pws65j",
-      "name": "Sekou Baredji",
-      "nation": "FRA",
-      "nation2": "MLI",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2500,
-      "weight": 77
     },
     {
       "alt": [

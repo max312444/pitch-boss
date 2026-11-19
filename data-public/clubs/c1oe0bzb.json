@@ -1,0 +1,33 @@
+{
+  "city": "Lleida",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "LLE",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1939,
+  "id": "c1oe0bzb",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "UE 예이더",
+  "name": "UE Lleyda",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "LLE"
+}

@@ -478,34 +478,6 @@
     },
     {
       "attrs": {
-        "aer": 72,
-        "com": 63,
-        "dri": 50,
-        "ldr": 70,
-        "pac": 63,
-        "pas": 55,
-        "pos": 68,
-        "sho": 42,
-        "sta": 63,
-        "str": 66,
-        "tac": 69,
-        "vis": 51
-      },
-      "birth": "1972-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0uy81pu",
-      "name": "Maxence Flachaz",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5500,
-      "weight": 77
-    },
-    {
-      "attrs": {
         "aer": 62,
         "com": 66,
         "dri": 61,
@@ -684,33 +656,6 @@
       "pos": "LW",
       "wage": 3500,
       "weight": 71
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 64,
-        "dri": 57,
-        "ldr": 59,
-        "pac": 64,
-        "pas": 57,
-        "pos": 61,
-        "sho": 62,
-        "sta": 59,
-        "str": 63,
-        "tac": 31,
-        "vis": 52
-      },
-      "birth": "1981-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0uwgy2i",
-      "name": "Basile de Cervalho",
-      "nation": "SEN",
-      "nation2": "GNB",
-      "number": null,
-      "pos": "ST",
-      "wage": 3000
     },
     {
       "alt": [

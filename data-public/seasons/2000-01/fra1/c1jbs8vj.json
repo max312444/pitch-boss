@@ -442,35 +442,6 @@
     },
     {
       "alt": [
-        "AM"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 60,
-        "dri": 61,
-        "ldr": 55,
-        "pac": 63,
-        "pas": 56,
-        "pos": 56,
-        "sho": 61,
-        "sta": 60,
-        "str": 64,
-        "tac": 28,
-        "vis": 53
-      },
-      "birth": "1977-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1n38kjs",
-      "name": "Arnaud Gonzelez",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 3500
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {
@@ -641,59 +612,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 72,
-        "dri": 66,
-        "ldr": 64,
-        "pac": 72,
-        "pas": 66,
-        "pos": 68,
-        "sho": 71,
-        "sta": 67,
-        "str": 74,
-        "tac": 44,
-        "vis": 65
-      },
-      "birth": "1973-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p00wjx8a",
-      "name": "Jerome Lempareur",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 68,
-        "dri": 65,
-        "ldr": 58,
-        "pac": 61,
-        "pas": 55,
-        "pos": 61,
-        "sho": 65,
-        "sta": 63,
-        "str": 66,
-        "tac": 37,
-        "vis": 53
-      },
-      "birth": "1977-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p10cyjh4",
-      "name": "Lilian Cumpan",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 3000
-    },
-    {
-      "attrs": {
         "aer": 59,
         "com": 61,
         "dri": 64,
@@ -807,32 +725,6 @@
       "weight": 70
     },
     {
-      "attrs": {
-        "aer": 62,
-        "com": 61,
-        "dri": 48,
-        "ldr": 57,
-        "pac": 57,
-        "pas": 50,
-        "pos": 61,
-        "sho": 35,
-        "sta": 54,
-        "str": 61,
-        "tac": 61,
-        "vis": 46
-      },
-      "birth": "1976-10-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0nmlvk2",
-      "name": "David Racorbet",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 2000
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -887,34 +779,6 @@
       "number": null,
       "pos": "CB",
       "wage": 1500
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 59,
-        "dri": 50,
-        "ldr": 64,
-        "pac": 61,
-        "pas": 58,
-        "pos": 66,
-        "sho": 34,
-        "sta": 57,
-        "str": 65,
-        "tac": 64,
-        "vis": 49
-      },
-      "birth": "1971-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1ijqq30",
-      "name": "Laurent Ciechalski",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000,
-      "weight": 77
     },
     {
       "attrs": {

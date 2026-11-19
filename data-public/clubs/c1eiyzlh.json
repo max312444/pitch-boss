@@ -1,0 +1,33 @@
+{
+  "city": "Cleethorpes",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#000000",
+      "#FFFFFF",
+      "#FFFFFF"
+    ],
+    "mark": "GRY",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1878,
+  "id": "c1eiyzlh",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    }
+  },
+  "ko": "그림주비 타운 FC",
+  "name": "Grymsby Town F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "GRY"
+}

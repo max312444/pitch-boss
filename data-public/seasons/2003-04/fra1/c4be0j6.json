@@ -339,36 +339,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 64,
-        "com": 77,
-        "dri": 76,
-        "ldr": 72,
-        "pac": 70,
-        "pas": 74,
-        "pos": 70,
-        "sho": 68,
-        "sta": 78,
-        "str": 67,
-        "tac": 73,
-        "vis": 78
-      },
-      "birth": "1982-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0hdue3q",
-      "name": "Jaroslav Plasyl",
-      "nation": "CZE",
-      "number": null,
-      "pos": "CM",
-      "wage": 24500,
-      "weight": 73
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 68,
         "com": 79,
         "dri": 81,
@@ -541,32 +511,6 @@
     },
     {
       "attrs": {
-        "aer": 69,
-        "com": 69,
-        "han": 70,
-        "ldr": 71,
-        "one": 72,
-        "pac": 52,
-        "pas": 61,
-        "pos": 72,
-        "ref": 77,
-        "sta": 63,
-        "str": 68,
-        "vis": 60
-      },
-      "birth": "1973-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0bmjfn8",
-      "name": "Stephane Poratu",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "wage": 11000
-    },
-    {
-      "attrs": {
         "aer": 79,
         "com": 70,
         "dri": 62,
@@ -651,32 +595,6 @@
       "pos": "LB",
       "wage": 9000,
       "weight": 77
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 64,
-        "dri": 61,
-        "ldr": 61,
-        "pac": 66,
-        "pas": 59,
-        "pos": 67,
-        "sho": 72,
-        "sta": 64,
-        "str": 69,
-        "tac": 37,
-        "vis": 59
-      },
-      "birth": "1976-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0u6xwud",
-      "name": "Mazhar Abdel Rehman",
-      "nation": "EGY",
-      "number": null,
-      "pos": "ST",
-      "wage": 8000
     },
     {
       "attrs": {

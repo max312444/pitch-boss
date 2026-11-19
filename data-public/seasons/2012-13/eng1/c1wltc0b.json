@@ -524,32 +524,6 @@
       "weight": 82
     },
     {
-      "attrs": {
-        "aer": 66,
-        "com": 66,
-        "dri": 66,
-        "ldr": 64,
-        "pac": 67,
-        "pas": 58,
-        "pos": 63,
-        "sho": 69,
-        "sta": 62,
-        "str": 70,
-        "tac": 35,
-        "vis": 60
-      },
-      "birth": "1988-12-01",
-      "contract": "2013-06-30",
-      "foot": "R",
-      "height": 183,
-      "id": "p0cwvczc",
-      "name": "Simon Chorch",
-      "nation": "WAL",
-      "number": 18,
-      "pos": "ST",
-      "wage": 22500
-    },
-    {
       "alt": [
         "RW"
       ],

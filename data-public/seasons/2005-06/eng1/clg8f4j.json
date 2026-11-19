@@ -804,66 +804,6 @@
       "pos": "CB",
       "wage": 20000,
       "weight": 83
-    },
-    {
-      "alt": [
-        "CM",
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 68,
-        "dri": 65,
-        "ldr": 62,
-        "pac": 72,
-        "pas": 69,
-        "pos": 56,
-        "sho": 63,
-        "sta": 74,
-        "str": 61,
-        "tac": 59,
-        "vis": 64
-      },
-      "birth": "1984-01-01",
-      "contract": "2007-06-30",
-      "foot": "R",
-      "height": 178,
-      "id": "p1v8aaix",
-      "name": "Dean Marnei",
-      "nation": "ENG",
-      "number": 31,
-      "pos": "RM",
-      "wage": 16000,
-      "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 73,
-        "com": 73,
-        "han": 70,
-        "ldr": 73,
-        "one": 69,
-        "pac": 58,
-        "pas": 64,
-        "pos": 73,
-        "ref": 75,
-        "sta": 61,
-        "str": 66,
-        "vis": 58
-      },
-      "birth": "1983-05-01",
-      "contract": "2010-06-30",
-      "foot": "R",
-      "height": 198,
-      "id": "p00q3hcr",
-      "name": "Marton Fulup",
-      "nation": "HUN",
-      "number": 13,
-      "pos": "GK",
-      "verify": true,
-      "wage": 10000,
-      "weight": 92
     }
   ],
   "stadiumCapacity": 36240

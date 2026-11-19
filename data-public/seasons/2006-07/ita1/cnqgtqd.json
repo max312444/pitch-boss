@@ -286,33 +286,6 @@
     },
     {
       "attrs": {
-        "aer": 73,
-        "com": 66,
-        "dri": 58,
-        "ldr": 71,
-        "pac": 63,
-        "pas": 63,
-        "pos": 74,
-        "sho": 41,
-        "sta": 69,
-        "str": 74,
-        "tac": 71,
-        "vis": 58
-      },
-      "birth": "1980-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1l7r1zq",
-      "name": "Thomas Manfrediny",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 10500,
-      "weight": 82
-    },
-    {
-      "attrs": {
         "aer": 67,
         "com": 70,
         "han": 72,
@@ -338,37 +311,6 @@
       "verify": true,
       "wage": 10500,
       "weight": 79
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 67,
-        "dri": 62,
-        "ldr": 65,
-        "pac": 59,
-        "pas": 68,
-        "pos": 66,
-        "sho": 58,
-        "sta": 70,
-        "str": 59,
-        "tac": 62,
-        "vis": 67
-      },
-      "birth": "1984-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0m39xcx",
-      "name": "Andrea Lezzari",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 9500,
-      "weight": 75
     },
     {
       "alt": [
@@ -630,37 +572,6 @@
       "weight": 73
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 69,
-        "dri": 70,
-        "ldr": 70,
-        "pac": 64,
-        "pas": 73,
-        "pos": 68,
-        "sho": 61,
-        "sta": 70,
-        "str": 61,
-        "tac": 68,
-        "vis": 67
-      },
-      "birth": "1980-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0bhjgfz",
-      "name": "Nicola Mingezzini",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 7000,
-      "weight": 62
-    },
-    {
       "attrs": {
         "aer": 66,
         "com": 67,
@@ -686,37 +597,6 @@
       "pos": "ST",
       "verify": true,
       "wage": 5000
-    },
-    {
-      "alt": [
-        "RB"
-      ],
-      "attrs": {
-        "aer": 70,
-        "com": 62,
-        "dri": 49,
-        "ldr": 66,
-        "pac": 61,
-        "pas": 61,
-        "pos": 66,
-        "sho": 36,
-        "sta": 62,
-        "str": 65,
-        "tac": 69,
-        "vis": 54
-      },
-      "birth": "1978-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p0p2xcpw",
-      "name": "Ernesto Tarra",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500,
-      "weight": 78
     },
     {
       "attrs": {
@@ -890,36 +770,6 @@
       "pos": "GK",
       "wage": 3500,
       "weight": 78
-    },
-    {
-      "alt": [
-        "RB"
-      ],
-      "attrs": {
-        "aer": 65,
-        "com": 62,
-        "dri": 47,
-        "ldr": 66,
-        "pac": 57,
-        "pas": 53,
-        "pos": 65,
-        "sho": 36,
-        "sta": 59,
-        "str": 62,
-        "tac": 65,
-        "vis": 46
-      },
-      "birth": "1986-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p0gm28h5",
-      "name": "Daniele Capalli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 3500,
-      "weight": 84
     },
     {
       "alt": [

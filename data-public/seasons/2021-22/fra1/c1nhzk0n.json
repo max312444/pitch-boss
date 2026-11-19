@@ -776,33 +776,6 @@
       "number": null,
       "pos": "CM",
       "wage": 10500
-    },
-    {
-      "attrs": {
-        "aer": 54,
-        "com": 50,
-        "dri": 41,
-        "ldr": 58,
-        "pac": 49,
-        "pas": 46,
-        "pos": 58,
-        "sho": 28,
-        "sta": 53,
-        "str": 58,
-        "tac": 56,
-        "vis": 40
-      },
-      "birth": "2000-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 200,
-      "id": "p1vbwyx1",
-      "name": "Till Cissokhu",
-      "nation": "FRA",
-      "nation2": "SEN",
-      "number": null,
-      "pos": "CB",
-      "wage": 7500
     }
   ],
   "stadiumCapacity": 11980

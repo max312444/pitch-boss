@@ -600,34 +600,6 @@
       "weight": 84
     },
     {
-      "attrs": {
-        "aer": 64,
-        "com": 63,
-        "dri": 45,
-        "ldr": 67,
-        "pac": 54,
-        "pas": 52,
-        "pos": 68,
-        "sho": 37,
-        "sta": 61,
-        "str": 65,
-        "tac": 64,
-        "vis": 51
-      },
-      "birth": "1968-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p191me79",
-      "name": "Jean-Marc Chanelat",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6500,
-      "weight": 68
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -765,35 +737,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 5000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 68,
-        "dri": 68,
-        "ldr": 65,
-        "pac": 64,
-        "pas": 72,
-        "pos": 64,
-        "sho": 62,
-        "sta": 67,
-        "str": 61,
-        "tac": 64,
-        "vis": 66
-      },
-      "birth": "1982-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p1g6oypc",
-      "name": "Alexandre Haow",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 5500
     },
     {
       "attrs": {

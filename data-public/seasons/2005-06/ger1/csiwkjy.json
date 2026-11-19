@@ -139,38 +139,6 @@
       "weight": 74
     },
     {
-      "alt": [
-        "CB",
-        "LB"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 71,
-        "dri": 72,
-        "ldr": 70,
-        "pac": 76,
-        "pas": 70,
-        "pos": 68,
-        "sho": 55,
-        "sta": 72,
-        "str": 69,
-        "tac": 71,
-        "vis": 65
-      },
-      "birth": "1972-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p1ohehmg",
-      "name": "Tomasz Hejto",
-      "nation": "POL",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 23500,
-      "weight": 90
-    },
-    {
       "attrs": {
         "aer": 56,
         "com": 75,
@@ -537,34 +505,6 @@
       "number": null,
       "pos": "CB",
       "wage": 8500
-    },
-    {
-      "attrs": {
-        "aer": 51,
-        "com": 62,
-        "dri": 68,
-        "ldr": 61,
-        "pac": 63,
-        "pas": 63,
-        "pos": 47,
-        "sho": 63,
-        "sta": 59,
-        "str": 55,
-        "tac": 41,
-        "vis": 70
-      },
-      "birth": "1983-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0jmlh2p",
-      "name": "Mehdi Taouyl",
-      "nation": "FRA",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 11500,
-      "weight": 73
     },
     {
       "attrs": {

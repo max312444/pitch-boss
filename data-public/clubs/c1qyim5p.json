@@ -1,0 +1,33 @@
+{
+  "city": "Gubbio",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "GOB",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1913,
+  "id": "c1qyim5p",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "AS 구비우 1910",
+  "name": "AS Gobbio 1910",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "GOB"
+}

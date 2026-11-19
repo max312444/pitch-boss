@@ -108,34 +108,6 @@
     },
     {
       "attrs": {
-        "aer": 80,
-        "com": 72,
-        "dri": 65,
-        "ldr": 78,
-        "pac": 68,
-        "pas": 67,
-        "pos": 77,
-        "sho": 49,
-        "sta": 72,
-        "str": 78,
-        "tac": 80,
-        "vis": 65
-      },
-      "birth": "1974-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p1rd950e",
-      "name": "Jeff Strassar",
-      "nation": "LUX",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 25500,
-      "weight": 80
-    },
-    {
-      "attrs": {
         "aer": 67,
         "com": 71,
         "dri": 70,

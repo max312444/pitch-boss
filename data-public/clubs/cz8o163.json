@@ -1,0 +1,33 @@
+{
+  "city": "Rodez",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FF0000",
+      "#FFFF00",
+      "#FFFF00"
+    ],
+    "mark": "ROD",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1929,
+  "id": "cz8o163",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FFFF00",
+      "secondary": "#FF0000"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FF0000",
+      "secondary": "#FFFF00"
+    }
+  },
+  "ko": "로데수 AF",
+  "name": "Rodaz AF",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "ROD"
+}

@@ -1,0 +1,33 @@
+{
+  "city": "Miranda de Ebro",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "MIR",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1927,
+  "id": "c1adj4m8",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "CD 미란대스",
+  "name": "CD Mirandas",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "MIR"
+}

@@ -367,33 +367,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 73,
-        "dri": 64,
-        "ldr": 67,
-        "pac": 72,
-        "pas": 58,
-        "pos": 68,
-        "sho": 73,
-        "sta": 63,
-        "str": 72,
-        "tac": 41,
-        "vis": 60
-      },
-      "birth": "1968-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0yhu3hv",
-      "name": "Gheorghe Creioveanu",
-      "nation": "ROU",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 11500
-    },
-    {
-      "attrs": {
         "aer": 72,
         "com": 69,
         "dri": 59,
@@ -470,65 +443,6 @@
       "number": null,
       "pos": "ST",
       "wage": 10000
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 72,
-        "dri": 72,
-        "ldr": 70,
-        "pac": 73,
-        "pas": 67,
-        "pos": 71,
-        "sho": 53,
-        "sta": 78,
-        "str": 71,
-        "tac": 73,
-        "vis": 66
-      },
-      "birth": "1975-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0uivmnr",
-      "name": "Javi Vente",
-      "nation": "ESP",
-      "number": null,
-      "pos": "RB",
-      "wage": 9500,
-      "weight": 74
-    },
-    {
-      "alt": [
-        "CM",
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 70,
-        "com": 74,
-        "dri": 71,
-        "ldr": 70,
-        "pac": 70,
-        "pas": 63,
-        "pos": 71,
-        "sho": 72,
-        "sta": 66,
-        "str": 70,
-        "tac": 42,
-        "vis": 61
-      },
-      "birth": "1972-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p1lph22n",
-      "name": "Quique Mertin",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 13500
     },
     {
       "alt": [
@@ -673,34 +587,6 @@
       "number": null,
       "pos": "RB",
       "wage": 6500
-    },
-    {
-      "attrs": {
-        "aer": 72,
-        "com": 70,
-        "dri": 56,
-        "ldr": 66,
-        "pac": 64,
-        "pas": 61,
-        "pos": 71,
-        "sho": 40,
-        "sta": 65,
-        "str": 69,
-        "tac": 70,
-        "vis": 53
-      },
-      "birth": "1972-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1ty5jd5",
-      "name": "Igor Tesevski",
-      "nation": "SRB",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500,
-      "weight": 80
     },
     {
       "attrs": {

@@ -288,33 +288,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 68,
-        "dri": 62,
-        "ldr": 65,
-        "pac": 63,
-        "pas": 60,
-        "pos": 66,
-        "sho": 68,
-        "sta": 63,
-        "str": 65,
-        "tac": 35,
-        "vis": 57
-      },
-      "birth": "1987-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0bencos",
-      "name": "Riccardo Manyero",
-      "nation": "ITA",
-      "number": 11,
-      "pos": "ST",
-      "wage": 9500,
-      "weight": 80
-    },
-    {
-      "attrs": {
         "aer": 56,
         "com": 63,
         "dri": 60,

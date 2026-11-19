@@ -1,0 +1,33 @@
+{
+  "city": "Oxford",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#0000FF",
+      "#FFFF00",
+      "#FFFF00"
+    ],
+    "mark": "OXF",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1893,
+  "id": "ckbxo41",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FFFF00",
+      "secondary": "#0000FF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#0000FF",
+      "secondary": "#FFFF00"
+    }
+  },
+  "ko": "옥스파드 유나이티드 FC",
+  "name": "Oxfurd United F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "OXF"
+}

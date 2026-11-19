@@ -728,37 +728,6 @@
       "weight": 83
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 50,
-        "com": 66,
-        "dri": 64,
-        "ldr": 61,
-        "pac": 58,
-        "pas": 66,
-        "pos": 49,
-        "sho": 62,
-        "sta": 62,
-        "str": 56,
-        "tac": 42,
-        "vis": 69
-      },
-      "birth": "1992-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p15t0r7m",
-      "name": "Neeskens Kebanu",
-      "nation": "FRA",
-      "nation2": "COD",
-      "number": 29,
-      "pos": "AM",
-      "wage": 42000,
-      "weight": 75
-    },
-    {
       "attrs": {
         "aer": 85,
         "com": 83,
@@ -784,37 +753,6 @@
       "pos": "GK",
       "wage": 116000,
       "weight": 80
-    },
-    {
-      "alt": [
-        "CB",
-        "LB"
-      ],
-      "attrs": {
-        "aer": 50,
-        "com": 54,
-        "dri": 56,
-        "ldr": 58,
-        "pac": 62,
-        "pas": 54,
-        "pos": 56,
-        "sho": 43,
-        "sta": 59,
-        "str": 52,
-        "tac": 63,
-        "vis": 55
-      },
-      "birth": "1992-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1e78n66",
-      "name": "Loick Lendre",
-      "nation": "FRA",
-      "number": 32,
-      "pos": "RB",
-      "wage": 14500,
-      "weight": 75
     },
     {
       "alt": [

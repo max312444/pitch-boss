@@ -46,34 +46,6 @@
     },
     {
       "attrs": {
-        "aer": 69,
-        "com": 72,
-        "han": 73,
-        "ldr": 71,
-        "one": 74,
-        "pac": 57,
-        "pas": 65,
-        "pos": 71,
-        "ref": 74,
-        "sta": 60,
-        "str": 72,
-        "vis": 59
-      },
-      "birth": "1974-02-01",
-      "contract": "2009-06-30",
-      "foot": "R",
-      "height": 186,
-      "id": "p0fnzn7s",
-      "name": "Radek Cerni",
-      "nation": "CZE",
-      "number": 13,
-      "pos": "GK",
-      "verify": true,
-      "wage": 43000,
-      "weight": 89
-    },
-    {
-      "attrs": {
         "aer": 65,
         "com": 67,
         "han": 65,

@@ -884,40 +884,6 @@
       "weight": 76
     },
     {
-      "alt": [
-        "CB",
-        "CM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 69,
-        "com": 72,
-        "dri": 68,
-        "ldr": 77,
-        "pac": 65,
-        "pas": 77,
-        "pos": 73,
-        "sho": 61,
-        "sta": 76,
-        "str": 76,
-        "tac": 78,
-        "vis": 73
-      },
-      "birth": "1971-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p19mt2uu",
-      "name": "Drazen Brncyc",
-      "nation": "BEL",
-      "nation2": "CRO",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 9500,
-      "weight": 74
-    },
-    {
       "attrs": {
         "aer": 80,
         "com": 78,

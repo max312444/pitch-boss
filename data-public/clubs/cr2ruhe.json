@@ -1,0 +1,33 @@
+{
+  "city": "Algeciras",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "ALG",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1909,
+  "id": "cr2ruhe",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "알헤시러스 CF",
+  "name": "Algecyras CF",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "ALG"
+}

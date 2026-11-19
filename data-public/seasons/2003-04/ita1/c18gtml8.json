@@ -174,34 +174,6 @@
       "weight": 72
     },
     {
-      "attrs": {
-        "aer": 82,
-        "com": 84,
-        "dri": 82,
-        "ldr": 76,
-        "pac": 83,
-        "pas": 72,
-        "pos": 76,
-        "sho": 82,
-        "sta": 74,
-        "str": 79,
-        "tac": 48,
-        "vis": 70
-      },
-      "birth": "1977-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 193,
-      "id": "p1ymmxc8",
-      "name": "Luca Tuni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 10500,
-      "weight": 88
-    },
-    {
       "alt": [
         "CB",
         "RWB"
@@ -497,33 +469,6 @@
     },
     {
       "attrs": {
-        "aer": 52,
-        "com": 62,
-        "dri": 71,
-        "ldr": 59,
-        "pac": 68,
-        "pas": 67,
-        "pos": 47,
-        "sho": 62,
-        "sta": 66,
-        "str": 55,
-        "tac": 41,
-        "vis": 62
-      },
-      "birth": "1981-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0m5a5n5",
-      "name": "Simone Del Neru",
-      "nation": "ITA",
-      "number": null,
-      "pos": "LW",
-      "wage": 5500,
-      "weight": 77
-    },
-    {
-      "attrs": {
         "aer": 55,
         "com": 72,
         "dri": 78,
@@ -726,34 +671,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 67,
-        "dri": 57,
-        "ldr": 65,
-        "pac": 58,
-        "pas": 64,
-        "pos": 67,
-        "sho": 56,
-        "sta": 67,
-        "str": 68,
-        "tac": 69,
-        "vis": 66
-      },
-      "birth": "1981-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0mooozt",
-      "name": "Roberto Guena",
-      "nation": "ITA",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 4500,
-      "weight": 72
-    },
-    {
-      "attrs": {
         "aer": 60,
         "com": 64,
         "dri": 61,
@@ -807,34 +724,6 @@
       "verify": true,
       "wage": 2000,
       "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 64,
-        "han": 60,
-        "ldr": 57,
-        "one": 60,
-        "pac": 47,
-        "pas": 55,
-        "pos": 60,
-        "ref": 66,
-        "sta": 51,
-        "str": 56,
-        "vis": 49
-      },
-      "birth": "1971-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 191,
-      "id": "p14678cz",
-      "name": "Davide Micyllo",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 2000,
-      "weight": 83
     },
     {
       "alt": [

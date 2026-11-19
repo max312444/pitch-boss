@@ -116,33 +116,6 @@
     },
     {
       "attrs": {
-        "aer": 59,
-        "com": 71,
-        "dri": 65,
-        "ldr": 66,
-        "pac": 77,
-        "pas": 65,
-        "pos": 69,
-        "sho": 49,
-        "sta": 71,
-        "str": 67,
-        "tac": 74,
-        "vis": 61
-      },
-      "birth": "1971-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p15mztgs",
-      "name": "Mikel Lase",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 22000
-    },
-    {
-      "attrs": {
         "aer": 63,
         "com": 71,
         "dri": 72,
@@ -507,33 +480,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 66,
-        "han": 69,
-        "ldr": 66,
-        "one": 66,
-        "pac": 47,
-        "pas": 53,
-        "pos": 67,
-        "ref": 67,
-        "sta": 57,
-        "str": 61,
-        "vis": 52
-      },
-      "birth": "1973-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 196,
-      "id": "p0dom8yi",
-      "name": "Xavi Valaro",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 6000
-    },
-    {
-      "attrs": {
         "aer": 60,
         "com": 68,
         "dri": 65,
@@ -610,33 +556,6 @@
       "number": null,
       "pos": "CB",
       "wage": 4500
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 66,
-        "dri": 66,
-        "ldr": 70,
-        "pac": 58,
-        "pas": 69,
-        "pos": 70,
-        "sho": 54,
-        "sta": 68,
-        "str": 69,
-        "tac": 69,
-        "vis": 70
-      },
-      "birth": "1973-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0tv97xp",
-      "name": "Jaime Ramus",
-      "nation": "ESP",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 6000
     },
     {
       "alt": [

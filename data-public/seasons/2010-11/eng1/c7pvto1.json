@@ -621,33 +621,6 @@
       "weight": 72
     },
     {
-      "attrs": {
-        "aer": 68,
-        "com": 59,
-        "dri": 51,
-        "ldr": 66,
-        "pac": 56,
-        "pas": 52,
-        "pos": 68,
-        "sho": 35,
-        "sta": 56,
-        "str": 64,
-        "tac": 67,
-        "vis": 50
-      },
-      "birth": "1984-01-01",
-      "contract": "2013-06-30",
-      "foot": "L",
-      "height": 185,
-      "id": "p1fabje2",
-      "name": "Matthew Kilgallun",
-      "nation": "ENG",
-      "number": 25,
-      "pos": "CB",
-      "verify": true,
-      "wage": 19500
-    },
-    {
       "alt": [
         "DM",
         "AM"

@@ -1,0 +1,33 @@
+{
+  "city": "Alessandria",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#808080",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "ALE",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2024,
+  "id": "ctgayq2",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#808080"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#808080",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "US 알레산드리어 칼초 1912",
+  "name": "US Alessandrie Calcio 1912",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "ALE"
+}

@@ -1,0 +1,33 @@
+{
+  "city": "Ravenna",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "RAV",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1913,
+  "id": "cc2pf8o",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "라밴나 FC",
+  "name": "Ravenne FC",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "RAV"
+}

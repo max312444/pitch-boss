@@ -596,37 +596,6 @@
     },
     {
       "alt": [
-        "AM"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 68,
-        "dri": 66,
-        "ldr": 65,
-        "pac": 63,
-        "pas": 60,
-        "pos": 63,
-        "sho": 68,
-        "sta": 65,
-        "str": 69,
-        "tac": 33,
-        "vis": 61
-      },
-      "birth": "1991-08-01",
-      "contract": "2014-06-30",
-      "foot": "R",
-      "height": 183,
-      "id": "p0yzqp0y",
-      "name": "Andreas Weimenn",
-      "nation": "AUT",
-      "number": 26,
-      "pos": "ST",
-      "verify": true,
-      "wage": 19000,
-      "weight": 76
-    },
-    {
-      "alt": [
         "CB",
         "LB"
       ],

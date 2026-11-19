@@ -630,35 +630,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 64,
-        "dri": 65,
-        "ldr": 63,
-        "pac": 64,
-        "pas": 58,
-        "pos": 63,
-        "sho": 69,
-        "sta": 58,
-        "str": 64,
-        "tac": 34,
-        "vis": 54
-      },
-      "birth": "1986-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p11lx58w",
-      "name": "Franck Dja Djadje",
-      "nation": "FRA",
-      "nation2": "CIV",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 6500,
-      "weight": 70
-    },
-    {
-      "attrs": {
         "aer": 61,
         "com": 67,
         "dri": 63,

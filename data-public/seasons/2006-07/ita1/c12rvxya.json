@@ -228,33 +228,6 @@
       "weight": 75
     },
     {
-      "attrs": {
-        "aer": 73,
-        "com": 70,
-        "dri": 67,
-        "ldr": 65,
-        "pac": 73,
-        "pas": 66,
-        "pos": 68,
-        "sho": 73,
-        "sta": 68,
-        "str": 71,
-        "tac": 43,
-        "vis": 63
-      },
-      "birth": "1985-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1qrvxnz",
-      "name": "Asamoah Gian",
-      "nation": "GHA",
-      "number": null,
-      "pos": "ST",
-      "wage": 17000,
-      "weight": 79
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -345,36 +318,6 @@
       "verify": true,
       "wage": 19000,
       "weight": 77
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 72,
-        "dri": 65,
-        "ldr": 65,
-        "pac": 62,
-        "pas": 74,
-        "pos": 69,
-        "sho": 65,
-        "sta": 68,
-        "str": 61,
-        "tac": 68,
-        "vis": 68
-      },
-      "birth": "1986-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p03nj0gf",
-      "name": "Piermario Morusini",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 19000,
-      "weight": 75
     },
     {
       "alt": [

@@ -726,59 +726,6 @@
       "weight": 74
     },
     {
-      "attrs": {
-        "aer": 69,
-        "com": 71,
-        "dri": 65,
-        "ldr": 67,
-        "pac": 66,
-        "pas": 64,
-        "pos": 64,
-        "sho": 73,
-        "sta": 64,
-        "str": 69,
-        "tac": 36,
-        "vis": 64
-      },
-      "birth": "1983-03-01",
-      "contract": "2007-06-30",
-      "foot": "R",
-      "height": 183,
-      "id": "p0u3nawj",
-      "name": "Jeremie Aliadiera",
-      "nation": "FRA",
-      "number": 30,
-      "pos": "ST",
-      "wage": 22000
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 71,
-        "dri": 69,
-        "ldr": 67,
-        "pac": 74,
-        "pas": 71,
-        "pos": 71,
-        "sho": 56,
-        "sta": 75,
-        "str": 68,
-        "tac": 70,
-        "vis": 66
-      },
-      "birth": "1984-11-01",
-      "contract": "2008-06-30",
-      "foot": "R",
-      "height": 180,
-      "id": "p1obtg0f",
-      "name": "Justin Hoyta",
-      "nation": "ENG",
-      "number": 31,
-      "pos": "RB",
-      "wage": 25000,
-      "weight": 75
-    },
-    {
       "alt": [
         "LW",
         "ST"

@@ -7,7 +7,7 @@
       "#000000",
       "#000000"
     ],
-    "mark": "BAS",
+    "mark": "BAA",
     "pattern": "solid",
     "shape": "shield"
   },
@@ -29,5 +29,5 @@
   "name": "SC Bastya",
   "nation": "FRA",
   "rivals": [],
-  "short": "BAS"
+  "short": "BAA"
 }

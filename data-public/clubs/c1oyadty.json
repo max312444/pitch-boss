@@ -1,0 +1,33 @@
+{
+  "city": "Arezzo",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#C32148",
+      "#800000",
+      "#800000"
+    ],
+    "mark": "ARE",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1923,
+  "id": "c1oyadty",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#800000",
+      "secondary": "#C32148"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#C32148",
+      "secondary": "#800000"
+    }
+  },
+  "ko": "US 아래초",
+  "name": "SS Arezzu",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "ARE"
+}

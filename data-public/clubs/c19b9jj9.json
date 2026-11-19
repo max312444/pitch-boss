@@ -1,0 +1,33 @@
+{
+  "city": "Las Palmas de Gran Canaria",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "UNI",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1994,
+  "id": "c19b9jj9",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "Universided de Las Palmas CF",
+  "name": "Universided de Las Palmas CF",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "UNI"
+}

@@ -705,33 +705,6 @@
       "pos": "LB",
       "wage": 51500,
       "weight": 71
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 65,
-        "dri": 53,
-        "ldr": 62,
-        "pac": 58,
-        "pas": 57,
-        "pos": 67,
-        "sho": 36,
-        "sta": 58,
-        "str": 66,
-        "tac": 65,
-        "vis": 51
-      },
-      "birth": "1990-11-01",
-      "contract": "2014-06-30",
-      "foot": "R",
-      "height": 191,
-      "id": "p1g11uq3",
-      "name": "Daniel Ayela",
-      "nation": "ESP",
-      "number": 26,
-      "pos": "CB",
-      "wage": 32000,
-      "weight": 84
     }
   ],
   "stadiumCapacity": 27244

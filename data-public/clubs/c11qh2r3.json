@@ -1,0 +1,33 @@
+{
+  "city": "Beziers",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "BEZ",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2007,
+  "id": "c11qh2r3",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "AS Béziars",
+  "name": "AS Bezyers",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "BEZ"
+}

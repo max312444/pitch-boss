@@ -223,60 +223,6 @@
     },
     {
       "attrs": {
-        "aer": 76,
-        "com": 71,
-        "dri": 56,
-        "ldr": 74,
-        "pac": 61,
-        "pas": 59,
-        "pos": 76,
-        "sho": 46,
-        "sta": 65,
-        "str": 73,
-        "tac": 75,
-        "vis": 58
-      },
-      "birth": "1974-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p00ek5qk",
-      "name": "Tabare Silve",
-      "nation": "URU",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 13500,
-      "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 72,
-        "dri": 71,
-        "ldr": 69,
-        "pac": 70,
-        "pas": 62,
-        "pos": 65,
-        "sho": 75,
-        "sta": 69,
-        "str": 73,
-        "tac": 37,
-        "vis": 65
-      },
-      "birth": "1977-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p1in4sey",
-      "name": "Diego Ribere",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 11000
-    },
-    {
-      "attrs": {
         "aer": 72,
         "com": 64,
         "dri": 52,
@@ -385,33 +331,6 @@
       "number": null,
       "pos": "GK",
       "wage": 8500
-    },
-    {
-      "attrs": {
-        "aer": 75,
-        "com": 66,
-        "dri": 52,
-        "ldr": 71,
-        "pac": 63,
-        "pas": 58,
-        "pos": 70,
-        "sho": 42,
-        "sta": 62,
-        "str": 73,
-        "tac": 72,
-        "vis": 55
-      },
-      "birth": "1978-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0815aw8",
-      "name": "Cesar Ceneda",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6500
     },
     {
       "attrs": {
@@ -780,33 +699,6 @@
       "pos": "ST",
       "verify": true,
       "wage": 3000
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 72,
-        "dri": 71,
-        "ldr": 65,
-        "pac": 70,
-        "pas": 60,
-        "pos": 66,
-        "sho": 75,
-        "sta": 64,
-        "str": 71,
-        "tac": 42,
-        "vis": 60
-      },
-      "birth": "1977-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0bkev08",
-      "name": "Mychel",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2500
     },
     {
       "attrs": {

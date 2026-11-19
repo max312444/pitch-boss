@@ -1,0 +1,34 @@
+{
+  "city": "Malaga",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "MAG",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1990,
+  "id": "cxuexgs",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "Atlético Malagueñu",
+  "name": "Atletico Malaguenu",
+  "nation": "ESP",
+  "parent": "c1mqq4eo",
+  "rivals": [],
+  "short": "MAG"
+}

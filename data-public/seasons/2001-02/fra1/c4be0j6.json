@@ -252,33 +252,6 @@
     },
     {
       "attrs": {
-        "aer": 77,
-        "com": 82,
-        "han": 81,
-        "ldr": 76,
-        "one": 77,
-        "pac": 59,
-        "pas": 72,
-        "pos": 78,
-        "ref": 82,
-        "sta": 67,
-        "str": 72,
-        "vis": 67
-      },
-      "birth": "1975-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0khzrd6",
-      "name": "Tony Sylve",
-      "nation": "SEN",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "GK",
-      "wage": 27000
-    },
-    {
-      "attrs": {
         "aer": 84,
         "com": 79,
         "dri": 62,
@@ -567,36 +540,6 @@
     },
     {
       "alt": [
-        "AM"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 67,
-        "dri": 64,
-        "ldr": 62,
-        "pac": 69,
-        "pas": 60,
-        "pos": 64,
-        "sho": 66,
-        "sta": 60,
-        "str": 63,
-        "tac": 39,
-        "vis": 57
-      },
-      "birth": "1968-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0dqdzim",
-      "name": "Xavier Grevelaine",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 7500
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {
@@ -816,60 +759,6 @@
       "nation": "FRA",
       "number": null,
       "pos": "GK",
-      "wage": 3500
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 65,
-        "han": 66,
-        "ldr": 65,
-        "one": 65,
-        "pac": 53,
-        "pas": 61,
-        "pos": 69,
-        "ref": 73,
-        "sta": 59,
-        "str": 66,
-        "vis": 56
-      },
-      "birth": "1969-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p18vcvu0",
-      "name": "Jean-Marie Aubri",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 4500
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 63,
-        "han": 67,
-        "ldr": 63,
-        "one": 63,
-        "pac": 48,
-        "pas": 52,
-        "pos": 64,
-        "ref": 68,
-        "sta": 54,
-        "str": 60,
-        "vis": 50
-      },
-      "birth": "1980-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p1m1rfrt",
-      "name": "Patrice Luzy",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
       "wage": 3500
     },
     {

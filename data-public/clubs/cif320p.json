@@ -1,0 +1,33 @@
+{
+  "city": "Santa Lucia de Tirajana",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "VEC",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1962,
+  "id": "cif320p",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "UD Vecindariu",
+  "name": "UD Vecindariu",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "VEC"
+}

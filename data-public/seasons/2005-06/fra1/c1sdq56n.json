@@ -83,38 +83,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 64,
-        "com": 80,
-        "dri": 72,
-        "ldr": 77,
-        "pac": 70,
-        "pas": 78,
-        "pos": 72,
-        "sho": 70,
-        "sta": 79,
-        "str": 75,
-        "tac": 72,
-        "vis": 78
-      },
-      "birth": "1982-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 169,
-      "id": "p0n1zfki",
-      "name": "Karim Zyani",
-      "nation": "ALG",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 17000,
-      "weight": 66
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 58,
         "com": 69,
         "dri": 72,
@@ -457,36 +425,6 @@
       "wage": 5000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 67,
-        "dri": 64,
-        "ldr": 67,
-        "pac": 62,
-        "pas": 67,
-        "pos": 69,
-        "sho": 61,
-        "sta": 70,
-        "str": 60,
-        "tac": 63,
-        "vis": 69
-      },
-      "birth": "1978-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p10w5roa",
-      "name": "Nicolas Flurentin",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6000
-    },
-    {
       "attrs": {
         "aer": 67,
         "com": 64,
@@ -594,60 +532,6 @@
       "pos": "GK",
       "wage": 5500,
       "weight": 79
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 65,
-        "dri": 54,
-        "ldr": 69,
-        "pac": 62,
-        "pas": 61,
-        "pos": 67,
-        "sho": 38,
-        "sta": 64,
-        "str": 65,
-        "tac": 71,
-        "vis": 52
-      },
-      "birth": "1978-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p07a580e",
-      "name": "Ludovic Lyron",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 63,
-        "dri": 50,
-        "ldr": 63,
-        "pac": 58,
-        "pas": 57,
-        "pos": 62,
-        "sho": 35,
-        "sta": 61,
-        "str": 67,
-        "tac": 64,
-        "vis": 49
-      },
-      "birth": "1977-12-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1jgavq4",
-      "name": "David Vayrelles",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000
     },
     {
       "alt": [
@@ -953,63 +837,6 @@
       "number": null,
       "pos": "CB",
       "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 60,
-        "dri": 60,
-        "ldr": 56,
-        "pac": 58,
-        "pas": 53,
-        "pos": 59,
-        "sho": 62,
-        "sta": 58,
-        "str": 60,
-        "tac": 33,
-        "vis": 56
-      },
-      "birth": "1984-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0hdf1ue",
-      "name": "Christian Nede",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 2000,
-      "weight": 80
-    },
-    {
-      "alt": [
-        "RB"
-      ],
-      "attrs": {
-        "aer": 67,
-        "com": 59,
-        "dri": 47,
-        "ldr": 66,
-        "pac": 55,
-        "pas": 52,
-        "pos": 66,
-        "sho": 37,
-        "sta": 56,
-        "str": 66,
-        "tac": 67,
-        "vis": 48
-      },
-      "birth": "1984-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p0zyganz",
-      "name": "Eric Marestar",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 2000,
-      "weight": 67
     },
     {
       "attrs": {

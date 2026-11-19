@@ -1,0 +1,33 @@
+{
+  "city": "Mantua",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "MET",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1911,
+  "id": "cpq7z1b",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "만토버 FC",
+  "name": "Mentova 1911",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "MET"
+}

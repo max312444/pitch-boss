@@ -1,0 +1,33 @@
+{
+  "city": "Barnsley",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#FF0000",
+      "#FF0000"
+    ],
+    "mark": "BAN",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1887,
+  "id": "c1y6xwrl",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FF0000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#FF0000"
+    }
+  },
+  "ko": "반즐레 FC",
+  "name": "Barnslei F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "BAN"
+}

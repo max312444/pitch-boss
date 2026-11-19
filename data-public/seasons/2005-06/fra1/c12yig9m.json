@@ -1150,32 +1150,6 @@
     },
     {
       "attrs": {
-        "aer": 50,
-        "com": 57,
-        "dri": 59,
-        "ldr": 53,
-        "pac": 61,
-        "pas": 57,
-        "pos": 57,
-        "sho": 42,
-        "sta": 59,
-        "str": 56,
-        "tac": 62,
-        "vis": 54
-      },
-      "birth": "1983-07-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0819btq",
-      "name": "Denis Stinet",
-      "nation": "FRA",
-      "number": null,
-      "pos": "LB",
-      "wage": 2000
-    },
-    {
-      "attrs": {
         "aer": 56,
         "com": 61,
         "han": 63,

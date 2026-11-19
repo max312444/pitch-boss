@@ -1,0 +1,33 @@
+{
+  "city": "El Ejido",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "POL",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1969,
+  "id": "c19w5h2b",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "폴리대포르티보 에히도",
+  "name": "Polidepurtivo Ejido",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "POL"
+}

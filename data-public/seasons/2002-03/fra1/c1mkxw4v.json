@@ -137,34 +137,6 @@
       "wage": 6500
     },
     {
-      "attrs": {
-        "aer": 64,
-        "com": 66,
-        "dri": 68,
-        "ldr": 63,
-        "pac": 66,
-        "pas": 59,
-        "pos": 68,
-        "sho": 68,
-        "sta": 60,
-        "str": 68,
-        "tac": 39,
-        "vis": 58
-      },
-      "birth": "1976-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p18ldsog",
-      "name": "Jose Junyor",
-      "nation": "BRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 6000,
-      "weight": 85
-    },
-    {
       "alt": [
         "CM",
         "RB",
@@ -280,35 +252,6 @@
       "verify": true,
       "wage": 5500,
       "weight": 79
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 67,
-        "dri": 64,
-        "ldr": 63,
-        "pac": 65,
-        "pas": 62,
-        "pos": 64,
-        "sho": 74,
-        "sta": 66,
-        "str": 68,
-        "tac": 41,
-        "vis": 58
-      },
-      "birth": "1973-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p10w50pb",
-      "name": "Samassi Abuu",
-      "nation": "FRA",
-      "nation2": "CIV",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4500,
-      "weight": 72
     },
     {
       "attrs": {
@@ -597,65 +540,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 61,
-        "com": 72,
-        "dri": 68,
-        "ldr": 65,
-        "pac": 68,
-        "pas": 74,
-        "pos": 72,
-        "sho": 65,
-        "sta": 70,
-        "str": 69,
-        "tac": 64,
-        "vis": 71
-      },
-      "birth": "1973-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1rl3xkl",
-      "name": "Emmerick Darbelat",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 65,
-        "dri": 62,
-        "ldr": 62,
-        "pac": 59,
-        "pas": 69,
-        "pos": 64,
-        "sho": 59,
-        "sta": 69,
-        "str": 59,
-        "tac": 65,
-        "vis": 68
-      },
-      "birth": "1977-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1wqhzja",
-      "name": "Gregory Ursole",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 4000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 60,
         "com": 69,
         "dri": 64,
@@ -819,33 +703,6 @@
     },
     {
       "attrs": {
-        "aer": 55,
-        "com": 65,
-        "dri": 60,
-        "ldr": 63,
-        "pac": 62,
-        "pas": 63,
-        "pos": 64,
-        "sho": 56,
-        "sta": 65,
-        "str": 56,
-        "tac": 57,
-        "vis": 66
-      },
-      "birth": "1972-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0xml5f8",
-      "name": "Anthony Gercia",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000
-    },
-    {
-      "attrs": {
         "aer": 51,
         "com": 62,
         "dri": 68,
@@ -958,35 +815,6 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 2500
-    },
-    {
-      "alt": [
-        "CM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 63,
-        "dri": 52,
-        "ldr": 65,
-        "pac": 51,
-        "pas": 61,
-        "pos": 63,
-        "sho": 51,
-        "sta": 63,
-        "str": 63,
-        "tac": 66,
-        "vis": 56
-      },
-      "birth": "1979-10-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0jvyz99",
-      "name": "Fabrice Levret",
-      "nation": "FRA",
-      "number": null,
-      "pos": "DM",
       "wage": 2500
     },
     {

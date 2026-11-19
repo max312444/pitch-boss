@@ -112,7 +112,7 @@ export function SquadView() {
         })()}
         {locker && <LockerRoom onClose={() => setLocker(false)} />}
 
-        <div data-tour="squad-filter" className="mb-3 flex shrink-0 items-center gap-1 overflow-x-auto">
+        <div data-tour="squad-filter" className="mb-3 flex shrink-0 items-center gap-1 overflow-x-auto lg:flex-wrap lg:overflow-visible">
           {GROUPS.filter((g) => g.key !== 'YOUTH' || academyOn(w)).map((g) => (
             <button key={g.key} onClick={() => setGroup(g.key)}
               className={`h-8 shrink-0 rounded-md px-3 text-[13px] transition-colors lg:px-4 ${group === g.key ? 'bg-ink-700 font-semibold text-hi' : 'text-mid hover:bg-ink-800 hover:text-hi'}`}>

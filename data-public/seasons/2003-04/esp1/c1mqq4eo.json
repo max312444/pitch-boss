@@ -220,32 +220,6 @@
     },
     {
       "attrs": {
-        "aer": 69,
-        "com": 76,
-        "dri": 72,
-        "ldr": 68,
-        "pac": 70,
-        "pas": 64,
-        "pos": 72,
-        "sho": 77,
-        "sta": 69,
-        "str": 70,
-        "tac": 44,
-        "vis": 65
-      },
-      "birth": "1977-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p089p7s5",
-      "name": "Edgar Pachaco",
-      "nation": "POR",
-      "number": null,
-      "pos": "ST",
-      "wage": 13500
-    },
-    {
-      "attrs": {
         "aer": 73,
         "com": 68,
         "dri": 61,
@@ -270,37 +244,6 @@
       "pos": "CB",
       "wage": 14000,
       "weight": 81
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 62,
-        "com": 71,
-        "dri": 72,
-        "ldr": 74,
-        "pac": 72,
-        "pas": 73,
-        "pos": 71,
-        "sho": 70,
-        "sta": 74,
-        "str": 71,
-        "tac": 69,
-        "vis": 75
-      },
-      "birth": "1974-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p0y2g4za",
-      "name": "Sandru",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 19000,
-      "weight": 63
     },
     {
       "attrs": {
@@ -355,37 +298,6 @@
       "verify": true,
       "wage": 9500,
       "weight": 88
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 67,
-        "dri": 75,
-        "ldr": 65,
-        "pac": 76,
-        "pas": 69,
-        "pos": 50,
-        "sho": 71,
-        "sta": 73,
-        "str": 65,
-        "tac": 50,
-        "vis": 73
-      },
-      "birth": "1980-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p1ln52cy",
-      "name": "Doda",
-      "nation": "POR",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 16000,
-      "weight": 71
     },
     {
       "attrs": {

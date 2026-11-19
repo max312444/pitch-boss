@@ -549,33 +549,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 62,
-        "dri": 49,
-        "ldr": 68,
-        "pac": 53,
-        "pas": 55,
-        "pos": 68,
-        "sho": 36,
-        "sta": 58,
-        "str": 66,
-        "tac": 65,
-        "vis": 50
-      },
-      "birth": "1989-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p14ekx2q",
-      "name": "Jonathan Rossyni",
-      "nation": "SUI",
-      "number": 24,
-      "pos": "CB",
-      "wage": 10500,
-      "weight": 82
-    },
-    {
-      "attrs": {
         "aer": 66,
         "com": 60,
         "dri": 51,
@@ -713,33 +686,6 @@
       "pos": "GK",
       "wage": 30500,
       "weight": 90
-    },
-    {
-      "attrs": {
-        "aer": 53,
-        "com": 62,
-        "dri": 59,
-        "ldr": 58,
-        "pac": 60,
-        "pas": 49,
-        "pos": 57,
-        "sho": 64,
-        "sta": 53,
-        "str": 58,
-        "tac": 27,
-        "vis": 52
-      },
-      "birth": "1988-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 192,
-      "id": "p00aweoq",
-      "name": "Salvatore Futi",
-      "nation": "ITA",
-      "number": 88,
-      "pos": "ST",
-      "wage": 7000,
-      "weight": 76
     },
     {
       "attrs": {

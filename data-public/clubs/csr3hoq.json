@@ -1,0 +1,33 @@
+{
+  "city": "Rimini",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#FF0000",
+      "#FF0000"
+    ],
+    "mark": "RYM",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2016,
+  "id": "csr3hoq",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FF0000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#FF0000"
+    }
+  },
+  "ko": "AC 리메니 1912",
+  "name": "Rymini Calcio S.S.D.",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "RYM"
+}

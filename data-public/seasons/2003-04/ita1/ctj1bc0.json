@@ -725,36 +725,6 @@
       "weight": 74
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 73,
-        "dri": 73,
-        "ldr": 68,
-        "pac": 73,
-        "pas": 79,
-        "pos": 68,
-        "sho": 67,
-        "sta": 83,
-        "str": 65,
-        "tac": 66,
-        "vis": 71
-      },
-      "birth": "1975-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p015o2iz",
-      "name": "Christian Manfredyni",
-      "nation": "CIV",
-      "number": null,
-      "pos": "LM",
-      "wage": 15000,
-      "weight": 73
-    },
-    {
       "attrs": {
         "aer": 79,
         "com": 72,
@@ -811,34 +781,6 @@
     },
     {
       "attrs": {
-        "aer": 69,
-        "com": 72,
-        "han": 71,
-        "ldr": 72,
-        "one": 74,
-        "pac": 56,
-        "pas": 61,
-        "pos": 76,
-        "ref": 78,
-        "sta": 60,
-        "str": 66,
-        "vis": 58
-      },
-      "birth": "1978-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 193,
-      "id": "p05fxu7j",
-      "name": "Emanuele Concatti",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 5000,
-      "weight": 85
-    },
-    {
-      "attrs": {
         "aer": 65,
         "com": 65,
         "han": 72,
@@ -864,34 +806,6 @@
       "verify": true,
       "wage": 5000,
       "weight": 81
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 72,
-        "dri": 66,
-        "ldr": 66,
-        "pac": 69,
-        "pas": 58,
-        "pos": 65,
-        "sho": 72,
-        "sta": 65,
-        "str": 67,
-        "tac": 40,
-        "vis": 59
-      },
-      "birth": "1982-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0qgd340",
-      "name": "Felice Evecuo",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3500,
-      "weight": 85
     },
     {
       "alt": [

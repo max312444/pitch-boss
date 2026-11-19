@@ -273,33 +273,6 @@
       "weight": 70
     },
     {
-      "attrs": {
-        "aer": 72,
-        "com": 72,
-        "dri": 66,
-        "ldr": 69,
-        "pac": 72,
-        "pas": 64,
-        "pos": 66,
-        "sho": 77,
-        "sta": 69,
-        "str": 70,
-        "tac": 41,
-        "vis": 62
-      },
-      "birth": "1991-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p1m12qql",
-      "name": "Ante Budymir",
-      "nation": "CRO",
-      "number": 14,
-      "pos": "ST",
-      "wage": 8000,
-      "weight": 75
-    },
-    {
       "alt": [
         "CB",
         "LB"

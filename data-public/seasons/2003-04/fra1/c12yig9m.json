@@ -131,37 +131,6 @@
       "weight": 77
     },
     {
-      "alt": [
-        "RB"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 66,
-        "dri": 65,
-        "ldr": 65,
-        "pac": 62,
-        "pas": 70,
-        "pos": 63,
-        "sho": 62,
-        "sta": 66,
-        "str": 62,
-        "tac": 63,
-        "vis": 66
-      },
-      "birth": "1981-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p06wx02l",
-      "name": "Goran Rubyl",
-      "nation": "CRO",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 18500,
-      "weight": 76
-    },
-    {
       "attrs": {
         "aer": 67,
         "com": 70,
@@ -635,33 +604,6 @@
     },
     {
       "attrs": {
-        "aer": 61,
-        "com": 62,
-        "han": 69,
-        "ldr": 63,
-        "one": 63,
-        "pac": 45,
-        "pas": 58,
-        "pos": 63,
-        "ref": 69,
-        "sta": 55,
-        "str": 58,
-        "vis": 56
-      },
-      "birth": "1977-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0t9pqrg",
-      "name": "Sebastien Peuvert",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 3500
-    },
-    {
-      "attrs": {
         "aer": 64,
         "com": 62,
         "dri": 61,
@@ -718,58 +660,6 @@
       "number": null,
       "pos": "CB",
       "wage": 3000
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 67,
-        "dri": 59,
-        "ldr": 58,
-        "pac": 66,
-        "pas": 58,
-        "pos": 61,
-        "sho": 69,
-        "sta": 57,
-        "str": 63,
-        "tac": 31,
-        "vis": 59
-      },
-      "birth": "1980-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 194,
-      "id": "p0ver6yp",
-      "name": "Mirza Masic",
-      "nation": "BIH",
-      "number": null,
-      "pos": "ST",
-      "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 68,
-        "dri": 61,
-        "ldr": 62,
-        "pac": 66,
-        "pas": 55,
-        "pos": 67,
-        "sho": 66,
-        "sta": 62,
-        "str": 68,
-        "tac": 35,
-        "vis": 59
-      },
-      "birth": "1979-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p10eutpc",
-      "name": "Pierre Arystouy",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 2500
     },
     {
       "attrs": {

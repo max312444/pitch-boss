@@ -948,33 +948,6 @@
       "weight": 82
     },
     {
-      "attrs": {
-        "aer": 57,
-        "com": 70,
-        "dri": 77,
-        "ldr": 67,
-        "pac": 67,
-        "pas": 72,
-        "pos": 57,
-        "sho": 74,
-        "sta": 71,
-        "str": 62,
-        "tac": 50,
-        "vis": 76
-      },
-      "birth": "1980-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p04zup3d",
-      "name": "Sergio Santamarya",
-      "nation": "ESP",
-      "number": null,
-      "pos": "AM",
-      "wage": 10000,
-      "weight": 68
-    },
-    {
       "alt": [
         "LW",
         "LB"

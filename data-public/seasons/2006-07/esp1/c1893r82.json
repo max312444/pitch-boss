@@ -458,34 +458,6 @@
       "weight": 72
     },
     {
-      "attrs": {
-        "aer": 69,
-        "com": 73,
-        "dri": 66,
-        "ldr": 79,
-        "pac": 63,
-        "pas": 76,
-        "pos": 73,
-        "sho": 58,
-        "sta": 78,
-        "str": 75,
-        "tac": 78,
-        "vis": 74
-      },
-      "birth": "1976-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p18a5ymv",
-      "name": "Gonzalo de los Santus",
-      "nation": "URU",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 49000,
-      "weight": 82
-    },
-    {
       "alt": [
         "DM",
         "AM"
@@ -852,63 +824,6 @@
       "verify": true,
       "wage": 12000,
       "weight": 64
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 75,
-        "dri": 69,
-        "ldr": 66,
-        "pac": 66,
-        "pas": 72,
-        "pos": 67,
-        "sho": 69,
-        "sta": 71,
-        "str": 66,
-        "tac": 66,
-        "vis": 73
-      },
-      "birth": "1984-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0dl9jvd",
-      "name": "Juanlo",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 8500
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 74,
-        "dri": 70,
-        "ldr": 63,
-        "pac": 67,
-        "pas": 60,
-        "pos": 65,
-        "sho": 72,
-        "sta": 68,
-        "str": 70,
-        "tac": 39,
-        "vis": 65
-      },
-      "birth": "1985-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0vyxjkr",
-      "name": "Miko",
-      "nation": "VEN",
-      "number": null,
-      "pos": "ST",
-      "wage": 6000,
-      "weight": 70
     },
     {
       "alt": [

@@ -109,39 +109,6 @@
       "wage": 22500
     },
     {
-      "alt": [
-        "CM",
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 75,
-        "com": 73,
-        "dri": 72,
-        "ldr": 70,
-        "pac": 74,
-        "pas": 66,
-        "pos": 70,
-        "sho": 78,
-        "sta": 69,
-        "str": 73,
-        "tac": 44,
-        "vis": 65
-      },
-      "birth": "1982-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p14z9vnd",
-      "name": "Kalu Ucha",
-      "nation": "NGA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 20500,
-      "weight": 71
-    },
-    {
       "attrs": {
         "aer": 71,
         "com": 75,
@@ -704,62 +671,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 5000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 68,
-        "dri": 65,
-        "ldr": 63,
-        "pac": 65,
-        "pas": 69,
-        "pos": 66,
-        "sho": 65,
-        "sta": 71,
-        "str": 61,
-        "tac": 65,
-        "vis": 68
-      },
-      "birth": "1984-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1mbmntq",
-      "name": "Renaud Cohada",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 5500,
-      "weight": 74
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 59,
-        "dri": 50,
-        "ldr": 63,
-        "pac": 58,
-        "pas": 58,
-        "pos": 65,
-        "sho": 39,
-        "sta": 60,
-        "str": 65,
-        "tac": 64,
-        "vis": 48
-      },
-      "birth": "1983-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p17su0w7",
-      "name": "Garald Cid",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 3500
     },
     {
       "attrs": {

@@ -597,34 +597,6 @@
       "weight": 83
     },
     {
-      "attrs": {
-        "aer": 71,
-        "com": 66,
-        "dri": 55,
-        "ldr": 68,
-        "pac": 66,
-        "pas": 63,
-        "pos": 75,
-        "sho": 43,
-        "sta": 68,
-        "str": 70,
-        "tac": 72,
-        "vis": 58
-      },
-      "birth": "1976-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1ijfozv",
-      "name": "Joseph Dayo Oshadogen",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 7500,
-      "weight": 75
-    },
-    {
       "alt": [
         "RW",
         "LW"
@@ -682,36 +654,6 @@
       "pos": "LB",
       "wage": 5500,
       "weight": 68
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 48,
-        "com": 64,
-        "dri": 65,
-        "ldr": 60,
-        "pac": 69,
-        "pas": 62,
-        "pos": 41,
-        "sho": 59,
-        "sta": 61,
-        "str": 52,
-        "tac": 40,
-        "vis": 64
-      },
-      "birth": "1982-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p1wqgzwr",
-      "name": "Sebastien Carola",
-      "nation": "FRA",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 7000
     },
     {
       "attrs": {
@@ -797,35 +739,6 @@
       "number": null,
       "pos": "CM",
       "verify": true,
-      "wage": 5500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 49,
-        "com": 61,
-        "dri": 58,
-        "ldr": 61,
-        "pac": 57,
-        "pas": 67,
-        "pos": 63,
-        "sho": 57,
-        "sta": 66,
-        "str": 59,
-        "tac": 59,
-        "vis": 66
-      },
-      "birth": "1983-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p0thiq9q",
-      "name": "Jimmy Joan",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
       "wage": 5500
     },
     {
@@ -974,36 +887,6 @@
       "weight": 78
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 50,
-        "com": 59,
-        "dri": 61,
-        "ldr": 59,
-        "pac": 53,
-        "pas": 63,
-        "pos": 62,
-        "sho": 53,
-        "sta": 61,
-        "str": 53,
-        "tac": 54,
-        "vis": 63
-      },
-      "birth": "1983-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1803ju6",
-      "name": "Nicolas Hislan",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000
-    },
-    {
       "attrs": {
         "aer": 62,
         "com": 66,
@@ -1031,36 +914,6 @@
       "verify": true,
       "wage": 2000,
       "weight": 71
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 61,
-        "dri": 60,
-        "ldr": 60,
-        "pac": 61,
-        "pas": 64,
-        "pos": 61,
-        "sho": 57,
-        "sta": 68,
-        "str": 60,
-        "tac": 63,
-        "vis": 64
-      },
-      "birth": "1984-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0cvy98w",
-      "name": "Antoine Graoss",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2500
     },
     {
       "alt": [

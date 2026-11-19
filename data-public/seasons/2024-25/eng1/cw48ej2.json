@@ -74,33 +74,6 @@
     },
     {
       "attrs": {
-        "aer": 70,
-        "com": 67,
-        "han": 70,
-        "ldr": 65,
-        "one": 68,
-        "pac": 53,
-        "pas": 62,
-        "pos": 74,
-        "ref": 69,
-        "sta": 55,
-        "str": 65,
-        "vis": 57
-      },
-      "birth": "1990-11-01",
-      "contract": "2025-06-30",
-      "foot": "R",
-      "height": 188,
-      "id": "p1bcxgz6",
-      "name": "Vaclav Hladki",
-      "nation": "CZE",
-      "number": 31,
-      "pos": "GK",
-      "verify": true,
-      "wage": 66000
-    },
-    {
-      "attrs": {
         "aer": 58,
         "com": 63,
         "dri": 65,
@@ -575,36 +548,6 @@
       "pos": "LW",
       "wage": 63500,
       "weight": 73
-    },
-    {
-      "alt": [
-        "RW"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 70,
-        "dri": 74,
-        "ldr": 64,
-        "pac": 73,
-        "pas": 70,
-        "pos": 52,
-        "sho": 68,
-        "sta": 72,
-        "str": 61,
-        "tac": 46,
-        "vis": 73
-      },
-      "birth": "1996-02-01",
-      "contract": "2026-06-30",
-      "foot": "R",
-      "height": 183,
-      "id": "p1x0jpix",
-      "name": "Marcus Harnass",
-      "nation": "ENG",
-      "number": 11,
-      "pos": "LW",
-      "verify": true,
-      "wage": 47000
     },
     {
       "alt": [

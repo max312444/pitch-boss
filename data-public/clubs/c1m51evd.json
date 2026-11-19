@@ -1,0 +1,33 @@
+{
+  "city": "Peterborough",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#F0FFFF",
+      "#007FFF",
+      "#007FFF"
+    ],
+    "mark": "PAT",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1934,
+  "id": "c1m51evd",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#007FFF",
+      "secondary": "#F0FFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#F0FFFF",
+      "secondary": "#007FFF"
+    }
+  },
+  "ko": "피터바러 유나이티드 FC",
+  "name": "Paterborough United F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "PAT"
+}

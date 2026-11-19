@@ -1,0 +1,33 @@
+{
+  "city": "Besancon",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "BES",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1904,
+  "id": "caip02p",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "Racing Besençon",
+  "name": "Racing Besancun",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "BES"
+}

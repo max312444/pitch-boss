@@ -312,37 +312,6 @@
       "weight": 79
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 67,
-        "dri": 66,
-        "ldr": 64,
-        "pac": 60,
-        "pas": 69,
-        "pos": 61,
-        "sho": 59,
-        "sta": 67,
-        "str": 60,
-        "tac": 59,
-        "vis": 67
-      },
-      "birth": "1973-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0xpi27f",
-      "name": "Roberto Biscunti",
-      "nation": "BEL",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 11000,
-      "weight": 78
-    },
-    {
       "attrs": {
         "aer": 83,
         "com": 72,
@@ -516,34 +485,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 68,
-        "dri": 60,
-        "ldr": 68,
-        "pac": 66,
-        "pas": 64,
-        "pos": 72,
-        "sho": 44,
-        "sta": 64,
-        "str": 70,
-        "tac": 72,
-        "vis": 54
-      },
-      "birth": "1980-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p10i6zo2",
-      "name": "Florian Jerjat",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5500,
-      "weight": 74
-    },
-    {
-      "attrs": {
         "aer": 56,
         "com": 64,
         "dri": 63,
@@ -706,69 +647,6 @@
       "number": null,
       "pos": "GK",
       "wage": 4500
-    },
-    {
-      "alt": [
-        "RB",
-        "LB",
-        "CM"
-      ],
-      "attrs": {
-        "aer": 70,
-        "com": 60,
-        "dri": 49,
-        "ldr": 63,
-        "pac": 59,
-        "pas": 58,
-        "pos": 66,
-        "sho": 37,
-        "sta": 62,
-        "str": 68,
-        "tac": 70,
-        "vis": 50
-      },
-      "birth": "1978-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1uoac4v",
-      "name": "Thibault Scottu",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 5000,
-      "weight": 65
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 66,
-        "dri": 63,
-        "ldr": 62,
-        "pac": 61,
-        "pas": 71,
-        "pos": 64,
-        "sho": 63,
-        "sta": 65,
-        "str": 62,
-        "tac": 63,
-        "vis": 67
-      },
-      "birth": "1977-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 168,
-      "id": "p0kkxzkh",
-      "name": "Yoann Bygne",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6000,
-      "weight": 65
     },
     {
       "alt": [

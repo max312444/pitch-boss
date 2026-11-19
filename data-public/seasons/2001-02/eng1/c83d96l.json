@@ -452,34 +452,6 @@
       "weight": 77
     },
     {
-      "attrs": {
-        "aer": 68,
-        "com": 72,
-        "han": 69,
-        "ldr": 69,
-        "one": 73,
-        "pac": 52,
-        "pas": 58,
-        "pos": 73,
-        "ref": 70,
-        "sta": 60,
-        "str": 65,
-        "vis": 59
-      },
-      "birth": "1973-05-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 190,
-      "id": "p1f0u951",
-      "name": "Pegguy Arphaxad",
-      "nation": "FRA",
-      "number": 19,
-      "pos": "GK",
-      "verify": true,
-      "wage": 24000,
-      "weight": 81
-    },
-    {
       "alt": [
         "RW",
         "LW"

@@ -85,34 +85,6 @@
       "weight": 69
     },
     {
-      "attrs": {
-        "aer": 62,
-        "com": 69,
-        "dri": 67,
-        "ldr": 70,
-        "pac": 79,
-        "pas": 67,
-        "pos": 73,
-        "sho": 55,
-        "sta": 74,
-        "str": 69,
-        "tac": 72,
-        "vis": 67
-      },
-      "birth": "1980-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0dy8zpq",
-      "name": "Fousseni Diewara",
-      "nation": "MLI",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "RB",
-      "wage": 15000,
-      "weight": 71
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -224,34 +196,6 @@
       "verify": true,
       "wage": 9000,
       "weight": 77
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 68,
-        "dri": 60,
-        "ldr": 68,
-        "pac": 58,
-        "pas": 65,
-        "pos": 68,
-        "sho": 54,
-        "sta": 68,
-        "str": 65,
-        "tac": 67,
-        "vis": 65
-      },
-      "birth": "1981-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p11jxk8b",
-      "name": "Alassane N'Duur",
-      "nation": "SEN",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 8000
     },
     {
       "attrs": {
@@ -599,60 +543,6 @@
       "wage": 5000
     },
     {
-      "attrs": {
-        "aer": 62,
-        "com": 67,
-        "han": 64,
-        "ldr": 65,
-        "one": 63,
-        "pac": 48,
-        "pas": 53,
-        "pos": 67,
-        "ref": 66,
-        "sta": 52,
-        "str": 64,
-        "vis": 52
-      },
-      "birth": "1976-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p1pzu8og",
-      "name": "Fabien Debac",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 5000
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 66,
-        "dri": 55,
-        "ldr": 68,
-        "pac": 62,
-        "pas": 57,
-        "pos": 69,
-        "sho": 37,
-        "sta": 61,
-        "str": 71,
-        "tac": 69,
-        "vis": 56
-      },
-      "birth": "1975-04-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p03qno82",
-      "name": "Damien Bridonneao",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000
-    },
-    {
       "alt": [
         "CM",
         "DM"
@@ -829,33 +719,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 62,
-        "dri": 48,
-        "ldr": 61,
-        "pac": 57,
-        "pas": 52,
-        "pos": 64,
-        "sho": 36,
-        "sta": 58,
-        "str": 64,
-        "tac": 62,
-        "vis": 50
-      },
-      "birth": "1980-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0lxqhng",
-      "name": "Sylvain Meslyen",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2500
-    },
-    {
-      "attrs": {
         "aer": 56,
         "com": 62,
         "dri": 52,
@@ -909,33 +772,6 @@
       "verify": true,
       "wage": 2000,
       "weight": 79
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 62,
-        "han": 61,
-        "ldr": 64,
-        "one": 64,
-        "pac": 44,
-        "pas": 52,
-        "pos": 64,
-        "ref": 68,
-        "sta": 51,
-        "str": 60,
-        "vis": 53
-      },
-      "birth": "1982-06-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0kq7ous",
-      "name": "Florent Perreud",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 2000
     },
     {
       "attrs": {

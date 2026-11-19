@@ -168,34 +168,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 75,
-        "dri": 71,
-        "ldr": 68,
-        "pac": 70,
-        "pas": 63,
-        "pos": 72,
-        "sho": 74,
-        "sta": 66,
-        "str": 68,
-        "tac": 39,
-        "vis": 61
-      },
-      "birth": "1977-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p1qpi0ae",
-      "name": "Cristian Bocchi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 8500,
-      "weight": 79
-    },
-    {
-      "attrs": {
         "aer": 67,
         "com": 72,
         "dri": 67,
@@ -866,34 +838,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 66,
-        "dri": 60,
-        "ldr": 57,
-        "pac": 62,
-        "pas": 55,
-        "pos": 61,
-        "sho": 68,
-        "sta": 56,
-        "str": 64,
-        "tac": 32,
-        "vis": 56
-      },
-      "birth": "1974-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1inli5z",
-      "name": "Roberto Colecone",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2500,
-      "weight": 72
-    },
-    {
-      "attrs": {
         "aer": 44,
         "com": 60,
         "dri": 68,
@@ -947,34 +891,6 @@
       "verify": true,
       "wage": 2500,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 64,
-        "dri": 62,
-        "ldr": 58,
-        "pac": 62,
-        "pas": 58,
-        "pos": 59,
-        "sho": 63,
-        "sta": 59,
-        "str": 63,
-        "tac": 36,
-        "vis": 53
-      },
-      "birth": "1985-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p1lzfuud",
-      "name": "Isah Eliekwu",
-      "nation": "NGA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2000,
-      "weight": 73
     },
     {
       "attrs": {
@@ -1034,33 +950,6 @@
     },
     {
       "attrs": {
-        "aer": 57,
-        "com": 56,
-        "dri": 41,
-        "ldr": 59,
-        "pac": 49,
-        "pas": 48,
-        "pos": 58,
-        "sho": 27,
-        "sta": 49,
-        "str": 61,
-        "tac": 59,
-        "vis": 41
-      },
-      "birth": "1970-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0m3b8n5",
-      "name": "Luigi Mertinelli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000
-    },
-    {
-      "attrs": {
         "aer": 64,
         "com": 58,
         "dri": 49,
@@ -1086,65 +975,6 @@
       "verify": true,
       "wage": 2500,
       "weight": 74
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 60,
-        "dri": 63,
-        "ldr": 62,
-        "pac": 56,
-        "pas": 66,
-        "pos": 58,
-        "sho": 54,
-        "sta": 65,
-        "str": 55,
-        "tac": 58,
-        "vis": 65
-      },
-      "birth": "1983-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p19k59zm",
-      "name": "Luca Belyngheri",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2500,
-      "weight": 70
-    },
-    {
-      "attrs": {
-        "aer": 56,
-        "com": 52,
-        "dri": 38,
-        "ldr": 54,
-        "pac": 50,
-        "pas": 45,
-        "pos": 61,
-        "sho": 31,
-        "sta": 51,
-        "str": 59,
-        "tac": 55,
-        "vis": 38
-      },
-      "birth": "1967-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0ubmpz2",
-      "name": "Oscar Bravi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2000,
-      "weight": 80
     },
     {
       "attrs": {

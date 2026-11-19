@@ -176,12 +176,16 @@ async function publish({ apply = false, log = console.log } = {}) {
     }
   }
   const clubMap = {}, usedNames = new Set(), usedShort = new Set();
+  // 공개 데이터가 나간 뒤 ID 를 바꾼 구단은 옛 ID 로 공개 ID · 가상 이름을 만든다 (canonical/club-public-seed.json, 예전 세이브 유지)
+  const pubSeed = readJson(path.join(CANONICAL_DIR, 'club-public-seed.json'), {});
+  const currentIds = new Set(clubs.map((c) => c.id));
+  const seedOf = (id) => { const old = pubSeed[id]; return typeof old === 'string' && !currentIds.has(old) ? old : id; };
   for (const c of [...clubs].sort((a, b) => (latestRep.get(b.id) ?? 0) - (latestRep.get(a.id) ?? 0) || a.id.localeCompare(b.id))) {
     // 실제 구단 이름에서 핵심 단어 한 글자만 바꾼다 (흔한 단어는 그대로) — 겹치면 다른 글자로
     let ko, en;
     for (let n = 0; n < 6; n++) {
-      ko = parodyClubKo(c.ko || c.name, c.id + (n ? '#' + n : ''));
-      en = parodyClubEn(c.name, c.id + (n ? '#' + n : ''));
+      ko = parodyClubKo(c.ko || c.name, seedOf(c.id) + (n ? '#' + n : ''));
+      en = parodyClubEn(c.name, seedOf(c.id) + (n ? '#' + n : ''));
       if (!usedNames.has(en) && !usedNames.has(ko)) break;
     }
     usedNames.add(en); usedNames.add(ko);
@@ -196,7 +200,7 @@ async function publish({ apply = false, log = console.log } = {}) {
     usedShort.add(short);
     const crest = crestFor(c);
     // 구단 ID는 이름과 무관한 고정 코드 (패러디 이름을 다듬어도 세이브가 깨지지 않게)
-    clubMap[c.id] = { id: 'c' + hash('club:' + c.id).toString(36).padStart(6, '0'), ko, en, short, crest: { ...crest, mark: short } };
+    clubMap[c.id] = { id: 'c' + hash('club:' + seedOf(c.id)).toString(36).padStart(6, '0'), ko, en, short, crest: { ...crest, mark: short } };
   }
 
   // ③ 선수 ID · 이름

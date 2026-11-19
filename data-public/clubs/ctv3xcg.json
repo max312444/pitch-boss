@@ -1,0 +1,33 @@
+{
+  "city": "Bristol",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#000000",
+      "#FFFFFF",
+      "#FFFFFF"
+    ],
+    "mark": "BRT",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1897,
+  "id": "ctv3xcg",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    }
+  },
+  "ko": "브레스틀 시티 FC",
+  "name": "Bristul City F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "BRT"
+}

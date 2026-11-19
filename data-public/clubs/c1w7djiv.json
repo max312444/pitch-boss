@@ -1,0 +1,33 @@
+{
+  "city": "London",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#000080",
+      "#FFFFFF",
+      "#FFFFFF"
+    ],
+    "mark": "MIW",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1885,
+  "id": "c1w7djiv",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000080"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#000080",
+      "secondary": "#FFFFFF"
+    }
+  },
+  "ko": "멜월 FC",
+  "name": "Millwell F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "MIW"
+}

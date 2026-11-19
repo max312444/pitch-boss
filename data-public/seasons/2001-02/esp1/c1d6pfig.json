@@ -397,33 +397,6 @@
     },
     {
       "attrs": {
-        "aer": 69,
-        "com": 71,
-        "dri": 74,
-        "ldr": 73,
-        "pac": 79,
-        "pas": 72,
-        "pos": 75,
-        "sho": 53,
-        "sta": 79,
-        "str": 71,
-        "tac": 74,
-        "vis": 71
-      },
-      "birth": "1971-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0aha436",
-      "name": "Rafael Barges",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 17500
-    },
-    {
-      "attrs": {
         "aer": 74,
         "com": 74,
         "dri": 70,
@@ -648,32 +621,6 @@
       "pos": "CM",
       "wage": 9500,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 59,
-        "dri": 46,
-        "ldr": 66,
-        "pac": 55,
-        "pas": 56,
-        "pos": 68,
-        "sho": 38,
-        "sta": 62,
-        "str": 68,
-        "tac": 68,
-        "vis": 50
-      },
-      "birth": "1976-07-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1inteix",
-      "name": "Francisco Noguarol",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 5500
     },
     {
       "alt": [

@@ -173,7 +173,7 @@
       "foot": "R",
       "height": 188,
       "id": "p0x4fto4",
-      "name": "Mo Kunjic",
+      "name": "Muhamed Kunjic",
       "nation": "BIH",
       "number": 26,
       "pos": "CB",
@@ -386,35 +386,6 @@
       "number": 15,
       "pos": "CM",
       "wage": 19000
-    },
-    {
-      "alt": [
-        "CM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 61,
-        "dri": 56,
-        "ldr": 65,
-        "pac": 53,
-        "pas": 61,
-        "pos": 65,
-        "sho": 47,
-        "sta": 66,
-        "str": 63,
-        "tac": 65,
-        "vis": 62
-      },
-      "birth": "1965-12-01",
-      "contract": "2001-06-30",
-      "foot": "R",
-      "height": 188,
-      "id": "p0htqp9k",
-      "name": "Carlton Palmar",
-      "nation": "ENG",
-      "number": 14,
-      "pos": "DM",
-      "wage": 22500
     },
     {
       "attrs": {

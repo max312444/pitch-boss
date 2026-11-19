@@ -246,33 +246,6 @@
       "weight": 89
     },
     {
-      "attrs": {
-        "aer": 71,
-        "com": 71,
-        "dri": 70,
-        "ldr": 70,
-        "pac": 74,
-        "pas": 62,
-        "pos": 70,
-        "sho": 75,
-        "sta": 67,
-        "str": 74,
-        "tac": 38,
-        "vis": 63
-      },
-      "birth": "1991-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p1h1xtzb",
-      "name": "Pierre-Michel Lasugga",
-      "nation": "GER",
-      "number": 10,
-      "pos": "ST",
-      "wage": 45000,
-      "weight": 85
-    },
-    {
       "alt": [
         "ST",
         "LW"

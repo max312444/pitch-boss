@@ -240,33 +240,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 68,
-        "dri": 70,
-        "ldr": 67,
-        "pac": 74,
-        "pas": 69,
-        "pos": 72,
-        "sho": 51,
-        "sta": 74,
-        "str": 68,
-        "tac": 74,
-        "vis": 66
-      },
-      "birth": "1970-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p03zsjnz",
-      "name": "Victor Torres Mestra",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 9000
-    },
-    {
-      "attrs": {
         "aer": 74,
         "com": 81,
         "han": 78,

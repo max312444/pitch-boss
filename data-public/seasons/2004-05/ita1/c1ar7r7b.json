@@ -370,33 +370,6 @@
     },
     {
       "attrs": {
-        "aer": 63,
-        "com": 68,
-        "dri": 71,
-        "ldr": 66,
-        "pac": 76,
-        "pas": 72,
-        "pos": 70,
-        "sho": 54,
-        "sta": 73,
-        "str": 70,
-        "tac": 71,
-        "vis": 69
-      },
-      "birth": "1982-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p024rzqe",
-      "name": "Luca Antonyni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "LB",
-      "wage": 8500,
-      "weight": 72
-    },
-    {
-      "attrs": {
         "aer": 57,
         "com": 69,
         "dri": 66,
@@ -871,36 +844,6 @@
       "number": null,
       "pos": "CM",
       "wage": 3500,
-      "weight": 70
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 63,
-        "dri": 59,
-        "ldr": 57,
-        "pac": 56,
-        "pas": 65,
-        "pos": 63,
-        "sho": 60,
-        "sta": 64,
-        "str": 59,
-        "tac": 59,
-        "vis": 61
-      },
-      "birth": "1984-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p07w8430",
-      "name": "Thumas Job",
-      "nation": "CMR",
-      "number": null,
-      "pos": "CM",
-      "wage": 2000,
       "weight": 70
     },
     {

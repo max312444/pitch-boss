@@ -277,36 +277,6 @@
       "wage": 21500
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 69,
-        "dri": 66,
-        "ldr": 66,
-        "pac": 64,
-        "pas": 71,
-        "pos": 68,
-        "sho": 63,
-        "sta": 73,
-        "str": 64,
-        "tac": 65,
-        "vis": 71
-      },
-      "birth": "1979-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p08zlvf4",
-      "name": "Bjarni Guðjonssun",
-      "nation": "ISL",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 18500
-    },
-    {
       "attrs": {
         "aer": 72,
         "com": 71,

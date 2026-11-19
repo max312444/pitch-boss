@@ -577,34 +577,6 @@
       "weight": 59
     },
     {
-      "attrs": {
-        "aer": 70,
-        "com": 70,
-        "dri": 71,
-        "ldr": 68,
-        "pac": 70,
-        "pas": 60,
-        "pos": 71,
-        "sho": 74,
-        "sta": 68,
-        "str": 69,
-        "tac": 43,
-        "vis": 66
-      },
-      "birth": "1984-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 189,
-      "id": "p03q246d",
-      "name": "Vedad Ibisavic",
-      "nation": "BIH",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 8500,
-      "weight": 80
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -754,34 +726,6 @@
     },
     {
       "attrs": {
-        "aer": 64,
-        "com": 64,
-        "dri": 63,
-        "ldr": 57,
-        "pac": 66,
-        "pas": 57,
-        "pos": 60,
-        "sho": 65,
-        "sta": 59,
-        "str": 66,
-        "tac": 36,
-        "vis": 56
-      },
-      "birth": "1986-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p11lx58w",
-      "name": "Franck Dja Djadje",
-      "nation": "FRA",
-      "nation2": "CIV",
-      "number": null,
-      "pos": "ST",
-      "wage": 6000,
-      "weight": 70
-    },
-    {
-      "attrs": {
         "aer": 73,
         "com": 74,
         "dri": 61,
@@ -888,35 +832,6 @@
       "pos": "CB",
       "wage": 6000,
       "weight": 86
-    },
-    {
-      "attrs": {
-        "aer": 50,
-        "com": 67,
-        "dri": 70,
-        "ldr": 65,
-        "pac": 63,
-        "pas": 69,
-        "pos": 46,
-        "sho": 65,
-        "sta": 62,
-        "str": 54,
-        "tac": 45,
-        "vis": 71
-      },
-      "birth": "1978-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p0hl9hi4",
-      "name": "Alioune Toore",
-      "nation": "FRA",
-      "nation2": "MLI",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 4500,
-      "weight": 65
     },
     {
       "attrs": {

@@ -472,33 +472,6 @@
       "weight": 75
     },
     {
-      "attrs": {
-        "aer": 60,
-        "com": 60,
-        "dri": 62,
-        "ldr": 54,
-        "pac": 63,
-        "pas": 55,
-        "pos": 57,
-        "sho": 63,
-        "sta": 60,
-        "str": 61,
-        "tac": 29,
-        "vis": 51
-      },
-      "birth": "1991-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0kt7gn7",
-      "name": "Roberto Inglase",
-      "nation": "ITA",
-      "number": 23,
-      "pos": "ST",
-      "wage": 5000,
-      "weight": 75
-    },
-    {
       "alt": [
         "DM"
       ],

@@ -268,36 +268,6 @@
       "wage": 12500
     },
     {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 62,
-        "dri": 57,
-        "ldr": 61,
-        "pac": 59,
-        "pas": 61,
-        "pos": 61,
-        "sho": 52,
-        "sta": 64,
-        "str": 55,
-        "tac": 57,
-        "vis": 62
-      },
-      "birth": "2003-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p15mnl5o",
-      "name": "Caspar Jender",
-      "nation": "GER",
-      "number": 20,
-      "pos": "CM",
-      "wage": 10500
-    },
-    {
       "attrs": {
         "aer": 45,
         "com": 51,

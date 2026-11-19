@@ -617,33 +617,6 @@
       "number": 45,
       "pos": "CM",
       "wage": 37000
-    },
-    {
-      "attrs": {
-        "aer": 39,
-        "com": 58,
-        "dri": 57,
-        "ldr": 53,
-        "pac": 59,
-        "pas": 57,
-        "pos": 35,
-        "sho": 53,
-        "sta": 57,
-        "str": 44,
-        "tac": 35,
-        "vis": 52
-      },
-      "birth": "2003-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0srxs26",
-      "name": "Tairyk Arcunte",
-      "nation": "FRA",
-      "nation2": "GLP",
-      "number": 97,
-      "pos": "RW",
-      "wage": 7000
     }
   ],
   "stadiumCapacity": 15097

@@ -621,34 +621,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 66,
-        "dri": 51,
-        "ldr": 68,
-        "pac": 60,
-        "pas": 62,
-        "pos": 73,
-        "sho": 39,
-        "sta": 61,
-        "str": 66,
-        "tac": 70,
-        "vis": 54
-      },
-      "birth": "1970-04-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1xs4ar7",
-      "name": "Patrick Guilluu",
-      "nation": "FRA",
-      "nation2": "GER",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500
-    },
-    {
-      "attrs": {
         "aer": 51,
         "com": 58,
         "han": 56,
@@ -728,34 +700,6 @@
       "verify": true,
       "wage": 3500,
       "weight": 81
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 64,
-        "dri": 50,
-        "ldr": 72,
-        "pac": 61,
-        "pas": 60,
-        "pos": 72,
-        "sho": 41,
-        "sta": 64,
-        "str": 67,
-        "tac": 73,
-        "vis": 54
-      },
-      "birth": "1970-06-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p12mlhhp",
-      "name": "Romarin Byllong",
-      "nation": "FRA",
-      "nation2": "CMR",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000
     },
     {
       "alt": [

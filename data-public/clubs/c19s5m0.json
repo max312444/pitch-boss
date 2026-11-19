@@ -1,0 +1,34 @@
+{
+  "city": "Bilbao",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "BIB",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1964,
+  "id": "c19s5m0",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "빌버오 아틀레틱",
+  "name": "Athletic Bilbau B",
+  "nation": "ESP",
+  "parent": "c93gbv7",
+  "rivals": [],
+  "short": "BIB"
+}

@@ -616,33 +616,6 @@
     },
     {
       "attrs": {
-        "aer": 55,
-        "com": 68,
-        "dri": 68,
-        "ldr": 63,
-        "pac": 63,
-        "pas": 70,
-        "pos": 50,
-        "sho": 70,
-        "sta": 64,
-        "str": 60,
-        "tac": 49,
-        "vis": 73
-      },
-      "birth": "1976-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0betqr2",
-      "name": "Dennis Serben",
-      "nation": "ROU",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 23000
-    },
-    {
-      "attrs": {
         "aer": 62,
         "com": 66,
         "dri": 66,
@@ -695,35 +668,6 @@
       "verify": true,
       "wage": 8000,
       "weight": 78
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 65,
-        "dri": 60,
-        "ldr": 66,
-        "pac": 57,
-        "pas": 68,
-        "pos": 66,
-        "sho": 56,
-        "sta": 70,
-        "str": 60,
-        "tac": 60,
-        "vis": 66
-      },
-      "birth": "1982-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0quxa56",
-      "name": "Libero Perri",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "wage": 9000
     },
     {
       "attrs": {

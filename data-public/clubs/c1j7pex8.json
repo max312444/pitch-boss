@@ -1,0 +1,33 @@
+{
+  "city": "Castellon de la Plana",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#000000",
+      "#FFFFFF",
+      "#FFFFFF"
+    ],
+    "mark": "CET",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1922,
+  "id": "c1j7pex8",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    }
+  },
+  "ko": "CD 카스태욘",
+  "name": "CD Cestellon",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "CET"
+}

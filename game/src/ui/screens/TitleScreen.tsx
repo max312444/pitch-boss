@@ -142,7 +142,6 @@ export function TitleScreen() {
         </footer>
         {loadError && <p className="mt-4 max-w-[440px] text-[13px] text-amber">{loadError}</p>}
         <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-          <button onClick={() => setFeedbackOpen(true)} className="h-9 rounded-lg px-3 text-[12px] font-semibold text-neon ring-1 ring-line transition-colors hover:bg-neon-ghost">의견 보내기 · 버그 제보</button>
           <button onClick={() => setNotice('view')} className="py-2 text-[11px] text-lo transition-colors hover:text-mid">비공식 팬 프로젝트 · 고지 보기</button>
         </div>
         {feedbackOpen && <FeedbackDialog onClose={() => setFeedbackOpen(false)} />}

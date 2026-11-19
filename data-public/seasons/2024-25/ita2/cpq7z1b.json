@@ -1,0 +1,104 @@
+{
+  "club": "cpq7z1b",
+  "estimated": true,
+  "facilities": {
+    "training": 2,
+    "youth": 3
+  },
+  "finance": {
+    "balance": 150000,
+    "transferBudget": 100000,
+    "wageBudget": 5500
+  },
+  "league": "ita2",
+  "reputation": 56,
+  "season": "2024-25",
+  "source": {
+    "derived": "pipeline-derived-v1",
+    "facts": "wikidata",
+    "license": "CC0-1.0",
+    "roster": "wikidata",
+    "snapshot": "2024-09-01"
+  },
+  "squad": [
+    {
+      "attrs": {
+        "aer": 56,
+        "com": 64,
+        "dri": 58,
+        "ldr": 62,
+        "pac": 59,
+        "pas": 65,
+        "pos": 63,
+        "sho": 59,
+        "sta": 65,
+        "str": 57,
+        "tac": 61,
+        "vis": 65
+      },
+      "birth": "1995-05-01",
+      "contract": null,
+      "foot": null,
+      "height": 180,
+      "id": "p1lja6k3",
+      "name": "Mattia Aramo",
+      "nation": "ITA",
+      "number": null,
+      "pos": "CM",
+      "wage": 2500
+    },
+    {
+      "attrs": {
+        "aer": 52,
+        "com": 60,
+        "dri": 56,
+        "ldr": 53,
+        "pac": 52,
+        "pas": 60,
+        "pos": 57,
+        "sho": 50,
+        "sta": 59,
+        "str": 55,
+        "tac": 52,
+        "vis": 58
+      },
+      "birth": "1990-08-01",
+      "contract": null,
+      "foot": null,
+      "height": 177,
+      "id": "p1dn1gs4",
+      "name": "Riccardo Perpetuiny",
+      "nation": "ITA",
+      "number": null,
+      "pos": "CM",
+      "wage": 1500
+    },
+    {
+      "attrs": {
+        "aer": 40,
+        "com": 51,
+        "dri": 54,
+        "ldr": 52,
+        "pac": 45,
+        "pas": 53,
+        "pos": 53,
+        "sho": 50,
+        "sta": 54,
+        "str": 50,
+        "tac": 52,
+        "vis": 51
+      },
+      "birth": "1990-09-01",
+      "contract": null,
+      "foot": null,
+      "height": 190,
+      "id": "p1as9rgd",
+      "name": "Filippo Cerini",
+      "nation": "ITA",
+      "number": null,
+      "pos": "CM",
+      "wage": 1000
+    }
+  ],
+  "stadiumCapacity": 7367
+}

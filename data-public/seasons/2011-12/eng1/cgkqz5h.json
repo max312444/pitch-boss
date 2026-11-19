@@ -73,35 +73,6 @@
       "weight": 96
     },
     {
-      "attrs": {
-        "aer": 67,
-        "com": 66,
-        "han": 72,
-        "ldr": 69,
-        "one": 68,
-        "pac": 50,
-        "pas": 61,
-        "pos": 70,
-        "ref": 74,
-        "sta": 58,
-        "str": 68,
-        "vis": 58
-      },
-      "birth": "1986-06-01",
-      "contract": "2014-06-30",
-      "foot": "R",
-      "height": 188,
-      "id": "p1hhioli",
-      "name": "Carl Ikema",
-      "nation": "ENG",
-      "nation2": "NGA",
-      "number": 25,
-      "pos": "GK",
-      "verify": true,
-      "wage": 20000,
-      "weight": 84
-    },
-    {
       "alt": [
         "CB",
         "LB",

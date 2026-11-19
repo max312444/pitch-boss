@@ -195,66 +195,6 @@
       "weight": 74
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 62,
-        "com": 68,
-        "dri": 67,
-        "ldr": 69,
-        "pac": 65,
-        "pas": 75,
-        "pos": 68,
-        "sho": 66,
-        "sta": 76,
-        "str": 65,
-        "tac": 66,
-        "vis": 71
-      },
-      "birth": "1989-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p1i0tms3",
-      "name": "Francesco Bolzony",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 43000,
-      "weight": 83
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 68,
-        "dri": 68,
-        "ldr": 62,
-        "pac": 75,
-        "pas": 67,
-        "pos": 65,
-        "sho": 48,
-        "sta": 72,
-        "str": 64,
-        "tac": 69,
-        "vis": 64
-      },
-      "birth": "1992-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1lisqyk",
-      "name": "Achraf Lazear",
-      "nation": "ITA",
-      "nation2": "MAR",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 33000,
-      "weight": 67
-    },
-    {
       "attrs": {
         "aer": 72,
         "com": 71,
@@ -601,33 +541,6 @@
       "pos": "LB",
       "wage": 8000,
       "weight": 81
-    },
-    {
-      "attrs": {
-        "aer": 58,
-        "com": 60,
-        "dri": 62,
-        "ldr": 59,
-        "pac": 60,
-        "pas": 53,
-        "pos": 60,
-        "sho": 62,
-        "sta": 59,
-        "str": 60,
-        "tac": 33,
-        "vis": 56
-      },
-      "birth": "1996-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0fhiy85",
-      "name": "Antonino La Gumine",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "wage": 5500,
-      "weight": 72
     },
     {
       "alt": [

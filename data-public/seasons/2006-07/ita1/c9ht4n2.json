@@ -708,33 +708,6 @@
     },
     {
       "attrs": {
-        "aer": 69,
-        "com": 72,
-        "dri": 73,
-        "ldr": 66,
-        "pac": 72,
-        "pas": 66,
-        "pos": 74,
-        "sho": 75,
-        "sta": 73,
-        "str": 74,
-        "tac": 46,
-        "vis": 67
-      },
-      "birth": "1984-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p03bx3ow",
-      "name": "Alessandro Matry",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "wage": 19000,
-      "weight": 80
-    },
-    {
-      "attrs": {
         "aer": 49,
         "com": 64,
         "dri": 67,
@@ -904,33 +877,6 @@
       "verify": true,
       "wage": 9500,
       "weight": 85
-    },
-    {
-      "attrs": {
-        "aer": 72,
-        "com": 68,
-        "dri": 57,
-        "ldr": 67,
-        "pac": 64,
-        "pas": 59,
-        "pos": 73,
-        "sho": 38,
-        "sta": 65,
-        "str": 68,
-        "tac": 70,
-        "vis": 57
-      },
-      "birth": "1986-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p062av4s",
-      "name": "Romano Perticona",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 7500,
-      "weight": 78
     },
     {
       "attrs": {

@@ -405,34 +405,6 @@
     },
     {
       "attrs": {
-        "aer": 62,
-        "com": 66,
-        "dri": 57,
-        "ldr": 66,
-        "pac": 56,
-        "pas": 64,
-        "pos": 67,
-        "sho": 52,
-        "sta": 65,
-        "str": 65,
-        "tac": 65,
-        "vis": 65
-      },
-      "birth": "1977-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0l7coc9",
-      "name": "Balazs Mulnar",
-      "nation": "HUN",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 7500,
-      "weight": 81
-    },
-    {
-      "attrs": {
         "aer": 71,
         "com": 66,
         "dri": 51,

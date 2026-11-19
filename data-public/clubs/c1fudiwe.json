@@ -1,0 +1,33 @@
+{
+  "city": "Padua",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "PAD",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1910,
+  "id": "c1fudiwe",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "칼초 파두바",
+  "name": "Calcio Paduva",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "PAD"
+}

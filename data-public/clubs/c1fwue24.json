@@ -1,0 +1,33 @@
+{
+  "city": "Guadalajara",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#800080",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "GUE",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1947,
+  "id": "c1fwue24",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#800080"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#800080",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "CD 과덜라하라",
+  "name": "CD Guedalajara",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "GUE"
+}

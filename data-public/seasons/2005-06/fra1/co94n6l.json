@@ -736,32 +736,6 @@
       "weight": 90
     },
     {
-      "attrs": {
-        "aer": 47,
-        "com": 63,
-        "dri": 64,
-        "ldr": 58,
-        "pac": 60,
-        "pas": 66,
-        "pos": 42,
-        "sho": 62,
-        "sta": 59,
-        "str": 55,
-        "tac": 40,
-        "vis": 62
-      },
-      "birth": "1982-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p1axb5lu",
-      "name": "Mounir Diene",
-      "nation": "MAR",
-      "number": null,
-      "pos": "AM",
-      "wage": 4500
-    },
-    {
       "alt": [
         "CB"
       ],
@@ -791,34 +765,6 @@
       "pos": "DM",
       "wage": 3000,
       "weight": 68
-    },
-    {
-      "attrs": {
-        "aer": 53,
-        "com": 64,
-        "dri": 58,
-        "ldr": 62,
-        "pac": 68,
-        "pas": 62,
-        "pos": 60,
-        "sho": 45,
-        "sta": 68,
-        "str": 61,
-        "tac": 66,
-        "vis": 55
-      },
-      "birth": "1983-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p1dncwnc",
-      "name": "Lesly Maluuda",
-      "nation": "FRA",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 3500,
-      "weight": 66
     },
     {
       "attrs": {

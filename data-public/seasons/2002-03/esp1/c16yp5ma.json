@@ -586,33 +586,6 @@
     },
     {
       "attrs": {
-        "aer": 66,
-        "com": 73,
-        "dri": 66,
-        "ldr": 63,
-        "pac": 71,
-        "pas": 60,
-        "pos": 68,
-        "sho": 70,
-        "sta": 65,
-        "str": 71,
-        "tac": 37,
-        "vis": 61
-      },
-      "birth": "1977-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0bkev08",
-      "name": "Mychel",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4000
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 71,
         "dri": 68,

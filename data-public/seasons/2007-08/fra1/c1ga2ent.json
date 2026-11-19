@@ -327,38 +327,6 @@
     },
     {
       "alt": [
-        "CM",
-        "RB",
-        "LB"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 61,
-        "dri": 48,
-        "ldr": 62,
-        "pac": 52,
-        "pas": 51,
-        "pos": 65,
-        "sho": 30,
-        "sta": 55,
-        "str": 63,
-        "tac": 60,
-        "vis": 48
-      },
-      "birth": "1987-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p1v55a7y",
-      "name": "Larrys Mabiale",
-      "nation": "FRA",
-      "nation2": "COD",
-      "number": 12,
-      "pos": "CB",
-      "wage": 6500
-    },
-    {
-      "alt": [
         "RW",
         "LW"
       ],

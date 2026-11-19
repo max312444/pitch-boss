@@ -371,33 +371,6 @@
     },
     {
       "attrs": {
-        "aer": 63,
-        "com": 68,
-        "dri": 65,
-        "ldr": 70,
-        "pac": 64,
-        "pas": 69,
-        "pos": 71,
-        "sho": 59,
-        "sta": 69,
-        "str": 69,
-        "tac": 70,
-        "vis": 65
-      },
-      "birth": "1970-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1eqp7r9",
-      "name": "Steffen Freond",
-      "nation": "GER",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 21500
-    },
-    {
-      "attrs": {
         "aer": 67,
         "com": 62,
         "dri": 52,

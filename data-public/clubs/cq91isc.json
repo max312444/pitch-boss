@@ -7,7 +7,7 @@
       "#000000",
       "#000000"
     ],
-    "mark": "SAA",
+    "mark": "SAR",
     "pattern": "solid",
     "shape": "round"
   },
@@ -29,5 +29,5 @@
   "name": "1. FC Saarbruckan",
   "nation": "GER",
   "rivals": [],
-  "short": "SAA"
+  "short": "SAR"
 }

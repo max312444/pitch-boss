@@ -585,38 +585,6 @@
     },
     {
       "alt": [
-        "CM",
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 64,
-        "dri": 65,
-        "ldr": 60,
-        "pac": 70,
-        "pas": 68,
-        "pos": 60,
-        "sho": 59,
-        "sta": 73,
-        "str": 63,
-        "tac": 60,
-        "vis": 66
-      },
-      "birth": "1976-08-01",
-      "contract": "2002-06-30",
-      "foot": "R",
-      "height": 170,
-      "id": "p0vv9elt",
-      "name": "Terry Cuoke",
-      "nation": "ENG",
-      "number": 11,
-      "pos": "RM",
-      "wage": 12000,
-      "weight": 64
-    },
-    {
-      "alt": [
         "RW",
         "LW"
       ],
@@ -735,62 +703,6 @@
       "number": 37,
       "pos": "ST",
       "wage": 11000
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 73,
-        "dri": 69,
-        "ldr": 65,
-        "pac": 72,
-        "pas": 64,
-        "pos": 64,
-        "sho": 71,
-        "sta": 66,
-        "str": 67,
-        "tac": 41,
-        "vis": 60
-      },
-      "birth": "1973-02-01",
-      "contract": "2001-06-30",
-      "foot": "R",
-      "height": 188,
-      "id": "p1eusioz",
-      "name": "Gareth Tailor",
-      "nation": "WAL",
-      "number": 14,
-      "pos": "ST",
-      "wage": 8500,
-      "weight": 86
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 65,
-        "dri": 62,
-        "ldr": 63,
-        "pac": 56,
-        "pas": 68,
-        "pos": 61,
-        "sho": 56,
-        "sta": 68,
-        "str": 62,
-        "tac": 57,
-        "vis": 65
-      },
-      "birth": "1975-04-01",
-      "contract": "2001-06-30",
-      "foot": "R",
-      "height": 175,
-      "id": "p0u8ugub",
-      "name": "Jim Whitlay",
-      "nation": "NIR",
-      "number": 17,
-      "pos": "CM",
-      "wage": 8500
     }
   ],
   "stadiumCapacity": 34421

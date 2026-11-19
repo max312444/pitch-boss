@@ -539,33 +539,6 @@
       "weight": 78
     },
     {
-      "attrs": {
-        "aer": 67,
-        "com": 60,
-        "dri": 50,
-        "ldr": 66,
-        "pac": 56,
-        "pas": 59,
-        "pos": 68,
-        "sho": 41,
-        "sta": 62,
-        "str": 69,
-        "tac": 69,
-        "vis": 48
-      },
-      "birth": "1973-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1cx24ra",
-      "name": "Davide Nycola",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6000
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -711,65 +684,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 68,
-        "dri": 67,
-        "ldr": 62,
-        "pac": 66,
-        "pas": 62,
-        "pos": 66,
-        "sho": 72,
-        "sta": 63,
-        "str": 67,
-        "tac": 40,
-        "vis": 60
-      },
-      "birth": "1980-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0ink55e",
-      "name": "Mattia Graffiedy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4500,
-      "weight": 77
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 72,
-        "dri": 64,
-        "ldr": 67,
-        "pac": 61,
-        "pas": 70,
-        "pos": 70,
-        "sho": 63,
-        "sta": 72,
-        "str": 63,
-        "tac": 66,
-        "vis": 72
-      },
-      "birth": "1977-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p00amhbn",
-      "name": "Andrea Ardyto",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6500,
-      "weight": 62
-    },
-    {
-      "attrs": {
         "aer": 63,
         "com": 66,
         "dri": 63,
@@ -823,70 +737,6 @@
       "weight": 90
     },
     {
-      "alt": [
-        "CB",
-        "CM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 65,
-        "dri": 58,
-        "ldr": 65,
-        "pac": 53,
-        "pas": 68,
-        "pos": 68,
-        "sho": 55,
-        "sta": 64,
-        "str": 63,
-        "tac": 63,
-        "vis": 62
-      },
-      "birth": "1980-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p10r8x0u",
-      "name": "Simone Bonomy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "DM",
-      "wage": 4000,
-      "weight": 68
-    },
-    {
-      "alt": [
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 68,
-        "dri": 64,
-        "ldr": 69,
-        "pac": 60,
-        "pas": 70,
-        "pos": 63,
-        "sho": 65,
-        "sta": 69,
-        "str": 61,
-        "tac": 61,
-        "vis": 72
-      },
-      "birth": "1977-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0u3mt6y",
-      "name": "Daniele Di Doneto",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4500,
-      "weight": 73
-    },
-    {
       "attrs": {
         "aer": 61,
         "com": 65,
@@ -911,34 +761,6 @@
       "number": null,
       "pos": "LB",
       "wage": 3500,
-      "weight": 70
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 63,
-        "dri": 52,
-        "ldr": 67,
-        "pac": 56,
-        "pas": 59,
-        "pos": 69,
-        "sho": 39,
-        "sta": 59,
-        "str": 65,
-        "tac": 70,
-        "vis": 51
-      },
-      "birth": "1973-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0m5fgyn",
-      "name": "Stefano Argilly",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000,
       "weight": 70
     },
     {

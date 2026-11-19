@@ -73,34 +73,6 @@
       "weight": 99
     },
     {
-      "attrs": {
-        "aer": 68,
-        "com": 70,
-        "han": 70,
-        "ldr": 65,
-        "one": 68,
-        "pac": 52,
-        "pas": 56,
-        "pos": 66,
-        "ref": 68,
-        "sta": 56,
-        "str": 61,
-        "vis": 59
-      },
-      "birth": "1986-06-01",
-      "contract": "2014-06-30",
-      "foot": "R",
-      "height": 188,
-      "id": "p1hhioli",
-      "name": "Carl Ikema",
-      "nation": "ENG",
-      "nation2": "NGA",
-      "number": 25,
-      "pos": "GK",
-      "wage": 14500,
-      "weight": 84
-    },
-    {
       "alt": [
         "CB",
         "LB",
@@ -623,33 +595,6 @@
       "pos": "CB",
       "verify": true,
       "wage": 29500
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 64,
-        "dri": 64,
-        "ldr": 60,
-        "pac": 62,
-        "pas": 56,
-        "pos": 60,
-        "sho": 68,
-        "sta": 60,
-        "str": 65,
-        "tac": 37,
-        "vis": 58
-      },
-      "birth": "1989-10-01",
-      "contract": "2014-06-30",
-      "foot": "R",
-      "height": 188,
-      "id": "p1na95kh",
-      "name": "Sam Vokas",
-      "nation": "WAL",
-      "number": 26,
-      "pos": "ST",
-      "wage": 12000,
-      "weight": 75
     },
     {
       "alt": [

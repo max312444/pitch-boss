@@ -713,33 +713,6 @@
     },
     {
       "attrs": {
-        "aer": 63,
-        "com": 63,
-        "dri": 61,
-        "ldr": 58,
-        "pac": 60,
-        "pas": 56,
-        "pos": 58,
-        "sho": 64,
-        "sta": 59,
-        "str": 59,
-        "tac": 32,
-        "vis": 55
-      },
-      "birth": "1986-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p09im2h3",
-      "name": "Rej Vulpato",
-      "nation": "ITA",
-      "number": 83,
-      "pos": "ST",
-      "wage": 6500,
-      "weight": 79
-    },
-    {
-      "attrs": {
         "aer": 67,
         "com": 69,
         "dri": 64,

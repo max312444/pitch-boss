@@ -627,37 +627,6 @@
       "wage": 123500
     },
     {
-      "alt": [
-        "AM",
-        "RW"
-      ],
-      "attrs": {
-        "aer": 48,
-        "com": 63,
-        "dri": 67,
-        "ldr": 63,
-        "pac": 69,
-        "pas": 62,
-        "pos": 48,
-        "sho": 66,
-        "sta": 66,
-        "str": 56,
-        "tac": 43,
-        "vis": 62
-      },
-      "birth": "1998-04-01",
-      "contract": "2022-06-30",
-      "foot": "L",
-      "height": 180,
-      "id": "p1befhrq",
-      "name": "Grady Diangane",
-      "nation": "ENG",
-      "nation2": "COD",
-      "number": 44,
-      "pos": "LW",
-      "wage": 43500
-    },
-    {
       "attrs": {
         "aer": 75,
         "com": 76,

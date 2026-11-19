@@ -312,39 +312,6 @@
       "wage": 12500
     },
     {
-      "alt": [
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 51,
-        "com": 74,
-        "dri": 73,
-        "ldr": 69,
-        "pac": 67,
-        "pas": 70,
-        "pos": 52,
-        "sho": 71,
-        "sta": 64,
-        "str": 60,
-        "tac": 46,
-        "vis": 72
-      },
-      "birth": "1981-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p1jjtkfp",
-      "name": "Pascal Feinduuno",
-      "nation": "FRA",
-      "nation2": "GUI",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 16500,
-      "weight": 69
-    },
-    {
       "attrs": {
         "aer": 74,
         "com": 77,
@@ -728,33 +695,6 @@
       "number": null,
       "pos": "DM",
       "wage": 4500
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 63,
-        "dri": 57,
-        "ldr": 55,
-        "pac": 65,
-        "pas": 54,
-        "pos": 58,
-        "sho": 66,
-        "sta": 60,
-        "str": 60,
-        "tac": 31,
-        "vis": 56
-      },
-      "birth": "1981-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p0nr2asl",
-      "name": "Herve Bognet",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 3000,
-      "weight": 68
     },
     {
       "attrs": {

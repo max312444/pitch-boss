@@ -621,36 +621,6 @@
     },
     {
       "attrs": {
-        "aer": 76,
-        "com": 75,
-        "dri": 73,
-        "ldr": 71,
-        "pac": 74,
-        "pas": 65,
-        "pos": 74,
-        "sho": 77,
-        "sta": 71,
-        "str": 78,
-        "tac": 45,
-        "vis": 66
-      },
-      "birth": "1977-10-01",
-      "contract": "2006-06-30",
-      "foot": "R",
-      "height": 180,
-      "id": "p0dkuj6q",
-      "name": "Matt Jansan",
-      "nation": "ENG",
-      "number": 17,
-      "pos": "ST",
-      "traits": [
-        "injury_prone"
-      ],
-      "wage": 14500,
-      "weight": 71
-    },
-    {
-      "attrs": {
         "aer": 69,
         "com": 69,
         "dri": 69,

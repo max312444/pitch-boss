@@ -283,33 +283,6 @@
     },
     {
       "attrs": {
-        "aer": 68,
-        "com": 62,
-        "dri": 54,
-        "ldr": 65,
-        "pac": 61,
-        "pas": 56,
-        "pos": 71,
-        "sho": 35,
-        "sta": 64,
-        "str": 66,
-        "tac": 69,
-        "vis": 50
-      },
-      "birth": "1975-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1eob6ao",
-      "name": "Pascal Gourvilla",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5500
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 67,
         "dri": 52,
@@ -451,36 +424,6 @@
       "wage": 5000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 68,
-        "dri": 62,
-        "ldr": 61,
-        "pac": 62,
-        "pas": 69,
-        "pos": 65,
-        "sho": 58,
-        "sta": 68,
-        "str": 64,
-        "tac": 60,
-        "vis": 68
-      },
-      "birth": "1973-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1h0rr8t",
-      "name": "Philippe Caldran",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6000
-    },
-    {
       "attrs": {
         "aer": 59,
         "com": 66,
@@ -532,34 +475,6 @@
       "number": null,
       "pos": "GK",
       "wage": 4000
-    },
-    {
-      "attrs": {
-        "aer": 54,
-        "com": 62,
-        "dri": 61,
-        "ldr": 57,
-        "pac": 64,
-        "pas": 60,
-        "pos": 63,
-        "sho": 42,
-        "sta": 64,
-        "str": 60,
-        "tac": 64,
-        "vis": 57
-      },
-      "birth": "1976-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1bmd82r",
-      "name": "Stephane Leony",
-      "nation": "FRA",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 3500,
-      "weight": 74
     },
     {
       "alt": [
@@ -650,33 +565,6 @@
     },
     {
       "attrs": {
-        "aer": 60,
-        "com": 63,
-        "dri": 64,
-        "ldr": 57,
-        "pac": 62,
-        "pas": 57,
-        "pos": 63,
-        "sho": 67,
-        "sta": 61,
-        "str": 63,
-        "tac": 33,
-        "vis": 52
-      },
-      "birth": "1970-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0osz1o6",
-      "name": "Laurent Peyralade",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000
-    },
-    {
-      "attrs": {
         "aer": 64,
         "com": 61,
         "dri": 53,
@@ -728,33 +616,6 @@
       "pos": "ST",
       "verify": true,
       "wage": 2000
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 57,
-        "dri": 46,
-        "ldr": 62,
-        "pac": 57,
-        "pas": 55,
-        "pos": 63,
-        "sho": 34,
-        "sta": 55,
-        "str": 61,
-        "tac": 60,
-        "vis": 48
-      },
-      "birth": "1969-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p01ztr41",
-      "name": "Luis Setorra",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 2500
     },
     {
       "attrs": {
@@ -894,32 +755,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 3000
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 62,
-        "han": 65,
-        "ldr": 61,
-        "one": 62,
-        "pac": 47,
-        "pas": 53,
-        "pos": 64,
-        "ref": 67,
-        "sta": 54,
-        "str": 63,
-        "vis": 50
-      },
-      "birth": "1979-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1gllemn",
-      "name": "Gilbert Bayiha N'Djeme",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "wage": 2000
     },
     {
       "attrs": {

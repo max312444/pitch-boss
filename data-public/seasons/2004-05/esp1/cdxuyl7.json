@@ -25,36 +25,6 @@
   "squad": [
     {
       "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 67,
-        "dri": 77,
-        "ldr": 65,
-        "pac": 73,
-        "pas": 71,
-        "pos": 54,
-        "sho": 71,
-        "sta": 70,
-        "str": 60,
-        "tac": 45,
-        "vis": 69
-      },
-      "birth": "1975-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p1b2ke49",
-      "name": "Laurentiu Rusu",
-      "nation": "ROU",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 21500
-    },
-    {
-      "alt": [
         "RW",
         "LW"
       ],

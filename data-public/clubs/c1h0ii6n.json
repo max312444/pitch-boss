@@ -1,0 +1,33 @@
+{
+  "city": "Rotherham",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#FF0000",
+      "#FF0000"
+    ],
+    "mark": "ROT",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1925,
+  "id": "c1h0ii6n",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FF0000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#FF0000"
+    }
+  },
+  "ko": "로더람 유나이티드 FC",
+  "name": "Rotherhem United F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "ROT"
+}

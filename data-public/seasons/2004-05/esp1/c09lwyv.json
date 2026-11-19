@@ -531,33 +531,6 @@
       "weight": 75
     },
     {
-      "attrs": {
-        "aer": 74,
-        "com": 76,
-        "dri": 73,
-        "ldr": 70,
-        "pac": 73,
-        "pas": 62,
-        "pos": 72,
-        "sho": 73,
-        "sta": 69,
-        "str": 71,
-        "tac": 40,
-        "vis": 68
-      },
-      "birth": "1974-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 165,
-      "id": "p1xzw7t4",
-      "name": "Victur",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 10000
-    },
-    {
       "alt": [
         "LW"
       ],
@@ -752,33 +725,6 @@
       "number": null,
       "pos": "CM",
       "wage": 4000
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 63,
-        "dri": 60,
-        "ldr": 68,
-        "pac": 56,
-        "pas": 69,
-        "pos": 66,
-        "sho": 53,
-        "sta": 67,
-        "str": 68,
-        "tac": 66,
-        "vis": 63
-      },
-      "birth": "1982-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0f9zmfw",
-      "name": "Pere Marty",
-      "nation": "ESP",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 3500
     },
     {
       "attrs": {

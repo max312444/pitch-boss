@@ -583,34 +583,6 @@
       "weight": 70
     },
     {
-      "attrs": {
-        "aer": 60,
-        "com": 58,
-        "dri": 54,
-        "ldr": 52,
-        "pac": 60,
-        "pas": 53,
-        "pos": 54,
-        "sho": 64,
-        "sta": 58,
-        "str": 61,
-        "tac": 28,
-        "vis": 49
-      },
-      "birth": "1980-07-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0jmshoi",
-      "name": "Marc-Eric Goei",
-      "nation": "FRA",
-      "nation2": "CIV",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2500
-    },
-    {
       "alt": [
         "CM",
         "RB",

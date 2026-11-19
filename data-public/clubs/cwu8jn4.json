@@ -1,0 +1,33 @@
+{
+  "city": "Ibiza",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "IBI",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 2015,
+  "id": "cwu8jn4",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "UD 이베사",
+  "name": "UD Ibize",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "IBI"
+}

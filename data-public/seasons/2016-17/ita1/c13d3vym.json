@@ -602,36 +602,6 @@
       "weight": 78
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 46,
-        "com": 57,
-        "dri": 68,
-        "ldr": 60,
-        "pac": 68,
-        "pas": 57,
-        "pos": 40,
-        "sho": 62,
-        "sta": 61,
-        "str": 50,
-        "tac": 36,
-        "vis": 61
-      },
-      "birth": "1994-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p0x1plwm",
-      "name": "Roberto Insigna",
-      "nation": "ITA",
-      "number": 94,
-      "pos": "RW",
-      "wage": 18500,
-      "weight": 65
-    },
-    {
       "attrs": {
         "aer": 71,
         "com": 76,

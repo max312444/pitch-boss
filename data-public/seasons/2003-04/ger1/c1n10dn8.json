@@ -661,36 +661,6 @@
       "wage": 7000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 72,
-        "dri": 68,
-        "ldr": 72,
-        "pac": 65,
-        "pas": 75,
-        "pos": 66,
-        "sho": 67,
-        "sta": 70,
-        "str": 64,
-        "tac": 67,
-        "vis": 70
-      },
-      "birth": "1973-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p0mwwfca",
-      "name": "Jose Menuel",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 8500
-    },
-    {
       "attrs": {
         "aer": 72,
         "com": 73,

@@ -598,32 +598,6 @@
     },
     {
       "attrs": {
-        "aer": 72,
-        "com": 70,
-        "dri": 57,
-        "ldr": 70,
-        "pac": 65,
-        "pas": 61,
-        "pos": 70,
-        "sho": 42,
-        "sta": 63,
-        "str": 70,
-        "tac": 70,
-        "vis": 52
-      },
-      "birth": "1978-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0815aw8",
-      "name": "Cesar Ceneda",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 5500
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 71,
         "han": 71,
@@ -679,36 +653,6 @@
       "pos": "AM",
       "wage": 4500,
       "weight": 72
-    },
-    {
-      "alt": [
-        "CM"
-      ],
-      "attrs": {
-        "aer": 69,
-        "com": 69,
-        "dri": 64,
-        "ldr": 72,
-        "pac": 60,
-        "pas": 70,
-        "pos": 72,
-        "sho": 56,
-        "sta": 73,
-        "str": 67,
-        "tac": 69,
-        "vis": 70
-      },
-      "birth": "1971-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p178rm4j",
-      "name": "Jose Meri",
-      "nation": "ESP",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 7000
     },
     {
       "alt": [
@@ -854,33 +798,6 @@
       "pos": "ST",
       "verify": true,
       "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 69,
-        "dri": 63,
-        "ldr": 66,
-        "pac": 67,
-        "pas": 56,
-        "pos": 66,
-        "sho": 73,
-        "sta": 64,
-        "str": 65,
-        "tac": 39,
-        "vis": 56
-      },
-      "birth": "1976-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0jldo11",
-      "name": "Syvori",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2000
     },
     {
       "alt": [

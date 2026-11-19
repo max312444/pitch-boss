@@ -1,0 +1,33 @@
+{
+  "city": "Reggio Emilia",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "REG",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1919,
+  "id": "c1ua6w0t",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "AC 레자너 1919",
+  "name": "AC Reggyana 1919",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "REG"
+}

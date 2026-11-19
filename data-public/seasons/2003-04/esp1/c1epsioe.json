@@ -284,33 +284,6 @@
       "wage": 16500
     },
     {
-      "attrs": {
-        "aer": 72,
-        "com": 71,
-        "dri": 70,
-        "ldr": 71,
-        "pac": 74,
-        "pas": 62,
-        "pos": 67,
-        "sho": 73,
-        "sta": 64,
-        "str": 74,
-        "tac": 38,
-        "vis": 61
-      },
-      "birth": "1977-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p05hn1jc",
-      "name": "Leonardo Biegini",
-      "nation": "ARG",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 11000
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -341,34 +314,6 @@
     },
     {
       "attrs": {
-        "aer": 73,
-        "com": 75,
-        "dri": 72,
-        "ldr": 69,
-        "pac": 73,
-        "pas": 61,
-        "pos": 67,
-        "sho": 74,
-        "sta": 66,
-        "str": 70,
-        "tac": 45,
-        "vis": 61
-      },
-      "birth": "1980-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0uqwail",
-      "name": "Dani Guize",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 9500,
-      "weight": 80
-    },
-    {
-      "attrs": {
         "aer": 58,
         "com": 74,
         "dri": 76,
@@ -395,34 +340,6 @@
       "verify": true,
       "wage": 12500,
       "weight": 70
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 71,
-        "dri": 64,
-        "ldr": 62,
-        "pac": 70,
-        "pas": 61,
-        "pos": 65,
-        "sho": 69,
-        "sta": 63,
-        "str": 67,
-        "tac": 39,
-        "vis": 62
-      },
-      "birth": "1971-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1kxlyie",
-      "name": "Turu Floras",
-      "nation": "ARG",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 8500,
-      "weight": 82
     },
     {
       "attrs": {
@@ -674,35 +591,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 55,
-        "com": 70,
-        "dri": 63,
-        "ldr": 63,
-        "pac": 62,
-        "pas": 69,
-        "pos": 64,
-        "sho": 61,
-        "sta": 69,
-        "str": 64,
-        "tac": 67,
-        "vis": 68
-      },
-      "birth": "1981-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1tmpzz0",
-      "name": "Julian Roblas",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "wage": 6000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 53,
         "com": 65,
         "dri": 62,
@@ -836,32 +724,6 @@
       "verify": true,
       "wage": 4500,
       "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 47,
-        "com": 59,
-        "dri": 65,
-        "ldr": 58,
-        "pac": 56,
-        "pas": 64,
-        "pos": 45,
-        "sho": 59,
-        "sta": 56,
-        "str": 54,
-        "tac": 36,
-        "vis": 67
-      },
-      "birth": "1982-06-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0x4n3ui",
-      "name": "Toni",
-      "nation": "ESP",
-      "number": null,
-      "pos": "AM",
-      "wage": 4000
     },
     {
       "attrs": {

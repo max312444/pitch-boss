@@ -544,36 +544,6 @@
       "wage": 23000
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 65,
-        "dri": 75,
-        "ldr": 63,
-        "pac": 71,
-        "pas": 70,
-        "pos": 50,
-        "sho": 68,
-        "sta": 67,
-        "str": 62,
-        "tac": 49,
-        "vis": 69
-      },
-      "birth": "1976-01-01",
-      "contract": "2004-06-30",
-      "foot": "R",
-      "height": 170,
-      "id": "p1lgcyj1",
-      "name": "Kevin Harpar",
-      "nation": "SCO",
-      "number": 18,
-      "pos": "RW",
-      "verify": true,
-      "wage": 10500
-    },
-    {
       "attrs": {
         "aer": 67,
         "com": 71,
@@ -627,34 +597,6 @@
       "verify": true,
       "wage": 6000,
       "weight": 86
-    },
-    {
-      "attrs": {
-        "aer": 68,
-        "com": 70,
-        "dri": 71,
-        "ldr": 68,
-        "pac": 68,
-        "pas": 61,
-        "pos": 69,
-        "sho": 75,
-        "sta": 70,
-        "str": 74,
-        "tac": 44,
-        "vis": 61
-      },
-      "birth": "1976-10-01",
-      "contract": "2004-06-30",
-      "foot": "R",
-      "height": 175,
-      "id": "p0na5a1s",
-      "name": "Deon Borton",
-      "nation": "JAM",
-      "nation2": "ENG",
-      "number": 19,
-      "pos": "ST",
-      "verify": true,
-      "wage": 20000
     },
     {
       "alt": [

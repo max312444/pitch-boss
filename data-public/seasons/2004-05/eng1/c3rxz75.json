@@ -76,34 +76,6 @@
     },
     {
       "attrs": {
-        "aer": 76,
-        "com": 76,
-        "han": 82,
-        "ldr": 75,
-        "one": 77,
-        "pac": 63,
-        "pas": 71,
-        "pos": 80,
-        "ref": 79,
-        "sta": 64,
-        "str": 73,
-        "vis": 67
-      },
-      "birth": "1980-11-01",
-      "contract": "2005-06-30",
-      "foot": "R",
-      "height": 193,
-      "id": "p01bt5k7",
-      "name": "Stuart Teylor",
-      "nation": "ENG",
-      "number": 13,
-      "pos": "GK",
-      "verify": true,
-      "wage": 22000,
-      "weight": 85
-    },
-    {
-      "attrs": {
         "aer": 80,
         "com": 84,
         "dri": 88,

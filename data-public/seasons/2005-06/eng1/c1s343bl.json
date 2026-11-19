@@ -103,35 +103,6 @@
       "weight": 80
     },
     {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 66,
-        "com": 74,
-        "dri": 71,
-        "ldr": 67,
-        "pac": 78,
-        "pas": 70,
-        "pos": 71,
-        "sho": 58,
-        "sta": 78,
-        "str": 67,
-        "tac": 77,
-        "vis": 70
-      },
-      "birth": "1974-08-01",
-      "contract": "2007-06-30",
-      "foot": "L",
-      "height": 170,
-      "id": "p1xi2ivg",
-      "name": "Michael Grai",
-      "nation": "ENG",
-      "number": 33,
-      "pos": "LB",
-      "wage": 37000
-    },
-    {
       "attrs": {
         "aer": 78,
         "com": 68,
@@ -244,36 +215,6 @@
       "pos": "CB",
       "wage": 13500,
       "weight": 89
-    },
-    {
-      "alt": [
-        "CB"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 61,
-        "dri": 60,
-        "ldr": 63,
-        "pac": 67,
-        "pas": 60,
-        "pos": 66,
-        "sho": 44,
-        "sta": 69,
-        "str": 58,
-        "tac": 68,
-        "vis": 59
-      },
-      "birth": "1985-02-01",
-      "contract": "2007-06-30",
-      "foot": "L",
-      "height": 185,
-      "id": "p027euv0",
-      "name": "Jay McAveley",
-      "nation": "SCO",
-      "number": 24,
-      "pos": "LB",
-      "verify": true,
-      "wage": 15000
     },
     {
       "alt": [

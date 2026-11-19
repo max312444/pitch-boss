@@ -327,36 +327,6 @@
       "wage": 6500
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 67,
-        "dri": 66,
-        "ldr": 67,
-        "pac": 68,
-        "pas": 70,
-        "pos": 71,
-        "sho": 64,
-        "sta": 72,
-        "str": 63,
-        "tac": 63,
-        "vis": 69
-      },
-      "birth": "1977-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1ks727e",
-      "name": "Pablo Rodryguez",
-      "nation": "ARG",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 8000
-    },
-    {
       "attrs": {
         "aer": 70,
         "com": 64,
@@ -734,60 +704,6 @@
     },
     {
       "attrs": {
-        "aer": 66,
-        "com": 63,
-        "dri": 66,
-        "ldr": 59,
-        "pac": 68,
-        "pas": 56,
-        "pos": 63,
-        "sho": 66,
-        "sta": 60,
-        "str": 65,
-        "tac": 38,
-        "vis": 56
-      },
-      "birth": "1979-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1veqq6d",
-      "name": "Laurent Gagniar",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 58,
-        "dri": 60,
-        "ldr": 57,
-        "pac": 61,
-        "pas": 55,
-        "pos": 59,
-        "sho": 66,
-        "sta": 59,
-        "str": 63,
-        "tac": 28,
-        "vis": 50
-      },
-      "birth": "1981-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0wsiapc",
-      "name": "Serge Ayely",
-      "nation": "FRA",
-      "nation2": "CIV",
-      "number": null,
-      "pos": "ST",
-      "wage": 3000
-    },
-    {
-      "attrs": {
         "aer": 62,
         "com": 63,
         "dri": 60,
@@ -871,32 +787,6 @@
       "number": null,
       "pos": "GK",
       "wage": 3000
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 65,
-        "dri": 65,
-        "ldr": 58,
-        "pac": 64,
-        "pas": 55,
-        "pos": 65,
-        "sho": 67,
-        "sta": 58,
-        "str": 66,
-        "tac": 33,
-        "vis": 56
-      },
-      "birth": "1974-07-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1kvtr3y",
-      "name": "Cedric Myonnet",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 2000
     },
     {
       "attrs": {

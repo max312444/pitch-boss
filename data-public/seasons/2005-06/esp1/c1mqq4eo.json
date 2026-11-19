@@ -558,33 +558,6 @@
     },
     {
       "attrs": {
-        "aer": 60,
-        "com": 64,
-        "dri": 64,
-        "ldr": 65,
-        "pac": 74,
-        "pas": 69,
-        "pos": 70,
-        "sho": 52,
-        "sta": 74,
-        "str": 67,
-        "tac": 73,
-        "vis": 62
-      },
-      "birth": "1980-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p1lkrb91",
-      "name": "Necho",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "wage": 12000,
-      "weight": 65
-    },
-    {
-      "attrs": {
         "aer": 70,
         "com": 72,
         "dri": 67,

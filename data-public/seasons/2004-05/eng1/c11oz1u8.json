@@ -176,7 +176,7 @@
       "foot": "R",
       "height": 188,
       "id": "p13cn1xh",
-      "name": "Jon Furtune",
+      "name": "Jonathan Furtune",
       "nation": "ENG",
       "number": 24,
       "pos": "CB",
@@ -650,33 +650,6 @@
       "pos": "ST",
       "wage": 14000,
       "weight": 69
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 67,
-        "dri": 71,
-        "ldr": 69,
-        "pac": 74,
-        "pas": 70,
-        "pos": 68,
-        "sho": 56,
-        "sta": 72,
-        "str": 68,
-        "tac": 71,
-        "vis": 66
-      },
-      "birth": "1969-09-01",
-      "contract": "2005-06-30",
-      "foot": "L",
-      "height": 178,
-      "id": "p0umcxs2",
-      "name": "Chris Powall",
-      "nation": "ENG",
-      "number": 3,
-      "pos": "LB",
-      "wage": 27500,
-      "weight": 73
     },
     {
       "attrs": {

@@ -436,33 +436,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 64,
-        "dri": 51,
-        "ldr": 66,
-        "pac": 58,
-        "pas": 53,
-        "pos": 67,
-        "sho": 35,
-        "sta": 62,
-        "str": 67,
-        "tac": 70,
-        "vis": 50
-      },
-      "birth": "1973-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p0n73l7c",
-      "name": "Alberto Sevino",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 4000,
-      "weight": 80
-    },
-    {
-      "attrs": {
         "aer": 66,
         "com": 62,
         "dri": 46,
@@ -550,37 +523,6 @@
       "weight": 87
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 52,
-        "com": 63,
-        "dri": 65,
-        "ldr": 61,
-        "pac": 59,
-        "pas": 68,
-        "pos": 66,
-        "sho": 56,
-        "sta": 66,
-        "str": 58,
-        "tac": 58,
-        "vis": 68
-      },
-      "birth": "1982-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0ldrpw6",
-      "name": "Wilfried Dalmet",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4500,
-      "weight": 80
-    },
-    {
       "attrs": {
         "aer": 60,
         "com": 67,
@@ -661,34 +603,6 @@
       "pos": "ST",
       "wage": 2500,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 60,
-        "dri": 60,
-        "ldr": 59,
-        "pac": 67,
-        "pas": 59,
-        "pos": 65,
-        "sho": 48,
-        "sta": 68,
-        "str": 61,
-        "tac": 63,
-        "vis": 60
-      },
-      "birth": "1973-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1t41k4y",
-      "name": "Gianluca Colunnello",
-      "nation": "ITA",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 3500,
-      "weight": 75
     },
     {
       "alt": [

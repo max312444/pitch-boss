@@ -1,0 +1,33 @@
+{
+  "city": "Trapani",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#C32148",
+      "#800000",
+      "#800000"
+    ],
+    "mark": "TRP",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2021,
+  "id": "c5xncck",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#800000",
+      "secondary": "#C32148"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#C32148",
+      "secondary": "#800000"
+    }
+  },
+  "ko": "트러파니 칼초",
+  "name": "FC Trapeni 1905",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "TRP"
+}

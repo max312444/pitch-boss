@@ -347,36 +347,6 @@
       "weight": 71
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 70,
-        "dri": 64,
-        "ldr": 67,
-        "pac": 62,
-        "pas": 67,
-        "pos": 64,
-        "sho": 60,
-        "sta": 70,
-        "str": 65,
-        "tac": 67,
-        "vis": 67
-      },
-      "birth": "1975-07-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1osv08n",
-      "name": "Harlington Sherani",
-      "nation": "ZIM",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 7000
-    },
-    {
       "attrs": {
         "aer": 71,
         "com": 62,

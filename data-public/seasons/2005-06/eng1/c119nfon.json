@@ -683,33 +683,6 @@
       "pos": "CM",
       "wage": 69000,
       "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 64,
-        "han": 66,
-        "ldr": 63,
-        "one": 66,
-        "pac": 46,
-        "pas": 54,
-        "pos": 67,
-        "ref": 65,
-        "sta": 51,
-        "str": 64,
-        "vis": 55
-      },
-      "birth": "1983-09-01",
-      "contract": "2006-06-30",
-      "foot": "R",
-      "height": 180,
-      "id": "p1gcxc9y",
-      "name": "Wayne Hendersun",
-      "nation": "IRL",
-      "number": 25,
-      "pos": "GK",
-      "wage": 11500,
-      "weight": 82
     }
   ],
   "stadiumCapacity": 42788

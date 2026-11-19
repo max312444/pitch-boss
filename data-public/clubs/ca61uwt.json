@@ -1,0 +1,34 @@
+{
+  "city": "Seville",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FF0000",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "SEI",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1958,
+  "id": "ca61uwt",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FF0000"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FF0000",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "세비여 아틀레티코",
+  "name": "Seville Atletico",
+  "nation": "ESP",
+  "parent": "chc7o23",
+  "rivals": [],
+  "short": "SEI"
+}

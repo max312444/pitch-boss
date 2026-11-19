@@ -1,0 +1,33 @@
+{
+  "city": "Gallipoli",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "GEL",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2013,
+  "id": "cb8jtdr",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "ASD Città di Gellipoli",
+  "name": "ASD Citta di Gellipoli",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "GEL"
+}

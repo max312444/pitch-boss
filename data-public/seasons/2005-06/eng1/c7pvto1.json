@@ -325,35 +325,6 @@
       "weight": 77
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 62,
-        "com": 71,
-        "dri": 69,
-        "ldr": 72,
-        "pac": 71,
-        "pas": 73,
-        "pos": 75,
-        "sho": 70,
-        "sta": 75,
-        "str": 70,
-        "tac": 72,
-        "vis": 75
-      },
-      "birth": "1976-10-01",
-      "contract": "2007-06-30",
-      "foot": "R",
-      "height": 178,
-      "id": "p1rt0iom",
-      "name": "Carl Robinsun",
-      "nation": "WAL",
-      "number": 4,
-      "pos": "CM",
-      "wage": 26500
-    },
-    {
       "attrs": {
         "aer": 53,
         "com": 68,
@@ -545,7 +516,7 @@
       "foot": "L",
       "height": 191,
       "id": "p1iyks1y",
-      "name": "Jonathan Steed",
+      "name": "Jon Steed",
       "nation": "ENG",
       "number": 9,
       "pos": "ST",

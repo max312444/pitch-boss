@@ -29,7 +29,7 @@ const ONLY = process.env.DEVICES ? process.env.DEVICES.split(',') : null;
 /** 페이지 안에서 문제 찾기 */
 function inspect(touch) {
   const vw = innerWidth, vh = innerHeight;
-  const out = { overflowX: document.documentElement.scrollWidth - vw, offscreen: [], covered: [], small: [], unreachable: [] };
+  const out = { overflowX: document.documentElement.scrollWidth - vw, offscreen: [], covered: [], small: [], unreachable: [], hiddenRow: [] };
   const vis = (el) => { const s = getComputedStyle(el); return s.visibility !== 'hidden' && s.display !== 'none' && +s.opacity > 0.05; };
   const label = (el) => (el.getAttribute('aria-label') || el.textContent || el.title || el.tagName).trim().replace(/\s+/g, ' ').slice(0, 40);
   const clipped = (el) => { for (let a = el.parentElement; a && a !== document.body; a = a.parentElement) { const s = getComputedStyle(a); if (/(auto|scroll|hidden|clip)/.test(s.overflowX + s.overflow)) return true; } return false; };
@@ -75,6 +75,13 @@ function inspect(touch) {
     if (hit) out.covered.push(`"${label(el)}" ← ${hit.tagName.toLowerCase()}.${String(hit.className).split(' ').slice(0, 3).join('.')} "${label(hit)}"`);
     if (touch && (r.height < 24 || r.width < 24) && !el.closest('.tap') && !el.classList.contains('tap') && el.tagName !== 'INPUT') out.small.push(`"${label(el)}" ${Math.round(r.width)}×${Math.round(r.height)}`);
   }
+  // PC: 가로로 넘쳐 숨은 버튼 줄 (스크롤바가 안 보여 뒤에 더 있는지 모름). 표처럼 큰 영역은 제외
+  if (!touch) for (const el of document.querySelectorAll('div, nav')) {
+    const s = getComputedStyle(el);
+    if (!/(auto|hidden|scroll)/.test(s.overflowX) || el.scrollWidth <= el.clientWidth + 4 || el.clientHeight > 80 || !vis(el)) continue;
+    const btns = el.querySelectorAll(':scope > button');
+    if (btns.length >= 3) out.hiddenRow.push(`"${label(btns[btns.length - 1])}" 등 ${btns.length}개 · ${el.scrollWidth - el.clientWidth}px 숨음`);
+  }
   out.offscreen = out.offscreen.slice(0, 8);
   return out;
 }
@@ -107,7 +114,7 @@ for (const d of DEVICES) {
     const errs = errors.splice(0);
     const row = { device: d.name, screen, shot, ...r, errors: errs };
     report.push(row);
-    const bad = [r.overflowX > 1 && `가로 넘침 ${r.overflowX}px`, r.offscreen.length && `화면 밖 ${r.offscreen.length}`, r.covered.length && `가려짐 ${r.covered.length}`, r.small.length && `작은 버튼 ${r.small.length}`, r.unreachable.length && `닿지 않음 ${r.unreachable.length}`, errs.length && `오류 ${errs.length}`].filter(Boolean);
+    const bad = [r.overflowX > 1 && `가로 넘침 ${r.overflowX}px`, r.offscreen.length && `화면 밖 ${r.offscreen.length}`, r.covered.length && `가려짐 ${r.covered.length}`, r.small.length && `작은 버튼 ${r.small.length}`, r.unreachable.length && `닿지 않음 ${r.unreachable.length}`, r.hiddenRow.length && `잘린 줄 ${r.hiddenRow.length}`, errs.length && `오류 ${errs.length}`].filter(Boolean);
     console.log(`${d.name.padEnd(12)} ${screen.padEnd(22)} ${bad.length ? bad.join(' · ') : 'OK'}`);
   };
   const app = (fn, arg) => page.evaluate(async ([src, a]) => {
@@ -156,5 +163,5 @@ for (const d of DEVICES) {
 }
 await browser.close();
 fs.writeFileSync(path.join(OUT, 'report.json'), JSON.stringify(report, null, 2));
-const bad = report.filter((r) => r.overflowX > 1 || r.offscreen.length || r.covered.length || r.small.length || r.unreachable.length || r.errors.length);
+const bad = report.filter((r) => r.overflowX > 1 || r.offscreen.length || r.covered.length || r.small.length || r.unreachable.length || r.hiddenRow.length || r.errors.length);
 console.log(`\n화면 ${report.length}개 · 문제 있는 화면 ${bad.length}개 → ${path.join(OUT, 'report.json')}`);

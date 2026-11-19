@@ -446,33 +446,6 @@
     },
     {
       "attrs": {
-        "aer": 72,
-        "com": 66,
-        "dri": 54,
-        "ldr": 71,
-        "pac": 67,
-        "pas": 62,
-        "pos": 70,
-        "sho": 42,
-        "sta": 63,
-        "str": 71,
-        "tac": 70,
-        "vis": 55
-      },
-      "birth": "1976-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p1opzud3",
-      "name": "Alexandre Dujeox",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500
-    },
-    {
-      "attrs": {
         "aer": 68,
         "com": 61,
         "dri": 50,
@@ -638,34 +611,6 @@
       "wage": 4500
     },
     {
-      "attrs": {
-        "aer": 63,
-        "com": 66,
-        "han": 66,
-        "ldr": 67,
-        "one": 67,
-        "pac": 49,
-        "pas": 54,
-        "pos": 66,
-        "ref": 70,
-        "sta": 58,
-        "str": 61,
-        "vis": 54
-      },
-      "birth": "1979-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p1t9fxgf",
-      "name": "Romuald Peisar",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 4500,
-      "weight": 79
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -811,33 +756,6 @@
     },
     {
       "attrs": {
-        "aer": 55,
-        "com": 57,
-        "dri": 56,
-        "ldr": 62,
-        "pac": 55,
-        "pas": 62,
-        "pos": 60,
-        "sho": 50,
-        "sta": 63,
-        "str": 60,
-        "tac": 61,
-        "vis": 57
-      },
-      "birth": "1972-06-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0l50suq",
-      "name": "Carl Touranne",
-      "nation": "FRA",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 4000
-    },
-    {
-      "attrs": {
         "aer": 63,
         "com": 62,
         "dri": 50,
@@ -887,33 +805,6 @@
       "nation": "FRA",
       "number": null,
       "pos": "ST",
-      "wage": 3000
-    },
-    {
-      "attrs": {
-        "aer": 49,
-        "com": 60,
-        "dri": 57,
-        "ldr": 58,
-        "pac": 55,
-        "pas": 64,
-        "pos": 54,
-        "sho": 56,
-        "sta": 62,
-        "str": 51,
-        "tac": 57,
-        "vis": 61
-      },
-      "birth": "1973-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1ovl8xc",
-      "name": "Frederic Adem",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
       "wage": 3000
     },
     {

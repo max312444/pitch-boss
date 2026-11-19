@@ -274,36 +274,6 @@
       "wage": 34000
     },
     {
-      "alt": [
-        "CB"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 59,
-        "dri": 58,
-        "ldr": 56,
-        "pac": 67,
-        "pas": 59,
-        "pos": 61,
-        "sho": 43,
-        "sta": 67,
-        "str": 54,
-        "tac": 65,
-        "vis": 55
-      },
-      "birth": "1985-02-01",
-      "contract": "2008-06-30",
-      "foot": "L",
-      "height": 185,
-      "id": "p027euv0",
-      "name": "Jay McAveley",
-      "nation": "SCO",
-      "number": 25,
-      "pos": "LB",
-      "verify": true,
-      "wage": 10000
-    },
-    {
       "attrs": {
         "aer": 66,
         "com": 71,
@@ -663,7 +633,7 @@
       "foot": "L",
       "height": 191,
       "id": "p1iyks1y",
-      "name": "Jonathan Steed",
+      "name": "Jon Steed",
       "nation": "ENG",
       "number": 9,
       "pos": "ST",

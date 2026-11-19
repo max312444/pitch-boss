@@ -1,0 +1,33 @@
+{
+  "city": "Terrassa",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "TAR",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1906,
+  "id": "c71bb6u",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "Tarrassa FC",
+  "name": "Tarrassa FC",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "TAR"
+}

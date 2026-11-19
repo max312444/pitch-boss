@@ -700,33 +700,6 @@
       "pos": "CM",
       "wage": 16000,
       "weight": 70
-    },
-    {
-      "attrs": {
-        "aer": 75,
-        "com": 64,
-        "dri": 54,
-        "ldr": 69,
-        "pac": 64,
-        "pas": 61,
-        "pos": 74,
-        "sho": 43,
-        "sta": 62,
-        "str": 73,
-        "tac": 73,
-        "vis": 52
-      },
-      "birth": "1980-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p0hl7njz",
-      "name": "Oscar Lopaz",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 12000,
-      "weight": 70
     }
   ],
   "stadiumCapacity": 60721

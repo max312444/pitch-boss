@@ -306,33 +306,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 73,
-        "dri": 65,
-        "ldr": 65,
-        "pac": 69,
-        "pas": 62,
-        "pos": 65,
-        "sho": 70,
-        "sta": 66,
-        "str": 73,
-        "tac": 42,
-        "vis": 62
-      },
-      "birth": "1988-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p0ds7yar",
-      "name": "Leonardo Pavoletty",
-      "nation": "ITA",
-      "number": 14,
-      "pos": "ST",
-      "wage": 15000,
-      "weight": 78
-    },
-    {
-      "attrs": {
         "aer": 83,
         "com": 79,
         "dri": 65,

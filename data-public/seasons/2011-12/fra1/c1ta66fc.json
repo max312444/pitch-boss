@@ -704,36 +704,6 @@
       "weight": 68
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 61,
-        "dri": 63,
-        "ldr": 63,
-        "pac": 59,
-        "pas": 63,
-        "pos": 59,
-        "sho": 56,
-        "sta": 64,
-        "str": 58,
-        "tac": 59,
-        "vis": 64
-      },
-      "birth": "1990-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p126w5ns",
-      "name": "Jonas Martyn",
-      "nation": "FRA",
-      "number": 28,
-      "pos": "CM",
-      "wage": 6500,
-      "weight": 70
-    },
-    {
       "attrs": {
         "aer": 60,
         "com": 52,

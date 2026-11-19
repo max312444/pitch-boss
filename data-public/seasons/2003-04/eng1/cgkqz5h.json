@@ -308,34 +308,6 @@
       "weight": 80
     },
     {
-      "attrs": {
-        "aer": 78,
-        "com": 72,
-        "dri": 57,
-        "ldr": 76,
-        "pac": 69,
-        "pas": 67,
-        "pos": 74,
-        "sho": 46,
-        "sta": 65,
-        "str": 77,
-        "tac": 76,
-        "vis": 56
-      },
-      "birth": "1977-08-01",
-      "contract": "2004-06-30",
-      "foot": "R",
-      "height": 183,
-      "id": "p0gjet19",
-      "name": "Ivar Ingimarssun",
-      "nation": "ISL",
-      "number": 15,
-      "pos": "CB",
-      "verify": true,
-      "wage": 33500,
-      "weight": 84
-    },
-    {
       "alt": [
         "CM"
       ],
@@ -486,34 +458,6 @@
       "pos": "RM",
       "verify": true,
       "wage": 30500
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 68,
-        "dri": 59,
-        "ldr": 71,
-        "pac": 61,
-        "pas": 67,
-        "pos": 66,
-        "sho": 58,
-        "sta": 70,
-        "str": 64,
-        "tac": 72,
-        "vis": 66
-      },
-      "birth": "1980-09-01",
-      "contract": "2005-06-30",
-      "foot": "R",
-      "height": 183,
-      "id": "p0tx8388",
-      "name": "Keith Andraws",
-      "nation": "IRL",
-      "number": 16,
-      "pos": "DM",
-      "verify": true,
-      "wage": 13000,
-      "weight": 78
     },
     {
       "attrs": {

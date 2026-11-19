@@ -81,37 +81,6 @@
       "wage": 22500
     },
     {
-      "alt": [
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 74,
-        "dri": 75,
-        "ldr": 68,
-        "pac": 67,
-        "pas": 70,
-        "pos": 51,
-        "sho": 69,
-        "sta": 69,
-        "str": 63,
-        "tac": 48,
-        "vis": 73
-      },
-      "birth": "1981-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 172,
-      "id": "p1lwpha8",
-      "name": "Lee Chun-sou",
-      "nation": "KOR",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 29000
-    },
-    {
       "attrs": {
         "aer": 68,
         "com": 78,

@@ -25,34 +25,6 @@
   "squad": [
     {
       "attrs": {
-        "aer": 67,
-        "com": 72,
-        "dri": 72,
-        "ldr": 71,
-        "pac": 71,
-        "pas": 64,
-        "pos": 69,
-        "sho": 77,
-        "sta": 69,
-        "str": 72,
-        "tac": 43,
-        "vis": 65
-      },
-      "birth": "1979-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p1t22a5z",
-      "name": "Mohamed Keder",
-      "nation": "TOG",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 21000,
-      "weight": 74
-    },
-    {
-      "attrs": {
         "aer": 86,
         "com": 79,
         "dri": 65,
@@ -248,34 +220,6 @@
       "pos": "CM",
       "wage": 15000,
       "weight": 69
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 70,
-        "han": 71,
-        "ldr": 73,
-        "one": 74,
-        "pac": 55,
-        "pas": 62,
-        "pos": 75,
-        "ref": 75,
-        "sta": 59,
-        "str": 68,
-        "vis": 56
-      },
-      "birth": "1979-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 191,
-      "id": "p0qbkm5r",
-      "name": "Gerard Gnenhouan",
-      "nation": "FRA",
-      "nation2": "CIV",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 11500
     },
     {
       "attrs": {
@@ -624,68 +568,6 @@
       "weight": 72
     },
     {
-      "alt": [
-        "CM",
-        "DM",
-        "AM"
-      ],
-      "attrs": {
-        "aer": 45,
-        "com": 60,
-        "dri": 66,
-        "ldr": 60,
-        "pac": 64,
-        "pas": 61,
-        "pos": 44,
-        "sho": 64,
-        "sta": 58,
-        "str": 54,
-        "tac": 36,
-        "vis": 63
-      },
-      "birth": "1984-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p0hgw5kh",
-      "name": "Sigamary Dierra",
-      "nation": "MLI",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "LW",
-      "verify": true,
-      "wage": 3500,
-      "weight": 71
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 66,
-        "dri": 64,
-        "ldr": 62,
-        "pac": 64,
-        "pas": 55,
-        "pos": 60,
-        "sho": 67,
-        "sta": 63,
-        "str": 65,
-        "tac": 35,
-        "vis": 60
-      },
-      "birth": "1981-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p0uwgy2i",
-      "name": "Basile de Cervalho",
-      "nation": "SEN",
-      "nation2": "GNB",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000
-    },
-    {
       "attrs": {
         "aer": 55,
         "com": 57,
@@ -711,38 +593,6 @@
       "pos": "RB",
       "verify": true,
       "wage": 3000
-    },
-    {
-      "alt": [
-        "CM",
-        "RW",
-        "LW"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 65,
-        "dri": 60,
-        "ldr": 59,
-        "pac": 59,
-        "pas": 52,
-        "pos": 59,
-        "sho": 65,
-        "sta": 58,
-        "str": 60,
-        "tac": 33,
-        "vis": 52
-      },
-      "birth": "1976-04-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1carsms",
-      "name": "Marcelo Trapesso",
-      "nation": "ARG",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 4000
     },
     {
       "attrs": {
@@ -997,59 +847,6 @@
       "nation": "FRA",
       "number": null,
       "pos": "GK",
-      "wage": 1500
-    },
-    {
-      "attrs": {
-        "aer": 52,
-        "com": 57,
-        "dri": 55,
-        "ldr": 51,
-        "pac": 55,
-        "pas": 46,
-        "pos": 56,
-        "sho": 58,
-        "sta": 53,
-        "str": 59,
-        "tac": 26,
-        "vis": 52
-      },
-      "birth": "1984-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0xwkqmx",
-      "name": "Thomas Ragnier",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "wage": 1000
-    },
-    {
-      "attrs": {
-        "aer": 55,
-        "com": 52,
-        "dri": 37,
-        "ldr": 52,
-        "pac": 48,
-        "pas": 48,
-        "pos": 56,
-        "sho": 26,
-        "sta": 52,
-        "str": 58,
-        "tac": 58,
-        "vis": 42
-      },
-      "birth": "1984-12-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p05kywhm",
-      "name": "Aime Levie",
-      "nation": "CGO",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
       "wage": 1500
     },
     {

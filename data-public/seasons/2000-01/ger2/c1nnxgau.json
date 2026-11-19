@@ -285,35 +285,6 @@
     },
     {
       "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 62,
-        "dri": 63,
-        "ldr": 61,
-        "pac": 60,
-        "pas": 67,
-        "pos": 60,
-        "sho": 61,
-        "sta": 64,
-        "str": 63,
-        "tac": 61,
-        "vis": 66
-      },
-      "birth": "1973-02-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1jjc8hr",
-      "name": "Neil Murrai",
-      "nation": "SCO",
-      "number": null,
-      "pos": "CM",
-      "wage": 3000
-    },
-    {
-      "alt": [
         "AM"
       ],
       "attrs": {

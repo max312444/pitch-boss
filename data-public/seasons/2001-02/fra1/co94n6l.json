@@ -201,36 +201,6 @@
       "wage": 9000
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 70,
-        "dri": 62,
-        "ldr": 66,
-        "pac": 64,
-        "pas": 68,
-        "pos": 65,
-        "sho": 59,
-        "sta": 68,
-        "str": 62,
-        "tac": 64,
-        "vis": 70
-      },
-      "birth": "1974-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 168,
-      "id": "p1woerjw",
-      "name": "Nenad Gruzdic",
-      "nation": "SRB",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 12000
-    },
-    {
       "attrs": {
         "aer": 75,
         "com": 72,
@@ -492,33 +462,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 59,
-        "dri": 52,
-        "ldr": 68,
-        "pac": 58,
-        "pas": 53,
-        "pos": 68,
-        "sho": 36,
-        "sta": 60,
-        "str": 64,
-        "tac": 70,
-        "vis": 49
-      },
-      "birth": "1968-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1trxkmq",
-      "name": "Franck Domas",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5000
-    },
-    {
-      "attrs": {
         "aer": 64,
         "com": 70,
         "dri": 72,
@@ -635,33 +578,6 @@
       "pos": "RW",
       "wage": 6500,
       "weight": 71
-    },
-    {
-      "attrs": {
-        "aer": 67,
-        "com": 59,
-        "dri": 48,
-        "ldr": 66,
-        "pac": 58,
-        "pas": 56,
-        "pos": 62,
-        "sho": 31,
-        "sta": 58,
-        "str": 63,
-        "tac": 67,
-        "vis": 49
-      },
-      "birth": "1975-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p175xyj8",
-      "name": "Xavier Meryde",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 5000,
-      "weight": 78
     },
     {
       "attrs": {
@@ -836,36 +752,6 @@
     },
     {
       "alt": [
-        "CM",
-        "DM"
-      ],
-      "attrs": {
-        "aer": 44,
-        "com": 61,
-        "dri": 63,
-        "ldr": 61,
-        "pac": 60,
-        "pas": 63,
-        "pos": 48,
-        "sho": 65,
-        "sta": 57,
-        "str": 55,
-        "tac": 44,
-        "vis": 63
-      },
-      "birth": "1980-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p12wz0v8",
-      "name": "Ludovic Dalporte",
-      "nation": "FRA",
-      "number": null,
-      "pos": "AM",
-      "wage": 3000
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {
@@ -893,33 +779,6 @@
       "pos": "CM",
       "wage": 2500,
       "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 55,
-        "com": 56,
-        "dri": 50,
-        "ldr": 61,
-        "pac": 52,
-        "pas": 63,
-        "pos": 60,
-        "sho": 44,
-        "sta": 63,
-        "str": 56,
-        "tac": 59,
-        "vis": 59
-      },
-      "birth": "1978-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0zltegk",
-      "name": "Franck Chaussidyere",
-      "nation": "FRA",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 2500
     },
     {
       "attrs": {

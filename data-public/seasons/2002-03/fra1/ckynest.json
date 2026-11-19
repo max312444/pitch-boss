@@ -642,61 +642,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 68,
-        "han": 68,
-        "ldr": 63,
-        "one": 69,
-        "pac": 52,
-        "pas": 61,
-        "pos": 66,
-        "ref": 67,
-        "sta": 54,
-        "str": 65,
-        "vis": 57
-      },
-      "birth": "1974-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p08emt5i",
-      "name": "Thierry Debas",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 4000
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 62,
-        "dri": 56,
-        "ldr": 68,
-        "pac": 53,
-        "pas": 65,
-        "pos": 67,
-        "sho": 48,
-        "sta": 68,
-        "str": 60,
-        "tac": 67,
-        "vis": 60
-      },
-      "birth": "1977-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0lfda08",
-      "name": "Vincent Duukantie",
-      "nation": "MLI",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 5500
-    },
-    {
-      "attrs": {
         "aer": 59,
         "com": 64,
         "dri": 68,
@@ -810,38 +755,6 @@
       "pos": "CB",
       "wage": 3000,
       "weight": 80
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 49,
-        "com": 63,
-        "dri": 69,
-        "ldr": 60,
-        "pac": 68,
-        "pas": 62,
-        "pos": 50,
-        "sho": 63,
-        "sta": 64,
-        "str": 55,
-        "tac": 41,
-        "vis": 62
-      },
-      "birth": "1981-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p07spr84",
-      "name": "Yacine Abdessedki",
-      "nation": "FRA",
-      "nation2": "MAR",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 4000,
-      "weight": 66
     },
     {
       "attrs": {
@@ -1006,32 +919,6 @@
       "wage": 1500
     },
     {
-      "attrs": {
-        "aer": 62,
-        "com": 67,
-        "han": 64,
-        "ldr": 64,
-        "one": 67,
-        "pac": 51,
-        "pas": 54,
-        "pos": 69,
-        "ref": 67,
-        "sta": 54,
-        "str": 64,
-        "vis": 54
-      },
-      "birth": "1976-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1bnglo7",
-      "name": "Christophe Eggimenn",
-      "nation": "FRA",
-      "number": null,
-      "pos": "GK",
-      "wage": 2000
-    },
-    {
       "alt": [
         "LW"
       ],
@@ -1061,36 +948,6 @@
       "verify": true,
       "wage": 1500,
       "weight": 73
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 57,
-        "com": 67,
-        "dri": 67,
-        "ldr": 67,
-        "pac": 61,
-        "pas": 68,
-        "pos": 65,
-        "sho": 63,
-        "sta": 71,
-        "str": 62,
-        "tac": 65,
-        "vis": 64
-      },
-      "birth": "1978-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1n39bte",
-      "name": "Rafik Mazriche",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000
     },
     {
       "attrs": {
@@ -1195,33 +1052,6 @@
       "id": "p0my92k7",
       "name": "Nordina Sam",
       "nation": "ALG",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 1500
-    },
-    {
-      "attrs": {
-        "aer": 52,
-        "com": 51,
-        "dri": 38,
-        "ldr": 52,
-        "pac": 43,
-        "pas": 45,
-        "pos": 55,
-        "sho": 21,
-        "sta": 47,
-        "str": 54,
-        "tac": 57,
-        "vis": 35
-      },
-      "birth": "1982-01-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p146hi3k",
-      "name": "Alexis N'Gamby",
-      "nation": "CMR",
       "number": null,
       "pos": "CB",
       "verify": true,

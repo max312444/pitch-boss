@@ -468,7 +468,7 @@
       "foot": "L",
       "height": 191,
       "id": "p1iyks1y",
-      "name": "Jonathan Steed",
+      "name": "Jon Steed",
       "nation": "ENG",
       "number": 16,
       "pos": "ST",
@@ -596,33 +596,6 @@
       "verify": true,
       "wage": 6500,
       "weight": 59
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 62,
-        "dri": 48,
-        "ldr": 69,
-        "pac": 60,
-        "pas": 55,
-        "pos": 68,
-        "sho": 40,
-        "sta": 60,
-        "str": 64,
-        "tac": 67,
-        "vis": 47
-      },
-      "birth": "1984-01-01",
-      "contract": "2009-06-30",
-      "foot": "L",
-      "height": 185,
-      "id": "p1fabje2",
-      "name": "Matthew Kilgallun",
-      "nation": "ENG",
-      "number": 23,
-      "pos": "CB",
-      "verify": true,
-      "wage": 13000
     },
     {
       "attrs": {

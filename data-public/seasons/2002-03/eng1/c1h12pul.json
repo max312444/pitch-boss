@@ -592,64 +592,6 @@
     },
     {
       "attrs": {
-        "aer": 71,
-        "com": 70,
-        "dri": 57,
-        "ldr": 72,
-        "pac": 67,
-        "pas": 65,
-        "pos": 73,
-        "sho": 41,
-        "sta": 68,
-        "str": 75,
-        "tac": 73,
-        "vis": 53
-      },
-      "birth": "1980-09-01",
-      "contract": "2004-06-30",
-      "foot": "R",
-      "height": 180,
-      "id": "p0dj6uxe",
-      "name": "Steven Celdwell",
-      "nation": "SCO",
-      "number": 27,
-      "pos": "CB",
-      "verify": true,
-      "wage": 15000,
-      "weight": 72
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 51,
-        "com": 65,
-        "dri": 58,
-        "ldr": 63,
-        "pac": 55,
-        "pas": 67,
-        "pos": 62,
-        "sho": 55,
-        "sta": 68,
-        "str": 56,
-        "tac": 62,
-        "vis": 67
-      },
-      "birth": "1981-10-01",
-      "contract": "2004-06-30",
-      "foot": "R",
-      "height": 176,
-      "id": "p0u5mi08",
-      "name": "Brian Karr",
-      "nation": "SCO",
-      "number": 29,
-      "pos": "CM",
-      "verify": true,
-      "wage": 23000
-    },
-    {
-      "attrs": {
         "aer": 62,
         "com": 77,
         "dri": 84,

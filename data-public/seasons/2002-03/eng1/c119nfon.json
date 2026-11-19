@@ -217,41 +217,6 @@
     },
     {
       "alt": [
-        "CB"
-      ],
-      "attrs": {
-        "aer": 74,
-        "com": 76,
-        "dri": 77,
-        "ldr": 72,
-        "pac": 76,
-        "pas": 66,
-        "pos": 75,
-        "sho": 80,
-        "sta": 74,
-        "str": 79,
-        "tac": 49,
-        "vis": 71
-      },
-      "birth": "1969-04-01",
-      "contract": "2004-06-30",
-      "foot": "R",
-      "height": 188,
-      "id": "p173l1v4",
-      "name": "Dion Doblin",
-      "nation": "ENG",
-      "number": 10,
-      "pos": "ST",
-      "traits": [
-        "aerial_threat",
-        "target_man"
-      ],
-      "verify": true,
-      "wage": 37000,
-      "weight": 78
-    },
-    {
-      "alt": [
         "RW",
         "LW"
       ],
@@ -534,40 +499,6 @@
       "wage": 33000
     },
     {
-      "alt": [
-        "CB",
-        "RB",
-        "CM"
-      ],
-      "attrs": {
-        "aer": 63,
-        "com": 67,
-        "dri": 73,
-        "ldr": 71,
-        "pac": 74,
-        "pas": 71,
-        "pos": 72,
-        "sho": 56,
-        "sta": 73,
-        "str": 65,
-        "tac": 77,
-        "vis": 69
-      },
-      "birth": "1981-03-01",
-      "contract": "2005-06-30",
-      "foot": "L",
-      "height": 180,
-      "id": "p15ojbgh",
-      "name": "Jlloyd Samoel",
-      "nation": "ENG",
-      "nation2": "TRI",
-      "number": 22,
-      "pos": "LB",
-      "verify": true,
-      "wage": 16000,
-      "weight": 72
-    },
-    {
       "attrs": {
         "aer": 72,
         "com": 69,
@@ -774,33 +705,6 @@
       "pos": "ST",
       "verify": true,
       "wage": 14500
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 78,
-        "dri": 74,
-        "ldr": 73,
-        "pac": 82,
-        "pas": 78,
-        "pos": 69,
-        "sho": 73,
-        "sta": 80,
-        "str": 71,
-        "tac": 68,
-        "vis": 74
-      },
-      "birth": "1971-08-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 175,
-      "id": "p1xfb27l",
-      "name": "Steve Stune",
-      "nation": "ENG",
-      "number": 15,
-      "pos": "RM",
-      "verify": true,
-      "wage": 29000
     }
   ],
   "stadiumCapacity": 42573

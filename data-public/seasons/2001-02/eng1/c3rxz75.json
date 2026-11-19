@@ -621,33 +621,6 @@
       "weight": 77
     },
     {
-      "attrs": {
-        "aer": 76,
-        "com": 77,
-        "dri": 63,
-        "ldr": 78,
-        "pac": 73,
-        "pas": 71,
-        "pos": 79,
-        "sho": 48,
-        "sta": 72,
-        "str": 81,
-        "tac": 76,
-        "vis": 61
-      },
-      "birth": "1979-04-01",
-      "contract": "2003-06-30",
-      "foot": "L",
-      "height": 185,
-      "id": "p1forsk0",
-      "name": "Matthew Upsun",
-      "nation": "ENG",
-      "number": 20,
-      "pos": "CB",
-      "verify": true,
-      "wage": 19500
-    },
-    {
       "alt": [
         "LW"
       ],
@@ -783,7 +756,7 @@
       "fullName": "Nwankwo Kanu",
       "height": 197,
       "id": "p1utxi4q",
-      "name": "Kano",
+      "name": "Nwankwo Kano",
       "nation": "NGA",
       "number": 25,
       "pos": "ST",

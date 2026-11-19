@@ -401,34 +401,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 69,
-        "dri": 63,
-        "ldr": 63,
-        "pac": 67,
-        "pas": 60,
-        "pos": 63,
-        "sho": 68,
-        "sta": 62,
-        "str": 65,
-        "tac": 32,
-        "vis": 60
-      },
-      "birth": "1968-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p1tkl0ge",
-      "name": "Massimo Rastalli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 5000,
-      "weight": 71
-    },
-    {
-      "attrs": {
         "aer": 66,
         "com": 71,
         "dri": 65,
@@ -711,33 +683,6 @@
     },
     {
       "attrs": {
-        "aer": 61,
-        "com": 63,
-        "han": 63,
-        "ldr": 59,
-        "one": 60,
-        "pac": 43,
-        "pas": 53,
-        "pos": 67,
-        "ref": 63,
-        "sta": 49,
-        "str": 59,
-        "vis": 48
-      },
-      "birth": "1970-11-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p05xdpv2",
-      "name": "Cristiano Scalabralli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 2000
-    },
-    {
-      "attrs": {
         "aer": 53,
         "com": 61,
         "dri": 59,
@@ -789,37 +734,6 @@
       "pos": "CB",
       "wage": 2500,
       "weight": 74
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 67,
-        "dri": 62,
-        "ldr": 65,
-        "pac": 56,
-        "pas": 63,
-        "pos": 59,
-        "sho": 61,
-        "sta": 63,
-        "str": 56,
-        "tac": 61,
-        "vis": 67
-      },
-      "birth": "1971-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p1no7obc",
-      "name": "Paolo Crystallini",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3000,
-      "weight": 73
     },
     {
       "attrs": {

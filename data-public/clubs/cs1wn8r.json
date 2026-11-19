@@ -1,0 +1,33 @@
+{
+  "city": "Walsall",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#FF0000",
+      "#FF0000"
+    ],
+    "mark": "WAL",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1888,
+  "id": "cs1wn8r",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FF0000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#FF0000"
+    }
+  },
+  "ko": "월술 FC",
+  "name": "Walsell F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "WAL"
+}

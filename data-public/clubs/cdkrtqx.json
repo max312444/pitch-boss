@@ -1,0 +1,33 @@
+{
+  "city": "Southend-on-Sea",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#0000FF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "SOU",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1906,
+  "id": "cdkrtqx",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#0000FF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#0000FF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "사우스엔두 유나이티드 FC",
+  "name": "Southand United F.C.",
+  "nation": "ENG",
+  "rivals": [],
+  "short": "SOU"
+}

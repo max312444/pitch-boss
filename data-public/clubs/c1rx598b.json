@@ -1,0 +1,33 @@
+{
+  "city": "Niort",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "NYO",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 1925,
+  "id": "c1rx598b",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "샤무어 니오르 FC",
+  "name": "Chamois Nyortais FC",
+  "nation": "FRA",
+  "rivals": [],
+  "short": "NYO"
+}

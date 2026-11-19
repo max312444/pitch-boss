@@ -353,34 +353,6 @@
       "wage": 11500
     },
     {
-      "attrs": {
-        "aer": 73,
-        "com": 64,
-        "dri": 57,
-        "ldr": 72,
-        "pac": 60,
-        "pas": 59,
-        "pos": 73,
-        "sho": 44,
-        "sta": 66,
-        "str": 73,
-        "tac": 74,
-        "vis": 56
-      },
-      "birth": "1978-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0x2u60j",
-      "name": "Ivan Ameya",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 10000,
-      "weight": 85
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -497,33 +469,6 @@
     },
     {
       "attrs": {
-        "aer": 69,
-        "com": 64,
-        "dri": 56,
-        "ldr": 70,
-        "pac": 58,
-        "pas": 62,
-        "pos": 70,
-        "sho": 40,
-        "sta": 66,
-        "str": 71,
-        "tac": 68,
-        "vis": 50
-      },
-      "birth": "1969-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p1w0utfn",
-      "name": "Jean-Francois Harnandez",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 7000
-    },
-    {
-      "attrs": {
         "aer": 68,
         "com": 69,
         "dri": 72,
@@ -549,33 +494,6 @@
       "verify": true,
       "wage": 5000,
       "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 65,
-        "dri": 70,
-        "ldr": 64,
-        "pac": 73,
-        "pas": 71,
-        "pos": 68,
-        "sho": 51,
-        "sta": 76,
-        "str": 64,
-        "tac": 70,
-        "vis": 61
-      },
-      "birth": "1969-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p18b5gjh",
-      "name": "Carlos Llurens",
-      "nation": "ESP",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 4500
     },
     {
       "attrs": {
@@ -686,32 +604,6 @@
       "pos": "RB",
       "verify": true,
       "wage": 3500
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 68,
-        "dri": 63,
-        "ldr": 62,
-        "pac": 64,
-        "pas": 60,
-        "pos": 66,
-        "sho": 70,
-        "sta": 60,
-        "str": 66,
-        "tac": 36,
-        "vis": 58
-      },
-      "birth": "1977-08-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0bkev08",
-      "name": "Mychel",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 2500
     }
   ],
   "stadiumCapacity": 14708

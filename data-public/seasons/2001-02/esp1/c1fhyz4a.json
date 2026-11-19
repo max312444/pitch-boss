@@ -195,33 +195,6 @@
       "wage": 16000
     },
     {
-      "attrs": {
-        "aer": 77,
-        "com": 72,
-        "dri": 62,
-        "ldr": 76,
-        "pac": 67,
-        "pas": 65,
-        "pos": 76,
-        "sho": 45,
-        "sta": 69,
-        "str": 78,
-        "tac": 78,
-        "vis": 61
-      },
-      "birth": "1975-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0edx0jb",
-      "name": "Jose Garcia Celvo",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 15000
-    },
-    {
       "alt": [
         "RW",
         "LW"
@@ -528,32 +501,6 @@
       "number": null,
       "pos": "CM",
       "wage": 6500
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 62,
-        "dri": 51,
-        "ldr": 66,
-        "pac": 57,
-        "pas": 56,
-        "pos": 71,
-        "sho": 39,
-        "sta": 61,
-        "str": 70,
-        "tac": 68,
-        "vis": 50
-      },
-      "birth": "1976-09-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0pi32qo",
-      "name": "Manuel Tana",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "wage": 5000
     },
     {
       "attrs": {

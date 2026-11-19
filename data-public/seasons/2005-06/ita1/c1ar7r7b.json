@@ -395,36 +395,6 @@
     },
     {
       "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 63,
-        "com": 69,
-        "dri": 71,
-        "ldr": 70,
-        "pac": 64,
-        "pas": 72,
-        "pos": 70,
-        "sho": 65,
-        "sta": 71,
-        "str": 67,
-        "tac": 69,
-        "vis": 74
-      },
-      "birth": "1976-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p102xixg",
-      "name": "Mark Edosei",
-      "nation": "GHA",
-      "number": null,
-      "pos": "CM",
-      "wage": 13000,
-      "weight": 70
-    },
-    {
-      "alt": [
         "LM"
       ],
       "attrs": {
@@ -672,61 +642,6 @@
       "weight": 80
     },
     {
-      "attrs": {
-        "aer": 71,
-        "com": 69,
-        "dri": 55,
-        "ldr": 68,
-        "pac": 65,
-        "pas": 64,
-        "pos": 71,
-        "sho": 40,
-        "sta": 62,
-        "str": 69,
-        "tac": 70,
-        "vis": 55
-      },
-      "birth": "1980-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 192,
-      "id": "p1jcl20v",
-      "name": "Moris Carrozziery",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 4500,
-      "weight": 90
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 58,
-        "dri": 49,
-        "ldr": 60,
-        "pac": 56,
-        "pas": 52,
-        "pos": 61,
-        "sho": 31,
-        "sta": 56,
-        "str": 64,
-        "tac": 66,
-        "vis": 48
-      },
-      "birth": "1972-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0i69rfy",
-      "name": "Stefano Sacchatti",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4500,
-      "weight": 73
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -879,34 +794,6 @@
     },
     {
       "attrs": {
-        "aer": 61,
-        "com": 57,
-        "han": 63,
-        "ldr": 56,
-        "one": 60,
-        "pac": 45,
-        "pas": 47,
-        "pos": 62,
-        "ref": 60,
-        "sta": 45,
-        "str": 53,
-        "vis": 50
-      },
-      "birth": "1970-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p0rx2f9f",
-      "name": "Luigi Torci",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 2500,
-      "weight": 88
-    },
-    {
-      "attrs": {
         "aer": 54,
         "com": 60,
         "dri": 52,
@@ -932,36 +819,6 @@
       "verify": true,
       "wage": 2000,
       "weight": 76
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 63,
-        "dri": 63,
-        "ldr": 62,
-        "pac": 59,
-        "pas": 64,
-        "pos": 61,
-        "sho": 62,
-        "sta": 69,
-        "str": 58,
-        "tac": 62,
-        "vis": 65
-      },
-      "birth": "1984-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 175,
-      "id": "p07w8430",
-      "name": "Thumas Job",
-      "nation": "CMR",
-      "number": null,
-      "pos": "CM",
-      "wage": 2500,
-      "weight": 70
     }
   ],
   "stadiumCapacity": 33205

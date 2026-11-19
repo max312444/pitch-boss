@@ -208,37 +208,6 @@
         "DM"
       ],
       "attrs": {
-        "aer": 61,
-        "com": 71,
-        "dri": 74,
-        "ldr": 73,
-        "pac": 69,
-        "pas": 75,
-        "pos": 71,
-        "sho": 66,
-        "sta": 76,
-        "str": 71,
-        "tac": 71,
-        "vis": 74
-      },
-      "birth": "1979-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p1r5an32",
-      "name": "Rudi Skacal",
-      "nation": "CZE",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 60500,
-      "weight": 77
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
         "aer": 66,
         "com": 79,
         "dri": 79,
@@ -805,33 +774,6 @@
       "number": null,
       "pos": "LB",
       "wage": 7500
-    },
-    {
-      "attrs": {
-        "aer": 61,
-        "com": 60,
-        "dri": 45,
-        "ldr": 59,
-        "pac": 54,
-        "pas": 49,
-        "pos": 65,
-        "sho": 31,
-        "sta": 56,
-        "str": 62,
-        "tac": 65,
-        "vis": 46
-      },
-      "birth": "1985-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p1q2lgru",
-      "name": "Leyti N'Diaya",
-      "nation": "SEN",
-      "number": null,
-      "pos": "CB",
-      "wage": 5500,
-      "weight": 84
     },
     {
       "attrs": {

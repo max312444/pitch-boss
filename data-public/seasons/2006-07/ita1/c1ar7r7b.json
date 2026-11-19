@@ -112,34 +112,6 @@
     },
     {
       "attrs": {
-        "aer": 75,
-        "com": 80,
-        "dri": 79,
-        "ldr": 72,
-        "pac": 79,
-        "pas": 69,
-        "pos": 75,
-        "sho": 83,
-        "sta": 74,
-        "str": 77,
-        "tac": 53,
-        "vis": 70
-      },
-      "birth": "1982-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p02mhwad",
-      "name": "Marco Borryello",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 18500,
-      "weight": 85
-    },
-    {
-      "attrs": {
         "aer": 73,
         "com": 76,
         "dri": 71,
@@ -192,37 +164,6 @@
       "verify": true,
       "wage": 22000,
       "weight": 79
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 68,
-        "com": 76,
-        "dri": 77,
-        "ldr": 71,
-        "pac": 68,
-        "pas": 76,
-        "pos": 74,
-        "sho": 73,
-        "sta": 76,
-        "str": 68,
-        "tac": 69,
-        "vis": 77
-      },
-      "birth": "1981-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p1kcfxtv",
-      "name": "Samuele Dalla Bone",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 17500,
-      "weight": 76
     },
     {
       "alt": [
@@ -281,34 +222,6 @@
       "verify": true,
       "wage": 12500,
       "weight": 75
-    },
-    {
-      "attrs": {
-        "aer": 70,
-        "com": 71,
-        "han": 71,
-        "ldr": 72,
-        "one": 69,
-        "pac": 51,
-        "pas": 62,
-        "pos": 69,
-        "ref": 74,
-        "sta": 60,
-        "str": 67,
-        "vis": 57
-      },
-      "birth": "1969-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p0ukvbk5",
-      "name": "Francesco Antunioli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 14500,
-      "weight": 82
     },
     {
       "attrs": {
@@ -419,34 +332,6 @@
       "weight": 71
     },
     {
-      "attrs": {
-        "aer": 67,
-        "com": 72,
-        "dri": 68,
-        "ldr": 66,
-        "pac": 68,
-        "pas": 64,
-        "pos": 69,
-        "sho": 74,
-        "sta": 65,
-        "str": 67,
-        "tac": 38,
-        "vis": 64
-      },
-      "birth": "1979-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p1fibemo",
-      "name": "Corrado Culombo",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 7500,
-      "weight": 80
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -533,65 +418,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 58,
-        "dri": 46,
-        "ldr": 63,
-        "pac": 58,
-        "pas": 56,
-        "pos": 69,
-        "sho": 37,
-        "sta": 62,
-        "str": 63,
-        "tac": 67,
-        "vis": 50
-      },
-      "birth": "1977-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p0l9jc8d",
-      "name": "Marco Zambony",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 6500,
-      "weight": 82
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 62,
-        "dri": 60,
-        "ldr": 63,
-        "pac": 62,
-        "pas": 68,
-        "pos": 66,
-        "sho": 59,
-        "sta": 66,
-        "str": 63,
-        "tac": 59,
-        "vis": 67
-      },
-      "birth": "1983-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0s83rld",
-      "name": "Biagio Pegano",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 7500,
-      "weight": 71
-    },
-    {
-      "attrs": {
         "aer": 74,
         "com": 66,
         "dri": 55,
@@ -647,34 +473,6 @@
       "verify": true,
       "wage": 7000,
       "weight": 74
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 60,
-        "dri": 50,
-        "ldr": 63,
-        "pac": 55,
-        "pas": 51,
-        "pos": 68,
-        "sho": 32,
-        "sta": 57,
-        "str": 65,
-        "tac": 65,
-        "vis": 47
-      },
-      "birth": "1973-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p0l9f7va",
-      "name": "Marcello Castellyni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5000,
-      "weight": 76
     },
     {
       "alt": [
@@ -862,36 +660,6 @@
       "pos": "RW",
       "verify": true,
       "wage": 4000,
-      "weight": 70
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 59,
-        "dri": 61,
-        "ldr": 61,
-        "pac": 59,
-        "pas": 63,
-        "pos": 61,
-        "sho": 54,
-        "sta": 64,
-        "str": 54,
-        "tac": 59,
-        "vis": 60
-      },
-      "birth": "1984-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0z438gf",
-      "name": "Gionata Minguzzi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "wage": 4500,
       "weight": 70
     },
     {

@@ -253,36 +253,6 @@
       "wage": 13500
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 69,
-        "dri": 66,
-        "ldr": 69,
-        "pac": 62,
-        "pas": 72,
-        "pos": 65,
-        "sho": 60,
-        "sta": 72,
-        "str": 65,
-        "tac": 65,
-        "vis": 71
-      },
-      "birth": "1981-12-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1ke4xel",
-      "name": "Makhtar N'Diaie",
-      "nation": "SEN",
-      "nation2": "FRA",
-      "number": null,
-      "pos": "CM",
-      "wage": 18000
-    },
-    {
       "attrs": {
         "aer": 59,
         "com": 72,
@@ -681,33 +651,6 @@
       "verify": true,
       "wage": 4500,
       "weight": 87
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 65,
-        "dri": 67,
-        "ldr": 58,
-        "pac": 66,
-        "pas": 61,
-        "pos": 62,
-        "sho": 67,
-        "sta": 64,
-        "str": 64,
-        "tac": 36,
-        "vis": 59
-      },
-      "birth": "1983-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p15t8ibg",
-      "name": "Fabrice Do Marcolyno",
-      "nation": "GAB",
-      "number": null,
-      "pos": "ST",
-      "wage": 3000,
-      "weight": 85
     },
     {
       "alt": [

@@ -382,37 +382,6 @@
       "weight": 90
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 63,
-        "com": 74,
-        "dri": 73,
-        "ldr": 70,
-        "pac": 67,
-        "pas": 76,
-        "pos": 74,
-        "sho": 67,
-        "sta": 77,
-        "str": 65,
-        "tac": 67,
-        "vis": 76
-      },
-      "birth": "1979-12-01",
-      "contract": "2004-06-30",
-      "foot": "L",
-      "height": 178,
-      "id": "p0d17he6",
-      "name": "Stephen McPheil",
-      "nation": "IRL",
-      "number": 14,
-      "pos": "CM",
-      "verify": true,
-      "wage": 48500,
-      "weight": 76
-    },
-    {
       "attrs": {
         "aer": 58,
         "com": 75,

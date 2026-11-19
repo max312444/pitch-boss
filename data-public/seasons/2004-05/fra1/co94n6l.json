@@ -343,35 +343,6 @@
       "weight": 82
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 69,
-        "dri": 70,
-        "ldr": 67,
-        "pac": 63,
-        "pas": 74,
-        "pos": 64,
-        "sho": 65,
-        "sta": 71,
-        "str": 63,
-        "tac": 65,
-        "vis": 71
-      },
-      "birth": "1977-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p029v4yv",
-      "name": "Pape Serr",
-      "nation": "SEN",
-      "number": null,
-      "pos": "CM",
-      "wage": 13000
-    },
-    {
       "attrs": {
         "aer": 57,
         "com": 70,
@@ -397,33 +368,6 @@
       "pos": "AM",
       "verify": true,
       "wage": 7000
-    },
-    {
-      "attrs": {
-        "aer": 78,
-        "com": 70,
-        "dri": 57,
-        "ldr": 76,
-        "pac": 67,
-        "pas": 62,
-        "pos": 75,
-        "sho": 44,
-        "sta": 71,
-        "str": 72,
-        "tac": 75,
-        "vis": 59
-      },
-      "birth": "1981-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p02bgucb",
-      "name": "Rod Fanny",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 8000,
-      "weight": 80
     },
     {
       "attrs": {
@@ -897,32 +841,6 @@
       "pos": "ST",
       "wage": 1500,
       "weight": 71
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 60,
-        "dri": 45,
-        "ldr": 59,
-        "pac": 52,
-        "pas": 53,
-        "pos": 64,
-        "sho": 34,
-        "sta": 60,
-        "str": 61,
-        "tac": 62,
-        "vis": 44
-      },
-      "birth": "1984-04-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p09153s2",
-      "name": "Martin Ekeni",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 1500
     },
     {
       "attrs": {

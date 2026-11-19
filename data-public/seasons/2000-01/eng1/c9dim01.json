@@ -100,40 +100,6 @@
       "wage": 10000
     },
     {
-      "alt": [
-        "CB",
-        "LB"
-      ],
-      "attrs": {
-        "aer": 54,
-        "com": 65,
-        "dri": 59,
-        "ldr": 62,
-        "pac": 67,
-        "pas": 65,
-        "pos": 65,
-        "sho": 44,
-        "sta": 70,
-        "str": 62,
-        "tac": 69,
-        "vis": 61
-      },
-      "birth": "1970-04-01",
-      "contract": "2002-06-30",
-      "foot": "R",
-      "height": 175,
-      "id": "p05zglzh",
-      "name": "Gary Charlas",
-      "nation": "ENG",
-      "number": 2,
-      "pos": "RB",
-      "traits": [
-        "injury_prone"
-      ],
-      "verify": true,
-      "wage": 14500
-    },
-    {
       "attrs": {
         "aer": 64,
         "com": 68,
@@ -569,36 +535,6 @@
       "pos": "ST",
       "verify": true,
       "wage": 10000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 71,
-        "com": 82,
-        "dri": 76,
-        "ldr": 75,
-        "pac": 72,
-        "pas": 80,
-        "pos": 75,
-        "sho": 74,
-        "sta": 79,
-        "str": 75,
-        "tac": 76,
-        "vis": 79
-      },
-      "birth": "1981-07-01",
-      "contract": "2004-06-30",
-      "foot": "L",
-      "height": 185,
-      "id": "p1u13ods",
-      "name": "Michael Carryck",
-      "nation": "ENG",
-      "number": 25,
-      "pos": "CM",
-      "wage": 24000,
-      "weight": 75
     },
     {
       "alt": [

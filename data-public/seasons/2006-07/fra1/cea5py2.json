@@ -602,33 +602,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 69,
-        "dri": 64,
-        "ldr": 67,
-        "pac": 60,
-        "pas": 69,
-        "pos": 69,
-        "sho": 59,
-        "sta": 74,
-        "str": 69,
-        "tac": 70,
-        "vis": 64
-      },
-      "birth": "1978-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1rwhsio",
-      "name": "Fabien Bouderene",
-      "nation": "FRA",
-      "number": null,
-      "pos": "DM",
-      "verify": true,
-      "wage": 6500
-    },
-    {
-      "attrs": {
         "aer": 59,
         "com": 61,
         "dri": 61,
@@ -802,32 +775,6 @@
       "pos": "CM",
       "wage": 4500,
       "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 56,
-        "dri": 42,
-        "ldr": 61,
-        "pac": 50,
-        "pas": 50,
-        "pos": 64,
-        "sho": 29,
-        "sta": 57,
-        "str": 60,
-        "tac": 62,
-        "vis": 44
-      },
-      "birth": "1987-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p01egocx",
-      "name": "Maxime Jossa",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "wage": 3000
     },
     {
       "attrs": {

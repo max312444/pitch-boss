@@ -1,0 +1,33 @@
+{
+  "city": "Cesena",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#000000",
+      "#FFFFFF",
+      "#FFFFFF"
+    ],
+    "mark": "CAS",
+    "pattern": "solid",
+    "shape": "shield"
+  },
+  "founded": 2018,
+  "id": "cicb49b",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    }
+  },
+  "ko": "체세너 FC",
+  "name": "Casena FC",
+  "nation": "ITA",
+  "rivals": [],
+  "short": "CAS"
+}

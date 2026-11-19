@@ -172,68 +172,6 @@
       "weight": 74
     },
     {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 65,
-        "com": 73,
-        "dri": 74,
-        "ldr": 74,
-        "pac": 67,
-        "pas": 75,
-        "pos": 74,
-        "sho": 67,
-        "sta": 74,
-        "str": 73,
-        "tac": 73,
-        "vis": 75
-      },
-      "birth": "1970-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p06d6tfe",
-      "name": "Eugenio Curini",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 13500,
-      "weight": 73
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 64,
-        "com": 71,
-        "dri": 74,
-        "ldr": 74,
-        "pac": 68,
-        "pas": 77,
-        "pos": 73,
-        "sho": 66,
-        "sta": 76,
-        "str": 68,
-        "tac": 70,
-        "vis": 78
-      },
-      "birth": "1978-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p11uzpw9",
-      "name": "Fabio Fyrmani",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 14000,
-      "weight": 69
-    },
-    {
       "attrs": {
         "aer": 73,
         "com": 62,
@@ -315,33 +253,6 @@
       "verify": true,
       "wage": 8500,
       "weight": 84
-    },
-    {
-      "attrs": {
-        "aer": 77,
-        "com": 70,
-        "dri": 63,
-        "ldr": 70,
-        "pac": 70,
-        "pas": 64,
-        "pos": 74,
-        "sho": 47,
-        "sta": 70,
-        "str": 74,
-        "tac": 74,
-        "vis": 62
-      },
-      "birth": "1976-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1pjur8i",
-      "name": "Emanuele Pasaresi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "wage": 7000,
-      "weight": 77
     },
     {
       "attrs": {
@@ -515,36 +426,6 @@
       "verify": true,
       "wage": 5500,
       "weight": 80
-    },
-    {
-      "alt": [
-        "LB"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 62,
-        "dri": 64,
-        "ldr": 64,
-        "pac": 67,
-        "pas": 62,
-        "pos": 62,
-        "sho": 45,
-        "sta": 69,
-        "str": 61,
-        "tac": 68,
-        "vis": 60
-      },
-      "birth": "1976-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p1exw3d3",
-      "name": "Moreno Lungo",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 5000
     },
     {
       "attrs": {
@@ -743,67 +624,6 @@
       "weight": 67
     },
     {
-      "alt": [
-        "AM"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 69,
-        "dri": 65,
-        "ldr": 64,
-        "pac": 72,
-        "pas": 71,
-        "pos": 57,
-        "sho": 61,
-        "sta": 74,
-        "str": 63,
-        "tac": 63,
-        "vis": 68
-      },
-      "birth": "1975-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1r95shw",
-      "name": "Andrea Zanchette",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RM",
-      "wage": 4500,
-      "weight": 68
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 69,
-        "dri": 64,
-        "ldr": 68,
-        "pac": 65,
-        "pas": 72,
-        "pos": 68,
-        "sho": 66,
-        "sta": 69,
-        "str": 65,
-        "tac": 63,
-        "vis": 69
-      },
-      "birth": "1974-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p1ie9vg8",
-      "name": "Dario Passuni",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 4500,
-      "weight": 74
-    },
-    {
       "attrs": {
         "aer": 65,
         "com": 62,
@@ -862,34 +682,6 @@
     },
     {
       "attrs": {
-        "aer": 65,
-        "com": 70,
-        "dri": 65,
-        "ldr": 64,
-        "pac": 69,
-        "pas": 60,
-        "pos": 67,
-        "sho": 70,
-        "sta": 64,
-        "str": 66,
-        "tac": 35,
-        "vis": 58
-      },
-      "birth": "1976-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 179,
-      "id": "p1hyusfd",
-      "name": "Marco Veronase",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2500,
-      "weight": 69
-    },
-    {
-      "attrs": {
         "aer": 61,
         "com": 69,
         "dri": 64,
@@ -914,37 +706,6 @@
       "pos": "ST",
       "wage": 2000,
       "weight": 80
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 60,
-        "com": 65,
-        "dri": 65,
-        "ldr": 64,
-        "pac": 60,
-        "pas": 72,
-        "pos": 65,
-        "sho": 60,
-        "sta": 73,
-        "str": 64,
-        "tac": 61,
-        "vis": 66
-      },
-      "birth": "1974-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p1wm46fp",
-      "name": "Ivano Della Murte",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 3500,
-      "weight": 76
     },
     {
       "alt": [
@@ -975,34 +736,6 @@
       "pos": "RW",
       "wage": 4000,
       "weight": 74
-    },
-    {
-      "attrs": {
-        "aer": 64,
-        "com": 64,
-        "dri": 67,
-        "ldr": 58,
-        "pac": 64,
-        "pas": 58,
-        "pos": 62,
-        "sho": 68,
-        "sta": 64,
-        "str": 65,
-        "tac": 33,
-        "vis": 59
-      },
-      "birth": "1973-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p0p07he5",
-      "name": "Luigi Beghettu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2000,
-      "weight": 80
     },
     {
       "alt": [
@@ -1065,34 +798,6 @@
     },
     {
       "attrs": {
-        "aer": 56,
-        "com": 59,
-        "dri": 57,
-        "ldr": 58,
-        "pac": 58,
-        "pas": 52,
-        "pos": 60,
-        "sho": 62,
-        "sta": 54,
-        "str": 64,
-        "tac": 30,
-        "vis": 54
-      },
-      "birth": "1984-03-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p0dderu2",
-      "name": "Bjorn Ronstrom",
-      "nation": "SWE",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 1500,
-      "weight": 77
-    },
-    {
-      "attrs": {
         "aer": 63,
         "com": 61,
         "dri": 50,
@@ -1146,33 +851,6 @@
       "verify": true,
       "wage": 2000,
       "weight": 79
-    },
-    {
-      "attrs": {
-        "aer": 62,
-        "com": 66,
-        "dri": 65,
-        "ldr": 64,
-        "pac": 63,
-        "pas": 56,
-        "pos": 61,
-        "sho": 70,
-        "sta": 58,
-        "str": 66,
-        "tac": 31,
-        "vis": 59
-      },
-      "birth": "1981-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p1rrhf8e",
-      "name": "Davide Succy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "wage": 2000,
-      "weight": 80
     },
     {
       "attrs": {

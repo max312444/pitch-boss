@@ -648,34 +648,6 @@
     },
     {
       "attrs": {
-        "aer": 75,
-        "com": 77,
-        "han": 77,
-        "ldr": 77,
-        "one": 77,
-        "pac": 64,
-        "pas": 71,
-        "pos": 80,
-        "ref": 79,
-        "sta": 70,
-        "str": 75,
-        "vis": 67
-      },
-      "birth": "1987-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 190,
-      "id": "p1ykdx7o",
-      "name": "Antonio Aden",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 35500,
-      "weight": 85
-    },
-    {
-      "attrs": {
         "aer": 73,
         "com": 87,
         "dri": 88,
@@ -844,34 +816,6 @@
       "number": null,
       "pos": "ST",
       "wage": 21000
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 69,
-        "han": 70,
-        "ldr": 69,
-        "one": 71,
-        "pac": 55,
-        "pas": 61,
-        "pos": 70,
-        "ref": 73,
-        "sta": 60,
-        "str": 70,
-        "vis": 59
-      },
-      "birth": "1978-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 184,
-      "id": "p1xhvvq4",
-      "name": "Carlos Senchez",
-      "nation": "ESP",
-      "number": null,
-      "pos": "GK",
-      "verify": true,
-      "wage": 18000,
-      "weight": 83
     },
     {
       "attrs": {

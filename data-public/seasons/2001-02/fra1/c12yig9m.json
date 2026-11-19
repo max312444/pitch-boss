@@ -721,62 +721,6 @@
       "wage": 3500
     },
     {
-      "attrs": {
-        "aer": 58,
-        "com": 66,
-        "dri": 61,
-        "ldr": 61,
-        "pac": 67,
-        "pas": 62,
-        "pos": 65,
-        "sho": 48,
-        "sta": 71,
-        "str": 61,
-        "tac": 71,
-        "vis": 58
-      },
-      "birth": "1977-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p1lx5dk4",
-      "name": "Ludovic Mari",
-      "nation": "FRA",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 2500
-    },
-    {
-      "attrs": {
-        "aer": 47,
-        "com": 66,
-        "dri": 62,
-        "ldr": 62,
-        "pac": 62,
-        "pas": 63,
-        "pos": 49,
-        "sho": 61,
-        "sta": 61,
-        "str": 50,
-        "tac": 39,
-        "vis": 65
-      },
-      "birth": "1978-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 170,
-      "id": "p0hl9hi4",
-      "name": "Alioune Toore",
-      "nation": "FRA",
-      "nation2": "MLI",
-      "number": null,
-      "pos": "AM",
-      "verify": true,
-      "wage": 2000,
-      "weight": 65
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -1000,36 +944,6 @@
       "number": null,
       "pos": "ST",
       "wage": 1500
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 49,
-        "com": 60,
-        "dri": 58,
-        "ldr": 55,
-        "pac": 55,
-        "pas": 60,
-        "pos": 55,
-        "sho": 53,
-        "sta": 60,
-        "str": 53,
-        "tac": 55,
-        "vis": 60
-      },
-      "birth": "1979-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p1pb6233",
-      "name": "Amadou Sanokhu",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2000
     },
     {
       "alt": [

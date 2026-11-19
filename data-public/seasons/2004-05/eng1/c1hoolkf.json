@@ -242,35 +242,6 @@
       "wage": 21500
     },
     {
-      "attrs": {
-        "aer": 72,
-        "com": 67,
-        "dri": 58,
-        "ldr": 72,
-        "pac": 69,
-        "pas": 64,
-        "pos": 75,
-        "sho": 46,
-        "sta": 67,
-        "str": 72,
-        "tac": 75,
-        "vis": 56
-      },
-      "birth": "1972-02-01",
-      "contract": "2006-06-30",
-      "foot": "R",
-      "height": 191,
-      "id": "p1f39f72",
-      "name": "Malky Mackai",
-      "nation": "SCO",
-      "number": 4,
-      "pos": "CB",
-      "traits": [
-        "aerial_threat"
-      ],
-      "wage": 23500
-    },
-    {
       "alt": [
         "RB",
         "LB",
@@ -444,7 +415,7 @@
       "foot": "R",
       "height": 173,
       "id": "p178k9cn",
-      "name": "Phil Mulrine",
+      "name": "Philip Mulrine",
       "nation": "NIR",
       "number": 7,
       "pos": "CM",

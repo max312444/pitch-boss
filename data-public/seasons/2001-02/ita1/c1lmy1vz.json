@@ -550,33 +550,6 @@
       "weight": 73
     },
     {
-      "attrs": {
-        "aer": 72,
-        "com": 78,
-        "dri": 71,
-        "ldr": 72,
-        "pac": 76,
-        "pas": 65,
-        "pos": 73,
-        "sho": 81,
-        "sta": 69,
-        "str": 74,
-        "tac": 45,
-        "vis": 68
-      },
-      "birth": "1974-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p154reie",
-      "name": "Nicola Amorusu",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "wage": 29000,
-      "weight": 75
-    },
-    {
       "alt": [
         "LW"
       ],

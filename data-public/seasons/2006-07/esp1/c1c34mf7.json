@@ -968,32 +968,6 @@
     },
     {
       "attrs": {
-        "aer": 69,
-        "com": 69,
-        "dri": 66,
-        "ldr": 68,
-        "pac": 70,
-        "pas": 61,
-        "pos": 68,
-        "sho": 70,
-        "sta": 63,
-        "str": 70,
-        "tac": 39,
-        "vis": 62
-      },
-      "birth": "1986-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 188,
-      "id": "p1fmsdzo",
-      "name": "Xysco",
-      "nation": "ESP",
-      "number": null,
-      "pos": "ST",
-      "wage": 3500
-    },
-    {
-      "attrs": {
         "aer": 65,
         "com": 65,
         "dri": 61,
@@ -1044,36 +1018,6 @@
       "number": null,
       "pos": "AM",
       "wage": 5000
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 65,
-        "dri": 67,
-        "ldr": 65,
-        "pac": 60,
-        "pas": 73,
-        "pos": 68,
-        "sho": 64,
-        "sta": 71,
-        "str": 63,
-        "tac": 63,
-        "vis": 66
-      },
-      "birth": "1985-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p159mucl",
-      "name": "Ivan Cerril",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CM",
-      "wage": 4000,
-      "weight": 75
     },
     {
       "alt": [

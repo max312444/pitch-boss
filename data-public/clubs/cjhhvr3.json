@@ -1,0 +1,33 @@
+{
+  "city": "Elda",
+  "crest": {
+    "charge": "ball",
+    "colors": [
+      "#FFFFFF",
+      "#000000",
+      "#000000"
+    ],
+    "mark": "ELD",
+    "pattern": "solid",
+    "shape": "pointed"
+  },
+  "founded": 1921,
+  "id": "cjhhvr3",
+  "kits": {
+    "away": {
+      "pattern": "solid",
+      "primary": "#000000",
+      "secondary": "#FFFFFF"
+    },
+    "home": {
+      "pattern": "solid",
+      "primary": "#FFFFFF",
+      "secondary": "#000000"
+    }
+  },
+  "ko": "CD 엘덴새",
+  "name": "CD Eldensa",
+  "nation": "ESP",
+  "rivals": [],
+  "short": "ELD"
+}

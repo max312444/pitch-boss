@@ -378,36 +378,6 @@
     },
     {
       "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 56,
-        "com": 73,
-        "dri": 80,
-        "ldr": 69,
-        "pac": 81,
-        "pas": 69,
-        "pos": 51,
-        "sho": 69,
-        "sta": 72,
-        "str": 65,
-        "tac": 51,
-        "vis": 74
-      },
-      "birth": "1970-12-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0ewohju",
-      "name": "Emmanuel Amunyke",
-      "nation": "NGA",
-      "number": null,
-      "pos": "RW",
-      "verify": true,
-      "wage": 53000
-    },
-    {
-      "alt": [
         "CB",
         "LB"
       ],

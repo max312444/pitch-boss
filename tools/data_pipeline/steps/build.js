@@ -252,9 +252,17 @@ async function buildLeague({ league, apply, overwrite, seasonFilter, log }) {
       if (!title) continue;
       let r = await wikipedia.squadAt(title, snapshotDate(season));
       let players = r.players.filter(p => p.title);
+      // 시즌 초 판에 문서 링크가 적으면 (하위 리그 · 막 승격) 시즌 중간 판 (2월 1일, 오늘 이전만) 도 보고 링크가 많은 쪽
+      const mid = `${+season.slice(0, 4) + 1}-02-01`;
+      if (players.length < 16 && mid <= new Date().toISOString().slice(0, 10)) {
+        const r2 = await wikipedia.squadAt(title, mid);
+        const p2 = r2.players.filter(p => p.title);
+        if (p2.length > players.length) { r = r2; players = p2; }
+      }
       // 1군 외 선수가 섞여 30명을 넘으면 등번호 있는 선수만 남긴다
       if (players.length > 30 && players.filter(p => p.number).length >= 18) players = players.filter(p => p.number);
-      if (players.length >= 16) wpRosters.set(`${season}/${teamIds.get(t.qid)}`, { ...r, players });
+      // 16명 미만이어도 8명 이상이면 쓰고, 아래에서 Wikidata 소속 기록으로 보충한다
+      if (players.length >= 8) wpRosters.set(`${season}/${teamIds.get(t.qid)}`, { ...r, players, partial: players.length < 16 });
     }
   }
   const titleMap = await wikipedia.resolveTitles([...new Set([...wpRosters.values()].flatMap(r => r.players.map(p => p.title)))]);
@@ -296,11 +304,19 @@ async function buildLeague({ league, apply, overwrite, seasonFilter, log }) {
           cands.push({ qid: q, number: p.number, nat: p.nat, posGroup: p.posGroup, loanFrom: p.loanFrom, presence: 'definite', fromWikipedia: true, ...(weak ? { weak } : {}) });
           allQids.add(q);
         }
-        candBySeasonClub.set(`${season}/${id}`, { club: id, clubQid: t.qid, season, date, cands, source: { roster: 'wikipedia', revid: wp.revid, unresolved: wp.unresolved || 0 } });
+        // 링크된 선수가 적은 명단: Wikidata 소속 기록으로 보충 (Wikidata 필터가 그대로 적용됨)
+        if (cands.length < 16) for (const [q, m] of membershipCands(id, date)) if (!cands.some(c => c.qid === q)) { cands.push(m); allQids.add(q); }
+        candBySeasonClub.set(`${season}/${id}`, { club: id, clubQid: t.qid, season, date, cands, source: { roster: 'wikipedia', revid: wp.revid, unresolved: wp.unresolved || 0, ...(wp.partial ? { partial: true } : {}) } });
         continue;
       }
+      const best = membershipCands(id, date);
+      candBySeasonClub.set(`${season}/${id}`, { club: id, clubQid: t.qid, season, date, cands: [...best.values()], source: { roster: 'wikidata' } });
+      for (const q of best.keys()) allQids.add(q);
+    }
+  }
+  function membershipCands(id, date) {
       const best = new Map();
-      for (const m of memberships[id]) {
+      for (const m of memberships[id] || []) {
         // 말이 안 되는 날짜(예: 1930~2930)는 잘못 입력된 기록으로 버린다
         if (m.start && (+m.start.value.slice(0, 4) < 1950 || (m.end && +m.end.value.slice(0, 4) > LAST_SEASON + 3))) continue;
         const presence = membershipAt(m, date);
@@ -309,9 +325,7 @@ async function buildLeague({ league, apply, overwrite, seasonFilter, log }) {
         const prev = best.get(m.qid);
         if (!prev || (prev.presence === 'possible' && presence === 'definite')) best.set(m.qid, { ...m, presence });
       }
-      candBySeasonClub.set(`${season}/${id}`, { club: id, clubQid: t.qid, season, date, cands: [...best.values()], source: { roster: 'wikidata' } });
-      for (const q of best.keys()) allQids.add(q);
-    }
+      return best;
   }
   log(`④ 후보 선수 ${allQids.size}명 신상 조회`);
   const profiles = await wikidata.playerProfiles([...allQids]);

@@ -157,32 +157,6 @@
       "weight": 76
     },
     {
-      "attrs": {
-        "aer": 81,
-        "com": 71,
-        "dri": 61,
-        "ldr": 78,
-        "pac": 66,
-        "pas": 64,
-        "pos": 80,
-        "sho": 48,
-        "sta": 69,
-        "str": 76,
-        "tac": 76,
-        "vis": 61
-      },
-      "birth": "1969-01-01",
-      "contract": "2001-06-30",
-      "foot": "L",
-      "height": 185,
-      "id": "p1e5ggd7",
-      "name": "Steve Steunton",
-      "nation": "IRL",
-      "number": 5,
-      "pos": "CB",
-      "wage": 25500
-    },
-    {
       "alt": [
         "CB"
       ],
@@ -740,36 +714,6 @@
       "pos": "LB",
       "wage": 11500,
       "weight": 87
-    },
-    {
-      "alt": [
-        "CB",
-        "LB"
-      ],
-      "attrs": {
-        "aer": 55,
-        "com": 63,
-        "dri": 62,
-        "ldr": 66,
-        "pac": 71,
-        "pas": 66,
-        "pos": 63,
-        "sho": 49,
-        "sta": 72,
-        "str": 61,
-        "tac": 65,
-        "vis": 57
-      },
-      "birth": "1980-02-01",
-      "contract": "2003-06-30",
-      "foot": "R",
-      "height": 185,
-      "id": "p1nll6l9",
-      "name": "Stephen Wryght",
-      "nation": "ENG",
-      "number": 29,
-      "pos": "RB",
-      "wage": 9500
     },
     {
       "attrs": {

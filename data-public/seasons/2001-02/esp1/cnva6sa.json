@@ -107,35 +107,6 @@
       "wage": 20500
     },
     {
-      "alt": [
-        "ST"
-      ],
-      "attrs": {
-        "aer": 63,
-        "com": 73,
-        "dri": 66,
-        "ldr": 71,
-        "pac": 68,
-        "pas": 73,
-        "pos": 70,
-        "sho": 61,
-        "sta": 73,
-        "str": 67,
-        "tac": 68,
-        "vis": 74
-      },
-      "birth": "1973-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p00h4v2l",
-      "name": "Þorður Guðjonssun",
-      "nation": "ISL",
-      "number": null,
-      "pos": "CM",
-      "wage": 20500
-    },
-    {
       "attrs": {
         "aer": 58,
         "com": 64,
@@ -298,35 +269,6 @@
       "verify": true,
       "wage": 9000,
       "weight": 78
-    },
-    {
-      "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 65,
-        "com": 72,
-        "dri": 74,
-        "ldr": 71,
-        "pac": 72,
-        "pas": 76,
-        "pos": 74,
-        "sho": 70,
-        "sta": 74,
-        "str": 66,
-        "tac": 70,
-        "vis": 77
-      },
-      "birth": "1972-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 176,
-      "id": "p0e5mdzm",
-      "name": "Juan Carlos Socorru",
-      "nation": "VEN",
-      "number": null,
-      "pos": "CM",
-      "wage": 14500
     },
     {
       "attrs": {
@@ -631,33 +573,6 @@
       "number": null,
       "pos": "DM",
       "wage": 5000
-    },
-    {
-      "attrs": {
-        "aer": 65,
-        "com": 63,
-        "dri": 48,
-        "ldr": 66,
-        "pac": 55,
-        "pas": 59,
-        "pos": 67,
-        "sho": 40,
-        "sta": 63,
-        "str": 65,
-        "tac": 64,
-        "vis": 48
-      },
-      "birth": "1969-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p17ivvl2",
-      "name": "Jaime Moline",
-      "nation": "ESP",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 4000
     },
     {
       "attrs": {

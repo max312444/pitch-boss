@@ -537,33 +537,6 @@
     },
     {
       "attrs": {
-        "aer": 67,
-        "com": 61,
-        "dri": 48,
-        "ldr": 61,
-        "pac": 59,
-        "pas": 54,
-        "pos": 66,
-        "sho": 36,
-        "sta": 63,
-        "str": 65,
-        "tac": 65,
-        "vis": 48
-      },
-      "birth": "1975-03-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p071kk75",
-      "name": "Alexandre Clemant",
-      "nation": "FRA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3500
-    },
-    {
-      "attrs": {
         "aer": 65,
         "com": 66,
         "dri": 64,

@@ -585,32 +585,6 @@
     },
     {
       "attrs": {
-        "aer": 50,
-        "com": 59,
-        "dri": 61,
-        "ldr": 54,
-        "pac": 66,
-        "pas": 60,
-        "pos": 57,
-        "sho": 45,
-        "sta": 61,
-        "str": 55,
-        "tac": 63,
-        "vis": 52
-      },
-      "birth": "1993-05-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p19sxbl0",
-      "name": "Marko Pajec",
-      "nation": "CRO",
-      "number": 33,
-      "pos": "LB",
-      "wage": 22000
-    },
-    {
-      "attrs": {
         "aer": 75,
         "com": 67,
         "dri": 55,

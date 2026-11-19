@@ -221,36 +221,6 @@
       "weight": 81
     },
     {
-      "alt": [
-        "RB"
-      ],
-      "attrs": {
-        "aer": 59,
-        "com": 74,
-        "dri": 66,
-        "ldr": 66,
-        "pac": 64,
-        "pas": 72,
-        "pos": 66,
-        "sho": 68,
-        "sta": 74,
-        "str": 66,
-        "tac": 66,
-        "vis": 70
-      },
-      "birth": "1979-09-01",
-      "contract": null,
-      "foot": null,
-      "height": 173,
-      "id": "p0cdoc96",
-      "name": "Ricardo Estevas",
-      "nation": "POR",
-      "number": null,
-      "pos": "CM",
-      "wage": 11000,
-      "weight": 68
-    },
-    {
       "attrs": {
         "aer": 79,
         "com": 73,
@@ -525,33 +495,6 @@
       "weight": 79
     },
     {
-      "attrs": {
-        "aer": 70,
-        "com": 78,
-        "han": 75,
-        "ldr": 72,
-        "one": 73,
-        "pac": 56,
-        "pas": 68,
-        "pos": 78,
-        "ref": 77,
-        "sta": 63,
-        "str": 70,
-        "vis": 64
-      },
-      "birth": "1977-10-01",
-      "contract": null,
-      "foot": null,
-      "height": 187,
-      "id": "p1x3f3g2",
-      "name": "Emanuele Belardy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "GK",
-      "wage": 6000,
-      "weight": 80
-    },
-    {
       "alt": [
         "DM",
         "AM"
@@ -674,38 +617,6 @@
       "weight": 73
     },
     {
-      "alt": [
-        "ST",
-        "CM",
-        "DM"
-      ],
-      "attrs": {
-        "aer": 48,
-        "com": 64,
-        "dri": 67,
-        "ldr": 61,
-        "pac": 60,
-        "pas": 64,
-        "pos": 48,
-        "sho": 62,
-        "sta": 60,
-        "str": 54,
-        "tac": 40,
-        "vis": 63
-      },
-      "birth": "1981-01-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p1h040t5",
-      "name": "Salvatore Vicary",
-      "nation": "ITA",
-      "number": null,
-      "pos": "AM",
-      "wage": 4000,
-      "weight": 66
-    },
-    {
       "attrs": {
         "aer": 70,
         "com": 61,
@@ -787,34 +698,6 @@
       "weight": 79
     },
     {
-      "attrs": {
-        "aer": 70,
-        "com": 62,
-        "dri": 53,
-        "ldr": 67,
-        "pac": 63,
-        "pas": 58,
-        "pos": 68,
-        "sho": 38,
-        "sta": 62,
-        "str": 70,
-        "tac": 67,
-        "vis": 54
-      },
-      "birth": "1975-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 178,
-      "id": "p18eqxto",
-      "name": "Iacopo Belestri",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 3000,
-      "weight": 72
-    },
-    {
       "alt": [
         "DM"
       ],
@@ -843,34 +726,6 @@
       "pos": "CM",
       "verify": true,
       "wage": 4500,
-      "weight": 72
-    },
-    {
-      "attrs": {
-        "aer": 59,
-        "com": 67,
-        "dri": 64,
-        "ldr": 62,
-        "pac": 66,
-        "pas": 55,
-        "pos": 64,
-        "sho": 65,
-        "sta": 58,
-        "str": 65,
-        "tac": 35,
-        "vis": 58
-      },
-      "birth": "1981-11-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0t358jz",
-      "name": "Massimo Gancy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3000,
       "weight": 72
     },
     {
@@ -1130,34 +985,6 @@
       "verify": true,
       "wage": 1500,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 52,
-        "com": 63,
-        "dri": 61,
-        "ldr": 61,
-        "pac": 60,
-        "pas": 65,
-        "pos": 59,
-        "sho": 57,
-        "sta": 63,
-        "str": 58,
-        "tac": 57,
-        "vis": 67
-      },
-      "birth": "1973-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 185,
-      "id": "p0j48c1t",
-      "name": "Salvatore Soviaro",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 2000,
-      "weight": 80
     },
     {
       "attrs": {

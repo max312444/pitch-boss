@@ -456,36 +456,6 @@
     },
     {
       "alt": [
-        "DM"
-      ],
-      "attrs": {
-        "aer": 63,
-        "com": 73,
-        "dri": 68,
-        "ldr": 67,
-        "pac": 68,
-        "pas": 74,
-        "pos": 66,
-        "sho": 67,
-        "sta": 74,
-        "str": 63,
-        "tac": 69,
-        "vis": 73
-      },
-      "birth": "1981-02-01",
-      "contract": "2006-06-30",
-      "foot": "R",
-      "height": 173,
-      "id": "p0yjj55s",
-      "name": "Liam Millar",
-      "nation": "IRL",
-      "number": 17,
-      "pos": "CM",
-      "wage": 55500,
-      "weight": 66
-    },
-    {
-      "alt": [
         "LM"
       ],
       "attrs": {
@@ -794,33 +764,6 @@
       "pos": "RB",
       "wage": 12000,
       "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 64,
-        "han": 63,
-        "ldr": 66,
-        "one": 66,
-        "pac": 50,
-        "pas": 53,
-        "pos": 63,
-        "ref": 69,
-        "sta": 52,
-        "str": 57,
-        "vis": 51
-      },
-      "birth": "1984-09-01",
-      "contract": "2006-06-30",
-      "foot": "R",
-      "height": 188,
-      "id": "p00iztro",
-      "name": "Luke Steela",
-      "nation": "ENG",
-      "number": 30,
-      "pos": "GK",
-      "wage": 14000,
-      "weight": 81
     }
   ],
   "stadiumCapacity": 68936

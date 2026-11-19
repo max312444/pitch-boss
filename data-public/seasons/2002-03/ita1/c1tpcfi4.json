@@ -206,67 +206,6 @@
     },
     {
       "alt": [
-        "CB",
-        "LB"
-      ],
-      "attrs": {
-        "aer": 61,
-        "com": 67,
-        "dri": 68,
-        "ldr": 65,
-        "pac": 72,
-        "pas": 69,
-        "pos": 74,
-        "sho": 56,
-        "sta": 75,
-        "str": 66,
-        "tac": 73,
-        "vis": 68
-      },
-      "birth": "1977-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p003uqro",
-      "name": "Alessandro Lucerelli",
-      "nation": "ITA",
-      "number": null,
-      "pos": "RB",
-      "verify": true,
-      "wage": 7000,
-      "weight": 78
-    },
-    {
-      "attrs": {
-        "aer": 71,
-        "com": 76,
-        "dri": 72,
-        "ldr": 65,
-        "pac": 71,
-        "pas": 64,
-        "pos": 67,
-        "sho": 72,
-        "sta": 68,
-        "str": 69,
-        "tac": 42,
-        "vis": 63
-      },
-      "birth": "1980-06-01",
-      "contract": null,
-      "foot": null,
-      "height": 186,
-      "id": "p0zf5emh",
-      "name": "Amaury",
-      "nation": "BRA",
-      "nation2": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 5500,
-      "weight": 83
-    },
-    {
-      "alt": [
         "DM"
       ],
       "attrs": {
@@ -295,34 +234,6 @@
       "verify": true,
       "wage": 10000,
       "weight": 68
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 72,
-        "dri": 67,
-        "ldr": 66,
-        "pac": 63,
-        "pas": 72,
-        "pos": 68,
-        "sho": 65,
-        "sta": 72,
-        "str": 64,
-        "tac": 67,
-        "vis": 70
-      },
-      "birth": "1974-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 174,
-      "id": "p018cuo1",
-      "name": "Sergio Volpy",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6000,
-      "weight": 69
     },
     {
       "attrs": {
@@ -376,34 +287,6 @@
       "number": null,
       "pos": "CB",
       "wage": 4500
-    },
-    {
-      "attrs": {
-        "aer": 66,
-        "com": 64,
-        "dri": 52,
-        "ldr": 64,
-        "pac": 63,
-        "pas": 61,
-        "pos": 67,
-        "sho": 41,
-        "sta": 62,
-        "str": 69,
-        "tac": 72,
-        "vis": 55
-      },
-      "birth": "1972-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0i69rfy",
-      "name": "Stefano Sacchatti",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CB",
-      "verify": true,
-      "wage": 5500,
-      "weight": 73
     },
     {
       "attrs": {
@@ -461,34 +344,6 @@
     },
     {
       "attrs": {
-        "aer": 56,
-        "com": 64,
-        "dri": 66,
-        "ldr": 63,
-        "pac": 70,
-        "pas": 61,
-        "pos": 62,
-        "sho": 48,
-        "sta": 66,
-        "str": 64,
-        "tac": 68,
-        "vis": 58
-      },
-      "birth": "1979-07-01",
-      "contract": null,
-      "foot": null,
-      "height": 177,
-      "id": "p0jz4ypm",
-      "name": "Nicola More",
-      "nation": "ITA",
-      "number": null,
-      "pos": "LB",
-      "verify": true,
-      "wage": 5000,
-      "weight": 73
-    },
-    {
-      "attrs": {
         "aer": 73,
         "com": 69,
         "dri": 57,
@@ -513,66 +368,6 @@
       "pos": "CB",
       "wage": 4500,
       "weight": 77
-    },
-    {
-      "alt": [
-        "DM",
-        "LM"
-      ],
-      "attrs": {
-        "aer": 58,
-        "com": 70,
-        "dri": 63,
-        "ldr": 64,
-        "pac": 64,
-        "pas": 69,
-        "pos": 68,
-        "sho": 60,
-        "sta": 73,
-        "str": 63,
-        "tac": 64,
-        "vis": 70
-      },
-      "birth": "1973-08-01",
-      "contract": null,
-      "foot": null,
-      "height": 180,
-      "id": "p0xcve2g",
-      "name": "Gabriele Ambrusetti",
-      "nation": "ITA",
-      "number": null,
-      "pos": "CM",
-      "verify": true,
-      "wage": 6000,
-      "weight": 73
-    },
-    {
-      "attrs": {
-        "aer": 69,
-        "com": 71,
-        "dri": 63,
-        "ldr": 62,
-        "pac": 69,
-        "pas": 57,
-        "pos": 65,
-        "sho": 70,
-        "sta": 61,
-        "str": 66,
-        "tac": 37,
-        "vis": 61
-      },
-      "birth": "1971-02-01",
-      "contract": null,
-      "foot": null,
-      "height": 181,
-      "id": "p0skj07q",
-      "name": "Paolo Puggi",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 3500,
-      "weight": 78
     },
     {
       "attrs": {
@@ -600,33 +395,6 @@
       "pos": "CB",
       "wage": 3500,
       "weight": 80
-    },
-    {
-      "attrs": {
-        "aer": 63,
-        "com": 67,
-        "dri": 65,
-        "ldr": 61,
-        "pac": 69,
-        "pas": 60,
-        "pos": 63,
-        "sho": 72,
-        "sta": 60,
-        "str": 64,
-        "tac": 39,
-        "vis": 60
-      },
-      "birth": "1970-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 182,
-      "id": "p1aolc7a",
-      "name": "Nicola Caccie",
-      "nation": "ITA",
-      "number": null,
-      "pos": "ST",
-      "wage": 3500,
-      "weight": 76
     },
     {
       "alt": [

@@ -804,34 +804,6 @@
     },
     {
       "attrs": {
-        "aer": 61,
-        "com": 61,
-        "dri": 49,
-        "ldr": 64,
-        "pac": 54,
-        "pas": 56,
-        "pos": 62,
-        "sho": 32,
-        "sta": 55,
-        "str": 66,
-        "tac": 61,
-        "vis": 46
-      },
-      "birth": "1984-04-01",
-      "contract": null,
-      "foot": null,
-      "height": 183,
-      "id": "p1t7i8fm",
-      "name": "Alexis Zywiecky",
-      "nation": "FRA",
-      "nation2": "POL",
-      "number": null,
-      "pos": "CB",
-      "wage": 3000,
-      "weight": 81
-    },
-    {
-      "attrs": {
         "aer": 55,
         "com": 67,
         "dri": 62,
@@ -947,33 +919,6 @@
       "verify": true,
       "wage": 3000,
       "weight": 69
-    },
-    {
-      "attrs": {
-        "aer": 60,
-        "com": 63,
-        "dri": 64,
-        "ldr": 61,
-        "pac": 65,
-        "pas": 55,
-        "pos": 61,
-        "sho": 70,
-        "sta": 64,
-        "str": 66,
-        "tac": 32,
-        "vis": 60
-      },
-      "birth": "1982-06-01",
-      "contract": null,
-      "foot": null,
-      "height": null,
-      "id": "p0yi0n9v",
-      "name": "Kevin Berralon",
-      "nation": "FRA",
-      "number": null,
-      "pos": "ST",
-      "verify": true,
-      "wage": 2000
     },
     {
       "attrs": {

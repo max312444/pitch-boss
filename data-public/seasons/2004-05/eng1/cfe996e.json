@@ -716,35 +716,6 @@
       ],
       "wage": 24000,
       "weight": 75
-    },
-    {
-      "alt": [
-        "LW"
-      ],
-      "attrs": {
-        "aer": 53,
-        "com": 71,
-        "dri": 73,
-        "ldr": 65,
-        "pac": 73,
-        "pas": 70,
-        "pos": 50,
-        "sho": 67,
-        "sta": 73,
-        "str": 59,
-        "tac": 46,
-        "vis": 70
-      },
-      "birth": "1976-01-01",
-      "contract": "2005-06-30",
-      "foot": "R",
-      "height": 170,
-      "id": "p1lgcyj1",
-      "name": "Kevin Harpar",
-      "nation": "SCO",
-      "number": 7,
-      "pos": "RW",
-      "wage": 10500
     }
   ],
   "stadiumCapacity": 20288
