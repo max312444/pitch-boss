@@ -37,6 +37,7 @@ const userLeague = (w: World) => w.clubs[w.userClubId].league;
 export function knowledge(w: World, p: PlayerState): number {
   if (!fogOn(w) || p.clubId === w.userClubId || !p.clubId) return 100;   // 자유계약 선수는 능력치 공개 (테스트 · 입단 테스트로 볼 수 있음)
   if (p.loan?.from === w.userClubId || w.scout?.ours?.[p.id]) return 100;   // 임대 보낸 선수 · 한 번 우리 구단에 있었던 선수
+  if (p.precontract?.club === w.userClubId) return 100;   // 우리와 사전 계약이 성사된 선수 (합류 전이라도 능력치 · 숨은 성향 공개)
   const base = leagueOfClub(w, p.clubId) === userLeague(w) || overall(p) >= 84 ? 40 : 20;
   return Math.max(base, w.scout?.k[p.id] ?? 0);
 }

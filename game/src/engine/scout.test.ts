@@ -69,3 +69,14 @@ describe('스카우트', () => {
     w.settings = { ...w.settings, scoutFog: true };
   });
 });
+
+describe('거래 성사 선수 공개', () => {
+  it('우리와 사전 계약한 선수는 합류 전에도 능력치를 정확히 안다', () => {
+    const w = createWorld(load('2025-26', ['eng1']), LIV, 3);
+    const p = Object.values(w.players).find((x) => x.clubId && x.clubId !== LIV)!;
+    expect(knowledge(w, p)).toBeLessThan(100);
+    p.precontract = { club: LIV, wage: p.wage, years: 3, date: w.date };
+    expect(knowledge(w, p)).toBe(100);
+    expect(seenOverall(w, p)[0]).toBe(seenOverall(w, p)[1]);
+  });
+});
