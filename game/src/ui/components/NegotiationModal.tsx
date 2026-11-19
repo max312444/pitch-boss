@@ -159,6 +159,7 @@ export function NegotiationModal({ p, onClose }: { p: PlayerState; onClose: () =
   };
   // 계약 후 여유: 예산 · 규정 중 좁은 쪽. 규정에는 합의한 이적료의 상각 (이적료 ÷ 계약 연수)도 들어간다
   const ri = wageRoomInfo(w, w.userClubId, fa ? 0 : w.talks?.[p.id]?.agreed ?? 0, years);
+  const ri0 = wageRoomInfo(w, w.userClubId);   // 이적료 상각 없이 (이적 화면 위쪽과 같은 값)
   const room = ri.room - wage * 1000;
   // 선수 마음 (실시간): 요인 합. 숨은 성향(야망 · 충성)은 스카우트로 알아야 이름이 보인다
   const join = joinFactors(w, p, w.userClubId, wage * 1000, role, clause, bosman, bosman ? undefined : rel, years);
@@ -168,6 +169,9 @@ export function NegotiationModal({ p, onClose }: { p: PlayerState; onClose: () =
     return [...join.factors.filter((x) => !/야망|충성/.test(x.label)), ...(Math.abs(hid) >= 0.05 ? [{ label: '성향 (스카우트하면 자세히)', v: hid }] : [])].sort((a, b) => Math.abs(b.v) - Math.abs(a.v));
   })();
   const want = Math.round(join.demand / 500) * 500;
+  // 이적료 단계: 이 이적료를 내면 (계약 5년으로 상각을 가장 줄여도) 원하는 주급을 줄 수 있는지 미리 알림
+  const feeRi = !fa && stage === 'fee' && fee > 0 ? wageRoomInfo(w, w.userClubId, fee * 1e6, 5) : null;
+  const feeTight = !!feeRi && want > feeRi.room;
   const lowWage = wage * 1000 < join.demand * 0.9;
   const joinPct = ((join.score + 3) / 6) * 100, linePct = ((JOIN_LINE + 3) / 6) * 100;
   const joinOk = !lowWage && join.score > JOIN_LINE;
@@ -274,6 +278,12 @@ export function NegotiationModal({ p, onClose }: { p: PlayerState; onClose: () =
                   <div>{t ? <>구단이 보는 조건 값어치 약 <span className="tnum text-mid">{money(termsWorth(w, p, fee * 1e6, t))}</span> — 그만큼 현금을 덜 받습니다 (어린 선수일수록 셀온 값어치 ↑ · 보너스는 이적료의 절반까지)</> : '셀온 · 보너스를 걸면 구단이 그 값어치만큼 현금을 덜 받습니다'}</div>
                 </div>
               )}
+              {feeTight && feeRi && (
+                <div className="rounded-lg bg-amber/10 px-3 py-2 text-[12px] text-amber">
+                  이 이적료면 계약 5년으로 해도 주급 여유가 {feeRi.room < 0 ? `−${money(-feeRi.room)}` : money(feeRi.room)}뿐이라 원하는 주급 {money(want)}를 줄 수 없습니다.
+                  {feeRi.by === 'rule' && <> {feeRi.ruleName}: 이적료는 계약 연수로 나눠 해마다 선수단 비용에 들어갑니다 (5년이면 주당 {money(feeRi.amortWeek)}).</>}
+                </div>
+              )}
               <button onClick={() => sendFee()} disabled={fee * 1e6 > budget || fee <= 0} className="h-11 w-full rounded-lg bg-neon text-[14px] font-semibold text-ink-950 transition-colors hover:bg-[#5bff3d] disabled:bg-ink-700 disabled:text-lo">
                 {fee * 1e6 > budget ? '이적 예산 부족' : `${money(fee * 1e6)}${t ? ` + ${termsText(t)}` : ''} 제안하기`}
               </button>
@@ -300,6 +310,13 @@ export function NegotiationModal({ p, onClose }: { p: PlayerState; onClose: () =
                 <Chip onClick={() => setWage(Math.round(p.wage / 1000))}>지금 주급 {money(p.wage)}</Chip>
                 <span className={`ml-auto ${room < 0 ? 'text-red' : 'text-lo'}`}>계약 후 주급 여유 <span className="tnum">{room < 0 ? `−${money(-room)}` : money(room)}</span></span>
               </div>
+              {ri.amortWeek > 0 && (
+                <div className={`rounded-lg px-3 py-2 text-[12px] ${room < 0 ? 'bg-red/10 text-red' : 'bg-ink-850 text-lo'}`}>
+                  {ri.by === 'rule'
+                    ? <>{ri.ruleName}: 이적료 {money(w.talks?.[p.id]?.agreed ?? 0)}를 {years}년으로 나눈 주당 {money(ri.amortWeek)}도 선수단 비용이라, 주급 여유가 {money(ri0.room)}가 아니라 {ri.room < 0 ? `−${money(-ri.room)}` : money(ri.room)}입니다.{years < 5 ? ' 계약 연수를 늘리면 주당 상각이 줄어듭니다.' : ''}</>
+                    : <>이적료 상각 주당 {money(ri.amortWeek)} ({years}년)은 재정 규정 안이라, 주급 여유는 주급 예산 기준입니다.</>}
+                </div>
+              )}
               <div className="grid grid-cols-2 gap-2 [&>select]:w-full">
                 <select value={role} onChange={(e) => setRole(e.target.value as Role)} title="약속하는 역할: 높을수록 선수가 오려고 하지만, 약속만큼 못 뛰면 불만이 빨리 생깁니다" className="h-11 rounded-lg border border-line bg-ink-850 px-3 text-[13px] text-hi">
                   {ROLES.map((x) => <option key={x} value={x}>역할: {ROLE_KO[x]}</option>)}
