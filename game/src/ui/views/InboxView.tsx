@@ -147,7 +147,7 @@ export function describe(e: GameEvent, w: World): { tag: string; tone: string; t
       const name = playerKo(e.player, p?.name ?? e.player);
       // 연락 때 적어 둔 주급 (예전 메시지는 원래 주급의 85%)
       const full = e.wage ?? (p ? wageDemand(w, p) : 0), cut = e.cut ?? Math.round((full * APPEAL_WAGE) / 500) * 500;
-      return { tag: '어필', tone: 'text-neon', title: `${name}(${clubKo(e.club)}) — 우리 구단으로 오고 싶다고 연락해 왔습니다`, body: `${appealWhy(w, e.player, e.rival)}에이전트: 주급은 덜 받아도 된다고 합니다 (원래 ${money(full)} → ${money(cut)}). 이적료는 ${clubKo(e.club)}와 협상해야 합니다 · ${e.until.slice(5).replace('-', '.')}까지 · 관심 목록에 넣어 두었습니다` };
+      return { tag: '어필', tone: 'text-neon', title: `${name}(${clubKo(e.club)}) — 우리 구단으로 오고 싶다고 연락해 왔습니다`, body: `${appealWhy(w, e.player, e.rival)}에이전트: 주급은 덜 받아도 된다고 합니다 (원래 ${money(full)} → ${money(cut)}). 이적료는 ${clubKo(e.club)}와 협상해야 합니다 · ${e.until.slice(5).replace('-', '.')}까지 · 이적 화면 '이적 희망'에 모아 두었습니다 (언론 플레이로 흔들어 볼 수도 있습니다)` };
     }
     case 'shortlist': {
       const name = playerKo(e.player, w.players[e.player]?.name ?? e.player);

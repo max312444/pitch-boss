@@ -1,4 +1,4 @@
-// 이적 화면: 선수 검색 · 관심 목록 · 내 선수(이적 명단 · 방출) · 받은 제안
+// 이적 화면: 선수 검색 · 관심 목록 (우리가 고름) · 이적 희망 (우리에게 오고 싶다고 연락한 선수) · 내 선수(이적 명단 · 방출) · 받은 제안
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { PlayerState } from '../../engine/types';
 import { estOverall, seenOverall } from '../../engine/scout';
@@ -28,8 +28,9 @@ import { nextSort, seenAttr, SortPicker, SortTh, STAT_KEYS, TopAttrs, type SortS
 import { SALE_KO, saleTag } from '../../engine/market';
 import { heightOf } from '../../engine/body';
 import { ATTR_KO } from '../format';
+import { activeAppeals, appealOf, pressOdds, PRESS_ANGRY } from '../../engine/appeal';
 
-type Tab = 'search' | 'shortlist' | 'mine' | 'offers';
+type Tab = 'search' | 'shortlist' | 'appeal' | 'mine' | 'offers';
 type Group = 'ALL' | 'GK' | 'DF' | 'MF' | 'FW';
 /** 세부 포지션 (여러 개 골라서 보기) */
 const POS_CHIPS: Position[] = ['GK', 'CB', 'LB', 'RB', 'LWB', 'RWB', 'DM', 'CM', 'AM', 'LM', 'RM', 'LW', 'RW', 'ST'];
@@ -67,6 +68,8 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
   const signedMoney = (v: number) => (v < 0 ? `−${money(-v)}` : money(v));
   const offers = (w.offers ?? []).filter((o) => offerValid(w, o));
   const shortlist = w.shortlist ?? [];
+  const appeals = activeAppeals(w);
+  const wants = new Set(appeals.map((a) => a.player));
   const listed = new Set(w.transferList ?? []);
   const xi = currentLineup(club.squad.map((id) => w.players[id]), club, matchRules(w.season).benchSize);   // 내 선수: 지금 선발 · 후보 표시
 
@@ -80,6 +83,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
     const name = (p: PlayerState) => playerKo(p.id, p.name);
     let ps: PlayerState[];
     if (tab === 'shortlist') ps = shortlist.map((id) => w.players[id]).filter(Boolean);
+    else if (tab === 'appeal') ps = appeals.map((a) => w.players[a.player]).filter(Boolean);
     else if (tab === 'mine') ps = [...club.squad, ...(club.loanedOut ?? [])].map((id) => w.players[id]).filter(Boolean);
     else {
       ps = Object.values(w.players).filter((p) => !p.retired && p.clubId !== w.userClubId
@@ -107,7 +111,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
     const dir = sort.desc ? -1 : 1;
     return ps.map((p) => ({ p, ovr: estOverall(w, p), age: ageOn(p.birth, w.date), value: marketValue(w, p) }))
       .sort((a, b) => { const ka = keyOf(a), kb = keyOf(b); const c = typeof ka === 'string' ? ka.localeCompare(kb as string, 'ko') : ka - (kb as number); return c * dir || b.ovr - a.ovr || a.age - b.age; }).slice(0, 200);
-  }, [w, tab, group, league, maxAge, minOvr, maxValue, q, shortlist, club.squad, posSet, pos, clubPick, sort, marketFilter]);
+  }, [w, tab, group, league, maxAge, minOvr, maxValue, q, shortlist, appeals.length, club.squad, posSet, pos, clubPick, sort, marketFilter]);
   // 조건을 바꾸면 목록을 맨 위로
   useEffect(() => { listRef.current?.scrollTo({ top: 0 }); }, [tab, group, league, maxAge, minOvr, maxValue, q, posSet, pos, clubPick, marketOnly]);
   /** 구단 고르기: 그 구단 선수단 전체가 보이게 능력 · 나이 조건을 넓힌다 */
@@ -141,7 +145,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
 
         {/* 탭 */}
         <div className="mb-3 flex items-center gap-1 overflow-x-auto">
-          {([['search', '선수 검색'], ['shortlist', `관심 목록 ${shortlist.length}`], ['mine', '내 선수'], ['offers', `받은 제안 ${offers.length}`]] as const).map(([k, label]) => (
+          {([['search', '선수 검색'], ['shortlist', `관심 목록 ${shortlist.length}`], ['appeal', `이적 희망 ${appeals.length}`], ['mine', '내 선수'], ['offers', `받은 제안 ${offers.length}`]] as const).map(([k, label]) => (
             <button key={k} onClick={() => { setTab(k); setSel(null); }}
               className={`h-8 shrink-0 rounded-md px-3 text-[13px] whitespace-nowrap transition-colors lg:px-4 ${tab === k ? 'bg-ink-700 font-semibold text-hi' : 'text-mid hover:bg-ink-800 hover:text-hi'}`}>{label}</button>
           ))}
@@ -153,7 +157,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
                 <button key={label} onClick={() => setMarketOnly(v)} className={`h-7 rounded-md px-3 transition-colors ${marketOnly === v ? 'bg-ink-700 font-semibold text-hi' : 'text-mid hover:text-hi'}`}>{label}</button>
               ))}
             </div>
-            <span className="text-lo">{marketFilter ? '이적 희망 · 만료 임박 · 구단 판매 · 급매물 · 자유계약만' : marketOnly ? '이름 · 구단으로 찾을 때는 모든 선수가 보입니다' : '표시 없는 선수도 웃돈 · 바이아웃 · 보스만으로 영입할 수 있습니다 (구단이 더 비싸게 부름)'}</span>
+            <span className="text-lo">{marketFilter ? '이적 요청 · 만료 임박 · 구단 판매 · 급매물 · 자유계약만' : marketOnly ? '이름 · 구단으로 찾을 때는 모든 선수가 보입니다' : '표시 없는 선수도 웃돈 · 바이아웃 · 보스만으로 영입할 수 있습니다 (구단이 더 비싸게 부름)'}</span>
           </div>
         )}
         {/* 휴대폰: 검색 조건은 접어 둔다 */}
@@ -273,7 +277,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
                 </tr>
               </thead>
               <tbody>
-                {rows.length === 0 && <tr><td colSpan={10} className="px-4 py-10 text-center text-lo">조건에 맞는 선수가 없습니다</td></tr>}
+                {rows.length === 0 && <tr><td colSpan={10} className="px-4 py-10 text-center text-lo">{tab === 'appeal' ? '우리 구단에 오고 싶다고 연락해 온 선수가 없습니다. 이적시장 기간과 그 직전 한 달에 소속 구단과 사이가 나쁜 선수가 연락해 옵니다' : '조건에 맞는 선수가 없습니다'}</td></tr>}
                 {rows.map(({ p, age, value }) => (
                   <tr key={p.id} onClick={() => setSel(p.id)} className={`h-12 cursor-pointer lg:h-11 shadow-[inset_0_-1px_0_var(--color-line)] transition-colors ${sel === p.id ? 'bg-neon-ghost' : p.clubId ? 'hover:bg-ink-800' : 'bg-sky/[0.06] hover:bg-sky/10'}`}>
                     <td className={`px-3 py-1.5 lg:min-w-[210px] lg:px-4 lg:py-0 ${!p.clubId ? 'shadow-[inset_3px_0_0_var(--color-sky)]' : p.clubId === w.userClubId && xi.starters.has(p.id) ? 'shadow-[inset_4px_0_0_var(--color-neon)]' : p.clubId === w.userClubId && xi.bench.has(p.id) ? 'shadow-[inset_4px_0_0_var(--color-sky)]' : ''}`}><span className="font-medium">{playerKo(p.id, p.name)}</span>
@@ -282,6 +286,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
                         : xi.bench.has(p.id) ? <span title="지금 후보" className="ml-2 rounded px-1.5 text-[11px] font-semibold text-sky ring-1 ring-sky">후보</span> : null)}
                       {listed.has(p.id) && <span className="ml-2 rounded bg-amber/15 px-1 text-[11px] text-amber">이적 명단</span>}
                       {p.loan && <span className="ml-2 rounded bg-sky/15 px-1 text-[11px] text-sky">{p.loan.from === w.userClubId ? '임대 보냄' : p.clubId === w.userClubId ? '임대 영입' : '임대 중'}</span>}
+                      {wants.has(p.id) && tab !== 'appeal' && <span title="우리 구단에 오고 싶다고 연락해 왔습니다 · 주급 15% 덜 요구" className="ml-2 rounded bg-neon/15 px-1 text-[11px] font-semibold text-neon">우리 구단 희망</span>}
                       {shortlist.includes(p.id) && tab !== 'shortlist' && <span className="ml-2 text-[11px] text-neon">관심</span>}
                       {(() => { const b = bargainOf(w, p); if (b) return <span title={b.kind === 'fire' ? `재정 위기로 시장 가치보다 싸게 내놓음 · ${money(b.price)} · ${koDate(b.until)}까지` : `강등 조항 발동 · ${money(b.price)}이면 구단이 거절할 수 없음 · ${koDate(b.until)}까지`} className="ml-2 rounded bg-red/15 px-1 text-[11px] font-semibold text-red">{b.kind === 'fire' ? `강제 매각 −${Math.round((b.cut ?? 0.25) * 100)}%` : '강등 조항 발동'}</span>;
                         const rc = p.clubId && p.clubId !== w.userClubId ? relClauseOf(w, p) : 0; return rc ? <span title={`소속 구단이 강등되면 ${money(rc)}에 거절할 수 없는 이적이 가능해집니다`} className="ml-2 rounded bg-amber/15 px-1 text-[11px] text-amber">강등 조항</span> : null; })()}
@@ -372,6 +377,7 @@ function Side({ p, mine, listed, shortlisted, onList, onShort, onRelease, onTalk
         <span>원하는 주급 약 <span className="tnum text-mid">{money(wageDemand(w, p, w.userClubId))}</span></span>
       </div>
       {p.clubId && (() => { const tg = saleTag(w, p); return <div className={`mb-3 rounded-lg px-3 py-2 text-[12px] ${tg ? 'bg-neon-ghost text-neon' : 'bg-ink-900 text-mid'}`}>{tg ? <><span className="font-semibold">이적 허용 · {SALE_KO[tg].ko}</span> — {SALE_KO[tg].how}</> : <><span className="font-semibold text-hi">비매물</span> — 구단이 팔 생각이 없는 선수입니다. 웃돈을 얹거나 바이아웃 · 보스만(계약 마지막 6개월)으로 데려올 수 있습니다</>}</div>; })()}
+      {p.clubId && <PressBox p={p} />}
       {ban && <div className="mb-2 rounded-lg border border-red/40 bg-red/10 px-3 py-2 text-[12px] text-red">협상 결렬 · {koDate(ban)}까지 협상 불가</div>}
       <div className="flex gap-2">
         <button onClick={onTalk} disabled={!!ban || p.precontract?.club === w.userClubId} className="h-10 flex-1 rounded-lg bg-neon text-[14px] font-semibold text-ink-950 transition-colors hover:bg-[#5bff3d] disabled:bg-ink-700 disabled:text-lo">
@@ -384,6 +390,30 @@ function Side({ p, mine, listed, shortlisted, onList, onShort, onRelease, onTalk
     </div>
   );
   return <PlayerPanel p={p} age={ageOn(p.birth, w.date)} ko={playerKo(p.id, p.name)} nation={nations.get(p.nation)?.ko ?? p.nation} club sheet={{ open: true, onClose }} actions={actions} />;
+}
+
+/** 이적 희망 선수: 언제까지 · 겨룰 주전 · 언론 플레이 (선수마다 한 번) */
+function PressBox({ p }: { p: PlayerState }) {
+  const w = useWorld();
+  const press = useGame((g) => g.pressPlay);
+  const [msg, setMsg] = useState('');
+  const a = appealOf(w, p);
+  if (!a) return null;
+  const odds = pressOdds(w, p);
+  const pct = (v: number) => `${Math.round(v * 100)}%`;
+  const done = a.press === 'ok' ? '성공 · 선수가 공개적으로 이적 요구 (이적료 10% ↓ · 핵심 선수라도 협상)' : a.press === 'angry' ? `역풍 · 소속 구단이 화나서 이적료 ${Math.round((PRESS_ANGRY - 1) * 100)}% ↑` : a.press === 'none' ? '무반응' : null;
+  return (
+    <div className="mb-3 rounded-lg bg-neon-ghost px-3 py-2.5 text-[12px] ring-1 ring-neon/30">
+      <div className="text-neon"><span className="font-semibold">이적 희망</span> — 우리 구단에 오고 싶다고 연락해 왔습니다 · 주급 15% 덜 요구 · {koDate(a.until)}까지{a.rival ? <> · 겨룰 주전 {playerKo(a.rival, w.players[a.rival]?.name ?? a.rival)}</> : ''}</div>
+      {done ? (msg ? null : <div className="mt-1.5 text-mid">언론 플레이: <span className={a.press === 'ok' ? 'font-semibold text-neon' : a.press === 'angry' ? 'font-semibold text-amber' : 'text-hi'}>{done}</span></div>) : (
+        <div className="mt-2 flex flex-wrap items-center gap-2">
+          <button onClick={() => setMsg(press(p.id))} className="h-8 rounded-md bg-ink-700 px-3 font-semibold text-hi hover:bg-ink-750">언론 플레이</button>
+          <span className="min-w-0 flex-1 text-lo">우리 관심을 언론에 흘려 선수를 흔듭니다 · 성공 {pct(odds.ok)} (이적료 ↓ · 갈등 ↑) · 역풍 {pct(odds.angry)} (이적료 ↑) · 한 번만</span>
+        </div>
+      )}
+      {msg && <div className="mt-1.5 text-hi">{msg}</div>}
+    </div>
+  );
 }
 
 type SortKey = 'name' | 'pos' | 'age' | 'club' | 'ovr' | 'value' | 'wage' | 'contract' | 'height' | `a_${AttrKey}`;

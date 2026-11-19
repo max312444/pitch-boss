@@ -36,6 +36,7 @@ import { askBoard, type BoardAsk } from '../engine/board';
 import { resolveBoardEvent } from '../engine/boardEvents';
 import { answerPress, pressReaction } from '../engine/press';
 import { sagaRespond, type SagaAction } from '../engine/saga';
+import { pressPlay } from '../engine/appeal';
 import { scandalRespond, type ScandalAction } from '../engine/scandal';
 import { evaluateLoan, exerciseBuy, loanMove, loanReturn, playerWillLoan, type LoanTerms } from '../engine/loan';
 import { breakTalks, cleanOffers, completeTransfer, counterOffer, offerValid, evaluateBid, MAX_TRIES, playerWillJoin, releasePlayer, talkBanned, talkOf, wageDemand, wageRoom, windowOpen, type BidResult } from '../engine/transfer';
@@ -254,6 +255,8 @@ interface GameStore {
   /** 직접 한 승부차기 결과 (null 이면 자동) */
   finishShootout(res: { home: import('../engine/shootoutSeq').Kick[]; away: import('../engine/shootoutSeq').Kick[] } | null): void;
   toggleShortlist(playerId: string): void;
+  /** 이적 희망 선수 언론 플레이 (선수마다 한 번) */
+  pressPlay(playerId: string): string;
   toggleTransferList(playerId: string): void;
   release(playerId: string): void;
   answerOffer(offerId: string, accept: boolean): string;
@@ -1075,6 +1078,15 @@ export const useGame = create<GameStore>((set, get) => {
       if (w.talks) delete w.talks[key];
       autosave(w); bump();
       return { ok: true, reason: `재계약 완료 · ${p.contract!.slice(0, 4)}년 6월까지` };
+    },
+
+    pressPlay(playerId) {
+      const w = get().world!;
+      const rng = createRng((w.rng ^ 0x7e55) >>> 0);
+      w.rng = (w.rng + 11) >>> 0;
+      const r = pressPlay(w, playerId, rng);
+      if (r.ok) { autosave(w); bump(); }
+      return r.text;
     },
 
     toggleShortlist(playerId) {

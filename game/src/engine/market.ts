@@ -14,7 +14,7 @@ export type SaleTag = 'free' | 'bargain' | 'request' | 'expiring' | 'surplus' | 
 export const SALE_KO: Record<SaleTag, { ko: string; how: string }> = {
   free: { ko: '자유계약', how: '소속 구단이 없어 이적료 없이 영입할 수 있습니다' },
   bargain: { ko: '급매물', how: '재정 위기 · 강등 조항으로 싸게 나온 선수입니다' },
-  request: { ko: '이적 희망', how: '출전 시간 불만 · 이적 요청으로 팀을 떠나고 싶어 합니다 (구단도 조금 싸게 팝니다)' },
+  request: { ko: '이적 요청', how: '출전 시간 불만 · 이적 요청으로 팀을 떠나고 싶어 합니다 (구단도 조금 싸게 팝니다)' },
   expiring: { ko: '만료 임박', how: '이번 시즌이 끝나면 계약이 끝나 구단이 지금 팔려고 합니다' },
   surplus: { ko: '구단 판매', how: '구단이 전력 외로 보고 팔려고 내놓은 선수입니다' },
   listed: { ko: '이적 명단', how: '내가 이적 명단에 올린 선수입니다' },

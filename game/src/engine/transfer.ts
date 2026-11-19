@@ -1,6 +1,6 @@
 // 이적 엔진: 몸값 · 이적시장 기간 · 영입 제안 판단 · 계약 · AI 구단 이적
 import { transferBan } from './ffp';
-import { APPEAL_WAGE, appealOf } from './appeal';
+import { APPEAL_WAGE, appealOf, PRESS_ANGRY } from './appeal';
 import { ROLE_JOIN, type Role } from './roles';
 import { transferFactor } from './gameSettings';
 import type { GameEvent, PlayerState, TransferOffer, World } from './types';
@@ -165,7 +165,7 @@ export function askingPrice(w: World, p: PlayerState): number {
   const mult = rank <= 3 ? 1.6 : rank <= 8 ? 1.3 : rank <= 15 ? 1.1 : 0.9;
   // 이적 명단 · 시장에 나온 선수 (이적 희망 · 계약 만료 임박 · 구단 판매)는 조금 싸게 (market.ts)
   const tag = saleTag(w, p);
-  const listed = (w.transferList ?? []).includes(p.id) || (tag === 'request' && p.saga?.kind !== 'move') || tag === 'expiring' || tag === 'surplus' ? 0.85 : 1;
+  const listed = (w.transferList ?? []).includes(p.id) || (tag === 'request' && (p.saga?.kind !== 'move' || appealOf(w, p)?.press === 'ok')) || tag === 'expiring' || tag === 'surplus' ? 0.85 : 1;
   return Math.round((marketValue(w, p) * mult * listed) / 50000) * 50000;
 }
 
@@ -196,7 +196,8 @@ export function evaluateBid(w: World, p: PlayerState, buyer: string, fee: number
   const seller = w.clubs[p.clubId];
   // 태업하며 이 구단을 지목한 선수: 단계마다 10% 싸게, 핵심 선수 규칙 없이
   const forcing = p.saga?.kind === 'move' && p.saga.target === buyer && p.saga.club === p.clubId ? p.saga.stage : 0;
-  const ask = askingPrice(w, p) * (1 - 0.1 * forcing) * (buyer === w.userClubId ? transferFactor(w).ask : 1);   // 설정: 이적 협상 난이도
+  const angry = buyer === w.userClubId && appealOf(w, p)?.press === 'angry' ? PRESS_ANGRY : 1;   // 언론 플레이 역풍
+  const ask = askingPrice(w, p) * (1 - 0.1 * forcing) * angry * (buyer === w.userClubId ? transferFactor(w).ask : 1);   // 설정: 이적 협상 난이도
   const rank = forcing ? 99 : rankInClub(w, p);
   // 셀온 · 보너스: 파는 구단은 이적료에 조건의 값어치를 더해 본다 (바이아웃 · 급매물은 현금만)
   const cash = fee;

@@ -3,8 +3,8 @@ import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createWorld, type SeasonInput } from './world';
-import { aiAppealDay, appealDay, troubleOf } from './appeal';
-import { marketValue } from './transfer';
+import { activeAppeals, aiAppealDay, appealDay, pressPlay, troubleOf } from './appeal';
+import { evaluateBid, marketValue } from './transfer';
 import { overall } from './ratings';
 import { createRng } from './rng';
 import type { ClubSeasonFile, LeagueSeasonFile } from '../data/types';
@@ -54,6 +54,30 @@ describe('이적 어필 (역제안)', () => {
       }
     }
     console.log('어필', got.map((e) => e.type === 'appeal' ? `${e.player} ${overall(w.players[e.player])} vs ${e.rival ? overall(w.players[e.rival]) : '빈 자리'}` : '').join(' · '));
+  });
+
+  it('언론 플레이: 선수마다 한 번 · 성공이면 이적료 ↓ · 핵심 선수라도 협상, 역풍이면 이적료 ↑', () => {
+    const counts = { ok: 0, angry: 0, none: 0 };
+    for (let seed = 1; seed <= 60; seed++) {
+      const w = createWorld(load('2025-26', ['eng1']), LIV, 10);
+      w.date = '2025-07-10';
+      const p = Object.values(w.players).filter((x) => x.clubId && x.clubId !== LIV).sort((a, b) => overall(b) - overall(a))[30];
+      p.loyalty = 20; p.unhappy = true;
+      w.appeals = [{ player: p.id, club: p.clubId!, date: w.date, until: '2025-08-31' }];
+      expect(activeAppeals(w)).toHaveLength(1);
+      const before = evaluateBid(w, p, LIV, 1).ask;
+      const r = pressPlay(w, p.id, createRng(seed));
+      expect(r.ok).toBe(true);
+      counts[r.result!]++;
+      const after = evaluateBid(w, p, LIV, 1).ask;
+      if (r.result === 'ok') { expect(after).toBeLessThan(before); expect(p.saga?.target).toBe(LIV); }
+      if (r.result === 'angry') expect(after).toBeGreaterThan(before);
+      if (r.result === 'none') expect(after).toBe(before);
+      expect(pressPlay(w, p.id, createRng(seed + 99)).ok).toBe(false);   // 한 번만
+    }
+    console.log('언론 플레이', counts);
+    expect(counts.ok).toBeGreaterThan(10);
+    expect(counts.angry).toBeGreaterThan(2);
   });
 
   it('다른 구단: 이적시장에 갈등 선수가 겨룰 만한 구단으로 시세의 80% 정도에 옮긴다', () => {

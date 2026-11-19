@@ -1,4 +1,5 @@
 import { Crest } from './Crest';
+import { activeAppeals } from '../../engine/appeal';
 import { SettingsDialog } from './SettingsDialog';
 import { Icon } from './Icon';
 import { useApp, type HubTab } from '../../store/app';
@@ -38,6 +39,7 @@ export function Sidebar() {
   const [helpOpen, setHelpOpen] = useState(false);
   const exportFile = useGame((g) => g.exportFile);
   const unreadInjuries = club.squad.filter((id) => w.players[id].injury).length;
+  const appeals = activeAppeals(w).length;   // 우리 구단에 오고 싶다고 연락한 선수
   return (
     <>
     {drawer && <div className="fixed inset-0 z-40 animate-[fade_0.2s_ease-out] bg-ink-950/70 lg:hidden" onClick={() => setDrawer(false)} />}
@@ -63,6 +65,9 @@ export function Sidebar() {
               <span className="flex-1 text-left">{w.intl && n.key === 'squad' ? '대표 명단' : n.label}</span>
               {n.key === 'squad' && unreadInjuries > 0 && (
                 <span title="부상자" className="tnum rounded-md bg-red/15 px-1.5 text-[11px] leading-5 font-semibold text-red">{unreadInjuries}</span>
+              )}
+              {n.key === 'transfers' && appeals > 0 && (
+                <span title="이적 희망 (우리 구단에 오고 싶다고 연락한 선수)" className="tnum rounded-md bg-neon/15 px-1.5 text-[11px] leading-5 font-semibold text-neon">{appeals}</span>
               )}
             </button>
           );

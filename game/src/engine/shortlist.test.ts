@@ -5,7 +5,7 @@ import path from 'node:path';
 import { createWorld, type SeasonInput } from './world';
 import { shortlistDay } from './shortlist';
 import { clubScoutTargets, knowledge, REPORT_K, scoutCost, scoutDay, scoutNewSeason, scoutProgress, startScout } from './scout';
-import { appealDay } from './appeal';
+import { activeAppeals, appealDay } from './appeal';
 import { createRng } from './rng';
 import { askingPrice, completeTransfer, wageDemand } from './transfer';
 import { releasePlayer } from './transfer';
@@ -90,7 +90,8 @@ describe('관심 해제 · 이적 어필 · 스카우트 기억', () => {
     for (let i = 0; i < 40 && !evs.length; i++) evs.push(...(appealDay(w, createRng(i)) as { type: string; player?: string }[]));
     expect(evs.length).toBe(1);
     const p = w.players[evs[0].player!];
-    expect(w.shortlist).toContain(p.id);
+    expect(w.shortlist ?? []).not.toContain(p.id);   // 관심 목록은 우리가 고르는 것: 이적 희망은 따로 (activeAppeals)
+    expect(activeAppeals(w).map((a) => a.player)).toEqual([p.id]);
     const full = wageDemand(w, p), mine = wageDemand(w, p, LIV);
     console.log('어필 선수', p.name, w.clubs[p.clubId!].reputation, '→ 우리', w.clubs[LIV].reputation, '주급', full, '→', mine);
     expect(mine).toBeLessThan(full * 0.9);
