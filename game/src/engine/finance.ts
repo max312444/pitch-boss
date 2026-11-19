@@ -130,12 +130,12 @@ export function prizeMoney(w: World, clubId: string, position: number, teams: nu
  *  - 모아 둔 돈의 8%까지는 해마다 주급에 더 쓸 수 있다 (부자 구단이 더 좋은 선수를 쓰게. 재정 규정 한도는 따로 적용)
  *  - 이적 예산: 잔고가 있으면 잔고의 절반 이상 (데이터 기준 예산과 잔고 중 작은 값까지), 잔고가 마이너스면 기준의 25%
  */
-export function seasonBudgets(c: ClubState, data: ClubState['finance']) {
+export function seasonBudgets(c: ClubState, data: ClubState['finance'], base: ClubState['finance'] = data) {
   const bal = c.finance.balance;
   const revenue = data.revenue ?? c.finance.revenue;
   const wageBudget = Math.round(data.wageBudget * (bal < 0 ? 0.92 : 1) + (Math.max(0, bal) * 0.08) / 52);
   const transferBudget = bal > 0 ? Math.max(Math.round(bal * 0.5), Math.min(bal, data.transferBudget)) : Math.round(data.transferBudget * 0.25);
-  c.finance = { balance: bal, transferBudget, wageBudget, ...(revenue ? { revenue } : {}) };
+  c.finance = { balance: bal, transferBudget, wageBudget, ...(revenue ? { revenue } : {}), base: { wage: base.wageBudget, transfer: base.transferBudget } };
   return c.finance;
 }
 
@@ -143,10 +143,11 @@ export function seasonBudgets(c: ClubState, data: ClubState['finance']) {
 export function boardReview(w: World, data: ClubState['finance'], nextSeason: string) {
   const c = w.clubs[w.userClubId];
   const l = ledgerOf(w);
-  const net = sum(l.current.income) - sum(l.current.expense);
+  // 구단주 배당 (잔고가 매출 40% 를 넘어 강제로 나가는 돈) 은 운영 손실이 아니므로 뺀다
+  const net = sum(l.current.income) - (sum(l.current.expense) - (l.current.expense.owner ?? 0));
   const bal = c.finance.balance;
   // 이사회: 손해를 봤으면 주급 예산을 조금 줄이고, 이익이면 조금 늘린다
-  const f = seasonBudgets(c, { ...data, wageBudget: Math.round(data.wageBudget * (bal < 0 ? 1 : net < 0 ? 0.97 : 1.03)) });
+  const f = seasonBudgets(c, { ...data, wageBudget: Math.round(data.wageBudget * (bal < 0 ? 1 : net < 0 ? 0.97 : 1.03)) }, data);
   const { balances, ...rest } = l.current;
   l.past = [...l.past, { ...rest, endBalance: bal }].slice(-10);
   void balances;

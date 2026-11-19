@@ -96,7 +96,7 @@ export interface TeamInMatch {
   subsUsed: number;
   maxSubs: number;
   sentOff: string[];
-  played: Record<string, { from: number; to: number | null }>;
+  played: Record<string, { from: number; to: number | null; /** 당일 컨디션 (교체로 나간 선수 평점에도 쓰려고) */ z?: number }>;
   /** 경기 중 나간 선수의 나갈 때 체력 */
   exitFitness: Record<string, number>;
   goals: number; shots: number; onTarget: number; xg: number; possSum: number;
@@ -159,7 +159,7 @@ function team(clubId: string, lineup: Lineup, tactics: Tactics, maxSubs: number,
     return { id, slot, fitness: p.fitness, factor, dayZ: z, yellow: false, fromMinute: 0, instr: ins[i] ?? null };
   });
   const played: TeamInMatch['played'] = {};
-  for (const o of onPitch) played[o.id] = { from: 0, to: null };
+  for (const o of onPitch) played[o.id] = { from: 0, to: null, z: o.dayZ };
   return {
     clubId, tactics: { ...tactics, formation: lineup.formation }, onPitch, bench: [...lineup.bench], subsUsed: 0, maxSubs, sentOff: [],
     played, exitFitness: {}, goals: 0, shots: 0, onTarget: 0, xg: 0, possSum: 0, manual,
@@ -252,17 +252,17 @@ function bestBenchFor(t: TeamInMatch, slot: Position, ctx: MatchCtx, fitOnly = f
 export const canSubInto = (p: PlayerState, slot: import('../data/types').Position) => (slot === 'GK') === (p.pos === 'GK') && playerFamiliarity(p, slot) >= 0.7;
 
 /** 교체. 성공하면 true (사용자가 직접 하는 교체는 자리에 맞는 선수만) */
-export function substitute(m: MatchState, side: Side, outId: string, inId: string, ctx: MatchCtx): boolean {
+export function substitute(m: MatchState, side: Side, outId: string, inId: string, ctx: MatchCtx, at?: number): boolean {
   const t = m[side];
   const i = t.onPitch.findIndex((o) => o.id === outId);
   if (i < 0 || !t.bench.includes(inId) || t.subsUsed >= t.maxSubs) return false;
   if (t.manual && !canSubInto(ctx.players[inId], t.onPitch[i].slot)) return false;
-  const minute = m.segment * SEG_MIN;
+  const minute = at ?? m.segment * SEG_MIN;   // 부상 교체는 다친 시각에
   const p = ctx.players[inId];
   const { factor, z } = rollDayForm(p, ctx.rng, m.bigMatch);
   t.played[outId].to = minute;
   t.exitFitness[outId] = t.onPitch[i].fitness;
-  t.played[inId] = { from: minute, to: null };
+  t.played[inId] = { from: minute, to: null, z };
   t.onPitch[i] = { id: inId, slot: t.onPitch[i].slot, fitness: p.fitness, factor, dayZ: z, yellow: false, fromMinute: minute, instr: t.onPitch[i].instr };
   t.bench = t.bench.filter((b) => b !== inId);
   t.subsUsed++;
@@ -461,8 +461,8 @@ export function step(m: MatchState, ctx: MatchCtx): void {
         const inj = injuryDays(rng);
         ctx.players[v.id].injury = inj;
         m.summary.injuries.push({ minute, side, player: v.id });
-        const inId = bestBenchFor(me, v.slot, ctx);
-        if (!(inId && substitute(m, side, v.id, inId, ctx))) {
+        const inId = bestBenchFor(me, v.slot, ctx, me.manual);   // 직접 지휘 팀은 그 자리에 맞는 선수만 (안 맞는 선수를 골라 교체가 막히면 10명이 되던 문제)
+        if (!(inId && substitute(m, side, v.id, inId, ctx, minute))) {
           me.onPitch = me.onPitch.filter((x) => x.id !== v.id);   // 교체 불가 → 10명
           me.played[v.id].to = minute;
           me.exitFitness[v.id] = v.fitness;
@@ -479,7 +479,7 @@ export function step(m: MatchState, ctx: MatchCtx): void {
   }
 
   m.segment++;
-  for (const side of sides) autoSubs(m, side, ctx);
+  if (m.segment < SEGMENTS) for (const side of sides) autoSubs(m, side, ctx);   // 경기 끝 (90분) 에는 교체하지 않음
   if (m.segment >= SEGMENTS) finish(m, ctx);
   if (m.cm) { const n = m.notes ?? []; commentSegment(m, ctx, n.slice(m.cm.seen.notes)); m.cm.seen.notes = n.length; }
 }
@@ -602,7 +602,7 @@ function finish(m: MatchState, ctx: MatchCtx) {
   }
   // 평점
   const zOf = new Map<string, number>();
-  for (const t of [m.home, m.away]) for (const o of t.onPitch) zOf.set(o.id, o.dayZ);
+  for (const t of [m.home, m.away]) { for (const [id, pl] of Object.entries(t.played)) if (pl.z != null) zOf.set(id, pl.z); for (const o of t.onPitch) zOf.set(o.id, o.dayZ); }
   for (const side of ['home', 'away'] as Side[]) {
     const t = m[side];
     const diff = side === 'home' ? s.homeGoals - s.awayGoals : s.awayGoals - s.homeGoals;

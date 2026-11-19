@@ -99,11 +99,12 @@ function pursue(w: World, n: NewsItem, rng: Rng): GameEvent[] {
   if (p.clubId === w.userClubId) {
     // 내 선수: 영입 제안으로 (수락 · 거절 · 역제안은 감독이)
     const value = Math.max(marketValue(w, p), 250000);
-    const fee = Math.round(Math.min(value * (1 + rng.next() * 0.25), w.clubs[buyer].finance.transferBudget) / 50000) * 50000;
-    if (fee < value * 0.8) return [];
+    const budget = w.clubs[buyer].finance.transferBudget;
+    const fee = Math.round(value * (1 + rng.next() * 0.25) / 50000) * 50000;
+    if (fee > budget) return [];   // 돈이 모자라면 낮춰 부르지 않고 제안하지 않음
     const offers = (w.offers ??= []);
     if (offers.some((o) => o.player === p.id && o.from === buyer)) return [];
-    offers.push({ id: `${w.date}-${buyer}-${p.id}`, player: p.id, from: buyer, fee, max: Math.round(fee * (1.15 + rng.next() * 0.2) / 50000) * 50000, tries: 0, date: w.date, expires: addDays(w.date, 7), unsolicited: true });
+    offers.push({ id: `${w.date}-${buyer}-${p.id}`, player: p.id, from: buyer, fee, max: Math.max(fee, Math.round(Math.min(fee * (1.15 + rng.next() * 0.2), budget) / 50000) * 50000), tries: 0, date: w.date, expires: addDays(w.date, 7), unsolicited: true });
     w.inbox.push({ type: 'offer', date: w.date, player: p.id, from: buyer, fee });
     return [];
   }

@@ -6,7 +6,7 @@
 //  - 막판 (80분, 1골 차 안): 총공격 · 잠그기 · 그대로
 //  결과 계산은 승부차기와 같은 규칙 (shootoutSeq.ts kickChance · resolveKick)
 import type { MatchCtx, MatchState } from './match';
-import { goalAt, setTactics, substitute, taker } from './match';
+import { canSubInto, goalAt, setTactics, substitute, taker } from './match';
 import type { Mentality, Side } from './types';
 import { aiDir, kickChance, resolveKick, DIR_KO, type Dir } from './shootoutSeq';
 import { posGroup } from '../data/rating';
@@ -85,7 +85,7 @@ export function applyMatchEvent(m: MatchState, side: Side, ev: MatchEvent, choic
       if (!o) return { text: '이미 경기장 밖에 있습니다', good: true };
       if (choice === 'sub' && me.subsUsed < me.maxSubs) {
         const g = posGroup(o.slot);
-        const pick = me.bench.map((id) => ctx.players[id]).filter((p) => p && !p.injury).sort((a, b) => +(posGroup(b.pos) === g) - +(posGroup(a.pos) === g) || overall(b) - overall(a))[0];
+        const pick = me.bench.map((id) => ctx.players[id]).filter((p) => p && !p.injury && (!me.manual || canSubInto(p, o.slot))).sort((a, b) => +(posGroup(b.pos) === g) - +(posGroup(a.pos) === g) || overall(b) - overall(a))[0];
         if (pick && substitute(m, side, o.id, pick.id, ctx)) return { text: `${name(o.id)} 대신 ${name(pick.id)} 투입`, good: true };
       }
       o.factor *= 0.85;

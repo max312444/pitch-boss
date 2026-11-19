@@ -15,6 +15,8 @@ import { aiBuyoutRaids, buyoutOf, buyoutWageFactor, relJoinBonus, relWageFactor 
 import { aiOfferBonus, aiTerms, bonusChance, sellOnFactor, setTerms, settleSellOn, termsWorth, type DealTerms } from './addons';
 import { bargainOf } from './firesale';
 import { saleTag } from './market';
+import { loanReturn } from './loan';
+import { logDeal, type DealKind } from './dealLog';
 
 const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v));
 const addDays = (iso: string, n: number) => new Date(Date.parse(iso + 'T00:00:00Z') + n * 86400000).toISOString().slice(0, 10);
@@ -274,13 +276,18 @@ export function talkOf(w: World, playerId: string) {
   if (t && t.until >= w.date) return t;
   return ((w.talks ??= {})[playerId] = { fee: 0, wage: 0, until: banUntil(w) });
 }
-export function breakTalks(w: World, playerId: string) {
+export function breakTalks(w: World, playerId: string, why = '협상 결렬', kind?: DealKind) {
+  const p = w.players[playerId];
+  if (p) logDeal(w, { dir: 'in', kind: kind ?? (p.clubId ? 'transfer' : 'free'), player: playerId, club: p.clubId, ok: false, why, fee: w.talks?.[playerId]?.agreed ?? undefined });
   (w.talkBan ??= {})[playerId] = banUntil(w);
   if (w.talks) delete w.talks[playerId];
 }
 
 // ── 이적 실행 ────────────────────────────────────────
-export function completeTransfer(w: World, p: PlayerState, to: string, fee: number, wage: number, years: number, terms?: DealTerms): GameEvent {
+export function completeTransfer(w: World, p: PlayerState, to: string, fee: number, wage: number, years: number, terms?: DealTerms, noLog = false): GameEvent {
+  // 임대 중인 선수: 원소속 구단으로 되돌린 뒤 이적 (이적료는 빌린 구단이 아니라 원소속 구단에, 시즌 끝 복귀로 선수를 잃지 않게)
+  if (p.loan) loanReturn(w, p);
+  p.precontract = undefined;   // 새 계약이 사전 계약을 대신한다 (시즌 끝에 공짜로 다른 구단에 가지 않게)
   const from = p.clubId;
   const net = settleSellOn(w, p, from, to, fee);   // 이 선수에게 걸려 있던 셀온: 원래 구단 몫을 떼고 파는 구단에
   setTerms(p, from, to, terms);                    // 이번 계약의 셀온 · 보너스
@@ -305,6 +312,7 @@ export function completeTransfer(w: World, p: PlayerState, to: string, fee: numb
   p.amort = fee > 0 ? Math.round(fee / Math.max(1, years)) : undefined;
   p.amortEnd = fee > 0 ? p.contract : undefined;
   p.loyalty = 50 + p.hidden.loyalty;          // 새 구단에서 다시 시작
+  p.seedClubSeasons = undefined; p.seedOneClub = undefined;   // 시작 전 실제 기록 (원클럽맨 · 오래 뛴 시즌) 은 옛 구단 것
   p.buyout = undefined; p.buyoutClub = undefined;   // 바이아웃은 새 계약에서 새로 (내 구단은 계약 때 정함)
   p.benchStreak = 0;
   p.unhappy = false;
@@ -313,6 +321,7 @@ export function completeTransfer(w: World, p: PlayerState, to: string, fee: numb
   w.offers = (w.offers ?? []).filter((o) => o.player !== p.id);
   if (to === w.userClubId) { w.shortlist = (w.shortlist ?? []).filter((id) => id !== p.id); w.appeals = (w.appeals ?? []).filter((a) => a.player !== p.id); }   // 영입하면 관심 · 어필 해제
   if (w.talks) delete w.talks[p.id];
+  if (!noLog && (from === w.userClubId || to === w.userClubId)) logDeal(w, { dir: to === w.userClubId ? 'in' : 'out', kind: from ? 'transfer' : 'free', player: p.id, club: to === w.userClubId ? from : to, fee, ok: true });
   return { type: 'transfer', date: w.date, player: p.id, from, to, fee, user: from === w.userClubId || to === w.userClubId };
 }
 
@@ -332,6 +341,7 @@ export function releasePlayer(w: World, p: PlayerState): void {
       return;
     }
   }
+  if (c.id === w.userClubId) logDeal(w, { dir: 'out', kind: 'release', player: p.id, club: null, ok: true });
   p.sellOn = undefined; p.addOn = undefined;   // 방출하면 이적 조건도 끝
   c.squad = c.squad.filter((id) => id !== p.id);
   p.clubId = null;
@@ -568,6 +578,7 @@ export function aiTransferDay(w: World, rng: Rng): GameEvent[] {
         const offers = (w.offers ??= []);
         if (!offers.some((o) => o.player === target.id && o.from === club.id)) {
           const f0 = Math.round((fee * (0.85 + rng.next() * 0.25)) / 50000) * 50000;
+          if (f0 > club.finance.transferBudget) continue;   // 예산 안에서만 제안
           const bonus = aiOfferBonus(rng, f0);
           const offer: TransferOffer = { id: `${w.date}-${club.id}-${target.id}`, player: target.id, from: club.id, fee: f0, max: Math.max(f0, Math.round(Math.min(fee * 1.2, club.finance.transferBudget) / 50000) * 50000), tries: 0, date: w.date, expires: addDays(w.date, 7), ...(bonus ? { bonus } : {}) };
           offers.push(offer);

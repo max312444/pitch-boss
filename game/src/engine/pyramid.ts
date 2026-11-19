@@ -141,7 +141,7 @@ export function playoffDay(w: World) {
       const topClub = topOrder[topOrder.length - rule.topDown - 1];
       const challenger = st.winner ?? seed(rule.up + 1);
       const b = of('barrage');
-      if (!b.length) { const d = [base(), lastDate(T.fixtures)].sort().at(-1)!; mk('barrage', topClub, challenger, [addDays(d, 4), addDays(d, 8)]); continue; }
+      if (!b.length) { const d0 = [base(), lastDate(T.fixtures)].sort().at(-1)!; const fin = Object.values(w.europe ?? {}).map((c) => c.dates.final).filter((x) => x >= d0 && x <= addDays(d0, 12)).sort().at(-1); const d = fin ?? d0;   /* 유럽 대회 결승과 같은 날을 피해 그 뒤로 */ mk('barrage', topClub, challenger, [addDays(d, 4), addDays(d, 8)]); continue; }
       st.barrage = { top: topClub, challenger, winner: b[0].winner! };
     }
     st.done = true;

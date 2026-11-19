@@ -14,6 +14,7 @@ import { overall } from './ratings';
 import { ageOn } from './condition';
 import { book } from './finance';
 import { canAfford, clubLevel, completeTransfer, marketValue, wageRoom, windowOpen } from './transfer';
+import { logDeal } from './dealLog';
 
 export interface Loan { from: string; until: string; share: number; fee: number; buy?: number; start: string; /** 영입 후 주급 */ buyWage?: number; /** 의무 이적 */ must?: boolean }
 export type LoanTerms = { share: number; fee: number; buy?: number; buyWage?: number; must?: boolean };
@@ -68,6 +69,8 @@ export function loanMove(w: World, p: PlayerState, to: string, t: LoanTerms): Ga
   p.role = undefined;
   w.offers = (w.offers ?? []).filter((o) => o.player !== p.id);
   w.transferList = (w.transferList ?? []).filter((id) => id !== p.id);
+  if (w.talks) delete w.talks[p.id];   // 임대 가면 하던 이적 협상도 끝
+  if (from === w.userClubId || to === w.userClubId) logDeal(w, { dir: to === w.userClubId ? 'in' : 'out', kind: 'loan', player: p.id, club: to === w.userClubId ? from : to, fee: t.fee || undefined, ok: true });
   w.clubs[from].lineup = null; w.clubs[to].lineup = null;
   return { type: 'loan', date: w.date, player: p.id, from, to, kind: 'start', share: t.share, fee: t.fee, ...(t.buy ? { buy: t.buy, ...(t.must ? { must: true } : {}) } : {}), user: from === w.userClubId || to === w.userClubId };
 }

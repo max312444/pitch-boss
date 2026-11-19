@@ -128,7 +128,7 @@ export function moveTo(w: World, club: string, why: ManagerStint['why'], rng: Rn
   if (tenure >= 300) {
     const bar = strength(w, club) - 4;
     const fans = w.clubs[old].squad.map((id) => w.players[id])
-      .filter((p) => p.loyalty >= 70 && ageOn(p.birth, w.date) <= 32 && overall(p) >= bar && p.stats.apps + p.stats.subApps + p.career.filter((c) => c.club === old).reduce((s, c) => s + c.apps, 0) >= 20)
+      .filter((p) => !p.loan && !p.precontract && p.loyalty >= 70 && ageOn(p.birth, w.date) <= 32 && overall(p) >= bar && p.stats.apps + p.stats.subApps + p.career.filter((c) => c.club === old).reduce((s, c) => s + c.apps, 0) >= 20)
       .sort((a, b) => overall(b) - overall(a)).slice(0, 4).filter(() => rng.chance(0.5)).slice(0, 2);
     if (fans.length) {
       m.followers = [...(m.followers ?? []), ...fans.map((p) => ({ player: p.id, from: old, to: club, until: addDays(w.date, 240) }))];
@@ -156,6 +156,8 @@ export function moveTo(w: World, club: string, why: ManagerStint['why'], rng: Rn
   m.offers = [];
   m.renewal = undefined;
   m.sackAtEnd = false;
+  m.dropSeason = undefined;   // 2부 강등권 연속 판정은 새 구단에서 처음부터
+  delete w.clubs[club].ledger;   // 예전에 맡았던 구단으로 돌아와도 그때 장부 (매출 기준 · 수입 합계) 를 다시 쓰지 않게
   m.pendingJob = undefined;
   m.contract = `${endYear(w.season) + 2}-06-30`;   // 이번 시즌 포함 3시즌 (시즌 중이면 2시즌 반)
   // 내 구단에만 있던 상태 정리

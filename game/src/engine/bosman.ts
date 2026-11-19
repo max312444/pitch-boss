@@ -14,6 +14,7 @@ import { overall } from './ratings';
 import { ageOn } from './condition';
 import { canAfford, clubLevel, completeTransfer, playerWillJoin, wageDemand, windowEnd, windowOpen } from './transfer';
 import { setBuyout } from './clauses';
+import { logDeal, markJoined } from './dealLog';
 
 const daysBetween = (a: string, b: string) => Math.round((Date.parse(b) - Date.parse(a)) / 864e5);
 
@@ -59,6 +60,7 @@ export function bosmanEligible(w: World, p: PlayerState, buyer: string): boolean
 
 /** 사전 계약 (이적료 없음): 계약이 끝나면 합류 */
 export function signPrecontract(w: World, p: PlayerState, club: string, wage: number, years: number, extra?: { role?: PlayerState['role']; buyout?: number }) {
+  if (club === w.userClubId || p.clubId === w.userClubId) logDeal(w, { dir: club === w.userClubId ? 'in' : 'out', kind: 'precontract', player: p.id, club: club === w.userClubId ? p.clubId : club, ok: true });
   p.precontract = { club, wage, years, date: w.date, ...(extra?.role ? { role: extra.role } : {}), ...(extra?.buyout != null ? { buyout: extra.buyout } : {}) };
   w.transferList = (w.transferList ?? []).filter((id) => id !== p.id);
   w.offers = (w.offers ?? []).filter((o) => o.player !== p.id);
@@ -74,7 +76,8 @@ export function joinPrecontract(w: World, p: PlayerState): GameEvent | null {
   if (!pc) return null;
   p.precontract = undefined;
   if (!w.clubs[pc.club] || p.retired) return null;
-  const ev = completeTransfer(w, p, pc.club, 0, pc.wage, pc.years);
+  // 거래 기록: 사전 계약 줄에 합류 날짜만 (성사는 계약한 시즌에 이미 셈). 사전 계약 기록이 없으면 (예전 세이브) 이적으로 남긴다
+  const ev = completeTransfer(w, p, pc.club, 0, pc.wage, pc.years, undefined, markJoined(w, p.id));
   if (pc.role) p.role = pc.role;
   if (pc.buyout != null) setBuyout(p, pc.buyout);
   return ev;

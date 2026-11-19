@@ -167,7 +167,8 @@ export interface ClubState {
   /** 포메이션 숙련도 (0~100, 경기를 치를수록 오름) */
   formFam?: Record<string, number>;
   /** revenue = 연 매출 기준값 (데이터 · 시즌 시작 때 정함). 모든 구단이 이 매출로 수입 · 지출이 생긴다 */
-  finance: { balance: number; transferBudget: number; wageBudget: number; revenue?: number };
+  /** base: 시즌 예산의 기준값 (데이터 · 승강 보정만, 이사회 · 잔고 보너스 등 해마다 바뀌는 보정은 빼고) — 데이터가 끝난 뒤 다음 시즌 기준으로 써서 보정이 쌓이지 않게 */
+  finance: { balance: number; transferBudget: number; wageBudget: number; revenue?: number; base?: { wage: number; transfer: number } };
   /** 사용자가 직접 정한 선발 (없으면 자동 선택). 자리 순서는 포메이션 자리 순서 */
   /** benchExact: 감독이 후보를 직접 정함 (빈자리 자동으로 안 채움) */
   lineup?: { starters: (string | null)[]; bench: string[]; benchExact?: boolean } | null;
@@ -408,6 +409,8 @@ export interface World {
   appealSeen?: Record<string, string>;
   /** 진행 중인 영입 협상 (선수 ID별) */
   talks?: Record<string, Talk>;
+  /** 내 구단 거래 기록 (성사 · 무산, 이적 화면 「거래 현황」) */
+  dealLog?: import('./dealLog').DealEntry[];
   /** 협상 결렬로 이 날짜까지 다시 협상 불가 (선수 ID별) */
   talkBan?: Record<string, string>;
   /** 재계약 요청 팝업에 띄울 내 선수 (불만이 있거나 주급 예산이 모자라 자동 재계약이 안 된 선수) */

@@ -45,6 +45,7 @@ import type { RetireNews, TransferOffer } from '../engine/types';
 import { applyRenewal, evaluateRenewal } from '../engine/contract';
 import { buyoutMandatory, setBuyout, setRelClause } from '../engine/clauses';
 import { bosmanEligible, signPrecontract } from '../engine/bosman';
+import { logDeal } from '../engine/dealLog';
 import { meetingReady, teamMeeting } from '../engine/chemistry';
 const addDaysIso = (iso: string, n: number) => new Date(Date.parse(iso + 'T00:00:00Z') + n * 86400000).toISOString().slice(0, 10);
 import { CUSTOM_MARK, famOf, FORMATIONS, formationShape, guessFormation, matchRules, MAX_CUSTOM, pickLineup, registerFormations, validateFormation } from '../engine/squad';
@@ -340,8 +341,10 @@ export const useGame = create<GameStore>((set, get) => {
     const w = get().world!;
     const p = w.players[o.player];
     const wage = wageDemand(w, p);
+    const fail = (why: string, msg: string) => { logDeal(w, { dir: 'out', kind: 'transfer', player: p.id, club: o.from, fee: o.fee, ok: false, why }); return { ok: false, msg }; };
+    if (o.fee > w.clubs[o.from].finance.transferBudget || (o.fee > 0 && transferBan(w, o.from))) return fail('사는 구단 예산 부족으로 철회', '그 사이 사는 구단의 예산이 줄어 제안이 철회됐습니다');
     const r = playerWillJoin(w, p, o.from, wage);
-    if (!r.ok) return { ok: false, msg: `선수가 이적을 원하지 않아 무산됐습니다 (${r.reason})` };
+    if (!r.ok) return fail('선수가 이적을 거부', `선수가 이적을 원하지 않아 무산됐습니다 (${r.reason})`);
     w.inbox.push(completeTransfer(w, p, o.from, o.fee, wage, 3, { sellOn: o.sellOn, bonus: o.bonus }));
     set({ ceremony: { player: p.id, playerName: p.name, from: w.userClubId, to: o.from, fee: o.fee, wage, years: 3, kind: 'out' } });
     return { ok: true, msg: `이적이 성사됐습니다 · 이적료 ${Math.round(o.fee / 1e5) / 10}M 유로` };
@@ -733,9 +736,9 @@ export const useGame = create<GameStore>((set, get) => {
       const w = get().world!;
       const p = w.players[playerId];
       const c = evaluateLoan(w, p, w.userClubId, terms);
-      if (!c.ok) return { ok: false, msg: c.reason };
+      if (!c.ok) { if (p.clubId && p.clubId !== w.userClubId && !p.loan) logDeal(w, { dir: 'in', kind: 'loan', player: p.id, club: p.clubId, ok: false, why: '임대 거절 (' + c.reason + ')' }); return { ok: false, msg: c.reason }; }
       const pw = playerWillLoan(w, p, w.userClubId);
-      if (!pw.ok) return { ok: false, msg: pw.reason };
+      if (!pw.ok) { logDeal(w, { dir: 'in', kind: 'loan', player: p.id, club: p.clubId, ok: false, why: '선수가 임대를 거절' }); return { ok: false, msg: pw.reason }; }
       const fban = transferBan(w, w.userClubId);
       if (fban) return { ok: false, msg: fban };
       if (terms.fee > w.clubs[w.userClubId].finance.transferBudget) return { ok: false, msg: '이적 예산이 모자랍니다 (임대료)' };
@@ -971,6 +974,9 @@ export const useGame = create<GameStore>((set, get) => {
       const t = talkOf(w, playerId);
       if (p.clubId && t.agreed == null) return { ok: false, reason: '먼저 구단과 이적료를 합의해야 합니다' };
       const fee = p.clubId ? t.agreed! : 0;
+      if (p.clubId === w.userClubId) return { ok: false, reason: '이미 우리 구단 선수입니다' };
+      if (fee > 0 && transferBan(w, w.userClubId)) return { ok: false, reason: '이적 금지 징계 중이라 이적료를 내고 영입할 수 없습니다' };
+      if (fee > w.clubs[w.userClubId].finance.transferBudget) return { ok: false, reason: `이적 예산 초과 — 남은 이적 예산 ${Math.round(w.clubs[w.userClubId].finance.transferBudget / 1e5) / 10}M 유로` };
       // 주급 한도: 계약 후 주급 합계가 주급 예산을 넘으면 안 됨 (기회는 줄지 않음)
       const room = wageRoom(w, w.userClubId);
       if (wage > room) return { ok: false, reason: `주급 예산 초과 — 남은 주급 여유 ${Math.max(0, Math.round(room / 1000))}K 유로. 선수를 팔거나 방출해 주급을 줄여야 합니다` };
@@ -983,7 +989,7 @@ export const useGame = create<GameStore>((set, get) => {
         // 주급이 낮으면 기회 1번 소모, 구단 자체가 싫다면 바로 결렬
         if (r.low) t.wage++;
         const left = r.low ? MAX_TRIES - t.wage : 0;
-        if (left <= 0) breakTalks(w, playerId);
+        if (left <= 0) breakTalks(w, playerId, r.low ? '주급이 맞지 않아 선수가 거절' : '선수가 오기 싫어함 (' + r.reason + ')');
         autosave(w);
         bump();
         return { ok: false, reason: r.reason, left, broken: left <= 0 };
@@ -1014,7 +1020,7 @@ export const useGame = create<GameStore>((set, get) => {
       if (!r.ok) {
         if (r.low) t.wage++;
         const left = r.low ? MAX_TRIES - t.wage : 0;
-        if (left <= 0) breakTalks(w, playerId);
+        if (left <= 0) breakTalks(w, playerId, r.low ? '주급이 맞지 않아 선수가 거절' : '선수가 사전 계약을 거절', 'precontract');
         autosave(w); bump();
         return { ok: false, reason: r.reason, left, broken: left <= 0 };
       }
@@ -1116,6 +1122,7 @@ export const useGame = create<GameStore>((set, get) => {
       const o = (w.offers ?? []).find((x) => x.id === offerId);
       if (!o || !offerValid(w, o)) { cleanOffers(w); w.offers = (w.offers ?? []).filter((x) => x.id !== offerId); bump(); return '이미 끝난 제안입니다 (선수가 팀을 떠났거나 기한 · 이적시장이 끝났습니다)'; }
       w.offers = (w.offers ?? []).filter((x) => x.id !== offerId);
+      if (!accept && w.players[o.player]) logDeal(w, { dir: 'out', kind: 'transfer', player: o.player, club: o.from, fee: o.fee, ok: false, why: '제안 거절' });
       let msg = accept ? sellTo(o).msg : '제안을 거절했습니다';
       // 선수가 먼저 그 구단에 연락해서 온 제안을 거절: 선수가 실망 (충성도 · 사기 ↓)
       const p = w.players[o.player];
@@ -1130,6 +1137,7 @@ export const useGame = create<GameStore>((set, get) => {
       const o = (w.offers ?? []).find((x) => x.id === offerId);
       if (!o || !offerValid(w, o)) { cleanOffers(w); w.offers = (w.offers ?? []).filter((x) => x.id !== offerId); bump(); return { result: 'gone', fee: 0, reason: '이미 끝난 제안입니다 (선수가 팀을 떠났거나 기한 · 이적시장이 끝났습니다)' }; }
       const r = counterOffer(w, o, ask, sellOn);
+      if (r.result === 'withdraw') logDeal(w, { dir: 'out', kind: 'transfer', player: o.player, club: o.from, fee: o.fee, ok: false, why: '역제안이 높아 상대 구단이 포기' });
       let out: ReturnType<GameStore['counter']> = r;
       if (r.result === 'accept') {
         w.offers = (w.offers ?? []).filter((x) => x.id !== offerId);

@@ -59,7 +59,7 @@ export function leagueRule(league: string, season: string): CostRule {
     case 'GER':
       return y >= 2027 ? { name: '독일 선수단 비용 규정 70%', kind: 'ratio', ratio: 0.7 } : DEFAULT;
     case 'FRA':
-      return { ...DEFAULT, name: '기본 샐러리 캡 (매출의 70%) · DNCG 통제', dncg: true };
+      return { ...DEFAULT, name: '기본 샐러리 캡 (매출의 80%) · DNCG 통제', dncg: true };
     default:
       return DEFAULT;
   }

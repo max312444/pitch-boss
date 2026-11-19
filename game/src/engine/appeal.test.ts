@@ -119,4 +119,14 @@ describe('이적 어필 (역제안)', () => {
     aiAppealDay(w, () => { n++; return true; });
     expect(n).toBe(0);
   });
+
+  it('사전 계약을 맺은 선수는 이적 희망 목록에서 빠진다 (거래 현황으로)', () => {
+    const w = createWorld(load('2025-26', ['eng1']), LIV, 7);
+    w.date = '2026-01-10';
+    const p = Object.values(w.players).find((x) => x.clubId && x.clubId !== LIV)!;
+    w.appeals = [{ player: p.id, club: p.clubId!, until: '2026-01-31' } as never];
+    expect(activeAppeals(w).length).toBe(1);
+    p.precontract = { club: LIV, wage: p.wage, years: 3, date: w.date };
+    expect(activeAppeals(w).length).toBe(0);
+  });
 });

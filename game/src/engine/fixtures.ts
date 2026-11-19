@@ -53,7 +53,7 @@ export function matchDates(season: string, rounds: number): string[] {
     const extra: string[] = [];
     const mid = [utc(y, 12, 26), utc(y + 1, 1, 1)];
     for (let d = addDays(nthSaturday(y, 12, 1), 4); extra.length < rounds - sats.length && d < utc(y + 1, 5, 1); d = addDays(d, 7)) mid.push(d);
-    for (const d of mid) if (extra.length < rounds - sats.length && !sats.includes(iso(d))) extra.push(iso(d));
+    for (const d of mid) if (extra.length < rounds - sats.length && !sats.includes(iso(d)) && !extra.includes(iso(d))) extra.push(iso(d));
     dates = [...sats, ...extra].sort();
   }
   return dates;

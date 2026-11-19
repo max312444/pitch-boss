@@ -222,7 +222,7 @@ export function boardNewSeason(w: World, rng: Rng): GameEvent[] {
   if (rng.chance(0.04)) {
     const rich = rng.chance(0.5);
     m.relation = 50;
-    if (rich) { c.finance.balance += Math.round(rev * 0.4); c.finance.transferBudget = Math.round(c.finance.transferBudget * 1.3 + rev * 0.1); c.finance.wageBudget = Math.round(c.finance.wageBudget * 1.15); }
+    if (rich) { book(w, c.id, 'commercial', Math.round(rev * 0.4)); c.finance.transferBudget = Math.round(c.finance.transferBudget * 1.3 + rev * 0.1); c.finance.wageBudget = Math.round(c.finance.wageBudget * 1.15); }
     else { c.finance.transferBudget = Math.round(c.finance.transferBudget * 0.6); c.finance.wageBudget = Math.round(c.finance.wageBudget * 0.92); }
     out.push({ type: 'board', date: w.date, kind: rich ? 'ownerRich' : 'ownerCut' });
   }

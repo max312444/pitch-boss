@@ -117,7 +117,8 @@ export function appealDay(w: World, rng: Rng): GameEvent[] {
 }
 
 /** 지금 유효한 우리 구단 어필 (이적 희망 탭 · 사이드바 숫자) */
-export const activeAppeals = (w: World) => (w.appeals ?? []).filter((a) => a.until >= w.date && w.players[a.player]?.clubId === a.club);
+/** 지금 유효한 어필 (사전 계약을 맺은 선수는 이미 거래가 성사됐으므로 빼고, 거래 현황 탭에 나온다) */
+export const activeAppeals = (w: World) => (w.appeals ?? []).filter((a) => a.until >= w.date && w.players[a.player]?.clubId === a.club && !w.players[a.player]?.precontract);
 
 /** 언론 플레이 성공 확률 · 역풍 확률 */
 export function pressOdds(w: World, p: PlayerState): { ok: number; angry: number } {

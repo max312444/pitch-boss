@@ -154,7 +154,7 @@ export function aiSagaDay(w: World, rng: Rng, act: (p: PlayerState, to: string, 
   }
   for (const c of Object.values(w.clubs)) {
     if (c.id === w.userClubId || !w.competitions[c.league] || c.id.startsWith('nt-')) continue;
-    const top = c.squad.map((id) => w.players[id]).sort((a, b) => overall(b) - overall(a)).slice(0, 3);
+    const top = c.squad.map((id) => w.players[id]).filter((p) => !p.loan && !p.precontract).sort((a, b) => overall(b) - overall(a)).slice(0, 3);
     for (const p of top) {
       const s = p.saga;
       if (!open) { if (s) { p.saga = undefined; p.morale = clamp(p.morale - 10, 0, 100); } continue; }

@@ -1,4 +1,4 @@
-// 이적 화면: 선수 검색 · 관심 목록 (우리가 고름) · 이적 희망 (우리에게 오고 싶다고 연락한 선수) · 내 선수(이적 명단 · 방출) · 받은 제안
+// 이적 화면: 선수 검색 · 관심 목록 (우리가 고름) · 이적 희망 (우리에게 오고 싶다고 연락한 선수) · 내 선수(이적 명단 · 방출) · 받은 제안 · 거래 현황 (성사 · 무산 기록)
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { PlayerState } from '../../engine/types';
 import { estOverall, seenOverall } from '../../engine/scout';
@@ -29,8 +29,9 @@ import { SALE_KO, saleTag } from '../../engine/market';
 import { heightOf } from '../../engine/body';
 import { ATTR_KO } from '../format';
 import { activeAppeals, appealOf, pressOdds, PRESS_ANGRY } from '../../engine/appeal';
+import { DealsPanel } from '../components/DealsPanel';
 
-type Tab = 'search' | 'shortlist' | 'appeal' | 'mine' | 'offers';
+type Tab = 'search' | 'shortlist' | 'appeal' | 'mine' | 'offers' | 'deals';
 type Group = 'ALL' | 'GK' | 'DF' | 'MF' | 'FW';
 /** 세부 포지션 (여러 개 골라서 보기) */
 const POS_CHIPS: Position[] = ['GK', 'CB', 'LB', 'RB', 'LWB', 'RWB', 'DM', 'CM', 'AM', 'LM', 'RM', 'LW', 'RW', 'ST'];
@@ -54,6 +55,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
   const [q, setQ] = useState('');
   const [pos, setPos] = useState<Position[]>([]);            // 세부 포지션 (비어 있으면 위 그룹 기준)
   const [clubPick, setClubPick] = useState<string | null>(null);   // 구단만 보기
+  const [mineGroup, setMineGroup] = useState<Group>('ALL');   // 내 선수: 포지션 그룹
   const [clubQ, setClubQ] = useState('');
   const [marketOnly, setMarketOnly] = useState(false);   // 이적 허용 선수만 (기본은 전체: 비매물도 웃돈 · 바이아웃 · 보스만으로 영입 가능)
   const listRef = useRef<HTMLDivElement>(null);
@@ -84,7 +86,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
     let ps: PlayerState[];
     if (tab === 'shortlist') ps = shortlist.map((id) => w.players[id]).filter(Boolean);
     else if (tab === 'appeal') ps = appeals.map((a) => w.players[a.player]).filter(Boolean);
-    else if (tab === 'mine') ps = [...club.squad, ...(club.loanedOut ?? [])].map((id) => w.players[id]).filter(Boolean);
+    else if (tab === 'mine') ps = [...club.squad, ...(club.loanedOut ?? [])].map((id) => w.players[id]).filter((p) => p && (mineGroup === 'ALL' || posGroup(p.pos) === mineGroup));
     else {
       ps = Object.values(w.players).filter((p) => !p.retired && p.clubId !== w.userClubId
         && (clubPick ? p.clubId === clubPick : league === 'ALL' || (league === 'FA' ? !p.clubId : league === 'BOSMAN' ? bosmanEligible(w, p, w.userClubId) : league === 'BARGAIN' ? !!bargainOf(w, p) : p.clubId && w.clubs[p.clubId]?.league === league)));
@@ -111,7 +113,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
     const dir = sort.desc ? -1 : 1;
     return ps.map((p) => ({ p, ovr: estOverall(w, p), age: ageOn(p.birth, w.date), value: marketValue(w, p) }))
       .sort((a, b) => { const ka = keyOf(a), kb = keyOf(b); const c = typeof ka === 'string' ? ka.localeCompare(kb as string, 'ko') : ka - (kb as number); return c * dir || b.ovr - a.ovr || a.age - b.age; }).slice(0, 200);
-  }, [w, tab, group, league, maxAge, minOvr, maxValue, q, shortlist, appeals.length, club.squad, posSet, pos, clubPick, sort, marketFilter]);
+  }, [w, tab, mineGroup, group, league, maxAge, minOvr, maxValue, q, shortlist, appeals.length, club.squad, posSet, pos, clubPick, sort, marketFilter]);
   // 조건을 바꾸면 목록을 맨 위로
   useEffect(() => { listRef.current?.scrollTo({ top: 0 }); }, [tab, group, league, maxAge, minOvr, maxValue, q, posSet, pos, clubPick, marketOnly]);
   /** 구단 고르기: 그 구단 선수단 전체가 보이게 능력 · 나이 조건을 넓힌다 */
@@ -145,11 +147,22 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
 
         {/* 탭 */}
         <div className="mb-3 flex items-center gap-1 overflow-x-auto">
-          {([['search', '선수 검색'], ['shortlist', `관심 목록 ${shortlist.length}`], ['appeal', `이적 희망 ${appeals.length}`], ['mine', '내 선수'], ['offers', `받은 제안 ${offers.length}`]] as const).map(([k, label]) => (
+          {([['search', '선수 검색'], ['shortlist', `관심 목록 ${shortlist.length}`], ['appeal', `이적 희망 ${appeals.length}`], ['mine', '내 선수'], ['offers', `받은 제안 ${offers.length}`], ['deals', '거래 현황']] as const).map(([k, label]) => (
             <button key={k} onClick={() => { setTab(k); setSel(null); }}
               className={`h-8 shrink-0 rounded-md px-3 text-[13px] whitespace-nowrap transition-colors lg:px-4 ${tab === k ? 'bg-ink-700 font-semibold text-hi' : 'text-mid hover:bg-ink-800 hover:text-hi'}`}>{label}</button>
           ))}
         </div>
+        {tab === 'mine' && (() => {
+          const mine = [...club.squad, ...(club.loanedOut ?? [])].map((id) => w.players[id]).filter(Boolean);
+          const n = (g: Group) => (g === 'ALL' ? mine.length : mine.filter((p) => posGroup(p.pos) === g).length);
+          return (
+            <div className="mb-3 flex gap-1 overflow-x-auto rounded-lg bg-ink-900 p-1 text-[12px] sm:self-start">
+              {([['ALL', '전체'], ['FW', '공격수'], ['MF', '미드필더'], ['DF', '수비수'], ['GK', '골키퍼']] as const).map(([g, label]) => (
+                <button key={g} onClick={() => setMineGroup(g)} className={`tap h-8 shrink-0 rounded-md px-3 whitespace-nowrap transition-colors ${mineGroup === g ? 'bg-ink-700 font-semibold text-hi' : 'text-mid hover:text-hi'}`}>{label} <span className="tnum text-lo">{n(g)}</span></button>
+              ))}
+            </div>
+          );
+        })()}
         {tab === 'search' && (
           <div className="mb-3 flex flex-wrap items-center gap-2 text-[12px]">
             <div className="flex gap-1 rounded-lg bg-ink-900 p-1">
@@ -241,7 +254,9 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
           </div>
         )}
 
-        {tab === 'offers' ? (
+        {tab === 'deals' ? (
+          <DealsPanel onPick={setSel} />
+        ) : tab === 'offers' ? (
           <div className="panel min-h-0 overflow-auto lg:flex-1">
             {offers.length === 0 && <div className="grid h-full place-items-center text-[13px] text-lo">받은 제안이 없습니다. 내 선수 탭에서 이적 명단에 올리면 다른 구단이 제안해 옵니다.</div>}
             {offers.map((o) => { const p = w.players[o.player]; return (

@@ -270,7 +270,8 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
   // 2부 강등권인데 3부가 게임에 없어 잔류한 내 구단: 리그는 그대로, 강등처럼 명성 · 재정 한 단계 아래 · 주급 삭감
   const userDrop = report.userKept && levelOf(w.clubs[w.userClubId].league) === 2;
   for (const club of Object.values(w.clubs)) {
-    const d = dataClub.get(club.id);
+    // 나의 구단: 데이터 자리는 대신한 실제 구단 것이라 (값은 지금 값) 그 리그 기준으로 보정하면 해마다 ×2 · ×0.45 가 쌓인다 → 데이터 없는 구단처럼
+    const d = club.id === w.myClub?.id ? undefined : dataClub.get(club.id);
     const baseLevel = d ? levelOf(d.lg) : prevLevel.get(club.id) ?? levelOf(club.league);
     const drop = userDrop && club.id === w.userClubId ? 1 : 0;
     const steps = baseLevel - levelOf(club.league) - drop;    // 양수 = 실제(또는 지난 시즌)보다 위 리그
@@ -284,7 +285,9 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
     // 현금을 무한정 쌓지 않는다: 잔고가 연 매출의 40% 를 넘으면 넘는 돈의 80% 는 구단주 배당 · 부채 상환 (모든 구단 같은 규칙)
     const rev = clubRevenue(w, club.id);
     if (w.competitions[club.league] && club.finance.balance > rev * 0.4) book(w, club.id, 'owner', Math.round((club.finance.balance - rev * 0.4) * 0.8));
-    const fin = adjust(d ? d.c.finance : club.finance, steps);
+    // 데이터가 없으면 지난 시즌 기준값 (지난 시즌 실제 예산은 잔고 보너스 · 이사회 보정이 들어 있어 그대로 쓰면 해마다 쌓인다)
+    const base = club.finance.base;
+    const fin = adjust(d ? d.c.finance : base ? { ...club.finance, wageBudget: base.wage, transferBudget: base.transfer } : club.finance, steps);
     club.sales = 0;   // 재정 규정의 판매 수입은 시즌마다 새로
     if (club.id !== w.userClubId) seasonBudgets(club, fin);
     else report.board = { ...boardReview(w, fin, to), prize: w.lastPrize ?? 0 };
@@ -317,8 +320,8 @@ export function startNextSeason(w: World, next: SeasonInput): SeasonReport {
         if (d.sp.contract && (!p.contract || d.sp.contract > p.contract)) p.contract = d.sp.contract;
       }
       report.updated++;
-    } else if (!nextLeague.has(p.clubId ? w.clubs[p.clubId]?.league ?? '' : '')) {
-      // 이 선수의 리그에 다음 시즌 데이터가 없으면 성장 · 노화 엔진
+    } else {
+      // 다음 시즌 데이터에 없는 선수 (데이터 없는 리그 · 유스 · 게임이 만든 선수 · 실제로는 떠난 선수) 는 성장 · 노화 엔진
       ageAttributes(p, age, rng);
       report.aged++;
     }

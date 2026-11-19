@@ -93,7 +93,7 @@ export function negotiateFee(w: World, p: PlayerState, cash: number, terms?: Dea
   t.mood = Math.max(0, mood);
   const broken = t.mood <= 0 || left <= 0;
   if (broken) {
-    breakTalks(w, p.id);
+    breakTalks(w, p.id, t.mood <= 0 ? '구단이 협상을 끝냄 (인내심 바닥)' : '이적료 합의 실패 (기회 4번)');
     reason += t.mood <= 0 ? ' · 인내심이 바닥나 협상을 끝냈습니다' : ' · 기회를 다 써서 협상이 결렬됐습니다';
   }
   return {

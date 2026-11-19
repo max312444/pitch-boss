@@ -61,7 +61,7 @@ export function aiBuyoutRaids(w: World, rng: Rng): GameEvent[] {
   if (!me || w.intl) return [];
   for (const id of me.squad) {
     const p = w.players[id];
-    if (p.loan) continue;
+    if (p.loan || p.precontract) continue;
     const clause = buyoutOf(w, p);
     if (clause <= 0) continue;
     const r = clause / valueOf(w, p);

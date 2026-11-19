@@ -288,7 +288,7 @@ export function applyMatch(w: World, f: Fixture, m: MatchState) {
     w.players[g.scorer].stats.goals++;
     if (g.assist) w.players[g.assist].stats.assists++;
   }
-  for (const c of s.cards) {
+  for (const c of f.stage === 'intl' ? [] : s.cards) {   // 국가대표 경기 카드는 구단 징계와 관계없음 (국가대표 경기에선 징계가 줄지 않아 계속 빠지던 문제)
     const p = w.players[c.player];
     if (c.red) { if (!cup) p.stats.red++; p.suspension += 1; }
     else if (cup) continue;   // 컵 경고는 리그 누적에 넣지 않음
@@ -357,7 +357,7 @@ export function advanceDay(w: World): GameEvent[] {
   events.push(...intlBreakDay(w, rng));
   // 리그 종료 (플레이오프까지 모두 끝난 리그)
   for (const comp of Object.values(w.competitions)) {
-    if (!comp.fixtures.some((f) => !f.result) && !w.inbox.some((e) => e.type === 'seasonEnd' && e.league === comp.id && e.date >= seasonStart(comp.season))) {
+    if (!comp.fixtures.some((f) => !f.result) && !w.inbox.some((e) => e.type === 'seasonEnd' && e.league === comp.id && e.date >= comp.fixtures.reduce((a, f) => (f.date < a ? f.date : a), '9999'))) {   // 이번 시즌 첫 경기 뒤에 나온 알림만 (지난 시즌 플레이오프가 8월에 끝나도 헷갈리지 않게)
       events.push({ type: 'seasonEnd', date: today, league: comp.id, champion: sortTable(comp.table)[0].club });
     }
   }
