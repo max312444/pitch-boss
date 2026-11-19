@@ -163,6 +163,7 @@ function report(league, { t0, summary } = {}) {
   if (cmd === 'photos-import') return require('./steps/photoImport').photoImport({ log });
   if (cmd === 'economy') return require('./steps/economy').economy({ apply: args.includes('--apply'), seasonFilter: typeof opt('season') === 'string' ? opt('season') : undefined, log });
   if (cmd === 'dedupe') return dedupe({ apply: args.includes('--apply'), log });
+  if (cmd === 'fix-league') return require('./steps/fixLeague').fixLeague({ league: typeof opt('league') === 'string' ? opt('league') : undefined, apply: args.includes('--apply'), log });
   if (cmd === 'managers') return require('./steps/managers').managers({ apply: args.includes('--apply'), log });
   if (cmd === 'publish') return publish({ apply: args.includes('--apply'), log });
   if (cmd === 'positions') return require('./steps/positions').positions({ apply: args.includes('--apply'), log });

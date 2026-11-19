@@ -109,7 +109,7 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 
 ## 개발 현황 · 이어서 하기
 
-> 새 작업 세션은 이 절을 먼저 읽고 이어서 진행한다. (마지막 갱신: 2026-11-11)
+> 새 작업 세션은 이 절을 먼저 읽고 이어서 진행한다. **지금 하던 일은 아래 "▶ 새 세션은 여기부터"** (마지막 갱신: 2026-11-19)
 
 ### 작업 규칙
 
@@ -120,6 +120,11 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
   출처 없는 능력치를 사실처럼 저장하지 않음 (능력치 · 재정 · 명성은 자체 추정 모델 `derived`), 이름 유사도만으로 자동 병합 금지,
   유료 API · 유료 리소스는 사용자 승인 없이 사용 금지, API 키는 환경 변수로만 (`.env` 커밋 금지).
 - 데이터 작성 규칙: [data/DATA_GUIDE.md](data/DATA_GUIDE.md)
+- 테스트: 작업 중에는 **바뀐 부분만** 테스트하고, **전체 테스트(`npm test`)는 커밋 직전에만**. 화면이 바뀌면 **PC · 휴대폰 · 태블릿** 세 가지로 확인.
+- 버전: 큰 변화(새 모드) = 앞자리 (v1 → v2), 기능 추가 +0.1, 수정 +0.0.1. `game/src/version.ts` (GAME_VERSION + CHANGELOG 한 줄) · `game/package.json` · 아래 완료 목록 맨 위 `0. **vX …**`.
+- 커밋 메시지는 `vX 요약` 형식, 끝에 `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`. 커밋 대상은 코드 · `data-public` · `data/canonical/club-aliases.json` · `club-same.json` · `club-reserves.json` 만.
+- 게임 · 문서에 "월드컵" · "FIFA" 같은 실제 대회 · 단체 이름을 쓰지 않는다 (세계 대회). 테스트 코드에도 실제 구단 이름을 쓰지 않는다 (공개 ID 사용). 사진은 올리지 않는다.
+- 모든 구단 (AI 포함) 은 수입을 벌고 예산 안에서만 영입한다. 부자 구단은 더 많이 가지고 시작한다.
 
 ### 개발 팁
 
@@ -129,6 +134,71 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 - `publish --apply` 로 `data-public/`을 다시 만들면 켜 둔 개발 서버가 빈 파일 목록을 기억해 화면이 안 뜰 수 있다 → 개발 서버를 껐다 켤 것
 - Windows: Git Bash 의 `/c/...` 처럼 소문자 `c:` 경로에서 켜면 data 경로가 `../../c:/...` 로 깨져 메모리 부족(heap out of memory)으로 꺼지던 문제 → vite.config 가 드라이브 문자를 대문자로 맞춰 어디서 켜도 됨 (2026-11-12, Git Bash 로 켜서 게임 진행 · 메모리 246MB 확인). vite.config 는 `data/_pipeline` (캐시 · 백업) 을 감시하지 않는다
   (Windows에서 `npm run dev` 를 멈춰도 vite 프로세스가 5173 포트에 남을 수 있음 — 포트를 쓰는 프로세스를 끈다).
+
+### ▶ 새 세션은 여기부터: 지금 하던 일 (2026-11-19 기준)
+
+**현재 버전 v2.10 (`becde415`, 푸시 완료).** 그 뒤 커밋 안 한 변경: 이 README 정리 · `fix-league` 명령 (`tools/data_pipeline/steps/fixLeague.js`, `index.js`) — 다음 커밋에 함께 넣는다.
+진행 중인 일은 **2부 리그 데이터 수집** 하나 (지난 세션의 esp2 · ita2 미리보기는 세션이 끝나며 멈춤 → 다시 돌린다, 캐시가 남아 있어 빠름).
+
+| 리그 | 상태 (실명 데이터는 로컬 `data/` 에만, 커밋 안 함) |
+|---|---|
+| ger2 | 완료 (2026-11-10) |
+| eng2 | **완료** — build · names · dedupe · fix-league · unify-names · validate 오류 0 (26시즌 × 24팀) |
+| esp2 | 미리보기 통과 직전 (구단 충돌 다 해결, 아래). **처음부터 다시** 미리보기 → 저장 |
+| ita2 | 미리보기 통과 직전 (구단 충돌 다 해결). **Pordenone 확인 필요**: `nuovo-pordenone-asd` (Nuovo Pordenone 2024 FC ASD) 로 연결됨 — 2019~22 Serie B 의 Pordenone Calcio 가 2024년 재창단 항목으로 잘못 붙은 것인지 확인 → 다르면 `club-aliases.json` 에 QID 로 따로 지정 (합치기 규칙) |
+| fra2 | 시작 전 |
+
+리그마다 순서 (미리보기 결과에서 **시즌별 구단 수 · 16명 미만 선수단 · 구단 충돌 · "이름으로 연결한 구단 (확인 필요)"** 을 꼭 볼 것):
+```bash
+node tools/data_pipeline build --league esp2            # 미리보기 (1시간 안팎, 캐시가 있으면 빠름)
+node tools/data_pipeline build --league esp2 --apply    # 저장 (이미 있는 파일을 다시 쓰려면 --overwrite)
+node tools/data_pipeline names --league esp2 --apply    # 한국어 이름
+node tools/data_pipeline dedupe --apply                 # 같은 시즌 중복 소속 정리
+node tools/data_pipeline fix-league --league esp2 --apply   # 동명이인 (나이 15 미만 · 45 초과) 삭제 · 생년월일을 기존 리그 기록에 맞춤
+node tools/data_pipeline unify-names --apply            # 같은 선수 이름 표기 통일 (최근 시즌 표기)
+node tools/validate.js                                  # 오류 0 이어야 함 (GK 없음은 경고 — 게임이 유스로 채움)
+```
+네 리그 (esp2 · ita2 · fra2) 가 끝나면:
+```bash
+node tools/data_pipeline publish --apply   # data-public (가상 이름) 다시 만들기 → 개발 서버 껐다 켜기
+cd game && npm run history                 # 역대 기록 (감독 기록의 cesena → cesena-1 도 여기서 바뀜)
+```
+그다음 **게임에서 확인** (PC · 휴대폰 · 태블릿, Playwright):
+2부 구단으로 새 게임 → 시즌 진행 → 승격 플레이오프 · 승강 · **B팀 규칙** (모구단이 1부면 승격 · PO 제외, 순위표 색) ·
+**홀수 리그 일정** (ita2 2018-19 는 실제 19팀) · 44팀 컵 · **역제안 이적 건수** (한 시즌 20건 안팎이면 적당, 너무 많으면 `appeal.ts` 25% 를 줄임) ·
+`npm run invariants` · `npm run economy`. 문제 없으면 버전 올리고 (데이터 추가 = +0.1) README · 커밋 (data-public · 코드만).
+
+**2부 수집 중 정한 것 · 알아 둘 것**
+- **구단 합치기 규칙 (사용자 결정)**: Wikidata 항목 두 개가 같은 구단처럼 보여도 기록이 완전히 같을 때만 합친다. 다르면 `-1` · `-2` (또는 따로 ID) 로
+  `data/canonical/club-aliases.json` 에 **Wikidata 번호로** 지정하고 사용자에게 알린다. 이미 쓰던 ID 를 바꿀 때는
+  `node tools/data_pipeline rename-club <옛 ID> <새 ID> --apply` + `data/canonical/public-map.json` 키도 옮겨 공개 ID 유지 (cesena 때처럼).
+  - 나눈 구단: ssv-ulm-1/-2 · vicenza-1/-2 · ancona-1 · extremadura-1/-2 · cesena-1/-2 · cosenza-1/-2 · granada-74 · universidad-las-palmas ·
+    B팀 7개 (barcelona-atletic · real-madrid-castilla · athletic-bilbao-b · real-sociedad-b · sevilla-atletico · villarreal-b · atletico-malagueno)
+- **B팀**: `data/canonical/club-reserves.json` (B팀 → 모구단). build 가 새 구단 정보에 `parent` 를 넣고 publish 가 공개 ID 로 바꾼다.
+  esp2 저장 뒤 `data/clubs/<B팀>.json` 에 `parent` 가 들어갔는지 확인 (없으면 넣기). 다른 리그에서 B팀 · II팀이 나오면 여기에 추가.
+- 16명 미만 선수단: eng2 2000~2007년 하위권 40곳 (그 시대는 위키백과 선수단 표를 안 쓰고 Wikidata 소속 기록만 — 데이터 한계).
+  게임은 시작할 때 포지션 최소 인원을 유스로 채우므로 (`academyFill`) 그대로 둔다.
+- 이번에 고친 파이프라인 (v2.10): 잘린 응답 → 종료 연도 구간으로 나눠 받기 (`wikidata.js clubMemberships`), 선수단 틀 `fs player2 (sort)` ·
+  `first/last/dab` · `{{sortname}}`, 시즌 순위표가 별도 틀이면 따라가기, 위키백과 명단 나이 필터, 이름으로 추측 연결한 구단 표시,
+  `unify.js` 여러 줄 형식, `fix-league` 명령.
+
+### 다음 로드맵 (2부 데이터 다음)
+
+1. **2부 리그 마무리** (위) → 게임 확인 → 커밋
+2. 사진 · 실제 이름 넣는 방법 안내 문서 (사용자 요청). 화면에 사진 출처 표시는 하지 않음
+3. 문의 (구글 폼) 연결 — 사용자가 폼 링크를 주면
+4. 세이브 크기: 은퇴 선수 기록이 쌓여 8시즌 약 12MB (gzip 저장) — 오래된 은퇴 선수 정리
+5. 나중 후보: 대륙 대회 (유로 · 코파), 유럽 대회 36팀 리그 페이즈, 재판매 · 보너스 조항 보강
+
+### 남은 과제 · 알려진 문제
+
+- 1부만 있는 리그는 실제 데이터가 끝난 뒤 (2026-27~) 강등이 없다 → 2부 데이터가 들어오면 해결.
+- 데이터에 계약 정보는 약 19%만 있음 → 나머지는 게임이 1~5년 부여 (`contractGen`, 화면에 "게임 설정" 표시).
+- 로컬에서 실명 데이터까지 넣은 `npm run build` 는 메모리 부족 — 배포는 `PUBLIC_ONLY=1` 이라 무관.
+- 점검 스크립트: `npm run fairness` (경기 형평성) · `npm run economy` (FA · 잔고) · `npm run invariants` (여러 시즌 불변 조건).
+  화면 점검용 Playwright 스크립트는 세션 임시 폴더에 두었다가 사라지므로, 필요하면 `game/scripts` 처럼 남는 곳에 새로 만든다
+  (패턴: `tools/node_modules/playwright-core` + 설치된 Chrome, `localStorage` 에 intro · notice · tutorial · update · dataset=public 넣고,
+  `import('/src/store/game.ts')` 로 `useGame.getState().newGame('2025-26', 'eng1', 'c83d96l')`).
 
 ### 완료된 작업 (최근 순)
 
@@ -440,63 +510,3 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 2. 재계약 · 자동 재계약 · 재계약 요청 팝업, 시즌 말 이탈 소식, 떠난 선수 제안 정리 버그 수정 (`2997762`)
 3. 수상 연출 · POM · 팬 · 이적 협상 개편 · 은퇴 소식 · 전체 검색 · 게임 계약 부여 (`0702815`)
 4. 재정 · 호칭 시스템 (`631e9b8`), 이적 시스템 · 5개 리그 데이터 (이전 커밋들)
-
-### 진행 중: 2부 리그 데이터 수집
-
-- 파이프라인 설정 완료 (`tools/data_pipeline/config.js` `LEAGUES`에 eng2 · esp2 · ita2 · ger2 · fra2,
-  시대별 위키백과 시즌 문서 이름, `steps/model.js` 2부 리그 수준 0.80~0.86).
-- 구단 ID 충돌 처리: FSV 프랑크푸르트 별도 ID (`fsv-frankfurt`), 얀 레겐스부르크 두 Wikidata 항목 → `jahn-regensburg`
-  (`data/canonical/club-aliases.json`, 사람이 확인한 같은 구단 목록 `data/canonical/club-same.json`).
-- **구단 병합 규칙 (사용자 결정)**: Wikidata 항목 두 개가 같은 구단처럼 보여도 **기록(창단 · 리그 · 소속 선수 등)이 완전히 같을 때만** 합친다.
-  다르면 `-1` · `-2` 로 따로 두고 (`club-aliases.json`에 Wikidata 번호로 지정, 예 `"Q701290": "ssv-ulm-1"`),
-  나중에 Wikidata에서 병합되면 그때 합친다. 다른 기록이 있으면 사용자에게 알린다.
-  - SSV 울름: Q701290 (종합 스포츠 클럽, 창단 1970, 2000-01) → `ssv-ulm-1` · Q14551982 (축구 구단, 창단 1894, 2024-25) → `ssv-ulm-2`
-- **ger2 완료 (2026-11-10)**: 26시즌 · 시즌마다 18팀 · 468개 파일 · 최소 선수단 16명. 한국어 이름 332명 채움 (나머지는 Wikidata에 없음).
-  이번에 고친 파이프라인: 위키백과 순위표 구단은 이 리그 첫 기록이어도 넣음 (뮌스터 · 울름 누락 수정),
-  위키백과 문서가 없는 1군 팀 항목은 Wikidata 상위 구단(P361/P127/P749)의 선수단 표 · 소속 기록 사용 (레겐스부르크 · 지겐),
-  Wikidata 응답이 잘리면 묶음을 반씩 나눠 재조회, 구단 충돌 오류에 Wikidata 번호 · 시즌 표시, `dedupe --apply` 로 중복 소속 630개 정리.
-- **다음 할 일**: eng2 → esp2 → ita2 → fra2 를 ger2와 같은 순서로:
-  ```bash
-  node tools/data_pipeline build --league eng2            # 미리보기: 충돌 · 시즌별 구단 수 · 선수 수 확인
-  node tools/data_pipeline build --league eng2 --apply    # 문제 없으면 저장
-  node tools/data_pipeline names --league eng2 --apply    # 한국어 이름
-  node tools/data_pipeline dedupe --apply                 # 같은 시즌 중복 소속 정리 (임대 · 소속 기간으로)
-  node tools/validate.js                                  # 검사
-  # 2부 5개가 끝나면
-  node tools/data_pipeline publish --apply                # 공개용 패러디 데이터 (1부와 똑같이 가상 이름)
-  cd game && npm run history                              # 선수 이력 다시 만들기
-  ```
-  미리보기 결과는 시즌별 구단 수(18~24) · 16명 미만 선수단 · 구단 충돌을 꼭 확인.
-- 데이터가 들어오면: 게임에서 2부 구단으로 새 게임 → 시즌 진행 → 플레이오프 · 승강 · 순위표 화면을 브라우저로 확인.
-
-### 다음 로드맵 (사용자가 정한 순서)
-
-1. 2부 리그 데이터 수집 마무리 (위) → 게임에서 확인
-2. ~~국내 컵 대회~~ (완료 · 다음 할 일: 2부 데이터가 들어오면 44팀 컵을 브라우저로 확인)
-3. ~~유럽 대회~~ (완료 · 16팀 축소판. 나중에: 36팀 리그 페이즈(2024~) 같은 시대별 방식, 다른 나라 구단)
-4. ~~세계 대회~~ (완료 · 나중에: 유로 · 코파 아메리카 등 대륙 대회, 사용자가 대표팀 감독, 실제 2022 겨울 일정)
-5. ~~구단 메뉴 · 감독 계약 · 이사회 · 팬 · 기자회견 · 시설~~ (완료)
-6. ~~임대 · 역할 약속 · AI 감독 교체 · 무료 배포~~ (완료)
-7. ~~스카우트 · 내 포메이션~~ (완료, v0.3)
-7. ~~경기 (세트피스 · 선수별 지시 · 포메이션 숙련도)~~ (완료, v0.6)
-7. **다음 순서 (사용자가 정함)**: 포지션 바로잡기 적용(v0.9.2) → 계약 조항(바이아웃 v0.10 · 임대 개편 v0.11 완료, 재판매 · 보너스 조항은 나중에) → 이적 소문 · 뉴스 (v0.14 완료) → 라커룸 · 팀 케미 (v0.15 완료) → 구단 스폰서. 보류: 포지션 전환 훈련(육성 개편과 함께)
-8. 다음 후보: 공개 데이터 이름 정리 (ger2 한글 이름 · 울름 -1/-2 같은 이름), 나머지 2부 데이터 (eng2 · esp2 · ita2 · fra2), 사진 전체 수집 범위 결정
-
-### 남은 과제 · 알려진 문제
-
-- **전체 점검 (2026-11-10)**: 타입 검사 · 테스트 39개 · 배포 빌드 통과. 화면 전체(모든 메뉴 · 경기 · 팝업 · 시즌 전환) 콘솔 오류 0.
-  8시즌 연속 진행(2023-24 → 2031-32) 불변 조건 검사 문제 0건 (점검 스크립트는 세션 임시 폴더라 남지 않음 — 필요하면 `game/scripts`로 옮길 것).
-  고친 것: AI 구단 선수단이 줄고 골키퍼가 없어지던 문제 → `aiFillSquads` (인원 20명 미만 · 포지션 최소 인원 미달이면 매일 자유계약 선수 1명).
-- ~~신규 선수 생성 없음~~ → 유스 생성으로 해결 (위 완료 작업).
-- **재정 흑자 규모 점검 필요**: 수입 비율 합(중계권 40 + 스폰서 25 + 입장 20 + 상금 15 = 매출 100%) vs 주급 약 55 + 운영비 22 → 기본 약 20% 흑자,
-  상위 구단은 상금 · 우승 보너스 · 컵 · 유럽 입장 수입 · 팬 배수까지 더해진다. 운영비는 사용자 요청으로 25→22% 감축.
-  `economy` 저장 뒤 여러 시즌 돌려서 잔고가 계속 쌓이기만 하는지 확인할 것 (흑자는 영입으로 쓰이는 게 정상).
-- **자유계약 선수가 쌓임**: 10시즌 시험에서 소속 선수가 구단당 약 23명으로 줄고 자유계약 1,500명 이상. 옛 공개 데이터의 좁은 주급 예산 탓이 큼 → `economy` 저장 뒤 다시 확인.
-- 리그별 밸런스 점검, 이름 팩 (실명 공유용, 사용자 승인 대기), AI 구단 감독 교체, 사진 · 이름 넣는 방법 안내 문서 (사용자 요청, 할 일)
-- 데이터 점검 (`node tools/validate.js` 오류 80개): 생일 불일치 34건, 나이 이상 24명 (ger2에서 동명이인 연결로 보이는 5명:
-  david-fall-1902 104세 · felix-haas-2000 8세 · rene-muller-1959 · peter-auer-1954), 골키퍼 없는 구단 시즌 10곳 (게임에서는 자유계약 골키퍼로 보강됨),
-  이름 불일치 9건, ancona 2003-04 명성 0, 승격팀 누락 (esp1 2019-20 · ita1 2025-26), 판단 안 한 동명이인 179건,
-  `dedupe` 미결정 28건 (첫 소속을 남김)
-- 받은편지함 일부 알림(이사회 예산 · 호칭 변화)에 영문 이름이 나옴
-- 새 게임 시작 시 FA 선수가 없음 (방출 · 계약 만료로 생김)
-- 데이터에 계약 정보는 약 19%만 있음 → 나머지는 게임이 1~5년 부여 (`contractGen`, 화면에 "게임 설정" 표시)
