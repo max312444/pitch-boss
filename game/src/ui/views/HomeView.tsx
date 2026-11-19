@@ -98,19 +98,19 @@ export function HomeView() {
 
         <div className="grid grid-cols-1 items-start gap-6 xl:grid-cols-3">
           <div className="flex flex-col gap-6">
-            <Card title={started ? `리그 순위 · ${pos}위` : '리그 순위 · 개막 전'} action={<ActionLink onClick={() => setTab('table')}>전체 보기</ActionLink>}>
+            <Card fold="home.table" shut title={started ? `리그 순위 · ${pos}위` : '리그 순위 · 개막 전'} action={<ActionLink onClick={() => setTab('table')}>전체 보기</ActionLink>}>
               <LeagueTable league={club.league} compact />
             </Card>
             {(() => {
               const rum = [...(w.news ?? [])].reverse().filter((n) => n.kind === 'rumour' && n.status === 'open').slice(0, 4);
               return rum.length > 0 && (
-                <Card title="이적 소문" action={<ActionLink onClick={() => setTab('news')}>뉴스</ActionLink>}>
+                <Card fold="home.rumor" shut title="이적 소문" action={<ActionLink onClick={() => setTab('news')}>뉴스</ActionLink>}>
                   {rum.map((n) => <NewsRow key={n.id} w={w} n={n} onPlayer={(id) => openProfile(id)} />)}
                 </Card>
               );
             })()}
             {news.length > 0 && (
-              <Card title="최근 소식" action={<ActionLink onClick={() => setTab('inbox')}>받은편지함</ActionLink>}>
+              <Card fold="home.news" title="최근 소식" action={<ActionLink onClick={() => setTab('inbox')}>받은편지함</ActionLink>}>
                 {news.map((e, i) => { const d = describe(e, w); return (
                   <Row key={i}>
                     <span className={`w-8 text-[12px] font-medium ${d.tone}`}>{d.tag}</span>
@@ -128,7 +128,7 @@ export function HomeView() {
           </div>
 
           <div className="flex flex-col gap-6">
-            <Card title="다가오는 일정" action={<ActionLink onClick={() => setTab('schedule')}>전체 일정</ActionLink>}>
+            <Card fold="home.next" title="다가오는 일정" action={<ActionLink onClick={() => setTab('schedule')}>전체 일정</ActionLink>}>
               {upcoming.length === 0 ? <div className="px-5 py-6 text-[13px] text-lo">남은 경기가 없습니다</div> : upcoming.map((f) => {
                 const home = f.home === w.userClubId; const opp = home ? f.away : f.home;
                 return (
@@ -144,7 +144,7 @@ export function HomeView() {
               })}
             </Card>
             {played.length > 0 && (
-              <Card title="최근 경기">
+              <Card fold="home.recent" shut title="최근 경기" peek={played.slice(-5).map((f) => ({ W: '승', D: '무', L: '패' })[resultFor(f, w.userClubId)!]).join(' ')}>
                 {played.map((f) => { const home = f.home === w.userClubId; const opp = home ? f.away : f.home; return (
                   <Row key={f.id}>
                     <ResultDot r={resultFor(f, w.userClubId)!} />
@@ -226,7 +226,7 @@ function SeasonGoal({ w, pos }: { w: World; pos: number | null }) {
   const o = objective(rank, ids.length, levelOf(club.league));
   const onTrack = pos == null ? null : pos <= o.target;
   return (
-    <Card title="시즌 목표">
+    <Card fold="home.goals" shut title="시즌 목표" peek={o.goal}>
       <div className="px-5 py-5">
         <div className="text-[12px] text-lo">이사회 기대</div>
         <div className="mt-1 text-[20px] font-semibold">{o.goal}</div>
@@ -261,7 +261,7 @@ function SquadStatus({ w, squad, onOpen }: { w: World; squad: PlayerState[]; onO
   const avgAge = squad.reduce((s, p) => s + ageOn(p.birth, w.date), 0) / squad.length;
   const fit = squad.reduce((s, p) => s + p.fitness, 0) / squad.length;
   return (
-    <Card title="선수단 현황" action={<ActionLink onClick={onOpen}>자세히</ActionLink>}>
+    <Card fold="home.squad" shut title="선수단 현황" peek={`${squad.length}명 · 체력 ${fit.toFixed(0)}%`} action={<ActionLink onClick={onOpen}>자세히</ActionLink>}>
       <div className="grid grid-cols-3 gap-4 px-5 pt-5">
         {([['인원', `${squad.length}명`], ['평균 나이', `${avgAge.toFixed(1)}세`], ['평균 체력', `${fit.toFixed(0)}%`]] as const).map(([k, v]) => (
           <div key={k}><div className="text-[12px] text-lo">{k}</div><div className="tnum mt-1 text-[16px] font-semibold">{v}</div></div>
@@ -289,7 +289,7 @@ function Finance({ w, squad }: { w: World; squad: PlayerState[] }) {
   const bill = squad.reduce((s, p) => s + p.wage, 0);
   const ratio = Math.min(1, bill / Math.max(1, f.wageBudget));
   return (
-    <Card title="재정">
+    <Card fold="home.finance" shut title="재정" peek={`이적 예산 ${money(f.transferBudget)}`}>
       <div className="grid grid-cols-2 gap-4 px-5 pt-5">
         <div><div className="text-[12px] text-lo">이적 예산</div><div className="tnum mt-1 text-[18px] font-semibold">{money(f.transferBudget)}</div></div>
         <div><div className="text-[12px] text-lo">구단 잔고</div><div className="tnum mt-1 text-[18px] font-semibold">{money(f.balance)}</div></div>
@@ -308,7 +308,7 @@ function LeagueLeaders({ w, league, started }: { w: World; league: string; start
     ? ps.filter((p) => p.stats.goals > 0).sort((a, b) => b.stats.goals - a.stats.goals || a.stats.apps - b.stats.apps).slice(0, 6)
     : ps.sort((a, b) => overall(b) - overall(a)).slice(0, 6);
   return (
-    <Card title={started ? '리그 득점 순위' : '리그 주목 선수'}>
+    <Card fold="home.scorers" shut title={started ? '리그 득점 순위' : '리그 주목 선수'}>
       {list.length === 0 ? <div className="px-5 py-6 text-[13px] text-lo">아직 득점이 없습니다</div> : list.map((p, i) => (
         <Row key={p.id}>
           <span className="tnum w-4 text-[12px] text-lo">{i + 1}</span>

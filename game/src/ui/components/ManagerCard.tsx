@@ -138,7 +138,7 @@ export function JobModal() {
   const str = (c: string) => { const top = w.clubs[c].squad.map((id) => overall(w.players[id])).sort((a, b) => b - a).slice(0, 11); return Math.round(top.reduce((a, b) => a + b, 0) / Math.max(1, top.length)); };
   return (
     <div className="fixed inset-0 z-[70] grid animate-[fade_0.2s_ease-out] place-items-center bg-ink-950/90 p-2 sm:p-6 backdrop-blur-sm">
-      <div className="panel w-full max-w-[560px] overflow-hidden">
+      <div className="panel w-full max-w-[560px] max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain">
         <div className="px-4 sm:px-7 pt-7 pb-4">
           <div className="text-[12px] text-lo">{clubKo(w.userClubId)}</div>
           <h2 className="mt-1 text-[20px] font-semibold">{REASON[job.reason]}</h2>

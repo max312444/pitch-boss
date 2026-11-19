@@ -40,7 +40,7 @@ export function RetireNews() {
 
   return (
     <div className="fixed inset-0 z-[55] grid animate-[fade_0.2s_ease-out] place-items-center bg-ink-950/85 p-2 sm:p-6 backdrop-blur-sm" onClick={next}>
-      <article key={i} className="panel w-[620px] max-w-[94vw] animate-[fade_0.3s_ease-out] overflow-hidden" onClick={(e) => e.stopPropagation()}>
+      <article key={i} className="panel w-[620px] max-w-[94vw] animate-[fade_0.3s_ease-out] max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain" onClick={(e) => e.stopPropagation()}>
         <header className="flex items-center justify-between border-b border-line px-4 sm:px-7 py-3 text-[12px]">
           <span className={`flex items-center gap-2 font-semibold ${leave ? 'text-sky' : 'text-amber'}`}><span className={`h-2 w-2 rounded-full ${leave ? 'bg-sky' : 'bg-amber'}`} />{leave ? '계약 만료 · 팀 이탈' : '은퇴 발표'}{n.mine && <span className="rounded bg-neon-ghost px-1.5 text-neon">우리 구단</span>}</span>
           <span className="tnum text-lo">{n.season.replace('-', '/')} 시즌 종료 · {i + 1} / {list!.length}</span>

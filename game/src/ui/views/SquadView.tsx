@@ -84,8 +84,8 @@ export function SquadView() {
 
   return (
     <div className="flex h-full min-h-0 gap-5 p-3 lg:p-6">
-      <section className="flex min-w-0 flex-1 flex-col">
-        <div className="mb-3 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-line lg:mb-5 lg:grid-cols-4">
+      <section className="flex min-w-0 flex-1 flex-col overflow-y-auto">
+        <div className="mb-3 grid shrink-0 grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-line lg:mb-5 lg:grid-cols-4">
           {([
             ['선수', `${rows.length}명`, ''],
             ['주전 11명 평균', (top11.reduce((s, r) => s + r.ovr, 0) / top11.length).toFixed(0), 'text-neon'],
@@ -102,7 +102,7 @@ export function SquadView() {
         {(() => {
           const c = chemistry(w, w.userClubId);
           return (
-            <button data-tour="squad-chem" onClick={() => setLocker(true)} className="mb-3 flex w-full items-center gap-3 rounded-lg border border-line bg-ink-850 px-4 py-2.5 text-left text-[13px] transition-colors hover:bg-ink-800">
+            <button data-tour="squad-chem" onClick={() => setLocker(true)} className="mb-3 flex w-full shrink-0 items-center gap-3 rounded-lg border border-line bg-ink-850 px-4 py-2.5 text-left text-[13px] transition-colors hover:bg-ink-800">
               <span className="text-lo">팀 케미</span>
               <span className={`tnum text-[16px] font-semibold ${chemTone(c.total)}`}>{c.total}</span>
               <span className="min-w-0 flex-1 truncate text-lo">{c.captain ? `주장 ${playerKo(c.captain, w.players[c.captain]?.name ?? '')}` : ''}{c.unrest.length ? <span className="text-red"> · 불만 {c.unrest.length}명</span> : null}</span>
@@ -112,7 +112,7 @@ export function SquadView() {
         })()}
         {locker && <LockerRoom onClose={() => setLocker(false)} />}
 
-        <div data-tour="squad-filter" className="mb-3 flex items-center gap-1 overflow-x-auto">
+        <div data-tour="squad-filter" className="mb-3 flex shrink-0 items-center gap-1 overflow-x-auto">
           {GROUPS.filter((g) => g.key !== 'YOUTH' || academyOn(w)).map((g) => (
             <button key={g.key} onClick={() => setGroup(g.key)}
               className={`h-8 shrink-0 rounded-md px-3 text-[13px] transition-colors lg:px-4 ${group === g.key ? 'bg-ink-700 font-semibold text-hi' : 'text-mid hover:bg-ink-800 hover:text-hi'}`}>
@@ -126,8 +126,8 @@ export function SquadView() {
         </div>
 
         {group === 'YOUTH' ? <AcademyList /> : <>
-        <SortPicker className="mb-2 xl:hidden" s={sort} options={SORT_OPTIONS} onPick={(k) => setSort({ k, desc: !ASC_FIRST.includes(k) })} onFlip={() => setSort((x) => ({ ...x, desc: !x.desc }))} />
-        <div className="panel min-h-0 flex-1 overflow-auto">
+        <SortPicker className="mb-2 shrink-0 xl:hidden" s={sort} options={SORT_OPTIONS} onPick={(k) => setSort({ k, desc: !ASC_FIRST.includes(k) })} onFlip={() => setSort((x) => ({ ...x, desc: !x.desc }))} />
+        <div className="panel min-h-[min(420px,75dvh)] flex-1 overflow-auto">
           <table className="w-full border-collapse text-[14px]">
             <thead className="sticky top-0 z-10 bg-ink-800 text-left text-[12px] text-lo">
               <tr className="h-9 shadow-[inset_0_-1px_0_var(--color-line)]">

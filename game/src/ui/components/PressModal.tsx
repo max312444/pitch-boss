@@ -17,7 +17,7 @@ export function PressModal() {
   const head = conf.kind === 'pre' ? `경기 전 기자회견${conf.opp ? ` · 상대 ${clubKo(conf.opp)}` : ''}` : conf.kind === 'post' ? `경기 후 기자회견${conf.opp ? ` · ${clubKo(conf.opp)}전` : ''}` : '기자회견';
   return (
     <div className="fixed inset-0 z-[64] grid animate-[fade_0.2s_ease-out] place-items-center bg-ink-950/85 p-2 sm:p-6 backdrop-blur-sm">
-      <div className="panel w-full max-w-[560px] overflow-hidden">
+      <div className="panel w-full max-w-[560px] max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain">
         <div className="px-4 sm:px-7 pt-7 pb-4">
           <div className="flex items-center justify-between text-[12px]"><span className="font-semibold text-sky">{head}</span><span className="text-lo">질문 {conf.questions.length}개 남음</span></div>
           <h2 className="mt-2 text-[18px] leading-snug font-semibold">기자: "{text}"</h2>

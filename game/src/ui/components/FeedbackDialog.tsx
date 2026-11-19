@@ -12,7 +12,7 @@ export function FeedbackDialog({ onClose }: { onClose: () => void }) {
   const open = (kind: string) => { window.open(feedbackUrl(kind, info), '_blank', 'noopener'); onClose(); };
   return createPortal(
     <div className="fixed inset-0 z-[90] grid animate-[fade_0.2s_ease-out] place-items-center bg-ink-950/80 p-3 backdrop-blur-sm" onClick={onClose}>
-      <div className="panel w-full max-w-[440px] overflow-hidden" onClick={(e) => e.stopPropagation()}>
+      <div className="panel w-full max-w-[440px] max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain" onClick={(e) => e.stopPropagation()}>
         <header className="flex items-center justify-between border-b border-line px-5 py-4">
           <div>
             <div className="text-[16px] font-semibold">의견 보내기</div>

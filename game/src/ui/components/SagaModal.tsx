@@ -31,7 +31,7 @@ export function SagaModal() {
   ];
   return (
     <div className="fixed inset-0 z-[63] grid animate-[fade_0.2s_ease-out] place-items-center bg-ink-950/85 p-2 sm:p-6 backdrop-blur-sm">
-      <div className="panel w-full max-w-[560px] overflow-hidden">
+      <div className="panel w-full max-w-[560px] max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain">
         <div className="px-4 sm:px-7 pt-7 pb-4">
           <div className="flex items-center justify-between text-[12px]"><span className="font-semibold text-amber">선수 · {s.kind === 'wage' ? '연봉 인상 요구' : '이적 요청'}</span><span className="text-lo">{SAGA_STAGE_KO[s.stage]} ({s.stage}/3)</span></div>
           <h2 className="mt-2 text-[19px] leading-snug font-semibold">
@@ -52,7 +52,7 @@ export function SagaModal() {
           ))}
         </div>
         <div className="border-t border-line px-4 sm:px-7 py-3 text-right">
-          <button onClick={sagaClose} className="text-[12px] text-lo hover:text-hi">지금은 두고 보기</button>
+          <button onClick={sagaClose} className="tap text-[12px] text-lo hover:text-hi">지금은 두고 보기</button>
         </div>
       </div>
     </div>

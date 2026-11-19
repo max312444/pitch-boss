@@ -7,7 +7,7 @@ import type { Rng } from './rng';
 import { attr, overall, playerFamiliarity, fitnessFactor, preMatchFactor, slotRating } from './ratings';
 import { FILL_ORDER, FORMATIONS, type Lineup } from './squad';
 import { commentSegment, initCommentary, type CommentaryState, type MatchNote } from './commentary';
-import { traitForm, traitMul } from './traits';
+import { traitForm, traitMul, traitPen } from './traits';
 import { bodyTireMul, heightAirMul } from './body';
 
 export const SEGMENTS = 18;
@@ -512,7 +512,7 @@ function setPieces(m: MatchState, side: Side, ctx: MatchCtx, myAir: number, thei
   const home = side === 'home' ? TUNING.homeAdv : 2 - TUNING.homeAdv;
   // 코너 · 프리킥: 우리 공중 경합 / 상대 공중 경합 (골키퍼 공중볼 조금) · 키커 정확도
   const k = taker(me, ctx, 'set');
-  const kq = k ? (attr(ctx.players[k.id], 'pas') + 0.5 * attr(ctx.players[k.id], 'vis')) / 1.5 / 70 : 0.8;
+  const kq = k ? (attr(ctx.players[k.id], 'pas') + 0.5 * attr(ctx.players[k.id], 'vis')) / 1.5 / 70 * traitMul(ctx.players[k.id], 'set') : 0.8;
   const gk = opp.onPitch.find((o) => o.slot === 'GK');
   const oppAir = theirAir * 0.85 + (gk ? attr(ctx.players[gk.id], 'aer') : 40) * 0.15;
   const setXg = TUNING.setXg * clamp((myAir / oppAir) ** 2, 0.4, 2.2) * clamp(kq, 0.6, 1.4) * home * ease;
@@ -527,7 +527,7 @@ function setPieces(m: MatchState, side: Side, ctx: MatchCtx, myAir: number, thei
     const pk = taker(me, ctx, 'pen');
     if (!pk) return;
     const p = ctx.players[pk.id];
-    const conv = clamp(0.58 + (attr(p, 'sho') + attr(p, 'com') - 140) / 220 - (gk ? (attr(ctx.players[gk.id], 'ref') - 70) / 400 : -0.1), 0.55, 0.92);
+    const conv = clamp(0.58 + (attr(p, 'sho') + attr(p, 'com') - 140) / 220 - (gk ? (attr(ctx.players[gk.id], 'ref') - 70) / 400 : -0.1) + traitPen(p), 0.55, 0.95);
     me.xg += 0.76;
     if (rng.chance(conv)) goalAt(m, side, pk.id, undefined, 'pen', rng);
     else { me.shots++; if (rng.chance(0.6)) me.onTarget++; m.notes?.push({ minute: m.segment * SEG_MIN + 3, side, kind: 'penMiss', player: pk.id }); }

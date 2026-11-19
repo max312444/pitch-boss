@@ -21,6 +21,7 @@ function renameClub(from, into, { apply = false, log = console.log } = {}) {
         if (meta.clubs?.includes(from)) {
           if (meta.clubs.includes(into)) throw new Error(`${season}/${league}에 ${from}와 ${into}가 둘 다 있음`);
           meta.clubs = meta.clubs.map((c) => (c === from ? into : c)).sort();
+          if (Array.isArray(meta.standings)) meta.standings = meta.standings.map((c) => (c === from ? into : c));   // 실제 순위 (순서 유지)
           ops.push(['league', metaFile, meta]);
         }
       }

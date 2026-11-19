@@ -4,6 +4,8 @@ import { compKo } from '../../data/db';
 import { conditionLevel } from '../../engine/condition';
 import { posGroup } from '../../data/rating';
 import type { Position } from '../../data/types';
+import { Icon } from './Icon';
+import { useCompact, useFold } from './fold';
 
 const GROUP_TONE: Record<string, string> = {
   GK: 'text-[#f2c14e] bg-[#f2c14e]/10', DF: 'text-sky bg-sky/10', MF: 'text-neon bg-neon/10', FW: 'text-red bg-red/10',
@@ -43,16 +45,30 @@ export function ResultDot({ r }: { r: 'W' | 'D' | 'L' }) {
   return <span className={`inline-grid h-5 w-5 place-items-center rounded text-[11px] font-semibold ${c}`}>{r === 'W' ? '승' : r === 'D' ? '무' : '패'}</span>;
 }
 
-export function Card({ title, action, children, className = '', tour }: { title?: string; action?: React.ReactNode; children: React.ReactNode; className?: string; tour?: string }) {
+/**
+ * 카드. fold 를 주면 휴대폰 (좁거나 낮은 화면) 에서 제목을 눌러 접고 펼칠 수 있다 (fold = 기억할 이름, shut = 처음에 접힘).
+ * 접혀 있으면 peek (짧은 요약) 를 제목 옆에 보여 준다. PC · 태블릿은 늘 펼침
+ */
+export function Card({ title, action, children, className = '', tour, fold, shut, peek }: { title?: string; action?: React.ReactNode; children: React.ReactNode; className?: string; tour?: string; fold?: string; shut?: boolean; peek?: React.ReactNode }) {
+  const compact = useCompact();
+  const [open, toggle] = useFold(fold, shut);
+  const can = !!fold && !!title && compact;
+  const shown = !can || open;
   return (
-    <section data-tour={tour} className={`panel flex min-h-0 flex-col ${className}`}>
+    <section data-tour={tour} className={`panel flex min-h-0 flex-col ${shown ? className : className.replace(/(^|s)(flex-1|min-h-S+|h-S+)(?=s|$)/g, ' ')}`}>
       {title && (
-        <header className="flex h-11 shrink-0 items-center justify-between px-5 shadow-[inset_0_-1px_0_var(--color-line)]">
-          <h3 className="text-[13px] font-semibold text-mid">{title}</h3>
-          {action}
+        <header className={`flex h-11 shrink-0 items-center justify-between gap-2 px-5 ${shown ? 'shadow-[inset_0_-1px_0_var(--color-line)]' : ''}`}>
+          {can ? (
+            <button onClick={toggle} aria-expanded={open} className="-ml-2 flex h-full min-w-0 flex-1 items-center gap-2 pl-2 text-left">
+              <span className={`shrink-0 text-lo transition-transform ${open ? 'rotate-90' : ''}`}><Icon name="chevron" size={14} /></span>
+              <h3 className="shrink-0 text-[13px] font-semibold text-mid">{title}</h3>
+              {!open && peek != null && <span className="min-w-0 truncate text-[12px] text-lo">{peek}</span>}
+            </button>
+          ) : <h3 className="text-[13px] font-semibold text-mid">{title}</h3>}
+          {shown && action}
         </header>
       )}
-      <div className="min-h-0 flex-1">{children}</div>
+      {shown && <div className="min-h-0 flex-1">{children}</div>}
     </section>
   );
 }

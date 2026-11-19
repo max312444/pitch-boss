@@ -72,12 +72,12 @@ export function FinanceView() {
         <SponsorCard />
 
         <div className="grid gap-4 lg:grid-cols-2">
-          <Card title="이번 시즌 수입">
+          <Card fold="fin.income" title="이번 시즌 수입">
             <div className="px-5 py-3">
               {(Object.keys(INCOME_LABEL) as IncomeKind[]).map((k) => <Bar key={k} label={INCOME_LABEL[k]} v={cur.income[k]} max={maxRow} tone="bg-neon" />)}
             </div>
           </Card>
-          <Card title="이번 시즌 지출">
+          <Card fold="fin.spend" shut title="이번 시즌 지출" peek={money(Object.values(cur.expense).reduce((a, b) => a + (b ?? 0), 0))}>
             <div className="px-5 py-3">
               {(Object.keys(EXPENSE_LABEL) as ExpenseKind[]).map((k) => <Bar key={k} label={EXPENSE_LABEL[k]} v={cur.expense[k] ?? 0} max={maxRow} tone="bg-red" />)}
             </div>
@@ -85,10 +85,10 @@ export function FinanceView() {
         </div>
 
         <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr]">
-          <Card title="잔고 추이" action={<span className="text-[12px] text-lo">매주 월요일 기준</span>}>
+          <Card fold="fin.balance" shut title="잔고 추이" action={<span className="text-[12px] text-lo">매주 월요일 기준</span>}>
             <Trend points={cur.balances} />
           </Card>
-          <Card title="돈은 어떻게 움직이나">
+          <Card fold="fin.how" shut title="돈은 어떻게 움직이나">
             <div className="flex items-end justify-between border-b border-line px-5 py-4">
               <div><div className="text-[12px] text-lo">팬</div><div className="tnum mt-1 text-[20px] font-semibold">{(fans / 1e6).toFixed(2)}M 명</div></div>
               <div className="text-right text-[12px] text-lo">구단 규모 기준 대비 <span className={`tnum font-semibold ${fans >= fanBase ? 'text-neon' : 'text-red'}`}>{fans >= fanBase ? '+' : ''}{(((fans / fanBase) - 1) * 100).toFixed(1)}%</span><br />경기장 · 스폰서 수입 ×{ff.toFixed(2)}</div>
@@ -105,7 +105,7 @@ export function FinanceView() {
           </Card>
         </div>
 
-        <Card title="지난 시즌">
+        <Card fold="fin.last" shut title="지난 시즌">
           {ledger.past.length === 0 ? <div className="px-5 py-6 text-[13px] text-lo">첫 시즌이 끝나면 여기에 기록됩니다</div> : (
             <table className="w-full text-[13px]">
               <thead><tr className="text-left text-[12px] text-lo">{['시즌', '수입', '지출', '손익', '시즌 말 잔고'].map((h, i) => <th key={h} className={`px-5 py-2 font-normal ${i ? 'text-right' : ''}`}>{h}</th>)}</tr></thead>

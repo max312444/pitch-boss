@@ -194,7 +194,7 @@ export function TacticsView() {
           </Card>
         ) : (
           <div className="flex flex-col gap-4 pb-2">
-            <Card title="포메이션">
+            <Card fold="tac.formation" title="포메이션">
               <div className="grid grid-cols-3 gap-2 p-3 sm:grid-cols-5 sm:p-4">
                 {Object.keys(FORMATIONS).filter((f) => !isCustom(f)).map((f) => (
                   <button key={f} onClick={() => changeFormation(f)}
@@ -219,7 +219,7 @@ export function TacticsView() {
                 </div>
               </div>
             </Card>
-            <Card title="팀 성향">
+            <Card fold="tac.style" title="팀 성향">
               <div className="space-y-4 p-4">
                 <div><div className="mb-2 text-[12px] text-lo">공격 · 수비 성향</div>{seg(MENTALITY, t.mentality, (v) => setClubTactics({ mentality: v }))}</div>
                 <div><div className="mb-2 text-[12px] text-lo">압박 강도 — 높으면 상대 기회 ↓, 체력 소모 ↑</div>{seg(PRESSING, t.pressing, (v) => setClubTactics({ pressing: v }))}</div>
@@ -227,7 +227,7 @@ export function TacticsView() {
             </Card>
             <SetPieceCard />
             <TrainingCard />
-            <Card tour="tactics-bench" title={`후보 ${lineup.bench.length}명`}>
+            <Card fold="tac.bench" shut tour="tactics-bench" title={`후보 ${lineup.bench.length}명`}>
               <BenchEditor squad={squad} starters={current} bench={lineup.bench} size={rules.benchSize} onChange={(b) => setLineup(slots.map((_, i) => fixed[i] ?? null), b, true)} />
               <p className="px-5 pb-4 text-[12px] leading-relaxed text-lo">직접 지정하지 않은 자리와 부상 · 징계로 빠진 자리는 체력과 자리 적합도로 자동 선택됩니다. 후보로 정한 선수는 자동 선발에 쓰지 않습니다.</p>
             </Card>
@@ -261,7 +261,7 @@ function SetPieceCard() {
     );
   };
   return (
-    <Card title="세트피스">
+    <Card fold="tac.set" shut title="세트피스">
       <div className="space-y-2 p-4">
         {row('set', '코너킥 · 프리킥', setQ)}
         {row('pen', '페널티킥', penQ)}
@@ -282,7 +282,7 @@ function TrainingCard() {
   const young = club.squad.map((id) => w.players[id]).filter((p) => ageOn(p.birth, w.date) <= 22);
   const avg = young.length ? young.reduce((s, p) => s + (p.dev ?? 0), 0) / young.length : 0;
   return (
-    <Card title="훈련">
+    <Card fold="tac.train" shut title="훈련">
       <div className="space-y-4 p-4">
         <div>
           <div className="mb-2 text-[12px] text-lo">훈련 초점 — 고른 영역 능력치가 더 많이 오릅니다</div>

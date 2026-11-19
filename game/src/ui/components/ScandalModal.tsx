@@ -22,7 +22,7 @@ export function ScandalModal() {
   ];
   return (
     <div className="fixed inset-0 z-[62] grid animate-[fade_0.2s_ease-out] place-items-center bg-ink-950/85 p-2 sm:p-6 backdrop-blur-sm">
-      <div className="panel w-full max-w-[540px] overflow-hidden">
+      <div className="panel w-full max-w-[540px] max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain">
         <div className="px-4 sm:px-7 pt-7 pb-4">
           <div className="flex justify-between text-[12px]"><span className="font-semibold text-red">선수 논란 · {SCANDAL_TITLE[s.kind]}</span><span className="text-lo">게임 속 사건</span></div>
           <h2 className="mt-2 text-[19px] leading-snug font-semibold">{name}{s.kind === 'teammate' && other ? ` · ${other}` : ''}</h2>

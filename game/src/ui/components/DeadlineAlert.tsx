@@ -15,7 +15,7 @@ export function DeadlineAlert() {
   const today = d.left === 0;
   return (
     <div className="fixed inset-0 z-[48] grid animate-[fade_0.2s_ease-out] place-items-center bg-ink-950/80 p-2 sm:p-6 backdrop-blur-sm">
-      <div className="panel w-full max-w-[460px] overflow-hidden">
+      <div className="panel w-full max-w-[460px] max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain">
         <div className="px-6 pt-6 pb-5 text-center">
           <div className={`mx-auto mb-3 inline-flex items-center gap-2 rounded-full px-3 py-1 text-[12px] font-semibold ${today ? 'bg-red/15 text-red' : 'bg-amber/15 text-amber'}`}>
             <span className={`h-2 w-2 rounded-full ${today ? 'bg-red' : 'bg-amber'}`} />{today ? '데드라인 데이' : `D-${d.left}`}

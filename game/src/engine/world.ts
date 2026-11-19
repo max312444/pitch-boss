@@ -233,7 +233,12 @@ export function applyMatch(w: World, f: Fixture, m: MatchState) {
     if (g.side === 'home') hg++; else ag++;
     const diff = g.side === 'home' ? hg - ag : ag - hg;
     if (g.minute >= 75 && (diff === 0 || diff === 1)) log(g.scorer).late++;
+    const sl = log(g.scorer);
+    if ((m[g.side].played[g.scorer]?.from ?? 0) > 0) sl.subG = (sl.subG ?? 0) + 1;
+    if (g.kind === 'pen') sl.pen = (sl.pen ?? 0) + 1;
+    if (g.kind === 'set') { sl.set = (sl.set ?? 0) + 1; if (g.assist) { const al = log(g.assist); al.set = (al.set ?? 0) + 1; } }
   }
+  for (const e of s.errors ?? []) if (e.goal && w.players[e.player]) { const l = log(e.player); l.err = (l.err ?? 0) + 1; }
   for (const [side, opp] of [['home', f.away], ['away', f.home]] as const) {
     if ((w.clubs[opp]?.reputation ?? 0) < 80) continue;
     for (const id of Object.keys(m[side].played)) { const r = s.ratings[id]; if (r != null) { const l = log(id); l.bigN++; l.bigSum += r; } }

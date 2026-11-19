@@ -7,7 +7,7 @@ export function EventResultModal() {
   if (!r) return null;
   return (
     <div className="fixed inset-0 z-[70] grid place-items-center bg-ink-950/85 p-2 sm:p-6 backdrop-blur-sm">
-      <div className="panel w-full max-w-[540px] animate-[fade_0.2s_ease-out] overflow-hidden">
+      <div className="panel w-full max-w-[540px] animate-[fade_0.2s_ease-out] max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain">
         <div className="px-4 sm:px-7 pt-7 pb-5">
           <div className={`text-[12px] font-semibold ${r.tone}`}>{r.tag}</div>
           {r.choice && <h2 className="mt-2 text-[17px] leading-snug font-semibold">{r.choice}</h2>}

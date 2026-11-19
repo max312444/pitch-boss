@@ -23,6 +23,10 @@ import { useState, type ReactNode } from 'react';
 import { clubKo, compKo } from '../../data/db';
 import { useHistory, useWorld } from '../hooks';
 import { Crest } from '../components/Crest';
+import { useCompact } from '../components/fold';
+
+type Pane = 'attr' | 'trait' | 'career';
+const PANES: [Pane, string][] = [['attr', '능력치'], ['trait', '호칭 · 성향'], ['career', '경력 · 평가']];
 
 export interface Spell { from: string; to: string; club: string; seasons: number; apps: number; goals: number; ovr: [number, number] | null }
 
@@ -126,6 +130,10 @@ export function PlayerPanel({ p, age, ko, nation, actions, club, sheet }: { p: P
   const groups = p.pos === 'GK' ? [GK_GROUP, ...ATTR_GROUPS] : ATTR_GROUPS;
   const s = p.stats;
   const apps = s.apps + s.subApps;
+  // 휴대폰: 아래 내용을 탭으로 나눠 짧게 (PC 는 모두 보임)
+  const compact = useCompact();
+  const [pane, setPane] = useState<Pane>('attr');
+  const on = (k: Pane) => !compact || pane === k;
   return (
     <aside key={p.id} className={`panel flex shrink-0 animate-[fade_0.25s_ease-out] flex-col overflow-hidden ${sheet ? `fixed inset-0 z-40 rounded-none border-0 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] lg:static lg:z-auto lg:w-[340px] lg:rounded-xl lg:border lg:p-0 ${sheet.open ? '' : 'hidden lg:flex'}` : 'w-full lg:w-[340px]'}`}>
       {sheet && <button onClick={sheet.onClose} className="flex h-11 shrink-0 items-center gap-2 border-b border-line px-4 text-[14px] text-mid lg:hidden">← 닫기</button>}
@@ -193,7 +201,16 @@ export function PlayerPanel({ p, age, ko, nation, actions, club, sheet }: { p: P
         {p.intlStats?.apps ? <div className="mt-1 text-center text-[11px] text-sky">세계 대회 {p.intlStats.apps}경기 {p.intlStats.goals}골 {p.intlStats.assists}도움</div> : null}
       </div>
 
+      {compact && (
+        <div className="sticky top-0 z-10 flex gap-1 border-b border-line bg-ink-850 px-3 py-2">
+          {PANES.map(([k, label]) => (
+            <button key={k} onClick={() => setPane(k)} aria-pressed={pane === k}
+              className={`h-9 flex-1 rounded-md text-[13px] transition-colors ${pane === k ? 'bg-ink-700 font-semibold text-hi' : 'text-lo'}`}>{label}</button>
+          ))}
+        </div>
+      )}
       <div className="px-5 py-4">
+        {on('attr') && <>
         {p.clubId && (p.dev ?? 0) !== 0 && (
           <div className="mb-3 text-[12px] text-lo">지난달 훈련 성장 <span className={(p.dev ?? 0) > 0.05 ? 'text-neon' : (p.dev ?? 0) < -0.05 ? 'text-red' : 'text-mid'}>{(p.dev ?? 0) > 0.05 ? '↑ 잘 자라는 중' : (p.dev ?? 0) < -0.05 ? '↓ 정체 · 하락' : '→ 보통'}</span> · 오른쪽 작은 숫자는 훈련으로 바뀐 만큼</div>
         )}
@@ -233,8 +250,9 @@ export function PlayerPanel({ p, age, ko, nation, actions, club, sheet }: { p: P
             </div>
           );
         })}
-        <HiddenTraits p={p} />
-        <Traits p={p} />
+        </>}
+        {on('trait') && <><HiddenTraits p={p} /><Traits p={p} /></>}
+        {on('career') && <>
         <Career p={p} />
         {(p.honours?.length || p.boost) ? (
           <div className="mb-5">
@@ -251,6 +269,7 @@ export function PlayerPanel({ p, age, ko, nation, actions, club, sheet }: { p: P
           {pressNotes(p).map((n) => <li key={n} className="flex gap-2"><span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-neon/70" />{n}</li>)}
         </ul>
         <div className="mt-4 text-[12px] text-lo">주급 {money(p.wage)} · 계약 {p.contract ? p.contract.slice(0, 7).replace('-', '.') + (p.contractGen ? ' (게임 설정)' : '') : p.clubId ? '정보 없음' : '없음 (FA)'}{p.clubId && !p.clubId.startsWith('nt-') ? ` · 바이아웃 ${buyoutOf(w, p) ? money(buyoutOf(w, p)) : '없음'}${relClauseOf(w, p) ? ` · 강등 조항 ${money(relClauseOf(w, p))}` : ''}` : ''} · 최근 폼 {p.recentRatings.length ? formAvg(p).toFixed(1) : '–'}{termsLine(w, p, clubKo) && <span className="block text-mid">이적 조건: {termsLine(w, p, clubKo)}</span>}</div>
+        </>}
       </div>
       </div>
       <PhotoCredit id={p.id} />

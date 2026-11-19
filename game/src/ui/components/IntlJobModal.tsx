@@ -14,7 +14,7 @@ export function IntlJobModal() {
   const sacked = job.reason === 'sacked';
   return (
     <div className="fixed inset-0 z-50 grid animate-[fade_0.2s_ease-out] place-items-center bg-ink-950/80 p-3 backdrop-blur-sm">
-      <div className={`panel w-full max-w-[480px] border ${sacked ? 'border-red/50' : 'border-neon/50'} px-5 py-5`}>
+      <div className={`panel max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain w-full max-w-[480px] border ${sacked ? 'border-red/50' : 'border-neon/50'} px-5 py-5`}>
         <div className={`text-[12px] font-semibold ${sacked ? 'text-red' : 'text-neon'}`}>{sacked ? '협회 결정' : '감독 제안'}</div>
         <div className="mt-1 text-[19px] font-semibold">{sacked ? `${nationKo(w.intl!.nation)} 대표팀에서 경질됐습니다` : '다른 나라가 감독으로 모시고 싶어 합니다'}</div>
         <div className="mt-1.5 text-[13px] leading-relaxed text-mid">

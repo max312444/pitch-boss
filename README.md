@@ -122,7 +122,7 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 - 데이터 작성 규칙: [data/DATA_GUIDE.md](data/DATA_GUIDE.md)
 - 테스트: 작업 중에는 **바뀐 부분만** 테스트하고, **전체 테스트(`npm test`)는 커밋 직전에만**. 화면이 바뀌면 **PC · 휴대폰 · 태블릿** 세 가지로 확인.
 - 버전: 큰 변화(새 모드) = 앞자리 (v1 → v2), 기능 추가 +0.1, 수정 +0.0.1. `game/src/version.ts` (GAME_VERSION + CHANGELOG 한 줄) · `game/package.json` · 아래 완료 목록 맨 위 `0. **vX …**`.
-- 커밋 메시지는 `vX 요약` 형식, 끝에 `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`. 커밋 대상은 코드 · `data-public` · `data/canonical/club-aliases.json` · `club-same.json` · `club-reserves.json` 만.
+- 커밋 메시지는 `vX 요약` 형식, 끝에 `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`. 커밋 대상은 코드 · `data-public` · `data/canonical/club-aliases.json` · `club-same.json` · `club-reserves.json` · `club-era.json` 만.
 - 게임 · 문서에 "월드컵" · "FIFA" 같은 실제 대회 · 단체 이름을 쓰지 않는다 (세계 대회). 테스트 코드에도 실제 구단 이름을 쓰지 않는다 (공개 ID 사용). 사진은 올리지 않는다.
 - 모든 구단 (AI 포함) 은 수입을 벌고 예산 안에서만 영입한다. 부자 구단은 더 많이 가지고 시작한다.
 
@@ -137,15 +137,15 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 
 ### ▶ 새 세션은 여기부터: 지금 하던 일 (2026-11-19 기준)
 
-**현재 버전 v2.10.** 이 README 정리 · `fix-league` 명령까지 모두 커밋 · 푸시 완료 (작업 폴더 깨끗함, 실명 데이터는 원래 커밋 안 함).
-진행 중인 일은 **2부 리그 데이터 수집** 하나 (지난 세션의 esp2 · ita2 미리보기는 세션이 끝나며 멈춤 → 다시 돌린다, 캐시가 남아 있어 빠름).
+**현재 버전 v2.11** (호칭 8개 · 기기별 화면 점검 · 휴대폰 접는 카드, 2026-11-19) — 커밋 · 푸시 완료 (실명 데이터는 원래 커밋 안 함).
+진행 중인 일은 **2부 리그 데이터 수집** — esp2 · ita2 끝 (2026-11-19), 다음은 **fra2 미리보기**부터.
 
 | 리그 | 상태 (실명 데이터는 로컬 `data/` 에만, 커밋 안 함) |
 |---|---|
 | ger2 | 완료 (2026-11-10) |
 | eng2 | **완료** — build · names · dedupe · fix-league · unify-names · validate 오류 0 (26시즌 × 24팀) |
-| esp2 | 미리보기 통과 직전 (구단 충돌 다 해결, 아래). **처음부터 다시** 미리보기 → 저장 |
-| ita2 | 미리보기 통과 직전 (구단 충돌 다 해결). **Pordenone 확인 필요**: `nuovo-pordenone-asd` (Nuovo Pordenone 2024 FC ASD) 로 연결됨 — 2019~22 Serie B 의 Pordenone Calcio 가 2024년 재창단 항목으로 잘못 붙은 것인지 확인 → 다르면 `club-aliases.json` 에 QID 로 따로 지정 (합치기 규칙) |
+| esp2 | **완료** (2026-11-19) — 26시즌 × 22팀, validate 오류 0 |
+| ita2 | **완료** (2026-11-19) — 551 구단 시즌 (실제 구단 수와 일치: 03-04 24팀 · 18-19 19팀), validate 오류 0. Pordenone (Q257078) · Ternana (Q8623) 는 한 항목인데 영어 문서 제목만 재창단 이름 → 별칭 `pordenone` · `ternana`. Vicenza 2001~17 이 LR Vicenza 로 잡히던 것 (14-15 · 16-17 은 두 번 들어가 23팀) · A.C. Ancona 0명은 `club-era.json` 으로 바로잡음. 남은 16명 미만 8개 (mantova 24-25 · ternana 17-18 · virtus-entella 25-26 등, 출처 한계 → 유스로 채움) |
 | fra2 | 시작 전 |
 
 리그마다 순서 (미리보기 결과에서 **시즌별 구단 수 · 16명 미만 선수단 · 구단 충돌 · "이름으로 연결한 구단 (확인 필요)"** 을 꼭 볼 것):
@@ -158,7 +158,7 @@ node tools/data_pipeline fix-league --league esp2 --apply   # 동명이인 (나�
 node tools/data_pipeline unify-names --apply            # 같은 선수 이름 표기 통일 (최근 시즌 표기)
 node tools/validate.js                                  # 오류 0 이어야 함 (GK 없음은 경고 — 게임이 유스로 채움)
 ```
-네 리그 (esp2 · ita2 · fra2) 가 끝나면:
+남은 fra2 까지 끝나면:
 ```bash
 node tools/data_pipeline publish --apply   # data-public (가상 이름) 다시 만들기 → 개발 서버 껐다 켜기
 cd game && npm run history                 # 역대 기록 (감독 기록의 cesena → cesena-1 도 여기서 바뀜)
@@ -178,6 +178,8 @@ cd game && npm run history                 # 역대 기록 (감독 기록의 ces
   esp2 저장 뒤 `data/clubs/<B팀>.json` 에 `parent` 가 들어갔는지 확인 (없으면 넣기). 다른 리그에서 B팀 · II팀이 나오면 여기에 추가.
 - 16명 미만 선수단: eng2 2000~2007년 하위권 40곳 (그 시대는 위키백과 선수단 표를 안 쓰고 Wikidata 소속 기록만 — 데이터 한계).
   게임은 시작할 때 포지션 최소 인원을 유스로 채우므로 (`academyFill`) 그대로 둔다.
+- v2.11 에 고친 파이프라인: `fix-league` 가 맞출 생년월일 기준으로도 나이를 봄 (동명이인이 생년월일만 바뀌어 남던 문제), `rename-club` 이 `_league.json` standings 도 바꿈 (cesena 때 ita1 3시즌 standings 가 옛 ID 로 남아 있었음 → 로컬 데이터 고침).
+  `unify-names` 는 여전히 일부 파일을 "줄 형식이 달라 건너뜀" (2013-14 real-sociedad · 2016-17 villarreal) → validate 가 이름 불일치를 잡으면 손으로 맞춘다 (최근 · 다수 표기).
 - 이번에 고친 파이프라인 (v2.10): 잘린 응답 → 종료 연도 구간으로 나눠 받기 (`wikidata.js clubMemberships`), 선수단 틀 `fs player2 (sort)` ·
   `first/last/dab` · `{{sortname}}`, 시즌 순위표가 별도 틀이면 따라가기, 위키백과 명단 나이 필터, 이름으로 추측 연결한 구단 표시,
   `unify.js` 여러 줄 형식, `fix-league` 명령.
@@ -196,7 +198,9 @@ cd game && npm run history                 # 역대 기록 (감독 기록의 ces
 - 데이터에 계약 정보는 약 19%만 있음 → 나머지는 게임이 1~5년 부여 (`contractGen`, 화면에 "게임 설정" 표시).
 - 로컬에서 실명 데이터까지 넣은 `npm run build` 는 메모리 부족 — 배포는 `PUBLIC_ONLY=1` 이라 무관.
 - 점검 스크립트: `npm run fairness` (경기 형평성) · `npm run economy` (FA · 잔고) · `npm run invariants` (여러 시즌 불변 조건).
-  화면 점검용 Playwright 스크립트는 세션 임시 폴더에 두었다가 사라지므로, 필요하면 `game/scripts` 처럼 남는 곳에 새로 만든다
+  화면 점검: `node game/scripts/screens.mjs [출력 폴더]` (개발 서버 켠 상태, `DEVICES=phone,tablet` 로 기기 고르기) — 7기기 (휴대폰 · 휴대폰 가로 · 태블릿 세로/가로 · PC) × 제목 · 새 게임 3모드 · 허브 10탭 · 서랍 · 선수 · 구단 · 경기 준비 · 경기.
+  콘솔 오류 · 가로 넘침 · 화면 밖 요소 · 스크롤해도 가려지는 버튼 · 스크롤해도 닿지 않는 버튼 · 터치 24px 미만 버튼을 찾고 스크린샷을 남긴다 (서랍 메뉴 뒤 버튼 '가려짐'은 정상).
+  그 밖의 Playwright 점검도
   (패턴: `tools/node_modules/playwright-core` + 설치된 Chrome, `localStorage` 에 intro · notice · tutorial · update · dataset=public 넣고,
   `import('/src/store/game.ts')` 로 `useGame.getState().newGame('2025-26', 'eng1', 'c83d96l')`).
 
@@ -205,6 +209,7 @@ cd game && npm run history                 # 역대 기록 (감독 기록의 ces
 > 버전: `game/src/version.ts` (첫 화면 표시). 기능 추가 +0.1 · 작은 수정 +0.0.1, 바꿀 때마다 여기에 적는다.
 > 같은 파일의 `CHANGELOG` 맨 위에 플레이어용 한 줄 요약도 넣는다 → 첫 화면 '업데이트 소식' (새 버전을 처음 본 뒤 24시간 표시, `UpdateNotes.tsx`).
 
+0. **v2.11 호칭 8개 추가 · 기기별 화면 점검** (2026-11-19) — `traits.ts`: 골잡이 (poacher, 경기당 0.5골↑ 12골↑) · 원더키드 (wonderkid, 21세↓ 15경기 평점 7.0↑, `maxAge` 23 넘으면 시즌 말 졸업) · 페널티 장인 (spotkick, PK 골 4↑, `pen` +0.06 → `match.ts` 성공률 상한 0.95) · 세트피스 달인 (setpiece, 세트피스 골+도움 5↑, `set` ×1.12 키커 정확도) · 슈퍼 서브 (supersub, 교체 골 3↑, bench 0.5) · 철인 (ironman, 선발 32↑ 부상 0, injury 0.8) · 노장의 품격 (elder, 33세↑ 20경기 평점 6.9↑) · 실수 제조기 (blunder, 실점 실책 3↑). `TraitLog` subG · pen · set · err (`world.ts` 경기 뒤 기록, 예전 세이브는 없으면 0). excludes 는 양쪽에 적음 (테스트). 화면: `game/scripts/screens.mjs` (아래 남은 과제 참고) 7기기 × 19화면 — 팝업 15개 `max-h-[calc(100dvh-3rem)] overflow-y-auto` (낮은 화면에서 아래 선택지가 잘리던 문제), SquadView 낮은 화면 스크롤 (표 높이 0 이던 문제), MatchPrep 오른쪽 칸 스크롤 · 후보 칸 최소 높이, Sidebar 메인 메뉴 아이콘 `exit`, 태블릿 작은 버튼 `.tap`. 휴대폰 보기: `ui/components/fold.ts` (`useCompact` = 폭 768 미만 또는 높이 500 이하 · `useFold` localStorage `pitchboss.fold`), `Card` 에 `fold` (기억 키) · `shut` (처음 접힘) · `peek` (접혔을 때 요약) — 홈 · 구단 · 재정 · 전술 · 경기 준비 카드 30개 (휴대폰 스크롤 홈 3.4→1.7 · 구단 4.4→2.5 · 재정 3.0→1.8 · 전술/경기 준비 3.5→2.1 화면). PlayerPanel 휴대폰 탭 (능력치 · 호칭 성향 · 경력 평가, 위에 붙음). ScheduleView 열면 다음 경기 위로 자동 스크롤. 데이터 파이프라인: 미리보기에 16명 미만 선수단 목록, `data/canonical/club-era.json` (재창단 구단 시즌별 항목 바로잡기: `use` · `members`).
 0. **v2.10 이적 어필 (역제안) · B팀 승격 규칙 · 2부 리그 수집 준비** (2026-11-18) — `appeal.ts`: `troubleOf` (충성도 55 미만 · 불만 · 벤치 4경기+ · 사가 · 사기 35 미만 · 계약 만료 임박) > 0 인 선수만 어필, 겨룰 주전 = 받는 구단의 같은 포지션 (보조 포지션 포함) 최고 선수, 능력 차 −3~+6 (빈 자리면 팀 전력 ±6), 명성 −5 (갈등 2 이상 −10) 까지. 우리 구단 대상 `appealDay` (이벤트에 `rival`, 받은편지함 `appealWhy`), 다른 구단 대상 `aiAppealDay` (이적시장 중 하루 25%, 날짜 시드 난수라 다른 시스템 난수 순서 그대로, 시세 80% 이적), 우리 선수가 연락하면 그 구단이 `offers` 에 `appeal: true` 제안 (85%, 역제안 95%까지) · 거절하면 충성도 −8 · 사기 −6 (`answerOffer`). B팀: `World.reserves` (B팀 → 모구단, 새 게임 · 불러오기 때 구단 정보 `parent` 로 채움), `pyramid.ts reserveBlocked` — 플레이오프 시드 · 자동 승격 · 승격 채우기에서 제외, 모구단이 2부로 오면 B팀은 대기 리그, `TableView` 승격권 색. 데이터: `data/canonical/club-reserves.json` (B팀 ID → 모구단 ID, build 가 구단 정보에 `parent`, publish 가 공개 ID 로). 파이프라인: `wikidata.js clubMemberships` 잘린 응답이면 종료 연도 구간으로 나눠 받음, `wikipedia.js` 선수단 틀 `fs player2 (sort)` · `first/last/dab` · `{{sortname}}`, 시즌 순위표가 별도 틀이면 항상 따라가 읽음, `build.js` 위키백과 명단도 15세 미만 · 45세 초과 제외 (동명이인 링크), 이름으로 추측 연결한 구단 (exact · suffix · prefix) 을 미리보기에 표시, `unify.js` 여러 줄 형식 파일도 이름 통일, `validate.js` GK 없음은 경고 (게임 시작 때 유스로 채움). 구단 나눔 (합치기 규칙): B팀 7개 · extremadura-1/-2 · cesena-1/-2 (cesena → cesena-1, 공개 ID 유지) · cosenza-1/-2 · granada-74 · universidad-las-palmas. 테스트 `appeal.test.ts` · `pyramid.test.ts` B팀.
 0. **v2.9.5 터치 영역** (2026-11-18) — `styles.css` `.tap` (pointer: coarse 에서 ::after 로 위아래 11px · 좌우 6px 넓힘, absolute · fixed 버튼은 position 유지): SortTh · HomeView ActionLink · 전술 「현재 선발 고정」 「+ 만들기」 · NameEdit ✎ · 새 게임 · 세계 대회 「메인 메뉴」 · 「인트로 다시 보기」 · 스카우트 리그 관찰 · 구단 창 「순위 보기」.
 0. **v2.9.4 전체 점검 · 임대 선수 방출 고침** (2026-11-18) — 점검 항목: 타입 · 테스트 229 · 공개 빌드 (`PUBLIC_ONLY=1`, 로컬 실명 포함 빌드는 메모리 부족 — 배포와 무관), 공개 데이터 실명 유출 0 (세계 대회 풀 24,160명 이름+생일 일치 0). `scripts/invariants.ts` (`npm run invariants -- [시즌] [시드] [시작 연도]`): 매주 두 구단 소속 · clubId 불일치 · 은퇴 선수 · 주급 · 계약 · 체력 · 사기 · 능력치 범위 · 16명 미만 · GK 없음 · 재정 NaN · 지난 경기 결과 · 순위표 (재정 규정 감점 허용) — 2023→2031 8시즌 × 시드 2. 찾은 것: `transfer.ts releasePlayer` 가 임대 선수를 무소속으로 만듦 → 원소속 복귀 (테스트). 승격팀 데이터 14~15명은 며칠 안에 채움. ger2 한 구단 재정 규정 감점 반복 (강등 뒤 매출 ↓ · 주급 그대로 — 현실적). 1부만 있는 리그 (eng1 등)는 데이터가 끝나면 강등 없음 (2부 데이터 필요). 세이브 원본 8시즌 12MB (gzip 저장). 그 밖: 경기 엔진 극단 상황 (체력 0 · 9명 · GK 없음 · 후보 없음) 2만 경기 문제 0, 모드별 3~4시즌 자동 진행 (store) 멈춤 · 예외 0, 투자 인수 조건 실패 → 해임 → 새 구단 확인, 사용자 행동 21가지 (영입 · 방출 · 재계약 · 저장/불러오기 · 하프타임 배치 · 교체) 예외 0, 6개 기기 × 35 화면 오류 · 가로 넘침 · 누를 수 없는 버튼 0 (휴대폰 글자 버튼 높이 18px 만).

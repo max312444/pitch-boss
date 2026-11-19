@@ -21,9 +21,10 @@ for (const x of files) {
   const j = JSON.parse(x.raw); const start = new Date(+x.s.slice(0, 4) + '-08-01');
   const keep = []; const gone = new Set(); const rebirth = new Map();
   for (const pl of j.squad) {
-    const age = (start - new Date(pl.birth)) / 31557600000;
-    const idYear = +((pl.id.match(/-(\d{4})(?:-\d+)?$/) || [])[1] || 0);
     const refB = ref.get(pl.id);
+    // 다른 리그 기록에 맞출 생년월일로도 나이를 본다 (동명이인이 그 선수 ID 로 잘못 연결된 경우)
+    const age = (start - new Date(refB ?? pl.birth)) / 31557600000;
+    const idYear = +((pl.id.match(/-(\d{4})(?:-\d+)?$/) || [])[1] || 0);
     const birthOk = refB ? true : (!idYear || idYear === +pl.birth.slice(0, 4));
     if (age < 15 || age > 45 || !birthOk) { del++; gone.add(pl.id); dels.push(`${x.s}/${x.l}/${path.basename(x.p)} ${pl.id} ${pl.birth}`); continue; }
     if (refB && refB !== pl.birth) { rebirth.set(pl.id, refB); pl.birth = refB; fixB++; }

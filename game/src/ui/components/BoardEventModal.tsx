@@ -39,7 +39,7 @@ export function BoardEventModal() {
   const t = boardEventText(w, ev.kind, ev.player);
   return (
     <div className="fixed inset-0 z-[65] grid animate-[fade_0.2s_ease-out] place-items-center bg-ink-950/85 p-2 sm:p-6 backdrop-blur-sm">
-      <div className="panel w-full max-w-[540px] overflow-hidden">
+      <div className="panel w-full max-w-[540px] max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain">
         <div className="px-4 sm:px-7 pt-7 pb-4">
           <div className="text-[12px] font-semibold text-amber">{boardTag(ev.kind)}</div>
           <h2 className="mt-1 text-[19px] leading-snug font-semibold">{t.title}</h2>

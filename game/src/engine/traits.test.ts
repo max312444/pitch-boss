@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { advanceDay, createWorld, seasonOver, type SeasonInput } from './world';
 import { closeSeason } from './season';
-import { seedTraits, TRAIT, traitMul, traitSeasonEnd } from './traits';
+import { seedTraits, TRAIT, TRAITS, traitMul, traitPen, traitSeasonEnd } from './traits';
 import { createRng } from './rng';
 import { attr, overall } from './ratings';
 import type { ClubSeasonFile, LeagueSeasonFile } from '../data/types';
@@ -41,7 +41,23 @@ describe('호칭 (리버풀 2025/26)', () => {
     p.traits = ['maestro', 'glass'];
     expect(attr(p, 'pas')).toBe(before + 2);
     expect(traitMul(p, 'injury')).toBe(1.5);
+    p.traits = ['spotkick', 'setpiece'];
+    expect(traitPen(p)).toBeCloseTo(0.06);
+    expect(traitMul(p, 'set')).toBeCloseTo(1.12);
     p.traits = [];
+  });
+
+  it('같이 가질 수 없는 호칭은 양쪽에 적혀 있다', () => {
+    for (const t of TRAITS) for (const x of t.excludes ?? []) expect(TRAIT.get(x)?.excludes ?? [], `${t.id} ↔ ${x}`).toContain(t.id);
+  });
+
+  it('원더키드는 23세가 넘으면 시즌 말에 사라진다', () => {
+    const w = createWorld(loadSeason('2025-26', 'eng1'), LIVERPOOL, 3);
+    const p = w.players[w.clubs[LIVERPOOL].squad[0]];
+    p.birth = '1990-01-01';
+    p.traits = ['wonderkid'];
+    traitSeasonEnd(w, createRng(1));
+    expect(p.traits).not.toContain('wonderkid');
   });
 });
 

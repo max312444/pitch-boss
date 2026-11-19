@@ -21,7 +21,7 @@ const DEAL_HINT: Record<Deal, string> = {
 function Shell({ title, sub, onClose, children }: { title: string; sub: string; onClose: () => void; children: React.ReactNode }) {
   return (
     <div className="fixed inset-0 z-50 grid animate-[fade_0.2s_ease-out] place-items-center bg-ink-950/80 p-2 sm:p-6 backdrop-blur-sm" onClick={onClose}>
-      <div className="panel w-full max-w-[520px] overflow-hidden" onClick={(e) => e.stopPropagation()}>
+      <div className="panel w-full max-w-[520px] max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain" onClick={(e) => e.stopPropagation()}>
         <header className="flex items-start justify-between border-b border-line px-6 py-4">
           <div><div className="text-[16px] font-semibold">{title}</div><div className="mt-0.5 text-[12px] text-lo">{sub}</div></div>
           <button onClick={onClose} className="h-9 shrink-0 rounded-lg px-3 text-[13px] text-mid ring-1 ring-line transition-colors hover:text-hi">닫기</button>

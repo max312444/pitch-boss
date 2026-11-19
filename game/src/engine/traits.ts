@@ -38,6 +38,12 @@ export interface TraitDef {
   spread?: number;
   /** 연속 벤치 때 충성도 하락 배수 */
   bench?: number;
+  /** 페널티 성공률 보정 (더하기) */
+  pen?: number;
+  /** 세트피스 키커 정확도 배수 */
+  set?: number;
+  /** 이 나이를 넘으면 시즌 말에 사라짐 (원더키드) */
+  maxAge?: number;
   permanent?: boolean;
   /** 시즌 말에만 판정 (매달 판정 안 함) */
   seasonOnly?: boolean;
@@ -52,8 +58,12 @@ export interface TraitDef {
 }
 
 /** 시즌 행동 기록 (시즌마다 초기화) */
-export interface TraitLog { inj: number; late: number; bigN: number; bigSum: number }
-export const emptyLog = (): TraitLog => ({ inj: 0, late: 0, bigN: 0, bigSum: 0 });
+export interface TraitLog {
+  inj: number; late: number; bigN: number; bigSum: number;
+  /** 교체로 들어가 넣은 골 · 페널티 골 · 세트피스 골/도움 · 실점으로 이어진 실책 (예전 세이브에는 없음) */
+  subG?: number; pen?: number; set?: number; err?: number;
+}
+export const emptyLog = (): TraitLog => ({ inj: 0, late: 0, bigN: 0, bigSum: 0, subG: 0, pen: 0, set: 0, err: 0 });
 
 const per = (n: number, apps: number) => (apps ? n / apps : 0);
 const bigAvg = (p: PlayerState) => (p.tlog && p.tlog.bigN ? p.tlog.bigSum / p.tlog.bigN : 0);
@@ -68,7 +78,7 @@ export const TRAITS: TraitDef[] = [
   { id: 'oneclub', ko: '원클럽맨', kind: 'positive', permanent: true, how: '1부 리그 데뷔 구단에서만 6시즌 이상',
     plus: '충성도 최대', check: (_p, c) => c.oneClub && c.clubSeasons >= 6,
     seed: (_p, s) => s.oneClub && s.exp >= 7 },
-  { id: 'pro', ko: '프로페셔널', kind: 'positive', how: '부상 · 퇴장 없이 많이 뛰며 평점이 꾸준함 · 나이가 들어도 기량 유지', excludes: ['trouble', 'glass', 'decline'],
+  { id: 'pro', ko: '프로페셔널', kind: 'positive', how: '부상 · 퇴장 없이 많이 뛰며 평점이 꾸준함 · 나이가 들어도 기량 유지', excludes: ['trouble', 'glass', 'decline', 'blunder'],
     plus: '경기 기복이 작아짐', spread: 0.85,
     check: (p, c) => c.apps >= 20 && (p.tlog?.inj ?? 0) === 0 && p.stats.red === 0 && p.stats.yellow <= 3 && c.avg >= 7.0,
     seed: (_p, s) => s.age >= 31 && s.exp >= 8 && s.ovr >= s.peak - 3 && s.ovr >= 78 },
@@ -82,6 +92,28 @@ export const TRAITS: TraitDef[] = [
     check: (p, c) => p.stats.apps >= 20 && a(p, 'sta') >= 75 && a(p, 'tac') >= 65 && c.avg >= 6.8 && c.group !== 'GK',
     style: (p, g, s) => g !== 'GK' && a(p, 'sta') >= 82 - s && a(p, 'tac') >= 72 - s,
     seed: (p, s) => s.exp >= 4 && (s.group === 'MF' || s.group === 'DF') && a(p, 'sta') >= 86 - s.b && a(p, 'tac') >= 78 - s.b },
+  { id: 'spotkick', ko: '페널티 장인', kind: 'positive', how: '한 시즌에 페널티 골을 4골 이상',
+    plus: '페널티 성공률 ↑', pen: 0.06,
+    check: (p) => (p.tlog?.pen ?? 0) >= 4,
+    style: (p, g, s) => g !== 'GK' && a(p, 'sho') >= 82 - s && a(p, 'com') >= 82 - s,
+    seed: (p, s) => s.exp >= 5 && s.group !== 'GK' && a(p, 'sho') >= 86 - s.b && a(p, 'com') >= 88 - s.b },
+  { id: 'setpiece', ko: '세트피스 달인', kind: 'positive', how: '코너킥 · 프리킥으로 골과 도움을 많이 만듦',
+    plus: '세트피스 킥 정확도 ↑', set: 1.12,
+    check: (p) => (p.tlog?.set ?? 0) >= 5,
+    style: (p, g, s) => g !== 'GK' && a(p, 'pas') >= 82 - s,
+    seed: (p, s) => s.exp >= 4 && s.group !== 'GK' && a(p, 'pas') >= 88 - s.b && a(p, 'vis') >= 84 - s.b && a(p, 'sho') >= 78 - s.b },
+  { id: 'supersub', ko: '슈퍼 서브', kind: 'positive', how: '교체로 들어가 골을 여러 번 넣음',
+    plus: '벤치에 있어도 불만이 덜 쌓임 · 침착성 +1', attrs: { com: 1 }, bench: 0.5,
+    check: (p) => (p.tlog?.subG ?? 0) >= 3 },
+  { id: 'ironman', ko: '철인', kind: 'positive', how: '한 시즌 거의 모든 리그 경기를 부상 없이 선발 출전', excludes: ['glass'],
+    plus: '부상 확률 ↓ · 체력 +1', attrs: { sta: 1 }, injury: 0.8,
+    check: (p) => p.stats.apps >= 32 && (p.tlog?.inj ?? 0) === 0,
+    style: (p, _g, s) => a(p, 'sta') >= 75 - s && p.hidden.injuryProne <= 12 },
+  { id: 'elder', ko: '노장의 품격', kind: 'positive', how: '33세가 넘어서도 주전으로 좋은 평점', excludes: ['decline'],
+    plus: '침착성 · 위치 선정 +1', attrs: { com: 1, pos: 1 },
+    check: (_p, c) => c.age >= 33 && c.apps >= 20 && c.avg >= 6.9,
+    style: (p, _g, s) => overall(p) >= 76 - s,
+    seed: (_p, s) => s.age >= 33 && s.exp >= 8 && s.ovr >= s.peak - 4 && s.ovr >= 76 - s.b },
 
   // ── 양날의 검 ──
   { id: 'captain', ko: '캡틴', kind: 'double', how: '경험 많은 리더 · 라커룸의 중심',
@@ -104,7 +136,7 @@ export const TRAITS: TraitDef[] = [
     check: (p) => (p.tlog?.late ?? 0) >= 3,
     style: (p, g, s) => g !== 'GK' && a(p, 'sho') >= 85 - s && a(p, 'com') >= 85 - s,
     seed: (p, s) => s.exp >= 4 && (s.group === 'FW' || s.group === 'MF') && a(p, 'sho') >= 87 - s.b && a(p, 'com') >= 87 - s.b },
-  { id: 'wall', ko: '철벽', kind: 'double', how: '수비수 · 골키퍼로 무실점 경기를 많이 쌓음',
+  { id: 'wall', ko: '철벽', kind: 'double', how: '수비수 · 골키퍼로 무실점 경기를 많이 쌓음', excludes: ['blunder'],
     plus: '위치 선정 +2', minus: '패스 −1', attrs: { pos: 2, pas: -1 },
     check: (p, c) => (c.group === 'DF' || c.group === 'GK') && p.stats.cleanSheets >= 9,
     style: (p, g, s) => (g === 'DF' && a(p, 'pos') >= 84 - s && a(p, 'tac') >= 82 - s) || (g === 'GK' && a(p, 'ref') >= 85 - s && a(p, 'pos') >= 82 - s),
@@ -114,23 +146,35 @@ export const TRAITS: TraitDef[] = [
     check: (p, c) => p.stats.apps >= 22 && p.stats.subApps <= 1 && a(p, 'sta') >= 86 && c.group !== 'GK',
     style: (p, g, s) => g !== 'GK' && a(p, 'sta') >= 86 - s,
     seed: (p, s) => s.exp >= 3 && s.group !== 'GK' && a(p, 'sta') >= 91 - s.b },
+  { id: 'poacher', ko: '골잡이', kind: 'double', how: '경기당 0.5골 넘게 꾸준히 득점',
+    plus: '슈팅 +2 · 침착성 +1', minus: '패스 · 태클 −1', attrs: { sho: 2, com: 1, pas: -1, tac: -1 },
+    check: (p, c) => c.group !== 'GK' && p.stats.goals >= 12 && per(p.stats.goals, c.apps) >= 0.5,
+    style: (p, g, s) => (g === 'FW' || g === 'MF') && a(p, 'sho') >= 85 - s,
+    seed: (p, s) => s.exp >= 3 && s.group === 'FW' && a(p, 'sho') >= 88 - s.b && a(p, 'com') >= 84 - s.b },
+  { id: 'wonderkid', ko: '원더키드', kind: 'double', how: '21세 이하로 주전 자리를 꿰차고 높은 평점', maxAge: 23,
+    plus: '드리블 · 빠르기 +1', minus: '경기 기복이 조금 커짐', attrs: { dri: 1, pac: 1 }, spread: 1.1,
+    check: (_p, c) => c.age <= 21 && c.apps >= 15 && c.avg >= 7.0,
+    seed: (_p, s) => s.age <= 20 && s.ovr >= 78 },
   { id: 'badboy', ko: '악동', kind: 'double', how: '거친 플레이와 공격 포인트를 함께 쌓음',
     plus: '슈팅 · 몸싸움 +1', minus: '카드 확률 ↑ · 침착성 −2', attrs: { sho: 1, str: 1, com: -2 }, card: 1.4,
     check: (p, c) => c.apps >= 10 && per(p.stats.yellow + p.stats.red * 3, c.apps) >= 0.28 && per(p.stats.goals + p.stats.assists, c.apps) >= 0.35 },
 
   // ── 완전 부정 (게임 진행 중에만 생김) ──
-  { id: 'decline', ko: '하락세', kind: 'negative', seasonOnly: true, how: '전성기가 지나 기량이 눈에 띄게 떨어짐', excludes: ['pro'],
+  { id: 'decline', ko: '하락세', kind: 'negative', seasonOnly: true, how: '전성기가 지나 기량이 눈에 띄게 떨어짐', excludes: ['pro', 'elder'],
     minus: '경기 기복 ↑ · 침착성 −1', attrs: { com: -1 }, spread: 1.15,
     check: (_p, c) => c.age >= 30 && c.ovr <= c.peak - 6 },
   { id: 'trouble', ko: '트러블메이커', kind: 'negative', how: '경고 · 퇴장이 반복됨', excludes: ['pro'],
     minus: '카드 확률 크게 ↑ · 침착성 −1', attrs: { com: -1 }, card: 1.6,
     check: (p, c) => c.apps >= 8 && (p.stats.red >= 2 || per(p.stats.yellow, c.apps) >= 0.4) },
-  { id: 'glass', ko: '유리몸', kind: 'negative', how: '한 시즌에 부상이 반복됨', excludes: ['pro'],
+  { id: 'glass', ko: '유리몸', kind: 'negative', how: '한 시즌에 부상이 반복됨', excludes: ['pro', 'ironman'],
     minus: '부상 확률 ↑', injury: 1.5, check: (p) => (p.tlog?.inj ?? 0) >= 3 },
   { id: 'bottler', ko: '새가슴', kind: 'negative', how: '큰 경기마다 부진', excludes: ['bigman'],
     minus: '큰 경기 컨디션 ↓', big: -0.03, check: (p, c) => (p.tlog?.bigN ?? 0) >= 5 && c.apps >= 12 && bigAvg(p) <= c.avg - 0.6 },
   { id: 'flop', ko: '먹튀', kind: 'negative', how: '고액 이적 후 오래 부진',
     minus: '사기 ↓', check: (p, c) => (p.lastFee ?? 0) >= 40e6 && c.apps >= 12 && c.avg < 6.6 },
+  { id: 'blunder', ko: '실수 제조기', kind: 'negative', how: '실점으로 이어지는 실책을 반복', excludes: ['pro', 'wall'],
+    minus: '침착성 −2 · 경기 기복 ↑', attrs: { com: -2 }, spread: 1.08,
+    check: (p, c) => c.apps >= 10 && (p.tlog?.err ?? 0) >= 3 },
 ];
 export const TRAIT = new Map(TRAITS.map((t) => [t.id, t]));
 export const MAX_TRAITS = 3;
@@ -142,10 +186,15 @@ export function traitAttr(p: PlayerState, k: AttrKey): number {
   for (const id of p.traits) s += TRAIT.get(id)?.attrs?.[k] ?? 0;
   return s;
 }
-export function traitMul(p: PlayerState, key: 'card' | 'injury' | 'spread' | 'bench'): number {
+export function traitMul(p: PlayerState, key: 'card' | 'injury' | 'spread' | 'bench' | 'set'): number {
   let m = 1;
   for (const id of p.traits) m *= TRAIT.get(id)?.[key] ?? 1;
   return m;
+}
+export function traitPen(p: PlayerState): number {
+  let s = 0;
+  for (const id of p.traits) s += TRAIT.get(id)?.pen ?? 0;
+  return s;
 }
 export function traitForm(p: PlayerState, bigMatch: boolean): number {
   let f = 0;
@@ -259,6 +308,10 @@ export function traitSeasonEnd(w: World, rng: Rng): string[] {
       const t = TRAIT.get(id);
       if (!t) return false;
       if (t.permanent) return true;
+      if (t.maxAge != null && c.age > t.maxAge) {
+        if (mine) notes.push(`{p:${p.id}} — 「${t.ko}」 시절을 졸업했습니다 (${c.age}세)`);
+        return false;
+      }
       if (t.id === 'decline') {
         if (c.ovr < c.peak - 3) return true;
         if (mine) notes.push(`{p:${p.id}} — 기량을 되찾아 「하락세」에서 벗어났습니다`);

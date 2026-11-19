@@ -9,6 +9,7 @@ const PATHS: Record<string, string> = {
   transfers: 'M5 8h13l-3.5-3.5M19 16H6l3.5 3.5',
   finance: 'M4 19V9M10 19V5M16 19v-7M21 19H3',
   club: 'M12 3 4.5 6v5.5c0 4.4 3.1 8.2 7.5 9.5 4.4-1.3 7.5-5.1 7.5-9.5V6z',
+  exit: 'M14 4H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h8M10 12h10M17 8.5 20.5 12 17 15.5',
   search: 'M10.5 17a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13zM15.3 15.3 20 20',
   arrow: 'M5 12h13M13 6l6 6-6 6',
   chevron: 'm9 6 6 6-6 6',

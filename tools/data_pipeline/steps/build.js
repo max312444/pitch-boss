@@ -16,6 +16,7 @@ const nationCodes = new Set(JSON.parse(fs.readFileSync(path.join(__dirname, '..'
 const { CLUBS_FILE } = require('./clubs');
 const model = require('./model');
 
+const ERA_FILE = path.join(CANONICAL_DIR, 'club-era.json');       // 시즌별 구단 항목 바로잡기 (재창단 구단)
 const ALIASES_FILE = path.join(CANONICAL_DIR, 'club-aliases.json'); // { "정규화된 위키백과 제목": "club-id" }
 // 같은 구단이 시대별로 Wikidata 항목이 나뉜 경우 (사람이 확인한 것만): 여러 항목이 같은 ID로 연결돼도 허용하고 소속 기록을 합친다
 const SAME_FILE = path.join(CANONICAL_DIR, 'club-same.json'); // ["club-id", ...]
@@ -186,7 +187,16 @@ async function buildLeague({ league, apply, overwrite, seasonFilter, log }) {
     missingSeasons = missingSeasons.filter(s => (bySeason.get(s)?.teams.length ?? 0) < 16);
   }
   for (const s of [...bySeason.keys()]) if (bySeason.get(s).teams.length < 16) bySeason.delete(s);
+  // 재창단 구단: 옛 시즌이 새 항목으로 잡혔으면 그 시대 항목으로 (club-era.json use)
+  const era = readJson(ERA_FILE, {});
+  for (const [season, s] of bySeason) {
+    const fixed = s.teams.map((t) => { const e = era[t.qid]; return e?.use && season <= e.until ? (known.get(e.use) ?? { qid: e.use, enwiki: null, label: e.use }) : t; });
+    const moved = fixed.filter((t, i) => t !== s.teams[i]);
+    const uniq = fixed.filter((t, i) => fixed.findIndex((x) => x.qid === t.qid) === i);   // 두 항목이 다 올라 있던 시즌은 하나로
+    if (moved.length) { bySeason.set(season, { ...s, teams: uniq }); if (uniq.length < fixed.length) log(`  ${season}: 같은 구단 두 항목 → 하나로 (${fixed.length} → ${uniq.length}개)`); log(`  ${season}: 시대 항목으로 바꿈 ${s.teams.filter((t, i) => t !== fixed[i]).map((t) => t.qid).join(', ')} → ${moved.map((t) => t.qid).join(', ')}`); }
+  }
   const seasons = [...bySeason.keys()].sort();
+  log(`  시즌별 구단 수: ${seasons.map((x) => `${x.slice(2, 4)}:${bySeason.get(x).teams.length}`).join(' ')}`);
   log(`  시즌 ${seasons.length}개${missingSeasons.length ? ` · 참가 구단 정보 없음: ${missingSeasons.join(', ')}` : ''}`);
 
   // ② 구단 ID 연결
@@ -227,6 +237,7 @@ async function buildLeague({ league, apply, overwrite, seasonFilter, log }) {
   for (const [q, id] of teamIds) {
     memberships[id] = [...(memberships[id] ?? []), ...await wikidata.clubMemberships(q)];
     if (parents[q]) memberships[id].push(...await wikidata.clubMemberships(parents[q].qid));
+    if (era[q]?.members) memberships[id].push(...await wikidata.clubMemberships(era[q].members));
   }
 
   // ④ 시즌별 후보 선수 → 신상 조회
@@ -404,6 +415,8 @@ async function buildLeague({ league, apply, overwrite, seasonFilter, log }) {
 
   const sizes = outputs.map(o => o.file.squad.length).sort((a, b) => a - b);
   log(`⑤ 구단 시즌 ${stats.clubSeasons}개 · 선수 항목 ${stats.players}개 (선수단 크기 최소 ${sizes[0]} · 중간 ${sizes[sizes.length >> 1]} · 최대 ${sizes[sizes.length - 1]})`);
+  const small = outputs.filter(o => o.file.squad.length < 16).sort((a, b) => a.file.squad.length - b.file.squad.length);
+  if (small.length) log(`  16명 미만 선수단 ${small.length}개: ${small.map(o => `${o.season} ${o.club}(${o.file.squad.length})`).join(', ')}`);
   log(`  기존 ID 재사용 ${stats.reusedIds} · 새 ID ${stats.newIds} · 검토 표시 ${stats.verify} · 제외 ${JSON.stringify(stats.excluded)}`);
 
   if (!apply) return { stats, outputs, missingSeasons, preview: true };

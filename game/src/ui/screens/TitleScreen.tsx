@@ -163,7 +163,7 @@ export function TitleScreen() {
 
       {loadOpen && (
         <div className="fixed inset-0 z-50 grid animate-[fade_0.2s_ease-out] place-items-center bg-ink-950/80 p-2 sm:p-8 backdrop-blur-sm" onClick={() => setLoadOpen(false)}>
-          <div className="panel w-full max-w-[520px] overflow-hidden" onClick={(e) => e.stopPropagation()}>
+          <div className="panel w-full max-w-[520px] max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain" onClick={(e) => e.stopPropagation()}>
             <header className="flex items-center justify-between border-b border-line px-6 py-4">
               <h2 className="text-[15px] font-semibold">불러오기</h2>
               <button onClick={() => setLoadOpen(false)} className="h-9 shrink-0 rounded-lg px-3 text-[13px] text-mid ring-1 ring-line transition-colors hover:text-hi">닫기</button>

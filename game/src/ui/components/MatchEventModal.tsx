@@ -13,7 +13,7 @@ export function MatchEventModal({ ev, players }: { ev: MatchEvent; players: Reco
   const tone = ev.kind === 'penAgainst' || ev.kind === 'knock' ? 'border-amber/60' : 'border-neon/60';
   return (
     <div className="fixed inset-0 z-50 grid animate-[fade_0.2s_ease-out] place-items-end bg-ink-950/70 p-3 backdrop-blur-sm sm:place-items-center">
-      <div className={`panel w-full max-w-[460px] border ${tone} px-5 py-5`}>
+      <div className={`panel max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain w-full max-w-[460px] border ${tone} px-5 py-5`}>
         <div className="flex items-baseline justify-between">
           <div className="text-[18px] font-semibold">{ev.title}</div>
           <div className="tnum text-[12px] text-lo">{ev.minute}'</div>

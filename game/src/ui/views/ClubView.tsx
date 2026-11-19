@@ -109,7 +109,7 @@ export function ClubView() {
 
       <div className="grid grid-cols-1 items-start gap-6 xl:grid-cols-3">
         <div className="flex flex-col gap-6">
-          <Card title="우승 기록">
+          <Card fold="club.honours" shut title="우승 기록">
             <div className="divide-y divide-line">
               {trophyRows.map((r) => (
                 <div key={r.label} className="px-5 py-3.5">
@@ -131,7 +131,7 @@ export function ClubView() {
             </div>
           </Card>
 
-          <Card title="구단 정보">
+          <Card fold="club.info" title="구단 정보">
             <div className="space-y-4 px-5 py-4 text-[13px]">
               <Facility kind="training" />
               <Facility kind="youth" />
@@ -148,7 +148,7 @@ export function ClubView() {
           </Card>
         </div>
 
-        <Card title="시즌별 순위" action={<span className="text-[11px] text-lo">{real === null ? '불러오는 중…' : `${places.length}시즌`}</span>}>
+        <Card fold="club.seasons" shut title="시즌별 순위" action={<span className="text-[11px] text-lo">{real === null ? '불러오는 중…' : `${places.length}시즌`}</span>}>
           <PlaceChart places={places} />
           <div className="max-h-[520px] overflow-auto">
             {[...places].reverse().map((p) => {
@@ -173,7 +173,7 @@ export function ClubView() {
         <div className="flex flex-col gap-6">
           <MyManagerCard />
           <ManagerCard />
-          <Card title="이사회 기대">
+          <Card fold="club.board" shut title="이사회 기대" peek={o.goal}>
             <div className="px-5 py-5">
               <div className="text-[20px] font-semibold">{o.goal}</div>
               <div className="text-[13px] text-mid">{o.detail} · 주전 전력 {rank}위 / {ids.length}</div>
@@ -182,7 +182,7 @@ export function ClubView() {
               </div>
             </div>
           </Card>
-          <Card title="재정 요약">
+          <Card fold="club.finance" shut title="재정 요약">
             <div className="grid grid-cols-2 gap-4 px-5 py-5">
               <Stat k="잔고" v={signed(club.finance.balance)} warn={club.finance.balance < 0} />
               <Stat k="연 매출 (기준)" v={club.finance.revenue ? money(club.finance.revenue) : '–'} />
@@ -278,7 +278,7 @@ function ClubRecords({ w, club }: { w: World; club: string }) {
     </div>
   );
   return (
-    <Card title="구단 역대 기록" action={<span className="text-[11px] text-lo">게임 속 · 리그 + 컵</span>}>
+    <Card fold="club.records" shut title="구단 역대 기록" action={<span className="text-[11px] text-lo">게임 속 · 리그 + 컵</span>}>
       <div className="grid grid-cols-2 gap-5 px-5 py-4"><List k="apps" unit="경기" /><List k="goals" unit="골" /></div>
     </Card>
   );

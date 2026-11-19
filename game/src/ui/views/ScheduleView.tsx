@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { Fixture, World } from '../../engine/types';
 import { clubKo, playerKo } from '../../data/db';
 import { allFixtures } from '../../engine/world';
@@ -21,17 +21,24 @@ export function ScheduleView() {
   const list = userFixtures(w);
   const [open, setOpen] = useState<string | null>(null);
   const sel = list.find((f) => f.id === open) ?? null;
+  // 열면 다음 경기 바로 위로 (지난 경기 2개가 보이게)
+  const box = useRef<HTMLDivElement>(null);
+  const nextId = list.find((f) => !f.result)?.id;
+  useEffect(() => {
+    const el = box.current?.querySelector<HTMLElement>('[data-next]');
+    if (box.current && el) box.current.scrollTop = Math.max(0, el.offsetTop - el.offsetHeight * 2);
+  }, [nextId]);
 
   return (
     <div className="flex h-full gap-5 p-3 lg:p-6">
-      <div className="panel min-w-0 flex-1 overflow-auto">
+      <div ref={box} className="panel relative min-w-0 flex-1 overflow-auto">
         {list.map((f) => {
           const home = f.home === w.userClubId;
           const opp = home ? f.away : f.home;
           const r = resultFor(f, w.userClubId);
           const today = f.date === w.date && !f.result;
           return (
-            <button key={f.id} onClick={() => f.result && setOpen(f.id)}
+            <button key={f.id} data-next={f.id === nextId ? '' : undefined} onClick={() => f.result && setOpen(f.id)}
               className={`relative flex h-12 w-full items-center gap-2.5 px-4 text-left text-[14px] sm:gap-4 sm:px-5 shadow-[inset_0_-1px_0_var(--color-line)] transition-colors ${
                 open === f.id ? 'bg-neon-ghost' : today ? 'bg-ink-800' : `${kind(f) !== 'league' ? 'bg-ink-850' : ''} ${f.result ? 'hover:bg-ink-800' : ''}`}`}>
               <span className={`absolute top-1.5 bottom-1.5 left-0 w-1 rounded-r ${COMP_TONE[kind(f)].bar}`} />

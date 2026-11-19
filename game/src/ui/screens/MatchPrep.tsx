@@ -109,7 +109,7 @@ export function MatchPrep() {
         {sel != null && <div className="fixed inset-0 z-30 bg-ink-950/60 lg:hidden" onClick={() => setSel(null)} />}
         {/* 왼쪽: 상대 분석 */}
         <div className="order-3 flex shrink-0 flex-col gap-4 lg:order-none lg:min-h-0 lg:shrink lg:overflow-auto">
-          <Card title="전력 비교">
+          <Card fold="prep.power" title="전력 비교">
             <div className="space-y-3 px-5 py-4">
               {([[w.userClubId, myStr], [oppId, oppStr]] as const).map(([c, v]) => (
                 <div key={c} className="flex items-center gap-3">
@@ -121,7 +121,7 @@ export function MatchPrep() {
               ))}
             </div>
           </Card>
-          <Card title={`상대 · ${clubKo(oppId)}`}>
+          <Card fold="prep.opp" shut title={`상대 · ${clubKo(oppId)}`}>
             <div className="px-5 py-4">
               <div className="mb-3"><ManagerLine clubId={oppId} compact /></div>
               <div className="flex items-center justify-between text-[13px]"><span className="text-lo">예상 포메이션</span><span className="tnum font-semibold">{oppPlan.tactics.formation}</span></div>
@@ -174,7 +174,7 @@ export function MatchPrep() {
         </div>
 
         {/* 오른쪽: AI 추천 · 전술 · 후보 / 선수 선택 */}
-        <div className="order-2 flex shrink-0 flex-col gap-4 lg:order-none lg:min-h-0 lg:shrink">
+        <div className="order-2 flex shrink-0 flex-col gap-4 lg:order-none lg:min-h-0 lg:shrink lg:overflow-auto lg:*:shrink-0">
           {sel != null ? (
             <Card title={`${slots[sel]} 자리에 넣을 선수`} action={<button onClick={() => setSel(null)} className="h-8 rounded-lg px-3 text-[12px] text-mid ring-1 ring-line hover:text-hi">닫기</button>} className="min-h-0 flex-1 max-lg:fixed max-lg:inset-x-0 max-lg:bottom-0 max-lg:z-40 max-lg:max-h-[78dvh] max-lg:rounded-b-none max-lg:pb-[env(safe-area-inset-bottom)] max-lg:shadow-2xl">
               <div className="h-full overflow-auto">
@@ -203,12 +203,12 @@ export function MatchPrep() {
             </Card>
           ) : (
             <>
-              <Card title="AI 추천" action={changed ? <button onClick={resetDraft} className="text-[12px] text-lo transition-colors hover:text-hi">AI 추천으로 되돌리기</button> : <span className="text-[12px] text-neon">적용 중</span>}>
+              <Card fold="prep.ai" shut title="AI 추천" action={changed ? <button onClick={resetDraft} className="text-[12px] text-lo transition-colors hover:text-hi">AI 추천으로 되돌리기</button> : <span className="text-[12px] text-neon">적용 중</span>}>
                 <ul className="space-y-2 px-5 py-4 text-[13px]">
                   {m.rec.reasons.map((r) => <li key={r} className="flex gap-2"><span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-neon" /><span className="text-mid">{r}</span></li>)}
                 </ul>
               </Card>
-              <Card title="포메이션 · 성향">
+              <Card fold="prep.tactics" title="포메이션 · 성향">
                 <div className="space-y-4 p-4">
                   <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
                     {Object.keys(FORMATIONS).map((fm) => (
@@ -224,7 +224,7 @@ export function MatchPrep() {
                   <div><div className="mb-2 text-[12px] text-lo">압박 강도</div>{seg(PRESSING, d.pressing, m.rec.tactics.pressing, (v) => updateDraft({ pressing: v }))}</div>
                 </div>
               </Card>
-              <Card title={`후보 ${d.bench.length}명`} className="min-h-0 flex-1">
+              <Card fold="prep.bench" shut title={`후보 ${d.bench.length}명`} className="min-h-0 flex-1 lg:min-h-[260px]">
                 <div className="h-full overflow-auto">
                   <BenchEditor squad={squad} starters={d.starters} bench={d.bench} size={matchRules(w.season).benchSize} onChange={(b) => updateDraft({ bench: b, benchExact: true })} />
                 </div>

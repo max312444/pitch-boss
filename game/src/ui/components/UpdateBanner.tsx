@@ -33,7 +33,7 @@ export function UpdateBanner() {
   return (
     // 화면 한가운데 창 · 뒤는 흐리게 (놓치지 않게)
     <div role="alertdialog" aria-modal="true" className="fixed inset-0 z-[1000] grid animate-[fade_0.25s_ease-out] place-items-center bg-ink-950/60 p-4 backdrop-blur-md">
-      <div className="panel w-full max-w-[400px] border border-neon/60 px-6 py-7 text-center shadow-[0_0_60px_rgba(57,255,20,0.15)]">
+      <div className="panel max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain w-full max-w-[400px] border border-neon/60 px-6 py-7 text-center shadow-[0_0_60px_rgba(57,255,20,0.15)]">
         <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-neon/15 text-[28px]" aria-hidden>🔄</div>
         <div className="mt-4 text-[19px] font-semibold text-hi">게임이 업데이트되었습니다</div>
         <div className="mt-1.5 text-[14px] text-mid">새로 고침 한 번만 해 주세요</div>
