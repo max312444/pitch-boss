@@ -142,7 +142,7 @@ export interface PlayerState {
   nameFrom?: [string | null, string | null];
   /** 게임이 만든 선수의 한국어 이름 */
   ko?: string;
-  /** 언론 플레이 (연봉 인상 요구 · 이적 요청 → 태업), saga.ts */
+  /** 언론 플레이 (주급 인상 요구 · 이적 요청 → 태업), saga.ts */
   saga?: import('./saga').Saga;
   /** 임대 (빌린 구단에서 뛰는 중, 원소속 · 기간 · 주급 분담), loan.ts */
   loan?: import('./loan').Loan;

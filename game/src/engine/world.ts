@@ -404,7 +404,7 @@ export function advanceDay(w: World): GameEvent[] {
   }
 
   if (!w.intl) events.push(...boardEventDay(w, events, rng));   // 팬 여론 · 이사회 이벤트
-  const sagas = w.intl ? [] : sagaDay(w, rng);   // 선수 언론 플레이 (연봉 요구 · 이적 요청 · 태업)
+  const sagas = w.intl ? [] : sagaDay(w, rng);   // 선수 언론 플레이 (주급 요구 · 이적 요청 · 태업)
   events.push(...sagas);
   events.push(...aiSagaDay(w, rng, (p, to, fee) => {
     const wage = Math.max(p.wage, wageDemand(w, p));

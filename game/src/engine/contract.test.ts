@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { advanceDay, createWorld, seasonOver, type SeasonInput } from './world';
 import { closeSeason, startNextSeason } from './season';
-import { applyRenewal, evaluateRenewal, renewDemand, seasonEnd } from './contract';
+import { applyRenewal, evaluateRenewal, renewDemand, renewEnd, seasonEnd } from './contract';
 import type { ClubSeasonFile, LeagueSeasonFile } from '../data/types';
 
 const DATA = path.resolve(__dirname, '../../../data-public');
@@ -58,4 +58,20 @@ describe('재계약 · 계약 만료', () => {
     expect(b.retired || b.clubId === LIVERPOOL).toBe(true);
     expect(w.offers).toHaveLength(0);
   }, 60000);
+
+  it('시즌 후반 (1월~) 재계약은 다음 시즌부터 센다 · 주급 인상 요구 중이면 그 금액 아래로는 거절', () => {
+    const w = createWorld(loadSeason('2025-26'), LIVERPOOL, 5);
+    expect(renewEnd(w, 3)).toBe('2028-06-30');   // 시즌 시작 무렵: 25-26 · 26-27 · 27-28
+    w.date = '2026-05-10';
+    expect(renewEnd(w, 3)).toBe('2029-06-30');   // 시즌 끝 무렵: 26-27 · 27-28 · 28-29
+    const p = w.clubs[LIVERPOOL].squad.map((id) => w.players[id]).find((x) => !x.unhappy && +x.birth.slice(0, 4) >= 1998)!;
+    p.loyalty = 90; p.morale = 80;
+    const want = Math.round((renewDemand(w, p) * 1.2) / 500) * 500;
+    p.saga = { kind: 'wage', stage: 0, since: w.date, next: w.date, wantWage: want, club: LIVERPOOL };
+    expect(renewDemand(w, p)).toBe(want);
+    const low = evaluateRenewal(w, p, want - 1000, 3);
+    expect(low.ok).toBe(false);
+    expect(low.reason).toContain('주급 인상');
+    expect(evaluateRenewal(w, p, want, 3).ok).toBe(true);
+  });
 });

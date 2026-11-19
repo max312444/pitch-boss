@@ -1,4 +1,4 @@
-// 선수 언론 플레이 대응 창: 연봉 인상 요구 · 이적 요청 · 태업 단계 → 대화 · 약속 · 징계 · 공개 비판 · 판매 허락
+// 선수 언론 플레이 대응 창: 주급 인상 요구 · 이적 요청 · 태업 단계 → 대화 · 약속 · 징계 · 공개 비판 · 판매 허락
 import { SAGA_STAGE_KO, type SagaAction } from '../../engine/saga';
 import { overall } from '../../engine/ratings';
 import { clubKo, playerKo } from '../../data/db';
@@ -33,7 +33,7 @@ export function SagaModal() {
     <div className="fixed inset-0 z-[63] grid animate-[fade_0.2s_ease-out] place-items-center bg-ink-950/85 p-2 sm:p-6 backdrop-blur-sm">
       <div className="panel w-full max-w-[560px] max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain">
         <div className="px-4 sm:px-7 pt-7 pb-4">
-          <div className="flex items-center justify-between text-[12px]"><span className="font-semibold text-amber">선수 · {s.kind === 'wage' ? '연봉 인상 요구' : '이적 요청'}</span><span className="text-lo">{SAGA_STAGE_KO[s.stage]} ({s.stage}/3)</span></div>
+          <div className="flex items-center justify-between text-[12px]"><span className="font-semibold text-amber">선수 · {s.kind === 'wage' ? '주급 인상 요구' : '이적 요청'}</span><span className="text-lo">{SAGA_STAGE_KO[s.stage]} ({s.stage}/3)</span></div>
           <h2 className="mt-2 text-[19px] leading-snug font-semibold">
             {s.kind === 'wage' ? `${name}: "지금 주급으로는 남을 수 없다"` : `${name}: "${clubKo(s.target ?? '')}로 가고 싶다"`}
           </h2>

@@ -10,6 +10,7 @@ import { clubKo, compKo, nations, playerKo } from '../../data/db';
 import { PlayerPanel } from './PlayerPanel';
 import { NegotiationModal } from '../components/NegotiationModal';
 import { SellNegotiationModal } from '../components/SellNegotiationModal';
+import { SaleImpactBox } from '../components/SaleImpactBox';
 import { ContractBox } from '../components/ContractBox';
 import { LoanInModal, LoanOutModal } from '../components/LoanModal';
 import { posGroup, POS_ORDER } from '../../data/rating';
@@ -22,7 +23,7 @@ import { bosmanEligible, deadlineLeft, inFinalMonths } from '../../engine/bosman
 import { bargainOf, relClauseOf } from '../../engine/firesale';
 import { currentLineup, matchRules } from '../../engine/squad';
 import { useApp } from '../../store/app';
-import { analyzeClub, searchPreset } from '../../engine/analysis';
+import { analyzeClub, searchPreset, type UnitReport } from '../../engine/analysis';
 import type { AttrKey, Position } from '../../data/types';
 import { nextSort, seenAttr, SortPicker, SortTh, STAT_KEYS, TopAttrs, type SortState } from '../components/SortTh';
 import { SALE_KO, saleTag } from '../../engine/market';
@@ -50,6 +51,8 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
   const [maxAge, setMaxAge] = useState(preset?.maxAge ?? 40);
   const [minOvr, setMinOvr] = useState(preset?.minOvr ?? 60);
   const [posSet, setPosSet] = useState<{ positions: Position[]; label: string } | null>(preset?.positions.length ? { positions: preset.positions, label: preset.label } : null);
+  // 보강 추천을 고르면 선수 검색 탭에서 그 조건으로 찾기
+  const pickAdvice = (r: UnitReport) => { const pr = searchPreset(r); setTab('search'); setSel(null); setPosSet({ positions: pr.positions, label: pr.label }); setMinOvr(pr.minOvr); setMaxAge(pr.maxAge); };
   const advice = useMemo(() => analyzeClub(w, w.userClubId).priorities, [w, w.clubs[w.userClubId].squad.length]);
   const [maxValue, setMaxValue] = useState(0);   // 0 = 제한 없음
   const [q, setQ] = useState('');
@@ -264,6 +267,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
                 <Crest clubId={o.from} size={24} />
                 <div className="min-w-0 flex-1 basis-[calc(100%-40px)] lg:basis-auto">
                   <div className="text-[14px] font-medium">{playerKo(p.id, p.name)} <span className="text-lo">← {clubKo(o.from)}</span></div>
+                  <SaleImpactBox playerId={p.id} compact />
                   <div className="text-[12px] text-lo">제안 이적료 <span className="tnum font-semibold text-neon">{money(o.fee)}</span>{o.bonus ? <span className="text-mid"> + 보너스 {money(o.bonus.amount)} (출전 {o.bonus.apps}경기)</span> : ''} · 시장 가치 {money(marketValue(w, p))} · {koDate(o.expires)}까지{o.unsolicited ? ' · 이적 명단에 없는 선수' : ''}{o.tries ? ` · 역제안 ${o.tries}회` : ''}</div>
                 </div>
                 <button onClick={() => setSellTalk(o.id)} className="h-9 rounded-lg bg-ink-700 px-4 text-[13px] font-semibold text-hi transition-colors hover:bg-ink-750">협상</button>
@@ -334,7 +338,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
       {selected && <Side p={selected} mine={selected.clubId === w.userClubId} listed={listed.has(selected.id)} shortlisted={shortlist.includes(selected.id)}
         onList={() => toggleTransferList(selected.id)} onShort={() => toggleShortlist(selected.id)} onTalk={() => setTalkWith(selected.id)}
         onRelease={() => { release(selected.id); setSel(null); setNotice(`${playerKo(selected.id, selected.name)} 방출`); }} onClose={() => setSel(null)} />}
-      {sellTalk && <SellNegotiationModal offerId={sellTalk} onClose={() => setSellTalk(null)} />}
+      {sellTalk && <SellNegotiationModal offerId={sellTalk} onClose={() => setSellTalk(null)} onPick={(r) => { setSellTalk(null); pickAdvice(r); }} />}
       {talkWith && w.players[talkWith] && <NegotiationModal p={w.players[talkWith]} onClose={() => { setTalkWith(null); if (w.players[talkWith].clubId === w.userClubId) setSel(null); }} />}
     </div>
   );

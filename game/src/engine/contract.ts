@@ -15,14 +15,18 @@ export const seasonEnd = (w: World) => `${+w.season.slice(0, 4) + 1}-06-30`;
 /** 이번 시즌 끝에 계약이 끝나는 선수 */
 export const expiring = (w: World, p: PlayerState) => !!p.contract && p.contract <= seasonEnd(w);
 
+/** 주급 인상 요구 (사가) 중인 선수가 요구하는 주급 (없으면 0) */
+export const sagaWant = (p: PlayerState) => (p.saga?.kind === 'wage' && p.saga.club === p.clubId ? p.saga.wantWage ?? 0 : 0);
+
 /** 재계약 때 원하는 주급: 이적 때 요구액 기준, 충성도가 높으면 덜 요구 (최대 −10%), 지금 주급보다는 낮추지 않음 */
 export function renewDemand(w: World, p: PlayerState): number {
   const d = wageDemand(w, p) * (1 - clamp((p.loyalty - 50) / 500, -0.05, 0.1));
-  return Math.max(p.wage, Math.round(d / 500) * 500);
+  // 주급 인상을 공개 요구 중 (saga.ts) 이면 그 요구액 아래로는 원하지 않는다
+  return Math.max(p.wage, Math.round(d / 500) * 500, sagaWant(p));
 }
 
-/** 재계약 후 계약 종료일: 이번 시즌 끝에서 years 년 */
-export const renewEnd = (w: World, years: number) => `${+w.season.slice(0, 4) + years}-06-30`;
+/** 재계약 후 계약 종료일: years 시즌. 시즌 후반 (1월~) 이면 이번 시즌은 거의 끝났으니 다음 시즌부터 센다 */
+export const renewEnd = (w: World, years: number) => { const y = +w.season.slice(0, 4); return `${y + years + (w.date >= `${y + 1}-01-01` ? 1 : 0)}-06-30`; };
 
 /** 구단에 남을 마음이 있는지 (주급과 무관) */
 export function willStay(w: World, p: PlayerState): { ok: boolean; reason: string } {
@@ -48,6 +52,7 @@ export function evaluateRenewal(w: World, p: PlayerState, wage: number, years: n
   const demand = renewDemand(w, p) * (clause == null ? 1 : buyoutWageFactor(w, p, clause)) * (rel == null ? 1 : relWageFactor(w, p, rel));
   // 길게 묶을수록 조금 더 원한다 (4년 이상 +5%)
   const need = demand * (years >= 4 ? 1.05 : 1) * 0.95;
+  if (sagaWant(p) && wage < sagaWant(p)) return { ok: false, low: true, reason: `주급 인상을 요구하고 있습니다. 주급 ${+(sagaWant(p) / 1000).toFixed(1)}K 유로 이상이어야 합니다` };
   if (wage < need) return { ok: false, low: true, reason: `원하는 주급보다 낮습니다. 주급 ${Math.round((demand * (years >= 4 ? 1.05 : 1)) / 1000)}K 유로 정도를 원합니다` };
   return { ok: true, reason: '재계약에 합의했습니다' };
 }

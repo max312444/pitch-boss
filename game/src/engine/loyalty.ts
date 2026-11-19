@@ -98,7 +98,7 @@ export function unrestReasons(w: World, p: PlayerState): string[] {
     const promised = p.role && (r === 'key' || r === 'regular') ? `'${ROLE_KO[r]}'로 약속받았는데 ` : '';
     out.push(p.benchStreak > 0 ? `${promised}출전 시간이 부족 (연속 ${p.benchStreak}경기 결장)` : `${promised}그동안 출전 시간이 부족해 충성도가 낮음 (${Math.round(p.loyalty)})`);
   } else if (p.benchStreak >= 6) out.push(`${p.benchStreak}경기 연속 결장`);
-  if (p.saga && p.saga.club === p.clubId) out.push(p.saga.kind === 'wage' ? '연봉 인상을 요구하는 중' : '이적을 요청하는 중');
+  if (p.saga && p.saga.club === p.clubId) out.push(p.saga.kind === 'wage' ? `주급 인상을 요구하는 중 (주급 €${+((p.saga.wantWage ?? 0) / 1000).toFixed(1)}K 원함)` : '이적을 요청하는 중');
   if (p.morale < 35) out.push(`사기가 낮음 (${Math.round(p.morale)})`);
   return out;
 }

@@ -127,3 +127,44 @@ export function searchPreset(r: UnitReport): SearchPreset {
   const base = r.starters.length ? r.starterAvg + 1 : Math.max(55, r.benchmark - 6);
   return { positions: r.unit.members, label: r.unit.label, minOvr: Math.max(55, Math.min(Math.round(base), Math.round(r.benchmark))), maxAge: r.aging ? 28 : 31 };
 }
+
+/** 받은 영입 제안 판단용: 이 선수가 우리 팀에서 어떤 자리 · 몇 번째인지, 같은 자리 경쟁자, 팔면 바뀌는 보강 우선순위 */
+export interface SaleImpact {
+  unit: Unit;
+  /** 같은 묶음에서 자리 적합 능력 순위 (1부터) */
+  rank: number;
+  need: number;
+  starter: boolean;
+  /** 같은 묶음 다른 선수 (자리 적합 능력 순) */
+  rivals: { p: PlayerState; rating: number }[];
+  /** 팔면 이 묶음 주전 평균이 얼마나 바뀌는지 (음수 = 약해짐) */
+  drop: number;
+  /** 팔고 나서 영입이 필요한 묶음 (시급한 순) */
+  after: UnitReport[];
+  /** 팔고 나서 이 묶음이 새로 영입 필요 목록에 들어가는지 */
+  newNeed: boolean;
+}
+
+export function saleImpact(w: World, playerId: string): SaleImpact | null {
+  const p = w.players[playerId];
+  const clubId = p?.clubId;
+  if (!clubId) return null;
+  const club = w.clubs[clubId];
+  const unit = UNITS.find((u) => u.members.includes(p.pos)) ?? UNITS[3];
+  const need = needOf(club.tactics.formation, unit);
+  const mates = club.squad.map((id) => w.players[id]).filter((q) => unit.members.includes(q.pos) && !q.loan)
+    .map((q) => ({ p: q, rating: slotRating(q, unit.slot) })).sort((a, b) => b.rating - a.rating);
+  const rank = mates.findIndex((m) => m.p.id === p.id) + 1;
+  // 팔고 난 뒤: 선수단에서 뺀 복사본으로 다시 분석 (원래 world는 건드리지 않음)
+  const w2: World = { ...w, clubs: { ...w.clubs, [clubId]: { ...club, squad: club.squad.filter((id) => id !== p.id) } } };
+  const before = analyzeClub(w, clubId);
+  const after = analyzeClub(w2, clubId);
+  const b = before.units.find((r) => r.unit.key === unit.key)!, a = after.units.find((r) => r.unit.key === unit.key)!;
+  return {
+    unit, rank: rank || mates.length + 1, need, starter: rank > 0 && rank <= need,
+    rivals: mates.filter((m) => m.p.id !== p.id),
+    drop: (a.starters.length ? a.starterAvg : 0) - b.starterAvg,
+    after: after.priorities,
+    newNeed: after.priorities.some((r) => r.unit.key === unit.key) && !before.priorities.some((r) => r.unit.key === unit.key),
+  };
+}

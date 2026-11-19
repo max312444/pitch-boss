@@ -120,7 +120,7 @@ function questions(w: World, kind: 'pre' | 'post' | 'free', ctx: { opp?: string;
   // 선수 언론 플레이 (공개 인터뷰 이상) 중인 선수가 있으면 그 선수부터
   const saga = me.squad.map((id) => w.players[id]).find((p) => (p.saga?.stage ?? 0) >= 1);
   if (qs.length < 2 && saga?.saga) {
-    qs.push({ topic: 'rumour', player: saga.id, text: saga.saga.kind === 'wage' ? '{player}가 공개적으로 연봉 인상을 요구했습니다.' : '{player}가 공개적으로 이적을 원한다고 말했습니다.', answers: [
+    qs.push({ topic: 'rumour', player: saga.id, text: saga.saga.kind === 'wage' ? '{player}가 공개적으로 주급 인상을 요구했습니다.' : '{player}가 공개적으로 이적을 원한다고 말했습니다.', answers: [
       A('criticize', '"구단보다 큰 선수는 없다" (공개 비판)', { player: saga.id, playerMorale: -20, fan: 4 }),
       A('support', '"선수의 마음을 이해한다. 대화로 풀겠다"', { player: saga.id, playerMorale: 6, fan: -2 }),
       A('nocomment', '"내부 문제는 내부에서 해결한다"', {}),

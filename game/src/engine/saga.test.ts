@@ -1,4 +1,4 @@
-// 선수 언론 플레이 (연봉 요구 · 이적 요청 · 태업) 테스트
+// 선수 언론 플레이 (주급 요구 · 이적 요청 · 태업) 테스트
 import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -37,7 +37,7 @@ const brat = (w: ReturnType<typeof fresh>['w'], me: string) => {
 };
 
 describe('선수 언론 플레이', () => {
-  it('연봉 인상 요구: 시세보다 많이 낮으면 시작 → 요구 주급 이상이 되면 해결', () => {
+  it('주급 인상 요구: 시세보다 많이 낮으면 시작 → 요구 주급 이상이 되면 해결', () => {
     const { w, me } = fresh();
     const p = brat(w, me);
     p.wage = Math.round(wageForAbility(w, overall(p)) * 0.3);

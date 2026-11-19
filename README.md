@@ -137,7 +137,7 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 
 ### ▶ 새 세션은 여기부터: 지금 하던 일 (2026-11-19 기준)
 
-**현재 버전 v2.16.2** (주급 여유 이적료 상각 안내, 2026-11-19) — 커밋 · 푸시 완료 (실명 데이터는 원래 커밋 안 함). 실명 데이터 백업: 바탕화면 `PITCH_BOSS/01_실명데이터` (2026-11-12 판, 2부 리그 4개는 아직 로컬 `data/` 에만).
+**현재 버전 v2.17** (받은 제안 판단 도우미 · 주급 인상 요구 금액 · 재계약 기간 수정, 2026-11-19) — 커밋 · 푸시 완료 (실명 데이터는 원래 커밋 안 함). 실명 데이터 백업: 바탕화면 `PITCH_BOSS/01_실명데이터` (2026-11-12 판, 2부 리그 4개는 아직 로컬 `data/` 에만).
 2부 리그 5개 수집 · publish · 게임 확인까지 끝 (2026-11-19). 다음 할 일은 아래 로드맵.
 
 | 리그 | 상태 (실명 데이터는 로컬 `data/` 에만, 커밋 안 함) |
@@ -206,6 +206,7 @@ cd game && npm run history                 # 역대 기록 (감독 기록의 ces
 > 버전: `game/src/version.ts` (첫 화면 표시). 기능 추가 +0.1 · 작은 수정 +0.0.1, 바꿀 때마다 여기에 적는다.
 > 같은 파일의 `CHANGELOG` 맨 위에 플레이어용 한 줄 요약도 넣는다 → 첫 화면 '업데이트 소식' (새 버전을 처음 본 뒤 24시간 표시, `UpdateNotes.tsx`).
 
+0. **v2.17 받은 제안 판단 도우미** (2026-11-19) — analysis.ts `saleImpact` (자리 순위 · 경쟁자 · 팔면 주전 수준 변화 · 판 뒤 보강 우선순위, 선수단 복사본으로 계산) + SaleImpactBox (받은 제안 목록 한 줄 · 판매 협상 창, 추천 누르면 검색 조건). 사가 「연봉」→「주급」 인상 요구, 요구액 표시 · contract.ts `renewDemand`/`evaluateRenewal` 이 요구액 반영. `renewEnd` 시즌 후반 (1월~) 은 다음 시즌부터. 테스트 analysis.test.ts · contract.test.ts.
 0. **v2.16.2 주급 여유 이적료 상각 안내** (2026-11-19) — NegotiationModal: 개인 계약 단계에 재정 규정 이적료 상각 (이적료 ÷ 계약 연수) 때문에 주급 여유가 줄어든 이유 · 숫자 표시, 이적료 단계에서 5년 계약으로도 요구 주급을 못 주면 미리 경고. 계산 (rules.ts `wageRoomInfo`) 은 그대로.
 0. **v2.16.1 사전 계약 선수 능력치 공개** (2026-11-19) — scout.ts `knowledge`: `p.precontract.club === 우리 구단` 이면 100 (능력치 · 숨은 성향). 테스트 scout.test.ts.
 0. **v2.16 거래 현황 탭 · 전체 엔진 점검** (2026-11-19) — `engine/dealLog.ts`: `w.dealLog` (최대 400줄, 같은 날 같은 선수 무산은 한 줄) — completeTransfer (내 구단이 끼면 성사, `noLog`) · loanMove · releasePlayer · signPrecontract (사전 계약은 계약한 시즌에 성사, 합류 때 `markJoined` 로 joined 날짜만) · breakTalks (why · kind) · store sellTo 실패 · answerOffer 거절 · counter withdraw · loanIn 거절. `ui/components/DealsPanel.tsx` (이번 시즌/전체 · 모두/성사/무산 · 포지션 그룹 요약 · 덜 보강). 점검 (엔진 4영역 코드 검토 + invariants · economy · fairness · validate): 이적 — completeTransfer 가 임대 선수면 loanReturn 먼저 · precontract 지움 · seed 경력 지움, aiSagaDay · 감독 따라오는 선수 · 바이아웃 습격은 임대 · 사전 계약 선수 제외, sign 이적 예산 · 이적 금지 재확인, sellTo 사는 구단 예산 재확인, aiTransferDay · news 제안도 예산 안에서만, 임대 가면 talks 지움. 경기 — 국가대표 카드 구단 징계 제외, fixtures 추가 날짜 중복, 부상 교체 fitOnly · 다친 분에 교체, knock 교체 canSubInto, played.z 로 교체된 선수 평점 컨디션, 90분 autoSubs 안 함. 시즌 — 데이터 없는 시즌 예산 기준 `finance.base` (보정 누적 막음), 나의 구단은 데이터 없는 구단처럼, 데이터에 없는 선수는 모두 ageAttributes, seasonEnd 알림 중복 판정을 첫 경기 날짜로, 승강 PO 를 유럽 결승 뒤로. 재정 — boardReview net 에서 구단주 배당 제외, 감독 이직 시 새 구단 ledger · dropSeason 초기화, 프랑스 규정 이름 80%, 부자 구단주 돈 book. 사전 계약 선수는 activeAppeals 에서 빠짐 (DealsPanel 이 기록 없는 사전 계약을 지금 상태로 한 줄 만들어 보임 — 예전 세이브), 「덜 보강」은 최소 그룹이 2곳 이하일 때만. 내 선수 탭 포지션 그룹 칩 (mineGroup). 테스트 transferGuards · dealLog · appeal.

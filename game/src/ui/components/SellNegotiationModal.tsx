@@ -10,9 +10,11 @@ import { useWorld } from '../hooks';
 import { Crest } from './Crest';
 import { PosTag } from './bits';
 import { Bubble, type Msg } from './NegotiationModal';
+import { SaleImpactBox } from './SaleImpactBox';
+import type { UnitReport } from '../../engine/analysis';
 import { money, ratingTone } from '../format';
 
-export function SellNegotiationModal({ offerId, onClose }: { offerId: string; onClose: () => void }) {
+export function SellNegotiationModal({ offerId, onClose, onPick }: { offerId: string; onClose: () => void; onPick?: (r: UnitReport) => void }) {
   const w = useWorld();
   const { counter, answerOffer } = useGame();
   const live = (w.offers ?? []).find((o) => o.id === offerId);
@@ -68,7 +70,8 @@ export function SellNegotiationModal({ offerId, onClose }: { offerId: string; on
           <span>시장 가치 <span className="tnum text-mid">{money(value)}</span></span>
           <span className="ml-auto flex items-center gap-1.5">남은 기회{Array.from({ length: MAX_TRIES }, (_, i) => <span key={i} className={`h-2 w-2 rounded-full ${i < left ? 'bg-neon' : 'bg-ink-700'}`} />)}</span>
         </div>
-        <div ref={log} className="min-h-[180px] flex-1 space-y-2 overflow-auto px-6 py-4">
+        <SaleImpactBox playerId={p.id} onPick={onPick} />
+        <div ref={log} className="min-h-[120px] flex-1 space-y-2 overflow-auto px-6 py-4">
           {msgs.map((m, i) => <Bubble key={i} m={m} club={o.from} />)}
         </div>
         <footer className="border-t border-line bg-ink-900/50 px-6 py-5">

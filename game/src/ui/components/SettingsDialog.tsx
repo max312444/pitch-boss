@@ -34,7 +34,7 @@ const POPUPS: [PopupKind, string, string][] = [
   ['press', '기자회견', '끄면 무난하게 답한 것으로 처리'],
   ['board', '이사회 이벤트', '끄면 갈등이 적은 쪽으로 처리'],
   ['scandal', '선수 논란', '끄면 내부 징계로 처리'],
-  ['saga', '선수 언론 플레이 (연봉 · 이적 요구)', '끄면 대화로 처리'],
+  ['saga', '선수 언론 플레이 (주급 · 이적 요구)', '끄면 대화로 처리'],
 ];
 
 export function SettingsDialog({ onClose }: { onClose: () => void }) {

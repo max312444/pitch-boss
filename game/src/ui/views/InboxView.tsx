@@ -181,8 +181,8 @@ export function describe(e: GameEvent, w: World): { tag: string; tone: string; t
     }
     case 'saga': {
       const name = playerKo(e.player, w.players[e.player]?.name ?? e.player);
-      const what = e.kind === 'wage' ? '연봉 인상 요구' : `이적 요청${e.target ? ` (${clubKo(e.target)})` : ''}`;
-      if (e.step === 'resolved') return { tag: '선수', tone: 'text-neon', title: `${name} · 연봉 문제가 해결됐습니다`, body: '요구 주급 이상으로 재계약' };
+      const what = e.kind === 'wage' ? '주급 인상 요구' : `이적 요청${e.target ? ` (${clubKo(e.target)})` : ''}`;
+      if (e.step === 'resolved') return { tag: '선수', tone: 'text-neon', title: `${name} · 주급 문제가 해결됐습니다`, body: '요구 주급 이상으로 재계약' };
       if (e.step === 'forced') return { tag: '이적', tone: 'text-sky', title: `${name}, 태업 끝에 ${clubKo(e.target ?? '')} 이적`, body: `${clubKo(e.from ?? '')}가 결국 ${money(e.fee ?? 0)}에 팔았습니다` };
       if (e.step === 'wantsUs') return { tag: '이적', tone: 'text-neon', title: `${name}: "${clubKo(e.target ?? '')}에서 뛰고 싶다"`, body: `${clubKo(e.from ?? '')} 소속 · 태업이 길어질수록 원래 구단이 싸게 팝니다 (이적 화면에서 영입 제안)` };
       const stage = ['에이전트 발언', '공개 인터뷰', '훈련 불참', '출전 거부'][e.stage] ?? '';

@@ -1,4 +1,4 @@
-// 선수 언론 플레이 (사가): 연봉 인상 요구 · 이적 요청 (특정 구단 지목) → 태업으로 커짐 → 이적 · 재계약 · 약속으로 끝남
+// 선수 언론 플레이 (사가): 주급 인상 요구 · 이적 요청 (특정 구단 지목) → 태업으로 커짐 → 이적 · 재계약 · 약속으로 끝남
 //  단계: 0 에이전트 발언 · 1 공개 인터뷰 · 2 훈련 불참 · 3 출전 거부
 //  - 시작: 매달 5일 · 20일, 성격 (야망 · 프로의식 · 충성도) 과 상황 (시세보다 낮은 주급 · 빅클럽 관심 · 출전 불만) 으로 확률
 //  - 커짐: 약 2주마다. 0→1 (공개 인터뷰) 은 프로의식이 낮을수록 잘 커지고,
@@ -88,7 +88,7 @@ export function sagaDay(w: World, rng: Rng): GameEvent[] {
       const temper = 0.5 + amb - 0.5 * pro - 0.5 * loy + (p.scandals ?? 0) * 0.1;   // 0 ~ 1.5 (+ 논란 전력)
       if (temper <= 0) continue;
       const fair = wageForAbility(w, overall(p));
-      // 연봉 인상 요구: 시세의 70% 미만
+      // 주급 인상 요구: 시세의 70% 미만
       if (p.wage < fair * 0.7 && rng.chance(0.05 * temper * freqOf(w, 'saga'))) {
         const want = Math.round((fair * 0.95) / 500) * 500;
         p.saga = { kind: 'wage', stage: 0, since: w.date, next: addDays(w.date, 14), wantWage: want, club: club.id };
@@ -198,7 +198,7 @@ export function sagaRespond(w: World, playerId: string, action: SagaAction, rng:
       s.next = w.date; return say('대화가 통하지 않았습니다 · 선수의 태도가 더 굳어졌습니다');
     }
     case 'promise': {
-      // 약속: 연봉은 60일 안에 재계약, 이적은 다음 이적시장 (시즌 끝) 에 보내 주겠다
+      // 약속: 주급은 60일 안에 재계약, 이적은 다음 이적시장 (시즌 끝) 에 보내 주겠다
       s.promise = s.kind === 'wage' ? addDays(w.date, 60) : `${+w.season.slice(0, 4) + 1}-08-31`;
       s.stage = Math.min(s.stage, 1) as Saga['stage'];
       p.morale = clamp(p.morale + 8, 0, 100);
@@ -233,5 +233,5 @@ export function sagaRespond(w: World, playerId: string, action: SagaAction, rng:
 export function sagaSummary(p: PlayerState): string | null {
   const s = p.saga;
   if (!s) return null;
-  return `${s.kind === 'wage' ? '연봉 인상 요구' : '이적 요청'} · ${SAGA_STAGE_KO[s.stage]}${s.promise ? ' · 약속함' : ''}`;
+  return `${s.kind === 'wage' ? '주급 인상 요구' : '이적 요청'} · ${SAGA_STAGE_KO[s.stage]}${s.promise ? ' · 약속함' : ''}`;
 }
