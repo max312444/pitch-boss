@@ -39,7 +39,7 @@ function dreamClub(w: World, p: PlayerState, rng: Rng): string | null {
   const me = w.clubs[p.clubId!];
   const ovr = overall(p);
   const cands = Object.values(w.clubs).filter((c) => c.id !== me.id && w.competitions[c.league] && !c.id.startsWith('nt-') && c.reputation >= me.reputation + 6
-    && ovr >= clubLevel(w, c.id) - 4 && c.finance.transferBudget >= marketValue(w, p) * 0.6);
+    && ovr >= clubLevel(w, c.id) - 4 && c.finance.transferBudget >= marketValue(w, p) * 0.8);
   return cands.length ? rng.weighted(cands, (c) => c.reputation ** 3).id : null;
 }
 
@@ -53,7 +53,8 @@ function targetOffer(w: World, p: PlayerState, rng: Rng) {
   const cut = 1 - 0.07 * s.stage;   // 태업할수록 상대는 깎으려 한다
   const r50 = (x: number) => Math.round(x / 50000) * 50000;
   const budget = w.clubs[s.target].finance.transferBudget;
-  const fee = r50(Math.min(v * (0.8 + rng.next() * 0.1) * cut, budget));
+  const fee = r50(v * (0.8 + rng.next() * 0.1) * cut);
+  if (fee > budget) return;   // 돈이 모자라면 남은 예산만큼 낮춰 부르지 않고 제안을 미룬다 (예산이 생기면 다음에)
   const max = Math.max(fee, r50(Math.min(v * (0.95 + rng.next() * 0.1) * cut, budget)));
   offers.push({ id: `${w.date}-${s.target}-${p.id}`, player: p.id, from: s.target, fee, max, tries: 0, date: w.date, expires: addDays(w.date, 10) });
   w.inbox.push({ type: 'offer', date: w.date, player: p.id, from: s.target, fee });

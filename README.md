@@ -137,7 +137,7 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 
 ### ▶ 새 세션은 여기부터: 지금 하던 일 (2026-11-19 기준)
 
-**현재 버전 v2.15** (은퇴 선수 보관으로 세이브 약 20% ↓, 2026-11-19) — 커밋 · 푸시 완료 (실명 데이터는 원래 커밋 안 함).
+**현재 버전 v2.15.1** (헐값 이적 제안 고침, 2026-11-19) — v2.15.1 은 아직 커밋 안 함 (v2.15 까지 커밋 · 푸시 완료, 실명 데이터는 원래 커밋 안 함).
 2부 리그 5개 수집 · publish · 게임 확인까지 끝 (2026-11-19). 다음 할 일은 아래 로드맵.
 
 | 리그 | 상태 (실명 데이터는 로컬 `data/` 에만, 커밋 안 함) |
@@ -206,6 +206,7 @@ cd game && npm run history                 # 역대 기록 (감독 기록의 ces
 > 버전: `game/src/version.ts` (첫 화면 표시). 기능 추가 +0.1 · 작은 수정 +0.0.1, 바꿀 때마다 여기에 적는다.
 > 같은 파일의 `CHANGELOG` 맨 위에 플레이어용 한 줄 요약도 넣는다 → 첫 화면 '업데이트 소식' (새 버전을 처음 본 뒤 24시간 표시, `UpdateNotes.tsx`).
 
+0. **v2.15.1 헐값 이적 제안** (2026-11-19) — 우리 선수에게 오는 제안 금액을 `Math.min(시장 가치 × 비율, 남은 예산)` 으로 잘라 돈 없는 구단이 시장 가치 13% 같은 헐값을 부르던 문제 (주로 사가: 목표 구단을 고른 뒤 예산이 줄어도 그대로 제안). saga.ts `targetOffer` · appeal.ts `aiAppealDay` · transfer.ts `userOffers` 는 원하는 금액이 예산을 넘으면 제안하지 않음 (자르지 않음), `dreamClub` · 이적 명단 관심 구단 예산 기준 0.6 → 0.8. 테스트 saga.test.ts 2개.
 0. **배포 빌드 메모리** (2026-11-19) — v2.12 부터 GitHub Actions build 가 종료 코드 134 (메모리 부족) 로 실패: 공개 데이터 시즌 · 구단 파일 5천여 개가 각각 조각이라 빌드에 4GB 가까이 필요, 특히 조각마다 gzip 크기 계산 단계에서 넘침. vite.config `build.reportCompressedSize: false` · `json.stringify: true`, deploy.yml build 에 `NODE_OPTIONS=--max-old-space-size=6144` (3GB 한도면 로컬에서도 꺼짐). 근본 해결 후보: 시즌 JSON 을 묶지 않고 dist 에 복사 → fetch. 로컬에서 Git Bash 로 빌드할 땐 `MSYS_NO_PATHCONV=1` (안 그러면 BASE=/pitch-boss/ 가 Windows 경로로 바뀜).
 0. **v2.15 영입 협상 새로 만들기** (2026-11-19) — engine/negotiation.ts (사용자가 사는 쪽만, AI 끼리는 evaluateBid 그대로): `negotiateFee` 밀고 당기기 — talk 에 `counter` (조건 포함 값) · `mood` (인내심) · `final`. 역제안 = 지금 요구에서 (우리 제안과 최저선 중 큰 값) 쪽으로 STEP 0.3/0.42/0.55, 마지막 기회엔 최저선 (`sellerFloor`: 0.9 기준, 팔 생각 · 계약 짧음 · 재정 어려움 −, 긴 계약 · 핵심 +, 0.78~0.97). 60% 미만 무례 (인내심 −40, 역제안 없음), 인내심 0 · 4번 (`FEE_TRIES`) 이면 결렬. evaluateBid 결과에 `hard` · `core` · `full`. `sellerHint` 제안 전 분위기. 선수: `joinFactors` (요인 목록, 합 > `JOIN_LINE` −0.6 이면 옴 · 결과는 예전과 같음) + 계약 기간 선호 (years 를 넘길 때만, 사용자 계약). NegotiationModal 새 화면: 상황판 (구단 요구 · 인내심 · 시장 가치 / 선수 마음 막대 · 요인 칩, 숨은 성향은 스카우트 전 「성향」으로 묶음) · Amount 스테퍼 · 칩 (역제안 맞추기 · 요구 주급 맞추기) · 접는 추가 조건. 테스트 negotiation.test.ts 8개.
 0. **v2.14 2부 강등권 벌칙 · 경질 강화** (2026-11-19) — 2부 강등권 내 구단은 3부가 없어 잔류하던 것 (`userKept`) 에 강등 벌칙: season.ts `userDrop` → 재정 · 명성 한 단계 아래 (`steps − 1`) · 주급 40% 삭감, 알림 문구 고침. manager.ts `managerSeasonEnd`: 강등권을 `pairRule` (topDown · secondDown) 로, 2부 강등권도 신뢰도 −30 · 명성 −5 · 관계 −10. 경질: 강등 + 관계 40 미만 → 바로 (`sackWhy`), 2부 강등권 두 시즌 연속 (`dropSeason`) → 확실히, 처음 2부 강등권은 신뢰도를 시즌 중 경질선 +10 으로 (마지막 기회). `managerNewSeason` 이 경질 이유를 받은편지함에. 테스트 manager.test.ts 강등 · 경질 4개.

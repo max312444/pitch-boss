@@ -132,3 +132,29 @@ describe('AI 구단 선수 언론 플레이', () => {
     expect(p.saga).toBeUndefined();
   });
 });
+
+describe('이적 요청 제안 금액 (돈 없는 구단이 헐값 제안하지 않음)', () => {
+  const setup = (budget: number) => {
+    const { w, me } = fresh();
+    const p = brat(w, me);
+    only(w, me, p.id);
+    const target = Object.values(w.clubs).filter((c) => c.id !== me).sort((a, b) => b.reputation - a.reputation)[0].id;
+    w.date = '2025-07-10';
+    p.saga = { kind: 'move', stage: 1, since: w.date, next: w.date, target, club: me };
+    w.offers = [];
+    const v = Math.max(marketValue(w, p), 250000);
+    w.clubs[target].finance.transferBudget = budget < 0 ? v * 3 : v * budget;
+    sagaDay(w, createRng(3));
+    return { offer: w.offers.find((o) => o.player === p.id && o.from === target), v };
+  };
+
+  it('예산이 시장 가치의 15% 뿐이면 예산만큼 낮춰 부르지 않고 제안하지 않는다', () => {
+    expect(setup(0.15).offer).toBeUndefined();
+  });
+
+  it('예산이 충분하면 시장 가치의 70% 이상으로 제안한다', () => {
+    const { offer, v } = setup(-1);
+    expect(offer).toBeDefined();
+    expect(offer!.fee).toBeGreaterThanOrEqual(v * 0.7);
+  });
+});

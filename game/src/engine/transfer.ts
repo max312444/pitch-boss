@@ -380,14 +380,15 @@ function userOffers(w: World, rng: Rng, active: World['clubs'][string][]) {
     const cands = active.filter((c) => {
       if (offers.some((o) => o.player === id && o.from === c.id) || talkBanned(w, `${id}:${c.id}`)) return false;
       const lv = clubLevel(w, c.id);
-      return ovr >= lv - 7 && ovr <= lv + 4 && c.finance.transferBudget >= value * (onList ? 0.6 : 1)
+      return ovr >= lv - 7 && ovr <= lv + 4 && c.finance.transferBudget >= value * (onList ? 0.8 : 1)
         && wage <= wageRoom(w, c.id) && withinRules(w, c.id, wage, value, 3).ok && playerWillJoin(w, p, c.id, wage).ok;
     });
     if (!cands.length) continue;
     const club = rng.pick(cands);
     const budget = club.finance.transferBudget;
     const r50 = (v: number) => Math.round(v / 50000) * 50000;
-    const fee = r50(Math.min(value * (onList ? 0.75 + rng.next() * 0.3 : 1 + rng.next() * 0.25), budget));
+    const fee = r50(value * (onList ? 0.75 + rng.next() * 0.3 : 1 + rng.next() * 0.25));
+    if (fee > budget) continue;   // 돈이 모자라면 남은 예산만큼 낮춰 부르지 않고 제안하지 않음
     const max = Math.max(fee, r50(Math.min(value * (onList ? 0.95 + rng.next() * 0.25 : 1.2 + rng.next() * 0.4), budget)));
     const bonus = aiOfferBonus(rng, fee);
     offers.push({ id: `${w.date}-${club.id}-${id}`, player: id, from: club.id, fee, max, tries: 0, date: w.date, expires: addDays(w.date, 7), ...(onList ? {} : { unsolicited: true }), ...(bonus ? { bonus } : {}) });

@@ -193,7 +193,8 @@ export function aiAppealDay(w: World, act: (p: PlayerState, to: string, fee: num
   const v = Math.max(marketValue(w, p), 200000);
   const r50 = (x: number) => Math.round(x / 50000) * 50000;
   const budget = w.clubs[to].finance.transferBudget;
-  const offerFee = r50(Math.min(v * 0.85, budget));
+  const offerFee = r50(v * 0.85);
+  if (offerFee > budget) return [];   // 돈이 모자라면 낮춰 부르지 않고 제안하지 않음
   offers.push({ id: `${w.date}-${to}-${p.id}`, player: p.id, from: to, fee: offerFee, max: Math.max(offerFee, r50(Math.min(v * 0.95, budget))), tries: 0, date: w.date, expires: addDays(w.date, 10), appeal: true });
   w.inbox.push({ type: 'offer', date: w.date, player: p.id, from: to, fee: offerFee, appeal: true });
   return [];
