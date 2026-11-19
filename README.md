@@ -137,7 +137,7 @@ cd game && npm run history                 # 선수 이력 (data-public/history/
 
 ### ▶ 새 세션은 여기부터: 지금 하던 일 (2026-11-19 기준)
 
-**현재 버전 v2.10 (`becde415`, 푸시 완료).** 그 뒤 커밋 안 한 변경: 이 README 정리 · `fix-league` 명령 (`tools/data_pipeline/steps/fixLeague.js`, `index.js`) — 다음 커밋에 함께 넣는다.
+**현재 버전 v2.10.** 이 README 정리 · `fix-league` 명령까지 모두 커밋 · 푸시 완료 (작업 폴더 깨끗함, 실명 데이터는 원래 커밋 안 함).
 진행 중인 일은 **2부 리그 데이터 수집** 하나 (지난 세션의 esp2 · ita2 미리보기는 세션이 끝나며 멈춤 → 다시 돌린다, 캐시가 남아 있어 빠름).
 
 | 리그 | 상태 (실명 데이터는 로컬 `data/` 에만, 커밋 안 함) |
