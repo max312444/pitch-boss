@@ -269,7 +269,7 @@ export type GameEvent =
   /** 스폰서: 제안 도착 · 계약 · 자동 계약 · 성과 보너스 */
   | { type: 'sponsor'; date: string; kind: 'offers' | 'signed' | 'auto' | 'bonus'; slot: import('./sponsors').SponsorSlot; name?: string; amount?: number }
   /** 이적 어필: 우리 구단에 오고 싶다는 선수 (appeal.ts) */
-  | { type: 'appeal'; date: string; player: string; club: string; until: string; /** 겨룰 우리 주전 (없으면 빈 자리) */ rival?: string }
+  | { type: 'appeal'; date: string; player: string; club: string; until: string; /** 겨룰 우리 주전 (없으면 빈 자리) */ rival?: string; /** 연락 때 주급: 원래 · 우리 구단 */ wage?: number; cut?: number }
   | { type: 'shortlist'; date: string; player: string; kind: 'bargain' | 'free' | 'bosman' | 'expiring'; club?: string | null }
   /** 감독: 제안 · 재계약 · 경질 · 이동 · 따라오는 선수 */
   /** AI 구단 감독 교체 (season: 시즌 중 경질 · end: 시즌 끝 교체), news = 받은편지함에 남길 만한 소식 */

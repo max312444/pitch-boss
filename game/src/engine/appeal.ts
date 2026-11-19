@@ -103,7 +103,8 @@ export function appealDay(w: World, rng: Rng): GameEvent[] {
   seen[p.id] = w.season;
   w.appeals.push({ player: p.id, club: p.clubId!, date: w.date, until, ...(rival ? { rival: rival.id } : {}) });
   if (!(w.shortlist ?? []).includes(p.id)) w.shortlist = [...(w.shortlist ?? []), p.id];   // 찾기 쉽게 관심 목록에
-  return [{ type: 'appeal', date: w.date, player: p.id, club: p.clubId!, until, ...(rival ? { rival: rival.id } : {}) }];
+  // 메시지에 그때 주급을 적어 둔다 (기한이 지난 뒤 열어도 그대로 보이게)
+  return [{ type: 'appeal', date: w.date, player: p.id, club: p.clubId!, until, ...(rival ? { rival: rival.id } : {}), wage: wageDemand(w, p), cut: wageDemand(w, p, w.userClubId) }];
 }
 
 /**

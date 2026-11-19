@@ -67,6 +67,25 @@ describe('셀온', () => {
     expect(flipped).toBeGreaterThan(5);
   });
 
+  it('셀온 · 보너스를 넣으면 구단이 알려 주는 금액(역제안)이 내려가고, 그 금액을 내면 받아들인다', () => {
+    const w = createWorld(load('2025-26', ['eng1']), LIV, 3);
+    const pool = Object.values(w.players).filter((p) => p.clubId && p.clubId !== LIV && w.competitions[w.clubs[p.clubId].league] && ageOn(p.birth, w.date) <= 24);
+    let n = 0;
+    for (const p of pool.slice(0, 200)) {
+      const ask = askingPrice(w, p);
+      if (ask < 3e6) continue;
+      const cash = Math.round(ask * 0.8);
+      const terms = { sellOn: 20, bonus: { amount: Math.floor(cash * 0.3 / 5e5) * 5e5, apps: 20 } };
+      const a = evaluateBid(w, p, LIV, cash), b = evaluateBid(w, p, LIV, cash, terms);
+      if (a.decision !== 'counter' || b.decision !== 'counter') continue;
+      expect(b.ask).toBeLessThan(a.ask);                                       // 조건만큼 덜 요구
+      expect(b.reason).toContain(`${Math.round(b.ask / 1e5) / 10}M`);
+      expect(evaluateBid(w, p, LIV, b.ask, terms).decision).toBe('accept');   // 알려 준 금액이면 성사
+      n++;
+    }
+    expect(n).toBeGreaterThan(3);
+  });
+
   it('받은 제안에 셀온을 요구하면 사는 구단은 그만큼 덜 낸다', () => {
     const w = createWorld(load('2025-26', ['eng1']), LIV, 6);
     const p = w.players[w.clubs[LIV].squad.find((id) => ageOn(w.players[id].birth, w.date) <= 23)!];

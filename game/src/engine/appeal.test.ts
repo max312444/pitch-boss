@@ -41,6 +41,9 @@ describe('이적 어필 (역제안)', () => {
       if (e.type !== 'appeal') continue;
       const p = w.players[e.player];
       expect(troubleOf(w, p)).toBeGreaterThan(0);
+      // 메시지에 그때 주급을 적어 둔다: 우리 구단 주급이 실제로 15% 낮다
+      expect(e.cut).toBeLessThan(e.wage!);
+      expect(Math.abs(e.cut! - e.wage! * 0.85)).toBeLessThanOrEqual(500);
       if (e.rival) {
         const r = w.players[e.rival];
         expect(r.clubId).toBe(LIV);

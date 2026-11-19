@@ -12,7 +12,7 @@ import { book } from './finance';
 import { WAGE_SLACK, ruleWageRoom, withinRules } from './rules';
 import { youthIntake } from './youth';
 import { aiBuyoutRaids, buyoutOf, buyoutWageFactor, relJoinBonus, relWageFactor } from './clauses';
-import { aiOfferBonus, aiTerms, sellOnFactor, setTerms, settleSellOn, termsWorth, type DealTerms } from './addons';
+import { aiOfferBonus, aiTerms, bonusChance, sellOnFactor, setTerms, settleSellOn, termsWorth, type DealTerms } from './addons';
 import { bargainOf } from './firesale';
 import { saleTag } from './market';
 
@@ -169,6 +169,16 @@ export function askingPrice(w: World, p: PlayerState): number {
   return Math.round((marketValue(w, p) * mult * listed) / 50000) * 50000;
 }
 
+/** 셀온 · 보너스를 건 채로 원하는 값(ask)을 채우려면 필요한 현금 이적료 (0.1M 단위 올림) */
+export function cashNeeded(w: World, p: PlayerState, ask: number, terms?: DealTerms): number {
+  if (!terms?.sellOn && !terms?.bonus?.amount) return ask;
+  const so = terms.sellOn ? (terms.sellOn / 100) * sellOnFactor(w, p) : 0;
+  const bw = terms.bonus?.amount ? terms.bonus.amount * bonusChance(terms.bonus.apps) : 0;
+  // 보너스는 이적료의 절반까지라 (termsError), 알려 준 금액에서도 같은 보너스를 걸 수 있게
+  const cash = Math.max(ask * 0.4, (ask - bw) / (1 + so), (terms.bonus?.amount ?? 0) * 2);
+  return Math.min(ask, Math.ceil(cash / 1e5) * 1e5);
+}
+
 /** 파는 구단의 판단 */
 export function evaluateBid(w: World, p: PlayerState, buyer: string, fee: number, terms?: DealTerms): BidResult {
   if (!p.clubId) return { decision: 'accept', ask: 0, reason: '자유계약 선수' };
@@ -195,8 +205,11 @@ export function evaluateBid(w: World, p: PlayerState, buyer: string, fee: number
   // 핵심 선수는 비슷한 급 이상 구단이 크게 쓸 때만
   if (rank <= 2 && w.clubs[buyer].reputation + 5 < seller.reputation && fee < ask * 1.5) return { decision: 'reject', ask, reason: '팀의 핵심 선수라 팔 생각이 없다고 합니다' };
   if (fee >= ask) return { decision: 'accept', ask, reason: fee > cash ? '조건을 포함해 제안을 받아들였습니다' : '제안을 받아들였습니다' };
-  if (fee >= ask * 0.75) return { decision: 'counter', ask, reason: `원하는 가격보다 낮습니다. ${Math.round(ask / 1e5) / 10}M 유로면 보내겠다고 합니다` };
-  return { decision: 'reject', ask, reason: '원하는 가격보다 한참 낮습니다. 금액을 크게 올려야 합니다' };
+  // 조건을 걸었으면 그 값어치만큼 덜 받는다: 알려 주는 금액 = 이 조건으로 필요한 현금 이적료
+  const need = cashNeeded(w, p, ask, terms);
+  const withTerms = need < ask ? ` (셀온 · 보너스 포함, 조건 없이는 ${Math.round(ask / 1e5) / 10}M 유로)` : '';
+  if (fee >= ask * 0.75) return { decision: 'counter', ask: need, reason: `원하는 가격보다 낮습니다. ${Math.round(need / 1e5) / 10}M 유로면 보내겠다고 합니다${withTerms}` };
+  return { decision: 'reject', ask: need, reason: '원하는 가격보다 한참 낮습니다. 금액을 크게 올려야 합니다' };
 }
 
 /** 선수가 이 구단으로 오겠는지 */
