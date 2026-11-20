@@ -54,7 +54,7 @@ export function DatabaseDialog({ onClose }: { onClose: () => void }) {
                 <li><b className="text-mid">폴더 고르기</b>: 실명 데이터 폴더(<Code>meta</Code> · <Code>clubs</Code> · <Code>seasons</Code> 가 들어 있는 폴더)를 고르면 필요한 파일만 이 브라우저에 저장합니다.
                   브라우저가 '업로드' 확인을 묻지만 <b className="text-mid">어디로도 전송되지 않고</b> 이 PC 브라우저 안에만 저장됩니다. 사진 등 나머지 파일은 읽지 않습니다.</li>
                 <li><b className="text-mid">직접 실행할 때</b>: 저장소의 <Code>data/</Code> 자리에 폴더를 두고 개발 서버를 켜면 자동으로 씁니다. 만드는 방법은 README '실명 데이터로 플레이하기'.</li>
-                <li>바꾸면 화면을 다시 불러옵니다. 실명으로 시작한 세이브는 실명 데이터가 있어야 이름이 제대로 나옵니다.</li>
+                <li>바꾸면 화면을 다시 불러옵니다. 실명으로 시작한 세이브는 실명 데이터가 있어야 이름이 제대로 나옵니다. 패러디 이름으로 하던 게임은 실명을 켠 뒤 <b className="text-mid">이어하기 · 불러오기</b>를 하면 실명으로 바꿀지 묻습니다.</li>
               </ul>
             </div>
           </section>

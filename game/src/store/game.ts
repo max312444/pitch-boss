@@ -1200,6 +1200,9 @@ export const useGame = create<GameStore>((set, get) => {
       // 패러디 세이브 → 실명으로 바꾸기 (슬롯 목록의 「실명으로 바꾸기」: 실명 데이터로 새로 고침한 뒤 여기서)
       let conv: string | null = null;
       try { conv = sessionStorage.getItem('pitchboss.convert'); } catch { /* 무시 */ }
+      // 실명 데이터를 켠 채로 패러디 세이브를 이어 하면: 실명으로 바꿀지 묻는다 (전에는 말없이 패러디로 되돌아가 실명이 적용되지 않았음)
+      if (conv !== slot && world.dataset === 'public' && dataset === 'real' && typeof confirm === 'function'
+        && confirm('이 게임은 패러디 이름으로 시작한 게임입니다.\n\n확인: 실명 데이터로 바꿔서 이어 하기 (선수 · 구단이 실제 이름으로 바뀌고 앞으로도 실명으로 이어집니다. 패러디로 되돌릴 수 없습니다)\n취소: 패러디 이름 그대로 이어 하기')) conv = slot;
       if (conv === slot && world.dataset === 'public' && dataset === 'real') {
         try { sessionStorage.removeItem('pitchboss.convert'); } catch { /* 무시 */ }
         const map = await loadPublicMap();
