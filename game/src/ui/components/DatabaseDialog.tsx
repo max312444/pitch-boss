@@ -7,7 +7,7 @@ import { availableSeasons, dataset, leagues, realAvailable, realSource, setDatas
 import { clearRealPack, filesFromDrop, importRealFolder, realBoot, type PickedFile } from '../../data/realStore';
 import { loadPhotos, photosEnabled, photoStats, setPhotosEnabled } from '../../data/photos';
 
-function Switch({ on, disabled, onChange }: { on: boolean; disabled?: boolean; onChange: (v: boolean) => void }) {
+export function Switch({ on, disabled, onChange }: { on: boolean; disabled?: boolean; onChange: (v: boolean) => void }) {
   return (
     <button role="switch" aria-checked={on} disabled={disabled} onClick={() => onChange(!on)}
       className={`relative h-6 w-11 shrink-0 rounded-full transition-colors disabled:opacity-40 ${on ? 'bg-neon' : 'bg-ink-700'}`}>
@@ -106,7 +106,7 @@ export function DatabaseDialog({ onClose }: { onClose: () => void }) {
 }
 
 /** 실명 데이터 폴더 고르기 · 지우기 (브라우저 저장) */
-function RealImport() {
+export function RealImport({ beforeSwitch }: { beforeSwitch?: () => Promise<void> } = {}) {
   const ref = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState<string | null>(null);
   const [err, setErr] = useState<string | null>(null);
@@ -124,6 +124,7 @@ function RealImport() {
         if (r) ph = ` · 사진 ${r.ok}장`;
       }
       setBusy(`넣었습니다: 시즌 ${info.seasons}개 · 파일 ${info.files}개${ph}. 실명으로 바꿉니다…`);
+      if (beforeSwitch) await beforeSwitch();   // 게임 화면에서 넣을 때: 지금 게임을 저장하고 새로 고침 뒤 실명으로 바꾸게 표시
       setDataset('real');
     } catch (e) { setErr((e as Error).message); setBusy(null); }
     if (ref.current) ref.current.value = '';

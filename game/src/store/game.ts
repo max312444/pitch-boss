@@ -271,6 +271,8 @@ interface GameStore {
   academyAct(id: string, act: 'promote' | 'release'): { ok: boolean; reason: string };
   /** 패러디 이름 세이브를 실명 데이터로 바꿔 불러오기 (실명 데이터가 있을 때) */
   convertToReal(slot: string): void;
+  /** 하고 있는 패러디 게임을 자동 저장한 뒤 실명으로 바꿔 이어 하기 (사이드바 토글) */
+  convertCurrentToReal(switchNow?: boolean): Promise<void>;
   changeTactics(t: Partial<Tactics>): void;
   /** 경기 중 포메이션 바꾸기 */
   changeFormation(formation: string): void;
@@ -475,6 +477,16 @@ export const useGame = create<GameStore>((set, get) => {
       bump();
     },
 
+    async convertCurrentToReal(switchNow = true) {
+      const w = get().world;
+      if (!w) return;
+      await writeSave('auto', w);
+      // 이미 실명 게임: 새 데이터로 새로 고침한 뒤 이 게임으로 바로 이어 하기만
+      if (w.dataset !== 'public') { try { sessionStorage.setItem('pitchboss.resume', 'auto'); } catch { /* 무시 */ } return; }
+      if (switchNow) { get().convertToReal('auto'); return; }
+      // 실명 데이터를 막 넣는 중 (DatabaseDialog RealImport 가 곧 실명으로 새로 고침): 표시만 해 둔다
+      try { sessionStorage.setItem('pitchboss.convert', 'auto'); sessionStorage.setItem('pitchboss.resume', 'auto'); } catch { /* 무시 */ }
+    },
     convertToReal(slot) {
       try { sessionStorage.setItem('pitchboss.convert', slot); sessionStorage.setItem('pitchboss.resume', slot); } catch { /* 무시 */ }
       setDataset('real');   // 새로 고침 → 실명 데이터로 켜진 뒤 resume 이 load(slot) → 위에서 바꾼다
