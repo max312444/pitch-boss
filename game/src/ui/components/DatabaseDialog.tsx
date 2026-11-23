@@ -16,6 +16,9 @@ export function Switch({ on, disabled, onChange }: { on: boolean; disabled?: boo
   );
 }
 
+/** 안내 문서 (저장소 docs/실명_사진_넣기.md) */
+const GUIDE_URL = 'https://github.com/max312444/pitch-boss/blob/master/docs/%EC%8B%A4%EB%AA%85_%EC%82%AC%EC%A7%84_%EB%84%A3%EA%B8%B0.md';
+
 const Code = ({ children }: { children: string }) => <code className="rounded bg-ink-900 px-1.5 py-0.5 text-[11px] text-mid">{children}</code>;
 
 export function DatabaseDialog({ onClose }: { onClose: () => void }) {
@@ -33,6 +36,9 @@ export function DatabaseDialog({ onClose }: { onClose: () => void }) {
           <button onClick={onClose} className="h-9 shrink-0 rounded-lg px-3 text-[13px] text-mid ring-1 ring-line transition-colors hover:text-hi">닫기</button>
         </header>
         <div className="space-y-6 overflow-auto px-4 sm:px-7 py-6 text-[13px]">
+          <a href={GUIDE_URL} target="_blank" rel="noreferrer" className="tap block rounded-lg bg-neon/10 px-4 py-2.5 text-[12px] text-mid ring-1 ring-neon/30 hover:text-hi">
+            처음이라면 <b className="text-neon">쉬운 안내 보기 ↗</b> <span className="text-lo">· 실제 이름 · 사진 넣는 방법을 순서대로</span>
+          </a>
           {/* 실명 데이터 */}
           <section>
             <div className="flex items-center gap-4">
@@ -49,12 +55,12 @@ export function DatabaseDialog({ onClose }: { onClose: () => void }) {
             </div>
             {realSource !== 'folder' && <RealImport />}
             <div className="mt-2 rounded-lg bg-ink-900 px-4 py-3 text-[12px] leading-relaxed text-mid">
-              실명 데이터는 게임에 들어 있지 않습니다. 개인이 직접 넣어야 합니다.
+              실명 데이터는 게임에 없어서 각자 넣어야 합니다.
               <ul className="mt-1.5 list-disc space-y-0.5 pl-4 text-lo">
-                <li><b className="text-mid">폴더 고르기</b>: 실명 데이터 폴더(<Code>meta</Code> · <Code>clubs</Code> · <Code>seasons</Code> 가 들어 있는 폴더)를 고르면 필요한 파일만 이 브라우저에 저장합니다.
-                  브라우저가 '업로드' 확인을 묻지만 <b className="text-mid">어디로도 전송되지 않고</b> 이 PC 브라우저 안에만 저장됩니다. 사진 등 나머지 파일은 읽지 않습니다.</li>
-                <li><b className="text-mid">직접 실행할 때</b>: 저장소의 <Code>data/</Code> 자리에 폴더를 두고 개발 서버를 켜면 자동으로 씁니다. 만드는 방법은 README '실명 데이터로 플레이하기'.</li>
-                <li>바꾸면 화면을 다시 불러옵니다. 실명으로 시작한 세이브는 실명 데이터가 있어야 이름이 제대로 나옵니다. 패러디 이름으로 하던 게임은 실명을 켠 뒤 <b className="text-mid">이어하기 · 불러오기</b>를 하면 실명으로 바꿀지 묻습니다.</li>
+                <li><Code>meta</Code> · <Code>clubs</Code> · <Code>seasons</Code> 가 들어 있는 폴더를 고르세요. 안에 <Code>photos</Code> 가 있으면 사진도 함께 들어갑니다.</li>
+                <li>브라우저가 '업로드'라고 묻지만, <b className="text-mid">어디로도 보내지 않고</b> 이 브라우저에만 저장합니다.</li>
+                <li>패러디 이름으로 하던 게임은 실명을 켠 뒤 <b className="text-mid">이어하기 · 불러오기</b>를 하면 바꿀지 묻습니다 (바꾸면 되돌릴 수 없음).</li>
+                <li>PC에서 직접 실행하면 저장소의 <Code>data/</Code> 폴더를 자동으로 씁니다.</li>
               </ul>
             </div>
           </section>
@@ -72,16 +78,22 @@ export function DatabaseDialog({ onClose }: { onClose: () => void }) {
               <Switch on={photosOn} onChange={(v) => { setPhotosEnabled(v); setOn(v); }} />
             </div>
             <div className="mt-2 rounded-lg bg-ink-900 px-4 py-3 text-[12px] leading-relaxed text-mid">
-              선수 사진은 게임에 들어 있지 않습니다. 개인이 추가해야 합니다.
+              선수 사진도 게임에 없어서 각자 넣어야 합니다.
               <ul className="mt-1.5 list-disc space-y-0.5 pl-4 text-lo">
-                <li><b className="text-mid">휴대폰 · 어디서나</b>: 선수 정보의 사진 칸(없으면 '+ 사진') → 사진 고르기 → 끌어서 얼굴 맞추기. 여러 장 · 다른 기기로 옮기기는 아래 '내 데이터'.</li>
-                <li className="pt-1 text-[11px] text-lo">아래는 PC에서 개발 서버로 실행할 때만 (고급):</li>
-                <li><b className="text-mid">PC 사진 폴더</b>: 사진 칸에서 파일을 끌어다 놓거나 Ctrl+V · 이미지 주소. 얼굴 위치는 자동으로 맞춥니다.</li>
-                <li><b className="text-mid">직접 모은 사진 한꺼번에</b>: <Code>node tools/data_pipeline photos-ids --club liverpool</Code> 로 선수 ID 목록(CSV)을 뽑고,
-                  사진을 <Code>data/photos/inbox/선수ID/2025-26.jpg</Code> 처럼 넣은 뒤 <Code>node tools/data_pipeline photos-import</Code>. 얼굴 위치는 자동으로 맞춥니다.</li>
-                <li><b className="text-mid">공개 사진 자동 수집</b>: <Code>tools</Code> 폴더에서 <Code>npm i</Code> 한 번, 그다음 <Code>node tools/data_pipeline photos --club liverpool --season 2025-26</Code></li>
-                <li>사진은 <Code>data/photos/</Code> 에만 저장되고 저장소에 올라가지 않습니다. 끄면 사진이 숨겨지고, 폴더를 지우면 완전히 빠집니다.</li>
+                <li><b className="text-mid">한 명씩</b>: 선수 정보의 사진 칸(없으면 '+ 사진') → 사진 고르기 → 끌어서 얼굴 맞추기. 휴대폰도 됩니다.</li>
+                <li><b className="text-mid">여러 장 · 다른 기기로 옮기기</b>: 아래 '내 데이터'.</li>
+                <li>스위치를 끄면 사진만 숨깁니다. 넣은 사진은 그대로입니다.</li>
               </ul>
+              <details className="mt-2 text-lo">
+                <summary className="cursor-pointer text-[11px] hover:text-mid">PC에서 직접 실행할 때 (고급)</summary>
+                <ul className="mt-1.5 list-disc space-y-0.5 pl-4">
+                  <li>사진 칸에 파일을 끌어다 놓거나 Ctrl+V · 이미지 주소. 얼굴 위치는 자동으로 맞춥니다.</li>
+                  <li>한꺼번에: <Code>node tools/data_pipeline photos-ids --club liverpool</Code> 로 선수 ID 목록을 뽑고,
+                    사진을 <Code>data/photos/inbox/선수ID/2025-26.jpg</Code> 처럼 넣은 뒤 <Code>node tools/data_pipeline photos-import</Code></li>
+                  <li>공개 사진 자동 수집: <Code>tools</Code> 폴더에서 <Code>npm i</Code> 한 번, 그다음 <Code>node tools/data_pipeline photos --club liverpool --season 2025-26</Code></li>
+                  <li>사진은 <Code>data/photos/</Code> 에만 저장되고 저장소에 올라가지 않습니다. 폴더를 지우면 완전히 빠집니다.</li>
+                </ul>
+              </details>
             </div>
           </section>
 

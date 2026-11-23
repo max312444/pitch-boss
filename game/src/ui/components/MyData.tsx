@@ -28,19 +28,22 @@ export function MyData() {
     <section>
       <div className="text-[15px] font-semibold">내 데이터 (이름 · 사진)</div>
       <div className="mt-0.5 text-[12px] text-lo">
-        바꾼 이름 선수 {st.players} · 구단 {st.clubs} · 감독 {st.managers} · 넣은 사진 {st.photos}장 — 이 기기 브라우저에만 저장됩니다 (어디로도 보내지 않음)
+        바꾼 이름 선수 {st.players} · 구단 {st.clubs} · 감독 {st.managers} · 넣은 사진 {st.photos}장 — 이 브라우저에만 저장 (어디로도 보내지 않음)
       </div>
 
       {/* 1. 이름 */}
       <div className="mt-3 rounded-lg bg-ink-900 px-4 py-3 text-[12px] leading-relaxed text-mid">
         <div className="font-semibold text-hi">1. 이름 바꾸기 (엑셀 CSV)</div>
-        <div className="mt-1 text-lo">한 명씩은 선수 정보 · 구단 창 · 감독 이름 옆 <b className="text-mid">✎</b>. 한꺼번에는: 목록을 내려받아 엑셀에서 <b className="text-mid">'바꿀 이름'</b> 칸만 채우고 저장 → 올리기. 비운 줄은 그대로입니다.</div>
-        <pre className="mt-2 overflow-x-auto rounded-md bg-ink-950 px-3 py-2 text-[11px] leading-relaxed text-mid">{SAMPLE_CSV}</pre>
-        <ul className="mt-1.5 list-disc space-y-0.5 pl-4 text-lo">
-          <li><Code>id</Code> 는 게임 안 번호라 바꾸면 안 됩니다 (같은 이름이 있어도 이 번호로 구분)</li>
-          <li><Code>짧은 이름</Code> 은 '짧은 이름 표기' · 피치 위 이름 (비우면 마지막 단어)</li>
-          <li>엑셀 기본 저장(CSV 쉼표로 분리) · UTF-8 모두 읽습니다. JSON 도 됩니다</li>
+        <ul className="mt-1 list-disc space-y-0.5 pl-4 text-lo">
+          <li><b className="text-mid">한 명씩</b>: 선수 정보 · 구단 창 · 감독 이름 옆 <b className="text-mid">✎</b></li>
+          <li><b className="text-mid">한꺼번에</b>: 목록 내려받기 → 엑셀에서 <b className="text-mid">'바꿀 이름'</b> 칸만 채우고 저장 → 올리기 (비운 줄은 그대로)</li>
+          <li><Code>id</Code> 칸은 고치지 마세요. <Code>짧은 이름</Code> 은 경기장 위에 보이는 이름 (비우면 마지막 단어)</li>
         </ul>
+        <details className="mt-1.5 text-lo">
+          <summary className="cursor-pointer text-[11px] hover:text-mid">파일 모양 보기</summary>
+          <pre className="mt-1.5 overflow-x-auto rounded-md bg-ink-950 px-3 py-2 text-[11px] leading-relaxed text-mid">{SAMPLE_CSV}</pre>
+          <div className="mt-1 text-[11px]">엑셀 기본 저장(CSV) · UTF-8 · JSON 모두 읽습니다.</div>
+        </details>
         <div className="mt-2.5 flex flex-wrap gap-2">
           <Btn primary disabled={!!busy} onClick={() => { setBusy('names'); run(async () => { await downloadNamesCsv((m) => setBusy(m)); return '이름 목록을 내려받았습니다 (pitchboss-이름목록-날짜.csv)'; }); }}>이름 목록 내려받기</Btn>
           <Btn disabled={!!busy} onClick={() => nameRef.current?.click()}>고친 목록 올리기</Btn>
@@ -52,10 +55,12 @@ export function MyData() {
       {/* 2. 사진 */}
       <div className="mt-3 rounded-lg bg-ink-900 px-4 py-3 text-[12px] leading-relaxed text-mid">
         <div className="font-semibold text-hi">2. 사진 넣기</div>
-        <div className="mt-1 text-lo">한 명씩은 선수 정보의 사진 칸(없으면 <b className="text-mid">'+ 사진'</b>) → <b className="text-mid">사진 고르기</b> → 끌어서 얼굴 맞추기 (휴대폰 갤러리 · 카메라 가능). 여러 장은 파일 이름을 맞춰 한꺼번에:</div>
-        <pre className="mt-2 overflow-x-auto rounded-md bg-ink-950 px-3 py-2 text-[11px] leading-relaxed text-mid">{'p00000a1.jpg            ← 선수 id (가장 정확, 이름 목록 CSV 에 있음)\n모하메드 살라흐.jpg       ← 지금 이름 그대로 (같은 이름이 여럿이면 건너뜀)\np00000a1_2017-18.jpg    ← 그 시즌만 (없으면 모든 시즌에 이 사진)'}</pre>
-        <div className="mt-1 text-lo">jpg · png · webp. 가운데 · 위쪽 기준으로 잘라 줄여서 저장합니다 (나중에 사진 칸에서 다시 맞출 수 있음).</div>
-        <div className="mt-1 text-lo"><b className="text-mid">PC 사진 폴더</b>: 예전에 모아 둔 <Code>data/photos</Code> 폴더(<Code>manifest.json</Code> · <Code>files</Code>)를 고르면 얼굴에 맞춰 잘라 그 시즌 사진으로 넣습니다. 위의 실명 데이터 폴더로 <Code>data</Code> 를 고르면 사진도 함께 들어갑니다. 휴대폰에는 아래 '내 데이터 내보내기'로 옮기세요.</div>
+        <ul className="mt-1 list-disc space-y-0.5 pl-4 text-lo">
+          <li><b className="text-mid">한 명씩</b>: 선수 정보의 사진 칸(없으면 '+ 사진') → 사진 고르기 → 끌어서 얼굴 맞추기</li>
+          <li><b className="text-mid">여러 장</b>: 파일 이름을 아래처럼 바꾸고 한꺼번에 고르기 (jpg · png · webp, 얼굴 쪽으로 알아서 자름)</li>
+        </ul>
+        <pre className="mt-2 overflow-x-auto rounded-md bg-ink-950 px-3 py-2 text-[11px] leading-relaxed text-mid">{'p00000a1.jpg            ← 선수 id (가장 정확, 이름 목록에 있음)\n모하메드 살라흐.jpg       ← 게임에 보이는 이름 (같은 이름이 여럿이면 건너뜀)\np00000a1_2017-18.jpg    ← 그 시즌에만'}</pre>
+        <div className="mt-1 text-lo"><b className="text-mid">PC 사진 폴더</b>: PC에서 모아 둔 <Code>data/photos</Code> 폴더를 고르면 그대로 넣습니다.</div>
         <div className="mt-2.5 flex flex-wrap gap-2">
           <Btn primary disabled={!!busy} onClick={() => photoRef.current?.click()}>사진 여러 장 고르기</Btn>
           <Btn disabled={!!busy} onClick={() => dirRef.current?.click()}>PC 사진 폴더 고르기</Btn>
@@ -71,10 +76,10 @@ export function MyData() {
       {/* 3. 옮기기 */}
       <div className="mt-3 rounded-lg bg-ink-900 px-4 py-3 text-[12px] leading-relaxed text-mid">
         <div className="font-semibold text-hi">3. 다른 기기로 옮기기 (PC → 휴대폰)</div>
-        <div className="mt-1 text-lo">내보내면 <Code>pitchboss-내데이터-날짜.pitchboss</Code> 파일 하나가 나옵니다 (바꾼 이름 · 사진{realExportable() ? ' · 원하면 실명 데이터' : ''}). 휴대폰으로 보내서(메신저 · 클라우드 등) 휴대폰의 이 화면에서 <b className="text-mid">가져오기</b>로 고르면 그대로 들어갑니다.</div>
+        <div className="mt-1 text-lo"><b className="text-mid">내보내기</b> → 나온 파일 하나를 휴대폰으로 보내기 (메신저 · 클라우드 등) → 휴대폰의 이 화면에서 <b className="text-mid">가져오기</b>. 바꾼 이름 · 사진{realExportable() ? ' (원하면 실명 데이터까지)' : ''}이 그대로 들어갑니다.</div>
         {realExportable() && (
           <label className="mt-2 flex items-center gap-2 text-mid">
-            <input type="checkbox" checked={withReal} onChange={(e) => setWithReal(e.target.checked)} className="accent-[#39ff14]" />실명 데이터도 함께 (PC 사진 폴더 사진 포함 · 파일이 약 15MB · 휴대폰에서 폴더 고르기 없이 실명 · 사진 사용)
+            <input type="checkbox" checked={withReal} onChange={(e) => setWithReal(e.target.checked)} className="accent-[#39ff14]" />실명 데이터도 함께 (파일 약 15MB)
           </label>
         )}
         <div className="mt-2.5 flex flex-wrap gap-2">
