@@ -17,7 +17,8 @@ export interface SaveMeta {
   /** 패러디 이름 · 실명 (목록에서 실명으로 바꾸기 버튼) */
   dataset?: 'public' | 'real';
 }
-interface SaveRecord extends SaveMeta { world: World }
+/** world: 예전 형식 (객체 그대로) · gz: v2.18.2 부터 (짧은 형식 JSON 을 gzip, 압축을 못 쓰는 브라우저는 world) */
+interface SaveRecord extends SaveMeta { world?: World; gz?: ArrayBuffer }
 
 const DB = 'pitch-boss', STORE = 'saves';
 export const SLOTS = ['auto', 'slot-1', 'slot-2', 'slot-3'] as const;
@@ -40,23 +41,34 @@ function tx<T>(mode: IDBTransactionMode, fn: (s: IDBObjectStore) => IDBRequest<T
   }));
 }
 
+// 저장은 차례대로 (압축이 비동기라, 먼저 부른 저장이 나중에 끝나 새 저장을 덮어쓰지 않게)
+let queue: Promise<unknown> = Promise.resolve();
+
 export async function writeSave(slot: string, world: World): Promise<SaveMeta> {
-  const meta: SaveMeta = { slot, savedAt: new Date().toISOString(), season: world.season, date: world.date, clubId: world.userClubId, version: world.version, ...(world.myClub ? { myClub: world.myClub } : {}) };
-  // 구조화 복제로 저장 (월드는 함수 없는 순수 데이터)
-  await tx('readwrite', (s) => s.put({ ...meta, world: packWorld(world) } satisfies SaveRecord));
+  const meta: SaveMeta = { slot, savedAt: new Date().toISOString(), season: world.season, date: world.date, clubId: world.userClubId, version: world.version, dataset: world.dataset ?? 'real', ...(world.myClub ? { myClub: world.myClub } : {}) };
+  // 부른 순간의 월드를 짧은 형식으로 글자로 (이후 게임이 진행돼도 이 시점 그대로)
+  const text = typeof CompressionStream === 'undefined' ? null : JSON.stringify(packWorld(world));
+  const packed = text === null ? packWorld(world) : null;
+  const job = queue.then(async () => {
+    const rec: SaveRecord = text !== null ? { ...meta, gz: await (await gzip(text)).arrayBuffer() } : { ...meta, world: packed! };
+    await tx('readwrite', (s) => s.put(rec));
+  });
+  queue = job.catch(() => undefined);
+  await job;
   return meta;
 }
 
 export async function readSave(slot: string): Promise<World | null> {
   const rec = await tx<SaveRecord | undefined>('readonly', (s) => s.get(slot) as IDBRequest<SaveRecord | undefined>);
   if (!rec) return null;
-  return migrate(rec.world);
+  const world = rec.gz ? (JSON.parse(await gunzip(rec.gz)) as World) : rec.world;
+  return world ? migrate(world) : null;
 }
 
 export async function listSaves(): Promise<SaveMeta[]> {
   const all = await tx<SaveRecord[]>('readonly', (s) => s.getAll() as IDBRequest<SaveRecord[]>);
   // 나의 구단 세이브: 불러오기 전에도 목록에 이름 · 엠블럼이 보이게 등록 (예전 세이브는 world 에서)
-  return all.map(({ world, ...meta }) => { const my = meta.myClub ?? world?.myClub; registerMyClub(my); return { ...meta, dataset: world?.dataset ?? 'real', ...(my ? { myClub: my } : {}) }; }).sort((a, b) => b.savedAt.localeCompare(a.savedAt));
+  return all.map(({ world, gz: _gz, ...meta }) => { const my = meta.myClub ?? world?.myClub; registerMyClub(my); return { ...meta, dataset: meta.dataset ?? world?.dataset ?? 'real', ...(my ? { myClub: my } : {}) }; }).sort((a, b) => b.savedAt.localeCompare(a.savedAt));
 }
 
 export async function deleteSave(slot: string): Promise<void> {
