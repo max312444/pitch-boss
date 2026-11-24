@@ -4,7 +4,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createWorld, type SeasonInput } from './world';
 import { completeTransfer, counterOffer, evaluateBid, askingPrice } from './transfer';
-import { addOnApp, termsError, termsWorth } from './addons';
+import { addOnApp, addOnGoal, addOnTitles, bonusChance, clauseRows, termsError, termsLine, termsWorth } from './addons';
+import { loanMove, loanReturn } from './loan';
+import { ledgerOf } from './finance';
 import { ageOn } from './condition';
 import type { ClubSeasonFile, LeagueSeasonFile } from '../data/types';
 import type { TransferOffer, World } from './types';
@@ -133,5 +135,126 @@ describe('보너스 (조건부 추가 이적료)', () => {
     for (let i = 0; i < 10; i++) addOnApp(w, q);
     completeTransfer(w, q, y, 9e6, 50000, 4);
     expect(q.addOn).toBeUndefined();
+  });
+});
+
+describe('보너스 종류 (v2.19): 골 · 리그 우승', () => {
+  it('골 보너스: 출전으로는 안 늘고, 골 수를 채우면 지급 (재정 장부 「조항」 항목)', () => {
+    const w = createWorld(load('2025-26', ['eng1']), LIV, 11);
+    const [x] = others(w);
+    const p = w.players[w.clubs[x].squad[3]];
+    completeTransfer(w, p, LIV, 10e6, 50000, 4, { bonus: { amount: 3e6, apps: 5, kind: 'goals' } });
+    expect(p.addOn).toMatchObject({ kind: 'goals', apps: 5, done: 0 });
+    for (let i = 0; i < 30; i++) addOnApp(w, p);
+    expect(p.addOn?.done).toBe(0);
+    const bl = bal(w, LIV), bx = bal(w, x);
+    for (let i = 0; i < 4; i++) addOnGoal(w, p);
+    expect(bal(w, LIV)).toBe(bl);
+    expect(termsLine(w, p, (id) => id)).toContain('골 4/5');
+    addOnGoal(w, p);
+    expect(bl - bal(w, LIV)).toBe(3e6);
+    expect(bal(w, x) - bx).toBe(3e6);
+    expect(p.addOn).toBeUndefined();
+    expect(ledgerOf(w).current.expense.clauseOut).toBe(3e6);
+    expect(w.inbox.filter((e) => e.type === 'clause')).toMatchObject([{ kind: 'bonus', dir: 'out', amount: 3e6, bk: 'goals' }]);
+  });
+
+  it('우승 보너스: 내는 구단이 리그 우승하면 지급, 다른 구단 우승이면 그대로', () => {
+    const w = createWorld(load('2025-26', ['eng1']), LIV, 12);
+    const [x, y] = others(w);
+    const p = w.players[w.clubs[x].squad[4]];
+    completeTransfer(w, p, LIV, 10e6, 50000, 4, { bonus: { amount: 2e6, apps: 1, kind: 'title' } });
+    const bl = bal(w, LIV);
+    addOnTitles(w, [y]);
+    expect(p.addOn).toBeDefined();
+    expect(bal(w, LIV)).toBe(bl);
+    addOnTitles(w, [LIV]);
+    expect(bl - bal(w, LIV)).toBe(2e6);
+    expect(p.addOn).toBeUndefined();
+  });
+
+  it('보너스 값어치: 골은 공격수가 수비수보다, 우승은 명성 1위 구단이 하위 구단보다 크다', () => {
+    const w = createWorld(load('2025-26', ['eng1']), LIV, 13);
+    const all = Object.values(w.players).filter((p) => p.clubId && w.competitions[w.clubs[p.clubId].league]);
+    const st = all.find((p) => p.pos === 'ST')!, cb = all.find((p) => p.pos === 'CB')!;
+    expect(bonusChance(10, 'goals', w, st)).toBeGreaterThan(bonusChance(10, 'goals', w, cb) * 3);
+    const clubs = Object.values(w.clubs).filter((c) => c.league === 'eng1').sort((a, b) => b.reputation - a.reputation);
+    expect(bonusChance(1, 'title', w, st, clubs[0].id)).toBeGreaterThan(bonusChance(1, 'title', w, st, clubs.at(-1)!.id) * 5);
+    expect(termsError(10e6, { bonus: { amount: 2e6, apps: 10, kind: 'goals' } })).toBeNull();
+    expect(termsError(10e6, { bonus: { amount: 2e6, apps: 7, kind: 'goals' } })).not.toBeNull();
+    expect(termsError(10e6, { bonus: { amount: 2e6, apps: 1, kind: 'title' } })).toBeNull();
+  });
+});
+
+describe('임대 중 보너스 (v2.19)', () => {
+  it('내는 구단이 임대 보내면 멈췄다가 돌아오면 이어서 센다 (없어지지 않음)', () => {
+    const w = createWorld(load('2025-26', ['eng1']), LIV, 14);
+    const [x, y] = others(w);
+    const p = w.players[w.clubs[x].squad[5]];
+    completeTransfer(w, p, LIV, 10e6, 50000, 4, { bonus: { amount: 1e6, apps: 20 } });
+    for (let i = 0; i < 5; i++) addOnApp(w, p);
+    loanMove(w, p, y, { share: 1, fee: 0 });
+    for (let i = 0; i < 30; i++) addOnApp(w, p);   // 임대 가서 뛴 경기는 안 셈
+    expect(p.addOn).toMatchObject({ done: 5 });
+    expect(termsLine(w, p, (id) => id)).toContain('임대 중 멈춤');
+    expect(clauseRows(w, LIV).find((r) => r.player === p.id)).toMatchObject({ kind: 'bonus', dir: 'out', paused: true });
+    loanReturn(w, p);
+    for (let i = 0; i < 15; i++) addOnApp(w, p);
+    expect(p.addOn).toBeUndefined();               // 5 + 15 = 20 → 지급
+    expect(w.inbox.filter((e) => e.type === 'clause')).toMatchObject([{ kind: 'bonus', dir: 'out', amount: 1e6 }]);
+  });
+});
+
+describe('팔 때 보너스 요구 (v2.19)', () => {
+  const setup = (seed: number) => {
+    const w = createWorld(load('2025-26', ['eng1']), LIV, seed);
+    const p = w.players[w.clubs[LIV].squad.find((id) => w.players[id].pos === 'ST') ?? w.clubs[LIV].squad[0]];
+    const [y] = others(w);
+    const mk = (): TransferOffer => ({ id: 'o', player: p.id, from: y, fee: 10e6, max: 12e6, tries: 0, date: w.date, expires: '2099-01-01' });
+    return { w, p, y, mk };
+  };
+  it('보너스를 요구하면 사는 구단이 그만큼 덜 내고, 합의하면 제안에 붙어 이적 뒤 선수에 걸린다', () => {
+    const { w, p, y, mk } = setup(15);
+    expect(counterOffer(w, mk(), 12e6).result).toBe('accept');
+    const big = counterOffer(w, mk(), 12e6, 0, { amount: 5e6, apps: 20 });
+    expect(big.result).not.toBe('accept');           // 보너스까지면 12M 은 비쌈
+    const o = mk();
+    const ok = counterOffer(w, o, 10e6, 0, { amount: 2e6, apps: 10, kind: 'goals' });
+    expect(ok.result).toBe('accept');
+    expect(ok.reason).toContain('10골');
+    expect(o.bonus).toEqual({ amount: 2e6, apps: 10, kind: 'goals' });
+    completeTransfer(w, p, y, o.fee, 60000, 3, { bonus: o.bonus });
+    expect(p.addOn).toMatchObject({ club: LIV, payer: y, kind: 'goals', apps: 10 });
+    expect(clauseRows(w, LIV)).toContainEqual(expect.objectContaining({ player: p.id, kind: 'bonus', dir: 'in', club: y, bk: 'goals' }));
+    const bl = bal(w, LIV);
+    for (let i = 0; i < 10; i++) addOnGoal(w, p);
+    expect(bal(w, LIV) - bl).toBe(2e6);
+    expect(ledgerOf(w).current.income.clauseIn).toBe(2e6);
+  });
+  it('이적료 절반을 넘는 보너스는 거절 (기회는 안 씀)', () => {
+    const { w, mk } = setup(16);
+    const o = mk();
+    const r = counterOffer(w, o, 10e6, 0, { amount: 6e6, apps: 20 });
+    expect(r.result).toBe('reject');
+    expect(r.reason).toContain('절반');
+    expect(o.tries).toBe(0);
+  });
+});
+
+describe('조항 한눈에 보기 (v2.19)', () => {
+  it('받을 셀온 · 낼 셀온 · 받은 셀온은 장부 「조항 수입」', () => {
+    const w = createWorld(load('2025-26', ['eng1']), LIV, 17);
+    const [x, y, z] = others(w);
+    const sold = w.players[w.clubs[LIV].squad[6]];
+    completeTransfer(w, sold, y, 20e6, 50000, 4, { sellOn: 15 });
+    const bought = w.players[w.clubs[x].squad[6]];
+    completeTransfer(w, bought, LIV, 10e6, 50000, 4, { sellOn: 10 });
+    const rows = clauseRows(w, LIV);
+    expect(rows).toContainEqual(expect.objectContaining({ player: sold.id, kind: 'sellOn', dir: 'in', club: y, pct: 15 }));
+    expect(rows).toContainEqual(expect.objectContaining({ player: bought.id, kind: 'sellOn', dir: 'out', club: x, pct: 10 }));
+    const before = ledgerOf(w).current.income.clauseIn ?? 0;
+    completeTransfer(w, sold, z, 30e6, 60000, 4);
+    expect(ledgerOf(w).current.income.clauseIn - before).toBe(4.5e6);
+    expect(clauseRows(w, LIV).some((r) => r.player === sold.id)).toBe(false);
   });
 });

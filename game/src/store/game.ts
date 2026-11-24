@@ -263,7 +263,7 @@ interface GameStore {
   release(playerId: string): void;
   answerOffer(offerId: string, accept: boolean): string;
   /** 받은 제안에 역제안 (이적료). done = 이적 성사, gone = 제안이 사라짐 */
-  counter(offerId: string, ask: number, sellOn?: number): { result: 'accept' | 'raise' | 'reject' | 'withdraw' | 'gone'; fee: number; reason: string; done?: boolean };
+  counter(offerId: string, ask: number, sellOn?: number, bonus?: import('../engine/addons').Bonus): { result: 'accept' | 'raise' | 'reject' | 'withdraw' | 'gone'; fee: number; reason: string; done?: boolean };
   stepMatch(n?: number): void;
   /** 포지션 전환 훈련 시작 · 멈춤 (내 선수) */
   retrain(playerId: string, pos: Position | null): { ok: boolean; reason: string };
@@ -1144,11 +1144,11 @@ export const useGame = create<GameStore>((set, get) => {
       return msg;
     },
 
-    counter(offerId, ask, sellOn) {
+    counter(offerId, ask, sellOn, bonus) {
       const w = get().world!;
       const o = (w.offers ?? []).find((x) => x.id === offerId);
       if (!o || !offerValid(w, o)) { cleanOffers(w); w.offers = (w.offers ?? []).filter((x) => x.id !== offerId); bump(); return { result: 'gone', fee: 0, reason: '이미 끝난 제안입니다 (선수가 팀을 떠났거나 기한 · 이적시장이 끝났습니다)' }; }
-      const r = counterOffer(w, o, ask, sellOn);
+      const r = counterOffer(w, o, ask, sellOn, bonus);
       if (r.result === 'withdraw') logDeal(w, { dir: 'out', kind: 'transfer', player: o.player, club: o.from, fee: o.fee, ok: false, why: '역제안이 높아 상대 구단이 포기' });
       let out: ReturnType<GameStore['counter']> = r;
       if (r.result === 'accept') {

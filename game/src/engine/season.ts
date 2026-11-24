@@ -33,6 +33,7 @@ import { traitSeasonEnd } from './traits';
 import { overall } from './ratings';
 import { levelOf, pairRule, PAIRS, poolOf, reserveBlocked } from './pyramid';
 import { cleanOffers } from './transfer';
+import { addOnTitles } from './addons';
 import { money } from '../ui/format';
 import { seasonAwards } from './awards';
 import { createCups } from './cup';
@@ -88,6 +89,8 @@ export function closeSeason(w: World): SeasonRecord[] {
     p.career.push({ season: w.season, club: p.clubId, apps, goals: p.stats.goals, assists: p.stats.assists, rating: apps ? Math.round((p.stats.ratingSum / apps) * 100) / 100 : null,
       ...(p.cupStats?.apps ? { cupApps: p.cupStats.apps, cupGoals: p.cupStats.goals } : {}) });
   }
+  // 리그 우승 보너스 조항 (우승 구단에 있는 선수)
+  addOnTitles(w, recs.map((r) => r.champion));
   // 시즌 수상 (보상 포함)
   const awards = seasonAwards(w);
   for (const r of recs) r.awards = awards.filter((a) => a.league === r.league);

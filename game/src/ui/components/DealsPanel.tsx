@@ -1,11 +1,13 @@
 // 이적 화면 「거래 현황」: 내 구단이 한 거래 (성사 · 무산) 와 포지션별 보강 요약
 import { useMemo, useState } from 'react';
 import { DEAL_GROUPS, dealSummary, type DealEntry } from '../../engine/dealLog';
+import { addOnProgress, clauseRows, type ClauseRow } from '../../engine/addons';
+import { ledgerOf } from '../../engine/finance';
 import { posGroup } from '../../data/rating';
 import { clubKo, playerKo } from '../../data/db';
 import { useWorld } from '../hooks';
 import { Crest } from './Crest';
-import { PosTag } from './bits';
+import { Card, PosTag } from './bits';
 import { koDate, money } from '../format';
 
 const GROUP_KO = { GK: '골키퍼', DF: '수비', MF: '미드필더', FW: '공격' } as const;
@@ -79,6 +81,8 @@ export function DealsPanel({ onPick }: { onPick: (playerId: string) => void }) {
         })}
       </div>
 
+      <ClauseCard onPick={onPick} />
+
       {/* 거래 목록 */}
       <div className="panel min-h-0 overflow-auto lg:flex-1">
         {rows.length === 0 && (
@@ -114,5 +118,54 @@ export function DealsPanel({ onPick }: { onPick: (playerId: string) => void }) {
         })}
       </div>
     </div>
+  );
+}
+
+/** 걸린 조항 (셀온 · 보너스): 우리가 받을 것 · 낼 것 + 이번 시즌 받은 · 낸 금액 */
+function ClauseCard({ onPick }: { onPick: (playerId: string) => void }) {
+  const w = useWorld();
+  // 같은 선수 · 같은 방향 (셀온 + 보너스) 은 한 줄로
+  const rows = useMemo(() => {
+    const m = new Map<string, { player: string; dir: 'in' | 'out'; club: string; items: ClauseRow[] }>();
+    for (const r of clauseRows(w, w.userClubId)) {
+      const k = `${r.dir}:${r.player}:${r.club}`;
+      const g = m.get(k) ?? { player: r.player, dir: r.dir, club: r.club, items: [] };
+      g.items.push(r);
+      m.set(k, g);
+    }
+    return [...m.values()].sort((a, b) => (a.dir === b.dir ? 0 : a.dir === 'in' ? -1 : 1));
+  }, [w, w.date]);
+  const cur = ledgerOf(w).current;
+  const got = cur.income.clauseIn ?? 0, paid = cur.expense.clauseOut ?? 0;
+  const nIn = rows.filter((r) => r.dir === 'in').length, nOut = rows.length - nIn;
+  const what = (r: ClauseRow) => (r.kind === 'sellOn'
+    ? `셀온 ${r.pct}%`
+    : `보너스 ${money(r.amount ?? 0)} (${addOnProgress({ kind: r.bk, apps: r.apps ?? 0, done: r.done })}${r.paused ? ' · 임대 중 멈춤' : ''})`);
+  return (
+    <Card fold="deals.clauses" shut title="걸린 조항 (셀온 · 보너스)" peek={rows.length ? `받을 ${nIn} · 낼 ${nOut}` : '없음'}>
+      <div className="px-4 py-2 text-[12px] text-lo lg:px-5">
+        셀온 = 다시 팔리면 이적료의 몇 % · 보너스 = 조건을 채우면 · 이번 시즌 조항 수입 <span className="tnum font-semibold text-neon">{money(got)}</span> · 조항 지출 <span className="tnum font-semibold text-amber">{money(paid)}</span>
+      </div>
+      {rows.length === 0 ? (
+        <div className="px-4 pb-3 text-[12px] text-lo lg:px-5">걸린 조항이 없습니다. 영입 · 판매 협상에서 셀온 · 보너스를 걸면 여기에 보입니다</div>
+      ) : (
+        <div className="max-h-[200px] overflow-auto">
+          {rows.map((r) => {
+            const p = w.players[r.player];
+            return (
+              <button key={`${r.dir}-${r.player}-${r.club}`} onClick={() => p && onPick(r.player)}
+                className="flex w-full items-center gap-3 px-4 py-2 text-left shadow-[inset_0_1px_0_var(--color-line)] hover:bg-ink-800 lg:px-5">
+                <span className={`w-10 shrink-0 rounded py-0.5 text-center text-[11px] font-semibold ${r.dir === 'in' ? 'bg-neon/15 text-neon' : 'bg-amber/15 text-amber'}`}>{r.dir === 'in' ? '받을' : '낼'}</span>
+                <div className="min-w-0 flex-1">
+                  <div className="truncate text-[13px] font-medium">{p ? playerKo(p.id, p.name) : r.player}</div>
+                  <div className="truncate text-[12px] text-lo">{r.items.map(what).join(' · ')}</div>
+                </div>
+                <span className="flex min-w-0 max-w-[40%] shrink-0 items-center gap-1.5 text-[12px] text-lo"><Crest clubId={r.club} size={14} /><span className="truncate">{clubKo(r.club)}</span></span>
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </Card>
   );
 }

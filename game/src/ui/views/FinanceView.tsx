@@ -74,7 +74,7 @@ export function FinanceView() {
         <div className="grid gap-4 lg:grid-cols-2">
           <Card fold="fin.income" title="이번 시즌 수입">
             <div className="px-5 py-3">
-              {(Object.keys(INCOME_LABEL) as IncomeKind[]).map((k) => <Bar key={k} label={INCOME_LABEL[k]} v={cur.income[k]} max={maxRow} tone="bg-neon" />)}
+              {(Object.keys(INCOME_LABEL) as IncomeKind[]).map((k) => <Bar key={k} label={INCOME_LABEL[k]} v={cur.income[k] ?? 0} max={maxRow} tone="bg-neon" />)}
             </div>
           </Card>
           <Card fold="fin.spend" shut title="이번 시즌 지출" peek={money(Object.values(cur.expense).reduce((a, b) => a + (b ?? 0), 0))}>
