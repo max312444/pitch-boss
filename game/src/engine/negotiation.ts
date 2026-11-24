@@ -65,7 +65,7 @@ export function negotiateFee(w: World, p: PlayerState, cash: number, terms?: Dea
   const t = talkOf(w, p.id);
   const mood0 = t.mood ?? 100;
   const r = evaluateBid(w, p, w.userClubId, cash, terms);
-  const v = cash + termsWorth(w, p, cash, terms);
+  const v = cash + termsWorth(w, p, cash, terms, w.userClubId);
   const done = (reason: string): FeeResult => { t.agreed = cash; t.terms = terms?.sellOn || terms?.bonus?.amount ? terms : undefined; return { decision: 'accept', ask: cash, reason, left: FEE_TRIES - t.fee, mood: mood0 }; };
   if (r.decision === 'accept') return done(r.reason);
   if (r.hard) return { ...r, left: FEE_TRIES - t.fee, mood: mood0 };

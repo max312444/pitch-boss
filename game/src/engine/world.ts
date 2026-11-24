@@ -1,6 +1,6 @@
 // 월드 생성과 하루 진행 (advanceDay)
 import { intlDay, onIntlResult } from './intl';
-import { addOnApp } from './addons';
+import { addOnApp, addOnGoal } from './addons';
 import { ffpMidSeason, ffpOf } from './ffp';
 import { clinchCheck } from './clinch';
 import { coachDay } from './coaches';
@@ -280,6 +280,7 @@ export function applyMatch(w: World, f: Fixture, m: MatchState) {
     if (r != null) { if (!cup) p.stats.ratingSum += r; p.recentRatings = [...p.recentRatings, r].slice(-5); }
   }
   for (const g of s.goals) {
+    if (w.players[g.scorer]?.addOn) addOnGoal(w, w.players[g.scorer]);   // 보너스 조건 (골 수, 리그 · 컵)
     if (cup) {
       cs(g.scorer).goals++;
       if (g.assist) cs(g.assist).assists++;

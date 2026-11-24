@@ -99,8 +99,8 @@ export interface PlayerState {
   sellOn?: { club: string; pct: number };
   /** 대표팀 전용 선수 (실제 세계 대회 명단 중 게임에 없는 선수 · 국내파, engine/wcsquads.ts) */
   intlOnly?: boolean;
-  /** 보너스: payer(지금 구단)가 이 선수 출전 apps 경기를 채우면 club 에 amount (done = 지금까지) */
-  addOn?: { club: string; payer: string; amount: number; apps: number; done: number };
+  /** 보너스: payer(지금 구단)가 이 선수로 조건 apps 개를 채우면 club 에 amount (done = 지금까지). kind 없으면 출전 경기 수 (addons.ts) */
+  addOn?: { club: string; payer: string; amount: number; apps: number; done: number; kind?: 'goals' | 'title' | 'apps' };
   /** 보스만 사전 계약: 계약이 끝나면 이 구단으로 (bosman.ts) */
   /** 강등 조항 금액 (0 = 없음) · 정한 구단 (firesale.ts) */
   relClause?: number;
@@ -259,7 +259,7 @@ export type GameEvent =
   | { type: 'seasonEnd'; date: string; league: string; champion: string }
   | { type: 'info'; date: string; text: string }
   /** 이적 조건 정산 (engine/addons.ts): 셀온 · 보너스, 받음(in) · 냄(out) */
-  | { type: 'clause'; date: string; player: string; kind: 'sellOn' | 'bonus'; dir: 'in' | 'out'; amount: number; club: string; pct?: number; fee?: number; apps?: number }
+  | { type: 'clause'; date: string; player: string; kind: 'sellOn' | 'bonus'; dir: 'in' | 'out'; amount: number; club: string; pct?: number; fee?: number; apps?: number; bk?: 'goals' | 'title' | 'apps' }
   /** 스카우트 보고서: 선수 한 명 · 리그 관찰 */
   | { type: 'scout'; date: string; player?: string; club?: string; league?: string; count?: number }
   /** 관심 선수 소식 (급매물 · 자유계약 · 보스만 · 계약 만료 임박) */
@@ -330,8 +330,8 @@ export interface TransferOffer {
   tries?: number;
   /** 이적 명단에 없던 선수에게 온 제안 */
   unsolicited?: boolean;
-  /** 사는 구단이 붙인 보너스 (출전 apps 경기 채우면 amount) */
-  bonus?: { amount: number; apps: number };
+  /** 보너스 (사는 구단이 붙였거나 내가 역제안으로 받아 냄): 조건 apps 개 채우면 amount (kind 없으면 출전 경기) */
+  bonus?: import('./addons').Bonus;
   /** 내가 역제안으로 받아 낸 셀온 % */
   sellOn?: number;
 }

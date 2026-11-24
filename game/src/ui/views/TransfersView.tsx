@@ -1,4 +1,5 @@
 // 이적 화면: 선수 검색 · 관심 목록 (우리가 고름) · 이적 희망 (우리에게 오고 싶다고 연락한 선수) · 내 선수(이적 명단 · 방출) · 받은 제안 · 거래 현황 (성사 · 무산 기록)
+import { bonusLabel } from '../../engine/addons';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { PlayerState } from '../../engine/types';
 import { estOverall, seenOverall } from '../../engine/scout';
@@ -268,7 +269,7 @@ export function TransfersView({ initialGroup }: { initialGroup?: Group }) {
                 <div className="min-w-0 flex-1 basis-[calc(100%-40px)] lg:basis-auto">
                   <div className="text-[14px] font-medium">{playerKo(p.id, p.name)} <span className="text-lo">← {clubKo(o.from)}</span></div>
                   <SaleImpactBox playerId={p.id} compact />
-                  <div className="text-[12px] text-lo">제안 이적료 <span className="tnum font-semibold text-neon">{money(o.fee)}</span>{o.bonus ? <span className="text-mid"> + 보너스 {money(o.bonus.amount)} (출전 {o.bonus.apps}경기)</span> : ''} · 시장 가치 {money(marketValue(w, p))} · {koDate(o.expires)}까지{o.unsolicited ? ' · 이적 명단에 없는 선수' : ''}{o.tries ? ` · 역제안 ${o.tries}회` : ''}</div>
+                  <div className="text-[12px] text-lo">제안 이적료 <span className="tnum font-semibold text-neon">{money(o.fee)}</span>{o.bonus ? <span className="text-mid"> + 보너스 {money(o.bonus.amount)} ({bonusLabel(o.bonus)})</span> : ''} · 시장 가치 {money(marketValue(w, p))} · {koDate(o.expires)}까지{o.unsolicited ? ' · 이적 명단에 없는 선수' : ''}{o.tries ? ` · 역제안 ${o.tries}회` : ''}</div>
                 </div>
                 <button onClick={() => setSellTalk(o.id)} className="h-9 rounded-lg bg-ink-700 px-4 text-[13px] font-semibold text-hi transition-colors hover:bg-ink-750">협상</button>
                 <button onClick={() => setNotice(answerOffer(o.id, false))} className="h-9 rounded-lg px-4 text-[13px] text-mid ring-1 ring-line transition-colors hover:text-hi">거절</button>

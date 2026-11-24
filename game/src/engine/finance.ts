@@ -10,10 +10,10 @@ import type { ClubState, World } from './types';
 import { fanFactor } from './awards';
 import { monthlyCommercial } from './sponsors';
 
-export type IncomeKind = 'tv' | 'gate' | 'commercial' | 'prize' | 'sales';
-export type ExpenseKind = 'wages' | 'operations' | 'training' | 'purchases' | 'facility' | 'scouting' | 'owner' | 'fine';
-export const INCOME_LABEL: Record<IncomeKind, string> = { tv: '중계권', gate: '경기장 수입', commercial: '스폰서 · 상품', prize: '상금 (리그 · 컵 · 유럽)', sales: '선수 판매' };
-export const EXPENSE_LABEL: Record<ExpenseKind, string> = { wages: '선수 주급', operations: '운영비', training: '훈련비', purchases: '선수 영입', facility: '시설 투자', scouting: '스카우트', owner: '구단주 배당 · 부채 상환', fine: '재정 규정 벌금' };
+export type IncomeKind = 'tv' | 'gate' | 'commercial' | 'prize' | 'sales' | 'clauseIn';
+export type ExpenseKind = 'wages' | 'operations' | 'training' | 'purchases' | 'clauseOut' | 'facility' | 'scouting' | 'owner' | 'fine';
+export const INCOME_LABEL: Record<IncomeKind, string> = { tv: '중계권', gate: '경기장 수입', commercial: '스폰서 · 상품', prize: '상금 (리그 · 컵 · 유럽)', sales: '선수 판매', clauseIn: '조항 수입' };
+export const EXPENSE_LABEL: Record<ExpenseKind, string> = { wages: '선수 주급', operations: '운영비', training: '훈련비', purchases: '선수 영입', clauseOut: '조항 지출', facility: '시설 투자', scouting: '스카우트', owner: '구단주 배당 · 부채 상환', fine: '재정 규정 벌금' };
 
 /** 매출 대비 비율 */
 export const SHARE = { tv: 0.4, commercial: 0.25, gate: 0.2, prize: 0.15, operations: 0.14 } as const;
@@ -37,8 +37,8 @@ export interface Ledger { current: SeasonLedger; past: (Omit<SeasonLedger, 'bala
 
 const emptyLedger = (season: string, balance: number, date: string, base: number): SeasonLedger => ({
   season, base,
-  income: { tv: 0, gate: 0, commercial: 0, prize: 0, sales: 0 },
-  expense: { wages: 0, operations: 0, training: 0, purchases: 0, facility: 0, scouting: 0, owner: 0, fine: 0 },
+  income: { tv: 0, gate: 0, commercial: 0, prize: 0, sales: 0, clauseIn: 0 },
+  expense: { wages: 0, operations: 0, training: 0, purchases: 0, clauseOut: 0, facility: 0, scouting: 0, owner: 0, fine: 0 },
   balances: [{ date, balance }],
 });
 

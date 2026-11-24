@@ -2,7 +2,7 @@
 //  ① 이적료: 파는 구단과 합의 (자유계약 선수는 건너뜀)
 //  ② 개인 계약: 선수와 주급 · 계약 기간 합의
 // 이적료는 밀고 당기기 (engine/negotiation.ts: 역제안 · 인내심 · 최저선, 4번), 주급은 3번 안에 합의 못 하면 결렬 → 이번 이적시장 동안 이 선수와 다시 협상 불가
-import { BONUS_APPS, bonusCap, SELL_ON_PCTS, termsWorth, type DealTerms } from '../../engine/addons';
+import { BONUS_OPTS, bonusCap, bonusLabel, SELL_ON_PCTS, termsWorth, type BonusKind, type DealTerms } from '../../engine/addons';
 import { appealOf } from '../../engine/appeal';
 import { autoRole, ROLE_KO, ROLES, type Role } from '../../engine/roles';
 import { OvrText } from './Scout';
@@ -104,10 +104,11 @@ export function NegotiationModal({ p, onClose }: { p: PlayerState; onClose: () =
   // 이적 조건 (선택): 셀온 % · 보너스 (출전 경기 수 · 금액 M)
   const [extra, setExtra] = useState(false);
   const [sellOn, setSellOn] = useState(0);
-  const [bApps, setBApps] = useState(0);
+  const [bKey, setBKey] = useState('');   // 'apps:20' · 'goals:10' · 'title:1' (빈 값 = 보너스 없음)
+  const [bKind, bN] = bKey ? [bKey.split(':')[0] as BonusKind, +bKey.split(':')[1]] : ['apps' as BonusKind, 0];
   const [bAmt, setBAmt] = useState(0);
-  const terms = (): DealTerms | undefined => (sellOn || (bApps && bAmt > 0) ? { ...(sellOn ? { sellOn } : {}), ...(bApps && bAmt > 0 ? { bonus: { amount: Math.round(bAmt * 1e6), apps: bApps } } : {}) } : undefined);
-  const termsText = (t?: DealTerms) => (t ? [t.sellOn ? `셀온 ${t.sellOn}%` : '', t.bonus ? `보너스 ${money(t.bonus.amount)} (출전 ${t.bonus.apps}경기)` : ''].filter(Boolean).join(' · ') : '');
+  const terms = (): DealTerms | undefined => (sellOn || (bN && bAmt > 0) ? { ...(sellOn ? { sellOn } : {}), ...(bN && bAmt > 0 ? { bonus: { amount: Math.round(bAmt * 1e6), apps: bN, ...(bKind !== 'apps' ? { kind: bKind } : {}) } } : {}) } : undefined);
+  const termsText = (t?: DealTerms) => (t ? [t.sellOn ? `셀온 ${t.sellOn}%` : '', t.bonus ? `보너스 ${money(t.bonus.amount)} (${bonusLabel(t.bonus)})` : ''].filter(Boolean).join(' · ') : '');
   const [wage, setWage] = useState(Math.round(demand / 1000));
   const [years, setYears] = useState(3);
   const [role, setRole] = useState<Role>(() => autoRole(w, p, w.userClubId));
@@ -265,17 +266,17 @@ export function NegotiationModal({ p, onClose }: { p: PlayerState; onClose: () =
                     <select value={sellOn} onChange={(e) => setSellOn(+e.target.value)} title="셀온: 나중에 이 선수를 다시 팔면 그 이적료의 몇 %를 지금 구단에 줍니다. 어린 선수일수록 구단이 반깁니다" className="h-9 rounded-lg border border-line bg-ink-900 px-2 text-[12px] text-hi max-sm:flex-1">
                       {SELL_ON_PCTS.map((x) => <option key={x} value={x}>{x ? `셀온 ${x}%` : '셀온 없음'}</option>)}
                     </select>
-                    <select value={bApps} onChange={(e) => { setBApps(+e.target.value); if (+e.target.value && !bAmt) setBAmt(Math.min(Math.round(fee * 0.15 * 2) / 2 || 0.5, bonusCap(fee * 1e6) / 1e6)); }} title="보너스: 이 선수가 우리 구단에서 그만큼 출전하면 이 금액을 더 냅니다 (리그 · 컵, 교체 포함)" className="h-9 rounded-lg border border-line bg-ink-900 px-2 text-[12px] text-hi max-sm:flex-1">
-                      <option value={0}>보너스 없음</option>
-                      {BONUS_APPS.map((x) => <option key={x} value={x}>보너스: 출전 {x}경기</option>)}
+                    <select value={bKey} onChange={(e) => { setBKey(e.target.value); if (e.target.value && !bAmt) setBAmt(Math.min(Math.round(fee * 0.15 * 2) / 2 || 0.5, bonusCap(fee * 1e6) / 1e6)); }} title="보너스: 이 선수가 우리 구단에서 조건을 채우면 이 금액을 더 냅니다 (출전 · 골은 리그 · 컵 합계, 우승은 리그 우승). 구단은 이뤄질 가능성만큼 값어치를 봅니다" className="h-9 rounded-lg border border-line bg-ink-900 px-2 text-[12px] text-hi max-sm:flex-1">
+                      <option value="">보너스 없음</option>
+                      {BONUS_OPTS.map((o) => <option key={`${o.kind}:${o.n}`} value={`${o.kind}:${o.n}`}>보너스: {bonusLabel({ kind: o.kind, apps: o.n })}</option>)}
                     </select>
-                    {bApps > 0 && (
+                    {bN > 0 && (
                       <label className="flex h-9 items-center gap-1.5 rounded-lg border border-line bg-ink-900 px-2 text-[12px] max-sm:flex-1"><span className="shrink-0">금액</span>
                         <input type="number" step={0.5} min={0} max={bonusCap(fee * 1e6) / 1e6} value={bAmt} onChange={(e) => setBAmt(+e.target.value)} className="tnum w-14 min-w-0 flex-1 bg-transparent text-right font-semibold text-hi outline-none" />백만 유로
                       </label>
                     )}
                   </div>
-                  <div>{t ? <>구단이 보는 조건 값어치 약 <span className="tnum text-mid">{money(termsWorth(w, p, fee * 1e6, t))}</span> — 그만큼 현금을 덜 받습니다 (어린 선수일수록 셀온 값어치 ↑ · 보너스는 이적료의 절반까지)</> : '셀온 · 보너스를 걸면 구단이 그 값어치만큼 현금을 덜 받습니다'}</div>
+                  <div>{t ? <>구단이 보는 조건 값어치 약 <span className="tnum text-mid">{money(termsWorth(w, p, fee * 1e6, t, w.userClubId))}</span> — 그만큼 현금을 덜 받습니다 (어린 선수일수록 셀온 ↑ · 보너스는 이뤄질 것 같을수록 ↑ · 이적료의 절반까지)</> : '셀온 · 보너스를 걸면 구단이 그 값어치만큼 현금을 덜 받습니다'}</div>
                 </div>
               )}
               {feeTight && feeRi && (
