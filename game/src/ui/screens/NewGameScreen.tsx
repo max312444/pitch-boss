@@ -1,4 +1,5 @@
 import { IntlNewGame } from './IntlNewGame';
+import { leagueSubs, leagueTops } from '../leagueTabs';
 import { useEffect, useMemo, useState } from 'react';
 import { useApp } from '../../store/app';
 import { useGame } from '../../store/game';
@@ -33,6 +34,10 @@ function ClubNewGame() {
   const [season, setSeason] = useState<string>(allSeasons[allSeasons.length - 1]);
   const lgOptions = top.filter((l) => availableSeasons(l.id).includes(season));
   const [league, setLeague] = useState<string>(lgOptions[0]?.id ?? 'eng1');
+  // 리그 탭: 나라마다 가장 높은 단계 하나 (보통 1부) + 고른 나라의 나머지 (2부 · 3부)
+  const lgTops = leagueTops(lgOptions);
+  const curNation = lgOptions.find((l) => l.id === league)?.nation;
+  const lgSubs = leagueSubs(lgOptions, curNation);
   const [clubsData, setClubsData] = useState<ClubSeasonFile[] | null>(null);
   const [club, setClub] = useState<string | null>(null);
 
@@ -173,15 +178,28 @@ function ClubNewGame() {
               );
             })}
           </div>
-          <div className="-mx-4 mt-5 flex gap-2 overflow-x-auto px-4 pb-1 lg:mx-0 lg:mt-6 lg:flex-wrap lg:overflow-visible lg:px-0 lg:pb-0">
-            {lgOptions.map((l) => (
-              <button key={l.id} onClick={() => setLeague(l.id)}
+          {/* 나라별 1부만 한 줄 · 고른 나라의 2부 · 3부는 아래 작은 줄 (그 시즌 데이터에 있는 것만) */}
+          <div className="-mx-4 mt-5 flex gap-2 overflow-x-auto px-4 pb-1 lg:mx-0 lg:mt-6 lg:flex-wrap lg:overflow-visible lg:px-0 lg:pb-0" data-testid="league-tops">
+            {lgTops.map((l) => (
+              <button key={l.id} data-league={l.id} onClick={() => setLeague(l.id)}
                 className={`h-10 shrink-0 rounded-lg px-4 text-[14px] font-semibold whitespace-nowrap transition-colors lg:px-5 ${
-                  l.id === league ? 'bg-ink-700 text-hi ring-1 ring-line-strong' : 'bg-ink-850 text-mid ring-1 ring-line hover:text-hi'}`}>
+                  l.nation === curNation ? 'bg-ink-700 text-hi ring-1 ring-line-strong' : 'bg-ink-850 text-mid ring-1 ring-line hover:text-hi'}`}>
                 {l.ko}
               </button>
             ))}
           </div>
+          {lgSubs.length > 0 && (
+            <div className="-mx-4 mt-2 flex items-center gap-1.5 overflow-x-auto px-4 pb-1 lg:mx-0 lg:px-0" data-testid="league-subs">
+              <span className="shrink-0 pr-1 text-[12px] text-lo">하위 리그</span>
+              {lgSubs.map((l) => (
+                <button key={l.id} data-league={l.id} onClick={() => setLeague(l.id)}
+                  className={`h-8 shrink-0 rounded-md px-3 text-[13px] whitespace-nowrap transition-colors ${
+                    l.id === league ? 'bg-ink-700 font-semibold text-hi ring-1 ring-line-strong' : 'bg-ink-850 text-mid ring-1 ring-line hover:text-hi'}`}>
+                  <span className="tnum mr-1 text-lo">{l.level}부</span>{l.ko}
+                </button>
+              ))}
+            </div>
+          )}
         </section>
 
         <section className="px-4 py-5 lg:min-h-0 lg:flex-1 lg:overflow-auto lg:px-8 lg:py-6">

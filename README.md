@@ -208,6 +208,7 @@ cd game && npm run history                 # 역대 기록 (감독 기록의 ces
 > 버전: `game/src/version.ts` (첫 화면 표시). 기능 추가 +0.1 · 작은 수정 +0.0.1, 바꿀 때마다 여기에 적는다.
 > 같은 파일의 `CHANGELOG` 맨 위에 플레이어용 한 줄 요약도 넣는다 → 첫 화면 '업데이트 소식' (새 버전을 처음 본 뒤 24시간 표시, `UpdateNotes.tsx`).
 
+0. **v2.20 새 게임 리그 탭 1부 줄 + 하위 리그 줄** (2026-11-24) — `ui/leagueTabs.ts` (`leagueTops` 나라마다 가장 높은 단계 하나 · `leagueSubs` 고른 나라의 아래 단계, leagues.json 의 nation · level 기준, 그 시즌 데이터가 있는 리그만) + 테스트. NewGameScreen 리그 탭: 윗줄 1부 (고른 나라 강조), 아래 작은 줄 「하위 리그 · 2부 …」 (따로 가로 스크롤, 하위 리그 없으면 숨김). 버튼에 `data-league` · 줄에 `data-testid=league-tops/subs` (점검용). 기본 · 나의 구단 모드 공통. 버전 번호는 v2.19 (조항 보강) 와 병합 때 맞춤.
 0. **v2.18.1 데이터베이스 화면 설명 쉽게 · 안내 문서** (2026-11-23) — [docs/실명_사진_넣기.md](docs/실명_사진_넣기.md) (실명 · 이름 · 사진 · 휴대폰 옮기기, 쉬운 말). DatabaseDialog 맨 위 「쉬운 안내 보기」 (GitHub 문서 링크 `GUIDE_URL`), 실명 · 사진 설명 짧게 (실명 폴더에 photos 가 있으면 사진도 들어간다고 바로잡음 — 전에는 "사진은 읽지 않음"), 사진 고급 명령은 접는 「PC에서 직접 실행할 때」. MyData 이름 · 사진 · 옮기기 설명 짧게, CSV 예시는 접는 「파일 모양 보기」. 기능 변화 없음. 실명 데이터 백업 2026-11-23 판 (10개 리그).
 0. **v2.18 게임 화면 실명 데이터 토글 · 파일 추가** (2026-11-20) — Sidebar: 실명 데이터 카드 (Switch, 패러디 게임이면 켜서 실명 전환) + 「+ 파일 추가」 (DatabaseDialog `RealImport` 재사용, `beforeSwitch` 로 지금 게임 자동 저장 · 전환 표시). store `convertCurrentToReal(switchNow)`. 개발 서버는 data/ 폴더가 먼저라 넣기 창에 안내.
 0. **v2.17.1 패러디 세이브 실명 전환 안내** (2026-11-20) — store/game.ts `load`: 실명 데이터가 켜진 채 패러디 세이브를 열면 confirm 으로 실명 전환 여부를 묻는다 (전에는 데이터를 패러디로 되돌림). DatabaseDialog 안내 문구.
