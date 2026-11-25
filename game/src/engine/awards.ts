@@ -1,14 +1,20 @@
-// 시즌 수상: 리그 우승 · 득점왕 · 도움왕 · 시즌 MVP · 영플레이어 · 골든글러브
+// 시즌 수상: 리그 우승 · 득점왕 · 도움왕 · 시즌 MVP · 영플레이어 · 골든글러브 · 세계 올해의 선수 (모든 1부 리그 중 한 명)
 // 보상: 구단(팬 증가 · 우승 보너스), 선수(사기 · 충성도 · 몇 달 동안 능력치 상승 · 수상 경력)
 import type { PlayerState, World } from './types';
 import { sortTable } from './standings';
 import { book, clubRevenue } from './finance';
 
-export type AwardKind = 'champion' | 'mvp' | 'boot' | 'assist' | 'young' | 'glove' | 'cup' | 'euro' | 'wc';
+export type AwardKind = 'champion' | 'mvp' | 'boot' | 'assist' | 'young' | 'glove' | 'cup' | 'euro' | 'wc' | 'world';
 /** 우승 트로피 (리그 · 컵 · 유럽) */
 export const isTrophy = (k: AwardKind) => k === 'champion' || k === 'cup' || k === 'euro' || k === 'wc';
 export const AWARD_KO: Record<AwardKind, string> = {
-  champion: '리그 우승', cup: '컵 우승', euro: '유럽 대회 우승', wc: '세계 대회 우승', mvp: '시즌 MVP', boot: '득점왕', assist: '도움왕', young: '올해의 영플레이어', glove: '골든글러브',
+  champion: '리그 우승', cup: '컵 우승', euro: '유럽 대회 우승', wc: '세계 대회 우승', mvp: '시즌 MVP', boot: '득점왕', assist: '도움왕', young: '올해의 영플레이어', glove: '골든글러브', world: '세계 올해의 선수',
+};
+/** 개인상 무게 (한 선수가 여러 개 받으면 가벼운 것부터 보여 주고 큰 상으로 끝냄) */
+export const AWARD_RANK: Partial<Record<AwardKind, number>> = { young: 1, glove: 2, assist: 3, boot: 4, mvp: 5, world: 6 };
+/** 짧은 이름 (선수 프로필 시즌 줄) */
+export const AWARD_SHORT: Record<AwardKind, string> = {
+  champion: '리그 우승', cup: '컵 우승', euro: '유럽 우승', wc: '세계 대회 우승', mvp: 'MVP', boot: '득점왕', assist: '도움왕', young: '영플레이어', glove: '골든글러브', world: '세계 올해의 선수',
 };
 export interface Award {
   kind: AwardKind;
@@ -65,6 +71,21 @@ export function seasonAwards(w: World): Award[] {
     if (glove && glove.stats.cleanSheets > 0) add('glove', glove.clubId!, `무실점 ${glove.stats.cleanSheets}경기`, glove);
   }
 
+  // 세계 올해의 선수: 모든 1부 리그 (2부 제외) 20경기 이상 중 한 명. 활약 + 이번 시즌 우승 (리그 · 유럽 · 컵) + 받은 개인상
+  {
+    const topLeagues = new Set(Object.keys(w.competitions).filter((id) => /1$/.test(id)));
+    const titles = (club: string) => (out.some((a) => a.kind === 'champion' && a.club === club) ? 0.35 : 0)
+      + ((w.cupHistory ?? []).some((h) => h.season === w.season && h.winner === club && (h.cup === 'ucl')) ? 0.5 : 0)
+      + ((w.cupHistory ?? []).some((h) => h.season === w.season && h.winner === club && h.cup === 'uel') ? 0.2 : 0)
+      + ((w.cupHistory ?? []).some((h) => h.season === w.season && h.winner === club && h.cup !== 'ucl' && h.cup !== 'uel') ? 0.1 : 0);
+    const won = (p: PlayerState) => out.filter((a) => a.player === p.id).length * 0.12;
+    const pool = Object.values(w.players).filter((p) => p.clubId && !p.retired && topLeagues.has(w.clubs[p.clubId]?.league ?? '') && apps(p) >= 20);
+    const worldScore = (p: PlayerState) => score(p) + titles(p.clubId!) + won(p);
+    const star = best(pool, worldScore);
+    if (star) out.push({ kind: 'world', season: w.season, league: w.clubs[star.clubId!].league, club: star.clubId!, player: star.id, rewards: [],
+      value: `${star.stats.goals}골 ${star.stats.assists}도움 · 평점 ${avg(star).toFixed(2)}` });
+  }
+
   // 보상
   for (const a of out) {
     if (a.kind === 'champion') {
@@ -86,13 +107,13 @@ export function seasonAwards(w: World): Award[] {
       a.rewards.push('우승 멤버 사기 · 충성도 상승');
     } else if (a.player) {
       const p = w.players[a.player];
-      const amount = a.kind === 'mvp' ? 2 : 1;
+      const amount = a.kind === 'world' ? 3 : a.kind === 'mvp' ? 2 : 1;
       p.morale = Math.min(100, p.morale + 15);
       p.loyalty = Math.min(100, p.loyalty + 8);
       p.boost = { amount: Math.max(amount, p.boost?.amount ?? 0), months: 5 };
       (p.honours ??= []).push({ season: a.season, kind: a.kind, league: a.league });
-      addFans(w, a.club, 1.02);
-      a.rewards.push(`능력치 +${amount} (다음 시즌 초반 몇 달)`, '사기 · 충성도 상승', '구단 팬 +2%');
+      addFans(w, a.club, a.kind === 'world' ? 1.05 : 1.02);
+      a.rewards.push(`능력치 +${amount} (다음 시즌 초반 몇 달)`, '사기 · 충성도 상승', `구단 팬 +${a.kind === 'world' ? 5 : 2}%`);
     }
   }
   w.pendingAwards = [...out.filter((a) => a.club === w.userClubId), ...(w.cupAwards ?? [])];

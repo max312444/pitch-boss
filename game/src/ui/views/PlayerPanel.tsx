@@ -18,9 +18,9 @@ import { ATTR_GROUPS, ATTR_KO, GK_GROUP, money, ratingBar, ratingTone } from '..
 import { ConditionIcon, FitnessBar } from '../components/bits';
 import { loyaltyLabel, UNHAPPY, unrestReasons } from '../../engine/loyalty';
 import { TRAIT, type PlayerHistory, type TraitKind } from '../../engine/traits';
-import { AWARD_KO, isTrophy } from '../../engine/awards';
+import { HonourSeasons } from '../components/HonourSeasons';
 import { useState, type ReactNode } from 'react';
-import { clubKo, compKo } from '../../data/db';
+import { clubKo } from '../../data/db';
 import { useHistory, useWorld } from '../hooks';
 import { Crest } from '../components/Crest';
 import { useCompact } from '../components/fold';
@@ -257,11 +257,7 @@ export function PlayerPanel({ p, age, ko, nation, actions, club, sheet }: { p: P
         {(p.honours?.length || p.boost) ? (
           <div className="mb-5">
             <div className="mb-2 flex items-baseline justify-between"><span className="text-[11px] font-semibold text-lo">수상 경력</span>{p.boost && <span className="text-[11px] text-neon">수상 효과 능력 +{p.boost.amount} · {p.boost.months}개월 남음</span>}</div>
-            <ul className="space-y-1 text-[12px]">
-              {[...(p.honours ?? [])].reverse().map((h, i) => (
-                <li key={i} className="flex justify-between"><span className={isTrophy(h.kind) ? 'text-[#f2c94c]' : 'text-hi'}>{AWARD_KO[h.kind]}{isTrophy(h.kind) ? ` · ${compKo(h.league)}` : ''}</span><span className="tnum text-lo">{h.season.replace('-', '/')}</span></li>
-              ))}
-            </ul>
+            <HonourSeasons honours={p.honours ?? []} />
           </div>
         ) : null}
         <div className="mb-2 text-[11px] font-semibold text-lo">언론 평가</div>

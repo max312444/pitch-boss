@@ -38,7 +38,7 @@ describe('POM · 팬 · 시즌 수상 (리버풀 2025/26)', () => {
 
     // 개인 수상자: 능력치 일시 상승 · 수상 경력
     const mvp = w.players[awards.find((a) => a.kind === 'mvp')!.player!];
-    expect(mvp.boost?.amount).toBe(2);
+    expect(mvp.boost?.amount).toBe(mvp.honours?.some((h) => h.kind === 'world') ? 3 : 2);   // 세계 올해의 선수도 받으면 +3
     expect(mvp.honours?.some((h) => h.kind === 'mvp')).toBe(true);
     const before = overall(mvp);
     mvp.boost = undefined;
@@ -46,5 +46,14 @@ describe('POM · 팬 · 시즌 수상 (리버풀 2025/26)', () => {
     // 우승 구단 팬 증가
     const champ = awards.find((a) => a.kind === 'champion')!;
     expect(fansOf(w, champ.club)).toBeGreaterThan(baseFans(w.clubs[champ.club].reputation));
+
+    // 세계 올해의 선수: 시즌에 한 명 · 1부 리그 20경기 이상 · 능력 +3 · 수상 경력
+    const worlds = awards.filter((a) => a.kind === 'world');
+    expect(worlds).toHaveLength(1);
+    const star = w.players[worlds[0].player!];
+    expect(star.career.at(-1)!.apps).toBeGreaterThanOrEqual(20);
+    expect(worlds[0].rewards).toContain('능력치 +3 (다음 시즌 초반 몇 달)');   // (위에서 MVP 능력 효과를 지워 봤으므로 보상 글로 확인)
+    expect(star.honours?.some((h) => h.kind === 'world' && h.season === worlds[0].season)).toBe(true);
+    console.log('세계 올해의 선수', star.name, worlds[0].value);
   });
 });
