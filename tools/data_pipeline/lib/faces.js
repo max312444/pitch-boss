@@ -62,13 +62,36 @@ async function openAnalyzer() {
               sum += l; sq += l * l; cnt++;
             }
             const sharp = sq / cnt - (sum / cnt) ** 2;
-            return { box: [b.x / W, b.y / H, b.width / W, b.height / H], px: Math.round(b.width), score: d.detection.score, sharp: Math.round(sharp), desc: Array.from(d.descriptor, (v) => Math.round(v * 1e4) / 1e4) };
+            // 얼굴 방향 (68점): 코끝이 턱선 왼쪽 끝 · 오른쪽 끝 사이 어디쯤인지 → 0 정면, ±1 옆모습
+            //  위아래: 눈 높이 ~ 턱 사이에서 코끝 위치 (정면이면 0.4~0.65 쯤, 고개를 숙이거나 들면 벗어남)
+            const p = d.landmarks.positions;
+            const nose = p[30], jl = p[0], jr = p[16], chin = p[8];
+            const dl = nose.x - jl.x, dr = jr.x - nose.x;
+            const yaw = dl + dr > 0 ? (dr - dl) / (dr + dl) : 1;
+            const eyeY = (p[36].y + p[45].y) / 2;
+            const pitch = chin.y - eyeY > 0 ? (nose.y - eyeY) / (chin.y - eyeY) : 0;
+            return { box: [b.x / W, b.y / H, b.width / W, b.height / H], px: Math.round(b.width), score: Math.round(d.detection.score * 1000) / 1000, sharp: Math.round(sharp),
+              yaw: Math.round(yaw * 100) / 100, pitch: Math.round(pitch * 100) / 100, desc: Array.from(d.descriptor, (v) => Math.round(v * 1e4) / 1e4) };
           }),
         };
       }, `/img/${name}`);
     } finally { images.delete(name); }
   }
   return { analyze, close: () => browser.close() };
+}
+
+/** 분석 결과 형식 번호 (바뀌면 _faces 캐시를 받아 둔 사진으로 다시 분석) — 2: 얼굴 방향 yaw · pitch 추가 */
+const ANALYSIS_VERSION = 2;
+
+/** 선수 사진으로 쓸 만한 얼굴인가 (정면 · 또렷 · 충분히 큼). 이유를 돌려준다 (통과면 null) */
+function faceProblem(f) {
+  if (!f) return '얼굴 없음';
+  if (f.score < 0.85) return '얼굴 확신 낮음';
+  if (f.yaw == null || Math.abs(f.yaw) > 0.8) return '옆모습';   // 3/4 까지는 괜찮음 (리버풀 표본: 정면~3/4 은 0.8 이하, 옆모습 · 손으로 가린 얼굴은 0.82~1.3)
+  if (f.pitch != null && (f.pitch < 0.2 || f.pitch > 0.7)) return '고개 숙이거나 듦';
+  if (f.px < 80) return '얼굴 작음';
+  if (f.sharp < 200) return '흐림';
+  return null;
 }
 
 /** 두 얼굴 특징값 거리 (0.5 이하면 같은 사람일 가능성 높음) */
@@ -82,4 +105,4 @@ function referenceFace(descs) {
   return best[0].map((_, i) => best.reduce((s, x) => s + x[i], 0) / best.length);
 }
 
-module.exports = { openAnalyzer, faceDist, referenceFace };
+module.exports = { openAnalyzer, faceDist, referenceFace, faceProblem, ANALYSIS_VERSION };

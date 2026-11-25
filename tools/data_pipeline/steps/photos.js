@@ -11,7 +11,7 @@ const { DATA, USER_AGENT } = require('../config');
 const { readJson, normName } = require('../lib/util');
 const { getJson } = require('../lib/http');
 const { sparql } = require('../providers/wikidata');
-const { openAnalyzer, faceDist, referenceFace } = require('../lib/faces');
+const { openAnalyzer, faceDist, referenceFace, faceProblem, ANALYSIS_VERSION } = require('../lib/faces');
 
 const OUT = path.join(DATA, 'photos');
 const COMMONS = 'https://commons.wikimedia.org/w/api.php?format=json&formatversion=2';
@@ -72,17 +72,28 @@ async function photos({ club, season, league, limit, log }) {
   const qids = readJson(path.join(DATA, 'canonical', 'players.json'));
   const apps = appearances({ club, season, leagues });
   let ids = [...apps.keys()].filter((id) => qids[id]?.wikidata);
+  if (process.env.PHOTO_ONLY) ids = ids.filter((id) => process.env.PHOTO_ONLY.split(',').includes(id));   // 시험용: 이 선수만
   if (limit) ids = ids.slice(0, limit);
   log(`  대상 선수 ${ids.length}명`);
 
   const manifestFile = path.join(OUT, 'manifest.json');
   const manifest = fs.existsSync(manifestFile) ? readJson(manifestFile) : { players: {}, files: {} };
+  const REDO = !!process.env.PHOTO_REDO;
+  /** 이번에 다시 고른 선수 (저장 때 예전 결과를 덮어씀) */
+  const redone = new Set();
   // 저장: 다른 창(동시에 돌리는 수집 · 게임에서 고른 사진)이 바꾼 내용을 지우지 않게 디스크의 최신 목록과 합쳐서 저장
   const save = () => {
     fs.mkdirSync(OUT, { recursive: true });
     const disk = fs.existsSync(manifestFile) ? readJson(manifestFile) : { players: {}, files: {} };
     for (const [k, v] of Object.entries(manifest.files)) disk.files[k] ??= v;
     for (const [id, e] of Object.entries(manifest.players)) {
+      if (redone.has(id)) {
+        const d = disk.players[id] ?? { seasons: {} };
+        const keep = Object.fromEntries(Object.entries(d.seasons ?? {}).filter(([s]) => d.picked?.[s]));
+        disk.players[id] = { ...d, seasons: { ...e.seasons, ...keep }, cands: e.cands ?? {}, default: e.default };
+        if (!disk.players[id].default) delete disk.players[id].default;
+        continue;
+      }
       const d = (disk.players[id] ??= { seasons: {} });
       for (const [s, k] of Object.entries(e.seasons ?? {})) if (!d.picked?.[s] && !d.seasons[s]) d.seasons[s] = k;   // 이미 있는 (직접 고른 · 다른 창이 찾은) 사진은 그대로
       if (e.cands) d.cands = { ...e.cands, ...(d.cands ?? {}) };
@@ -196,8 +207,8 @@ async function photos({ club, season, league, limit, log }) {
       const raw = `${c.title} ${c.cats.join(' ')}`.toLowerCase();
       const club = clubId && clubTokens(clubId).some((t) => text.includes(t));
       let s = 0;
-      if (club) s += 4;
-      if (MATCH.test(text)) s += 2;
+      if (club) s += 5;          // 그 시즌 구단 (유니폼)
+      if (MATCH.test(text)) s += 3;   // 경기 사진 (유니폼)
       if (/crop/.test(raw)) s += 3;
       if (/wikiportraits/.test(raw)) s += 2;   // 얼굴 촬영 (WikiPortraits)
       if (e.imgs.has(c.title)) s += 3;
@@ -221,9 +232,10 @@ async function photos({ club, season, league, limit, log }) {
       const f = await fetchFile(c);
       if (!f) return null;
       const cache = path.join(OUT, '_faces', `${f.key}.json`);
-      if (fs.existsSync(cache)) return { ...f, ...readJson(cache) };
+      if (fs.existsSync(cache)) { const old = readJson(cache); if (old.v === ANALYSIS_VERSION) return { ...f, ...old }; }
       const r = await analyzer().then((a) => a.analyze(fs.readFileSync(f.file))).catch(() => null);
       if (!r) return null;
+      r.v = ANALYSIS_VERSION;
       fs.mkdirSync(path.dirname(cache), { recursive: true });
       fs.writeFileSync(cache, JSON.stringify(r));
       return { ...f, ...r };
@@ -242,32 +254,45 @@ async function photos({ club, season, league, limit, log }) {
     const ref = referenceFace(refDescs);
 
     /** 사진에서 이 선수 얼굴 (기준 얼굴과 가장 가까운 얼굴, 기준이 없으면 얼굴이 하나뿐일 때만) */
-    const playerFace = (an) => {
+    const playerFace = (an, c) => {
       if (!an?.faces.length) return null;
-      if (ref) { const best = an.faces.map((f) => ({ f, d: faceDist(f.desc, ref) })).sort((x, y) => x.d - y.d)[0]; return best.d < 0.55 ? { ...best.f, dist: best.d } : null; }
-      return an.faces.length === 1 ? an.faces[0] : null;
+      // 위키데이터가 이 사람 사진으로 정한 대표 사진 (P18): 얼굴이 하나면 믿는다 (기준 얼굴은 최근 사진으로 만들어져 몇 해 전 대표 사진을 남으로 볼 수 있음)
+      if (e.imgs.has(c.title) && an.faces.length === 1) return an.faces[0];
+      if (ref) { const best = an.faces.map((f) => ({ f, d: faceDist(f.desc, ref) })).sort((x, y) => x.d - y.d)[0]; return best.d < 0.5 ? { ...best.f, dist: best.d } : null; }
+      // 기준 얼굴이 없으면: 얼굴이 하나뿐이고, 대표 사진이거나 파일 이름에 선수 성이 있을 때만
+      return an.faces.length === 1 && (e.imgs.has(c.title) || (surname && normName(c.title).includes(surname))) ? an.faces[0] : null;
+    };
+    /** 쓸 수 있는 사진: 이 선수 얼굴이 정면으로 또렷하게 (뒷모습 · 몸 일부 · 옆모습 · 흐린 사진 · 다른 사람은 빠짐) */
+    const goodFace = async (c) => {
+      const an = await facesOf(c);
+      const face = playerFace(an, c);
+      if (process.env.PHOTO_DEBUG) log(`    [${id}] ${c.title} · 얼굴 ${an?.faces.length ?? '-'} · ${face ? (faceProblem(face) ?? '통과') + (face.dist != null ? ` (거리 ${face.dist.toFixed(2)})` : '') : ref ? '이 선수 얼굴 아님 (기준과 멂)' : '기준 얼굴 없음 · 조건 안 맞음'}`);
+      return face && !faceProblem(face) ? { an, face } : null;
     };
 
     // 대표 사진 (시즌 사진이 없을 때 참고용)
-    const def = pool.filter((c) => e.imgs.has(c.title))[0];
-    if (!entry.default && def) { const an = await facesOf(def); if (an) { record(def, an.key, an, playerFace(an)); entry.default = an.key; } }
+    if (REDO) { redone.add(id); delete entry.default; }
+    if (!entry.default) {
+      const lastClub = a0.clubs[[...a0.seasons].sort().pop()];
+      const order = [...pool.filter((c) => e.imgs.has(c.title)), ...pool.filter((c) => !e.imgs.has(c.title))
+        .map((c) => ({ c, sc: score(c, lastClub) + (photoDate(c.extmetadata) ?? '').slice(0, 4) / 1e4 })).sort((x, y) => y.sc - x.sc).slice(0, 6).map((x) => x.c)];
+      for (const c of order) { const g = await goodFace(c); if (g) { record(c, g.an.key, g.an, g.face); entry.default = g.an.key; break; } }
+    }
 
     // 시즌별: 그 시즌에 찍힌 사진 중 이 선수 얼굴이 크고 선명한 사진. 기본 점수 (그 시즌 구단 경기 사진 · 유명한 사진) 를 더한다
     for (const s of a0.seasons) {
       if (entry.picked?.[s]) continue;   // 직접 고른 사진은 그대로
-      if (entry.seasons[s] && !process.env.PHOTO_REDO) continue;   // 이미 찾은 시즌은 건너뜀 (중간에 멈춰도 이어서) · 다시 고르려면 PHOTO_REDO=1
+      if (entry.seasons[s] && !REDO) continue;   // 이미 찾은 시즌은 건너뜀 (중간에 멈춰도 이어서) · 다시 고르려면 PHOTO_REDO=1
       const [a, b] = seasonWindow(s);
       const inSeason = pool.filter((c) => { const d = photoDate(c.extmetadata); return d && d >= a && d <= b; })
         .map((c) => ({ c, sc: score(c, a0.clubs[s]) })).sort((x, y) => y.sc - x.sc).slice(0, 8);   // 후보 8장까지만 받아 얼굴 분석 (속도)
       const ok = [];
       for (const x of inSeason) {
-        const an = await facesOf(x.c);
-        const face = playerFace(an);
-        if (!face) continue;
-        x.an = an; x.face = face;
-        x.faceSc = Math.min(4, face.px / 60) + Math.min(4, face.sharp / 250);
-        // 얼굴이 너무 작거나 흐리면 뺀다
-        if (face.px >= 70 && face.sharp >= 150) ok.push(x);
+        const g = await goodFace(x.c);
+        if (!g) continue;   // 정면 · 또렷 · 충분히 큰 이 선수 얼굴이 아니면 뺀다
+        x.an = g.an; x.face = g.face;
+        x.faceSc = Math.min(4, g.face.px / 60) + Math.min(4, g.face.sharp / 250) + (1 - Math.abs(g.face.yaw)) * 2;   // 크고 선명하고 정면일수록
+        ok.push(x);
       }
       ok.sort((x, y) => (y.sc + y.faceSc) - (x.sc + x.faceSc));
       if (process.env.PHOTO_DEBUG) for (const x of ok.slice(0, 5)) log(`    [${id} ${s}] ${(x.sc + x.faceSc).toFixed(1)} (기본 ${x.sc} · 얼굴 ${x.face.px}px · 선명 ${x.face.sharp}${x.face.dist != null ? ` · 거리 ${x.face.dist.toFixed(2)}` : ''}) ${x.c.title}`);
