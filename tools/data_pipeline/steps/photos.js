@@ -42,6 +42,20 @@ function appearances({ club, season, leagues }) {
   return out;
 }
 
+/** 위키미디어 표준 미리보기 크기 (https://w.wiki/GHai). 다른 크기 · 원본은 요청이 많으면 429 로 막힌다 */
+const STD_WIDTHS = [960, 500, 330];
+/** 받을 주소: 원본보다 작은 표준 크기 중 가장 큰 것 (960 → 500 → 330). 330 보다 작은 사진은 쓰지 않음 */
+function stdThumb(c) {
+  const m = (c.url ?? '').split('?')[0].match(/^https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\/([0-9a-f])\/([0-9a-f]{2})\/(.+)$/);
+  if (!m) return null;
+  const w = STD_WIDTHS.find((x) => x < (c.width ?? 0));
+  if (!w) return null;
+  const name = m[3];
+  return `https://upload.wikimedia.org/wikipedia/commons/thumb/${m[1]}/${m[2]}/${name}/${w}px-${name}`;
+}
+/** 얼굴 크기 · 선명도 기준은 가로 640px 사진으로 정했다 → 사진 크기에 맞춰 얼굴 크기를 640 기준으로 바꿔서 판정 */
+const norm640 = (face, an) => (an?.w && an.w !== 640 ? { ...face, px: Math.round((face.px * 640) / an.w) } : face);
+
 /** 시즌 기간 */
 const seasonWindow = (s) => [`${s.slice(0, 4)}-07-01`, `${+s.slice(0, 4) + 1}-06-30`];
 
@@ -51,12 +65,20 @@ function photoDate(meta) {
   return m ? `${m[1]}-${m[2]}-${m[3] ?? '15'}` : null;
 }
 
+/** 받기 통계 (거절 429 · 5xx 횟수) */
+const dl = { refused: 0 };
 async function download(url, file) {
   for (let attempt = 0; attempt < 4; attempt++) {
     await sleep(300);
     try {
       const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT }, signal: AbortSignal.timeout(60_000) });
-      if (res.status === 429 || res.status >= 500) { await sleep(3000 * 2 ** attempt); continue; }
+      if (res.status === 429 || res.status >= 500) {
+        dl.refused++;
+        // 위키미디어가 알려 준 만큼 기다린다 (retry-after 초, 최대 60초)
+        const ra = +(res.headers.get('retry-after') ?? 0);
+        await sleep(Math.min(60_000, ra > 0 ? ra * 1000 : 3000 * 2 ** attempt));
+        continue;
+      }
       if (!res.ok) return false;
       fs.mkdirSync(path.dirname(file), { recursive: true });
       fs.writeFileSync(file, Buffer.from(await res.arrayBuffer()));
@@ -224,7 +246,13 @@ async function photos({ club, season, league, limit, log }) {
     const fetchFile = async (c) => {
       const key = hashOf(c);
       const file = path.join(OUT, 'files', `${key}.jpg`);
-      if (!fs.existsSync(file)) { if (!(await download(c.thumburl, file))) return null; files++; }
+      if (!fs.existsSync(file)) {
+        const url = stdThumb(c);
+        const ok = !!url && (await download(url, file));
+        if (process.env.PHOTO_DEBUG) log(`    받기 ${ok ? '성공' : url ? '실패' : '작아서 안 받음'} ${c.width ?? '?'}px ${c.title}`);
+        if (!ok) return null;
+        files++;
+      }
       return { key, file };
     };
     /** 얼굴 분석 (결과는 _faces/ 에 저장해 다시 쓰지 않음) */
@@ -250,7 +278,7 @@ async function photos({ club, season, league, limit, log }) {
     const solo = pool.filter((c) => e.imgs.has(c.title) || (normName(c.title).includes(surname) && !/\band\b|,|\bvs?\b/i.test(c.title.replace(/\(.*?\)/g, ''))))
       .sort((x, y) => (e.imgs.has(y.title) ? 1 : 0) - (e.imgs.has(x.title) ? 1 : 0)).slice(0, 8);
     const refDescs = [];
-    for (const c of solo) { const an = await facesOf(c); if (an?.faces.length === 1 && an.faces[0].px >= 60) refDescs.push(an.faces[0].desc); }
+    for (const c of solo) { const an = await facesOf(c); if (an?.faces.length === 1 && norm640(an.faces[0], an).px >= 60) refDescs.push(an.faces[0].desc); }
     const ref = referenceFace(refDescs);
 
     /** 사진에서 이 선수 얼굴 (기준 얼굴과 가장 가까운 얼굴, 기준이 없으면 얼굴이 하나뿐일 때만) */
@@ -267,7 +295,8 @@ async function photos({ club, season, league, limit, log }) {
       const an = await facesOf(c);
       const face = playerFace(an, c);
       if (process.env.PHOTO_DEBUG) log(`    [${id}] ${c.title} · 얼굴 ${an?.faces.length ?? '-'} · ${face ? (faceProblem(face) ?? '통과') + (face.dist != null ? ` (거리 ${face.dist.toFixed(2)})` : '') : ref ? '이 선수 얼굴 아님 (기준과 멂)' : '기준 얼굴 없음 · 조건 안 맞음'}`);
-      return face && !faceProblem(face) ? { an, face } : null;
+      const f = face && norm640(face, an);
+      return f && !faceProblem(f) ? { an, face: f } : null;
     };
 
     // 대표 사진 (시즌 사진이 없을 때 참고용)
@@ -298,14 +327,14 @@ async function photos({ club, season, league, limit, log }) {
       if (process.env.PHOTO_DEBUG) for (const x of ok.slice(0, 5)) log(`    [${id} ${s}] ${(x.sc + x.faceSc).toFixed(1)} (기본 ${x.sc} · 얼굴 ${x.face.px}px · 선명 ${x.face.sharp}${x.face.dist != null ? ` · 거리 ${x.face.dist.toFixed(2)}` : ''}) ${x.c.title}`);
       if (!ok.length) { delete entry.seasons[s]; if (entry.cands) delete entry.cands[s]; continue; }
       // 게임에서 직접 고를 수 있는 후보 (얼굴 · 선명도 기준을 통과한 사진만, 최대 8장)
-      (entry.cands ??= {})[s] = ok.slice(0, 8).map(({ c, an, face }) => ({ title: c.title, src: c.thumburl, author: strip(c.extmetadata?.Artist?.value).slice(0, 120), license: strip(c.extmetadata?.LicenseShortName?.value), date: photoDate(c.extmetadata), url: c.descriptionurl, w: an.w, h: an.h, face: face.box.map((v) => Math.round(v * 1e4) / 1e4) }));
+      (entry.cands ??= {})[s] = ok.slice(0, 8).map(({ c, an, face }) => ({ title: c.title, src: stdThumb(c) ?? c.thumburl, author: strip(c.extmetadata?.Artist?.value).slice(0, 120), license: strip(c.extmetadata?.LicenseShortName?.value), date: photoDate(c.extmetadata), url: c.descriptionurl, w: an.w, h: an.h, face: face.box.map((v) => Math.round(v * 1e4) / 1e4) }));
       const best = ok[0];
       record(best.c, best.an.key, best.an, best.face);
       entry.seasons[s] = best.an.key;
       seasonsFilled++;
     }
     if (entry.default || Object.keys(entry.seasons).length) { manifest.players[id] = entry; withPhoto++; }
-    if (done % 50 === 0) { save(); log(`  ${done}/${ids.length} · 사진 있는 선수 ${withPhoto} · 시즌 사진 ${seasonsFilled} · 받은 파일 ${files}`); }
+    if (done % 50 === 0) { save(); log(`  ${done}/${ids.length} · 사진 있는 선수 ${withPhoto} · 시즌 사진 ${seasonsFilled} · 받은 파일 ${files} · 거절 ${dl.refused}`); }
   }
   save();
   if (az) await (await az).close();
